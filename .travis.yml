@@ -5,10 +5,12 @@ sudo: false
 language: node_js
 install:
   - npm install gitbook-cli -g
+  - pip install --user beautifulsoup4
   - pip install --user ghp-import
 node_js: '4.1'
 script:
   - make _book 
+  - make test
 after_success:
   - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && make publish-travis > /dev/null 2>&1 || true'
 env:
