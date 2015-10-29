@@ -1,0 +1,16 @@
+branches:
+  only:
+    - master
+sudo: false
+language: node_js
+install:
+  - npm install gitbook-cli -g
+  - pip install --user ghp-import
+node_js: '4.1'
+script:
+  - make _book 
+after_success:
+  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && make publish-travis > /dev/null 2>&1 || true'
+env:
+  global:
+    secure: roXogK5GYjvHZwrFJlyNdeYbdH1f3piXxM21p8nqOSK5SlT61qw82NQ7/o6KmLQy03aU5NT1vXPMAUHh/VjlChUhQiOs++VhUylTEmbRZFbvprsJwW6Hte8RcYXou8cdmdzVikvy8QG9vtJiiIjvULNjbn1iejiVWF/ZVvjpFawedMMGWzPgPHigcjyk9pcAwCv+gI/QMttFoq8I9R7yj7BBW4ogvChrgQkSbEGRwkyUGPfguvaRqEIf001T8gD/L4x0wM9lLjmMSLxOLKNZSnEF5JnPYkLo8gDptEaHs37s5IZLmUyrlRXGyMWevNrvIdHGgUNNqrXiK732wwjEzopZqHzCteZWssqQbFzjVFIRK/RNiC/1Sf/QI3EG2ufXgBhw310CSKZTdiF4HCzcRiPw+PJqrYKmok236kwWL+Mqp47/lVBfHke3XlXsTUDvCTv7XEJD7HYqDf1zitOoaFHQyeXR44Bh/KCrwlPXJX937O6Vogg+A3z+pS+mgAlf5/daucUlQDLtMHBNmw6QMFk+ZjePjPqDvvKGaeOXfd7Iil1AouXFcrvun6MTESrrmWyXyiUNUpqYNQXzclk5c00mwPxxUdent6ZkMHKiLUPJ1BxGpHopcMMv5eAVUEg/UQLuG78AeDFjx1DOuxPul/E8bnphy/hUEumxTBE+KBA=
