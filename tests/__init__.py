@@ -1,1 +1,1 @@
-from .test_references import TestLinksInHtmlFiles
+from .test_references import TestRefsInMarkdownFiles
