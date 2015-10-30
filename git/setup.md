@@ -20,3 +20,13 @@ You can view all your settings by running `cat ~/.gitconfig`. You can also edit
 this file by hand if you know what you're doing. Extensive documentation can be
 found on the `git-config` manpage (run `man git-config`) or in the [online
 documentation](https://git-scm.com/docs/git-config).
+
+---
+
+### Excercises
+
+ 1. List the contents of your Git configuration. Make sure that your name and
+    email address are set correctly.
+ 2. Git has a nice feature that can automatically correct commands if you made a
+    typing error. Find out how to enable this option (and enable it if you want
+    to).

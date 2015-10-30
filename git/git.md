@@ -20,3 +20,5 @@ intended to
 We hope that at the end of the day (or at least after the first time Git has
 saved you from losing your progress) you will accept that it is _the best and
 only way_ to version anything from your diary to your future company's software.
+
+[![XKCD about Git](http://imgs.xkcd.com/comics/git.png)](http://xkcd.com/1597/)
