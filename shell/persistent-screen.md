@@ -21,9 +21,11 @@ kinit -k -t USERNAME.keytab USERNAME@CERN.CH
 ```
 where `-k` tells `kinit` to use a keytab file and `-t USERNAME.keytab` where this keytab actually is.
 ### Using k5reauth to automatically refresh your kerberos token
-To create a permanent session of `tmux` or `screen`, the `k5reauth` command is used, which by default creates a new shell and attaches it as a child to itself and keeps
-renewing the kerberos token for its children. `k5reauth` can start processes other than a new shell by specifying the program you want to start as an argument k5reauth -f -i 3600 -p .... -- <command>. To start `screen` or `tmux` run:
-
+To create a permanent session of `tmux` or `screen`, the `k5reauth` command is used, which by default creates a new shell and attaches it as a child to itself and keeps renewing the kerberos token for its children. `k5reauth` can start processes other than a new shell by specifying the program you want to start as an argument 
+```bash
+k5reauth -f -i 3600 -p .... -- <command>. 
+```
+To start `screen` or `tmux` run:
 ```bash
 k5reauth -f -i 3600 -p USERNAME -k /path/to/USERNAME.keytab -- tmux new-session -s NAME
 ```
