@@ -3,16 +3,13 @@
 ### Setting up password-less kerberos token
 
 In order for the kerberos token to be refreshed automatically, it must be possible to do so without a password.
-Therefore, we create a keytab (similar to a private ssh key) on lxplus:
+Therefore, we create a keytab (similar to a private ssh key) on lxplus using the keytab utility. After starting it by tying `ktutil`, type the following three lines into the prompt and confirm the first two steps with your password.
 ```bash
-# /usr/kerberos/sbin/ktutil
-ktutil:  add_entry -password -p USERNAME@CERN.CH -k 1 -e arcfour-hmac-md5
-Password for USERNAME@CERN.CH: 
-ktutil:  add_entry -password -p USERNAME@CERN.CH -k 1 -e aes256-cts
-Password for USERNAME@CERN.CH: 
-ktutil:  wkt USERNAME.keytab
+add_entry -password -p USERNAME@CERN.CH -k 1 -e arcfour-hmac-md5
+add_entry -password -p USERNAME@CERN.CH -k 1 -e aes256-cts
+wkt USERNAME.keytab
 ```
-and close the `ktutil` prompt.
+and close the `ktutil` prompt with `Ctrl+D`.
 This will create a file called USERNAME.keytab in the current directory. It is strongly recommended to store this file in a directory to which only you have access as anyone who obtains a copy of this file can use it to obtain tokens in your name.
 ### Making use of the keytab
 This keytab file can now be used to obtain kerberos tokens without having to type a password:
