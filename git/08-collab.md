@@ -38,10 +38,9 @@ Next, the Collaborator needs to download a copy of the Owner's repository to her
  machine. This is called "cloning a repo". To clone the Owner's repo into
 her `Desktop` folder, the Collaborator enters:
 
-~~~
+```bash
 $ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
-~~~
-{: .bash}
+```
 
 Replace 'vlad' with the Owner's username.
 
@@ -50,23 +49,21 @@ Replace 'vlad' with the Owner's username.
 The Collaborator can now make a change in her clone of the Owner's repository,
 exactly the same way as we've been doing before:
 
-~~~
+```bash
 $ cd ~/Desktop/vlad-planets
 $ nano pluto.txt
 $ cat pluto.txt
-~~~
-{: .bash}
+```
 
 ~~~
 It is so a planet!
 ~~~
 {: .output}
 
-~~~
+```bash
 $ git add pluto.txt
 $ git commit -m "Add notes about Pluto"
-~~~
-{: .bash}
+```
 
 ~~~
  1 file changed, 1 insertion(+)
@@ -76,10 +73,9 @@ $ git commit -m "Add notes about Pluto"
 
 Then push the change to the *Owner's repository* on GitHub:
 
-~~~
+```bash
 $ git push origin master
-~~~
-{: .bash}
+```
 
 ~~~
 Counting objects: 4, done.
@@ -102,10 +98,9 @@ Collaborator.
 
 To download the Collaborator's changes from GitHub, the Owner now enters:
 
-~~~
+```bash
 $ git pull origin master
-~~~
-{: .bash}
+```
 
 ~~~
 remote: Counting objects: 4, done.

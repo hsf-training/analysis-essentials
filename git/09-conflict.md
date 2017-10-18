@@ -23,10 +23,9 @@ To see how we can resolve conflicts, we must first create one.  The file
 `mars.txt` currently looks like this in both partners' copies of our `planets`
 repository:
 
-~~~
+```bash
 $ cat mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -37,11 +36,10 @@ But the Mummy will appreciate the lack of humidity
 
 Let's add a line to one partner's copy only:
 
-~~~
+```bash
 $ nano mars.txt
 $ cat mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -53,11 +51,10 @@ This line added to Wolfman's copy
 
 and then push the change to GitHub:
 
-~~~
+```bash
 $ git add mars.txt
 $ git commit -m "Add a line in our home copy"
-~~~
-{: .bash}
+```
 
 ~~~
 [master 5ae9631] Add a line in our home copy
@@ -65,10 +62,9 @@ $ git commit -m "Add a line in our home copy"
 ~~~
 {: .output}
 
-~~~
+```bash
 $ git push origin master
-~~~
-{: .bash}
+```
 
 ~~~
 Counting objects: 5, done.
@@ -85,11 +81,10 @@ Now let's have the other partner
 make a different change to their copy
 *without* updating from GitHub:
 
-~~~
+```bash
 $ nano mars.txt
 $ cat mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -101,11 +96,10 @@ We added a different line in the other copy
 
 We can commit the change locally:
 
-~~~
+```bash
 $ git add mars.txt
 $ git commit -m "Add a line in my copy"
-~~~
-{: .bash}
+```
 
 ~~~
 [master 07ebc69] Add a line in my copy
@@ -115,10 +109,9 @@ $ git commit -m "Add a line in my copy"
 
 but Git won't let us push it to GitHub:
 
-~~~
+```bash
 $ git push origin master
-~~~
-{: .bash}
+```
 
 ~~~
 To https://github.com/vlad/planets.git
@@ -140,10 +133,9 @@ What we have to do is pull the changes from GitHub,
 and then push that.
 Let's start by pulling:
 
-~~~
+```bash
 $ git pull origin master
-~~~
-{: .bash}
+```
 
 ~~~
 remote: Counting objects: 5, done.
@@ -161,10 +153,9 @@ Automatic merge failed; fix conflicts and then commit the result.
 `git pull` tells us there's a conflict,
 and marks that conflict in the affected file:
 
-~~~
+```bash
 $ cat mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -191,10 +182,9 @@ the change made in the remote repository, write something new to replace both,
 or get rid of the change entirely.
 Let's replace both so that the file looks like this:
 
-~~~
+```bash
 $ cat mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -208,11 +198,10 @@ To finish merging,
 we add `mars.txt` to the changes being made by the merge
 and then commit:
 
-~~~
+```bash
 $ git add mars.txt
 $ git status
-~~~
-{: .bash}
+```
 
 ~~~
 On branch master
@@ -226,10 +215,9 @@ Changes to be committed:
 ~~~
 {: .output}
 
-~~~
+```bash
 $ git commit -m "Merge changes from GitHub"
-~~~
-{: .bash}
+```
 
 ~~~
 [master 2abf2b1] Merge changes from GitHub
@@ -238,10 +226,9 @@ $ git commit -m "Merge changes from GitHub"
 
 Now we can push our changes to GitHub:
 
-~~~
+```bash
 $ git push origin master
-~~~
-{: .bash}
+```
 
 ~~~
 Counting objects: 10, done.
@@ -258,10 +245,9 @@ Git keeps track of what we've merged with what,
 so we don't have to fix things by hand again
 when the collaborator who made the first change pulls again:
 
-~~~
+```bash
 $ git pull origin master
-~~~
-{: .bash}
+```
 
 ~~~
 remote: Counting objects: 10, done.
@@ -279,10 +265,9 @@ Fast-forward
 
 We get the merged file:
 
-~~~
+```bash
 $ cat mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 Cold and dry, but everything is my favorite color

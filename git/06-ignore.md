@@ -16,18 +16,16 @@ like backup files created by our editor
 or intermediate files created during data analysis.
 Let's create a few dummy files:
 
-~~~
+```bash
 $ mkdir results
 $ touch a.dat b.dat c.dat results/a.out results/b.out
-~~~
-{: .bash}
+```
 
 and see what Git says:
 
-~~~
+```bash
 $ git status
-~~~
-{: .bash}
+```
 
 ~~~
 On branch master
@@ -49,11 +47,10 @@ so let's tell Git to ignore them.
 
 We do this by creating a file in the root directory of our project called `.gitignore`:
 
-~~~
+```bash
 $ nano .gitignore
 $ cat .gitignore
-~~~
-{: .bash}
+```
 
 ~~~
 *.dat
@@ -69,10 +66,9 @@ Git would continue to track them.)
 Once we have created this file,
 the output of `git status` is much cleaner:
 
-~~~
+```bash
 $ git status
-~~~
-{: .bash}
+```
 
 ~~~
 On branch master
@@ -90,12 +86,11 @@ but everyone we're sharing our repository with will probably want to ignore
 the same things that we're ignoring.
 Let's add and commit `.gitignore`:
 
-~~~
+```bash
 $ git add .gitignore
 $ git commit -m "Add the ignore file"
 $ git status
-~~~
-{: .bash}
+```
 
 ~~~
 # On branch master
@@ -105,10 +100,9 @@ nothing to commit, working directory clean
 
 As a bonus, using `.gitignore` helps us avoid accidentally adding to the repository files that we don't want to track:
 
-~~~
+```bash
 $ git add a.dat
-~~~
-{: .bash}
+```
 
 ~~~
 The following paths are ignored by one of your .gitignore files:
@@ -122,10 +116,9 @@ we can use `git add -f` to force Git to add something. For example,
 `git add -f a.dat`.
 We can also always see the status of ignored files if we want:
 
-~~~
+```bash
 $ git status --ignored
-~~~
-{: .bash}
+```
 
 ~~~
 On branch master
@@ -148,8 +141,7 @@ nothing to commit, working directory clean
 > ~~~
 > results/data
 > results/plots
-> ~~~
-> {: .bash}
+> ```
 >
 > How would you ignore only `results/plots` and not `results/data`?
 >
@@ -204,8 +196,7 @@ nothing to commit, working directory clean
 > results/data/position/gps/c.data
 > results/data/position/gps/info.txt
 > results/plots
-> ~~~
-> {: .bash}
+> ```
 >
 > What's the shortest `.gitignore` rule you could write to ignore all `.data`
 > files in `result/data/position/gps`? Do not ignore the `info.txt`.
@@ -224,8 +215,7 @@ nothing to commit, working directory clean
 > ~~~
 > *.data
 > !*.data
-> ~~~
-> {: .bash}
+> ```
 >
 > What will be the result?
 >

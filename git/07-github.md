@@ -42,12 +42,11 @@ information on how to configure your local repository:
 
 This effectively does the following on GitHub's servers:
 
-~~~
+```bash
 $ mkdir planets
 $ cd planets
 $ git init
-~~~
-{: .bash}
+```
 
 Our local repository still contains our earlier work on `mars.txt`, but the
 remote repository on GitHub doesn't contain any files yet:
@@ -80,20 +79,18 @@ SSH to HTTPS.
 Copy that URL from the browser, go into the local `planets` repository, and run
 this command:
 
-~~~
+```bash
 $ git remote add origin https://github.com/vlad/planets.git
-~~~
-{: .bash}
+```
 
 Make sure to use the URL for your repository rather than Vlad's: the only
 difference should be your username instead of `vlad`.
 
 We can check that the command has worked by running `git remote -v`:
 
-~~~
+```bash
 $ git remote -v
-~~~
-{: .bash}
+```
 
 ~~~
 origin   https://github.com/vlad/planets.git (push)
@@ -107,10 +104,9 @@ something else if we wanted to, but `origin` is by far the most common choice.
 Once the nickname `origin` is set up, this command will push the changes from
 our local repository to the repository on GitHub:
 
-~~~
+```bash
 $ git push origin master
-~~~
-{: .bash}
+```
 
 ~~~
 Counting objects: 9, done.
@@ -130,20 +126,18 @@ Branch master set up to track remote branch master from origin.
 > last command failed with "Could not resolve hostname" as the error message. To
 > solve this issue you need to tell Git about the proxy:
 >
-> ~~~
+> ```bash
 > $ git config --global http.proxy http://user:password@proxy.url
 > $ git config --global https.proxy http://user:password@proxy.url
-> ~~~
-> {: .bash}
+> ```
 >
 > When you connect to another network that doesn't use a proxy you will need to
 > tell Git to disable the proxy using:
 >
-> ~~~
+> ```bash
 > $ git config --global --unset http.proxy
 > $ git config --global --unset https.proxy
-> ~~~
-> {: .bash}
+> ```
 {: .callout}
 
 > ## Password Managers
@@ -154,10 +148,9 @@ Branch master set up to track remote branch master from origin.
 > username and password at the terminal instead of using a password manager,
 > type:
 >
-> ~~~
+> ```bash
 > $ unset SSH_ASKPASS
-> ~~~
-> {: .bash}
+> ```
 >
 > in the terminal, before you run `git push`.  Despite the name, [git uses
 > `SSH_ASKPASS` for all credential
@@ -184,10 +177,9 @@ Our local and remote repositories are now in this state:
 
 We can pull changes from the remote repository to the local one as well:
 
-~~~
+```bash
 $ git pull origin master
-~~~
-{: .bash}
+```
 
 ~~~
 From https://github.com/vlad/planets
@@ -248,8 +240,7 @@ GitHub, though, this command would download them to our local repository.
 >
 > ~~~
 > git remote add broken https://github.com/this/url/is/invalid
-> ~~~
-> {: .bash}
+> ```
 >
 > Do you get an error when adding the remote? Can you think of a
 > command that would make it obvious that your remote URL was not

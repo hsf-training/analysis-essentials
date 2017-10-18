@@ -14,35 +14,31 @@ Once Git is configured,
 we can start using it.
 Let's create a directory for our work and then move into that directory:
 
-~~~
+```bash
 $ mkdir planets
 $ cd planets
-~~~
-{: .bash}
+```
 
 Then we tell Git to make `planets` a [repository]({{ page.root }}/reference/#repository)—a place where
 Git can store versions of our files:
 
-~~~
+```bash
 $ git init
-~~~
-{: .bash}
+```
 
 If we use `ls` to show the directory's contents,
 it appears that nothing has changed:
 
-~~~
+```bash
 $ ls
-~~~
-{: .bash}
+```
 
 But if we add the `-a` flag to show everything,
 we can see that Git has created a hidden directory within `planets` called `.git`:
 
-~~~
+```bash
 $ ls -a
-~~~
-{: .bash}
+```
 
 ~~~
 .	..	.git
@@ -56,10 +52,9 @@ we will lose the project's history.
 We can check that everything is set up correctly
 by asking Git to tell us the status of our project:
 
-~~~
+```bash
 $ git status
-~~~
-{: .bash}
+```
 
 ~~~
 # On branch master
@@ -76,7 +71,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > Despite Wolfman's concerns, he enters the following sequence of commands to
 > create one Git repository inside another:
 >
-> ~~~
+> ```bash
 > $ cd             # return to home directory
 > $ mkdir planets  # make a new directory planets
 > $ cd planets     # go into planets
@@ -84,8 +79,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > $ mkdir moons    # make a sub-directory planets/moons
 > $ cd moons       # go into planets/moons
 > $ git init       # make the moons sub-directory a Git repository
-> ~~~
-> {: .bash}
+> ```
 >
 > Why is it a bad idea to do this? (Notice here that the `planets` project is now also tracking the entire `moons` repository.)
 > How can Dracula undo his last `git init`?

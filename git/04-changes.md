@@ -21,17 +21,15 @@ keypoints:
 First let's make sure we're still in the right directory.
 You should be in the `planets` directory.
 
-~~~
+```bash
 $ pwd
-~~~
-{: .bash}
+```
 
 If you are still in `moons` navigate back up to `planets`
 
-~~~
+```bash
 $ cd ..
-~~~
-{: .bash}
+```
 
 Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
@@ -39,10 +37,9 @@ We'll use `nano` to edit the file;
 you can use whatever editor you like.
 In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create/) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
 
-~~~
+```bash
 $ nano mars.txt
-~~~
-{: .bash}
+```
 
 Type the text below into the `mars.txt` file:
 
@@ -53,20 +50,18 @@ Cold and dry, but everything is my favorite color
 
 `mars.txt` now contains a single line, which we can see by running:
 
-~~~
+```bash
 $ ls
-~~~
-{: .bash}
+```
 
 ~~~
 mars.txt
 ~~~
 {: .output}
 
-~~~
+```bash
 $ cat mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -76,10 +71,9 @@ Cold and dry, but everything is my favorite color
 If we check the status of our project again,
 Git tells us that it's noticed the new file:
 
-~~~
+```bash
 $ git status
-~~~
-{: .bash}
+```
 
 ~~~
 On branch master
@@ -98,17 +92,15 @@ The "untracked files" message means that there's a file in the directory
 that Git isn't keeping track of.
 We can tell Git to track a file using `git add`:
 
-~~~
+```bash
 $ git add mars.txt
-~~~
-{: .bash}
+```
 
 and then check that the right thing happened:
 
-~~~
+```bash
 $ git status
-~~~
-{: .bash}
+```
 
 ~~~
 On branch master
@@ -128,10 +120,9 @@ but it hasn't recorded these changes as a commit yet.
 To get it to do that,
 we need to run one more command:
 
-~~~
+```bash
 $ git commit -m "Start notes on Mars as a base"
-~~~
-{: .bash}
+```
 
 ~~~
 [master (root-commit) f22b25e] Start notes on Mars as a base
@@ -159,10 +150,9 @@ a blank line between the summary line and your additional notes.
 
 If we run `git status` now:
 
-~~~
+```bash
 $ git status
-~~~
-{: .bash}
+```
 
 ~~~
 On branch master
@@ -174,10 +164,9 @@ it tells us everything is up to date.
 If we want to know what we've done recently,
 we can ask Git to show us the project's history using `git log`:
 
-~~~
+```bash
 $ git log
-~~~
-{: .bash}
+```
 
 ~~~
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
@@ -210,11 +199,10 @@ Now suppose Dracula adds more information to the file.
 (Again, we'll edit with `nano` and then `cat` the file to show its contents;
 you may use a different editor, and don't need to `cat`.)
 
-~~~
+```bash
 $ nano mars.txt
 $ cat mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -225,10 +213,9 @@ The two moons may be a problem for Wolfman
 When we run `git status` now,
 it tells us that a file it already knows about has been modified:
 
-~~~
+```bash
 $ git status
-~~~
-{: .bash}
+```
 
 ~~~
 On branch master
@@ -253,10 +240,9 @@ our changes before saving them. We do this using `git diff`.
 This shows us the differences between the current state
 of the file and the most recently saved version:
 
-~~~
+```bash
 $ git diff
-~~~
-{: .bash}
+```
 
 ~~~
 diff --git a/mars.txt b/mars.txt
@@ -287,11 +273,10 @@ If we break it down into pieces:
 
 After reviewing our change, it's time to commit it:
 
-~~~
+```bash
 $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 $ git status
-~~~
-{: .bash}
+```
 
 ~~~
 On branch master
@@ -309,11 +294,10 @@ Whoops:
 Git won't commit because we didn't use `git add` first.
 Let's fix that:
 
-~~~
+```bash
 $ git add mars.txt
 $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
-~~~
-{: .bash}
+```
 
 ~~~
 [master 34961b1] Add concerns about effects of Mars' moons on Wolfman
@@ -367,11 +351,10 @@ and into long-term storage.
 First,
 we'll add another line to the file:
 
-~~~
+```bash
 $ nano mars.txt
 $ cat mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -380,10 +363,9 @@ But the Mummy will appreciate the lack of humidity
 ~~~
 {: .output}
 
-~~~
+```bash
 $ git diff
-~~~
-{: .bash}
+```
 
 ~~~
 diff --git a/mars.txt b/mars.txt
@@ -403,11 +385,10 @@ we've added one line to the end of the file
 Now let's put that change in the staging area
 and see what `git diff` reports:
 
-~~~
+```bash
 $ git add mars.txt
 $ git diff
-~~~
-{: .bash}
+```
 
 There is no output:
 as far as Git can tell,
@@ -416,10 +397,9 @@ and what's currently in the directory.
 However,
 if we do this:
 
-~~~
+```bash
 $ git diff --staged
-~~~
-{: .bash}
+```
 
 ~~~
 diff --git a/mars.txt b/mars.txt
@@ -438,10 +418,9 @@ the last committed change
 and what's in the staging area.
 Let's save our changes:
 
-~~~
+```bash
 $ git commit -m "Discuss concerns about Mars' climate for Mummy"
-~~~
-{: .bash}
+```
 
 ~~~
 [master 005937f] Discuss concerns about Mars' climate for Mummy
@@ -451,10 +430,9 @@ $ git commit -m "Discuss concerns about Mars' climate for Mummy"
 
 check our status:
 
-~~~
+```bash
 $ git status
-~~~
-{: .bash}
+```
 
 ~~~
 On branch master
@@ -464,10 +442,9 @@ nothing to commit, working directory clean
 
 and look at the history of what we've done so far:
 
-~~~
+```bash
 $ git log
-~~~
-{: .bash}
+```
 
 ~~~
 commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
@@ -518,10 +495,9 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > commits that you want to view. For example, if you only want information from
 > the last commit you can use:
 >
-> ~~~
+> ```bash
 > $ git log -1
-> ~~~
-> {: .bash}
+> ```
 >
 > ~~~
 > commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
@@ -535,10 +511,9 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > You can also reduce the quantity of information using the
 > `--oneline` option:
 >
-> ~~~
+> ```bash
 > $ git log --oneline
-> ~~~
-> {: .bash}
+> ```
 > ~~~
 > * 005937f Discuss concerns about Mars' climate for Mummy
 > * 34961b1 Add concerns about effects of Mars' moons on Wolfman
@@ -549,10 +524,9 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > You can also combine the `--oneline` options with others. One useful
 > combination is:
 >
-> ~~~
+> ```bash
 > $ git log --oneline --graph --all --decorate
-> ~~~
-> {: .bash}
+> ```
 > ~~~
 > * 005937f Discuss concerns about Mars' climate for Mummy (HEAD, master)
 > * 34961b1 Add concerns about effects of Mars' moons on Wolfman
@@ -568,13 +542,12 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > 1. Git does not track directories on their own, only files within them.
 > Try it for yourself:
 >
-> ~~~
+> ```bash
 > $ mkdir directory
 > $ git status
 > $ git add directory
 > $ git status
-> ~~~
-> {: .bash}
+> ```
 >
 > Note, our newly created empty directory `directory` does not appear in
 > the list of untracked files even if we explicitly add it (_via_ `git add`) to our
@@ -589,8 +562,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 >
 > ~~~
 > git add <directory-with-files>
-> ~~~
-> {: .bash}
+> ```
 >
 {: .callout}
 
@@ -708,17 +680,15 @@ repository (`git commit`):
 > that by telling Git to show you more information about your last
 > commits:
 >
-> ~~~
+> ```bash
 > $ git log --format=full
-> ~~~
-> {: .bash}
+> ```
 >
 > When commiting you can name someone else as the author:
 >
-> ~~~
+> ```bash
 > $ git commit --author="Vlad Dracula <vlad@tran.sylvan.ia>"
-> ~~~
-> {: .bash}
+> ```
 >
 > Create a new repository and create two commits: one without the
 > `--author` option and one by naming a colleague of yours as the

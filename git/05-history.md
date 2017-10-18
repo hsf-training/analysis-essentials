@@ -24,11 +24,10 @@ We've been adding one line at a time to `mars.txt`, so it's easy to track our
 progress by looking, so let's do that using our `HEAD`s.  Before we start,
 let's make a change to `mars.txt`.
 
-~~~
+```bash
 $ nano mars.txt
 $ cat mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -40,10 +39,9 @@ An ill-considered change
 
 Now, let's see what we get.
 
-~~~
+```bash
 $ git diff HEAD mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 diff --git a/mars.txt b/mars.txt
@@ -62,19 +60,17 @@ which is the same as what you would get if you leave out `HEAD` (try it).  The
 real goodness in all this is when you can refer to previous commits.  We do
 that by adding `~1` to refer to the commit one before `HEAD`.
 
-~~~
+```bash
 $ git diff HEAD~1 mars.txt
-~~~
-{: .bash}
+```
 
 If we want to see the differences between older commits we can use `git diff`
 again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to them:
 
 
-~~~
+```bash
 $ git diff HEAD~2 mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 diff --git a/mars.txt b/mars.txt
@@ -90,10 +86,9 @@ index df0654a..b36abfd 100644
 
 We could also use `git show` which shows us what changes we made at an older commit as well as the commit message, rather than the _differences_ between a commit and our working directory that we see by using `git diff`.
 
-~~~
+```bash
 $ git show HEAD~2 mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
@@ -131,10 +126,9 @@ Our first commit was given the ID
 `f22b25e3233b4645dabd0d81e651fe074bd8e73b`,
 so let's try this:
 
-~~~
+```bash
 $ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 diff --git a/mars.txt b/mars.txt
@@ -152,10 +146,9 @@ That's the right answer,
 but typing out random 40-character strings is annoying,
 so Git lets us use just the first few characters:
 
-~~~
+```bash
 $ git diff f22b25e mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 diff --git a/mars.txt b/mars.txt
@@ -174,11 +167,10 @@ we can save changes to files and see what we've changed—now how
 can we restore older versions of things?
 Let's suppose we accidentally overwrite our file:
 
-~~~
+```bash
 $ nano mars.txt
 $ cat mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 We will need to manufacture our own oxygen
@@ -188,10 +180,9 @@ We will need to manufacture our own oxygen
 `git status` now tells us that the file has been changed,
 but those changes haven't been staged:
 
-~~~
+```bash
 $ git status
-~~~
-{: .bash}
+```
 
 ~~~
 On branch master
@@ -208,11 +199,10 @@ no changes added to commit (use "git add" and/or "git commit -a")
 We can put things back the way they were
 by using `git checkout`:
 
-~~~
+```bash
 $ git checkout HEAD mars.txt
 $ cat mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 Cold and dry, but everything is my favorite color
@@ -229,25 +219,22 @@ which is the last saved commit.
 If we want to go back even further,
 we can use a commit identifier instead:
 
-~~~
+```bash
 $ git checkout f22b25e mars.txt
-~~~
-{: .bash}
+```
 
-~~~
+```bash
 $ cat mars.txt
-~~~
-{: .bash}
+```
 
 ~~~
 Cold and dry, but everything is my favorite color
 ~~~
 {: .output}
 
-~~~
+```bash
 $ git status
-~~~
-{: .bash}
+```
 
 ~~~
 # On branch master
@@ -267,19 +254,17 @@ Notice that the changes are on the staged area.
 Again, we can put things back the way they were
 by using `git checkout`:
 
-~~~
+```bash
 $ git checkout -f master mars.txt
-~~~
-{: .bash}
+```
 
 > ## Don't Lose Your HEAD
 >
 > Above we used
 >
-> ~~~
+> ```bash
 > $ git checkout f22b25e mars.txt
-> ~~~
-> {: .bash}
+> ```
 >
 > to revert `mars.txt` to its state after the commit `f22b25e`.
 > If you forget `mars.txt` in that command, Git will tell you that "You are in
@@ -309,8 +294,7 @@ here's how Git works in cartoon form:
 >
 > ~~~
 > (use "git checkout -- <file>..." to discard changes in working directory)
-> ~~~
-> {: .bash}
+> ```
 >
 > As it says,
 > `git checkout` without a version identifier restores files to the state saved in `HEAD`.
@@ -377,7 +361,7 @@ moving backward and forward in time becomes much easier.
 >
 > What is the output of cat venus.txt at the end of this set of commands?
 >
-> ~~~
+> ```bash
 > $ cd planets
 > $ nano venus.txt #input the following text: Venus is beautiful and full of love
 > $ git add venus.txt
@@ -385,8 +369,7 @@ moving backward and forward in time becomes much easier.
 > $ git commit -m "Comment on Venus as an unsuitable base"
 > $ git checkout HEAD venus.txt
 > $ cat venus.txt #this will print the contents of venus.txt to the screen
-> ~~~
-> {: .bash}
+> ```
 >
 > 1.
 >
@@ -496,10 +479,9 @@ moving backward and forward in time becomes much easier.
 > Recorded that the `git diff` command allow us to explore one specific file,
 > e.g. `git diff mars.txt`. We can apply the similar idea here.
 >
-> ~~~
+> ```bash
 > $ git log mars.txt
-> ~~~
-> {: .bash}
+> ```
 >
 > Unfortunately some of these commit messages are very ambiguous e.g. `update files`.
 > How can you search through these files?
@@ -507,19 +489,17 @@ moving backward and forward in time becomes much easier.
 > Both `git diff` and `git log` are very useful and they summarize different part of the history for you.
 > Is that possible to combine both? Let's try the following:
 >
-> ~~~
+> ```bash
 > $ git log --patch mars.txt
-> ~~~
-> {: .bash}
+> ```
 >
 > You should get a long list of output, and you should be able to see both commit messages and the difference between each commit.
 >
 > Question: What does the following command do?
 >
-> ~~~
+> ```bash
 > $ git log --patch HEAD~3 *.txt
-> ~~~
-> {: .bash}
+> ```
 {: .challenge}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
