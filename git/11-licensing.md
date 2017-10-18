@@ -3,12 +3,14 @@ teaching: 5
 exercises: 0
 questions:
 - "What licensing information should I include with my work?"
-objectives:
+---
+# Licensing
+
+{% objectives "Learning Objectives" %}
 - "Explain why adding licensing information to a repository is important."
 - "Choose a proper license."
 - "Explain differences in licensing and social expectations."
----
-# Licensing
+{% endobjectives %}
 
 When a repository with source code, a manuscript or other creative
 works becomes public, it should include a file `LICENSE` or

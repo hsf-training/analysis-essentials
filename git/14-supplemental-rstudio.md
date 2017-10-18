@@ -3,10 +3,12 @@ teaching: 10
 exercises: 0
 questions:
 - "How can I use Git with RStudio?"
-objectives:
-- "Understand how to use Git from RStudio."
 ---
 # Using Git from RStudio
+
+{% objectives "Learning Objectives" %}
+- "Understand how to use Git from RStudio."
+{% endobjectives %}
 
 Since version control is so useful when developing scripts, RStudio has built-in
 integration with Git. There are some more obscure Git features that you still

@@ -3,10 +3,12 @@ teaching: 10
 exercises: 0
 questions:
 - "Where does Git store information?"
-objectives:
-- "Create a local Git repository."
 ---
 # Creating a Repository
+
+{% objectives "Learning Objectives" %}
+- "Create a local Git repository."
+{% endobjectives %}
 
 Once Git is configured,
 we can start using it.

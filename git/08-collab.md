@@ -3,11 +3,13 @@ teaching: 25
 exercises: 0
 questions:
 - "How can I use version control to collaborate with other people?"
-objectives:
-- "Clone a remote repository."
-- "Collaborate pushing to a common repository."
 ---
 # Collaborating
+
+{% objectives "Learning Objectives" %}
+- "Clone a remote repository."
+- "Collaborate pushing to a common repository."
+{% endobjectives %}
 
 For the next step, get into pairs.  One person will be the "Owner" and the other
 will be the "Collaborator". The goal is that the Collaborator add changes into

@@ -3,10 +3,12 @@ teaching: 2
 exercises: 0
 questions:
 - "How can I make my work easier to cite?"
-objectives:
-- "Make your work easy to cite"
 ---
 # Citation
+
+{% objectives "Learning Objectives" %}
+- "Make your work easy to cite"
+{% endobjectives %}
 
 You may want to include a file called `CITATION` or `CITATION.txt`
 that describes how to reference your project;

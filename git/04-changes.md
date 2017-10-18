@@ -5,12 +5,14 @@ questions:
 - "How do I record changes in Git?"
 - "How do I check the status of my version control repository?"
 - "How do I record notes about what changes I made and why?"
-objectives:
+---
+# Tracking Changes
+
+{% objectives "Learning Objectives" %}
 - "Go through the modify-add-commit cycle for one or more files."
 - "Explain where information is stored at each stage of Git commit workflow."
 - "Distinguish between descriptive and non-descriptive commit messages."
----
-# Tracking Changes
+{% endobjectives %}
 
 First let's make sure we're still in the right directory.
 You should be in the `planets` directory.

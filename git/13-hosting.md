@@ -3,10 +3,12 @@ teaching: 10
 exercises: 0
 questions:
 - "Where should I host my version control repositories?"
-objectives:
-- "Explain different options for hosting scientific work."
 ---
 # Hosting
+
+{% objectives "Learning Objectives" %}
+- "Explain different options for hosting scientific work."
+{% endobjectives %}
 
 The second big question for groups that want to open up their work is where to
 host their code and data.  One option is for the lab, the department, or the

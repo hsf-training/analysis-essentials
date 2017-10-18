@@ -3,11 +3,13 @@ teaching: 5
 exercises: 0
 questions:
 - "How can I tell Git to ignore files I don't want to track?"
-objectives:
-- "Configure Git to ignore specific files."
-- "Explain why ignoring files can be useful."
 ---
 # Ignoring Things
+
+{% objectives "Learning Objectives" %}
+- "Configure Git to ignore specific files."
+- "Explain why ignoring files can be useful."
+{% endobjectives %}
 
 What if we have files that we do not want Git to track for us,
 like backup files created by our editor

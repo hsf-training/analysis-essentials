@@ -3,11 +3,13 @@ teaching: 30
 exercises: 0
 questions:
 - "How do I share my changes with others on the web?"
-objectives:
-- "Explain what remote repositories are and why they are useful."
-- "Push to or pull from a remote repository."
 ---
 # Remotes in GitHub
+
+{% objectives "Learning Objectives" %}
+- "Explain what remote repositories are and why they are useful."
+- "Push to or pull from a remote repository."
+{% endobjectives %}
 
 Version control really comes into its own when we begin to collaborate with
 other people.  We already have most of the machinery we need to do this; the

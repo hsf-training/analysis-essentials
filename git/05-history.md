@@ -5,13 +5,15 @@ questions:
 - "How can I identify old versions of files?"
 - "How do I review my changes?"
 - "How can I recover old versions of files?"
-objectives:
+---
+# Exploring History
+
+{% objectives "Learning Objectives" %}
 - "Explain what the HEAD of a repository is and how to use it."
 - "Identify and use Git commit numbers."
 - "Compare various versions of tracked files."
 - "Restore old versions of files."
----
-# Exploring History
+{% endobjectives %}
 
 As we saw in the previous lesson, we can refer to commits by their
 identifiers.  You can refer to the _most recent commit_ of the working

@@ -3,11 +3,13 @@ teaching: 15
 exercises: 0
 questions:
 - "What do I do when my changes conflict with someone else's?"
-objectives:
-- "Explain what conflicts are and when they can occur."
-- "Resolve conflicts resulting from a merge."
 ---
 # Conflicts
+
+{% objectives "Learning Objectives" %}
+- "Explain what conflicts are and when they can occur."
+- "Resolve conflicts resulting from a merge."
+{% endobjectives %}
 
 As soon as people can work in parallel, it's likely someone's going to step on someone
 else's toes.  This will even happen with a single person: if we are working on
