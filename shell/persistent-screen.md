@@ -30,4 +30,23 @@ which will create a `tmux` session whose kerberos token is refreshed automatical
 ```bash
 tmux attach-session -t NAME
 ```
-is sufficient.
+or
+```bash
+tmux a
+```
+(if you want to attach the most recently used session) is sufficient.
+
+You will almost certainly want to use an alias or function to access this command. One way to do that would be to copy and paste the following into your `~/.bashrc` (if you use bash):
+```bash
+ktmux(){
+    if [[ -z "$1" ]]; then #if no argument passed
+        k5reauth -f -i 3600 -p USERNAME -k /path/to/USERNAME.keytab -- tmux new-session
+    else #pass the argument as the tmux session name
+        k5reauth -f -i 3600 -p USERNAME -k /path/to/USERNAME.keytab -- tmux new-session -s $1
+    fi
+}
+```
+You could then start a tmux session named “Test” using
+```bash
+ktmux Test
+```
