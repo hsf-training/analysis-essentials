@@ -1,5 +1,4 @@
 ---
-title: Licensing
 teaching: 5
 exercises: 0
 questions:
@@ -13,6 +12,7 @@ keypoints:
 - "The Creative Commons family of licenses allow people to mix and match requirements and restrictions on attribution, creation of derivative works, further sharing, and commercialization."
 - "People who are not lawyers should not try to write licenses from scratch."
 ---
+# Licensing
 
 When a repository with source code, a manuscript or other creative
 works becomes public, it should include a file `LICENSE` or

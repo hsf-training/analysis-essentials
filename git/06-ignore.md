@@ -1,5 +1,4 @@
 ---
-title: Ignoring Things
 teaching: 5
 exercises: 0
 questions:
@@ -10,6 +9,7 @@ objectives:
 keypoints:
 - "The `.gitignore` file tells Git what files to ignore."
 ---
+# Ignoring Things
 
 What if we have files that we do not want Git to track for us,
 like backup files created by our editor

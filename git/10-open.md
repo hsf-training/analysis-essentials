@@ -1,5 +1,4 @@
 ---
-title: Open Science
 teaching: 5
 exercises: 5
 questions:
@@ -9,6 +8,7 @@ objectives:
 keypoints:
 - "Open scientific work is more useful and more highly cited than closed."
 ---
+# Open Science
 
 > The opposite of "open" isn't "closed".
 > The opposite of "open" is "broken".

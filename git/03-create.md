@@ -1,5 +1,4 @@
 ---
-title: Creating a Repository
 teaching: 10
 exercises: 0
 questions:
@@ -9,6 +8,7 @@ objectives:
 keypoints:
 - "`git init` initializes a repository."
 ---
+# Creating a Repository
 
 Once Git is configured,
 we can start using it.

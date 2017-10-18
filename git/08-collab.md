@@ -1,5 +1,4 @@
 ---
-title: Collaborating
 teaching: 25
 exercises: 0
 questions:
@@ -10,6 +9,7 @@ objectives:
 keypoints:
 - "`git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up."
 ---
+# Collaborating
 
 For the next step, get into pairs.  One person will be the "Owner" and the other
 will be the "Collaborator". The goal is that the Collaborator add changes into

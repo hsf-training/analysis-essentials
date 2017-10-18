@@ -1,5 +1,4 @@
 ---
-title: Hosting
 teaching: 10
 exercises: 0
 questions:
@@ -10,6 +9,7 @@ keypoints:
 - "Projects can be hosted on university servers, on personal domains, or on public forges."
 - "Rules regarding intellectual property and storage of sensitive information apply no matter where code and data are hosted."
 ---
+# Hosting
 
 The second big question for groups that want to open up their work is where to
 host their code and data.  One option is for the lab, the department, or the

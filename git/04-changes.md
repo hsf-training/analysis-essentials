@@ -1,5 +1,4 @@
 ---
-title: Tracking Changes
 teaching: 20
 exercises: 0
 questions:
@@ -17,6 +16,7 @@ keypoints:
 - "`git commit` saves the staged content as a new commit in the local repository."
 - "Always write a log message when committing changes."
 ---
+# Tracking Changes
 
 First let's make sure we're still in the right directory.
 You should be in the `planets` directory.

@@ -1,5 +1,4 @@
 ---
-title: Automated Version Control
 teaching: 5
 exercises: 0
 questions:
@@ -11,6 +10,7 @@ keypoints:
 - "Version control is like an unlimited 'undo'."
 - "Version control also allows many people to work in parallel."
 ---
+# Automated Version Control
 
 We'll start by exploring how version control can be used
 to keep track of what one person did and when.

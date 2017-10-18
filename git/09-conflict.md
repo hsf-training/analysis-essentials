@@ -1,5 +1,4 @@
 ---
-title: Conflicts
 teaching: 15
 exercises: 0
 questions:
@@ -11,6 +10,7 @@ keypoints:
 - "Conflicts occur when two or more people change the same file(s) at the same time."
 - "The version control system does not allow people to overwrite each other's changes blindly, but highlights conflicts so that they can be resolved."
 ---
+# Conflicts
 
 As soon as people can work in parallel, it's likely someone's going to step on someone
 else's toes.  This will even happen with a single person: if we are working on

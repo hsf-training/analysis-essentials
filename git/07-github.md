@@ -1,5 +1,4 @@
 ---
-title: Remotes in GitHub
 teaching: 30
 exercises: 0
 questions:
@@ -13,6 +12,7 @@ keypoints:
 - "`git push` copies changes from a local repository to a remote repository."
 - "`git pull` copies changes from a remote repository to a local repository."
 ---
+# Remotes in GitHub
 
 Version control really comes into its own when we begin to collaborate with
 other people.  We already have most of the machinery we need to do this; the

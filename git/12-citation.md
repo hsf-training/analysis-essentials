@@ -1,5 +1,4 @@
 ---
-title: Citation
 teaching: 2
 exercises: 0
 questions:
@@ -9,6 +8,7 @@ objectives:
 keypoints:
 - "Add a CITATION file to a repository to explain how you want your work cited."
 ---
+# Citation
 
 You may want to include a file called `CITATION` or `CITATION.txt`
 that describes how to reference your project;

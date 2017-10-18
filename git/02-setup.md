@@ -1,5 +1,4 @@
 ---
-title: Setting Up Git
 teaching: 5
 exercises: 0
 questions:
@@ -10,6 +9,7 @@ objectives:
 keypoints:
 -   "Use `git config` to configure a user name, email address, editor, and other preferences once per machine."
 ---
+# Setting Up Git
 
 When we use Git on a new computer for the first time,
 we need to configure a few things. Below are a few examples

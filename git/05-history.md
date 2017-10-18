@@ -1,5 +1,4 @@
 ---
-title: Exploring History
 teaching: 25
 exercises: 0
 questions:
@@ -15,6 +14,7 @@ keypoints:
 - "`git diff` displays differences between commits."
 - "`git checkout` recovers old versions of files."
 ---
+# Exploring History
 
 As we saw in the previous lesson, we can refer to commits by their
 identifiers.  You can refer to the _most recent commit_ of the working
