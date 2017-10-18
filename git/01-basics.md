@@ -2,13 +2,13 @@
 teaching: 5
 exercises: 0
 questions:
-- "What is version control and why should I use it?"
+- What is version control and why should I use it?
 ---
 # Automated Version Control
 
 {% objectives "Learning Objectives" %}
-- "Understand the benefits of an automated version control system."
-- "Understand the basics of how Git works."
+- Understand the benefits of an automated version control system.
+- Understand the basics of how Git works.
 {% endobjectives %}
 
 We'll start by exploring how version control can be used
@@ -77,8 +77,8 @@ the same files concurrently.
 
 
 {% keypoints "Key Points" %}
-- "Version control is like an unlimited 'undo'."
-- "Version control also allows many people to work in parallel."
+- Version control is like an unlimited 'undo'.
+- Version control also allows many people to work in parallel.
 {% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

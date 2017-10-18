@@ -2,13 +2,13 @@
 teaching: 15
 exercises: 0
 questions:
-- "What do I do when my changes conflict with someone else's?"
+- What do I do when my changes conflict with someone else's?
 ---
 # Conflicts
 
 {% objectives "Learning Objectives" %}
-- "Explain what conflicts are and when they can occur."
-- "Resolve conflicts resulting from a merge."
+- Explain what conflicts are and when they can occur.
+- Resolve conflicts resulting from a merge.
 {% endobjectives %}
 
 As soon as people can work in parallel, it's likely someone's going to step on someone
@@ -428,8 +428,8 @@ started.
 
 
 {% keypoints "Key Points" %}
-- "Conflicts occur when two or more people change the same file(s) at the same time."
-- "The version control system does not allow people to overwrite each other's changes blindly, but highlights conflicts so that they can be resolved."
+- Conflicts occur when two or more people change the same file(s) at the same time.
+- The version control system does not allow people to overwrite each other's changes blindly, but highlights conflicts so that they can be resolved.
 {% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

@@ -2,13 +2,13 @@
 teaching: 5
 exercises: 0
 questions:
-- "How do I get set up to use Git?"
+- How do I get set up to use Git?
 ---
 # Setting Up Git
 
 {% objectives "Learning Objectives" %}
-- "Configure `git` the first time it is used on a computer."
-- "Understand the meaning of the `--global` configuration flag."
+- Configure `git` the first time it is used on a computer.
+- Understand the meaning of the `--global` configuration flag.
 {% endobjectives %}
 
 When we use Git on a new computer for the first time,

@@ -2,13 +2,13 @@
 teaching: 25
 exercises: 0
 questions:
-- "How can I use version control to collaborate with other people?"
+- How can I use version control to collaborate with other people?
 ---
 # Collaborating
 
 {% objectives "Learning Objectives" %}
-- "Clone a remote repository."
-- "Collaborate pushing to a common repository."
+- Clone a remote repository.
+- Collaborate pushing to a common repository.
 {% endobjectives %}
 
 For the next step, get into pairs.  One person will be the "Owner" and the other
@@ -168,7 +168,7 @@ What are some of the benifits of using version control, Git and GitHub?
 
 
 {% keypoints "Key Points" %}
-- "`git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up."
+- `git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up.
 {% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

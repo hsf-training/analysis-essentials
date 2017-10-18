@@ -2,13 +2,13 @@
 teaching: 30
 exercises: 0
 questions:
-- "How do I share my changes with others on the web?"
+- How do I share my changes with others on the web?
 ---
 # Remotes in CERN GitLab
 
 {% objectives "Learning Objectives" %}
-- "Explain what remote repositories are and why they are useful."
-- "Push to or pull from a remote repository."
+- Explain what remote repositories are and why they are useful.
+- Push to or pull from a remote repository.
 {% endobjectives %}
 
 Version control really comes into its own when we begin to collaborate with
@@ -206,10 +206,10 @@ allows us to change the remote's URL to fix it.
 {% endchallenge %}
 
 {% keypoints "Key Points" %}
-- "A local Git repository can be connected to one or more remote repositories."
-- "Use the SSH protocol to connect to remote repositories."
-- "`git push` copies changes from a local repository to a remote repository."
-- "`git pull` copies changes from a remote repository to a local repository."
+- A local Git repository can be connected to one or more remote repositories.
+- Use the SSH protocol to connect to remote repositories.
+- `git push` copies changes from a local repository to a remote repository.
+- `git pull` copies changes from a remote repository to a local repository.
 {% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

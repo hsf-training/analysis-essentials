@@ -2,13 +2,13 @@
 teaching: 5
 exercises: 0
 questions:
-- "How can I tell Git to ignore files I don't want to track?"
+- How can I tell Git to ignore files I don't want to track?
 ---
 # Ignoring Things
 
 {% objectives "Learning Objectives" %}
-- "Configure Git to ignore specific files."
-- "Explain why ignoring files can be useful."
+- Configure Git to ignore specific files.
+- Explain why ignoring files can be useful.
 {% endobjectives %}
 
 What if we have files that we do not want Git to track for us,
@@ -225,7 +225,7 @@ You want to keep them but you do not want to track them through `git`.
 
 
 {% keypoints "Key Points" %}
-- "The `.gitignore` file tells Git what files to ignore."
+- The `.gitignore` file tells Git what files to ignore.
 {% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

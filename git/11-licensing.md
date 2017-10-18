@@ -2,14 +2,14 @@
 teaching: 5
 exercises: 0
 questions:
-- "What licensing information should I include with my work?"
+- What licensing information should I include with my work?
 ---
 # Licensing
 
 {% objectives "Learning Objectives" %}
-- "Explain why adding licensing information to a repository is important."
-- "Choose a proper license."
-- "Explain differences in licensing and social expectations."
+- Explain why adding licensing information to a repository is important.
+- Choose a proper license.
+- Explain differences in licensing and social expectations.
 {% endobjectives %}
 
 When a repository with source code, a manuscript or other creative
@@ -79,9 +79,9 @@ the licenses discussed in this session? How is it different?
 
 
 {% keypoints "Key Points" %}
-- "People who incorporate GPL'd software into their own software must make their software also open under the GPL license; most other open licenses do not require this."
-- "The Creative Commons family of licenses allow people to mix and match requirements and restrictions on attribution, creation of derivative works, further sharing, and commercialization."
-- "People who are not lawyers should not try to write licenses from scratch."
+- People who incorporate GPL'd software into their own software must make their software also open under the GPL license; most other open licenses do not require this.
+- The Creative Commons family of licenses allow people to mix and match requirements and restrictions on attribution, creation of derivative works, further sharing, and commercialization.
+- People who are not lawyers should not try to write licenses from scratch.
 {% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

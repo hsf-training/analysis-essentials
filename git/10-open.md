@@ -2,12 +2,12 @@
 teaching: 5
 exercises: 5
 questions:
-- "How can version control help me make my work more open?"
+- How can version control help me make my work more open?
 ---
 # Open Science
 
 {% objectives "Learning Objectives" %}
-- "Explain how a version control system can be leveraged as an electronic lab notebook for computational work."
+- Explain how a version control system can be leveraged as an electronic lab notebook for computational work.
 {% endobjectives %}
 
 > The opposite of "open" isn't "closed".
@@ -133,7 +133,7 @@ that this is only one of many ways to making your code citable.
 
 
 {% keypoints "Key Points" %}
-- "Open scientific work is more useful and more highly cited than closed."
+- Open scientific work is more useful and more highly cited than closed.
 {% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

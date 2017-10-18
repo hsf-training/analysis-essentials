@@ -2,17 +2,17 @@
 teaching: 25
 exercises: 0
 questions:
-- "How can I identify old versions of files?"
-- "How do I review my changes?"
-- "How can I recover old versions of files?"
+- How can I identify old versions of files?
+- How do I review my changes?
+- How can I recover old versions of files?
 ---
 # Exploring History
 
 {% objectives "Learning Objectives" %}
-- "Explain what the HEAD of a repository is and how to use it."
-- "Identify and use Git commit numbers."
-- "Compare various versions of tracked files."
-- "Restore old versions of files."
+- Explain what the HEAD of a repository is and how to use it.
+- Identify and use Git commit numbers.
+- Compare various versions of tracked files.
+- Restore old versions of files.
 {% endobjectives %}
 
 As we saw in the previous lesson, we can refer to commits by their
@@ -448,8 +448,8 @@ $ git log --patch HEAD~3 *.txt
 
 
 {% keypoints "Key Points" %}
-- "`git diff` displays differences between commits."
-- "`git checkout` recovers old versions of files."
+- `git diff` displays differences between commits.
+- `git checkout` recovers old versions of files.
 {% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
