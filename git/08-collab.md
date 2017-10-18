@@ -53,18 +53,12 @@ exactly the same way as we've been doing before:
 $ cd ~/Desktop/vlad-planets
 $ nano pluto.txt
 $ cat pluto.txt
-```
-
-```
 It is so a planet!
 ```
 
 ```bash
 $ git add pluto.txt
 $ git commit -m "Add notes about Pluto"
-```
-
-```
  1 file changed, 1 insertion(+)
  create mode 100644 pluto.txt
 ```
@@ -73,9 +67,6 @@ Then push the change to the *Owner's repository* on GitHub:
 
 ```bash
 $ git push origin master
-```
-
-```
 Counting objects: 4, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
@@ -97,9 +88,6 @@ To download the Collaborator's changes from GitHub, the Owner now enters:
 
 ```bash
 $ git pull origin master
-```
-
-```
 remote: Counting objects: 4, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0)

@@ -38,9 +38,6 @@ we can see that Git has created a hidden directory within `planets` called `.git
 
 ```bash
 $ ls -a
-```
-
-```
 .	..	.git
 ```
 
@@ -53,9 +50,6 @@ by asking Git to tell us the status of our project:
 
 ```bash
 $ git status
-```
-
-```
 # On branch master
 #
 # Initial commit
@@ -115,9 +109,6 @@ Similarly, we can ignore (as discussed later) entire directories, such as the `m
 ```bash
 $ nano .gitignore # open the .gitignore file in the texteditor to add the moons directory
 $ cat .gitignore # if you run cat afterwards, it should look like this:
-```
-
-```
 moons
 ```
 

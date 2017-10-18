@@ -25,9 +25,6 @@ and see what Git says:
 
 ```bash
 $ git status
-```
-
-```
 On branch master
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
@@ -49,9 +46,6 @@ We do this by creating a file in the root directory of our project called `.giti
 ```bash
 $ nano .gitignore
 $ cat .gitignore
-```
-
-```
 *.dat
 results/
 ```
@@ -66,9 +60,6 @@ the output of `git status` is much cleaner:
 
 ```bash
 $ git status
-```
-
-```
 On branch master
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
@@ -87,9 +78,6 @@ Let's add and commit `.gitignore`:
 $ git add .gitignore
 $ git commit -m "Add the ignore file"
 $ git status
-```
-
-```
 # On branch master
 nothing to commit, working directory clean
 ```
@@ -98,9 +86,6 @@ As a bonus, using `.gitignore` helps us avoid accidentally adding to the reposit
 
 ```bash
 $ git add a.dat
-```
-
-```
 The following paths are ignored by one of your .gitignore files:
 a.dat
 Use -f if you really want to add them.
@@ -113,9 +98,6 @@ We can also always see the status of ignored files if we want:
 
 ```bash
 $ git status --ignored
-```
-
-```
 On branch master
 Ignored files:
  (use "git add -f <file>..." to include in what will be committed)

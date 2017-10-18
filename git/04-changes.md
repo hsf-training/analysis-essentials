@@ -47,17 +47,11 @@ Cold and dry, but everything is my favorite color
 
 ```bash
 $ ls
-```
-
-```
 mars.txt
 ```
 
 ```bash
 $ cat mars.txt
-```
-
-```
 Cold and dry, but everything is my favorite color
 ```
 
@@ -66,9 +60,6 @@ Git tells us that it's noticed the new file:
 
 ```bash
 $ git status
-```
-
-```
 On branch master
 
 Initial commit
@@ -92,9 +83,6 @@ and then check that the right thing happened:
 
 ```bash
 $ git status
-```
-
-```
 On branch master
 
 Initial commit
@@ -113,9 +101,6 @@ we need to run one more command:
 
 ```bash
 $ git commit -m "Start notes on Mars as a base"
-```
-
-```
 [master (root-commit) f22b25e] Start notes on Mars as a base
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt
@@ -126,7 +111,7 @@ Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
 This permanent copy is called a [commit]({{ page.root }}/reference/#commit)
 (or [revision]({{ page.root }}/reference/#revision)) and its short identifier is `f22b25e`
-(Your commit may have another identifier.)
+(your commit will have a different identifier.)
 
 We use the `-m` flag (for "message")
 to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
@@ -142,9 +127,6 @@ If we run `git status` now:
 
 ```bash
 $ git status
-```
-
-```
 On branch master
 nothing to commit, working directory clean
 ```
@@ -155,9 +137,6 @@ we can ask Git to show us the project's history using `git log`:
 
 ```bash
 $ git log
-```
-
-```
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
@@ -189,10 +168,10 @@ you may use a different editor, and don't need to `cat`.)
 
 ```bash
 $ nano mars.txt
-$ cat mars.txt
 ```
 
-```
+```bash
+$ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 ```
@@ -202,9 +181,6 @@ it tells us that a file it already knows about has been modified:
 
 ```bash
 $ git status
-```
-
-```
 On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -228,9 +204,6 @@ of the file and the most recently saved version:
 
 ```bash
 $ git diff
-```
-
-```
 diff --git a/mars.txt b/mars.txt
 index df0654a..315bf3a 100644
 --- a/mars.txt
@@ -261,9 +234,6 @@ After reviewing our change, it's time to commit it:
 ```bash
 $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 $ git status
-```
-
-```
 On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -281,9 +251,6 @@ Let's fix that:
 ```bash
 $ git add mars.txt
 $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
-```
-
-```
 [master 34961b1] Add concerns about effects of Mars' moons on Wolfman
  1 file changed, 1 insertion(+)
 ```
@@ -337,9 +304,6 @@ we'll add another line to the file:
 ```bash
 $ nano mars.txt
 $ cat mars.txt
-```
-
-```
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
@@ -347,9 +311,6 @@ But the Mummy will appreciate the lack of humidity
 
 ```bash
 $ git diff
-```
-
-```
 diff --git a/mars.txt b/mars.txt
 index 315bf3a..b36abfd 100644
 --- a/mars.txt
@@ -380,9 +341,6 @@ if we do this:
 
 ```bash
 $ git diff --staged
-```
-
-```
 diff --git a/mars.txt b/mars.txt
 index 315bf3a..b36abfd 100644
 --- a/mars.txt
@@ -400,9 +358,6 @@ Let's save our changes:
 
 ```bash
 $ git commit -m "Discuss concerns about Mars' climate for Mummy"
-```
-
-```
 [master 005937f] Discuss concerns about Mars' climate for Mummy
  1 file changed, 1 insertion(+)
 ```
@@ -411,9 +366,6 @@ check our status:
 
 ```bash
 $ git status
-```
-
-```
 On branch master
 nothing to commit, working directory clean
 ```
@@ -422,9 +374,6 @@ and look at the history of what we've done so far:
 
 ```bash
 $ git log
-```
-
-```
 commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:14:07 2013 -0400
@@ -474,9 +423,6 @@ the last commit you can use:
 
 ```bash
 $ git log -1
-```
-
-```
 commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:14:07 2013 -0400

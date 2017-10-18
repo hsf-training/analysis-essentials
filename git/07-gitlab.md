@@ -4,7 +4,7 @@ exercises: 0
 questions:
 - "How do I share my changes with others on the web?"
 ---
-# Remotes in GitHub
+# Remotes in CERN GitLab
 
 {% objectives "Learning Objectives" %}
 - "Explain what remote repositories are and why they are useful."
@@ -87,9 +87,6 @@ We can check that the command has worked by running `git remote -v`:
 
 ```bash
 $ git remote -v
-```
-
-```
 origin   https://github.com/vlad/planets.git (push)
 origin   https://github.com/vlad/planets.git (fetch)
 ```
@@ -102,9 +99,6 @@ our local repository to the repository on GitHub:
 
 ```bash
 $ git push origin master
-```
-
-```
 Counting objects: 9, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
@@ -114,26 +108,6 @@ To https://github.com/vlad/planets
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ```
-
-{% callout "Proxy" %}
-
-If the network you are connected to uses a proxy there is a chance that your
-last command failed with "Could not resolve hostname" as the error message. To
-solve this issue you need to tell Git about the proxy:
-
-```bash
-$ git config --global http.proxy http://user:password@proxy.url
-$ git config --global https.proxy http://user:password@proxy.url
-```
-
-When you connect to another network that doesn't use a proxy you will need to
-tell Git to disable the proxy using:
-
-```bash
-$ git config --global --unset http.proxy
-$ git config --global --unset https.proxy
-```
-{% endcallout %}
 
 {% callout "Password Managers" %}
 
@@ -174,9 +148,6 @@ We can pull changes from the remote repository to the local one as well:
 
 ```bash
 $ git pull origin master
-```
-
-```
 From https://github.com/vlad/planets
  * branch            master     -> FETCH_HEAD
 Already up-to-date.

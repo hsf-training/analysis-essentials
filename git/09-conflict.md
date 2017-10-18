@@ -24,9 +24,6 @@ repository:
 
 ```bash
 $ cat mars.txt
-```
-
-```
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
@@ -37,32 +34,23 @@ Let's add a line to one partner's copy only:
 ```bash
 $ nano mars.txt
 $ cat mars.txt
-```
-
-```
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 This line added to Wolfman's copy
 ```
 
-and then push the change to GitHub:
+and then push the change to CERN GitLab:
 
 ```bash
 $ git add mars.txt
 $ git commit -m "Add a line in our home copy"
-```
-
-```
 [master 5ae9631] Add a line in our home copy
  1 file changed, 1 insertion(+)
 ```
 
 ```bash
 $ git push origin master
-```
-
-```
 Counting objects: 5, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (3/3), done.
@@ -74,14 +62,11 @@ To https://github.com/vlad/planets
 
 Now let's have the other partner
 make a different change to their copy
-*without* updating from GitHub:
+*without* updating from CERN GitLab:
 
 ```bash
 $ nano mars.txt
 $ cat mars.txt
-```
-
-```
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
@@ -93,20 +78,14 @@ We can commit the change locally:
 ```bash
 $ git add mars.txt
 $ git commit -m "Add a line in my copy"
-```
-
-```
 [master 07ebc69] Add a line in my copy
  1 file changed, 1 insertion(+)
 ```
 
-but Git won't let us push it to GitHub:
+but Git won't let us push it to CERN GitLab:
 
 ```bash
 $ git push origin master
-```
-
-```
 To https://github.com/vlad/planets.git
  ! [rejected]        master -> master (non-fast-forward)
 error: failed to push some refs to 'https://github.com/vlad/planets.git'
@@ -120,16 +99,13 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 Git detects that the changes made in one copy overlap with those made in the other
 and stops us from trampling on our previous work.
-What we have to do is pull the changes from GitHub,
+What we have to do is pull the changes from CERN GitLab,
 [merge]({{ page.root }}/reference/#merge) them into the copy we're currently working in,
 and then push that.
 Let's start by pulling:
 
 ```bash
 $ git pull origin master
-```
-
-```
 remote: Counting objects: 5, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 3 (delta 1)
@@ -146,9 +122,6 @@ and marks that conflict in the affected file:
 
 ```bash
 $ cat mars.txt
-```
-
-```
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
@@ -174,9 +147,6 @@ Let's replace both so that the file looks like this:
 
 ```bash
 $ cat mars.txt
-```
-
-```
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
@@ -190,9 +160,6 @@ and then commit:
 ```bash
 $ git add mars.txt
 $ git status
-```
-
-```
 On branch master
 All conflicts fixed but you are still merging.
   (use "git commit" to conclude merge)
@@ -205,9 +172,6 @@ Changes to be committed:
 
 ```bash
 $ git commit -m "Merge changes from GitHub"
-```
-
-```
 [master 2abf2b1] Merge changes from GitHub
 ```
 
@@ -215,9 +179,6 @@ Now we can push our changes to GitHub:
 
 ```bash
 $ git push origin master
-```
-
-```
 Counting objects: 10, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
@@ -233,9 +194,6 @@ when the collaborator who made the first change pulls again:
 
 ```bash
 $ git pull origin master
-```
-
-```
 remote: Counting objects: 10, done.
 remote: Compressing objects: 100% (4/4), done.
 remote: Total 6 (delta 2), reused 6 (delta 2)
@@ -252,9 +210,6 @@ We get the merged file:
 
 ```bash
 $ cat mars.txt
-```
-
-```
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
@@ -310,9 +265,6 @@ a dummy binary file like this:
 ```bash
 $ head --bytes 1024 /dev/urandom > mars.jpg
 $ ls -lh mars.jpg
-```
-
-```
 -rw-r--r-- 1 vlad 57095 1.0K Mar  8 20:24 mars.jpg
 ```
 
@@ -324,9 +276,6 @@ Now, suppose Dracula adds `mars.jpg` to his repository:
 ```bash
 $ git add mars.jpg
 $ git commit -m "Add picture of Martian surface"
-```
-
-```
 [master 8e4115c] Add picture of Martian surface
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 mars.jpg
@@ -338,9 +287,6 @@ When Dracula tries to push, he gets a familiar message:
 
 ```bash
 $ git push origin master
-```
-
-```
 To https://github.com/vlad/planets.git
  ! [rejected]        master -> master (fetch first)
 error: failed to push some refs to 'https://github.com/vlad/planets.git'
@@ -395,9 +341,6 @@ version is `439dc8c0...`. If we want to use our version, we can use
 $ git checkout HEAD mars.jpg
 $ git add mars.jpg
 $ git commit -m "Use image of surface instead of sky"
-```
-
-```
 [master 21032c3] Use image of surface instead of sky
 ```
 
@@ -408,9 +351,6 @@ Wolfman's commit identifier, `439dc8c0`:
 $ git checkout 439dc8c0 mars.jpg
 $ git add mars.jpg
 $ git commit -m "Use image of sky instead of surface"
-```
-
-```
 [master da21b34] Use image of sky instead of surface
 ```
 
@@ -433,9 +373,6 @@ $ git rm mars.jpg
 $ git add mars-surface.jpg
 $ git add mars-sky.jpg
 $ git commit -m "Use two images: surface and sky"
-```
-
-```
 [master 94ae08c] Use two images: surface and sky
  2 files changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 mars-sky.jpg
