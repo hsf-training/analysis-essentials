@@ -1,9 +1,9 @@
 # Git
 As stated on the project's official website [git-scm.com](https://git-scm.com),
 
-> Git is a free and open source distributed version control system designed to
-> handle everything from small to very large projects with speed and
-> efficiency.
+Git is a free and open source distributed version control system designed to
+handle everything from small to very large projects with speed and
+efficiency.
 
 Great so this means that here we have a tool that we can use free of charge
 (even better, we can look at and modify the source code) which allows us to

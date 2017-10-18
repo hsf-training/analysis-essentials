@@ -56,24 +56,24 @@ a [repository]({{ page.root }}/reference/#repository). Repositories can be kept 
 across different computers facilitating collaboration among different people.
 
 {% callout "The Long History of Version Control Systems" %}
->
-> Automated version control systems are nothing new.
-> Tools like RCS, CVS, or Subversion have been around since the early 1980s and are used by many large companies.
-> However, many of these are now becoming considered as legacy systems due to various limitations in their capabilities.
-> In particular, the more modern systems, such as Git and [Mercurial](http://swcarpentry.github.io/hg-novice/)
-> are *distributed*, meaning that they do not need a centralized server to host the repository.
-> These modern systems also include powerful merging tools that make it possible for multiple authors to work within
-> the same files concurrently.
+
+Automated version control systems are nothing new.
+Tools like RCS, CVS, or Subversion have been around since the early 1980s and are used by many large companies.
+However, many of these are now becoming considered as legacy systems due to various limitations in their capabilities.
+In particular, the more modern systems, such as Git and [Mercurial](http://swcarpentry.github.io/hg-novice/)
+are *distributed*, meaning that they do not need a centralized server to host the repository.
+These modern systems also include powerful merging tools that make it possible for multiple authors to work within
+the same files concurrently.
 {% endcallout %}
 
 {% challenge "Paper Writing" %}
->
-> *   Imagine you drafted an excellent paragraph for a paper you are writing, but later ruin it. How would you retrieve
->     the *excellent* version of your conclusion? Is it even possible?
->
-> *   Imagine you have 5 co-authors. How would you manage the changes and comments they make to your paper?
->     If you use LibreOffice Writer or Microsoft Word, what happens if you accept changes made using the
->     `Track Changes` option? Do you have a history of those changes?
+
+*   Imagine you drafted an excellent paragraph for a paper you are writing, but later ruin it. How would you retrieve
+    the *excellent* version of your conclusion? Is it even possible?
+
+*   Imagine you have 5 co-authors. How would you manage the changes and comments they make to your paper?
+    If you use LibreOffice Writer or Microsoft Word, what happens if you accept changes made using the
+    `Track Changes` option? Do you have a history of those changes?
 {% endchallenge %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

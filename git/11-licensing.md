@@ -56,26 +56,26 @@ decision only makes it more complicated later, because each time a new
 collaborator starts contributing, they, too, hold copyright and will
 thus need to be asked for approval once a license is chosen.
 
-> ## Can I Use Open License?
->
-> Find out whether you are allowed to apply an open license to your software.
-> Can you do this unilaterally,
-> or do you need permission from someone in your institution?
-> If so, who?
-{: .challenge}
+{% challenge "Can I Use Open License?" %}
 
-> ## What licenses have I already accepted?
->
-> Many of the software tools we use on a daily basis (including in this workshop) are
-> released as open-source software. Pick a project on GitHub from the list below, or
-> one of your own choosing. Find its license (usually in a file called `LICENSE` or
-> `COPYING`) and talk about how it restricts your use of the software. Is it one of
-> the licenses discussed in this session? How is it different?
-> - [Git](https://github.com/git/git), the source-code management tool
-> - [CPython](https://github.com/python/cpython), the standard implementation of the Python language
-> - [Jupyter](https://github.com/jupyter), the project behind the web-based Python notebooks we'll be using
-> - [EtherPad](https://github.com/ether/etherpad-lite), a real-time collaborative editor
-{: .challenge}
+Find out whether you are allowed to apply an open license to your software.
+Can you do this unilaterally,
+or do you need permission from someone in your institution?
+If so, who?
+{% endchallenge %}
+
+{% challenge "What licenses have I already accepted?" %}
+
+Many of the software tools we use on a daily basis (including in this workshop) are
+released as open-source software. Pick a project on GitHub from the list below, or
+one of your own choosing. Find its license (usually in a file called `LICENSE` or
+`COPYING`) and talk about how it restricts your use of the software. Is it one of
+the licenses discussed in this session? How is it different?
+- [Git](https://github.com/git/git), the source-code management tool
+- [CPython](https://github.com/python/cpython), the standard implementation of the Python language
+- [Jupyter](https://github.com/jupyter), the project behind the web-based Python notebooks we'll be using
+- [EtherPad](https://github.com/ether/etherpad-lite), a real-time collaborative editor
+{% endchallenge %}
 
 [software-licensing]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002598
 

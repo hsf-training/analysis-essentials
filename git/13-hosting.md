@@ -56,29 +56,29 @@ online service.  Furthermore, such tools are often provided free of charge to
 open source projects, and are also available for private repositories for a fee.
 
 {% callout "Institutional Barriers" %}
->
-> Sharing is the ideal for science,
-> but many institutions place restrictions on sharing,
-> for example to protect potentially patentable intellectual property.
-> If you encounter such restrictions,
-> it can be productive to inquire about the underlying motivations
-> either to request an exception for a specific project or domain,
-> or to push more broadly for institutional reform to support more open science.
+
+Sharing is the ideal for science,
+but many institutions place restrictions on sharing,
+for example to protect potentially patentable intellectual property.
+If you encounter such restrictions,
+it can be productive to inquire about the underlying motivations
+either to request an exception for a specific project or domain,
+or to push more broadly for institutional reform to support more open science.
 {% endcallout %}
 
-> ## Can My Work Be Public?
->
-> Find out whether you are allowed to host your work openly on a public forge.
-> Can you do this unilaterally,
-> or do you need permission from someone in your institution?
-> If so, who?
-{: .challenge}
+{% challenge "Can My Work Be Public?" %}
 
-> ## Where Can I Share My Work?
->
-> Does your institution have a repository or repositories that you can
-> use to share your papers, data and software? How do institutional repositories
-> differ from services like [arXiV](http://arxiv.org/), [figshare](http://figshare.com/) and [GitHub](http://github.com/)?
-{: .challenge}
+Find out whether you are allowed to host your work openly on a public forge.
+Can you do this unilaterally,
+or do you need permission from someone in your institution?
+If so, who?
+{% endchallenge %}
+
+{% challenge "Where Can I Share My Work?" %}
+
+Does your institution have a repository or repositories that you can
+use to share your papers, data and software? How do institutional repositories
+differ from services like [arXiV](http://arxiv.org/), [figshare](http://figshare.com/) and [GitHub](http://github.com/)?
+{% endchallenge %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

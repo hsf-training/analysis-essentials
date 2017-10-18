@@ -16,7 +16,7 @@ the [one for Software
 Carpentry](https://github.com/swcarpentry/website/blob/gh-pages/CITATION)
 states:
 
-~~~
+```
 To reference Software Carpentry in publications, please cite both of the following:
 
 Greg Wilson: "Software Carpentry: Getting Scientists to Write Better
@@ -42,7 +42,6 @@ July 2013.
   eprinttype  = {arxiv},
   eprint      = {1307.5448}
 }
-~~~
-{: .source}
+```
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

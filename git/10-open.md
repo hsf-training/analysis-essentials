@@ -14,7 +14,6 @@ keypoints:
 > The opposite of "open" is "broken".
 >
 > --- John Wilbanks
-{: .quotation}
 
 Free sharing of information might be the ideal in science,
 but the reality is often more complicated.
@@ -95,41 +94,41 @@ by acting as a shareable electronic lab notebook for computational work:
     the entire history.
 
 {% callout "Making Code Citable" %}
->
-> [This short guide](https://guides.github.com/activities/citable-code/) from GitHub
-> explains how to create a Digital Object Identifier (DOI) for your code,
-> your papers,
-> or anything else hosted in a version control repository.
+
+[This short guide](https://guides.github.com/activities/citable-code/) from GitHub
+explains how to create a Digital Object Identifier (DOI) for your code,
+your papers,
+or anything else hosted in a version control repository.
 {% endcallout %}
 
-> ## How Reproducible Is My Work?
->
-> Ask one of your labmates to reproduce a result you recently obtained
-> using only what they can find in your papers or on the web.
-> Try to do the same for one of their results,
-> then try to do it for a result from a lab you work with.
-{: .challenge}
+{% challenge "How Reproducible Is My Work?" %}
 
-> ## How to Find an Appropriate Data Repository?
->
-> Surf the internet for a couple of minutes and check out the data repositories
-> mentioned above: [Figshare](http://figshare.com/), [Zenodo](http://zenodo.org),
-> [Dryad](http://datadryad.org/). Depending on your field of research, you might
-> find community-recognized repositories that are well-known in your field.
-> You might also find useful [these data repositories recommended by Nature](
-> http://www.nature.com/sdata/data-policies/repositories).
-> Discuss with your neighbor which data repository you might want to
-> approach for your current project and explain why.
-{: .challenge}
+Ask one of your labmates to reproduce a result you recently obtained
+using only what they can find in your papers or on the web.
+Try to do the same for one of their results,
+then try to do it for a result from a lab you work with.
+{% endchallenge %}
 
-> ## Can I Also Publish Code?
->
-> There are many new ways to publish code and to make it citable. One
-> way is described [on the homepage of GitHub itself](
-> https://guides.github.com/activities/citable-code/).
-> Basically it's a combination of GitHub (where the code is) and Zenodo (the
-> repository creating the DOI). Read through this page while being aware
-> that this is only one of many ways to making your code citable.
-{: .challenge}
+{% challenge "How to Find an Appropriate Data Repository?" %}
+
+Surf the internet for a couple of minutes and check out the data repositories
+mentioned above: [Figshare](http://figshare.com/), [Zenodo](http://zenodo.org),
+[Dryad](http://datadryad.org/). Depending on your field of research, you might
+find community-recognized repositories that are well-known in your field.
+You might also find useful [these data repositories recommended by Nature](
+http://www.nature.com/sdata/data-policies/repositories).
+Discuss with your neighbor which data repository you might want to
+approach for your current project and explain why.
+{% endchallenge %}
+
+{% challenge "Can I Also Publish Code?" %}
+
+There are many new ways to publish code and to make it citable. One
+way is described [on the homepage of GitHub itself](
+https://guides.github.com/activities/citable-code/).
+Basically it's a combination of GitHub (where the code is) and Zenodo (the
+repository creating the DOI). Read through this page while being aware
+that this is only one of many ways to making your code citable.
+{% endchallenge %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
