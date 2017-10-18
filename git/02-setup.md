@@ -38,7 +38,7 @@ which means that any changes pushed to
 another Git host server
 in a later lesson will include this information.
 
-> ## Line Endings
+{% callout "Line Endings" %}
 >
 > As with other keys, when you hit the 'return' key on your keyboard,
 > your computer encodes this input.
@@ -66,7 +66,7 @@ in a later lesson will include this information.
 >
 > You can read more about this issue
 > [on this GitHub page](https://help.github.com/articles/dealing-with-line-endings/).
-{: .callout}
+{% endcallout %}
 
 For these lessons, we will be interacting with [GitHub](http://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy].
 If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one. You can change the email address later on by using the `git config` command again.
@@ -91,10 +91,10 @@ Dracula also has to set his favorite text editor, following this table:
 
 It is possible to reconfigure the text editor for Git whenever you want to change it.
 
-> ## Exiting Vim
+{% callout "Exiting Vim" %}
 >
 > Note that `vim` is the default editor for many programs. If you haven't used `vim` before and wish to exit a session, type `Esc` then `:q!` and `Enter`.
-{: .callout}
+{% endcallout %}
 
 The four commands we just ran above only need to be run once: the flag `--global` tells Git
 to use the settings for every project, in your user account, on this computer.
@@ -108,7 +108,7 @@ $ git config --list
 You can change your configuration as many times as you want: just use the
 same commands to choose another editor or update your email address.
 
-> ## Proxy
+{% callout "Proxy" %}
 >
 > In some networks you need to use a
 > [proxy](https://en.wikipedia.org/wiki/Proxy_server). If this is the case, you
@@ -125,9 +125,9 @@ same commands to choose another editor or update your email address.
 > $ git config --global --unset http.proxy
 > $ git config --global --unset https.proxy
 > ```
-{: .callout}
+{% endcallout %}
 
-> ## Git Help and Manual
+{% callout "Git Help and Manual" %}
 >
 > Always remember that if you forget a `git` command, you can access the list of commands by using `-h` and access the Git manual by using `--help` :
 >
@@ -135,7 +135,7 @@ same commands to choose another editor or update your email address.
 > $ git config -h
 > $ git config --help
 > ```
-{: .callout}
+{% endcallout %}
 
 [git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
 

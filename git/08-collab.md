@@ -16,13 +16,13 @@ will be the "Collaborator". The goal is that the Collaborator add changes into
 the Owner's repository. We will switch roles at the end, so both persons will
 play Owner and Collaborator.
 
-> ## Practicing By Yourself
+{% callout "Practicing By Yourself" %}
 >
 > If you're working through this lesson on your own, you can carry on by opening
 > a second terminal window.
 > This window will represent your partner, working on another computer. You
 > won't need to give anyone access on GitHub, because both 'partners' are you.
-{: .callout}
+{% endcallout %}
 
 The Owner needs to give the Collaborator access.
 On GitHub, click the settings button on the right,
@@ -120,7 +120,7 @@ Fast-forward
 Now the three repositories (Owner's local, Collaborator's local, and Owner's on
 GitHub) are back in sync.
 
-> ## A Basic Collaborative Workflow
+{% callout "A Basic Collaborative Workflow" %}
 >
 > In practice, it is good to be sure that you have an updated version of the
 > repository you are collaborating on, so you should `git pull` before making
@@ -134,7 +134,7 @@ GitHub) are back in sync.
 > It is better to make many commits with smaller changes rather than
 > of one commit with massive changes: small commits are easier to
 > read and review.
-{: .callout}
+{% endcallout %}
 
 > ## Switch Roles and Repeat
 >

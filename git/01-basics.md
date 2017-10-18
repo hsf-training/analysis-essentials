@@ -55,7 +55,7 @@ complete history of commits for a particular project and their metadata make up
 a [repository]({{ page.root }}/reference/#repository). Repositories can be kept in sync
 across different computers facilitating collaboration among different people.
 
-> ## The Long History of Version Control Systems
+{% callout "The Long History of Version Control Systems" %}
 >
 > Automated version control systems are nothing new.
 > Tools like RCS, CVS, or Subversion have been around since the early 1980s and are used by many large companies.
@@ -64,7 +64,7 @@ across different computers facilitating collaboration among different people.
 > are *distributed*, meaning that they do not need a centralized server to host the repository.
 > These modern systems also include powerful merging tools that make it possible for multiple authors to work within
 > the same files concurrently.
-{: .callout}
+{% endcallout %}
 
 > ## Paper Writing
 >

@@ -120,7 +120,7 @@ Branch master set up to track remote branch master from origin.
 ~~~
 {: .output}
 
-> ## Proxy
+{% callout "Proxy" %}
 >
 > If the network you are connected to uses a proxy there is a chance that your
 > last command failed with "Could not resolve hostname" as the error message. To
@@ -138,9 +138,9 @@ Branch master set up to track remote branch master from origin.
 > $ git config --global --unset http.proxy
 > $ git config --global --unset https.proxy
 > ```
-{: .callout}
+{% endcallout %}
 
-> ## Password Managers
+{% callout "Password Managers" %}
 >
 > If your operating system has a password manager configured, `git push` will
 > try to use it when it needs your username and password.  For example, this
@@ -160,7 +160,7 @@ Branch master set up to track remote branch master from origin.
 >
 > You may also want to add `unset SSH_ASKPASS` at the end of your `~/.bashrc`
 > to make git default to using the terminal for usernames and passwords.
-{: .callout}
+{% endcallout %}
 
 Our local and remote repositories are now in this state:
 

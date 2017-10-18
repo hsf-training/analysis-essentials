@@ -94,13 +94,13 @@ by acting as a shareable electronic lab notebook for computational work:
     control repository is easy to archive for perpetuity, and contains
     the entire history.
 
-> ## Making Code Citable
+{% callout "Making Code Citable" %}
 >
 > [This short guide](https://guides.github.com/activities/citable-code/) from GitHub
 > explains how to create a Digital Object Identifier (DOI) for your code,
 > your papers,
 > or anything else hosted in a version control repository.
-{: .callout}
+{% endcallout %}
 
 > ## How Reproducible Is My Work?
 >

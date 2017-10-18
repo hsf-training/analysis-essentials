@@ -287,7 +287,7 @@ here's how Git works in cartoon form:
 
 ![http://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg)
 
-> ## Simplifying the Common Case
+{% callout "Simplifying the Common Case" %}
 >
 > If you read the output of `git status` carefully,
 > you'll see that it includes this hint:
@@ -302,7 +302,7 @@ here's how Git works in cartoon form:
 > from the command itself:
 > without it,
 > Git would try to use the name of the file as the commit identifier.
-{: .callout}
+{% endcallout %}
 
 The fact that files can be reverted one by one
 tends to change the way people organize their work.

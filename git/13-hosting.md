@@ -55,7 +55,7 @@ situations, there is much less setup and maintenance involved with using an
 online service.  Furthermore, such tools are often provided free of charge to
 open source projects, and are also available for private repositories for a fee.
 
-> ## Institutional Barriers
+{% callout "Institutional Barriers" %}
 >
 > Sharing is the ideal for science,
 > but many institutions place restrictions on sharing,
@@ -64,7 +64,7 @@ open source projects, and are also available for private repositories for a fee.
 > it can be productive to inquire about the underlying motivations
 > either to request an exception for a specific project or domain,
 > or to push more broadly for institutional reform to support more open science.
-{: .callout}
+{% endcallout %}
 
 > ## Can My Work Be Public?
 >

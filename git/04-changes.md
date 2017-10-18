@@ -323,7 +323,7 @@ where it keeps track of things that have been added to
 the current [changeset]({{ page.root }}/reference/#changeset)
 but not yet committed.
 
-> ## Staging Area
+{% callout "Staging Area" %}
 >
 > If you think of Git as taking snapshots of changes over the life of a project,
 > `git add` specifies *what* will go in a snapshot
@@ -341,7 +341,7 @@ but not yet committed.
 > Try to stage things manually,
 > or you might find yourself searching for "git undo commit" more
 > than you would like!
-{: .callout}
+{% endcallout %}
 
 ![The Git Staging Area](fig/git-staging-area.svg)
 
@@ -475,7 +475,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > words using colors.
 {: .callout}
 
-> ## Paging the Log
+{% callout "Paging the Log" %}
 >
 > When the output of `git log` is too long to fit in your screen,
 > `git` uses a program to split it into pages of the size of your screen.
@@ -486,9 +486,9 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > *   To move to the next page, press the space bar.
 > *   To search for `some_word` in all pages, type `/some_word`
 >     and navigate through matches pressing `n`.
-{: .callout}
+{% endcallout %}
 
-> ## Limit Log Size
+{% callout "Limit Log Size" %}
 >
 > To avoid having `git log` cover your entire terminal screen, you can limit the
 > number of commits that Git lists by using `-N`, where `N` is the number of
@@ -533,9 +533,9 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > * f22b25e Start notes on Mars as a base
 > ~~~
 > {: .output}
-{: .callout}
+{% endcallout %}
 
-> ## Directories
+{% callout "Directories" %}
 >
 > Two important facts you should know about directories in Git.
 >
@@ -564,7 +564,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > git add <directory-with-files>
 > ```
 >
-{: .callout}
+{% endcallout %}
 
 To recap, when we want to add changes to our repository,
 we first need to add the changed files to the staging area
