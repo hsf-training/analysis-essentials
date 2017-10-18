@@ -172,14 +172,14 @@ then
     echo “COND2 evaluated to true”
 else
     echo “Test not passed”
-fi 
+fi
 ```
 
 `Exercise (5 min):` Create a text file and then write a script that checks whether the text file
 - exists;
 - is readable;
 - is newer than another text file.
- 
+
 `Exercise (5 min):` In the `StarWars.sh` script, add some lines to check whether
 - `A` is equal to `B`;
 - `A` is smaller than `B`;
@@ -191,9 +191,9 @@ Be careful! We might be tempted to use `>` and `<` inside the shell script, but 
 Let us consider the three following lines, in which we link the commands to list the files in the `Poems` and `Recipes` folders through the `;`, `&&`, or `||` operators:
 
 ```
-ls Poems/*.txt; ls Recipes/*.txt 
-ls Poems/*.txt && ls Recipes/*.txt 
-ls Poems/*.txt || ls Recipes/*.txt 
+ls Poems/*.txt; ls Recipes/*.txt
+ls Poems/*.txt && ls Recipes/*.txt
+ls Poems/*.txt || ls Recipes/*.txt
 ```
 
 The `;` means execute the first, then the second; the `&&` means execute the first, then the second if the first was successful, while the `||` means execute the first, then the second if the first was not successful.
@@ -332,7 +332,7 @@ head -n 2 file1.dat file2.dat
 
 Text editors allow not only to read, but also to modify the contents of a text file.
 There are text editors available for every taste, and this is for sure a not-exhaustive list of those you may find along your way:
-- `vim` or simply `vi` 
+- `vim` or simply `vi`
 - `emacs`
 - `nano`
 - `gedit`

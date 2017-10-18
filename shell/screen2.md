@@ -19,7 +19,7 @@ yes prints the hostname and output of `screen -list`.
 
 ### Using tabs in screen
 
-Screen supports some features beyond detaching a session. A very useful feature is different sessions in tab pages, all within a single instance of `screen`. 
+Screen supports some features beyond detaching a session. A very useful feature is different sessions in tab pages, all within a single instance of `screen`.
 In order to maximise the usefulness of this feature, you need to set the screen status bar. The simplest way to do this is by appending the following line to the file `~/.screenrc` (create it if it doesn't already exist):
 ```
 # Status lines

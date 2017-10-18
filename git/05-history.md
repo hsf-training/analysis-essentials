@@ -430,7 +430,7 @@ moving backward and forward in time becomes much easier.
 > > $ nano venus.txt #input the following text: Venus is beautiful and full of love
 > > ~~~
 > > {: .bash}
-> > We created a new file and wrote a sentence in it, but the file is not tracked by git.  
+> > We created a new file and wrote a sentence in it, but the file is not tracked by git.
 > >
 > > ~~~
 > > $ git add venus.txt
