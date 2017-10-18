@@ -40,7 +40,7 @@ But the Mummy will appreciate the lack of humidity
 This line added to Wolfman's copy
 ```
 
-and then push the change to CERN GitLab:
+and then push the change to GitLab:
 
 ```bash
 $ git add mars.txt
@@ -62,7 +62,7 @@ To https://github.com/vlad/planets
 
 Now let's have the other partner
 make a different change to their copy
-*without* updating from CERN GitLab:
+*without* updating from GitLab:
 
 ```bash
 $ nano mars.txt
@@ -82,13 +82,13 @@ $ git commit -m "Add a line in my copy"
  1 file changed, 1 insertion(+)
 ```
 
-but Git won't let us push it to CERN GitLab:
+but Git won't let us push it to GitLab:
 
 ```bash
 $ git push origin master
-To https://github.com/vlad/planets.git
+To ssh://gitlab.cern.ch:7999/vlad/planets.git
  ! [rejected]        master -> master (non-fast-forward)
-error: failed to push some refs to 'https://github.com/vlad/planets.git'
+error: failed to push some refs to 'ssh://gitlab.cern.ch:7999/vlad/planets.git'
 hint: Updates were rejected because the tip of your current branch is behind
 hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
 hint: before pushing again.
@@ -99,7 +99,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 Git detects that the changes made in one copy overlap with those made in the other
 and stops us from trampling on our previous work.
-What we have to do is pull the changes from CERN GitLab,
+What we have to do is pull the changes from GitLab,
 [merge]({{ page.root }}/reference/#merge) them into the copy we're currently working in,
 and then push that.
 Let's start by pulling:
@@ -184,7 +184,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (6/6), 697 bytes, done.
 Total 6 (delta 2), reused 0 (delta 0)
-To https://github.com/vlad/planets.git
+To ssh://gitlab.cern.ch:7999/vlad/planets.git
    dabb4c8..2abf2b1  master -> master
 ```
 
@@ -287,9 +287,9 @@ When Dracula tries to push, he gets a familiar message:
 
 ```bash
 $ git push origin master
-To https://github.com/vlad/planets.git
+To ssh://gitlab.cern.ch:7999/vlad/planets.git
  ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to 'https://github.com/vlad/planets.git'
+error: failed to push some refs to 'ssh://gitlab.cern.ch:7999/vlad/planets.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -312,7 +312,7 @@ remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 3 (delta 0), reused 0 (delta 0)
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets.git
+From ssh://gitlab.cern.ch:7999/vlad/planets.git
  * branch            master     -> FETCH_HEAD
    6a67967..439dc8c  master     -> origin/master
 warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)

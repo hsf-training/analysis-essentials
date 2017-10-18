@@ -94,7 +94,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (9/9), 821 bytes, done.
 Total 9 (delta 2), reused 0 (delta 0)
-To https://gitlab.cern.ch/vlad/planets
+To ssh://gitlab.cern.ch:7999/vlad/planets.git
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ```
