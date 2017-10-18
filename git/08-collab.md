@@ -6,8 +6,6 @@ questions:
 objectives:
 - "Clone a remote repository."
 - "Collaborate pushing to a common repository."
-keypoints:
-- "`git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up."
 ---
 # Collaborating
 
@@ -177,5 +175,10 @@ Some backup software can keep a history of the versions of your files. They also
 allows you to recover specific versions. How is this functionality different from version control?
 What are some of the benifits of using version control, Git and GitHub?
 {% endchallenge %}
+
+
+{% keypoints "Key Points" %}
+- "`git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up."
+{% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

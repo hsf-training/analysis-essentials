@@ -6,9 +6,6 @@ questions:
 objectives:
 - "Understand the benefits of an automated version control system."
 - "Understand the basics of how Git works."
-keypoints:
-- "Version control is like an unlimited 'undo'."
-- "Version control also allows many people to work in parallel."
 ---
 # Automated Version Control
 
@@ -75,5 +72,11 @@ the same files concurrently.
     If you use LibreOffice Writer or Microsoft Word, what happens if you accept changes made using the
     `Track Changes` option? Do you have a history of those changes?
 {% endchallenge %}
+
+
+{% keypoints "Key Points" %}
+- "Version control is like an unlimited 'undo'."
+- "Version control also allows many people to work in parallel."
+{% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

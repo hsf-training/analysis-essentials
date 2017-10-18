@@ -10,9 +10,6 @@ objectives:
 - "Identify and use Git commit numbers."
 - "Compare various versions of tracked files."
 - "Restore old versions of files."
-keypoints:
-- "`git diff` displays differences between commits."
-- "`git checkout` recovers old versions of files."
 ---
 # Exploring History
 
@@ -479,5 +476,11 @@ Question: What does the following command do?
 $ git log --patch HEAD~3 *.txt
 ```
 {% endchallenge %}
+
+
+{% keypoints "Key Points" %}
+- "`git diff` displays differences between commits."
+- "`git checkout` recovers old versions of files."
+{% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

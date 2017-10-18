@@ -5,8 +5,6 @@ questions:
 - "How can I use Git with RStudio?"
 objectives:
 - "Understand how to use Git from RStudio."
-keypoints:
-- "Create an RStudio project"
 ---
 # Using Git from RStudio
 
@@ -101,5 +99,10 @@ There are many more features buried in the RStudio git interface, but these
 should be enough to get you started!
 
 [rstudio-projects]: https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
+
+
+{% keypoints "Key Points" %}
+- "Create an RStudio project"
+{% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

@@ -9,12 +9,6 @@ objectives:
 - "Go through the modify-add-commit cycle for one or more files."
 - "Explain where information is stored at each stage of Git commit workflow."
 - "Distinguish between descriptive and non-descriptive commit messages."
-keypoints:
-- "`git status` shows the status of a repository."
-- "Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded)."
-- "`git add` puts files in the staging area."
-- "`git commit` saves the staged content as a new commit in the local repository."
-- "Always write a log message when committing changes."
 ---
 # Tracking Changes
 
@@ -693,5 +687,14 @@ Vlad's initial bio.
 {% endchallenge %}
 
 [commit-messages]: http://chris.beams.io/posts/git-commit/
+
+
+{% keypoints "Key Points" %}
+- "`git status` shows the status of a repository."
+- "Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded)."
+- "`git add` puts files in the staging area."
+- "`git commit` saves the staged content as a new commit in the local repository."
+- "Always write a log message when committing changes."
+{% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

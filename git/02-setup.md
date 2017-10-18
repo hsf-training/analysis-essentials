@@ -6,8 +6,6 @@ questions:
 objectives:
 - "Configure `git` the first time it is used on a computer."
 - "Understand the meaning of the `--global` configuration flag."
-keypoints:
--   "Use `git config` to configure a user name, email address, editor, and other preferences once per machine."
 ---
 # Setting Up Git
 
@@ -138,5 +136,10 @@ $ git config --help
 {% endcallout %}
 
 [git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
+
+
+{% keypoints "Key Points" %}
+-   "Use `git config` to configure a user name, email address, editor, and other preferences once per machine."
+{% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

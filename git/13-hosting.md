@@ -5,9 +5,6 @@ questions:
 - "Where should I host my version control repositories?"
 objectives:
 - "Explain different options for hosting scientific work."
-keypoints:
-- "Projects can be hosted on university servers, on personal domains, or on public forges."
-- "Rules regarding intellectual property and storage of sensitive information apply no matter where code and data are hosted."
 ---
 # Hosting
 
@@ -80,5 +77,11 @@ Does your institution have a repository or repositories that you can
 use to share your papers, data and software? How do institutional repositories
 differ from services like [arXiV](http://arxiv.org/), [figshare](http://figshare.com/) and [GitHub](http://github.com/)?
 {% endchallenge %}
+
+
+{% keypoints "Key Points" %}
+- "Projects can be hosted on university servers, on personal domains, or on public forges."
+- "Rules regarding intellectual property and storage of sensitive information apply no matter where code and data are hosted."
+{% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

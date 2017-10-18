@@ -6,8 +6,6 @@ questions:
 objectives:
 - "Configure Git to ignore specific files."
 - "Explain why ignoring files can be useful."
-keypoints:
-- "The `.gitignore` file tells Git what files to ignore."
 ---
 # Ignoring Things
 
@@ -240,5 +238,10 @@ You want to keep them but you do not want to track them through `git`.
 3. track `log_01` using   `git add -f log_01`
 
 {% endchallenge %}
+
+
+{% keypoints "Key Points" %}
+- "The `.gitignore` file tells Git what files to ignore."
+{% endkeypoints %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
