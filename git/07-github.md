@@ -192,7 +192,7 @@ Pulling has no effect in this case because the two repositories are already
 synchronized.  If someone else had pushed some changes to the repository on
 GitHub, though, this command would download them to our local repository.
 
-> ## GitHub GUI
+{% challenge "GitHub GUI" %}
 >
 > Browse to your `planets` repository on GitHub.
 > Under the Code tab, find and click on the text that says "XX commits" (where "XX" is some number).
@@ -207,9 +207,9 @@ GitHub, though, this command would download them to our local repository.
 > >
 > > The right-most button lets you view all of the files in the repository at the time of that commit. To do this in the shell, we'd need to checkout the repository at that particular time. We can do this with ```git checkout ID``` where ID is the identifier of the commit we want to look at. If we do this, we need to remember to put the repository back to the right state afterwards!
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
-> ## GitHub Timestamp
+{% challenge "GitHub Timestamp" %}
 >
 > Create a remote repository on GitHub.  Push the contents of your local
 > repository to the remote.  Make changes to your local repository and push
@@ -220,7 +220,7 @@ GitHub, though, this command would download them to our local repository.
 > > ## Solution
 > > Github displays timestamps in a human readable relative format (i.e. "22 hours ago" or "three weeks ago"). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
 > ## Push vs. Commit
 >
@@ -232,7 +232,7 @@ GitHub, though, this command would download them to our local repository.
 > {: .solution}
 {: .challenge}
 
-> ## Fixing Remote Settings
+{% challenge "Fixing Remote Settings" %}
 >
 > It happens quite often in practice that you made a typo in the
 > remote URL. This exercice is about how to fix this kind of issues.
@@ -251,9 +251,9 @@ GitHub, though, this command would download them to our local repository.
 > > ## Solution
 > > We don't see any error message when we add the remote (adding the remote tells git about it, but doesn't try to use it yet). As soon as we try to use ```git push``` we'll see an error message. The command ```git remote set-url``` allows us to change the remote's URL to fix it.
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
-> ## GitHub License and README files
+{% challenge "GitHub License and README files" %}
 >
 > In this section we learned about creating a remote repository on GitHub, but when you initialized your
 > GitHub repo, you didn't add a README.md or a license file. If you had, what do you think would have happened when
@@ -262,6 +262,6 @@ GitHub, though, this command would download them to our local repository.
 > > ## Solution
 > > In this case, since we already had a README file in our own (local) repository, we'd see a merge conflict (when git realises that there are two versions of the file and asks us to reconcile the differences).
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

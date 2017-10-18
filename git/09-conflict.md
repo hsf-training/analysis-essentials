@@ -299,7 +299,7 @@ Conflicts can also be minimized with project management strategies:
   project convention that is governing and use code style tools (e.g.
   `htmltidy`, `perltidy`, `rubocop`, etc.) to enforce, if necessary
 
-> ## Solving Conflicts that You Create
+{% challenge "Solving Conflicts that You Create" %}
 >
 > Clone the repository created by your instructor.
 > Add a new file to it,
@@ -307,7 +307,7 @@ Conflicts can also be minimized with project management strategies:
 > When asked by your instructor,
 > pull her changes from the repository to create a conflict,
 > then resolve it.
-{: .challenge}
+{% endchallenge %}
 
 > ## Conflicts on Non-textual files
 >
@@ -478,7 +478,7 @@ Conflicts can also be minimized with project management strategies:
 > {: .solution}
 {: .challenge}
 
-> ## A Typical Work Session
+{% challenge "A Typical Work Session" %}
 >
 > You sit down at your computer to work on a shared project that is tracked in a
 > remote Git repository. During your work session, you take the following
@@ -518,6 +518,6 @@ Conflicts can also be minimized with project management strategies:
 > > |6    | Celebrate!        | `AFK`                                        |
 > >
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

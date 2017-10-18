@@ -313,7 +313,7 @@ If the introduction and conclusion are stored in separate files,
 on the other hand,
 moving backward and forward in time becomes much easier.
 
-> ## Recovering Older Versions of a File
+{% challenge "Recovering Older Versions of a File" %}
 >
 > Jennifer has made changes to the Python script that she has been working on for weeks, and the
 > modifications she made this morning "broke" the script and it no longer runs. She has spent
@@ -332,9 +332,9 @@ moving backward and forward in time becomes much easier.
 > 4. `$ git checkout <unique ID of last commit> data_cruncher.py`
 >
 > 5. Both 2 and 4
-{: .challenge}
+{% endchallenge %}
 
-> ## Reverting a Commit
+{% challenge "Reverting a Commit" %}
 >
 > Jennifer is collaborating on her Python script with her colleagues and
 > realizes her last commit to the group repository is wrong and wants to
@@ -355,9 +355,9 @@ moving backward and forward in time becomes much easier.
 > 4. Type in the new commit message.
 >
 > 5. Save and close
-{: .challenge}
+{% endchallenge %}
 
-> ## Understanding Workflow and History
+{% challenge "Understanding Workflow and History" %}
 >
 > What is the output of cat venus.txt at the end of this set of commands?
 >
@@ -446,7 +446,7 @@ moving backward and forward in time becomes much easier.
 > > If we print venus.txt we will get answer 2.
 > >
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
 > ## Checking Understanding of `git diff`
 >
@@ -458,15 +458,15 @@ moving backward and forward in time becomes much easier.
 > and what does happen?
 {: .challenge}
 
-> ## Getting Rid of Staged Changes
+{% challenge "Getting Rid of Staged Changes" %}
 >
 > `git checkout` can be used to restore a previous commit when unstaged changes have
 > been made, but will it also work for changes that have been staged but not committed?
 > Make a change to `mars.txt`, add that change, and use `git checkout` to see if
 > you can remove your change.
-{: .challenge}
+{% endchallenge %}
 
-> ## Explore and Summarize Histories
+{% challenge "Explore and Summarize Histories" %}
 >
 > Exploring history is an important part of git, often it is a challenge to find
 > the right commit ID, especially if the commit is from several months ago.
@@ -500,6 +500,6 @@ moving backward and forward in time becomes much easier.
 > ```bash
 > $ git log --patch HEAD~3 *.txt
 > ```
-{: .challenge}
+{% endchallenge %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

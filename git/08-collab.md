@@ -136,12 +136,12 @@ GitHub) are back in sync.
 > read and review.
 {% endcallout %}
 
-> ## Switch Roles and Repeat
+{% challenge "Switch Roles and Repeat" %}
 >
 > Switch roles and repeat the whole process.
-{: .challenge}
+{% endchallenge %}
 
-> ## Review Changes
+{% challenge "Review Changes" %}
 >
 > The Owner push commits to the repository without giving any information
 > to the Collaborator. How can the Collaborator find out what has changed with
@@ -162,9 +162,9 @@ GitHub) are back in sync.
 > > change the head fork to the main repository. This will show all the commits
 > > that are different.
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
-> ## Comment Changes in GitHub
+{% challenge "Comment Changes in GitHub" %}
 >
 > The Collaborator has some questions about one line change made by the Owner and
 > has some suggestions to propose.
@@ -173,7 +173,7 @@ GitHub) are back in sync.
 > code to comment, a blue comment icon appears to open a comment window.
 >
 > The Collaborator posts its comments and suggestions using GitHub interface.
-{: .challenge}
+{% endchallenge %}
 
 > ## Version History, Backup, and Version Control
 >

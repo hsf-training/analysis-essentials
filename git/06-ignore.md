@@ -134,7 +134,7 @@ nothing to commit, working directory clean
 ~~~
 {: .output}
 
-> ## Ignoring Nested Files
+{% challenge "Ignoring Nested Files" %}
 >
 > Given a directory structure that looks like:
 >
@@ -164,9 +164,9 @@ nothing to commit, working directory clean
 > > multiple directory levels. E.g. `**/results/plots/*` would make git ignore
 > > the `results/plots` directory in any root directory.
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
-> ## Including Specific Files
+{% challenge "Including Specific Files" %}
 >
 > How would you ignore all `.data` files in your root directory except for
 > `final.data`?
@@ -184,9 +184,9 @@ nothing to commit, working directory clean
 > >
 > > The exclamation point operator will include a previously excluded entry.
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
-> ## Ignoring all data Files in a Directory
+{% challenge "Ignoring all data Files in a Directory" %}
 >
 > Given a directory structure that looks like:
 >
@@ -206,9 +206,9 @@ nothing to commit, working directory clean
 > > Appending `results/data/position/gps/*.data` will match every file in `results/data/position/gps` that ends with `.data`.
 > > The file `results/data/position/gps/info.txt` will not be ignored.
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
-> ## The Order of Rules
+{% challenge "The Order of Rules" %}
 >
 > Given a `.gitignore` file with the following contents:
 >
@@ -226,9 +226,9 @@ nothing to commit, working directory clean
 > > none of them will be ignored, and all `.data` files will be tracked.
 > >
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
-> ## Log Files
+{% challenge "Log Files" %}
 >
 > You wrote a script that creates many intermediate log-files of the form `log_01`, `log_02`, `log_03`, etc.
 > You want to keep them but you do not want to track them through `git`.
@@ -246,6 +246,6 @@ nothing to commit, working directory clean
 > > 1. append either `log_*`  or  `log*`  as a new entry in your .gitignore
 > > 3. track `log_01` using   `git add -f log_01`
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

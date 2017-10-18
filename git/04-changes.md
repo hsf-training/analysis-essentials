@@ -573,7 +573,7 @@ repository (`git commit`):
 
 ![The Git Commit Workflow](fig/git-committing.svg)
 
-> ## Choosing a Commit Message
+{% challenge "Choosing a Commit Message" %}
 >
 > Which of the following commit messages would be most appropriate for the
 > last commit made to `mars.txt`?
@@ -587,9 +587,9 @@ repository (`git commit`):
 > > and answer 2 is too descriptive and redundant,
 > > but answer 3 is good: short but descriptive.
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
-> ## Committing Changes to Git
+{% challenge "Committing Changes to Git" %}
 >
 > Which command(s) below would save the changes of `myfile.txt`
 > to my local Git repository?
@@ -611,9 +611,9 @@ repository (`git commit`):
 > > 3. Is correct: first add the file to the staging area, then commit.
 > > 4. Would try to commit a file "my recent changes" with the message myfile.txt.
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
-> ## Committing Multiple Files
+{% challenge "Committing Multiple Files" %}
 >
 > The staging area can hold changes from any number of files
 > that you want to commit as a single snapshot.
@@ -671,9 +671,9 @@ repository (`git commit`):
 > > ~~~
 > > {: .output}
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
-> ## Author and Committer
+{% challenge "Author and Committer" %}
 >
 > For each of the commits you have done, Git stored your name twice.
 > You are named as the author and as the committer. You can observe
@@ -722,7 +722,7 @@ repository (`git commit`):
 > > ~~~
 > > {: .output}
 > {: .solution}
-{: .challenge}
+{% endchallenge %}
 
 [commit-messages]: http://chris.beams.io/posts/git-commit/
 
