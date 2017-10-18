@@ -12,8 +12,8 @@ questions:
 
 > The opposite of "open" isn't "closed".
 > The opposite of "open" is "broken".
->
-> --- John Wilbanks
+
+{% right %} John Wilbanks {% endright %}
 
 Free sharing of information might be the ideal in science,
 but the reality is often more complicated.
