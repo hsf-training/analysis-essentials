@@ -257,3 +257,5 @@ nothing to commit, working directory clean
 > > 3. track `log_01` using   `git add -f log_01`
 > {: .solution}
 {: .challenge}
+
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

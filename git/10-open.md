@@ -131,3 +131,5 @@ by acting as a shareable electronic lab notebook for computational work:
 > repository creating the DOI). Read through this page while being aware
 > that this is only one of many ways to making your code citable.
 {: .challenge}
+
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

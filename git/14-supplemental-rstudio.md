@@ -101,3 +101,5 @@ There are many more features buried in the RStudio git interface, but these
 should be enough to get you started!
 
 [rstudio-projects]: https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
+
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

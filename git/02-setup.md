@@ -145,3 +145,5 @@ same commands to choose another editor or update your email address.
 {: .callout}
 
 [git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
+
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

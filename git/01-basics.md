@@ -75,3 +75,5 @@ across different computers facilitating collaboration among different people.
 >     If you use LibreOffice Writer or Microsoft Word, what happens if you accept changes made using the
 >     `Track Changes` option? Do you have a history of those changes?
 {: .challenge}
+
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

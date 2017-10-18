@@ -80,3 +80,5 @@ open source projects, and are also available for private repositories for a fee.
 > use to share your papers, data and software? How do institutional repositories
 > differ from services like [arXiV](http://arxiv.org/), [figshare](http://figshare.com/) and [GitHub](http://github.com/)?
 {: .challenge}
+
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
