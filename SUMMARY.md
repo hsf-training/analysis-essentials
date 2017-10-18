@@ -36,5 +36,5 @@
    * [Licensing](git/11-licensing.md)
    * [Citation](git/12-citation.md)
    * [Hosting](git/13-hosting.md)
-   * [Using Git from RStudio](git/14-supplemental-rstudio.md)
+   <!-- * [Using Git from RStudio](git/14-supplemental-rstudio.md) -->
    * [CERN Gitlab](git/gitlab.md)
