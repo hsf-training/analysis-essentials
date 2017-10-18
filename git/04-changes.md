@@ -564,7 +564,7 @@ last commit made to `mars.txt`?
 Answer 1 is not descriptive enough,
 and answer 2 is too descriptive and redundant,
 but answer 3 is good: short but descriptive.
-{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Committing Changes to Git" %}
@@ -588,7 +588,7 @@ to my local Git repository?
 2. Would try to create a new repository.
 3. Is correct: first add the file to the staging area, then commit.
 4. Would try to commit a file "my recent changes" with the message myfile.txt.
-{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Committing Multiple Files" %}
@@ -640,7 +640,7 @@ $ git commit -m "Write plans to start a base on Venus"
  2 files changed, 2 insertions(+)
  create mode 100644 venus.txt
 ```
-{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Author and Committer" %}
@@ -689,7 +689,7 @@ Commit: Vlad Dracula <vlad@tran.sylvan.ia>
 
 Vlad's initial bio.
 ```
-{% endsolution %}
+
 {% endchallenge %}
 
 [commit-messages]: http://chris.beams.io/posts/git-commit/

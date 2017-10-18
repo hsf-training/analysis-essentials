@@ -157,7 +157,7 @@ The next challenge will cover this type of solution.
 Sometimes the `**` pattern comes in handy, too, which matches
 multiple directory levels. E.g. `**/results/plots/*` would make git ignore
 the `results/plots` directory in any root directory.
-{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Including Specific Files" %}
@@ -176,7 +176,7 @@ You would add the following two lines to your .gitignore:
 ```
 
 The exclamation point operator will include a previously excluded entry.
-{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Ignoring all data Files in a Directory" %}
@@ -198,7 +198,7 @@ files in `result/data/position/gps`? Do not ignore the `info.txt`.
 
 Appending `results/data/position/gps/*.data` will match every file in `results/data/position/gps` that ends with `.data`.
 The file `results/data/position/gps/info.txt` will not be ignored.
-{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "The Order of Rules" %}
@@ -218,7 +218,7 @@ The `!` modifier will negate an entry from a previously defined ignore pattern.
 Because the `!*.data` entry negates all of the previous `.data` files in the `.gitignore`,
 none of them will be ignored, and all `.data` files will be tracked.
 
-{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Log Files" %}
@@ -238,7 +238,7 @@ You want to keep them but you do not want to track them through `git`.
 
 1. append either `log_*`  or  `log*`  as a new entry in your .gitignore
 3. track `log_01` using   `git add -f log_01`
-{% endsolution %}
+
 {% endchallenge %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

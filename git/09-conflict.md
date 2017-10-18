@@ -445,7 +445,7 @@ $ git commit -m "Use two images: surface and sky"
 
 Now both images of Mars are checked into the repository, and `mars.jpg`
 no longer exists.
-{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "A Typical Work Session" %}
@@ -487,7 +487,7 @@ started.
 |5    | Update remote     | `git push origin master`                     |
 |6    | Celebrate!        | `AFK`                                        |
 
-{% endsolution %}
+
 {% endchallenge %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

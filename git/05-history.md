@@ -423,7 +423,7 @@ $ cat venus.txt #this will print the contents of venus.txt to the screen
 ```
 If we print venus.txt we will get answer 2.
 
-{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Checking Understanding of `git diff`" %}

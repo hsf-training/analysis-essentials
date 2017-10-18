@@ -157,7 +157,7 @@ Collaborator should change the base fork to their own repository, then click
 the link in the paragraph above to "compare across forks", and finally
 change the head fork to the main repository. This will show all the commits
 that are different.
-{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Comment Changes in GitHub" %}

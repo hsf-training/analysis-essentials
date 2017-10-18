@@ -203,7 +203,7 @@ The left-most button (with the picture of a clipboard) copies the full identifie
 When you click on the middle button, you'll see all of the changes that were made in that particular commit. Green shaded lines indicate additions and red ones removals. In the shell we can do the same thing with ```git diff```. In particular, ```git diff ID1..ID2``` where ID1 and ID2 are commit identifiers (e.g. ```git diff a3bf1e5..041e637```) will show the differences between those two commits.
 
 The right-most button lets you view all of the files in the repository at the time of that commit. To do this in the shell, we'd need to checkout the repository at that particular time. We can do this with ```git checkout ID``` where ID is the identifier of the commit we want to look at. If we do this, we need to remember to put the repository back to the right state afterwards!
-{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "GitHub Timestamp" %}
@@ -216,7 +216,7 @@ times, and why?
 
 {% solution "Solution" %}
 Github displays timestamps in a human readable relative format (i.e. "22 hours ago" or "three weeks ago"). However, if you hover over the timestamp, you can see the exact time at which the last change to the file occurred.
-{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Push vs. Commit" %}
@@ -226,7 +226,7 @@ How is "git push" different from "git commit"?
 
 {% solution "Solution" %}
 When we push changes, we're interacting with a remote repository to update it with the changes we've made locally (often this corresponds to sharing the changes we've made with others). Commit only updates your local repository.
-{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Fixing Remote Settings" %}
@@ -247,7 +247,7 @@ done with this exercise.
 
 {% solution "Solution" %}
 We don't see any error message when we add the remote (adding the remote tells git about it, but doesn't try to use it yet). As soon as we try to use ```git push``` we'll see an error message. The command ```git remote set-url``` allows us to change the remote's URL to fix it.
-{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "GitHub License and README files" %}
@@ -258,7 +258,7 @@ you tried to link your local and remote repositories?
 
 {% solution "Solution" %}
 In this case, since we already had a README file in our own (local) repository, we'd see a merge conflict (when git realises that there are two versions of the file and asks us to reconcile the differences).
-{% endsolution %}
+
 {% endchallenge %}
 
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
