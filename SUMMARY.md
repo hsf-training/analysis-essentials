@@ -36,4 +36,4 @@
    * [Open Science](git/11-open.md)
    * [Licensing](git/12-licensing.md)
    * [Citation](git/13-citation.md)
-   * [Hosting](git/14-hosting.md)
+   <!-- * [Hosting](git/14-hosting.md) -->
