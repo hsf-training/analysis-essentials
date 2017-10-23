@@ -11,6 +11,19 @@ questions:
 - Push to or pull from a remote repository.
 {% endobjectives %}
 
+{% prereq "Prerequisites" %}
+- A SSH Key added to your CERN GitLab account, see [here](https://docs.gitlab.com/ce/ssh/README.html)
+  for instructions.
+- You can test if this is working by runnning `ssh git@gitlab.cern.ch -p 7999`.
+  Everything is working correctly if the output of the command is something
+  similar to:
+
+```
+Welcome to GitLab, Your Name!
+Connection to gitlab.cern.ch closed.
+```
+{% endprereq %}
+
 Version control really comes into its own when we begin to collaborate with
 other people.  We already have most of the machinery we need to do this; the
 only thing missing is to copy changes from one repository to another.
