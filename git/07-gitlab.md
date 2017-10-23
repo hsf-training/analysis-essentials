@@ -69,13 +69,13 @@ remote repository on CERN GitLab doesn't contain any files yet:
 ![Freshly-Made CERN GitLab Repository](fig/git-freshly-made-gitlab-repo.png)
 
 The next step is to connect the two repositories.  We do this by making the
-GitLab repository a [remote]({{ page.root }}/reference/#remote) for the local repository.
+GitLab repository a remote for the local repository.
 The home page of the repository on GitLab includes the string we need to
 identify it:
 
 ![Where to Find Repository URL on CERN GitLab](fig/gitlab-find-repo-string.png)
 
-Click on the 'SSH' link to change the [protocol]({{ page.root }}/reference/#protocol) from
+Click on the 'SSH' link to change the protocol from
 KRB5 to SSH and then copy that URL from the browser, go into the local `planets`
 repository, and run this command:
 
@@ -172,7 +172,7 @@ need to remember to put the repository back to the right state afterwards!
 Create a remote repository on GitLab.  Push the contents of your local
 repository to the remote.  Make changes to your local repository and push
 these changes.  Go to the repo you just created on GitLab and check the
-[timestamps]({{ page.root }}/reference/#timestamp) of the files.  How does
+timestamps of the files.  How does
 GitLab record times, and why?
 
 {% solution "Solution" %}
