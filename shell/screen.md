@@ -1,11 +1,11 @@
 ## Using screen to keep things running
-
-### Learning Objectives {.objectives}
-> * Create a new `screen` session
-> * Disconnect from a `screen` session
-> * Reconnect to an existing `screen` session
-> * End an existing `screen` session
-> * Handling of Kerberos tokens
+{% objectives "Learning Objectives" %}
+* Create a new `screen` session
+* Disconnect from a `screen` session
+* Reconnect to an existing `screen` session
+* End an existing `screen` session
+* Handling of Kerberos tokens
+{% endobjectives %}
 
 Often we want to run a program for a long time on a computer we
 connected to via `ssh`, like the `lxplus` machines. The `screen`
@@ -115,8 +115,13 @@ $ kinit
 ```
 
 {% callout "tmux" %}
-`tmux` is another program you can use to keep things running remotely. In practice, it is very similar to screen, but it has some minor differences some people prefer (such as a friendly green bar to remind you that you're in a tmux session). You can find sytax guides easily online, including guides showing the equivalent commands in tmux and screen, but here's a quick list of equivalent commands to those used in this lesson:
+`tmux` is another program you can use to keep things running remotely. 
+In practice, it is very similar to screen, but it has some minor 
+differences. You can find syntax guides easily online, including guides 
+showing the equivalent commands in tmux and screen, but here's a quick 
+list of equivalent commands to those used in this lesson:
 * `tmux ls` instead of `screen -list`
-* `Ctrl-b d` to detach instead of `Ctrl-a d` (`tmux` in general uses `Ctrl-b` instead of `Ctrl-a`)
+* `Ctrl-b d` to detach instead of `Ctrl-a d` (`tmux` in general uses 
+  `Ctrl-b` instead of `Ctrl-a`)
 * `tmux a` or `tmux attach` instead of `screen -rD`
 {% endcallout %}
