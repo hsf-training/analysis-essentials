@@ -1,24 +1,14 @@
 # Python basics
 
-## Interactive interpreter, python, ipython
-* Introduction to the REPLs
-  * **R**ead **E**val **P**rint **L**oop, just like `bash`
-  * Start by using `python`
-  * Type in Python code, it's evaluated, and the result, if any, is printed back
-  * A few very simple commands, like `print 'Hello, World!'` and `1 + 3`
-  * There's an alternative shell called IPython
-* IPython
-  * Autocomplete (show with `import math`, then `math.s<tab>`)
-  * Persistent history across sessions (quit `python` and show that you can't
-    use the up arrow, unlike in Bash, whereas in IPython you can).
-  * Shell commands (`!ls`)
-  * Get help with `help(math)`, `math.sin?`
-  * Show all available things with `dir(math)`
+In these lessons, we’ll walk through the fundamentals of the Python programming 
+langauge. These includes its syntax (how you express your problem in terms of 
+code), and its data structures (what containers are available for you to store 
+your values in).
 
-## A few words about python 3
-  * We will use python 2.7 because available on lxplus and still used for the vast majority of LHCb code
-  * python 3 very similar to python 2.7 but not totally compatible (will give a few examples later on)
-  * Many aspects of python 3 can be used also in python 2.7 with `from __future__ import <thing_to_import>` but not all
+
+## Strings
+
+Strings are
 
 ## Core types/objects
 
@@ -342,3 +332,6 @@ Other useful types like, for example, ordered dictionaries can be found in the m
   probably going down the wrong road, a programmer benefits immensely from
   having a good intuition, which comes from experience writing _and reading_
   code
+
+[anaconda]: https://www.anaconda.com/download/
+[ipython]: https://ipython.org/

@@ -1,6 +1,12 @@
 # LHCb analysis essentials
 
  * [Python](python/introduction.md)
+   * [Running](python/running.md)
+   * [Objects and operators](python/operators.md)
+   * [Numbers](python/numbers.md)
+   * [Strings](python/strings.md)
+   * [Lists and looping](python/lists.md)
+   * [Dictionaries](python/dictionaries.md)
    * [Basics](python/basics.md)
    * [Scientific programming](python/scientific_programming.md)
    * [Further reading](python/further_reading.md)
