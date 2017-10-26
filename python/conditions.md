@@ -30,6 +30,15 @@ evaluated. If this also isn’t met, the `else` block is run. You can use as man
 `elif` conditions as you like, or none at all, and the `else` block is 
 optional.
 
+You can do `if` statements in a single line, but make sure your line doesn’t 
+get too long, otherwise things get hard to read.
+
+```python
+>>> x = 'ok' if pizzas[0] == 'Cheese' else 'not ok'
+>>> x
+'not ok'
+```
+
 Python evaluates a condition and sees whether it truth-like or not. If it is 
 truth like, the code in the block is run.
 

@@ -43,6 +43,29 @@ the single quotes in our string. This is useful because we can copy-paste the
 string into some Python code to use it somewhere else, without having to worry 
 about escaping things.
 
+We can create multi-line strings by using three quotation marks. 
+Conventionally, double quotations are usually used for these.
+
+```python
+>>> long_fact = """This is a long string.
+...
+... Quite long indeed.
+... """
+>>> print long_fact
+This is a long string.
+
+Quite long indeed.
+
+>>>
+```
+
+Creating strings like this is useful when you want to include line breaks in 
+your string. You can also use `\n` in strings to insert line breaks.
+
+```python
+>>> 'This is a long string\n\nQuite long indeed.\n'
+```
+
 We can convert things to strings by using the `str` method, which can also 
 create an _empty_ string for us.
 
