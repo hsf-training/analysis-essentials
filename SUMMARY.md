@@ -8,6 +8,7 @@
    * [Lists and looping](python/lists.md)
    * [Dictionaries](python/dictionaries.md)
    * [Conditions](python/conditions.md)
+   * [Methods](python/methods.md)
    * [Basics](python/basics.md)
    * [Scientific programming](python/scientific_programming.md)
    * [Further reading](python/further_reading.md)
