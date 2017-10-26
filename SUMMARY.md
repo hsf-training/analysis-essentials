@@ -7,6 +7,7 @@
    * [Strings](python/strings.md)
    * [Lists and looping](python/lists.md)
    * [Dictionaries](python/dictionaries.md)
+   * [Conditions](python/conditions.md)
    * [Basics](python/basics.md)
    * [Scientific programming](python/scientific_programming.md)
    * [Further reading](python/further_reading.md)
