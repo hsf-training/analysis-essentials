@@ -9,7 +9,7 @@ install:
   - pip install --user ghp-import
 node_js: '4.1'
 script:
-  - make _book 
+  - make
   - make test
 after_success:
   - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && make publish-travis > /dev/null 2>&1 || true'
