@@ -9,6 +9,8 @@
    * [Dictionaries](python/dictionaries.md)
    * [Conditions](python/conditions.md)
    * [Methods](python/methods.md)
+   * [Scripting](python/scripting.md)
+   * [Learning more](python/learning.md)
    * [Basics](python/basics.md)
    * [Scientific programming](python/scientific_programming.md)
    * [Further reading](python/further_reading.md)
