@@ -33,7 +33,7 @@ in these lessons. In general, and out in the real world, Python 3 is preferred
 as it receives the most focus from the people who make Python. If you’re 
 starting a new project, and don’t have to use LHCb software, consider trying to 
 use Python 3. You can install both Python 2 and Python 3 using 
-[Anaconda][anaconda].
+[Anaconda](https://www.anaconda.com/download/).
 {% endcallout %}
 
 Python is a very user-friendly language. If you’re used to having to compile 
@@ -157,3 +157,6 @@ In [11]: dir(math)
  ...
  'trunc']
 ```
+
+[anaconda]: https://www.anaconda.com/download/
+[ipython]: https://ipython.org/

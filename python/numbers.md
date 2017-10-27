@@ -40,7 +40,7 @@ ask to have this behaviour in Python 2.
 ```
 
 Because the default behaviour in Python 2 is quite unintuitive, we recommend 
-using the `import division` line everywhere. We’ll come to what exactly this 
+using the `from __future__ import division` line everywhere. We’ll come to what exactly this 
 line is doing shortly.
 
 If you _do_ want a rounding division, you then can ask for it explicitly with 
