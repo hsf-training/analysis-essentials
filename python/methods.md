@@ -119,8 +119,9 @@ have to remember the order in which the arguments were defined, you can specify
 _keyword arguments_ in any order. You can even mix _positional arguments_ with 
 keyword arguments, but any keyword arguments must come last.
 
-Using keyword arguments is particularly useful for arguments with act as flags, 
-because it’s often not obvious what your `True` or `False` is doing.
+Using keyword arguments is particularly useful for arguments which act as 
+on/off flags, because it’s often not obvious what your `True` or `False` is 
+doing.
 
 ```python
 >>> def add(x, y, show):
@@ -201,4 +202,203 @@ So when we call _this_ method, we’ll get back what we put in, but plus 3.
 ```
 {% endchallenge %}
 
-TODO: Lambdas, `*args`, `**kwargs`.
+What if you like to accept an arbitrary number of arguments? For example, we 
+can also write a `total` method that takes two arguments.
+
+```python
+>>> def total(x, y):
+...     """Return the sum of the arguments."""
+...     return x + y
+...
+>>>
+```
+
+But what if we want to allow the caller to pass more than two arguments? It 
+would be tedious to define many arguments explicitly.
+
+```python
+>>> def total(*args):
+...     """Return the sum of the arguments."""
+...     # For seeing what `*` does
+...     print 'Got {0} arguments: {1}'.format(len(args), args)
+...     return sum(args)
+...
+>>> total(1)
+Got 1 arguments: (1,)
+1
+>>> total(1, 2)
+Got 2 arguments: (1, 2)
+3
+>>> total(1, 2, 3)
+Got 3 arguments: (1, 2, 3)
+6
+```
+
+The `*args` syntax says “stuff any arguments into a tuple and call it `args`”.  
+This let’s us capture any number of arguments. As `args` is a tuple, when could 
+loop over it, access a specific element, and so on.
+
+We can also _expand_ lists into separate arguments in with the same syntax when 
+_calling_ a method.
+
+```python
+>>> def reverse_args(x, y):
+...     return y, x
+...
+>>> l = [1, 2]
+>>> reverse_args(l)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: reverse_args() takes exactly 2 arguments (1 given)
+>>> reverse_args(*l)
+('b', 'a')
+```
+
+A similar syntax exists for keyword arguments.
+
+```python
+>>> def ages(**people):
+...     """Print people's information."""
+...     # For seeing what `**` does
+...     print 'Got {0} arguments: {1}'.format(len(people), people)
+...     for person in people:
+...         print 'Person {0} is {1}'.format(person, people[person])
+...
+>>> ages(steve=31)
+Got 1 arguments: {'steve': 31}
+Person steve is 31
+>>> ages(steve=31, helen=70, zorblax=9963)
+Got 3 arguments: {'steve': 31, 'zorblax': 9963, 'helen': 70}
+Person steve is 31
+Person zorblax is 9963
+Person helen is 70
+```
+
+As you can see from the debug print statement, `**people` is a dictionary 
+containing the keyword arguments we passed to the `ages` method. The keys of 
+the dictionary are the names of the argument as strings, and the values are the 
+values of the arguments. Just like for the `*` syntax, `**` can also be used to 
+expand a dictionary into keyword arguments.
+
+```python
+>>> d = {'thor': 5000, 'yoda': -1}
+>>> ages(**d)
+Got 2 arguments: {'yoda': -1, 'thor': 5000}
+Person yoda is -1
+Person thor is 5000
+```
+
+It’s worth remembering thing because dictionaries are unordered, and the `**` 
+syntax effectively creates a dictionary, the order of the keyword arguments 
+used to call the method are not necessarily the same as those that the function 
+block sees!
+
+{% challenge "The most generic method" %}
+The most generic method would take any number of positional arguments _and_ any 
+number of keyword arguments. What would this method look like?
+
+{% solution "Solution" %}
+It would use both `*` and `**` syntax in defining the arguments.
+```python
+>>> def generic(*args, **kwargs):
+...     print 'Got args: {0}'.format(args)
+...     print 'Got kwargs: {0}'.format(kwargs)
+...
+>>> d = {'bing': 'baz'}
+>>> generic(1, 2, 'abc', foo='bar', **d)
+Got args: (1, 2, 'abc')
+Got kwargs: {'bing': 'baz', 'foo': 'bar'}
+```
+{% endchallenge %}
+
+## Inline methods
+
+Some methods take other methods as arguments, like the built-in `map` method.
+
+```python
+>>> map(str, range(5))
+['0', '1', '2', '3', '4']
+```
+
+`map` takes a function and a list, and applies the function to each element in 
+the list. It returns a new list with the results. We can define and then pass 
+our own functions.
+
+```python
+>>> def cube(x):
+...     """Return the third power of x."""
+...     return x*x*x
+...
+>>> map(cube, range(5))
+[0, 1, 8, 27, 64]
+```
+
+For such a simple method, this is a lot of typing! We can use `lambda` to 
+define such simple methods inline.
+
+```python
+>>> map(lambda x: x*x*x, range(5))
+[0, 1, 8, 27, 64]
+```
+
+The syntax of defining a `lambda` is like this:
+
+```
+lambda <args>: <return expression>
+```
+
+`<args>` is a command-separate set of variables that the `lambda` can take as 
+arguments, and `<return expression>` is the code that is run. A `lambda` 
+automatically returns whatever the result of the expression is, you don’t need 
+a `return` (the `return` is _implicit_).
+
+Writing a `lambda` statement defines a method, which you can capture as a 
+variable just like any other object.
+
+```python
+>>> div2 = lambda x: x/2
+>>> div2
+<function <lambda> at 0x7fc6b2207758>
+>>> map(div2, range(5))
+[0.0, 0.5, 1.0, 1.5, 2.0]
+```
+
+{% challenge "Sum in quadture" %}
+Write a method that accepts an arbitrary number of arguments, and returns the 
+sum of the arguments computed in quadrature. A “sum in quadrature” is the 
+square root of the sum of the squares of each number. You should use `lambda` 
+to define a squaring and a square root function, and `map` to apply the 
+squaring method.
+
+{% solution "Solution" %}
+We need a little square root method and a method to square its input.
+```python
+>>> square = lambda x: x*x
+>>> sqrt = lambda x: x**0.5
+```
+We then define a method that can accept any number of arguments using the 
+`*args` syntax, and use `map` to call the `square` method on the list of 
+arguments. Then we can call `sum` on the result, and then `sqrt`.
+```python
+>>> def quadrature(*args):
+...     """Return the sum in quadrature of the arguments."""
+...     return sqrt(sum(map(square, args)))
+...
+>>> quadrature(1, 1) # should be equal to sqrt(2)
+1.4142135623730951
+>>> 2**0.5
+1.4142135623730951
+```
+{% endchallenge %}
+
+Another use case for `lambda` is the built-in `filter` method (see: 
+`help(filter)`).
+
+```python
+>>> filter(lambda x: x % 2 == 0, range(10))
+[0, 2, 4, 6, 8]
+```
+
+Generally, you should only use `lambda` methods to define little throw-away 
+methods. The main downside with using them is that you can’t attach a docstring 
+to them, and they become unwieldy when there’s complex logic.
