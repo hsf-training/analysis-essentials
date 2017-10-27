@@ -26,6 +26,8 @@ let's make a change to `mars.txt`.
 ```bash
 $ nano mars.txt
 $ cat mars.txt
+```
+```
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
@@ -36,6 +38,8 @@ Now, let's see what we get.
 
 ```bash
 $ git diff HEAD mars.txt
+```
+```diff
 diff --git a/mars.txt b/mars.txt
 index b36abfd..0848c8d 100644
 --- a/mars.txt
@@ -61,6 +65,8 @@ again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to them:
 
 ```bash
 $ git diff HEAD~2 mars.txt
+```
+```diff
 diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
 --- a/mars.txt
@@ -75,6 +81,8 @@ We could also use `git show` which shows us what changes we made at an older com
 
 ```bash
 $ git show HEAD~2 mars.txt
+```
+```diff
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:07:21 2013 -0400
@@ -111,6 +119,8 @@ so let's try this:
 
 ```bash
 $ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
+```
+```diff
 diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
 --- a/mars.txt
@@ -127,6 +137,8 @@ so Git lets us use just the first few characters:
 
 ```bash
 $ git diff f22b25e mars.txt
+```
+```diff
 diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
 --- a/mars.txt
@@ -145,6 +157,8 @@ Let's suppose we accidentally overwrite our file:
 ```bash
 $ nano mars.txt
 $ cat mars.txt
+```
+```
 We will need to manufacture our own oxygen
 ```
 
@@ -153,6 +167,8 @@ but those changes haven't been staged:
 
 ```bash
 $ git status
+```
+```
 On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -169,6 +185,8 @@ by using `git checkout`:
 ```bash
 $ git checkout HEAD mars.txt
 $ cat mars.txt
+```
+```
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
@@ -188,11 +206,15 @@ $ git checkout f22b25e mars.txt
 
 ```bash
 $ cat mars.txt
+```
+```
 Cold and dry, but everything is my favorite color
 ```
 
 ```bash
 $ git status
+```
+```
 # On branch master
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)

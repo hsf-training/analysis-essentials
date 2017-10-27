@@ -25,6 +25,8 @@ and see what Git says:
 
 ```bash
 $ git status
+```
+```
 On branch master
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
@@ -46,6 +48,8 @@ We do this by creating a file in the root directory of our project called `.giti
 ```bash
 $ nano .gitignore
 $ cat .gitignore
+```
+```
 *.dat
 results/
 ```
@@ -60,6 +64,8 @@ the output of `git status` is much cleaner:
 
 ```bash
 $ git status
+```
+```
 On branch master
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
@@ -78,14 +84,19 @@ Let's add and commit `.gitignore`:
 $ git add .gitignore
 $ git commit -m "Add the ignore file"
 $ git status
+```
+```
 # On branch master
 nothing to commit, working directory clean
 ```
 
-As a bonus, using `.gitignore` helps us avoid accidentally adding to the repository files that we don't want to track:
+As a bonus, using `.gitignore` helps us avoid accidentally adding to the
+repository files that we don't want to track:
 
 ```bash
 $ git add a.dat
+```
+```
 The following paths are ignored by one of your .gitignore files:
 a.dat
 Use -f if you really want to add them.
@@ -98,6 +109,8 @@ We can also always see the status of ignored files if we want:
 
 ```bash
 $ git status --ignored
+```
+```
 On branch master
 Ignored files:
  (use "git add -f <file>..." to include in what will be committed)
@@ -178,8 +191,9 @@ files in `result/data/position/gps`? Do not ignore the `info.txt`.
 
 {% solution "Solution" %}
 
-Appending `results/data/position/gps/*.data` will match every file in `results/data/position/gps` that ends with `.data`.
-The file `results/data/position/gps/info.txt` will not be ignored.
+Appending `results/data/position/gps/*.data` will match every file in
+`results/data/position/gps` that ends with `.data`.  The file
+`results/data/position/gps/info.txt` will not be ignored.
 
 {% endchallenge %}
 
@@ -197,8 +211,9 @@ What will be the result?
 {% solution "Solution" %}
 
 The `!` modifier will negate an entry from a previously defined ignore pattern.
-Because the `!*.data` entry negates all of the previous `.data` files in the `.gitignore`,
-none of them will be ignored, and all `.data` files will be tracked.
+Because the `!*.data` entry negates all of the previous `.data` files in the
+`.gitignore`, none of them will be ignored, and all `.data` files will be
+tracked.
 
 
 {% endchallenge %}

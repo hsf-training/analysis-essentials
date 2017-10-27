@@ -95,6 +95,8 @@ We can check that the command has worked by running `git remote -v`:
 
 ```bash
 $ git remote -v
+```
+```
 origin  ssh://git@gitlab.cern.ch:7999/vlad/planets.git (fetch)
 origin  ssh://git@gitlab.cern.ch:7999/vlad/planets.git (push)
 ```
@@ -107,6 +109,8 @@ our local repository to the repository on GitLab:
 
 ```bash
 $ git push origin master
+```
+```
 Counting objects: 9, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
@@ -134,6 +138,8 @@ We can pull changes from the remote repository to the local one as well:
 
 ```bash
 $ git pull origin master
+```
+```
 From https://gitlab.cern.ch/vlad/planets
  * branch            master     -> FETCH_HEAD
 Already up-to-date.
