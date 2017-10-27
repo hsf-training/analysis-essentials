@@ -1,6 +1,6 @@
 # LHCb analysis essentials
 
- * [Python](python/introduction.md)
+ * [Python](python/README.md)
    * [Running](python/running.md)
    * [Objects and operators](python/operators.md)
    * [Numbers](python/numbers.md)
@@ -12,7 +12,7 @@
    * [Scripting](python/scripting.md)
    * [Learning more](python/learning.md)
    * [Basics](python/basics.md)
-   * [Scientific programming](python/scientific_programming.md)
+   * [Making your first histogram](python/first_histogram.md)
    * [Further reading](python/further_reading.md)
  * [Shell](shell/shell.md)
    * [Using screen to keep things running](shell/screen.md)
