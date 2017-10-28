@@ -47,6 +47,14 @@ maintain lists of licenses which are good choices.
 licensing and licensing options from the perspective of scientists who
 also write code.
 
+{% callout "Licensing at CERN" %}
+When developing software at CERN you should keep in mind the open grounds on
+which this international organization was constituted. CERN has a legal office
+offering [counseling and guidelines](http://legal.web.cern.ch/licenses) for
+licensing software and other kinds of materials: when in doubt do not hesitate
+to contact them for trustworthy advice.
+{% endcallout %}
+
 At the end of the day what matters is that there is a clear statement
 as to what the license is. Also, the license is best chosen from the
 get-go, even if for a repository that is not public. Pushing off the
