@@ -6,10 +6,10 @@ will use some public LHCb data for $$ B^+ \rightarrow H^+ H^+ H^- $$ from the
 on EOS:
 
 ```bash
-$ xrdfs root://eospublic.cern.ch/ ls /eos/opendata/lhcb/AntimatterMatters2017/data
-/eos/opendata/lhcb/AntimatterMatters2017/data/B2HHH_MagnetDown.root
-/eos/opendata/lhcb/AntimatterMatters2017/data/B2HHH_MagnetUp.root
-/eos/opendata/lhcb/AntimatterMatters2017/data/PhaseSpaceSimulation.root
+$ eos root://eospublic.cern.ch/ ls /eos/opendata/lhcb/AntimatterMatters2017/data
+B2HHH_MagnetDown.root
+B2HHH_MagnetUp.root
+PhaseSpaceSimulation.root
 ```
 
 {% callout "Installing python packages" %}
@@ -24,17 +24,27 @@ be installed using:
 pip install --user root_pandas
 ```
 
-We can even upgrade already installed packages using:
+Some packages, such as [flake8](http://flake8.pycqa.org/), provide executables
+which are useful to have included on your `PATH` so they are available without
+specifying their absolute path. This can be done by running
+```bash
+export PATH=$(python -m site --user-base)/bin:$PATH
+```
+see that bash lesson for more details about the `PATH` variable.
 
+We can even upgrade already installed packages using:
 ```bash
 pip install --user matplotlib --upgrade
 ```
 
-When using LCG this requires that you also run
+As LCG uses `PYTHONPATH` to make packages available any packages it provides
+have higher priority that the user installed package. In order to make it so
+the package installed with `--user` takes precedent you must run
 ```bash
-export PYTHONPATH=$HOME/.local/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$(python -m site --user-site):$PYTHONPATH
 ```
-every time you run the `source` command above.
+every time you run the `source` command above. This is **only** needed when
+installing user packages to upgrade LCG provided ones.
 {% endcallout %}
 
 All ROOT methods made available in Python using a set of automatically generated
