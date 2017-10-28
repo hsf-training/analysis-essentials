@@ -48,17 +48,24 @@ Name your repository "planets" and then click "Create project":
 
 ![Creating a Repository on CERN GitLab (Step 2)](fig/gitlab-create-repo-02.png)
 
+Here we can see one of the main reasons why you might want to use GitLab at CERN
+instead of an external service: every CERN user can create a *private*
+repository, meaning its access can be restricted to the persons you want.
+External services such as [GitHub](https://github.com) only allow you to create
+*public repositories* [unless you pay for it](https://github.com/pricing). Note
+that private repositories are very useful when collaborating for a paper.
+
 As soon as the repository is created, GitLab displays a page with a URL and some
 information on how to configure your local repository:
 
 ![Creating a Repository on CERN GitLab (Step 3)](fig/gitlab-create-repo-03.png)
 
-This effectively does the following on CERN's servers:
+This is roughly equivalent to perform the following on CERN's servers:
 
 ```bash
 $ mkdir planets
 $ cd planets
-$ git init
+$ git init --bare
 ```
 
 Our local repository still contains our earlier work on `mars.txt`, but the
