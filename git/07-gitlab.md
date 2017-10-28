@@ -14,13 +14,11 @@ questions:
 {% prereq "Prerequisites" %}
 - A SSH Key added to your CERN GitLab account, see [here](https://docs.gitlab.com/ce/ssh/README.html)
   for instructions.
-- You can test if this is working by runnning `ssh git@gitlab.cern.ch -p 7999`.
-  Everything is working correctly if the output of the command is something
-  similar to:
+- You can test if this is working by runnning `ssh git@gitlab.cern.ch -T -p 7999`.
+  Everything is working correctly if the output of the command is:
 
 ```
-Welcome to GitLab, Your Name!
-Connection to gitlab.cern.ch closed.
+Welcome to GitLab, Santa Claus!
 ```
 {% endprereq %}
 
