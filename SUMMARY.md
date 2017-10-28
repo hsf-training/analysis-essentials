@@ -30,10 +30,11 @@
    * [Exploring History](git/05-history.md)
    * [Ignoring Things](git/06-ignore.md)
    * [Remotes in CERN GitLab](git/07-gitlab.md)
-   * [Collaborating](git/08-collab.md)
-   * [Conflicts](git/09-conflict.md)
-   * [GitLab CI](git/10-ci.md)
-   * [Open Science](git/11-open.md)
-   * [Licensing](git/12-licensing.md)
-   * [Citation](git/13-citation.md)
-   <!-- * [Hosting](git/14-hosting.md) -->
+   * [Sharing a repository with others](git/08-share.md)
+   * [Collaborating with Pull Requests](git/09-pullrequests.md)
+   * [Conflicts](git/10-conflict.md)
+   * [GitLab CI](git/11-ci.md)
+   * [Open Science](git/12-open.md)
+   * [Licensing](git/13-licensing.md)
+   * [Citation](git/14-citation.md)
+   <!-- * [Hosting](git/15-hosting.md) -->

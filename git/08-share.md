@@ -4,7 +4,7 @@ exercises: 0
 questions:
 - How can I use version control to collaborate with other people?
 ---
-# Collaborating
+# Sharing a repository with others
 
 {% objectives "Learning Objectives" %}
 - Clone a remote repository.
