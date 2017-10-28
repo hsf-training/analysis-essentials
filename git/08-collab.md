@@ -17,28 +17,31 @@ the Owner's repository. We will switch roles at the end, so both persons will
 play Owner and Collaborator.
 
 {% callout "Practicing By Yourself" %}
-
 If you're working through this lesson on your own, you can carry on by opening
 a second terminal window.
 This window will represent your partner, working on another computer. You
 won't need to give anyone access on GitLab, because both 'partners' are you.
 {% endcallout %}
 
-The Owner needs to give the Collaborator access.
-On GitLab, click the "Members" tab at the top,
-and enter your partner's username.
+The Owner needs to give the Collaborator access.  On GitLab, click the
+"Members" tab at the top, and enter your partner's username.
 
 ![Adding Collaborators on GitLab](fig/gitlab-add-collaborators.png)
 
-Next, the Collaborator needs to download a copy of the Owner's repository to her
- machine. This is called "cloning a repo". To clone the Owner's repo into
+{% callout "Understanding GitLab permissions" %}
+GitLab permission levels might be complicated to understand. [This
+table](https://docs.gitlab.com/ee/user/permissions.html) might come in handy.
+{% endcallout %}
+
+Next, the Collaborator needs to download a copy of the Owner's repository to
+her machine. This is called "cloning a repo". To clone the Owner's repo into
 her `Desktop` folder, the Collaborator enters:
 
 ```bash
 $ git clone ssh://git@gitlab.cern.ch:7999/vlad/planets.git ~/Desktop/vlad-planets
 ```
 
-Replace 'vlad' with the Owner's username.
+Replace `vlad` with the Owner's username.
 
 ![After Creating Clone of Repository](fig/github-collaboration.svg)
 
@@ -72,9 +75,9 @@ To ssh://gitlab.cern.ch:7999/vlad/planets.git
    9272da5..29aba7c  master -> master
 ```
 
-Note that we didn't have to create a remote called `origin`: Git uses this
-name by default when we clone a repository.  (This is why `origin` was a
-sensible choice earlier when we were setting up remotes by hand.)
+Note that we didn't have to create a remote called `origin`: Git uses this name
+by default when we clone a repository.  (This is why `origin` was a sensible
+choice earlier when we were setting up remotes by hand.)
 
 Take a look to the Owner's repository on its GitLab website now (maybe you need
 to refresh your browser.) You should be able to see the new commit made by the
@@ -101,7 +104,6 @@ Now the three repositories (Owner's local, Collaborator's local, and Owner's on
 GitLab) are back in sync.
 
 {% callout "A Basic Collaborative Workflow" %}
-
 In practice, it is good to be sure that you have an updated version of the
 repository you are collaborating on, so you should `git pull` before making
 our changes. The basic collaborative workflow would be:
@@ -117,16 +119,13 @@ read and review.
 {% endcallout %}
 
 {% challenge "Switch Roles and Repeat" %}
-
 Switch roles and repeat the whole process.
 {% endchallenge %}
 
 {% challenge "Review Changes" %}
-
 The Owner push commits to the repository without giving any information
 to the Collaborator. How can the Collaborator find out what has changed with
 command line? And on GitLab?
-
 {% solution "Solution" %}
 On the command line, the Collaborator can use ```git fetch origin master```
 to get the remote changes into the local repository, but without merging
@@ -141,11 +140,9 @@ Collaborator should change the base fork to their own repository, then click
 the link in the paragraph above to "compare across forks", and finally
 change the head fork to the main repository. This will show all the commits
 that are different.
-
 {% endchallenge %}
 
 {% challenge "Comment Changes in GitLab" %}
-
 The Collaborator has some questions about one line change made by the Owner and
 has some suggestions to propose.
 
@@ -154,14 +151,11 @@ code to comment, a blue comment icon appears to open a comment window.
 
 The Collaborator posts its comments and suggestions using GitLab interface.
 {% endchallenge %}
-
 {% challenge "Version History, Backup, and Version Control" %}
-
 Some backup software can keep a history of the versions of your files. They also
 allows you to recover specific versions. How is this functionality different from version control?
 What are some of the benifits of using version control, Git and GitLab?
 {% endchallenge %}
-
 
 {% keypoints "Key Points" %}
 - `git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up.
