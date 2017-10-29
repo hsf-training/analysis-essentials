@@ -14,6 +14,7 @@
    * [Conditions](python/conditions.md)
    * [Methods](python/methods.md)
    * [Scripting](python/scripting.md)
+   * [Modules](python/modules.md)
    * [Learning more](python/learning.md)
    * [Making your first histogram](python/first_histogram.md)
    * [Further reading](python/further_reading.md)
