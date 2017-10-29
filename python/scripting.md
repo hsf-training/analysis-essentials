@@ -217,7 +217,7 @@ def make_pizza(*toppings):
 
 parser = argparse.ArgumentParser(description='Make a pizza')
 parser.add_argument('toppings', nargs='+',
-                    help='Topping to put on the pizza.')
+                    help='Toppings to put on the pizza.')
 parser.add_argument('--verbose', '-v', action='store_true',
                     help='Print more information whilst making.')
 arguments = parser.parse_args()
@@ -243,7 +243,7 @@ usage: simple.py [-h] [--verbose] toppings [toppings ...]
 Make a pizza
 
 positional arguments:
-  toppings       Topping to put on the pizza.
+  toppings       Toppings to put on the pizza.
 
 optional arguments:
   -h, --help     show this help message and exit
@@ -253,13 +253,15 @@ optional arguments:
 Woah, nice! We didn’t even tell `argparse` to have a `--help` flag, but we have
 one automatically. (`argparse` will also add `-h` as an alias for `--help`.)
 
+Let's now prepare the traditional Pizza Margherita:
+
 ```shell
-$ python pizzaiolo.py 'olive oil' garlic --verbose
+$ python pizzaiolo.py 'tomato sauce' 'buffalo mozzarella' --verbose
 About to call make_pizza
 Making pizza...
-Adding olive oil
+Adding tomato sauce
 Done!
-Adding garlic
+Adding buffalo mozzarella
 Done!
 Finished
 ```
