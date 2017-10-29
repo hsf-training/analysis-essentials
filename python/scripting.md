@@ -1,14 +1,13 @@
 # Scripting
 
-OK, so we’ve spent quite a long time in Python shells, but we can quit, we can 
-only get back our work line-by-line (with IPython’s history). When we want to 
+OK, so we’ve spent quite a long time in Python shells, but we can quit, we can
+only get back our work line-by-line (with IPython’s history). When we want to
 persist what we’ve done, we write code to a file and then run the file.
 
 Let’s create a file called `pizzaiolo.py`, and write a little python in it.
 
 ```python
 import time
-
 
 def make_pizza(*toppings):
     """Make a delicious pizza from the toppings."""
@@ -19,11 +18,10 @@ def make_pizza(*toppings):
     print 'Done!'
     return 'Pizza with toppings: {0}'.format(toppings)
 
-
 pizza = make_pizza('cheese', 'olives')
 ```
 
-To run it, we can run the `python` or `ipython` programs in our shell, passing 
+To run it, we can run the `python` or `ipython` programs in our shell, passing
 the filename as an argument.
 
 ```shell
@@ -41,8 +39,8 @@ Adding olives
 Done!
 ```
 
-We can enter an interactive shell after the script has run by including the 
-`-i` flag, in which we’ll have access to anything that was defined by the 
+We can enter an interactive shell after the script has run by including the
+`-i` flag, in which we’ll have access to anything that was defined by the
 script.
 
 ```shell
@@ -73,8 +71,8 @@ In [2]: exit()
 $
 ```
 
-One of most interesting things you can do in your own scripts is accept 
-arguments. Wouldn’t it be great if we could decide what toppings our pizza has 
+One of most interesting things you can do in your own scripts is accept
+arguments. Wouldn’t it be great if we could decide what toppings our pizza has
 _from the command line_?
 
 ```shell
@@ -86,16 +84,15 @@ Adding olives
 Done!
 ```
 
-Of course, nothing’s changed because our script doesn’t know how to handle such 
-arguments. To add this, we use the `sys` module, which makes the command line 
-arguments available as the `argv` property. We can modify our script to print 
-this out, to get a feeling for what’s going on. We’ll comment out our method 
+Of course, nothing’s changed because our script doesn’t know how to handle such
+arguments. To add this, we use the `sys` module, which makes the command line
+arguments available as the `argv` property. We can modify our script to print
+this out, to get a feeling for what’s going on. We’ll comment out our method
 call whilst we’re just playing around.
 
 ```python
 import sys
 import time
-
 
 def make_pizza(*toppings):
     """Make a delicious pizza from the toppings."""
@@ -105,7 +102,6 @@ def make_pizza(*toppings):
         time.sleep(1)
     print 'Done!'
     return 'Pizza with toppings: {0}'.format(toppings)
-
 
 print 'sys.argv:', sys.argv
 # pizza = make_pizza('cheese', 'olives')
@@ -122,8 +118,8 @@ $ python pizzaiolo.py cheese broccoli --help --verbose
 sys.argv: ['pizzaiolo.py', 'cheese', 'broccoli', '--help', '--verbose']
 ```
 
-Awesome! `sys.argv` is just a list with one value per argument (arguments on 
-the command line are separate by spaces). The first value is always the name of 
+Awesome! `sys.argv` is just a list with one value per argument (arguments on
+the command line are separate by spaces). The first value is always the name of
 the script that we run.
 
 So, let’s use the command line arguments in our script.
@@ -145,9 +141,9 @@ Adding broccoli
 Done!
 ```
 
-Super cool. Now we could decide to add some flags that modify the behaviour of 
-our program. We might like the `--help` flag to print a help message and exit, 
-without actually making pizza, and a `--verbose` flag to enable printing more 
+Super cool. Now we could decide to add some flags that modify the behaviour of
+our program. We might like the `--help` flag to print a help message and exit,
+without actually making pizza, and a `--verbose` flag to enable printing more
 information.
 
 ```python
@@ -198,9 +194,9 @@ Great, everything seems to work. 🍕
 
 ## argparse
 
-The [`argparse` module][argparse] comes as part of the Python standard library, 
-and allows us to define what arguments our scripts accepts much more easily 
-than what we’ve shown. Under the hood, it just inspects `sys.argv` in exactly 
+The [`argparse` module][argparse] comes as part of the Python standard library,
+and allows us to define what arguments our scripts accepts much more easily
+than what we’ve shown. Under the hood, it just inspects `sys.argv` in exactly
 the same way as we’ve done, but it takes care of things like validation for us.
 
 ```
@@ -233,9 +229,9 @@ if arguments.verbose:
     print 'Finished'
 ```
 
-We say that we want an argument, that we will refer to as `toppings` in the 
-code, that can be specified multiple times `nargs='+'`, and a flag called 
-`--verbose`. We ask that that flag can also be specified using the `-v` 
+We say that we want an argument, that we will refer to as `toppings` in the
+code, that can be specified multiple times `nargs='+'`, and a flag called
+`--verbose`. We ask that that flag can also be specified using the `-v`
 shorthand.
 
 Let’s start by asking for help.try again.
@@ -254,7 +250,7 @@ optional arguments:
   --verbose, -v  Print more information whilst making.
 ```
 
-Woah, nice! We didn’t even tell `argparse` to have a `--help` flag, but we have 
+Woah, nice! We didn’t even tell `argparse` to have a `--help` flag, but we have
 one automatically. (`argparse` will also add `-h` as an alias for `--help`.)
 
 ```shell
