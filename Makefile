@@ -6,8 +6,9 @@ all: node_modules
 serve: all
 	while true; do gitbook serve; sleep 5; done
 
-pdf: all
+pdf: node_modules
 	gitbook pdf
+	@mv book.pdf analysis-essentials.pdf
 
 node_modules:
 	gitbook install
@@ -17,6 +18,7 @@ test: all
 
 clean:
 	@rm -rf _book
+	@rm -f book.pdf
 	@rm -rf node_modules
 	@rm -f tests/*.pyc
 
