@@ -295,9 +295,11 @@ the list, it returns a new list containing the current index and the item.
 [(0, 4), (1, 2), (2, 9), (3, 45)]
 ```
 
-For performance reasons `enumerate` doesn’t return a list directly, but instead 
-something that the `for` statement knows how to iterate over.  We can convert 
-it to a list with the `list` method when we want to see what’s it doing.
+For performance reasons `enumerate` doesn’t return a list directly, but instead
+something that the `for` statement knows how to iterate over (this is called a
+[generator](https://wiki.python.org/moin/Generators) and for the moment you
+don't need to know how it works). We can convert it to a list with the `list`
+method when we want to see what’s it doing.
 
 This technique of looping over lists of lists lets us loop over two lists 
 simultaneously, using the `zip` method.
