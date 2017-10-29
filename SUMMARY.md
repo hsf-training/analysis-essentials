@@ -11,7 +11,6 @@
    * [Methods](python/methods.md)
    * [Scripting](python/scripting.md)
    * [Learning more](python/learning.md)
-   * [Basics](python/basics.md)
    * [Making your first histogram](python/first_histogram.md)
    * [Further reading](python/further_reading.md)
  * [Shell](shell/shell.md)
