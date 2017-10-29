@@ -68,6 +68,12 @@ specific indices from the list.
 [4, 2, 9, 45]
 ```
 
+{% callout "Functions and keywords" %}
+`del` is a language keyword representing an action, and not a function. The
+syntactic difference is that functions take their arguments between parentheses,
+such as `my_function(1, 2, 3)`, whereas `del` does not.
+{% endcallout %}
+
 You can retrieve sub-lists by using _slice_ notation whilst indexing.
 
 ```python
