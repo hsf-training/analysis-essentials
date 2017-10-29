@@ -116,10 +116,25 @@ We did something cool there by assigning a value to a specific index, `b[0] =
 3`. The same trick works with slices.
 
 ```python
->>> b[:2] = [99, 2]
+>>> b[:2] = [99, 2, 78]
 >>> b
-[99, 2, 45]
+[99, 2, 78, 45]
 ```
+
+This is equivalent of _replacing_ a certain range (`:2`, or items at position 0
+and 1) of the list `b` with other items from another list. Note that in our
+example we replace 2 elements with 3. The same syntax might be used for
+inserting elements at an arbitrary position in the list. If we want to insert
+the number 2 between the 6 and the 78 in the list above, we would use:
+
+```python
+>>> b[2:0] = [6]
+>>> b
+[99, 2, 6, 78, 45]
+```
+
+meaning _take out 0 elements from the list starting a position 2 and insert the
+content of the list `[6]` in that position_.
 
 {% challenge "Copying a list" %}
 Slicing creates a copy, so what notation could you use to copy the full list?
