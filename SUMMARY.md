@@ -1,7 +1,9 @@
 # LHCb analysis essentials
 
- * [Introduction](README.md)
+* [Introduction](README.md)
+
 ----
+
  * [Python](python/README.md)
    * [Running](python/running.md)
    * [Objects and operators](python/operators.md)
@@ -15,13 +17,17 @@
    * [Learning more](python/learning.md)
    * [Making your first histogram](python/first_histogram.md)
    * [Further reading](python/further_reading.md)
+
 ----
+
  * [Shell](shell/shell.md)
    * [Using screen to keep things running](shell/screen.md)
    * [Advanced screen topics](shell/screen2.md)
    * [Persistent screen or tmux session](shell/persistent-screen.md)
    * [Advanced shell topics](shell/shell2.md)
+
 ----
+
  * [Version control with Git](git/README.md)
    * [Basics](git/01-basics.md)
    * [Setting Up Git](git/02-setup.md)
