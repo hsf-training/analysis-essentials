@@ -1,10 +1,10 @@
 # Methods
 
-Methods, also called functions, take some input and return some output. We’ve 
-already used lots of methods, like `dir`, `help`, and `len`, and in this lesson 
-we’ll start creating are own.
+Methods, also called functions, take some input and return some output. We have
+already used lots of methods, like `dir`, `help`, and `len`, and in this lesson
+we will start creating are own.
 
-As we’ve seen, methods can do a lot of stuff with very little typing. Methods 
+As we have seen, methods can do a lot of stuff with very little typing. Methods
 are normally used to encapsulate small pieces of code that we want to reuse.
 
 Let’s rewrite `len` as an example.
@@ -33,23 +33,23 @@ foo(x)
 5
 ```
 
-There’s a lot going on here, so we’ll break it down line-by-line.
+There’s a lot going on here, so we will break it down line-by-line.
 
-1. `def length(obj)`: methods are _defined_ using `def`, followed by a space, 
-   and then the name you want to give the method.[^1] Inside the parentheses 
-   after the name, we list the inputs, or _arguments_, that we want our method 
-   to accept.  In this case, we only need a single input: the thing we want to 
-   compute the length of.  Finally, there’s a colon at the end, just like with 
-   a `for` or `if`, which means a _block_ of code follows (which must be 
+1. `def length(obj)`: methods are _defined_ using `def`, followed by a space,
+   and then the name you want to give the method.[^1] Inside the parentheses
+   after the name, we list the inputs, or _arguments_, that we want our method
+   to accept.  In this case, we only need a single input: the thing we want to
+   compute the length of.  Finally, there’s a colon at the end, just like with
+   a `for` or `if`, which means a _block_ of code follows (which must be
    indented).
-2. `"""Return the number of elements in obj."""`: This is the _docstring_. It’s 
-   just a string, defined literally with three double quotes so that we can 
-   include linebreaks. By placing a string here, Python makes the string 
-   available to use when we pass our function to `help`. Documenting your 
-   functions is a very good idea! It makes it clear to others, and to 
+2. `"""Return the number of elements in obj."""`: This is the _docstring_. It’s
+   just a string, defined literally with three double quotes so that we can
+   include linebreaks. By placing a string here, Python makes the string
+   available to use when we pass our function to `help`. Documenting your
+   functions is a very good idea! It makes it clear to others, and to
    future-you, what the method is supposed to do.
-3. The method block. This is the code that will run whenever you _call_ your 
-   method, like `length([1])`. The code in the block has access to the 
+3. The method block. This is the code that will run whenever you _call_ your
+   method, like `length([1])`. The code in the block has access to the
    arguments and to any variables defined _before_ the method definition.
 ```python
 >>> x = 1
@@ -66,12 +66,12 @@ Traceback (most recent call last):
   File "<stdin>", line 3, in top_function
 NameError: global name 'y' is not defined
 ```
-  In general, you should try to minimise the number of variables outside your 
-  method that you use inside. It makes figuring out what the method does much 
+  In general, you should try to minimise the number of variables outside your
+  method that you use inside. It makes figuring out what the method does much
   harder, as you have to look elsewhere in the code to find things out.
-4. `return i`: This defines the _output_ of the method, the thing that you get 
-   back when you call the method. You don’t have to return anything, in which 
-   case Python will implicitly make your function return `None`, or you can 
+4. `return i`: This defines the _output_ of the method, the thing that you get
+   back when you call the method. You don’t have to return anything, in which
+   case Python will implicitly make your function return `None`, or you can
    return multiple things at once.
 ```python
 >>> def no_return():
@@ -88,8 +88,8 @@ NameError: global name 'y' is not defined
 >>> b
 'much clever'
 ```
-  You can see that returning multiple things implicitly means returning a 
-  tuple, so we can choose to assign one variable per value while calling the 
+  You can see that returning multiple things implicitly means returning a
+  tuple, so we can choose to assign one variable per value while calling the
   method.
 
 [^1]: Names are conventionally in lowercase, with underscores separating words.
@@ -113,14 +113,14 @@ Methods can be called in several ways.
 SyntaxError: invalid syntax
 ```
 
-Specifying the argument’s name explicitly when calling a method is nice because 
-it reminds you what the argument is supposed to do. It also means you don’t 
-have to remember the order in which the arguments were defined, you can specify 
-_keyword arguments_ in any order. You can even mix _positional arguments_ with 
+Specifying the argument’s name explicitly when calling a method is nice because
+it reminds you what the argument is supposed to do. It also means you don’t
+have to remember the order in which the arguments were defined, you can specify
+_keyword arguments_ in any order. You can even mix _positional arguments_ with
 keyword arguments, but any keyword arguments must come last.
 
-Using keyword arguments is particularly useful for arguments which act as 
-on/off flags, because it’s often not obvious what your `True` or `False` is 
+Using keyword arguments is particularly useful for arguments which act as
+on/off flags, because it’s often not obvious what your `True` or `False` is
 doing.
 
 ```python
@@ -138,8 +138,8 @@ doing.
 >>> _ = add(1, 2, show=True) # Aha! Much clearer
 ```
 
-Always having to specify that flag is annoying. It would be much nicer if 
-`show` had a _default value_, so that we don’t _have_ to provide a value when 
+Always having to specify that flag is annoying. It would be much nicer if
+`show` had a _default value_, so that we don’t _have_ to provide a value when
 calling the method, but can optionally override it.
 
 ```python
@@ -181,8 +181,8 @@ What does this method do?
 ```
 
 {% solution "Solution" %}
-It returns a function whose `increment` value has been filled by the argument 
-to `make_incrementor`. If we called `make_incrementor(3)`, then `increment` has 
+It returns a function whose `increment` value has been filled by the argument
+to `make_incrementor`. If we called `make_incrementor(3)`, then `increment` has
 the value 3, and we can fill in the returned method in our heads.
 
 ```python
@@ -202,7 +202,7 @@ So when we call _this_ method, we’ll get back what we put in, but plus 3.
 ```
 {% endchallenge %}
 
-What if you like to accept an arbitrary number of arguments? For example, we 
+What if you like to accept an arbitrary number of arguments? For example, we
 can also write a `total` method that takes two arguments.
 
 ```python
@@ -213,7 +213,7 @@ can also write a `total` method that takes two arguments.
 >>>
 ```
 
-But what if we want to allow the caller to pass more than two arguments? It 
+But what if we want to allow the caller to pass more than two arguments? It
 would be tedious to define many arguments explicitly.
 
 ```python
@@ -234,11 +234,11 @@ Got 3 arguments: (1, 2, 3)
 6
 ```
 
-The `*args` syntax says “stuff any arguments into a tuple and call it `args`”.  
-This let’s us capture any number of arguments. As `args` is a tuple, when could 
+The `*args` syntax says “stuff any arguments into a tuple and call it `args`”.
+This let’s us capture any number of arguments. As `args` is a tuple, when could
 loop over it, access a specific element, and so on.
 
-We can also _expand_ lists into separate arguments in with the same syntax when 
+We can also _expand_ lists into separate arguments in with the same syntax when
 _calling_ a method.
 
 ```python
@@ -274,10 +274,10 @@ Person zorblax is 9963
 Person helen is 70
 ```
 
-As you can see from the debug print statement, `**people` is a dictionary 
-containing the keyword arguments we passed to the `ages` method. The keys of 
-the dictionary are the names of the argument as strings, and the values are the 
-values of the arguments. Just like for the `*` syntax, `**` can also be used to 
+As you can see from the debug print statement, `**people` is a dictionary
+containing the keyword arguments we passed to the `ages` method. The keys of
+the dictionary are the names of the argument as strings, and the values are the
+values of the arguments. Just like for the `*` syntax, `**` can also be used to
 expand a dictionary into keyword arguments.
 
 ```python
@@ -288,13 +288,13 @@ Person yoda is -1
 Person thor is 5000
 ```
 
-It’s worth remembering thing because dictionaries are unordered, and the `**` 
-syntax effectively creates a dictionary, the order of the keyword arguments 
-used to call the method are not necessarily the same as those that the function 
+It’s worth remembering thing because dictionaries are unordered, and the `**`
+syntax effectively creates a dictionary, the order of the keyword arguments
+used to call the method are not necessarily the same as those that the function
 block sees!
 
 {% challenge "The most generic method" %}
-The most generic method would take any number of positional arguments _and_ any 
+The most generic method would take any number of positional arguments _and_ any
 number of keyword arguments. What would this method look like?
 
 {% solution "Solution" %}
@@ -320,8 +320,8 @@ Some methods take other methods as arguments, like the built-in `map` method.
 ['0', '1', '2', '3', '4']
 ```
 
-`map` takes a function and a list, and applies the function to each element in 
-the list. It returns a new list with the results. We can define and then pass 
+`map` takes a function and a list, and applies the function to each element in
+the list. It returns a new list with the results. We can define and then pass
 our own functions.
 
 ```python
@@ -333,7 +333,7 @@ our own functions.
 [0, 1, 8, 27, 64]
 ```
 
-For such a simple method, this is a lot of typing! We can use `lambda` to 
+For such a simple method, this is a lot of typing! We can use `lambda` to
 define such simple methods inline.
 
 ```python
@@ -347,12 +347,12 @@ The syntax of defining a `lambda` is like this:
 lambda <args>: <return expression>
 ```
 
-`<args>` is a command-separate set of variables that the `lambda` can take as 
-arguments, and `<return expression>` is the code that is run. A `lambda` 
-automatically returns whatever the result of the expression is, you don’t need 
+`<args>` is a command-separate set of variables that the `lambda` can take as
+arguments, and `<return expression>` is the code that is run. A `lambda`
+automatically returns whatever the result of the expression is, you don’t need
 a `return` (the `return` is _implicit_).
 
-Writing a `lambda` statement defines a method, which you can capture as a 
+Writing a `lambda` statement defines a method, which you can capture as a
 variable just like any other object.
 
 ```python
@@ -363,11 +363,11 @@ variable just like any other object.
 [0.0, 0.5, 1.0, 1.5, 2.0]
 ```
 
-{% challenge "Sum in quadture" %}
-Write a method that accepts an arbitrary number of arguments, and returns the 
-sum of the arguments computed in quadrature. A “sum in quadrature” is the 
-square root of the sum of the squares of each number. You should use `lambda` 
-to define a squaring and a square root function, and `map` to apply the 
+{% challenge "Sum in quadrature" %}
+Write a method that accepts an arbitrary number of arguments, and returns the
+sum of the arguments computed in quadrature. A “sum in quadrature” is the
+square root of the sum of the squares of each number. You should use `lambda`
+to define a squaring and a square root function, and `map` to apply the
 squaring method.
 
 {% solution "Solution" %}
@@ -376,8 +376,8 @@ We need a little square root method and a method to square its input.
 >>> square = lambda x: x*x
 >>> sqrt = lambda x: x**0.5
 ```
-We then define a method that can accept any number of arguments using the 
-`*args` syntax, and use `map` to call the `square` method on the list of 
+We then define a method that can accept any number of arguments using the
+`*args` syntax, and use `map` to call the `square` method on the list of
 arguments. Then we can call `sum` on the result, and then `sqrt`.
 ```python
 >>> def quadrature(*args):
@@ -391,7 +391,7 @@ arguments. Then we can call `sum` on the result, and then `sqrt`.
 ```
 {% endchallenge %}
 
-Another use case for `lambda` is the built-in `filter` method (see: 
+Another use case for `lambda` is the built-in `filter` method (see:
 `help(filter)`).
 
 ```python
@@ -399,6 +399,15 @@ Another use case for `lambda` is the built-in `filter` method (see:
 [0, 2, 4, 6, 8]
 ```
 
-Generally, you should only use `lambda` methods to define little throw-away 
-methods. The main downside with using them is that you can’t attach a docstring 
+{% challenge "List comprehension" %}
+How would you rewrite the `filter` example above using a list comprehension?
+{% solution "Solution" %}
+```python
+>>> [ x for x in range(10) if x % 2 == 0 ]
+[0, 2, 4, 6, 8]
+```
+{% endchallenge %}
+
+Generally, you should only use `lambda` methods to define little throw-away
+methods. The main downside with using them is that you can’t attach a docstring
 to them, and they become unwieldy when there’s complex logic.
