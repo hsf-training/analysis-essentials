@@ -167,8 +167,44 @@ each one sequentially. This is called looping, or iterating, and is super easy.
 45
 ```
 
-We have to indent the code inside the `for` loop to tell Python that these 
-lines should be run for every iteration. The convention is to use four spaces.
+We have to indent the code inside the `for` loop to tell Python that these
+lines should be run for every iteration.
+
+{% callout "Indentation in Python" %}
+The `for` loop is a block, and every Python block requires indentation, unlike
+other "free-form" languages such as C++ or Java. This means that Python will
+throw an error if you don't indent:
+
+```python
+>>> for i in b:
+... print i
+  File "<ipython-input-56-11d6523211c0>", line 2
+    print i
+        ^
+IndentationError: expected an indented block
+```
+
+Indentation must be consistent within the same block, so if you indent two lines
+in the same `for` loop using a different number of spaces, Python will complain
+once again:
+
+```python
+>>> for i in b:
+...   print "I am in a loop"
+...     print i
+  File "<ipython-input-57-5c3d29e65ad9>", line 3
+    print i
+    ^
+IndentationError: unexpected indent
+```
+
+Indentation is necessary as Python does not use any keyword or symbol to
+determine the end of a block (_e.g._ there is no `endfor`). As a side effect,
+indentation forces you to make your code more readable!
+
+Note that it does not matter how many spaces you use for indentation. **As a
+convention, we are using four spaces.**
+{% endcallout %}
 
 The variable name `item` can be whatever we want, but its value is changed by 
 Python to be the element of the item we’re currently on, starting from the 
