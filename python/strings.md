@@ -153,4 +153,15 @@ There’s [a lot you can do inside the placeholders][strformat], such as specify
 This number is great: 123.000
 ```
 
+If you want to print a literal curly brace using `format`, you will need to
+escape it by doubling it, so that `{{` will become `{` and `}}` will become `}`.
+Here's an example:
+
+```python
+>>> print 'This number will be surrounded by curly braces: {{{0}}}'.format(123)
+This number will be surrounded by curly braces: {123}
+```
+
+The innermost `{0}` is replaced with the number, and `{{...}}` becomes `{...}`.
+
 [strformat]: https://pyformat.info/
