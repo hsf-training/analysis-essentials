@@ -1,10 +1,13 @@
-.PHONY: all clean serve
+.PHONY: all clean serve pdf
 
 all: node_modules
 	gitbook build
 
 serve: all
 	while true; do gitbook serve; sleep 5; done
+
+pdf: all
+	gitbook pdf
 
 node_modules:
 	gitbook install

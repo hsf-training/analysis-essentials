@@ -10,6 +10,7 @@ install:
 node_js: '4.1'
 script:
   - make
+  - make pdf
   - make test
 after_success:
   - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && make publish-travis > /dev/null 2>&1 || true'
