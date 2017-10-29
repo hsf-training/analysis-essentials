@@ -8,6 +8,8 @@ install:
   - npm install svgexport -g
   - pip install --user beautifulsoup4
   - pip install --user ghp-import
+  - wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | python -c "import sys; main=lambda x,y:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main('~/calibre-bin', True)"
+  - export PATH=$HOME/calibre-bin/calibre/bin/:$PATH
 node_js: '4.1'
 script:
   - make
