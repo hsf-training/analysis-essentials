@@ -3,8 +3,8 @@
 all: node_modules
 	gitbook build
 
-serve:
-	gitbook serve
+serve: all
+	while true; do gitbook serve; sleep 5; done
 
 node_modules:
 	gitbook install
