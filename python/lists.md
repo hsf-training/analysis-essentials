@@ -106,8 +106,8 @@ affect the original array.
 [4, 2, 9, 45]
 ```
 
-We did something cool there by assigning a value to a specific index, `b[0] = 
-3]`. The same trick works with slices.
+We did something cool there by assigning a value to a specific index, `b[0] =
+3`. The same trick works with slices.
 
 ```python
 >>> b[:2] = [99, 2]
@@ -165,9 +165,9 @@ we’re iterating.
 [9, 45]
 ```
 
-Intuitively, you might expect `a_copy` to be empty, but it’s not! The technical 
-reasons aren’t important, but this highlights an important rule: **never** 
-modify the length of a list whilst iterating over it! You won’t end up with 
+Intuitively, you might expect `a_copy` to be empty, but it’s not! The technical
+reasons aren’t important, but this highlights an important rule: **never
+modify the length of a list whilst iterating over it!** You won’t end up with
 what you expect.
 
 You can, however, freely modify the _values_ of each item in the list whilst 
@@ -247,7 +247,7 @@ simultaneously, using the `zip` method.
 
 ```python
 >>> for item, item2 in zip(a, a_doubled):
-...    print item2, item
+...     print item2, item
 ...
 8 4
 4 2
@@ -403,7 +403,7 @@ earlier when we used `enumerate`.
 
 Each element of the list is a tuple.
 
-{% challenge "Copying a list" %}
+{% challenge "Write a list comprehension yourself" %}
 Compute the square of the magnitude of the sum of the following two 
 three-vectors, using a single list comprehension and the global `sum` method.
 ```python
