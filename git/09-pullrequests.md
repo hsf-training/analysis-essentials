@@ -18,8 +18,8 @@ handy when working on larger projects. We will also see how this approach turns
 out to be useful even when working on small projects with only three or four
 contributors.
 
-The most naïve approach to Git collaboration is what we have [previously
-seen](08-share.md) with particular focus on the GitLab case:
+The most naive approach to Git collaboration is what we have [previously
+seen](08-share.md):
 
 * We have a **single remote repository**
 * This repository has one or more **owners** who decide who can contribute
@@ -44,8 +44,7 @@ The general idea behind Pull Requests is:
 * I submit this code for a review to the owners of the original project (this is
   where I open a **Pull Request**)
 * Owners will decide whether to **accept or reject** my changes, and a Web-based
-  interface will allow people to **comment and discuss**, just like a social
-  network
+  interface allows people to **comment and discuss**
 
 {% callout "Why are they called Pull Requests?" %}
 We have seen in a [previous lesson](07-gitlab.md) that the act of
@@ -65,20 +64,19 @@ part of the `git` tool itself: it depends on the hosting platform you use.
 
 ## Fork the original project repository
 
-The first step when collaborating to a project is to create a so-called **fork**
-of the remote repository. A "fork" is a remote clone of the remote repository,
-under your account. Let's see exactly what it means with an example.
+The first step when collaborating to a project is to create a **fork**
+of the remote repository. Let's see exactly what it means with an example.
 
-Connect to our dummy test repository using a Web browser:
+Connect to our example repository using a Web browser:
 
 > https://gitlab.cern.ch/starter-kit-scratch/starter-kit-example
 
-and click on the Fork button:
+and click on the "Fork" button:
 
 ![Fork a GitLab repository](fig/gitlab-pr-fork.png)
 
 If you have played already with GitLab groups you might have several fork
-destinations, just select your user:
+destinations, if so, just select your user:
 
 ![Select fork destination](fig/gitlab-pr-wheretofork.png)
 
@@ -87,24 +85,23 @@ original, `starter-kit-example`.
 
 At this point, CERN GitLab contains several copies of the same repositories:
 the main one, and all the forks you have just created. Those copies are **remote
-clones** for now, as they are not in your laptop yet.
+clones** for now, as they are not on your laptop yet.
 
 The main feature of your fork is that you (and by default you only) have **write
 permissions** to it. You cannot directly push to the original repository, but
 you can write to your fork.
 
 {% callout "Forks are independent" %}
-When you create a fork, you take a snapshot of the original repository at a
-given moment in time. From that point on, all forks are independent from the
-original repository, and among one another.
+When you create a fork, you make a snapshot of the original repository at a
+given moment in time. From that point on, the fork is independent from both the
+original repository and any forks made by other users.
 {% endcallout %}
 
 
 ## Clone a remote project and its fork
 
-Now it's time to open your terminal and clone the remote project into your
-laptop. [As we have seen already](07-gitlab.md) we can use the SSH URL for
-cloning the project:
+Now it is time to open your terminal and clone the remote project. [As we have
+already seen](07-gitlab.md) we can use the SSH URL for cloning the project:
 
 ```bash
 $ mkdir test_merge_requests/
@@ -119,13 +116,13 @@ remote: Total 3 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (3/3), done.
 ```
 
-Now putting into practice [what we've learned](07-gitlab.md) let's add our
-own fork: it will have the same URL with your CERN username instead of
-`starter-kit-scratch`:
+Now putting into practice [what we have already learnt](07-gitlab.md) let's add
+our fork as a remote, it will have the same URL as the main repository except
+`starter-kit-scratch` is replaced with your CERN username:
 
 ```bash
 cd starter-kit-example/
-git remote add <your_cern_username> ssh://git@gitlab.cern.ch:7999/<your_cern_username>/starter-kit-example.git
+git remote add YOUR_CERN_USERNAME ssh://git@gitlab.cern.ch:7999/YOUR_CERN_USERNAME/starter-kit-example.git
 ```
 
 {% challenge "What are my remotes now?" %}
@@ -150,11 +147,8 @@ repository. The second one is named after your CERN account and you have created
 it explicitly with `git remote add`.
 {% endchallenge %}
 
-Note that learning how to work with several remotes is essential when using Pull
-Requests.
 
-
-## Sync your local repoository with remote changes
+## Sync your local repository with remote changes
 
 You are now ready to start working on your new feature on your laptop. First off
 since you are using different remotes, make sure your local Git working
@@ -200,17 +194,16 @@ random content to your local repository. As an exercise, you can try to add a
 file named after your CERN username:
 
 ```bash
-echo "My name is Firstname Lastname" > <your_cern_username>.txt
+echo "My name is Firstname Lastname" > YOUR_CERN_USERNAME.txt
 ```
 
-Replace `<your_cern_username>` with your CERN username (for the moment let's
-avoid [conflicts](10-conflict.md)).
+Replace `YOUR_CERN_USERNAME` with your CERN username to avoid [conflicts](10-conflict.md).
 
 You can now commit the changes:
 
 ```bash
 $ git add --all -v
-$ git commit -m 'Add user info for <your_cern_username>'
+$ git commit -m 'Add user info for YOUR_CERN_USERNAME'
 ```
 
 {% challenge "What have I done?" %}
@@ -227,9 +220,8 @@ prints out every added file.
 `git commit` creates a commit, whose message is appropriate as it is shorter than
 50 characters and meaningful, in other words it's *concise*.
 
-As you already know very well, your commit is now available **on your laptop
-only** and it is not yet available either on your fork, or on the upstream
-repository.
+Your commit is only **on your laptop only** and it is not yet available in your
+fork, or on the upstream repository.
 {% endchallenge %}
 
 
@@ -255,15 +247,15 @@ To ssh://gitlab.cern.ch:7999/starter-kit-scratch/starter-kit-example.git
 error: failed to push some refs to 'ssh://git@gitlab.cern.ch:7999/starter-kit-scratch/starter-kit-example.git'
 ```
 
-By default, `git push` attempts to push to `origin`, which is forbidden as we
-have said! All modifications must go through Pull Requests. This means the only
-way we have is to push our changes to our own fork:
+By default, `git push` attempts to push to `origin`, which is forbidden in this
+case! All modifications must go through Pull Requests. This means the only way
+we have is to push our changes to our own fork:
 
 ```bash
-$ git push <your_cern_username>
+$ git push YOUR_CERN_USERNAME
 ```
 
-This time we've had more luck:
+This time we have had more luck:
 
 ```
 Counting objects: 3, done.
@@ -275,8 +267,8 @@ To ssh://gitlab.cern.ch:7999/dberzano/starter-kit-example.git
    764051d..256c9b6  master -> master
 ```
 
-OK, so my changes are now pushed to my private repository. Before opening the
-Pull Request let's check the status of the remote repositories.
+OK, so your changes are now pushed to your private repository. Before opening
+the Pull Request let's check the status of the remote repositories.
 
 {% challenge "Status of remote repositories" %}
 How do you use `git log` to see exactly what the two remote repositories
@@ -311,7 +303,7 @@ As we have said before, Pull Requests are not part of Git but they depend on
 the provider hosting your Git repositories. On GitLab you need to point your
 Web browser to your repository:
 
-> https://gitlab.cern.ch/<your_cern_username>/starter-kit-example
+> https://gitlab.cern.ch/YOUR_CERN_USERNAME/starter-kit-example
 
 Then click on the **+ (plus)** button and select **New merge request**:
 
@@ -337,8 +329,7 @@ commit messages:
 
 {% callout "Automatic Pull Request title and description" %}
 If your Pull Request has only one commit, the **Title** and **Description**
-fields will be automatically filled with the first line of the commit message,
-and any extra line, respectively.
+fields will be automatically filled for you.
 {% endcallout %}
 
 ![Title and description](fig/gitlab-pr-title.png)
@@ -351,12 +342,12 @@ Now, sit back and relax!
 
 ## Discussing, amending, retiring a Merge Request
 
-Once a Merge Request is opened, it behaves like a social network. Repository
-owners are notified (usually via email), and they (or even somebody else,
-according to the repository's permissions) can add comments and requests before
-accepting your changes.
+Once a Merge Request is opened the repository owners are notified (usually via
+email), and they (or even somebody else, depending on the repository's
+permissions) can add comments and requests before accepting your changes.
 
-A Merge Request is given a progressive number. Here's the merge request link:
+Merge Requests are each given a sequential number. The first ever merge request
+on the example respository can be found at:
 
 > https://gitlab.cern.ch/starter-kit-scratch/starter-kit-example/merge_requests/1
 
@@ -371,10 +362,10 @@ Merge Request before proceeding. Doing so is as simple as authoring and pushing
 more commits.
 
 Let's go back to our local working directory, edit the file
-`<your_cern_username>.txt` and add a line to it:
+`YOUR_CERN_USERNAME.txt` and add a line to it:
 
 ```bash
-$ echo "I hereby certify that this information is true." >> <your_cern_username>.txt
+$ echo "I hereby certify that this information is true." >> YOUR_CERN_USERNAME.txt
 ```
 
 Now commit:
@@ -390,7 +381,7 @@ $ git commit -a -m 'Add information certification'
 ...and finally push (once again, remember to do it to your remote):
 
 ```bash
-$ git push <your_cern_username>
+$ git push YOUR_CERN_USERNAME
 ```
 ```
 Counting objects: 3, done.
@@ -403,8 +394,8 @@ To ssh://gitlab.cern.ch:7999/dberzano/starter-kit-example.git
 ```
 
 Voilà, it's done: you have just added more commits to your Merge Request! Let's
-see on the Web all the commits you have added. Go to the Merge Request webpage
-and click on the **Commits** tab at the bottom, here's a direct link:
+look on the Web at the commits you have added. Go to the Merge Request page
+and click on the **Commits** tab at the bottom, here is a direct link for the example:
 
 > https://gitlab.cern.ch/starter-kit-scratch/starter-kit-example/merge_requests/1/commits
 
@@ -424,8 +415,9 @@ Requests: you submit your content for scrutiny, and reviewers will say what
 they think before accepting it, giving you the ability to amend things as you
 go.
 
-If you are not happy with a Pull Request you can decide to retire it by clicking
-on the **Close merge request** orange button on top of the webpage:
+If you or the maintainers of the project are not happy with a Pull Request it
+can be retired by clicking on the orange **Close merge request** button on top
+of the page:
 
 ![Close](fig/gitlab-pr-close.png)
 
@@ -439,20 +431,19 @@ When a Merge Request looks good, the repository owners will click on the
 
 Your code is then finally included upstream. On your local repository, if you
 want to work on a new feature, you can simply start over by [fetching remote
-changes first as explained
-earlier](#sync-your-local-repoository-with-remote-changes).
+changes first as explained earlier](#sync-your-local-repository-with-remote-changes).
 
 
 ## The social side of coding
 
-Using Pull/Merge Requests seems an overkill to someone, but they are a very
+Using Pull Requests can seem overly complicated at first, but they are a very
 efficient way to truly collaborate on large projects.
 
 * **A Pull Request represents an atomic unit of work.** You can open a Pull
   Request for adding a certain feature, composed by several commits with work in
   progresses, minor fixes, major bug fixes. When merged, the feature is finally
   there and complete, available to every collaborator. You reduce the chance of
-  having incomplete and/or buggy features upstream.
+  having incomplete and/or buggy features in released versions of the code.
 * **When writing a Pull Request, you know that your code will be viewed by
   someone.** This makes you more attentive to what other persons will think
   when they see it, making you a better collaborator.
@@ -470,12 +461,12 @@ as in real life - try not to go on a rampage, at least not too quickly!
 
 ## Automatic testing
 
-Pull and Merge Requests can also be used to run automatic tests (also called
-Continuous Integration tests) to your proposed changes before merging them. That
-way you can know, for instance, if the change you intend to introduce breaks the
-compilation of the whole projects, or some functionalities.
-
-The topic of automatic testing will be covered [later on](11-ci.md).
+Merge requests can be configured to prevent changes from being merged into the
+main branch of a repository if any of the project's builds or tests fail to run
+correctly. This is useful to try and ensure that the `master` branch always
+contains a "good" version of the project. See the [continuous integration](11-ci.md)
+lesson for details on how to set this up with GitLab, along with a list of
+services that can be used with other git hosts.
 
 
 {% keypoints "Key Points" %}
