@@ -76,7 +76,7 @@ Sure enough,
 our script's output is exactly what we would get if we ran that pipeline directly.
 
 {% callout "Text vs. Whatever" %}
->
+
 We usually call programs like Microsoft Word or LibreOffice Writer "text
 editors", but we need to be a bit more careful when it comes to
 programming. By default, Microsoft Word uses `.docx` files to store not
@@ -140,7 +140,7 @@ ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00
 {: .output}
 
 {% callout "Double-Quotes Around Arguments" %}
->
+
 For the same reason that we put the loop variable inside double-quotes,
 in case the filename happens to contain any spaces,
 we surround `$1` with double-quotes.
@@ -272,23 +272,23 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 {: .output}
 
 {% callout "Why Isn't It Doing Anything?" %}
->
+
 What happens if a script is supposed to process a bunch of files, but we
 don't give it any filenames? For example, what if we type:
->
+
 ~~~
 $ bash sorted.sh
 ~~~
 {: .bash}
->
+
 but don't say `*.dat` (or anything else)? In this case, `$@` expands to
 nothing at all, so the pipeline inside the script is effectively:
->
+
 ~~~
 $ wc -l | sort -n
 ~~~
 {: .bash}
->
+
 Since it doesn't have any filenames, `wc` assumes it is supposed to
 process standard input, so it just sits there and waits for us to give
 it some data interactively. From the outside, though, all we see is it
@@ -395,37 +395,37 @@ and use `*[AB].txt` if none were provided.
 Of course, this introduces another tradeoff between flexibility and complexity.
 
 {% solution "Variables in Shell Scripts" %}
->
+
 In the `molecules` directory, imagine you have a shell script called `script.sh` containing the
 following commands:
->
+
 ~~~
 head -n $2 $1
 tail -n $3 $1
 ~~~
 {: .bash}
->
+
 While you are in the `molecules` directory, you type the following command:
->
+
 ~~~
 bash script.sh '*.pdb' 1 1
 ~~~
 {: .bash}
->
+
 Which of the following outputs would you expect to see?
->
+
 1. All of the lines between the first and the last lines of each file ending in `.pdb`
    in the `molecules` directory
 2. The first and the last line of each file ending in `.pdb` in the `molecules` directory
 3. The first and the last line of each file in the `molecules` directory
 4. An error because of the quotes around `*.pdb`
->
+
 ## Solution
 The correct answer is 2.
->
+
 The special variables $1, $2 and $3 represent the command line arguments given to the
 script, such that the commands run are:
->
+
 ```
 $ head -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
 $ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
@@ -438,9 +438,9 @@ script by `head` and `tail`.
 {% endchallenge %}
 
 {% challenge "List Unique Species" %}
->
+
 Leah has several hundred data files, each of which is formatted like this:
->
+
 ~~~
 2013-11-05,deer,5
 2013-11-05,rabbit,22
@@ -452,20 +452,20 @@ Leah has several hundred data files, each of which is formatted like this:
 2013-11-07,bear,1
 ~~~
 {: .source}
->
+
 An example of this type of file is given in `data-shell/data/animal-counts/animals.txt`.
 
 Write a shell script called `species.sh` that takes any number of
 filenames as command-line arguments, and uses `cut`, `sort`, and
 `uniq` to print a list of the unique species appearing in each of
 those files separately.
->
+
 {% solution "Solution" %}
->
+
 ```
 # Script to find unique species in csv files where species is the second data field
 # This script accepts any number of file names as command line arguments
->
+
 # Loop over all files
 for file in $@
 do
@@ -479,22 +479,22 @@ done
 {% endchallenge %}
 
 {% challenge "Find the Longest File With a Given Extension" %}
->
+
 Write a shell script called `longest.sh` that takes the name of a
 directory and a filename extension as its arguments, and prints
 out the name of the file with the most lines in that directory
 with that extension. For example:
->
+
 ~~~
 $ bash longest.sh /tmp/data pdb
 ~~~
 {: .bash}
->
+
 would print the name of the `.pdb` file in `/tmp/data` that has
 the most lines.
->
+
 {% solution "Solution" %}
->
+
 ```
 # Shell script which takes two arguments:
 #    1. a directory name
@@ -509,19 +509,19 @@ wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
 {% endchallenge %}
 
 {% challenge "Why Record Commands in the History Before Running Them?" %}
->
+
 If you run the command:
->
+
 ~~~
 $ history | tail -n 5 > recent.sh
 ~~~
 {: .bash}
->
+
 the last command in the file is the `history` command itself, i.e.,
 the shell has added `history` to the command log before actually
 running it. In fact, the shell *always* adds commands to the log
 before running them. Why do you think it does this?
->
+
 {% solution "Solution" %}
 If a command causes something to crash or hang, it might be useful
 to know what that command was, in order to investigate the problem.
@@ -531,19 +531,19 @@ have a record of the last command run in the event of a crash.
 {% endchallenge %}
 
 {% challenge "Script Reading Comprehension" %}
->
+
 For this question, consider the `data-shell/molecules` directory once again.
 This contains a number of `.pdb` files in addition to any other files you
 may have created.
 Explain what a script called `example.sh` would do when run as
 `bash example.sh *.pdb` if it contained the following lines:
->
+
 ~~~
 # Script 1
 echo *.*
 ~~~
 {: .bash}
->
+
 ~~~
 # Script 2
 for filename in $1 $2 $3
@@ -552,16 +552,16 @@ do
 done
 ~~~
 {: .bash}
->
+
 ~~~
 # Script 3
 echo $@.pdb
 ~~~
 {: .bash}
->
+
 {% solution "Solutions" %}
 Script 1 would print out a list of all files containing a dot in their name.
->
+
 Script 2 would print the contents of the first 3 files matching the file extension.
 The shell expands the wildcard before passing the arguments to the `example.sh` script.
 
@@ -572,10 +572,10 @@ cubane.pdb ethane.pdb methane.pdb octane.pdb pentane.pdb propane.pdb.pdb
 {% endchallenge %}
 
 {% challenge "Debugging Scripts" %}
->
+
 Suppose you have saved the following script in a file called `do-errors.sh`
 in Nelle's `north-pacific-gyre/2012-07-03` directory:
->
+
 ~~~
 # Calculate stats for data files.
 for datafile in "$@"
@@ -585,25 +585,25 @@ do
 done
 ~~~
 {: .bash}
->
+
 When you run it:
->
+
 ~~~
 $ bash do-errors.sh *[AB].txt
 ~~~
 {: .bash}
->
+
 the output is blank.
 To figure out why, re-run the script using the `-x` option:
->
+
 ~~~
 bash -x do-errors.sh *[AB].txt
 ~~~
 {: .bash}
->
+
 What is the output showing you?
 Which line is responsible for the error?
->
+
 {% solution "Solution" %}
 The `-x` flag causes `bash` to run in debug mode.
 This prints out each command as it is run, which will help you to locate errors.

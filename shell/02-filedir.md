@@ -42,7 +42,7 @@ To start exploring them,
 let's open a shell window:
 
 {% callout "Preparation Magic" %}
->
+
 If you type the command:
 `PS1='$ '`
 into your shell, followed by pressing the 'enter' key,
@@ -86,7 +86,7 @@ More specifically, when we type `whoami` the shell:
 
 
 {% callout "Username Variation" %}
->
+
 In this lesson, we have used the username `nelle` (associated
 with our hypothetical scientist Nelle) in example input and output throughout.
 However, when
@@ -144,7 +144,7 @@ $ pwd
 {: .output}
 
 {% callout "Home Directory Variation" %}
->
+
 The home directory path will look different on different operating systems.
 On Linux it may look like `/home/nelle`,
 and on Windows it will be similar to `C:\Documents and Settings\nelle` or
@@ -184,7 +184,7 @@ we know that `/Users` is stored inside the root directory `/`
 because its name begins with `/`.
 
 {% callout "Slashes" %}
->
+
 Notice that there are two meanings for the `/` character.
 When it appears at the front of a file or directory name,
 it refers to the root directory. When it appears *inside* a name,
@@ -374,7 +374,7 @@ information on how to use the commands or programs.
 {% callout "Unsupported command-line options" %}
 If you try to use an option (flag) that is not supported, `ls` and other programs
 will print an error message similar to this:
->
+
 ~~~
 $ ls -j
 ~~~
@@ -393,7 +393,7 @@ it prints a description of a command and its options,
 and (if you're lucky) provides a few examples of how to use it.
 
 {% callout "`man` and Git for Windows" %}
->
+
 The bash shell provided by Git for Windows does not
 support the `man` command. Doing a web search for
 `unix man page COMMAND` (e.g. `unix man page grep`)
@@ -422,7 +422,7 @@ the shell thinks we're trying to run a command called `ls-F`,
 which doesn't exist.
 
 {% callout "Parameters vs. Arguments" %}
->
+
 According to [Wikipedia](https://en.wikipedia.org/wiki/Parameter_(computer_programming)#Parameters_and_arguments),
 the terms **argument** and **parameter**
 mean slightly different things.
@@ -610,7 +610,7 @@ with a single `-` and no spaces between the arguments: `ls -F -a` is
 equivalent to `ls -Fa`.
 
 {% callout "Other Hidden Files" %}
->
+
 In addition to the hidden directories `..` and `.`, you may also see a file
 called `.bash_profile`. This file usually contains shell configuration
 settings. You may also see other files and directories beginning
@@ -621,7 +621,7 @@ is used.
 {% endcallout %}
 
 {% callout "Orthogonality" %}
->
+
 The special names `.` and `..` don't belong to `cd`;
 they are interpreted the same way by every program.
 For example,
@@ -707,13 +707,13 @@ $ cd /Users/nelle/Desktop/data-shell
 Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 
 {% callout "Two More Shortcuts" %}
->
+
 The shell interprets the character `~` (tilde) at the start of a path to
 mean "the current user's home directory". For example, if Nelle's home
 directory is `/Users/nelle`, then `~/data` is equivalent to
 `/Users/nelle/data`. This only works if it is the first character in the
 path: `here/there/~/elsewhere` is *not* `here/there/Users/nelle/elsewhere`.
->
+
 Another shortcut is the `-` (dash) character.  `cd` will translate `-` into
 *the previous directory I was in*, which is faster than having to remember,
 then type, the full path.  This is a *very* efficient way of moving back
@@ -738,7 +738,7 @@ but she found them hard to understand after a couple of years.
 a directory called `revised-revised-results-3`.)
 
 {% callout "Sorting Output" %}
->
+
 Nelle names her directories "year-month-day",
 with leading zeroes for months and days,
 because the shell displays file and directory names in alphabetical order.
@@ -795,11 +795,11 @@ This is called **tab completion**,
 and we will see it in many other tools as we go on.
 
 {% challenge "Absolute vs Relative Paths" %}
->
+
 Starting from `/Users/amanda/data/`,
 which of the following commands could Amanda use to navigate to her home directory,
 which is `/Users/amanda`?
->
+
 1. `cd .`
 2. `cd /`
 3. `cd /home/amanda`
@@ -809,7 +809,7 @@ which is `/Users/amanda`?
 7. `cd ~/data/..`
 8. `cd`
 9. `cd ..`
->
+
 {% solution "Solution" %}
 1. No: `.` stands for the current directory.
 2. No: `/` stands for the root directory.
@@ -824,17 +824,17 @@ which is `/Users/amanda`?
 {% endchallenge %}
 
 {% challenge "Relative Path Resolution" %}
->
+
 Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
 what will `ls -F ../backup` display?
->
+
 1.  `../backup: No such file or directory`
 2.  `2012-12-01 2013-01-08 2013-01-27`
 3.  `2012-12-01/ 2013-01-08/ 2013-01-27/`
 4.  `original/ pnas_final/ pnas_sub/`
->
+
 ![File System for Challenge Questions](../fig/filesystem-challenge.svg)
->
+
 {% solution "Solution" %}
 1. No: there *is* a directory `backup` in `/Users`.
 2. No: this is the content of `Users/thing/backup`,
@@ -845,22 +845,22 @@ what will `ls -F ../backup` display?
 {% endchallenge %}
 
 {% challenge "`ls` Reading Comprehension" %}
->
+
 Assuming a directory structure as in the above Figure
 (File System for Challenge Questions), if `pwd` displays `/Users/backup`,
 and `-r` tells `ls` to display things in reverse order,
 what command will display:
->
+
 ~~~
 pnas_sub/ pnas_final/ original/
 ~~~
 {: .output}
->
+
 1.  `ls pwd`
 2.  `ls -r -F`
 3.  `ls -r -F /Users/backup`
 4.  Either #2 or #3 above, but not #1.
->
+
 {% solution "Solution" %}
  1. No: `pwd` is not the name of a directory.
  2. Yes: `ls` without directory argument lists files and directories
@@ -871,13 +871,13 @@ pnas_sub/ pnas_final/ original/
 {% endchallenge %}
 
 {% challenge "Exploring More `ls` Flags" %}
->
+
 What does the command `ls` do when used with the `-l` and `-h` flags?
->
+
 Some of its output is about properties that we do not cover in this lesson (such
 as file permissions and ownership), but the rest should be useful
 nevertheless.
->
+
 {% solution "Solution" %}
 The `-l` flag makes `ls` use a **l**ong listing format, showing not only
 the file/directory names but also additional information such as the file size
@@ -887,14 +887,14 @@ and the time of its last modification. The `-h` flag makes the file size
 {% endchallenge %}
 
 {% challenge "Listing Recursively and By Time" %}
->
+
 The command `ls -R` lists the contents of directories recursively, i.e., lists
 their sub-directories, sub-sub-directories, and so on in alphabetical order
 at each level. The command `ls -t` lists things by time of last change, with
 most recently changed files or directories first.
 In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
 format to view timestamps.
->
+
 {% solution "Solution" %}
 The directories are listed alphabetical at each level, the files/directories
 in each directory are sorted by time of last change.

@@ -109,7 +109,7 @@ name: `$filename` is equivalent to `${filename}`, but is different from
 `${file}name`. You may find this notation in other people's programs.
 
 {% callout "Follow the Prompt" %}
->
+
 The shell prompt changes from `$` to `>` and back again as we were
 typing in our loop. The second prompt, `>`, is different to remind
 us that we haven't finished typing a complete command yet. A semicolon, `;`,
@@ -117,15 +117,15 @@ can be used to separate two commands written on a single line.
 {% endcallout %}
 
 {% callout "Same Symbols, Different Meanings" %}
->
+
 Here we see `>` being used a shell prompt, whereas `>` is also
 used to redirect output.
 Similarly, `$` is used as a shell prompt, but, as we saw earlier,
 it is also used to ask the shell to get the value of a variable.
->
+
 If the *shell* prints `>` or `$` then it expects you to type something,
 and the symbol is a prompt.
->
+
 If *you* type `>` or `$` yourself, it is an instruction from you that
 the shell to redirect output or get the value of a variable.
 {% endcallout %}
@@ -210,13 +210,13 @@ from whatever file is being processed
 (assuming the file has at least 100 lines).
 
 {% callout "Spaces in Names" %}
->
+
 Whitespace is used to separate the elements on the list
 that we are going to loop over. If on the list we have elements
 with whitespace we need to quote those elements
 and our variable when using it.
 Suppose our data files are named:
->
+
 ~~~
 red dragon.dat
 purple unicorn.dat
@@ -232,9 +232,9 @@ do
 done
 ~~~
 {: .bash}
->
+
 It is simpler just to avoid using whitespaces (or other special characters) in filenames.
->
+
 The files above don't exist, so if we run the above code, the `head` command will be unable
 to find them, however the error message returned will show the name of the files it is
 expecting:
@@ -380,7 +380,7 @@ $ for datafile in NENE*[AB].txt; do echo $datafile; bash goostats $datafile stat
 {: .bash}
 
 {% callout "Beginning and End" %}
->
+
 We can move to the beginning of a line in the shell by typing `Ctrl-a`
 and to the end using `Ctrl-e`.
 {% endcallout %}
@@ -408,12 +408,12 @@ It looks good,
 so she decides to get some coffee and catch up on her reading.
 
 {% callout "Those Who Know History Can Choose to Repeat It" %}
->
+
 Another way to repeat previous work is to use the `history` command to
 get a list of the last few hundred commands that have been executed, and
 then to use `!123` (where "123" is replaced by the command number) to
 repeat one of those commands. For example, if Nelle types this:
->
+
 ~~~
 $ history | tail -n 5
 ~~~
@@ -426,15 +426,15 @@ $ history | tail -n 5
   460  history
 ~~~
 {: .output}
->
+
 then she can re-run `goostats` on `NENE01729B.txt` simply by typing
 `!458`.
 {% endcallout %}
 
 {% callout "Other History Commands" %}
->
+
 There are a number of other shortcut commands for getting at the history.
->
+
 - `Ctrl-R` enters a history search mode "reverse-i-search" and finds the
 most recent command in your history that matches the text you enter next.
 Press `Ctrl-R` one or more additional times to search for earlier matches.
@@ -448,17 +448,17 @@ quicker than doing up-arrow and editing the command-line.
 {% endcallout %}
 
 {% solution "Variables in Loops" %}
->
+
 This exercise refers to the `data-shell/molecules` directory.
 `ls` gives the following output:
->
+
 ~~~
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 ~~~
 {: .output}
->
+
 What is the output of the following code?
->
+
 ~~~
 for datafile in *.pdb
 do
@@ -466,9 +466,9 @@ do
 done
 ~~~
 {: .bash}
->
+
 Now, what is the output of the following code?
->
+
 ~~~
 for datafile in *.pdb
 do
@@ -476,9 +476,9 @@ do
 done
 ~~~
 {: .bash}
->
+
 Why do these two loops give different outputs?
->
+
 ## Solution
 The first code block gives the same output on each iteration through
 the loop.
@@ -493,7 +493,7 @@ do
 done
 ```
 {: .bash}
->
+
 ```
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
@@ -503,11 +503,11 @@ cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 ```
 {: .output}
->
+
 The second code block lists a different file on each loop iteration.
 The value of the `datafile` variable is evaluated using `$datafile`,
 and then listed using `ls`.
->
+
 ```
 cubane.pdb
 ethane.pdb
@@ -521,9 +521,9 @@ propane.pdb
 {% endchallenge %}
 
 {% challenge "Saving to a File in a Loop - Part One" %}
->
+
 In the same directory, what is the effect of this loop?
->
+
 ~~~
 for alkanes in *.pdb
 do
@@ -532,7 +532,7 @@ do
 done
 ~~~
 {: .bash}
->
+
 1.  Prints `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb` and `propane.pdb`,
     and the text from `propane.pdb` will be saved to a file called `alkanes.pdb`.
 2.  Prints `cubane.pdb`, `ethane.pdb`, and `methane.pdb`, and the text from all three files would be
@@ -540,7 +540,7 @@ done
 3.  Prints `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, and `pentane.pdb`, and the text
     from `propane.pdb` will be saved to a file called `alkanes.pdb`.
 4.  None of the above.
->
+
 {% solution "Solution" %}
 1. The text from each file in turn gets written to the `alkanes.pdb` file.
 However, the file gets overwritten on each loop interation, so the final content of `alkanes.pdb`
@@ -549,9 +549,9 @@ is the text from the `propane.pdb` file.
 {% endchallenge %}
 
 {% challenge "Saving to a File in a Loop - Part Two" %}
->
+
 In the same directory, what would be the output of the following loop?
->
+
 ~~~
 for datafile in *.pdb
 do
@@ -559,7 +559,7 @@ do
 done
 ~~~
 {: .bash}
->
+
 1.  All of the text from `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, and
     `pentane.pdb` would be concatenated and saved to a file called `all.pdb`.
 2.  The text from `ethane.pdb` will be saved to a file called `all.pdb`.
@@ -567,7 +567,7 @@ done
     and `propane.pdb` would be concatenated and saved to a file called `all.pdb`.
 4.  All of the text from `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb`
     and `propane.pdb` would be printed to the screen and saved to a file called `all.pdb`.
->
+
 {% solution "Solution" %}
 3 is the correct answer. `>>` appends to a file, rather than overwriting it with the redirected
 output from a command.
@@ -576,9 +576,9 @@ Given the output from the `cat` command has been redirected, nothing is printed 
 {% endchallenge %}
 
 {% challenge "Limiting Sets of Files" %}
->
+
 In the same directory, what would be the output of the following loop?
->
+
 ~~~
 for filename in c*
 do
@@ -586,19 +586,19 @@ do
 done
 ~~~
 {: .bash}
->
+
 1.  No files are listed.
 2.  All files are listed.
 3.  Only `cubane.pdb`, `octane.pdb` and `pentane.pdb` are listed.
 4.  Only `cubane.pdb` is listed.
->
+
 {% solution "Solution" %}
 4 is the correct answer. `*` matches zero or more characters, so any file name starting with
 the letter c, followed by zero or more other characters will be matched.
 
->
+
 How would the output differ from using this command instead?
->
+
 ~~~
 for filename in *c*
 do
@@ -606,13 +606,13 @@ do
 done
 ~~~
 {: .bash}
->
+
 1.  The same files would be listed.
 2.  All the files are listed this time.
 3.  No files are listed this time.
 4.  The files `cubane.pdb` and `octane.pdb` will be listed.
 5.  Only the file `octane.pdb` will be listed.
->
+
 {% solution "Solution" %}
 4 is the correct answer. `*` matches zero or more characters, so a file name with zero or more
 characters before a letter c and zero or more characters after the letter c will be matched.
@@ -620,14 +620,14 @@ characters before a letter c and zero or more characters after the letter c will
 {% endchallenge %}
 
 {% challenge "Doing a Dry Run" %}
->
+
 A loop is a way to do many things at once --- or to make many mistakes at
 once if it does the wrong thing. One way to check what a loop *would* do
 is to `echo` the commands it would run instead of actually running them.
 
 Suppose we want to preview the commands the following loop will execute
 without actually running those commands:
->
+
 ~~~
 for file in *.pdb
 do
@@ -635,10 +635,10 @@ do
 done
 ~~~
 {: .bash}
->
+
 What is the difference between the two loops below, and which one would we
 want to run?
->
+
 ~~~
 # Version 1
 for file in *.pdb
@@ -647,7 +647,7 @@ do
 done
 ~~~
 {: .bash}
->
+
 ~~~
 # Version 2
 for file in *.pdb
@@ -656,12 +656,12 @@ do
 done
 ~~~
 {: .bash}
->
+
 {% solution "Solution" %}
 The second version is the one we want to run.
 This prints to screen everything enclosed in the quote marks, expanding the
 loop variable name because we have prefixed it with a dollar sign.
->
+
 The first version redirects the output from the command `echo analyze $file` to
 a file, `analyzed-$file`. A series of files is generated: `analyzed-cubane.pdb`,
 `analyzed-ethane.pdb` etc.
@@ -672,12 +672,12 @@ Try both versions for yourself to see the output! Be sure to open the
 {% endchallenge %}
 
 {% challenge "Nested Loops" %}
->
+
 Suppose we want to set up up a directory structure to organize
 some experiments measuring reaction rate constants with different compounds
 *and* different temperatures.  What would be the
 result of the following code:
->
+
 ~~~
 for species in cubane ethane methane
 do
@@ -688,12 +688,12 @@ do
 done
 ~~~
 {: .bash}
->
+
 {% solution "Solution" %}
 We have a nested loop, i.e. contained within another loop, so for each species
 in the outer loop, the inner loop (the nested loop) iterates over the list of
 temperatures, and creates a new directory for each combination.
->
+
 Try running the code for yourself to see which directories are created!
 
 {% endchallenge %}

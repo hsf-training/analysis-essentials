@@ -54,7 +54,7 @@ Software is like that.
 {: .output}
 
 {% callout "Forever, or Five Years" %}
->
+
 We haven't linked to the original haikus because they don't appear to be on *Salon*'s site any longer.
 As [Jeff Rothenberg said](http://www.clir.org/pubs/archives/ensuring.pdf),
 "Digital information lasts forever --- or five years, whichever comes first."
@@ -229,7 +229,7 @@ Miscellaneous:
 {: .output}
 
 {% callout "Wildcards" %}
->
+
 `grep`'s real power doesn't come from its options, though; it comes from
 the fact that patterns can include wildcards. (The technical name for
 these is **regular expressions**, which
@@ -237,19 +237,19 @@ is what the "re" in "grep" stands for.) Regular expressions are both complex
 and powerful; if you want to do complex searches, please look at the lesson
 on [our website](http://v4.software-carpentry.org/regexp/index.html). As a taster, we can
 find lines that have an 'o' in the second position like this:
->
+
 ~~~
 $ grep -E '^.o' haiku.txt
 ~~~
 {: .bash}
->
+
 ~~~
 You bring fresh toner.
 Today it is not working
 Software is like that.
 ~~~
 {: .output}
->
+
 We use the `-E` flag and put the pattern in quotes to prevent the shell
 from trying to interpret it. (If the pattern contained a `*`, for
 example, the shell would try to expand it before running `grep`.) The
@@ -397,7 +397,7 @@ $ find . -name '*.txt'
 {: .output}
 
 {% callout "Listing vs. Finding" %}
->
+
 `ls` and `find` can be made to do similar things given the right options,
 but under normal circumstances,
 `ls` lists everything it can,
@@ -460,13 +460,13 @@ $ grep "FE" $(find .. -name '*.pdb')
 {: .output}
 
 {% callout "Binary Files" %}
->
+
 We have focused exclusively on finding things in text files. What if
 your data is stored as images, in databases, or in some other format?
 One option would be to extend tools like `grep` to handle those formats.
 This hasn't happened, and probably won't, because there are too many
 formats to support.
->
+
 The second option is to convert the data to text, or extract the
 text-ish bits from the data. This is probably the most common approach,
 since it only requires people to build one tool per data format (to
@@ -476,7 +476,7 @@ example, it's easy enough to write a program that will extract X and Y
 dimensions from image files for `grep` to play with, but how would you
 write something to find values in a spreadsheet whose cells contained
 formulas?
->
+
 The third choice is to recognize that the shell and text processing have
 their limits, and to use another programming language.
 When the time comes to do this, don't be too hard on the shell: many
@@ -496,21 +496,21 @@ number of important operations which we can perform without thinking
 about them."
 
 {% challenge "Using `grep`" %}
->
+
 Referring to `haiku.txt`
 presented at the begin of this topic,
 which command would result in the following output:
->
+
 ~~~
 and the presence of absence:
 ~~~
 {: .output}
->
+
 1. `grep "of" haiku.txt`
 2. `grep -E "of" haiku.txt`
 3. `grep -w "of" haiku.txt`
 4. `grep -i "of" haiku.txt`
->
+
 {% solution "Solution" %}
 The correct answer is 3, because the `-w` flag looks only for whole-word matches.
 The other options will all match "of" when part of another word.
@@ -518,14 +518,14 @@ The other options will all match "of" when part of another word.
 {% endchallenge %}
 
 {% challenge "`find` Pipeline Reading Comprehension" %}
->
+
 Write a short explanatory comment for the following shell script:
->
+
 ~~~
 wc -l $(find . -name '*.dat') | sort -n
 ~~~
 {: .bash}
->
+
 {% solution "Solution" %}
 1. Find all files with a `.dat` extension in the current directory
 2. Count the number of lines each of these files contains
@@ -534,7 +534,7 @@ wc -l $(find . -name '*.dat') | sort -n
 {% endchallenge %}
 
 {% challenge "Matching and Subtracting" %}
->
+
 The `-v` flag to `grep` inverts pattern matching, so that only lines
 which do *not* match the pattern are printed. Given that, which of
 the following commands will find all files in `/data` whose names
@@ -542,19 +542,19 @@ end in `s.txt` (e.g., `animals.txt` or `planets.txt`), but do
 *not* contain the word `net`?
 Once you have thought about your answer, you can test the commands in the `data-shell`
 directory.
->
+
 1.  `find data -name '*s.txt' | grep -v net`
 2.  `find data -name *s.txt | grep -v net`
 3.  `grep -v "temp" $(find data -name '*s.txt')`
 4.  None of the above.
->
+
 {% solution "Solution" %}
 The correct answer is 1. Putting the match expression in quotes prevents the shell
 expanding it, so it gets passed to the `find` command.
->
+
 Option 2 is incorrect because the shell expands `*s.txt` instead of passing the wildcard
 expression to `find`.
->
+
 Option 3 is incorrect because it searches the contents of the files for lines which
 do not match "temp", rather than searching the file names.
 
@@ -573,7 +573,7 @@ data files saved in one directory, each of which is formatted like this:
 2013-11-06,deer,2
 ~~~
 {: .source}
->
+
 She wants to write a shell script that takes a species as the first command-line argument
 and a directory as the second argument. The script should return one file called `species.txt`
 containing a list of dates and the number of that species seen on each date.
@@ -584,7 +584,7 @@ For example using the data shown above, `rabbits.txt` would contain:
 2013-11-06,19
 ~~~
 {: .source}
->
+
 Put these commands and pipes in the right order to achieve this:
 
 ~~~
@@ -597,21 +597,21 @@ $1.txt
 cut -d , -f 1,3
 ~~~
 {: .bash}
->
+
 Hint: use `man grep` to look for how to grep text recursively in a directory
 and `man cut` to select more than one field in a line.
->
+
 An example of such a file is provided in `data-shell/data/animal-counts/animals.txt`
->
+
 {% solution "Solution" %}
->
+
 ```
 grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3  > $1.txt
 ```
 {: .source}
->
+
 You would call the script above like this:
->
+
 ```
 $ bash count-species.sh bear .
 ```
@@ -620,7 +620,7 @@ $ bash count-species.sh bear .
 {% endchallenge %}
 
 {% challenge "Little Women" %}
->
+
 You and your friend, having just finished reading *Little Women* by
 Louisa May Alcott, are in an argument.  Of the four sisters in the
 book, Jo, Meg, Beth, and Amy, your friend thinks that Jo was the
@@ -629,14 +629,14 @@ have a file `LittleWomen.txt` containing the full text of the novel
 (`data-shell/writing/data/LittleWomen.txt`).
 Using a `for` loop, how would you tabulate the number of times each
 of the four sisters is mentioned?
->
+
 Hint: one solution might employ
 the commands `grep` and `wc` and a `|`, while another might utilize
 `grep` options.
 There is often more than one way to solve a programming task, so a
 particular solution is usually chosen based on a combination of
 yielding the correct result, elegance, readability, and speed.
->
+
 {% solution "Solutions" %}
 ```
 for sis in Jo Meg Beth Amy
@@ -646,7 +646,7 @@ do
 done
 ```
 {: .source}
->
+
 Alternative, slightly inferior solution:
 ```
 for sis in Jo Meg Beth Amy
@@ -656,7 +656,7 @@ do
 done
 ```
 {: .source}
->
+
 This solution is inferior because `grep -c` only reports the number of lines matched.
 The total number of matches reported by this method will be lower if there is more
 than one match per line.
@@ -670,14 +670,14 @@ to locate files with specific attributes, such as creation time, size,
 permissions, or ownership.  Use `man find` to explore these, and then
 write a single command to find all files in or below the current directory
 that were modified by the user `ahmed` in the last 24 hours.
->
+
 Hint 1: you will need to use three tests: `-type`, `-mtime`, and `-user`.
->
+
 Hint 2: The value for `-mtime` will need to be negative---why?
->
+
 {% solution "Solution" %}
 Assuming that Nelle’s home is our working directory we type:
->
+
 ~~~
 $ find ./ -type f -mtime -1 -user ahmed
 ~~~

@@ -66,13 +66,13 @@ $ wc *.pdb
 {: .output}
 
 {% callout "Wildcards" %}
->
+
 `*` is a **wildcard**. It matches zero or more
 characters, so `*.pdb` matches `ethane.pdb`, `propane.pdb`, and every
 file that ends with '.pdb'. On the other hand, `p*.pdb` only matches
 `pentane.pdb` and `propane.pdb`, because the 'p' at the front only
 matches filenames that begin with the letter 'p'.
->
+
 `?` is also a wildcard, but it only matches a single character. This
 means that `p?.pdb` would match `pi.pdb` or `p5.pdb` (if we had these two
 files in the `molecules` directory), but not `propane.pdb`.
@@ -84,7 +84,7 @@ match `preferred.practice`, and even `p.pi` (since the first `*` can
 match no characters at all), but not `quality.practice` (doesn't start
 with 'p') or `preferred.p` (there isn't at least one character after the
 '.p').
->
+
 When the shell sees a wildcard, it expands the wildcard to create a
 list of matching filenames *before* running the command that was
 asked for. As an exception, if a wildcard expression does not match
@@ -99,17 +99,17 @@ expanding wildcards, and this is another example of orthogonal design.
 {% endcallout %}
 
 {% challenge "Using Wildcards" %}
->
+
 When run in the `molecules` directory, which `ls` command(s) will
 produce this output?
->
+
 `ethane.pdb   methane.pdb`
->
+
 1. `ls *t*ane.pdb`
 2. `ls *t?ne.*`
 3. `ls *t??ne.pdb`
 4. `ls ethane.*`
->
+
 {% solution "Solution" %}
 >>  The solution is `3.`
 >>
@@ -196,7 +196,7 @@ $ cat lengths.txt
 {: .output}
 
 {% callout "Output Page by Page" %}
->
+
 We'll continue to use `cat` in this lesson, for convenience and consistency,
 but it has the disadvantage that it always dumps the whole file onto your screen.
 More useful in practice is the command `less`,
@@ -253,16 +253,16 @@ Since `sorted-lengths.txt` contains the lengths of our files ordered from least 
 the output of `head` must be the file with the fewest lines.
 
 {% callout "Redirecting to the same file" %}
->
+
 It's a very bad idea to try redirecting
 the output of a command that operates on a file
 to the same file. For example:
->
+
 ~~~
 $ sort -n lengths.txt > lengths.txt
 ~~~
 {: .bash}
->
+
 Doing something like this may give you
 incorrect results and/or delete
 the contents of `lengths.txt`.
@@ -394,7 +394,7 @@ You can *and should* write your programs this way
 so that you and other people can put those programs into pipes to multiply their power.
 
 {% callout "Redirecting Input" %}
->
+
 As well as using `>` to redirect a program's output, we can use `<` to
 redirect its input, i.e., to read from a file instead of from standard
 input. For example, instead of writing `wc ammonia.pdb`, we could write
@@ -498,9 +498,9 @@ the expression `[AB]` matches either an 'A' or a 'B',
 so this matches all the valid data files she has.
 
 {% challenge "What Does `sort -n` Do?" %}
->
+
 If we run `sort` on this file:
->
+
 ~~~
 10
 2
@@ -509,9 +509,9 @@ If we run `sort` on this file:
 6
 ~~~
 {: .source}
->
+
 the output is:
->
+
 ~~~
 10
 19
@@ -520,9 +520,9 @@ the output is:
 6
 ~~~
 {: .output}
->
+
 If we run `sort -n` on the same input, we get this instead:
->
+
 ~~~
 2
 6
@@ -531,35 +531,35 @@ If we run `sort -n` on the same input, we get this instead:
 22
 ~~~
 {: .output}
->
+
 Explain why `-n` has this effect.
->
+
 {% solution "Solution" %}
 The `-n` flag specifies a numeric sort, rather than alphabetical.
 
 {% endchallenge %}
 
 {% challenge "What Does `<` Mean?" %}
->
+
 Change directory to `data-shell` (the top level of our downloaded example data).
->
+
 What is the difference between:
->
+
 ~~~
 $ wc -l notes.txt
 ~~~
 {: .bash}
->
+
 and:
->
+
 ~~~
 $ wc -l < notes.txt
 ~~~
 {: .bash}
->
+
 {% solution "Solution" %}
 `<` is used to redirect input to a command.
->
+
 In both examples, the shell returns the number of lines from the input to
 the `wc` command.
 In the first example, the input is the file `notes.txt` and the file name is
@@ -569,7 +569,7 @@ standard input.
 It is as if we have entered the contents of the file by typing at the prompt.
 Hence the file name is not given in the output - just the number of lines.
 Try this for yourself:
->
+
 ```
 $ wc -l
 this
@@ -578,7 +578,7 @@ a test
 Ctrl-D # This lets the shell know you have finished typing the input
 ```
 {: .bash}
->
+
 ```
 3
 ```
@@ -587,29 +587,29 @@ Ctrl-D # This lets the shell know you have finished typing the input
 {% endchallenge %}
 
 {% challenge "What Does `>>` Mean?" %}
->
+
 What is the difference between:
->
+
 ~~~
 $ echo hello > testfile01.txt
 ~~~
 {: .bash}
->
+
 and:
->
+
 ~~~
 $ echo hello >> testfile02.txt
 ~~~
 {: .bash}
->
+
 Hint: Try executing each command twice in a row and then examining the output files.
 {% endchallenge %}
 
 {% challenge "More on Wildcards" %}
->
+
 Sam has a directory containing calibration data, datasets, and descriptions of
 the datasets:
->
+
 ~~~
 2015-10-23-calibration.txt
 2015-10-23-dataset1.txt
@@ -625,11 +625,11 @@ the datasets:
 2015-11-23-dataset_overview.txt
 ~~~
 {: .bash}
->
+
 Before heading off to another field trip, she wants to back up her data and
 send some datasets to her colleague Bob. Sam uses the following commands
 to get the job done:
->
+
 ~~~
 $ cp *dataset* /backup/datasets
 $ cp ____calibration____ /backup/calibration
@@ -637,9 +637,9 @@ $ cp 2015-____-____ ~/send_to_bob/all_november_files/
 $ cp ____ ~/send_to_bob/all_datasets_created_on_a_23rd/
 ~~~
 {: .bash}
->
+
 Help Sam by filling in the blanks.
->
+
 {% solution "Solution" %}
 ```
 $ cp *calibration.txt /backup/calibration
@@ -651,15 +651,15 @@ $ cp *-23-dataset* ~send_to_bob/all_datasets_created_on_a_23rd/
 {% endchallenge %}
 
 {% challenge "Piping Commands Together" %}
->
+
 In our current directory, we want to find the 3 files which have the least number of
 lines. Which command listed below would work?
->
+
 1. `wc -l * > sort -n > head -n 3`
 2. `wc -l * | sort -n | head -n 1-3`
 3. `wc -l * | head -n 3 | sort -n`
 4. `wc -l * | sort -n | head -n 3`
->
+
 {% solution "Solution" %}
 Option 4 is the solution.
 The pipe character `|` is used to feed the standard output from one process to
@@ -670,10 +670,10 @@ Try it in the `data-shell/molecules` directory!
 {% endchallenge %}
 
 {% challenge "Why Does `uniq` Only Remove Adjacent Duplicates?" %}
->
+
 The command `uniq` removes adjacent duplicated lines from its input.
 For example, the file `data-shell/data/salmon.txt` contains:
->
+
 ~~~
 coho
 coho
@@ -683,9 +683,9 @@ steelhead
 steelhead
 ~~~
 {: .source}
->
+
 Running the command `uniq salmon.txt` from the `data-shell/data` directory produces:
->
+
 ~~~
 coho
 steelhead
@@ -693,11 +693,11 @@ coho
 steelhead
 ~~~
 {: .output}
->
+
 Why do you think `uniq` only removes *adjacent* duplicated lines?
 (Hint: think about very large data sets.) What other command could
 you combine with it in a pipe to remove all duplicated lines?
->
+
 {% solution "Solution" %}
 ```
 $ sort salmon.txt | uniq
@@ -707,9 +707,9 @@ $ sort salmon.txt | uniq
 {% endchallenge %}
 
 {% challenge "Pipe Reading Comprehension" %}
->
+
 A file called `animals.txt` (in the `data-shell/data` folder) contains the following data:
->
+
 ~~~
 2012-11-05,deer
 2012-11-05,rabbit
@@ -721,9 +721,9 @@ A file called `animals.txt` (in the `data-shell/data` folder) contains the follo
 2012-11-07,bear
 ~~~
 {: .source}
->
+
 What text passes through each of the pipes and the final redirect in the pipeline below?
->
+
 ~~~
 $ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt
 ~~~
@@ -732,16 +732,16 @@ Hint: build the pipeline up one command at a time to test your understanding
 {% endchallenge %}
 
 {% challenge "Pipe Construction" %}
->
+
 For the file `animals.txt` from the previous exercise, the command:
->
+
 ~~~
 $ cut -d , -f 2 animals.txt
 ~~~
 {: .bash}
->
+
 produces the following output:
->
+
 ~~~
 deer
 rabbit
@@ -753,11 +753,11 @@ rabbit
 bear
 ~~~
 {: .output}
->
+
 What other command(s) could be added to this in a pipeline to find
 out what animals the file contains (without any duplicates in their
 names)?
->
+
 {% solution "Solution" %}
 ```
 $ cut -d , -f 2 animals.txt | sort | uniq
@@ -767,18 +767,18 @@ $ cut -d , -f 2 animals.txt | sort | uniq
 {% endchallenge %}
 
 {% challenge "Removing Unneeded Files" %}
->
+
 Suppose you want to delete your processed data files, and only keep
 your raw files and processing script to save storage.
 The raw files end in `.dat` and the processed files end in `.txt`.
 Which of the following would remove all the processed data files,
 and *only* the processed data files?
->
+
 1. `rm ?.txt`
 2. `rm *.txt`
 3. `rm * .txt`
 4. `rm *.*`
->
+
 {% solution "Solution" %}
 1. This would remove `.txt` files with one-character names
 2. This is correct answer
@@ -791,7 +791,7 @@ so this command would delete all files
 {% endchallenge %}
 
 {% challenge "Wildcard Expressions" %}
->
+
 Wildcard expressions can be very complex, but you can sometimes write
 them in ways that only use simple syntax, at the expense of being a bit
 more verbose.
@@ -799,21 +799,21 @@ Consider the directory `data-shell/north-pacific-gyre/2012-07-03` :
 the wildcard expression `*[AB].txt`
 matches all files ending in `A.txt` or `B.txt`. Imagine you forgot about
 this.
->
+
 1.  Can you match the same set of files with basic wildcard expressions
     that do not use the `[]` syntax? *Hint*: You may need more than one
     expression.
->
+
 2.  The expression that you found and the expression from the lesson match the
     same set of files in this example. What is the small difference between the
     outputs?
->
+
 3.  Under what circumstances would your new expression produce an error message
     where the original one would not?
->
+
 {% solution "Solution" %}
 1.
->
+
 	```
 	$ ls *A.txt
 	$ ls *B.txt
@@ -826,9 +826,9 @@ this.
 {% endchallenge %}
 
 {% challenge "Which Pipe?" %}
->
+
 The file `data-shell/data/animals.txt` contains 586 lines of data formatted as follows:
->
+
 ~~~
 2012-11-05,deer
 2012-11-05,rabbit
@@ -837,18 +837,18 @@ The file `data-shell/data/animals.txt` contains 586 lines of data formatted as f
 ...
 ~~~
 {: .output}
->
+
 Assuming your current directory is `data-shell/data/`,
 what command would you use to produce a table that shows
 the total count of each type of animal in the file?
->
+
 1.  `grep {deer, rabbit, raccoon, deer, fox, bear} animals.txt | wc -l`
 2.  `sort animals.txt | uniq -c`
 3.  `sort -t, -k2,2 animals.txt | uniq -c`
 4.  `cut -d, -f 2 animals.txt | uniq -c`
 5.  `cut -d, -f 2 animals.txt | sort | uniq -c`
 6.  `cut -d, -f 2 animals.txt | sort | uniq -c | wc -l`
->
+
 {% solution "Solution" %}
 Option 5. is the correct answer.
 If you have difficulty understanding why, try running the commands, or sub-sections of
@@ -857,22 +857,22 @@ the pipelines (make sure you are in the `data-shell/data` directory).
 {% endchallenge %}
 
 {% challenge "Appending Data" %}
->
+
 Consider the file `animals.txt`, used in previous exercise.
 After these commands, select the answer that
 corresponds to the file `animalsUpd.txt`:
->
+
 ~~~
 $ head -3 animals.txt > animalsUpd.txt
 $ tail -2 animals.txt >> animalsUpd.txt
 ~~~
 {: .bash}
->
+
 1. The first three lines of `animals.txt`
 2. The last two lines of `animals.txt`
 3. The first three lines and the last two lines of `animals.txt`
 4. The second and third lines of `animals.txt`
->
+
 {% solution "Solution" %}
 Option 3 is correct.
 For option 1 to be correct we would only run the `head` command.
