@@ -272,7 +272,7 @@ it is possible to see each command as it _would_ be executed. The following diag
 shows what happens when the modified script is executed, and demonstrates how the
 judicious use of `echo` is a good debugging technique.
 
-![For Loop in Action](../fig/shell_script_for_loop_flow_chart.svg)
+![For Loop in Action](fig/shell_script_for_loop_flow_chart.svg)
 
 {% challenge "Nelle's Pipeline: Processing Files" %}
 
