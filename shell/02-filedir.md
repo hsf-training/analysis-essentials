@@ -122,6 +122,15 @@ On Linux it may look like `/home/nelle`,
 and on Windows it will be similar to `C:\Documents and Settings\nelle` or
 `C:\Users\nelle`.
 (Note that it may look slightly different for different versions of Windows.)
+
+On lxplus your home directory is placed on a filesystem which can be shared
+between multiple computers called [AFS](https://en.wikipedia.org/wiki/Andrew_File_System).
+If your CERN username is `cernuser` then your home directory will be:
+
+```
+/afs/cern.ch/user/c/cernuser/
+```
+
 In future examples, we've used Mac output as the default - Linux and Windows
 output may differ slightly, but should be generally similar.
 {% endcallout %}
