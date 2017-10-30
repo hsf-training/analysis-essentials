@@ -3,13 +3,26 @@ branches:
     - master
 sudo: false
 language: node_js
+addons:
+  apt:
+    packages:
+    - calibre
+    - calibre-bin
 install:
   - npm install gitbook-cli -g
+  - npm install svgexport -g
   - pip install --user beautifulsoup4
   - pip install --user ghp-import
 node_js: '4.1'
+# Using xvfb to Run Tests That Require a GUI
+# https://docs.travis-ci.com/user/gui-and-headless-browsers/#Using-xvfb-to-Run-Tests-That-Require-a-GUI
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
 script:
   - make
+  - make pdf
   - make test
 after_success:
   - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && make publish-travis > /dev/null 2>&1 || true'

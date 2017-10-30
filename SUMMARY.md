@@ -45,3 +45,7 @@
    * [Licensing](git/13-licensing.md)
    * [Citation](git/14-citation.md)
    <!-- * [Hosting](git/15-hosting.md) -->
+
+----
+
+ * [Download PDF](ref://analysis-essentials.pdf)
