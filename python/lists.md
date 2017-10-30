@@ -125,7 +125,7 @@ This is equivalent of _replacing_ a certain range (`:2`, or items at position 0
 and 1) of the list `b` with other items from another list. Note that in our
 example we replace 2 elements with 3. The same syntax might be used for
 inserting elements at an arbitrary position in the list. If we want to insert
-the number 2 between the 6 and the 78 in the list above, we would use:
+the number 6 between the 2 and the 78 in the list above, we would use:
 
 ```python
 >>> b[2:0] = [6]
