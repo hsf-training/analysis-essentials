@@ -11,9 +11,8 @@ install:
   - wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | python -c "import sys; main=lambda x,y:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main('~/calibre-bin', True)"
 node_js: '4.1'
 script:
-  - export PATH=$HOME/calibre-bin/calibre/bin/:$PATH
   - make
-  - make pdf
+  - PATH=$HOME/calibre-bin/calibre/bin/:$PATH make pdf
   - make test
 after_success:
   - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && make publish-travis > /dev/null 2>&1 || true'
