@@ -1,5 +1,4 @@
 ---
-title: "Finding Things"
 teaching: 15
 exercises: 0
 questions:
@@ -17,6 +16,7 @@ keypoints:
 - "`man command` displays the manual page for a given command."
 - "`$(command)` inserts a command's output in place."
 ---
+# Finding Things
 
 In the same way that many of us now use "Google" as a 
 verb meaning "to find", Unix programmers often use the 

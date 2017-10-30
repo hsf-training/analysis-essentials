@@ -1,5 +1,4 @@
 ---
-title: "Working With Files and Directories"
 teaching: 15
 exercises: 0
 questions:
@@ -19,6 +18,7 @@ keypoints:
 - "The shell does not have a trash bin: once something is deleted, it's really gone."
 - "Depending on the type of work you do, you may need a more powerful text editor than Nano."
 ---
+# Working With Files and Directories
 
 We now know how to explore files and directories,
 but how do we create them in the first place?

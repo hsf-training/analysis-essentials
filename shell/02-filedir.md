@@ -1,5 +1,4 @@
 ---
-title: "Navigating Files and Directories"
 teaching: 15
 exercises: 0
 questions:
@@ -29,6 +28,7 @@ keypoints:
 - "Most files' names are `something.extension`. The extension isn't required, and doesn't guarantee anything, but is normally used to indicate the type of data in the file."
 - "Most commands take options (flags) which begin with a `-`."
 ---
+# Navigating Files and Directories
 
 The part of the operating system responsible for managing files and directories
 is called the **file system**.

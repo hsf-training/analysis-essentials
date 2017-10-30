@@ -1,5 +1,4 @@
 ---
-title: "Pipes and Filters"
 teaching: 15
 exercises: 0
 questions:
@@ -22,6 +21,7 @@ keypoints:
 - "`first | second` is a pipeline: the output of the first command is used as the input to the second."
 - "The best way to use the shell is to use pipes to combine simple single-purpose programs (filters)."
 ---
+# Pipes and Filters
 
 Now that we know a few basic commands,
 we can finally look at the shell's most powerful feature:

@@ -1,5 +1,4 @@
 ---
-title: "Shell Scripts"
 teaching: 15
 exercises: 0
 questions:
@@ -17,6 +16,7 @@ keypoints:
 - "Place variables in quotes if the values might have spaces in them."
 - "Letting users decide what files to process is more flexible and more consistent with built-in Unix commands."
 ---
+# Shell Scripts
 
 We are finally ready to see what makes the shell such a powerful programming environment.
 We are going to take the commands we repeat frequently and save them in files

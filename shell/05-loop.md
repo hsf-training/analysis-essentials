@@ -1,5 +1,4 @@
 ---
-title: "Loops"
 teaching: 15
 exercises: 0
 questions:
@@ -21,6 +20,7 @@ keypoints:
 - "Use `Ctrl-R` to search through the previously entered commands."
 - "Use `history` to display recent commands, and `!number` to repeat a command by number."
 ---
+# Loops
 
 **Loops** are key to productivity improvements through automation as they allow us to execute
 commands repetitively. Similar to wildcards and tab completion, using loops also reduces the

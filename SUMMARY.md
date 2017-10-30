@@ -21,13 +21,13 @@
 
 ----
 
- * [Shell](shell/README.md)
-   * [Filedir](shell/02-filedir.md)
-   * [Create](shell/03-create.md)
-   * [Pipefilter](shell/04-pipefilter.md)
-   * [Loop](shell/05-loop.md)
-   * [Script](shell/06-script.md)
-   * [Find](shell/07-find.md)
+ * [Introducing the Shell](shell/README.md)
+   * [Navigating Files and Directories](shell/02-filedir.md)
+   * [Working With Files and Directories](shell/03-create.md)
+   * [Pipes and Filters](shell/04-pipefilter.md)
+   * [Loops](shell/05-loop.md)
+   * [Shell Scripts](shell/06-script.md)
+   * [Finding Things](shell/07-find.md)
 
 ----
 

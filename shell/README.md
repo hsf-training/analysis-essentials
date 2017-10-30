@@ -1,5 +1,4 @@
 ---
-title: "Introducing the Shell"
 teaching: 5
 exercises: 0
 questions:
@@ -15,6 +14,7 @@ keypoints:
 - "Identify the actual command, flags, and filenames in a command-line call."
 - "Demonstrate the use of tab completion and explain its advantages."
 ---
+# Introducing the Shell
 ### Background
 At a high level, computers do four things:
 
