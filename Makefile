@@ -23,5 +23,4 @@ clean:
 	@rm -f tests/*.pyc
 
 publish-travis: all pdf
-	@git add -f analysis-essentials.pdf
 	@ghp-import -n ./_book && git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git gh-pages > /dev/null
