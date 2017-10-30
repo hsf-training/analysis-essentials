@@ -82,9 +82,9 @@ Commands are terse (often only a couple of characters long),
 their names are frequently cryptic,
 and their output is lines of text rather than something visual like a graph.
 On the other hand,
-with only a few keystrokes, the shell allows us to combine existing tools into 
+with only a few keystrokes, the shell allows us to combine existing tools into
 powerful pipelines and handle large volumes of data automatically. This automation
-not only makes us more productive but also improves the reproducibility of our workflows by 
+not only makes us more productive but also improves the reproducibility of our workflows by
 allowing us to repeat them with a few simple commands.
 In addition, the command line is often the easiest way to interact with remote machines and supercomputers.
 Familiarity with the shell is near essential to run a variety of specialized tools and resources
