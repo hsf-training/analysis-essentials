@@ -9,12 +9,7 @@ objectives:
 - "Use `find` to find files whose names match simple patterns."
 - "Use the output of one command as the command-line argument(s) to another command."
 - "Explain what is meant by 'text' and 'binary' files, and why many common tools don't handle the latter well."
-keypoints:
-- "`find` finds files with specific properties that match patterns."
-- "`grep` selects lines in files that match patterns."
-- "`--help` is a flag supported by many bash commands, and programs that can be run from within Bash, to display more information on how to use these commands or programs."
-- "`man command` displays the manual page for a given command."
-- "`$(command)` inserts a command's output in place."
+
 ---
 # Finding Things
 
@@ -640,3 +635,12 @@ $ find ./ -type f -mtime -1 -user ahmed
 ```
 
 {% endchallenge %}
+
+{% keypoints "Key Points" %}
+- "`find` finds files with specific properties that match patterns."
+- "`grep` selects lines in files that match patterns."
+- "`--help` is a flag supported by many bash commands, and programs that can be run from within Bash, to display more information on how to use these commands or programs."
+- "`man command` displays the manual page for a given command."
+- "`$(command)` inserts a command's output in place."
+{% endkeypoints %}
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

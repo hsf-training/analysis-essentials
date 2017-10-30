@@ -8,13 +8,7 @@ objectives:
 - "Run a shell script from the command line."
 - "Write a shell script that operates on a set of files defined by the user on the command line."
 - "Create pipelines that include shell scripts you, and others, have written."
-keypoints:
-- "Save commands in files (usually called shell scripts) for re-use."
-- "`bash filename` runs the commands saved in a file."
-- "`$@` refers to all of a shell script's command-line arguments."
-- "`$1`, `$2`, etc., refer to the first command-line argument, the second command-line argument, etc."
-- "Place variables in quotes if the values might have spaces in them."
-- "Letting users decide what files to process is more flexible and more consistent with built-in Unix commands."
+
 ---
 # Shell Scripts
 
@@ -570,3 +564,13 @@ in the loop variable name, and the variable `datfile` doesn't exist, hence retur
 an empty string.
 
 {% endchallenge %}
+
+{% keypoints "Key Points" %}
+- "Save commands in files (usually called shell scripts) for re-use."
+- "`bash filename` runs the commands saved in a file."
+- "`$@` refers to all of a shell script's command-line arguments."
+- "`$1`, `$2`, etc., refer to the first command-line argument, the second command-line argument, etc."
+- "Place variables in quotes if the values might have spaces in them."
+- "Letting users decide what files to process is more flexible and more consistent with built-in Unix commands."
+{% endkeypoints %}
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

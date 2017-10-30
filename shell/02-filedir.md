@@ -12,21 +12,7 @@ objectives:
 - "Explain the steps in the shell's read-run-print cycle."
 - "Identify the actual command, flags, and filenames in a command-line call."
 - "Demonstrate the use of tab completion, and explain its advantages."
-keypoints:
-- "The file system is responsible for managing information on the disk."
-- "Information is stored in files, which are stored in directories (folders)."
-- "Directories can also store other directories, which forms a directory tree."
-- "`cd path` changes the current working directory."
-- "`ls path` prints a listing of a specific file or directory; `ls` on its own lists the current working directory."
-- "`pwd` prints the user's current working directory."
-- "`whoami` shows the user's current identity."
-- "`/` on its own is the root directory of the whole file system."
-- "A relative path specifies a location starting from the current location."
-- "An absolute path specifies a location from the root of the file system."
-- "Directory names in a path are separated with `/` on Unix, but `\\\\` on Windows."
-- "`..` means 'the directory above the current one'; `.` on its own means 'the current directory'."
-- "Most files' names are `something.extension`. The extension isn't required, and doesn't guarantee anything, but is normally used to indicate the type of data in the file."
-- "Most commands take options (flags) which begin with a `-`."
+
 ---
 # Navigating Files and Directories
 
@@ -858,3 +844,21 @@ The directories are listed alphabetical at each level, the files/directories
 in each directory are sorted by time of last change.
 
 {% endchallenge %}
+
+{% keypoints "Key Points" %}
+- "The file system is responsible for managing information on the disk."
+- "Information is stored in files, which are stored in directories (folders)."
+- "Directories can also store other directories, which forms a directory tree."
+- "`cd path` changes the current working directory."
+- "`ls path` prints a listing of a specific file or directory; `ls` on its own lists the current working directory."
+- "`pwd` prints the user's current working directory."
+- "`whoami` shows the user's current identity."
+- "`/` on its own is the root directory of the whole file system."
+- "A relative path specifies a location starting from the current location."
+- "An absolute path specifies a location from the root of the file system."
+- "Directory names in a path are separated with `/` on Unix, but `\\\\` on Windows."
+- "`..` means 'the directory above the current one'; `.` on its own means 'the current directory'."
+- "Most files' names are `something.extension`. The extension isn't required, and doesn't guarantee anything, but is normally used to indicate the type of data in the file."
+- "Most commands take options (flags) which begin with a `-`."
+{% endkeypoints %}
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation {% endright %}

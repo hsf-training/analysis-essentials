@@ -6,13 +6,7 @@ questions:
 objectives:
 - "Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs."
 - "Explain when and why command-line interfaces should be used instead of graphical interfaces."
-keypoints:
-- "Explain the similarities and differences between a file and a directory."
-- "Translate an absolute path into a relative path and vice versa."
-- "Construct absolute and relative paths that identify specific files and directories."
-- "Explain the steps in the shell's read-run-print cycle."
-- "Identify the actual command, flags, and filenames in a command-line call."
-- "Demonstrate the use of tab completion and explain its advantages."
+
 ---
 # Introducing the Shell
 ### Background
@@ -139,3 +133,13 @@ As a bonus,
 once she has put a processing pipeline together,
 she will be able to use it again whenever she collects more data.
 
+
+{% keypoints "Key Points" %}
+- "Explain the similarities and differences between a file and a directory."
+- "Translate an absolute path into a relative path and vice versa."
+- "Construct absolute and relative paths that identify specific files and directories."
+- "Explain the steps in the shell's read-run-print cycle."
+- "Identify the actual command, flags, and filenames in a command-line call."
+- "Demonstrate the use of tab completion and explain its advantages."
+{% endkeypoints %}
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
