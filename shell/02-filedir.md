@@ -51,10 +51,9 @@ This isn't necessary to follow along (in fact, your prompt may have
 other helpful information you want to know about).  This is up to you!
 {% endcallout %}
 
-~~~
+```bash
 $
-~~~
-{: .bash}
+```
 
 The dollar sign is a **prompt**, which shows us that the shell is waiting for input;
 your shell may use a different character as a prompt and may add information before
@@ -67,15 +66,13 @@ The command's output is the ID of the current user,
 i.e.,
 it shows us who the shell thinks we are:
 
-~~~
+```bash
 $ whoami
-~~~
-{: .bash}
+```
 
-~~~
+```output
 nelle
-~~~
-{: .output}
+```
 
 More specifically, when we type `whoami` the shell:
 
@@ -104,15 +101,13 @@ programs.
 If you type the name of a program that does not exist and hit enter, you
 will see an error message similar to this:
 
-~~~
+```bash
 $ mycommand
-~~~
-{: .bash}
+```
 
-~~~
+```error
 -bash: mycommand: command not found
-~~~
-{: .error}
+```
 
 The Shell (Bash) tells you that it cannot find the program `mycommand`
 because the program you are trying to run does not exist on your computer.
@@ -133,15 +128,13 @@ Here,
 the computer's response is `/Users/nelle`,
 which is Nelle's **home directory**:
 
-~~~
+```bash
 $ pwd
-~~~
-{: .bash}
+```
 
-~~~
+```output
 /Users/nelle
-~~~
-{: .output}
+```
 
 {% callout "Home Directory Variation" %}
 
@@ -208,16 +201,14 @@ Now let's learn the command that will let us see the contents of our
 own filesystem.  We can see what's in our home directory by running `ls`,
 which stands for "listing":
 
-~~~
+```bash
 $ ls
-~~~
-{: .bash}
+```
 
-~~~
+```output
 Applications Documents    Library      Music        Public
 Desktop      Downloads    Movies       Pictures
-~~~
-{: .output}
+```
 
 (Again, your results may be slightly different depending on your operating
 system and how you have customized your filesystem.)
@@ -229,25 +220,22 @@ We can make its output more comprehensible by using the **flag** `-F`
 (also known as a **switch** or an **option**) ,
 which tells `ls` to add a trailing `/` to the names of directories:
 
-~~~
+```bash
 $ ls -F
-~~~
-{: .bash}
+```
 
-~~~
+```output
 Applications/ Documents/    Library/      Music/        Public/
 Desktop/      Downloads/    Movies/       Pictures/
-~~~
-{: .output}
+```
 
 `ls` has lots of other **flags**. To find out what they are, we can type:
 
-~~~
+```bash
 $ ls --help
-~~~
-{: .bash}
+```
 
-~~~
+```output
 Usage: ls [OPTION]... [FILE]...
 List information about the FILEs (the current directory by default).
 Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
@@ -364,8 +352,7 @@ Exit status:
 GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
 Full documentation at: <http://www.gnu.org/software/coreutils/ls>
 or available locally via: info '(coreutils) ls invocation'
-~~~
-{: .output}
+```
 
 Many bash commands, and programs that people have written that can be
 run from within bash, support a `--help` flag to display more
@@ -375,16 +362,14 @@ information on how to use the commands or programs.
 If you try to use an option (flag) that is not supported, `ls` and other programs
 will print an error message similar to this:
 
-~~~
+```bash
 $ ls -j
-~~~
-{: .bash}
+```
 
-~~~
+```error
 ls: invalid option -- 'j'
 Try 'ls --help' for more information.
-~~~
-{: .error}
+```
 {% endcallout %}
 
 For more information on how to use `ls` we can type `man ls`.
@@ -446,15 +431,13 @@ the command `ls` with the `-F` **flag** and the **argument**  `Desktop`.
 The argument `Desktop` tells `ls` that
 we want a listing of something other than our current working directory:
 
-~~~
+```bash
 $ ls -F Desktop
-~~~
-{: .bash}
+```
 
-~~~
+```output
 data-shell/
-~~~
-{: .output}
+```
 
 Your output should be a list of all the files and sub-directories on your
 Desktop, including the `data-shell` directory you downloaded at
@@ -474,16 +457,14 @@ can do two things.
 First, we can look at its contents, using the same strategy as before, passing
 a directory name to `ls`:
 
-~~~
+```bash
 $ ls -F Desktop/data-shell
-~~~
-{: .bash}
+```
 
-~~~
+```output
 creatures/          molecules/          notes.txt           solar.pdf
 data/               north-pacific-gyre/ pizza.cfg           writing/
-~~~
-{: .output}
+```
 
 Second, we can actually change our location to a different directory, so
 we are no longer located in
@@ -499,12 +480,11 @@ it changes the shell's idea of what directory we are in.
 Let's say we want to move to the `data` directory we saw above.  We can
 use the following series of commands to get there:
 
-~~~
+```bash
 $ cd Desktop
 $ cd data-shell
 $ cd data
-~~~
-{: .bash}
+```
 
 These commands will move us from our home directory onto our Desktop, then into
 the `data-shell` directory, then into the `data` directory.  `cd` doesn't print anything,
@@ -514,39 +494,33 @@ If we run `ls` without arguments now,
 it lists the contents of `/Users/nelle/Desktop/data-shell/data`,
 because that's where we now are:
 
-~~~
+```bash
 $ pwd
-~~~
-{: .bash}
+```
 
-~~~
+```output
 /Users/nelle/Desktop/data-shell/data
-~~~
-{: .output}
+```
 
-~~~
+```bash
 $ ls -F
-~~~
-{: .bash}
+```
 
-~~~
+```output
 amino-acids.txt   elements/     pdb/	        salmon.txt
 animals.txt       morse.txt     planets.txt     sunspot.txt
-~~~
-{: .output}
+```
 
 We now know how to go down the directory tree, but
 how do we go up?  We might try the following:
 
-~~~
+```bash
 $ cd data-shell
-~~~
-{: .bash}
+```
 
-~~~
+```error
 -bash: cd: data-shell: No such file or directory
-~~~
-{: .error}
+```
 
 But we get an error!  Why is this?
 
@@ -558,10 +532,9 @@ with the simplest.
 There is a shortcut in the shell to move up one directory level
 that looks like this:
 
-~~~
+```bash
 $ cd ..
-~~~
-{: .bash}
+```
 
 `..` is a special directory name meaning
 "the directory containing this one",
@@ -570,31 +543,27 @@ the **parent** of the current directory.
 Sure enough,
 if we run `pwd` after running `cd ..`, we're back in `/Users/nelle/Desktop/data-shell`:
 
-~~~
+```bash
 $ pwd
-~~~
-{: .bash}
+```
 
-~~~
+```output
 /Users/nelle/Desktop/data-shell
-~~~
-{: .output}
+```
 
 The special directory `..` doesn't usually show up when we run `ls`.  If we want
 to display it, we can give `ls` the `-a` flag:
 
-~~~
+```bash
 $ ls -F -a
-~~~
-{: .bash}
+```
 
-~~~
+```output
 ./                  creatures/          notes.txt
 ../                 data/               pizza.cfg
 .bash_profile       molecules/          solar.pdf
 Desktop/            north-pacific-gyre/ writing/
-~~~
-{: .output}
+```
 
 `-a` stands for "show all";
 it forces `ls` to show us file and directory names that begin with `.`,
@@ -638,22 +607,19 @@ These then, are the basic commands for navigating the filesystem on your compute
 if you type `cd` on its own, without giving
 a directory?
 
-~~~
+```bash
 $ cd
-~~~
-{: .bash}
+```
 
 How can you check what happened?  `pwd` gives us the answer!
 
-~~~
+```bash
 $ pwd
-~~~
-{: .bash}
+```
 
-~~~
+```output
 /Users/nelle
-~~~
-{: .output}
+```
 
 It turns out that `cd` without an argument will return you to your home directory,
 which is great if you've gotten lost in your own filesystem.
@@ -662,10 +628,9 @@ Let's try returning to the `data` directory from before.  Last time, we used
 three commands, but we can actually string together the list of directories
 to move to `data` in one step:
 
-~~~
+```bash
 $ cd Desktop/data-shell/data
-~~~
-{: .bash}
+```
 
 Check that we've moved to the right place by running `pwd` and `ls -F`
 
@@ -689,20 +654,17 @@ the filesystem (including from inside `data`).  To find the absolute path
 we're looking for, we can use `pwd` and then extract the piece we need
 to move to `data-shell`.
 
-~~~
+```bash
 $ pwd
-~~~
-{: .bash}
+```
 
-~~~
+```output
 /Users/nelle/Desktop/data-shell/data
-~~~
-{: .output}
+```
 
-~~~
+```bash
 $ cd /Users/nelle/Desktop/data-shell
-~~~
-{: .bash}
+```
 
 Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 
@@ -762,27 +724,24 @@ All 1520 files will go into the same directory.
 Now in her current directory `data-shell`,
 Nelle can see what files she has using the command:
 
-~~~
+```bash
 $ ls north-pacific-gyre/2012-07-03/
-~~~
-{: .bash}
+```
 
 This is a lot to type,
 but she can let the shell do most of the work through what is called **tab completion**.
 If she types:
 
-~~~
+```bash
 $ ls nor
-~~~
-{: .bash}
+```
 
 and then presses tab (the tab key on her keyboard),
 the shell automatically completes the directory name for her:
 
-~~~
+```bash
 $ ls north-pacific-gyre/
-~~~
-{: .bash}
+```
 
 If she presses tab again,
 Bash will add `2012-07-03/` to the command,
@@ -851,10 +810,9 @@ Assuming a directory structure as in the above Figure
 and `-r` tells `ls` to display things in reverse order,
 what command will display:
 
-~~~
+```output
 pnas_sub/ pnas_final/ original/
-~~~
-{: .output}
+```
 
 1.  `ls pwd`
 2.  `ls -r -F`

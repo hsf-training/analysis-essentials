@@ -31,14 +31,13 @@ we will use a file that contains three haikus taken from a
 1998 competition in *Salon* magazine. For this set of examples,
 we're going to be working in the writing subdirectory:
 
-~~~
+```bash
 $ cd
 $ cd writing
 $ cat haiku.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
 The Tao that is seen
 Is not the true Tao, until
 You bring fresh toner.
@@ -50,8 +49,7 @@ and the presence of absence:
 Yesterday it worked
 Today it is not working
 Software is like that.
-~~~
-{: .output}
+```
 
 {% callout "Forever, or Five Years" %}
 
@@ -62,17 +60,15 @@ As [Jeff Rothenberg said](http://www.clir.org/pubs/archives/ensuring.pdf),
 
 Let's find lines that contain the word "not":
 
-~~~
+```bash
 $ grep not haiku.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
 Is not the true Tao, until
 "My Thesis" not found
 Today it is not working
-~~~
-{: .output}
+```
 
 Here, `not` is the pattern we're searching for. The grep command searches through the file, looking for matches to the pattern specified. To use it type `grep`, then the pattern we're searching for and finally the name of the file (or files) we're searching in.
 
@@ -80,16 +76,14 @@ The output is the three lines in the file that contain the letters "not".
 
 Let's try a different pattern: "The".
 
-~~~
+```bash
 $ grep The haiku.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
 The Tao that is seen
 "My Thesis" not found.
-~~~
-{: .output}
+```
 
 This time,
 two lines that include the letters "The" are outputted.
@@ -100,15 +94,13 @@ To restrict matches to lines containing the word "The" on its own,
 we can give `grep` with the `-w` flag.
 This will limit matches to word boundaries.
 
-~~~
+```bash
 $ grep -w The haiku.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
 The Tao that is seen
-~~~
-{: .output}
+```
 
 Note that a "word boundary" includes the start and end of a line, so not
 just letters surrounded by spaces.
@@ -116,15 +108,13 @@ Sometimes we don't
 want to search for a single word, but a phrase. This is also easy to do with
 `grep` by putting the phrase in quotes.
 
-~~~
+```bash
 $ grep -w "is not" haiku.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
 Today it is not working
-~~~
-{: .output}
+```
 
 We've now seen that you don't have to have quotes around single words,
 but it is useful to use quotes when searching for multiple words.
@@ -134,17 +124,15 @@ We will use quotes in the remaining examples.
 
 Another useful option is `-n`, which numbers the lines that match:
 
-~~~
+```bash
 $ grep -n "it" haiku.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
 5:With searching comes loss
 9:Yesterday it worked
 10:Today it is not working
-~~~
-{: .output}
+```
 
 Here, we can see that lines 5, 9, and 10 contain the letters "it".
 
@@ -152,40 +140,35 @@ We can combine options (i.e. flags) as we do with other Unix commands.
 For example, let's find the lines that contain the word "the". We can combine
 the option `-w` to find the lines that contain the word "the" and `-n` to number the lines that match:
 
-~~~
+```bash
 $ grep -n -w "the" haiku.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
 2:Is not the true Tao, until
 6:and the presence of absence:
-~~~
-{: .output}
+```
 
 Now we want to use the option `-i` to make our search case-insensitive:
 
-~~~
+```bash
 $ grep -n -w -i "the" haiku.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
 1:The Tao that is seen
 2:Is not the true Tao, until
 6:and the presence of absence:
-~~~
-{: .output}
+```
 
 Now, we want to use the option `-v` to invert our search, i.e., we want to output
 the lines that do not contain the word "the".
 
-~~~
+```bash
 $ grep -n -w -v "the" haiku.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
 1:The Tao that is seen
 3:You bring fresh toner.
 4:
@@ -195,17 +178,15 @@ $ grep -n -w -v "the" haiku.txt
 9:Yesterday it worked
 10:Today it is not working
 11:Software is like that.
-~~~
-{: .output}
+```
 
 `grep` has lots of other options. To find out what they are, we can type:
 
-~~~
+```bash
 $ grep --help
-~~~
-{: .bash}
+```
 
-~~~
+```output
 Usage: grep [OPTION]... PATTERN [FILE]...
 Search for PATTERN in each FILE or standard input.
 PATTERN is, by default, a basic regular expression (BRE).
@@ -225,8 +206,7 @@ Regexp selection and interpretation:
 
 Miscellaneous:
 ...        ...        ...
-~~~
-{: .output}
+```
 
 {% callout "Wildcards" %}
 
@@ -238,17 +218,15 @@ and powerful; if you want to do complex searches, please look at the lesson
 on [our website](http://v4.software-carpentry.org/regexp/index.html). As a taster, we can
 find lines that have an 'o' in the second position like this:
 
-~~~
+```bash
 $ grep -E '^.o' haiku.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
 You bring fresh toner.
 Today it is not working
 Software is like that.
-~~~
-{: .output}
+```
 
 We use the `-E` flag and put the pattern in quotes to prevent the shell
 from trying to interpret it. (If the pattern contained a `*`, for
@@ -276,12 +254,11 @@ and a subdirectory called `old`, with a file `oldtool`.
 For our first command,
 let's run `find .`.
 
-~~~
+```bash
 $ find .
-~~~
-{: .bash}
+```
 
-~~~
+```output
 .
 ./old
 ./old/.gitkeep
@@ -297,8 +274,7 @@ $ find .
 ./haiku.txt
 ./thesis
 ./thesis/empty-draft.md
-~~~
-{: .output}
+```
 
 As always,
 the `.` on its own means the current working directory,
@@ -315,31 +291,28 @@ Sure enough,
 `find`'s output is the names of the six directories in our little tree
 (including `.`):
 
-~~~
+```bash
 $ find . -type d
-~~~
-{: .bash}
+```
 
-~~~
+```output
 ./
 ./old
 ./data
 ./thesis
 ./tools
 ./tools/old
-~~~
-{: .output}
+```
 
 Notice that the objects `find` finds are not listed in any particular order.
 If we change `-type d` to `-type f`,
 we get a listing of all the files instead:
 
-~~~
+```bash
 $ find . -type f
-~~~
-{: .bash}
+```
 
-~~~
+```output
 ./haiku.txt
 ./old/.gitkeep
 ./tools/stats
@@ -349,20 +322,17 @@ $ find . -type f
 ./data/one.txt
 ./data/LittleWomen.txt
 ./data/two.txt
-~~~
-{: .output}
+```
 
 Now let's try matching by name:
 
-~~~
+```bash
 $ find . -name *.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
 ./haiku.txt
-~~~
-{: .output}
+```
 
 We expected it to find all the text files,
 but it only prints out `./haiku.txt`.
@@ -370,10 +340,9 @@ The problem is that the shell expands wildcard characters like `*` *before* comm
 Since `*.txt` in the current directory expands to `haiku.txt`,
 the command we actually ran was:
 
-~~~
+```bash
 $ find . -name haiku.txt
-~~~
-{: .bash}
+```
 
 `find` did what we asked; we just asked for the wrong thing.
 
@@ -383,18 +352,16 @@ put `*.txt` in single quotes to prevent the shell from expanding the `*` wildcar
 This way,
 `find` actually gets the pattern `*.txt`, not the expanded filename `haiku.txt`:
 
-~~~
+```bash
 $ find . -name '*.txt'
-~~~
-{: .bash}
+```
 
-~~~
+```output
 ./data/one.txt
 ./data/LittleWomen.txt
 ./data/two.txt
 ./haiku.txt
-~~~
-{: .output}
+```
 
 {% callout "Listing vs. Finding" %}
 
@@ -414,19 +381,17 @@ How can we combine that with `wc -l` to count the lines in all those files?
 
 The simplest way is to put the `find` command inside `$()`:
 
-~~~
+```bash
 $ wc -l $(find . -name '*.txt')
-~~~
-{: .bash}
+```
 
-~~~
+```output
 11 ./haiku.txt
 300 ./data/two.txt
 21022 ./data/LittleWomen.txt
 70 ./data/one.txt
 21403 total
-~~~
-{: .output}
+```
 
 When the shell executes this command,
 the first thing it does is run whatever is inside the `$()`.
@@ -434,10 +399,9 @@ It then replaces the `$()` expression with that command's output.
 Since the output of `find` is the four filenames `./data/one.txt`, `./data/LittleWomen.txt`, `./data/two.txt`, and `./haiku.txt`,
 the shell constructs the command:
 
-~~~
+```bash
 $ wc -l ./data/one.txt ./data/LittleWomen.txt ./data/two.txt ./haiku.txt
-~~~
-{: .bash}
+```
 
 which is what we wanted.
 This expansion is exactly what the shell does when it expands wildcards like `*` and `?`,
@@ -449,15 +413,13 @@ the second looks for lines inside those files that match another pattern.
 Here, for example, we can find PDB files that contain iron atoms
 by looking for the string "FE" in all the `.pdb` files above the current directory:
 
-~~~
+```bash
 $ grep "FE" $(find .. -name '*.pdb')
-~~~
-{: .bash}
+```
 
-~~~
+```output
 ../data/pdb/heme.pdb:ATOM     25 FE           1      -0.924   0.535  -0.518
-~~~
-{: .output}
+```
 
 {% callout "Binary Files" %}
 
@@ -501,10 +463,9 @@ Referring to `haiku.txt`
 presented at the begin of this topic,
 which command would result in the following output:
 
-~~~
+```output
 and the presence of absence:
-~~~
-{: .output}
+```
 
 1. `grep "of" haiku.txt`
 2. `grep -E "of" haiku.txt`
@@ -521,10 +482,9 @@ The other options will all match "of" when part of another word.
 
 Write a short explanatory comment for the following shell script:
 
-~~~
+```bash
 wc -l $(find . -name '*.dat') | sort -n
-~~~
-{: .bash}
+```
 
 {% solution "Solution" %}
 1. Find all files with a `.dat` extension in the current directory
@@ -565,29 +525,27 @@ do not match "temp", rather than searching the file names.
 Leah has several hundred
 data files saved in one directory, each of which is formatted like this:
 
-~~~
+```source
 2013-11-05,deer,5
 2013-11-05,rabbit,22
 2013-11-05,raccoon,7
 2013-11-06,rabbit,19
 2013-11-06,deer,2
-~~~
-{: .source}
+```
 
 She wants to write a shell script that takes a species as the first command-line argument
 and a directory as the second argument. The script should return one file called `species.txt`
 containing a list of dates and the number of that species seen on each date.
 For example using the data shown above, `rabbits.txt` would contain:
 
-~~~
+```source
 2013-11-05,22
 2013-11-06,19
-~~~
-{: .source}
+```
 
 Put these commands and pipes in the right order to achieve this:
 
-~~~
+```bash
 cut -d : -f 2
 
 |
@@ -595,8 +553,7 @@ grep -w $1 -r $2
 |
 $1.txt
 cut -d , -f 1,3
-~~~
-{: .bash}
+```
 
 Hint: use `man grep` to look for how to grep text recursively in a directory
 and `man cut` to select more than one field in a line.
@@ -678,9 +635,8 @@ Hint 2: The value for `-mtime` will need to be negative---why?
 {% solution "Solution" %}
 Assuming that Nelle’s home is our working directory we type:
 
-~~~
+```bash
 $ find ./ -type f -mtime -1 -user ahmed
-~~~
-{: .bash}
+```
 
 {% endchallenge %}

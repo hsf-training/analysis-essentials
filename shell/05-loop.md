@@ -33,24 +33,21 @@ We would like to modify these files, but also save a version of the original fil
 `original-basilisk.dat` and `original-unicorn.dat`.
 We can't use:
 
-~~~
+```bash
 $ cp *.dat original-*.dat
-~~~
-{: .bash}
+```
 
 because that would expand to:
 
-~~~
+```bash
 $ cp basilisk.dat unicorn.dat original-*.dat
-~~~
-{: .bash}
+```
 
 This wouldn't back up our files, instead we get an error:
 
-~~~
+```error
 cp: target `original-*.dat' is not a directory
-~~~
-{: .error}
+```
 
 This problem arises when `cp` receives more than two inputs. When this happens, it
 expects the last input to be a directory where it can copy all the files it was passed.
@@ -61,23 +58,21 @@ Instead, we can use a **loop**
 to do some operation once for each thing in a list.
 Here's a simple example that displays the first three lines of each file in turn:
 
-~~~
+```bash
 $ for filename in basilisk.dat unicorn.dat
 do
    head -n 3 $filename
 done
-~~~
-{: .bash}
+```
 
-~~~
+```output
 COMMON NAME: basilisk
 CLASSIFICATION: basiliscus vulgaris
 UPDATED: 1745-05-02
 COMMON NAME: unicorn
 CLASSIFICATION: equus monoceros
 UPDATED: 1738-11-24
-~~~
-{: .output}
+```
 
 When the shell sees the keyword `for`,
 it knows to repeat a command (or group of commands) once for each thing `in` a list.
@@ -135,23 +130,21 @@ in order to make its purpose clearer to human readers.
 The shell itself doesn't care what the variable is called;
 if we wrote this loop as:
 
-~~~
+```bash
 for x in basilisk.dat unicorn.dat
 do
     head -n 3 $x
 done
-~~~
-{: .bash}
+```
 
 or:
 
-~~~
+```bash
 for temperature in basilisk.dat unicorn.dat
 do
     head -n 3 $temperature
 done
-~~~
-{: .bash}
+```
 
 it would work exactly the same way.
 *Don't do this.*
@@ -161,14 +154,13 @@ increase the odds that the program won't do what its readers think it does.
 
 Here's a slightly more complicated loop:
 
-~~~
+```bash
 for filename in *.dat
 do
     echo $filename
     head -n 100 $filename | tail -n 20
 done
-~~~
-{: .bash}
+```
 
 The shell starts by expanding `*.dat` to create the list of files it will process.
 The **loop body**
@@ -176,31 +168,28 @@ then executes two commands for each of those files.
 The first, `echo`, just prints its command-line arguments to standard output.
 For example:
 
-~~~
+```bash
 $ echo hello there
-~~~
-{: .bash}
+```
 
 prints:
 
-~~~
+```output
 hello there
-~~~
-{: .output}
+```
 
 In this case,
 since the shell expands `$filename` to be the name of a file,
 `echo $filename` just prints the name of the file.
 Note that we can't write this as:
 
-~~~
+```bash
 for filename in *.dat
 do
     $filename
     head -n 100 $filename | tail -n 20
 done
-~~~
-{: .bash}
+```
 
 because then the first time through the loop,
 when `$filename` expanded to `basilisk.dat`, the shell would try to run `basilisk.dat` as a program.
@@ -217,21 +206,19 @@ with whitespace we need to quote those elements
 and our variable when using it.
 Suppose our data files are named:
 
-~~~
+```source
 red dragon.dat
 purple unicorn.dat
-~~~
-{: .source}
+```
 
 We need to use
 
-~~~
+```bash
 for filename in "red dragon.dat" "purple unicorn.dat"
 do
     head -n 100 "$filename" | tail -n 20
 done
-~~~
-{: .bash}
+```
 
 It is simpler just to avoid using whitespaces (or other special characters) in filenames.
 
@@ -257,30 +244,27 @@ head: cannot open ‘unicorn.dat’ for reading: No such file or directory
 Going back to our original file copying problem,
 we can solve it using this loop:
 
-~~~
+```bash
 for filename in *.dat
 do
     cp $filename original-$filename
 done
-~~~
-{: .bash}
+```
 
 This loop runs the `cp` command once for each filename.
 The first time,
 when `$filename` expands to `basilisk.dat`,
 the shell executes:
 
-~~~
+```bash
 cp basilisk.dat original-basilisk.dat
-~~~
-{: .bash}
+```
 
 The second time, the command is:
 
-~~~
+```bash
 cp unicorn.dat original-unicorn.dat
-~~~
-{: .bash}
+```
 
 Since the `cp` command does not normally produce any output, it's hard to check
 that the loop is doing the correct thing. By prefixing the command with `echo`
@@ -298,47 +282,43 @@ she decides to build up the required commands in stages.
 Her first step is to make sure that she can select the right files --- remember,
 these are ones whose names end in 'A' or 'B', rather than 'Z'. Starting from her home directory, Nelle types:
 
-~~~
+```bash
 $ cd north-pacific-gyre/2012-07-03
 $ for datafile in NENE*[AB].txt
 do
     echo $datafile
 done
-~~~
-{: .bash}
+```
 
-~~~
+```output
 NENE01729A.txt
 NENE01729B.txt
 NENE01736A.txt
 ...
 NENE02043A.txt
 NENE02043B.txt
-~~~
-{: .output}
+```
 
 Her next step is to decide
 what to call the files that the `goostats` analysis program will create.
 Prefixing each input file's name with "stats" seems simple,
 so she modifies her loop to do that:
 
-~~~
+```bash
 $ for datafile in NENE*[AB].txt
 do
     echo $datafile stats-$datafile
 done
-~~~
-{: .bash}
+```
 
-~~~
+```output
 NENE01729A.txt stats-NENE01729A.txt
 NENE01729B.txt stats-NENE01729B.txt
 NENE01736A.txt stats-NENE01736A.txt
 ...
 NENE02043A.txt stats-NENE02043A.txt
 NENE02043B.txt stats-NENE02043B.txt
-~~~
-{: .output}
+```
 
 She hasn't actually run `goostats` yet,
 but now she's sure she can select the right files and generate the right output filenames.
@@ -352,18 +332,16 @@ In response,
 the shell redisplays the whole loop on one line
 (using semi-colons to separate the pieces):
 
-~~~
+```bash
 $ for datafile in NENE*[AB].txt; do echo $datafile stats-$datafile; done
-~~~
-{: .bash}
+```
 
 Using the left arrow key,
 Nelle backs up and changes the command `echo` to `bash goostats`:
 
-~~~
+```bash
 $ for datafile in NENE*[AB].txt; do bash goostats $datafile stats-$datafile; done
-~~~
-{: .bash}
+```
 
 When she presses Enter,
 the shell runs the modified command.
@@ -374,10 +352,9 @@ She kills the running command by typing `Ctrl-C`,
 uses up-arrow to repeat the command,
 and edits it to read:
 
-~~~
+```bash
 $ for datafile in NENE*[AB].txt; do echo $datafile; bash goostats $datafile stats-$datafile; done
-~~~
-{: .bash}
+```
 
 {% callout "Beginning and End" %}
 
@@ -388,13 +365,12 @@ and to the end using `Ctrl-e`.
 When she runs her program now,
 it produces one line of output every five seconds or so:
 
-~~~
+```output
 NENE01729A.txt
 NENE01729B.txt
 NENE01736A.txt
 ...
-~~~
-{: .output}
+```
 
 1518 times 5 seconds,
 divided by 60,
@@ -414,18 +390,16 @@ get a list of the last few hundred commands that have been executed, and
 then to use `!123` (where "123" is replaced by the command number) to
 repeat one of those commands. For example, if Nelle types this:
 
-~~~
+```bash
 $ history | tail -n 5
-~~~
-{: .bash}
-~~~
+```
+```output
   456  ls -l NENE0*.txt
   457  rm stats-NENE01729B.txt.txt
   458  bash goostats NENE01729B.txt stats-NENE01729B.txt
   459  ls -l NENE0*.txt
   460  history
-~~~
-{: .output}
+```
 
 then she can re-run `goostats` on `NENE01729B.txt` simply by typing
 `!458`.
@@ -452,30 +426,27 @@ quicker than doing up-arrow and editing the command-line.
 This exercise refers to the `data-shell/molecules` directory.
 `ls` gives the following output:
 
-~~~
+```output
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
-~~~
-{: .output}
+```
 
 What is the output of the following code?
 
-~~~
+```bash
 for datafile in *.pdb
 do
     ls *.pdb
 done
-~~~
-{: .bash}
+```
 
 Now, what is the output of the following code?
 
-~~~
+```bash
 for datafile in *.pdb
 do
 >	ls $datafile
 done
-~~~
-{: .bash}
+```
 
 Why do these two loops give different outputs?
 
@@ -524,14 +495,13 @@ propane.pdb
 
 In the same directory, what is the effect of this loop?
 
-~~~
+```bash
 for alkanes in *.pdb
 do
     echo $alkanes
     cat $alkanes > alkanes.pdb
 done
-~~~
-{: .bash}
+```
 
 1.  Prints `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb` and `propane.pdb`,
     and the text from `propane.pdb` will be saved to a file called `alkanes.pdb`.
@@ -552,13 +522,12 @@ is the text from the `propane.pdb` file.
 
 In the same directory, what would be the output of the following loop?
 
-~~~
+```bash
 for datafile in *.pdb
 do
     cat $datafile >> all.pdb
 done
-~~~
-{: .bash}
+```
 
 1.  All of the text from `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, and
     `pentane.pdb` would be concatenated and saved to a file called `all.pdb`.
@@ -579,13 +548,12 @@ Given the output from the `cat` command has been redirected, nothing is printed 
 
 In the same directory, what would be the output of the following loop?
 
-~~~
+```bash
 for filename in c*
 do
     ls $filename
 done
-~~~
-{: .bash}
+```
 
 1.  No files are listed.
 2.  All files are listed.
@@ -599,13 +567,12 @@ the letter c, followed by zero or more other characters will be matched.
 
 How would the output differ from using this command instead?
 
-~~~
+```bash
 for filename in *c*
 do
     ls $filename
 done
-~~~
-{: .bash}
+```
 
 1.  The same files would be listed.
 2.  All the files are listed this time.
@@ -628,34 +595,31 @@ is to `echo` the commands it would run instead of actually running them.
 Suppose we want to preview the commands the following loop will execute
 without actually running those commands:
 
-~~~
+```bash
 for file in *.pdb
 do
   analyze $file > analyzed-$file
 done
-~~~
-{: .bash}
+```
 
 What is the difference between the two loops below, and which one would we
 want to run?
 
-~~~
+```bash
 # Version 1
 for file in *.pdb
 do
   echo analyze $file > analyzed-$file
 done
-~~~
-{: .bash}
+```
 
-~~~
+```bash
 # Version 2
 for file in *.pdb
 do
   echo "analyze $file > analyzed-$file"
 done
-~~~
-{: .bash}
+```
 
 {% solution "Solution" %}
 The second version is the one we want to run.
@@ -678,7 +642,7 @@ some experiments measuring reaction rate constants with different compounds
 *and* different temperatures.  What would be the
 result of the following code:
 
-~~~
+```bash
 for species in cubane ethane methane
 do
     for temperature in 25 30 37 40
@@ -686,8 +650,7 @@ do
         mkdir $species-$temperature
     done
 done
-~~~
-{: .bash}
+```
 
 {% solution "Solution" %}
 We have a nested loop, i.e. contained within another loop, so for each species

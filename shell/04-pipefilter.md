@@ -31,16 +31,14 @@ that contains six files describing some simple organic molecules.
 The `.pdb` extension indicates that these files are in Protein Data Bank format,
 a simple text format that specifies the type and position of each atom in the molecule.
 
-~~~
+```bash
 $ ls molecules
-~~~
-{: .bash}
+```
 
-~~~
+```output
 cubane.pdb    ethane.pdb    methane.pdb
 octane.pdb    pentane.pdb   propane.pdb
-~~~
-{: .output}
+```
 
 Let's go into that directory with `cd` and run the command `wc *.pdb`.
 `wc` is the "word count" command:
@@ -48,13 +46,12 @@ it counts the number of lines, words, and characters in files.
 The `*` in `*.pdb` matches zero or more characters,
 so the shell turns `*.pdb` into a list of all `.pdb` files in the current directory:
 
-~~~
+```bash
 $ cd molecules
 $ wc *.pdb
-~~~
-{: .bash}
+```
 
-~~~
+```output
   20  156 1158 cubane.pdb
   12   84  622 ethane.pdb
    9   57  422 methane.pdb
@@ -62,8 +59,7 @@ $ wc *.pdb
   21  165 1226 pentane.pdb
   15  111  825 propane.pdb
  107  819 6081 total
-~~~
-{: .output}
+```
 
 {% callout "Wildcards" %}
 
@@ -125,12 +121,11 @@ produce this output?
 If we run `wc -l` instead of just `wc`,
 the output shows only the number of lines per file:
 
-~~~
+```bash
 $ wc -l *.pdb
-~~~
-{: .bash}
+```
 
-~~~
+```output
   20  cubane.pdb
   12  ethane.pdb
    9  methane.pdb
@@ -138,8 +133,7 @@ $ wc -l *.pdb
   21  pentane.pdb
   15  propane.pdb
  107  total
-~~~
-{: .output}
+```
 
 We can also use `-w` to get only the number of words,
 or `-c` to get only the number of characters.
@@ -149,10 +143,9 @@ It's an easy question to answer when there are only six files,
 but what if there were 6000?
 Our first step toward a solution is to run the command:
 
-~~~
+```bash
 $ wc -l *.pdb > lengths.txt
-~~~
-{: .bash}
+```
 
 The greater than symbol, `>`, tells the shell to **redirect** the command's output
 to a file instead of printing it to the screen. (This is why there is no screen output:
@@ -163,15 +156,13 @@ silently overwritten, which may lead to data loss and thus requires
 some caution.
 `ls lengths.txt` confirms that the file exists:
 
-~~~
+```bash
 $ ls lengths.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
 lengths.txt
-~~~
-{: .output}
+```
 
 We can now send the content of `lengths.txt` to the screen using `cat lengths.txt`.
 `cat` stands for "concatenate":
@@ -179,12 +170,11 @@ it prints the contents of files one after another.
 There's only one file in this case,
 so `cat` just shows us what it contains:
 
-~~~
+```bash
 $ cat lengths.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
   20  cubane.pdb
   12  ethane.pdb
    9  methane.pdb
@@ -192,8 +182,7 @@ $ cat lengths.txt
   21  pentane.pdb
   15  propane.pdb
  107  total
-~~~
-{: .output}
+```
 
 {% callout "Output Page by Page" %}
 
@@ -212,12 +201,11 @@ numerical instead of alphabetical.
 This does *not* change the file;
 instead, it sends the sorted result to the screen:
 
-~~~
+```bash
 $ sort -n lengths.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
   9  methane.pdb
  12  ethane.pdb
  15  propane.pdb
@@ -225,8 +213,7 @@ $ sort -n lengths.txt
  21  pentane.pdb
  30  octane.pdb
 107  total
-~~~
-{: .output}
+```
 
 We can put the sorted list of lines in another temporary file called `sorted-lengths.txt`
 by putting `> sorted-lengths.txt` after the command,
@@ -234,16 +221,14 @@ just as we used `> lengths.txt` to put the output of `wc` into `lengths.txt`.
 Once we've done that,
 we can run another command called `head` to get the first few lines in `sorted-lengths.txt`:
 
-~~~
+```bash
 $ sort -n lengths.txt > sorted-lengths.txt
 $ head -n 1 sorted-lengths.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
   9  methane.pdb
-~~~
-{: .output}
+```
 
 Using `-n 1` with `head` tells it that
 we only want the first line of the file;
@@ -258,10 +243,9 @@ It's a very bad idea to try redirecting
 the output of a command that operates on a file
 to the same file. For example:
 
-~~~
+```bash
 $ sort -n lengths.txt > lengths.txt
-~~~
-{: .bash}
+```
 
 Doing something like this may give you
 incorrect results and/or delete
@@ -274,15 +258,13 @@ even once you understand what `wc`, `sort`, and `head` do,
 all those intermediate files make it hard to follow what's going on.
 We can make it easier to understand by running `sort` and `head` together:
 
-~~~
+```bash
 $ sort -n lengths.txt | head -n 1
-~~~
-{: .bash}
+```
 
-~~~
+```output
   9  methane.pdb
-~~~
-{: .output}
+```
 
 The vertical bar, `|`, between the two commands is called a **pipe**.
 It tells the shell that we want to use
@@ -298,12 +280,11 @@ That is, we can for example send the output of `wc` directly to `sort`,
 and then the resulting output to `head`.
 Thus we first use a pipe to send the output of `wc` to `sort`:
 
-~~~
+```bash
 $ wc -l *.pdb | sort -n
-~~~
-{: .bash}
+```
 
-~~~
+```output
    9 methane.pdb
   12 ethane.pdb
   15 propane.pdb
@@ -311,20 +292,17 @@ $ wc -l *.pdb | sort -n
   21 pentane.pdb
   30 octane.pdb
  107 total
-~~~
-{: .output}
+```
 
 And now we send the output of this pipe, through another pipe, to `head`, so that the full pipeline becomes:
 
-~~~
+```bash
 $ wc -l *.pdb | sort -n | head -n 1
-~~~
-{: .bash}
+```
 
-~~~
+```output
    9  methane.pdb
-~~~
-{: .output}
+```
 
 This is exactly like a mathematician nesting functions like *log(3x)*
 and saying "the log of three times *x*".
@@ -411,15 +389,14 @@ Nelle has run her samples through the assay machines
 and created 17 files in the `north-pacific-gyre/2012-07-03` directory described earlier.
 As a quick sanity check, starting from her home directory, Nelle types:
 
-~~~
+```bash
 $ cd north-pacific-gyre/2012-07-03
 $ wc -l *.txt
-~~~
-{: .bash}
+```
 
 The output is 18 lines that look like this:
 
-~~~
+```output
 300 NENE01729A.txt
 300 NENE01729B.txt
 300 NENE01736A.txt
@@ -427,24 +404,21 @@ The output is 18 lines that look like this:
 300 NENE01751B.txt
 300 NENE01812A.txt
 ... ...
-~~~
-{: .output}
+```
 
 Now she types this:
 
-~~~
+```bash
 $ wc -l *.txt | sort -n | head -n 5
-~~~
-{: .bash}
+```
 
-~~~
+```output
  240 NENE02018B.txt
  300 NENE01729A.txt
  300 NENE01729B.txt
  300 NENE01736A.txt
  300 NENE01751A.txt
-~~~
-{: .output}
+```
 
 Whoops: one of the files is 60 lines shorter than the others.
 When she goes back and checks it,
@@ -454,19 +428,17 @@ and she forgot to reset it.
 Before re-running that sample,
 she checks to see if any files have too much data:
 
-~~~
+```bash
 $ wc -l *.txt | sort -n | tail -n 5
-~~~
-{: .bash}
+```
 
-~~~
+```output
  300 NENE02040B.txt
  300 NENE02040Z.txt
  300 NENE02043A.txt
  300 NENE02043B.txt
 5040 total
-~~~
-{: .output}
+```
 
 Those numbers look good --- but what's that 'Z' doing there in the third-to-last line?
 All of her samples should be marked 'A' or 'B';
@@ -474,15 +446,13 @@ by convention,
 her lab uses 'Z' to indicate samples with missing information.
 To find others like it, she does this:
 
-~~~
+```bash
 $ ls *Z.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
 NENE01971Z.txt    NENE02040Z.txt
-~~~
-{: .output}
+```
 
 Sure enough,
 when she checks the log on her laptop,
@@ -501,36 +471,33 @@ so this matches all the valid data files she has.
 
 If we run `sort` on this file:
 
-~~~
+```source
 10
 2
 19
 22
 6
-~~~
-{: .source}
+```
 
 the output is:
 
-~~~
+```output
 10
 19
 2
 22
 6
-~~~
-{: .output}
+```
 
 If we run `sort -n` on the same input, we get this instead:
 
-~~~
+```output
 2
 6
 10
 19
 22
-~~~
-{: .output}
+```
 
 Explain why `-n` has this effect.
 
@@ -545,17 +512,15 @@ Change directory to `data-shell` (the top level of our downloaded example data).
 
 What is the difference between:
 
-~~~
+```bash
 $ wc -l notes.txt
-~~~
-{: .bash}
+```
 
 and:
 
-~~~
+```bash
 $ wc -l < notes.txt
-~~~
-{: .bash}
+```
 
 {% solution "Solution" %}
 `<` is used to redirect input to a command.
@@ -590,17 +555,15 @@ Ctrl-D # This lets the shell know you have finished typing the input
 
 What is the difference between:
 
-~~~
+```bash
 $ echo hello > testfile01.txt
-~~~
-{: .bash}
+```
 
 and:
 
-~~~
+```bash
 $ echo hello >> testfile02.txt
-~~~
-{: .bash}
+```
 
 Hint: Try executing each command twice in a row and then examining the output files.
 {% endchallenge %}
@@ -610,7 +573,7 @@ Hint: Try executing each command twice in a row and then examining the output fi
 Sam has a directory containing calibration data, datasets, and descriptions of
 the datasets:
 
-~~~
+```bash
 2015-10-23-calibration.txt
 2015-10-23-dataset1.txt
 2015-10-23-dataset2.txt
@@ -623,20 +586,18 @@ the datasets:
 2015-11-23-dataset1.txt
 2015-11-23-dataset2.txt
 2015-11-23-dataset_overview.txt
-~~~
-{: .bash}
+```
 
 Before heading off to another field trip, she wants to back up her data and
 send some datasets to her colleague Bob. Sam uses the following commands
 to get the job done:
 
-~~~
+```bash
 $ cp *dataset* /backup/datasets
 $ cp ____calibration____ /backup/calibration
 $ cp 2015-____-____ ~/send_to_bob/all_november_files/
 $ cp ____ ~/send_to_bob/all_datasets_created_on_a_23rd/
-~~~
-{: .bash}
+```
 
 Help Sam by filling in the blanks.
 
@@ -674,25 +635,23 @@ Try it in the `data-shell/molecules` directory!
 The command `uniq` removes adjacent duplicated lines from its input.
 For example, the file `data-shell/data/salmon.txt` contains:
 
-~~~
+```source
 coho
 coho
 steelhead
 coho
 steelhead
 steelhead
-~~~
-{: .source}
+```
 
 Running the command `uniq salmon.txt` from the `data-shell/data` directory produces:
 
-~~~
+```output
 coho
 steelhead
 coho
 steelhead
-~~~
-{: .output}
+```
 
 Why do you think `uniq` only removes *adjacent* duplicated lines?
 (Hint: think about very large data sets.) What other command could
@@ -710,7 +669,7 @@ $ sort salmon.txt | uniq
 
 A file called `animals.txt` (in the `data-shell/data` folder) contains the following data:
 
-~~~
+```source
 2012-11-05,deer
 2012-11-05,rabbit
 2012-11-05,raccoon
@@ -719,15 +678,13 @@ A file called `animals.txt` (in the `data-shell/data` folder) contains the follo
 2012-11-06,fox
 2012-11-07,rabbit
 2012-11-07,bear
-~~~
-{: .source}
+```
 
 What text passes through each of the pipes and the final redirect in the pipeline below?
 
-~~~
+```bash
 $ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt
-~~~
-{: .bash}
+```
 Hint: build the pipeline up one command at a time to test your understanding
 {% endchallenge %}
 
@@ -735,14 +692,13 @@ Hint: build the pipeline up one command at a time to test your understanding
 
 For the file `animals.txt` from the previous exercise, the command:
 
-~~~
+```bash
 $ cut -d , -f 2 animals.txt
-~~~
-{: .bash}
+```
 
 produces the following output:
 
-~~~
+```output
 deer
 rabbit
 raccoon
@@ -751,8 +707,7 @@ deer
 fox
 rabbit
 bear
-~~~
-{: .output}
+```
 
 What other command(s) could be added to this in a pipeline to find
 out what animals the file contains (without any duplicates in their
@@ -829,14 +784,13 @@ this.
 
 The file `data-shell/data/animals.txt` contains 586 lines of data formatted as follows:
 
-~~~
+```output
 2012-11-05,deer
 2012-11-05,rabbit
 2012-11-05,raccoon
 2012-11-06,rabbit
 ...
-~~~
-{: .output}
+```
 
 Assuming your current directory is `data-shell/data/`,
 what command would you use to produce a table that shows
@@ -862,11 +816,10 @@ Consider the file `animals.txt`, used in previous exercise.
 After these commands, select the answer that
 corresponds to the file `animalsUpd.txt`:
 
-~~~
+```bash
 $ head -3 animals.txt > animalsUpd.txt
 $ tail -2 animals.txt >> animalsUpd.txt
-~~~
-{: .bash}
+```
 
 1. The first three lines of `animals.txt`
 2. The last two lines of `animals.txt`

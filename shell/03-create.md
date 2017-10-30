@@ -25,35 +25,30 @@ but how do we create them in the first place?
 Let's go back to our `data-shell` directory on the Desktop
 and use `ls -F` to see what it contains:
 
-~~~
+```bash
 $ pwd
-~~~
-{: .bash}
+```
 
-~~~
+```output
 /Users/nelle/Desktop/data-shell
-~~~
-{: .output}
+```
 
-~~~
+```bash
 $ ls -F
-~~~
-{: .bash}
+```
 
-~~~
+```output
 creatures/  molecules/           pizza.cfg
 data/       north-pacific-gyre/  solar.pdf
 Desktop/    notes.txt            writing/
-~~~
-{: .output}
+```
 
 Let's create a new directory called `thesis` using the command `mkdir thesis`
 (which has no output):
 
-~~~
+```bash
 $ mkdir thesis
-~~~
-{: .bash}
+```
 
 As you might guess from its name,
 `mkdir` means "make directory".
@@ -61,18 +56,16 @@ Since `thesis` is a relative path
 (i.e., doesn't have a leading slash),
 the new directory is created in the current working directory:
 
-~~~
+```bash
 $ ls -F
-~~~
-{: .bash}
+```
 
-~~~
+```output
 creatures/  north-pacific-gyre/  thesis/
 data/       notes.txt            writing/
 Desktop/    pizza.cfg
 molecules/  solar.pdf
-~~~
-{: .output}
+```
 
 {% callout "Two ways of doing the same thing" %}
 Using the shell to create a directory is no different than using a file explorer.
@@ -112,19 +105,17 @@ or another non-alphanumeric character, you should surround the name in quotes (`
 
 Since we've just created the `thesis` directory, there's nothing in it yet:
 
-~~~
+```bash
 $ ls -F thesis
-~~~
-{: .bash}
+```
 
 Let's change our working directory to `thesis` using `cd`,
 then run a text editor called Nano to create a file called `draft.txt`:
 
-~~~
+```bash
 $ cd thesis
 $ nano draft.txt
-~~~
-{: .bash}
+```
 
 {% callout "Which Editor?" %}
 
@@ -183,32 +174,28 @@ file.
 `nano` doesn't leave any output on the screen after it exits,
 but `ls` now shows that we have created a file called `draft.txt`:
 
-~~~
+```bash
 $ ls
-~~~
-{: .bash}
+```
 
-~~~
+```output
 draft.txt
-~~~
-{: .output}
+```
 
 Let's tidy up by running `rm draft.txt`:
 
-~~~
+```bash
 $ rm draft.txt
-~~~
-{: .bash}
+```
 
 This command removes files (`rm` is short for "remove").
 If we run `ls` again,
 its output is empty once more,
 which tells us that our file is gone:
 
-~~~
+```bash
 $ ls
-~~~
-{: .bash}
+```
 
 {% callout "Deleting Is Forever" %}
 
@@ -224,54 +211,46 @@ file's disk space right away.
 Let's re-create that file
 and then move up one directory to `/Users/nelle/Desktop/data-shell` using `cd ..`:
 
-~~~
+```bash
 $ pwd
-~~~
-{: .bash}
+```
 
-~~~
+```output
 /Users/nelle/Desktop/data-shell/thesis
-~~~
-{: .output}
+```
 
-~~~
+```bash
 $ nano draft.txt
 $ ls
-~~~
-{: .bash}
+```
 
-~~~
+```output
 draft.txt
-~~~
-{: .output}
+```
 
-~~~
+```bash
 $ cd ..
-~~~
-{: .bash}
+```
 
 If we try to remove the entire `thesis` directory using `rm thesis`,
 we get an error message:
 
-~~~
+```bash
 $ rm thesis
-~~~
-{: .bash}
+```
 
-~~~
+```error
 rm: cannot remove `thesis': Is a directory
-~~~
-{: .error}
+```
 
 This happens because `rm` by default only works on files, not directories.
 
 To really get rid of `thesis` we must also delete the file `draft.txt`.
 We can do this with the [recursive](https://en.wikipedia.org/wiki/Recursion) option for `rm`:
 
-~~~
+```bash
 $ rm -r thesis
-~~~
-{: .bash}
+```
 
 {% callout "With Great Power Comes Great Responsibility" %}
 
@@ -280,13 +259,12 @@ operation. If we're concerned about what we might be deleting we can
 add the "interactive" flag `-i` to `rm` which will ask us for confirmation
 before each step
 
-~~~
+```bash
 $ rm -r -i thesis
 rm: descend into directory ‘thesis’? y
 rm: remove regular file ‘thesis/draft.txt’? y
 rm: remove directory ‘thesis’? y
-~~~
-{: .bash}
+```
 
 This removes everything in the directory, then the directory itself, asking
 at each step for you to confirm the deletion.
@@ -296,36 +274,31 @@ Let's create that directory and file one more time.
 (Note that this time we're running `nano` with the path `thesis/draft.txt`,
 rather than going into the `thesis` directory and running `nano` on `draft.txt` there.)
 
-~~~
+```bash
 $ pwd
-~~~
-{: .bash}
+```
 
-~~~
+```output
 /Users/nelle/Desktop/data-shell
-~~~
-{: .output}
+```
 
-~~~
+```bash
 $ mkdir thesis
 $ nano thesis/draft.txt
 $ ls thesis
-~~~
-{: .bash}
+```
 
-~~~
+```output
 draft.txt
-~~~
-{: .output}
+```
 
 `draft.txt` isn't a particularly informative name,
 so let's change the file's name using `mv`,
 which is short for "move":
 
-~~~
+```bash
 $ mv thesis/draft.txt thesis/quotes.txt
-~~~
-{: .bash}
+```
 
 The first argument tells `mv` what we're "moving",
 while the second is where it's to go.
@@ -335,15 +308,13 @@ which has the same effect as renaming the file.
 Sure enough,
 `ls` shows us that `thesis` now contains one file called `quotes.txt`:
 
-~~~
+```bash
 $ ls thesis
-~~~
-{: .bash}
+```
 
-~~~
+```output
 quotes.txt
-~~~
-{: .output}
+```
 
 One has to be careful when specifying the target file name, since `mv` will
 silently overwrite any existing file with the same name, which could
@@ -362,32 +333,28 @@ but put the file somewhere new.
 In this case,
 the directory name we use is the special directory name `.` that we mentioned earlier.
 
-~~~
+```bash
 $ mv thesis/quotes.txt .
-~~~
-{: .bash}
+```
 
 The effect is to move the file from the directory it was in to the current working directory.
 `ls` now shows us that `thesis` is empty:
 
-~~~
+```bash
 $ ls thesis
-~~~
-{: .bash}
+```
 
 Further,
 `ls` with a filename or directory name as an argument only lists that file or directory.
 We can use this to see that `quotes.txt` is still in our current directory:
 
-~~~
+```bash
 $ ls quotes.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
 quotes.txt
-~~~
-{: .output}
+```
 
 The `cp` command works very much like `mv`,
 except it copies a file instead of moving it.
@@ -395,32 +362,28 @@ We can check that it did the right thing using `ls`
 with two paths as arguments --- like most Unix commands,
 `ls` can be given multiple paths at once:
 
-~~~
+```bash
 $ cp quotes.txt thesis/quotations.txt
 $ ls quotes.txt thesis/quotations.txt
-~~~
-{: .bash}
+```
 
-~~~
+```output
 quotes.txt   thesis/quotations.txt
-~~~
-{: .output}
+```
 
 To prove that we made a copy,
 let's delete the `quotes.txt` file in the current directory
 and then run that same `ls` again.
 
-~~~
+```bash
 $ rm quotes.txt
 $ ls quotes.txt thesis/quotations.txt
-~~~
-{: .bash}
+```
 
-~~~
+```error
 ls: cannot access quotes.txt: No such file or directory
 thesis/quotations.txt
-~~~
-{: .error}
+```
 
 This time it tells us that it can't find `quotes.txt` in the current directory,
 but it does find the copy in `thesis` that we didn't delete.
@@ -477,29 +440,24 @@ cannot be created.
 
 What is the output of the closing `ls` command in the sequence shown below?
 
-~~~
+```bash
 $ pwd
-~~~
-{: .bash}
-~~~
+```
+```output
 /Users/jamie/data
-~~~
-{: .output}
-~~~
+```
+```bash
 $ ls
-~~~
-{: .bash}
-~~~
+```
+```output
 proteins.dat
-~~~
-{: .output}
-~~~
+```
+```bash
 $ mkdir recombine
 $ mv proteins.dat recombine
 $ cp recombine/proteins.dat ../proteins-saved.dat
 $ ls
-~~~
-{: .bash}
+```
 
 1.   `proteins-saved.dat recombine`
 2.   `recombine`
@@ -527,35 +485,29 @@ So, the only thing that will show using ls (in `/Users/jamie/data`) is the recom
 Jamie is working on a project and she sees that her files aren't very well
 organized:
 
-~~~
+```bash
 $ ls -F
-~~~
-{: .bash}
-~~~
+```
+```output
 analyzed/  fructose.dat    raw/   sucrose.dat
-~~~
-{: .output}
+```
 
 The `fructose.dat` and `sucrose.dat` files contain output from her data
 analysis. What command(s) covered in this lesson does she need to run so that the commands below will
 produce the output shown?
 
-~~~
+```bash
 $ ls -F
-~~~
-{: .bash}
-~~~
+```
+```output
 analyzed/   raw/
-~~~
-{: .output}
-~~~
+```
+```bash
 $ ls analyzed
-~~~
-{: .bash}
-~~~
+```
+```output
 fructose.dat    sucrose.dat
-~~~
-{: .output}
+```
 
 {% solution "Solution" %}
 ```
@@ -574,26 +526,22 @@ For this exercise, you can test the commands in the `data-shell/data directory`.
 
 In the example below, what does `cp` do when given several filenames and a directory name?
 
-~~~
+```bash
 $ mkdir backup
 $ cp amino-acids.txt animals.txt backup/
-~~~
-{: .bash}
+```
 
 In the example below, what does `cp` do when given three or more file names?
 
-~~~
+```bash
 $ ls -F
-~~~
-{: .bash}
-~~~
+```
+```output
 amino-acids.txt  animals.txt  backup/  elements/  morse.txt  pdb/  planets.txt  salmon.txt  sunspot.txt
-~~~
-{: .output}
-~~~
+```
+```bash
 $ cp amino-acids.txt animals.txt morse.txt
-~~~
-{: .bash}
+```
 
 {% solution "Solution" %}
 If given more than one file name followed by a directory name (i.e. the destination directory must
@@ -629,11 +577,10 @@ are displayed chronologically.
 We have seen how to create text files using the `nano` editor.
 Now, try the following command in your home directory:
 
-~~~
+```bash
 $ cd                  # go to your home directory
 $ touch my_file.txt
-~~~
-{: .bash}
+```
 
 1.  What did the touch command do?
     When you look at your home directory using the GUI file explorer,
@@ -668,22 +615,20 @@ $ touch my_file.txt
 After running the following commands,
 Jamie realizes that she put the files `sucrose.dat` and `maltose.dat` into the wrong folder:
 
-~~~
+```bash
 $ ls -F
 raw/ analyzed/
 $ ls -F analyzed
 fructose.dat glucose.dat maltose.dat sucrose.dat
 $ cd raw/
-~~~
-{: .bash}
+```
 
 Fill in the blanks to move these files to the current folder
 (i.e., the one she is currently in):
 
-~~~
+```bash
 $ mv ___/sucrose.dat  ___/maltose.dat ___
-~~~
-{: .bash}
+```
 {% solution "Solution" %}
 ```
 $ mv ../analyzed/sucrose.dat ../analyzed/maltose.dat .
@@ -725,23 +670,20 @@ remove the data files from the directory you just created.
 Which of the following set of commands would achieve this objective?
 What would the other commands do?
 
-~~~
+```bash
 $ cp -r 2016-05-18-data/ 2016-05-20-data/
 $ rm 2016-05-20-data/raw/*
 $ rm 2016-05-20-data/processed/*
-~~~
-{: .bash}
-~~~
+```
+```bash
 $ rm 2016-05-20-data/raw/*
 $ rm 2016-05-20-data/processed/*
 $ cp -r 2016-05-18-data/ 2016-5-20-data/
-~~~
-{: .bash}
-~~~
+```
+```bash
 $ cp -r 2016-05-18-data/ 2016-05-20-data/
 $ rm -r -i 2016-05-20-data/
-~~~
-{: .bash}
+```
 
 {% solution "Solution" %}
 The first set of commands achieves this objective.

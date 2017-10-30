@@ -29,21 +29,19 @@ these are actually small programs.
 Let's start by going back to `molecules/` and creating a new file, `middle.sh` which will
 become our shell script:
 
-~~~
+```bash
 $ cd molecules
 $ nano middle.sh
-~~~
-{: .bash}
+```
 
 The command `nano middle.sh` opens the file `middle.sh` within the text editor "nano"
 (which runs within the shell).
 If the file does not exist, it will be created.
 We can use the text editor to directly edit the file -- we'll simply insert the following line:
 
-~~~
+```source
 head -n 15 octane.pdb | tail -n 5
-~~~
-{: .source}
+```
 
 This is a variation on the pipe we constructed earlier:
 it selects lines 11-15 of the file `octane.pdb`.
@@ -58,19 +56,17 @@ Once we have saved the file,
 we can ask the shell to execute the commands it contains.
 Our shell is called `bash`, so we run the following command:
 
-~~~
+```bash
 $ bash middle.sh
-~~~
-{: .bash}
+```
 
-~~~
+```output
 ATOM      9  H           1      -4.502   0.681   0.785  1.00  0.00
 ATOM     10  H           1      -5.254  -0.243  -0.537  1.00  0.00
 ATOM     11  H           1      -4.357   1.252  -0.895  1.00  0.00
 ATOM     12  H           1      -3.009  -0.741  -1.467  1.00  0.00
 ATOM     13  H           1      -3.172  -1.337   0.206  1.00  0.00
-~~~
-{: .output}
+```
 
 Sure enough,
 our script's output is exactly what we would get if we ran that pipeline directly.
@@ -93,51 +89,45 @@ We could edit `middle.sh` each time to change the filename,
 but that would probably take longer than just retyping the command.
 Instead, let's edit `middle.sh` and make it more versatile:
 
-~~~
+```bash
 $ nano middle.sh
-~~~
-{: .bash}
+```
 
 Now, within "nano", replace the text `octane.pdb` with the special variable called `$1`:
 
-~~~
+```output
 head -n 15 "$1" | tail -n 5
-~~~
-{: .output}
+```
 
 Inside a shell script,
 `$1` means "the first filename (or other argument) on the command line".
 We can now run our script like this:
 
-~~~
+```bash
 $ bash middle.sh octane.pdb
-~~~
-{: .bash}
+```
 
-~~~
+```output
 ATOM      9  H           1      -4.502   0.681   0.785  1.00  0.00
 ATOM     10  H           1      -5.254  -0.243  -0.537  1.00  0.00
 ATOM     11  H           1      -4.357   1.252  -0.895  1.00  0.00
 ATOM     12  H           1      -3.009  -0.741  -1.467  1.00  0.00
 ATOM     13  H           1      -3.172  -1.337   0.206  1.00  0.00
-~~~
-{: .output}
+```
 
 or on a different file like this:
 
-~~~
+```bash
 $ bash middle.sh pentane.pdb
-~~~
-{: .bash}
+```
 
-~~~
+```output
 ATOM      9  H           1       1.324   0.350  -1.332  1.00  0.00
 ATOM     10  H           1       1.271   1.378   0.122  1.00  0.00
 ATOM     11  H           1      -0.074  -0.384   1.288  1.00  0.00
 ATOM     12  H           1      -0.048  -1.362  -0.205  1.00  0.00
 ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00
-~~~
-{: .output}
+```
 
 {% callout "Double-Quotes Around Arguments" %}
 
@@ -151,64 +141,56 @@ though.
 Let's fix that by using the special variables `$2` and `$3` for the
 number of lines to be passed to `head` and `tail` respectively:
 
-~~~
+```bash
 $ nano middle.sh
-~~~
-{: .bash}
+```
 
-~~~
+```output
 head -n "$2" "$1" | tail -n "$3"
-~~~
-{: .output}
+```
 
 We can now run:
 
-~~~
+```bash
 $ bash middle.sh pentane.pdb 15 5
-~~~
-{: .bash}
+```
 
-~~~
+```output
 ATOM      9  H           1       1.324   0.350  -1.332  1.00  0.00
 ATOM     10  H           1       1.271   1.378   0.122  1.00  0.00
 ATOM     11  H           1      -0.074  -0.384   1.288  1.00  0.00
 ATOM     12  H           1      -0.048  -1.362  -0.205  1.00  0.00
 ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00
-~~~
-{: .output}
+```
 
 By changing the arguments to our command we can change our script's
 behaviour:
 
-~~~
+```bash
 $ bash middle.sh pentane.pdb 20 5
-~~~
-{: .bash}
+```
 
-~~~
+```output
 ATOM     14  H           1      -1.259   1.420   0.112  1.00  0.00
 ATOM     15  H           1      -2.608  -0.407   1.130  1.00  0.00
 ATOM     16  H           1      -2.540  -1.303  -0.404  1.00  0.00
 ATOM     17  H           1      -3.393   0.254  -0.321  1.00  0.00
 TER      18              1
-~~~
-{: .output}
+```
 
 This works,
 but it may take the next person who reads `middle.sh` a moment to figure out what it does.
 We can improve our script by adding some **comments** at the top:
 
-~~~
+```bash
 $ nano middle.sh
-~~~
-{: .bash}
+```
 
-~~~
+```output
 # Select lines from the middle of a file.
 # Usage: bash middle.sh filename end_line num_lines
 head -n "$2" "$1" | tail -n "$3"
-~~~
-{: .output}
+```
 
 A comment starts with a `#` character and runs to the end of the line.
 The computer ignores comments,
@@ -220,10 +202,9 @@ an explanation that sends the reader in the wrong direction is worse than none a
 What if we want to process many files in a single pipeline?
 For example, if we want to sort our `.pdb` files by length, we would type:
 
-~~~
+```bash
 $ wc -l *.pdb | sort -n
-~~~
-{: .bash}
+```
 
 because `wc -l` lists the number of lines in the files
 (recall that `wc` stands for 'word count', adding the `-l` flag means 'count lines' instead)
@@ -242,24 +223,21 @@ to handle the case of arguments containing spaces
 (`"$@"` is equivalent to `"$1"` `"$2"` ...)
 Here's an example:
 
-~~~
+```bash
 $ nano sorted.sh
-~~~
-{: .bash}
+```
 
-~~~
+```output
 # Sort filenames by their length.
 # Usage: bash sorted.sh one_or_more_filenames
 wc -l "$@" | sort -n
-~~~
-{: .output}
+```
 
-~~~
+```bash
 $ bash sorted.sh *.pdb ../creatures/*.dat
-~~~
-{: .bash}
+```
 
-~~~
+```output
 9 methane.pdb
 12 ethane.pdb
 15 propane.pdb
@@ -268,26 +246,23 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 30 octane.pdb
 163 ../creatures/basilisk.dat
 163 ../creatures/unicorn.dat
-~~~
-{: .output}
+```
 
 {% callout "Why Isn't It Doing Anything?" %}
 
 What happens if a script is supposed to process a bunch of files, but we
 don't give it any filenames? For example, what if we type:
 
-~~~
+```bash
 $ bash sorted.sh
-~~~
-{: .bash}
+```
 
 but don't say `*.dat` (or anything else)? In this case, `$@` expands to
 nothing at all, so the pipeline inside the script is effectively:
 
-~~~
+```bash
 $ wc -l | sort -n
-~~~
-{: .bash}
+```
 
 Since it doesn't have any filenames, `wc` assumes it is supposed to
 process standard input, so it just sits there and waits for us to give
@@ -304,21 +279,19 @@ Instead of typing them in again
 (and potentially getting them wrong)
 we can do this:
 
-~~~
+```bash
 $ history | tail -n 5 > redo-figure-3.sh
-~~~
-{: .bash}
+```
 
 The file `redo-figure-3.sh` now contains:
 
-~~~
+```source
 297 bash goostats NENE01729B.txt stats-NENE01729B.txt
 298 bash goodiff stats-NENE01729B.txt /data/validated/01729.txt > 01729-differences.txt
 299 cut -d ',' -f 2-3 01729-differences.txt > 01729-time-series.txt
 300 ygraph --format scatter --color bw --borders none 01729-time-series.txt figure-3.png
 301 history | tail -n 5 > redo-figure-3.sh
-~~~
-{: .source}
+```
 
 
 (`goostats` is a shell script which calculates some complicated statistics from a protein sample file -- the first argument -- and writes them to a file -- the second argument.
@@ -341,30 +314,27 @@ and save it as a shell script.
 Nelle's supervisor insisted that all her analytics must be reproducible. The easiest way to capture all the steps is in a script.
 She runs the editor and writes the following:
 
-~~~
+```bash
 # Calculate stats for data files.
 for datafile in "$@"
 do
     echo $datafile
     bash goostats $datafile stats-$datafile
 done
-~~~
-{: .bash}
+```
 
 She saves this in a file called `do-stats.sh`
 so that she can now re-do the first stage of her analysis by typing:
 
-~~~
+```bash
 $ bash do-stats.sh *[AB].txt
-~~~
-{: .bash}
+```
 
 She can also do this:
 
-~~~
+```bash
 $ bash do-stats.sh *[AB].txt | wc -l
-~~~
-{: .bash}
+```
 
 so that the output is just the number of files processed
 rather than the names of the files that were processed.
@@ -373,15 +343,14 @@ One thing to note about Nelle's script is that
 it lets the person running it decide what files to process.
 She could have written it as:
 
-~~~
+```bash
 # Calculate stats for Site A and Site B data files.
 for datafile in *[AB].txt
 do
     echo $datafile
     bash goostats $datafile stats-$datafile
 done
-~~~
-{: .bash}
+```
 
 The advantage is that this always selects the right files:
 she doesn't have to remember to exclude the 'Z' files.
@@ -399,18 +368,16 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 In the `molecules` directory, imagine you have a shell script called `script.sh` containing the
 following commands:
 
-~~~
+```bash
 head -n $2 $1
 tail -n $3 $1
-~~~
-{: .bash}
+```
 
 While you are in the `molecules` directory, you type the following command:
 
-~~~
+```bash
 bash script.sh '*.pdb' 1 1
-~~~
-{: .bash}
+```
 
 Which of the following outputs would you expect to see?
 
@@ -441,7 +408,7 @@ script by `head` and `tail`.
 
 Leah has several hundred data files, each of which is formatted like this:
 
-~~~
+```source
 2013-11-05,deer,5
 2013-11-05,rabbit,22
 2013-11-05,raccoon,7
@@ -450,8 +417,7 @@ Leah has several hundred data files, each of which is formatted like this:
 2013-11-06,fox,1
 2013-11-07,rabbit,18
 2013-11-07,bear,1
-~~~
-{: .source}
+```
 
 An example of this type of file is given in `data-shell/data/animal-counts/animals.txt`.
 
@@ -485,10 +451,9 @@ directory and a filename extension as its arguments, and prints
 out the name of the file with the most lines in that directory
 with that extension. For example:
 
-~~~
+```bash
 $ bash longest.sh /tmp/data pdb
-~~~
-{: .bash}
+```
 
 would print the name of the `.pdb` file in `/tmp/data` that has
 the most lines.
@@ -512,10 +477,9 @@ wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
 
 If you run the command:
 
-~~~
+```bash
 $ history | tail -n 5 > recent.sh
-~~~
-{: .bash}
+```
 
 the last command in the file is the `history` command itself, i.e.,
 the shell has added `history` to the command log before actually
@@ -538,26 +502,23 @@ may have created.
 Explain what a script called `example.sh` would do when run as
 `bash example.sh *.pdb` if it contained the following lines:
 
-~~~
+```bash
 # Script 1
 echo *.*
-~~~
-{: .bash}
+```
 
-~~~
+```bash
 # Script 2
 for filename in $1 $2 $3
 do
     cat $filename
 done
-~~~
-{: .bash}
+```
 
-~~~
+```bash
 # Script 3
 echo $@.pdb
-~~~
-{: .bash}
+```
 
 {% solution "Solutions" %}
 Script 1 would print out a list of all files containing a dot in their name.
@@ -576,30 +537,27 @@ cubane.pdb ethane.pdb methane.pdb octane.pdb pentane.pdb propane.pdb.pdb
 Suppose you have saved the following script in a file called `do-errors.sh`
 in Nelle's `north-pacific-gyre/2012-07-03` directory:
 
-~~~
+```bash
 # Calculate stats for data files.
 for datafile in "$@"
 do
     echo $datfile
     bash goostats $datafile stats-$datafile
 done
-~~~
-{: .bash}
+```
 
 When you run it:
 
-~~~
+```bash
 $ bash do-errors.sh *[AB].txt
-~~~
-{: .bash}
+```
 
 the output is blank.
 To figure out why, re-run the script using the `-x` option:
 
-~~~
+```bash
 bash -x do-errors.sh *[AB].txt
-~~~
-{: .bash}
+```
 
 What is the output showing you?
 Which line is responsible for the error?
