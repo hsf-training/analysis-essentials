@@ -65,6 +65,18 @@ the Bourne Again SHell
 Bash is the default shell on most modern implementations of Unix
 and in most packages that provide Unix-like tools for Windows.
 
+{% callout "Available shells at CERN" %}
+At CERN the `bash` is set as the default shell, however other shells are
+supported by the CERN IT department and can be set [on the account management
+page](https://resources.web.cern.ch/resources/Manage/Linux/Settings.aspx).
+Despite this, if you want a configuration that "just works", using `bash` is the
+best option as other shells are sometimes considered a non-standard
+configuration.
+
+Regardless of your default shell you can always use a different shell by running
+the relevant executable (i.e. `bash`, `tcsh`, `zsh`, ...) after logging in.
+{% endcallout %}
+
 ### Why bother?
 Using Bash or any other shell
 sometimes feels more like programming than like using a mouse.
