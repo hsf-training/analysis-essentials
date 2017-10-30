@@ -195,7 +195,7 @@ $ cat lengths.txt
 ~~~
 {: .output}
 
-{% challenge "Output Page by Page" %}
+{% callout "Output Page by Page" %}
 >
 We'll continue to use `cat` in this lesson, for convenience and consistency,
 but it has the disadvantage that it always dumps the whole file onto your screen.
@@ -497,7 +497,7 @@ the `*` matches any number of characters;
 the expression `[AB]` matches either an 'A' or a 'B',
 so this matches all the valid data files she has.
 
-## What Does `sort -n` Do?
+{% challenge "What Does `sort -n` Do?" %}
 >
 If we run `sort` on this file:
 >
