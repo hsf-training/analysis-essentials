@@ -21,11 +21,11 @@
 
 ----
 
- * [Shell](shell/shell.md)
-   * [Using screen to keep things running](shell/screen.md)
-   * [Advanced screen topics](shell/screen2.md)
-   * [Persistent screen or tmux session](shell/persistent-screen.md)
-   * [Advanced shell topics](shell/shell2.md)
+ * [Shell extras](shell-extras/README.md)
+   * [Using screen to keep things running](shell-extras/screen.md)
+   * [Advanced screen topics](shell-extras/screen2.md)
+   * [Persistent screen or tmux session](shell-extras/persistent-screen.md)
+   * [Advanced shell topics](shell-extras/shell2.md)
 
 ----
 
