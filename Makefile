@@ -18,9 +18,10 @@ test: all
 
 clean:
 	@rm -rf _book
-	@rm -f book.pdf
+	@rm -f book.pdf analysis-essentials.pdf
 	@rm -rf node_modules
 	@rm -f tests/*.pyc
 
-publish-travis: all
+publish-travis: all pdf
+	@git add -f analysis-essentials.pdf
 	@ghp-import -n ./_book && git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git gh-pages > /dev/null
