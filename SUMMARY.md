@@ -21,6 +21,16 @@
 
 ----
 
+ * [Shell](shell/README.md)
+   * [Filedir](shell/02-filedir.md)
+   * [Create](shell/03-create.md)
+   * [Pipefilter](shell/04-pipefilter.md)
+   * [Loop](shell/05-loop.md)
+   * [Script](shell/06-script.md)
+   * [Find](shell/07-find.md)
+
+----
+
  * [Shell extras](shell-extras/README.md)
    * [Using screen to keep things running](shell-extras/screen.md)
    * [Advanced screen topics](shell-extras/screen2.md)
