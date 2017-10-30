@@ -395,10 +395,11 @@ however,
 most people use them interchangeably
 to refer to the input term(s) given to a command.
 Consider the example below:
-```
+
+```bash
 ls -lh Documents
 ```
-{: .bash}
+
 `ls` is the command, `-lh` are the flags (also called options),
 and `Documents` is the argument.
 {% endcallout %}
