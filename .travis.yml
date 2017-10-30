@@ -3,16 +3,20 @@ branches:
     - master
 sudo: false
 language: node_js
+addons:
+  apt:
+    packages:
+    - calibre
+    - calibre-bin
 install:
   - npm install gitbook-cli -g
   - npm install svgexport -g
   - pip install --user beautifulsoup4
   - pip install --user ghp-import
-  - wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | python -c "import sys; main=lambda x,y:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main('~/calibre-bin', True)"
 node_js: '4.1'
 script:
   - make
-  - PATH=$HOME/calibre-bin/calibre/bin/:$PATH make pdf
+  - make pdf
   - make test
 after_success:
   - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && make publish-travis > /dev/null 2>&1 || true'
