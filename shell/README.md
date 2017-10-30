@@ -11,7 +11,7 @@ common set of files that everyone has access to. In order to create these files
 and directories, login to lxplus and run:
 
 ```bash
-wget https://cern.ch/go/9rKZ && unzip data-shell.zip && rm data-shell.zip
+mkdir Desktop; cd Desktop && wget https://cern.ch/go/9rKZ && unzip data-shell.zip && rm data-shell.zip && cd -
 ```
 
 For now it does not matter if you understand this command, hopefully by the end
