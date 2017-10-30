@@ -420,7 +420,7 @@ data-shell/
 ```
 
 Your output should be a list of all the files and sub-directories on your
-Desktop, including the `data-shell` directory you downloaded at
+Desktop, including the [`data-shell`](ref://files/data-shell.zip) directory you downloaded at
 the start of the lesson.  Take a look at your Desktop to confirm that
 your output is accurate.
 

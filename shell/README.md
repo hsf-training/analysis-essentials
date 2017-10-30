@@ -5,6 +5,19 @@
 - Explain when and why command-line interfaces should be used instead of graphical interfaces.
 {% endobjectives %}
 
+{% prereq "Prerequisites" %}
+In this lesson we will use the example `data-shell` directory to provide a
+common set of files that everyone has access to. In order to create these files
+and directories, login to lxplus and run:
+
+```bash
+wget https://cern.ch/go/9rKZ && unzip data-shell.zip && rm data-shell.zip
+```
+
+For now it does not matter if you understand this command, hopefully by the end
+of this lesson you will!
+{% endprereq %}
+
 ### Background
 At a high level, computers do four things:
 

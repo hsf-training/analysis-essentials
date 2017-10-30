@@ -1,14 +1,19 @@
 .PHONY: all clean serve pdf
 
-all: node_modules
+all: node_modules shell/files/data-shell.zip
 	gitbook build
+	@cp shell/files/data-shell.zip _book/shell/files/
+	-@cp analysis-essentials.pdf _book/
 
-serve: node_modules
+serve: node_modules shell/files/data-shell.zip
 	while true; do gitbook serve; sleep 5; done
 
 pdf: node_modules
 	gitbook pdf
 	@mv book.pdf analysis-essentials.pdf
+
+shell/files/data-shell.zip: $(shell find shell/data-shell/ -type f)
+	cd shell && zip -r files/data-shell.zip data-shell && cd ..
 
 node_modules:
 	gitbook install
