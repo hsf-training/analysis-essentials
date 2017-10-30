@@ -1,13 +1,13 @@
 # Pipes and Filters
 
 {% objectives "Learning Objectives" %}
-- "Redirect a command's output to a file."
-- "Process a file instead of keyboard input using redirection."
-- "Construct command pipelines with two or more stages."
-- "Explain what usually happens if a program or pipeline isn't given any input to process."
-- "Explain Unix's 'small pieces, loosely joined' philosophy."
-- "`first | second` is a pipeline: the output of the first command is used as the input to the second."
-- "The best way to use the shell is to use pipes to combine simple single-purpose programs (filters)."
+- Redirect a command's output to a file.
+- Process a file instead of keyboard input using redirection.
+- Construct command pipelines with two or more stages.
+- Explain what usually happens if a program or pipeline isn't given any input to process.
+- Explain Unix's 'small pieces, loosely joined' philosophy.
+- `first | second` is a pipeline: the output of the first command is used as the input to the second.
+- The best way to use the shell is to use pipes to combine simple single-purpose programs (filters).
 {% endobjectives %}
 
 Now that we know a few basic commands,
@@ -822,13 +822,13 @@ For option 4 to be correct we would have to pipe the output of `head` into `tail
 {% endchallenge %}
 
 {% keypoints "Key Points" %}
-- "`cat` displays the contents of its inputs."
-- "`head` displays the first few lines of its input."
-- "`tail` displays the last few lines of its input."
-- "`sort` sorts its inputs."
-- "`wc` counts lines, words, and characters in its inputs."
-- "`*` matches zero or more characters in a filename, so `*.txt` matches all files ending in `.txt`."
-- "`?` matches any single character in a filename, so `?.txt` matches `a.txt` but not `any.txt`."
-- "`command > file` redirects a command's output to a file."
+- `cat` displays the contents of its inputs.
+- `head` displays the first few lines of its input.
+- `tail` displays the last few lines of its input.
+- `sort` sorts its inputs.
+- `wc` counts lines, words, and characters in its inputs.
+- `*` matches zero or more characters in a filename, so `*.txt` matches all files ending in `.txt`.
+- `?` matches any single character in a filename, so `?.txt` matches `a.txt` but not `any.txt`.
+- `command > file` redirects a command's output to a file.
 {% endkeypoints %}
 {% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
