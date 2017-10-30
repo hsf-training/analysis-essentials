@@ -3,7 +3,7 @@
 all: node_modules
 	gitbook build
 
-serve: all
+serve: node_modules
 	while true; do gitbook serve; sleep 5; done
 
 pdf: node_modules
