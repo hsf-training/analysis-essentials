@@ -1,19 +1,14 @@
----
-teaching: 15
-exercises: 0
-questions:
-- "How can I combine existing commands to do new things?"
-objectives:
+# Pipes and Filters
+
+{% objectives "Learning Objectives" %}
 - "Redirect a command's output to a file."
 - "Process a file instead of keyboard input using redirection."
 - "Construct command pipelines with two or more stages."
 - "Explain what usually happens if a program or pipeline isn't given any input to process."
 - "Explain Unix's 'small pieces, loosely joined' philosophy."
-
 - "`first | second` is a pipeline: the output of the first command is used as the input to the second."
 - "The best way to use the shell is to use pipes to combine simple single-purpose programs (filters)."
----
-# Pipes and Filters
+{% endobjectives %}
 
 Now that we know a few basic commands,
 we can finally look at the shell's most powerful feature:

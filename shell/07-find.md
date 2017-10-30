@@ -1,17 +1,11 @@
----
-teaching: 15
-exercises: 0
-questions:
-- "How can I find files?"
-- "How can I find things in files?"
-objectives:
+# Finding Things
+
+{% objectives "Learning Objectives" %}
 - "Use `grep` to select lines from text files that match simple patterns."
 - "Use `find` to find files whose names match simple patterns."
 - "Use the output of one command as the command-line argument(s) to another command."
 - "Explain what is meant by 'text' and 'binary' files, and why many common tools don't handle the latter well."
-
----
-# Finding Things
+{% endobjectives %}
 
 In the same way that many of us now use "Google" as a
 verb meaning "to find", Unix programmers often use the

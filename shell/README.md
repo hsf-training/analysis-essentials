@@ -1,14 +1,10 @@
----
-teaching: 5
-exercises: 0
-questions:
-- "What is a command shell and why would I use one?"
-objectives:
+# Introducing the Shell
+
+{% objectives "Learning Objectives" %}
 - "Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs."
 - "Explain when and why command-line interfaces should be used instead of graphical interfaces."
+{% endobjectives %}
 
----
-# Introducing the Shell
 ### Background
 At a high level, computers do four things:
 

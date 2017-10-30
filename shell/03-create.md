@@ -1,19 +1,13 @@
----
-teaching: 15
-exercises: 0
-questions:
-- "How can I create, copy, and delete files and directories?"
-- "How can I edit files?"
-objectives:
+# Working With Files and Directories
+
+{% objectives "Learning Objectives" %}
 - "Create a directory hierarchy that matches a given diagram."
 - "Create files in that hierarchy using an editor or by copying and renaming existing files."
 - "Display the contents of a directory using the command line."
 - "Delete specified files and/or directories."
-
 - "The shell does not have a trash bin: once something is deleted, it's really gone."
 - "Depending on the type of work you do, you may need a more powerful text editor than Nano."
----
-# Working With Files and Directories
+{% endobjectives %}
 
 We now know how to explore files and directories,
 but how do we create them in the first place?
