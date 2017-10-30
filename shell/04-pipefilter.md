@@ -65,7 +65,7 @@ $ wc *.pdb
 ~~~
 {: .output}
 
-> ## Wildcards
+{% callout "Wildcards" %}
 >
 > `*` is a **wildcard**. It matches zero or more
 > characters, so `*.pdb` matches `ethane.pdb`, `propane.pdb`, and every
@@ -96,9 +96,9 @@ $ wc *.pdb
 > file names matching these expressions, but not the wildcards
 > themselves. It is the shell, not the other programs, that deals with
 > expanding wildcards, and this is another example of orthogonal design.
-{: .callout}
+{% endcallout %}
 
-> ## Using Wildcards
+{% challenge "Using Wildcards" %}
 >
 > When run in the `molecules` directory, which `ls` command(s) will
 > produce this output?
@@ -110,7 +110,7 @@ $ wc *.pdb
 > 3. `ls *t??ne.pdb`
 > 4. `ls ethane.*`
 >
-> > ## Solution
+{% solution "Solution" %}
 >>  The solution is `3.`
 >>
 >> `1.` shows all files that contain any number and combination of characters, followed by the letter `t`, another single character, and end with `ane.pdb`. This includes `octane.pdb` and `pentane.pdb`. 
@@ -120,8 +120,7 @@ $ wc *.pdb
 >> `3.` fixes the problems of option 2 by matching two characters between `t` and `ne`. This is the solution.
 >>
 >> `4.` only shows files starting with `ethane.`.
-> {: .solution}
-{: .challenge}
+{% endchallenge %}
 
 If we run `wc -l` instead of just `wc`,
 the output shows only the number of lines per file:
@@ -196,7 +195,7 @@ $ cat lengths.txt
 ~~~
 {: .output}
 
-> ## Output Page by Page
+{% challenge "Output Page by Page" %}
 >
 > We'll continue to use `cat` in this lesson, for convenience and consistency,
 > but it has the disadvantage that it always dumps the whole file onto your screen.
@@ -205,7 +204,7 @@ $ cat lengths.txt
 > This displays a screenful of the file, and then stops.
 > You can go forward one screenful by pressing the spacebar,
 > or back one by pressing `b`.  Press `q` to quit.
-{: .callout}
+{% endcallout %}
 
 Now let's use the `sort` command to sort its contents.
 We will also use the `-n` flag to specify that the sort is
@@ -253,7 +252,7 @@ and so on.
 Since `sorted-lengths.txt` contains the lengths of our files ordered from least to greatest,
 the output of `head` must be the file with the fewest lines.
 
-> ## Redirecting to the same file
+{% callout "Redirecting to the same file" %}
 >
 > It's a very bad idea to try redirecting
 > the output of a command that operates on a file
@@ -267,7 +266,7 @@ the output of `head` must be the file with the fewest lines.
 > Doing something like this may give you
 > incorrect results and/or delete
 > the contents of `lengths.txt`.
-{: .callout}
+{% endcallout %}
 
 If you think this is confusing,
 you're in good company:
@@ -394,7 +393,7 @@ can be combined with every other program that behaves this way as well.
 You can *and should* write your programs this way
 so that you and other people can put those programs into pipes to multiply their power.
 
-> ## Redirecting Input
+{% callout "Redirecting Input" %}
 >
 > As well as using `>` to redirect a program's output, we can use `<` to
 > redirect its input, i.e., to read from a file instead of from standard
@@ -404,7 +403,7 @@ so that you and other people can put those programs into pipes to multiply their
 > any command line arguments, so it reads from standard input, but we
 > have told the shell to send the contents of `ammonia.pdb` to `wc`'s
 > standard input.
-{: .callout}
+{% endcallout %}
 
 ## Nelle's Pipeline: Checking Files
 
@@ -535,12 +534,12 @@ so this matches all the valid data files she has.
 >
 > Explain why `-n` has this effect.
 >
-> > ## Solution
+{% solution "Solution" %}
 > > The `-n` flag specifies a numeric sort, rather than alphabetical.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## What Does `<` Mean?
+{% challenge "What Does `<` Mean?" %}
 >
 > Change directory to `data-shell` (the top level of our downloaded example data).
 >
@@ -558,7 +557,7 @@ so this matches all the valid data files she has.
 > ~~~
 > {: .bash}
 >
-> > ## Solution
+{% solution "Solution" %}
 > > `<` is used to redirect input to a command. 
 > >
 > > In both examples, the shell returns the number of lines from the input to
@@ -584,10 +583,10 @@ so this matches all the valid data files she has.
 > > 3
 > > ```
 > > {: .output}
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## What Does `>>` Mean?
+{% challenge "What Does `>>` Mean?" %}
 >
 > What is the difference between:
 >
@@ -604,9 +603,9 @@ so this matches all the valid data files she has.
 > {: .bash}
 >
 > Hint: Try executing each command twice in a row and then examining the output files.
-{: .challenge}
+{% endchallenge %}
 
-> ## More on Wildcards
+{% challenge "More on Wildcards" %}
 >
 > Sam has a directory containing calibration data, datasets, and descriptions of
 > the datasets:
@@ -641,17 +640,17 @@ so this matches all the valid data files she has.
 >
 > Help Sam by filling in the blanks.
 >
-> > ## Solution
+{% solution "Solution" %}
 > > ```
 > > $ cp *calibration.txt /backup/calibration
 > > $ cp 2015-11-* ~/send_to_bob/all_november_files/
 > > $ cp *-23-dataset* ~send_to_bob/all_datasets_created_on_a_23rd/
 > > ```
 > > {: .bash}
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Piping Commands Together
+{% challenge "Piping Commands Together" %}
 >
 > In our current directory, we want to find the 3 files which have the least number of
 > lines. Which command listed below would work?
@@ -661,16 +660,16 @@ so this matches all the valid data files she has.
 > 3. `wc -l * | head -n 3 | sort -n`
 > 4. `wc -l * | sort -n | head -n 3`
 >
-> > ## Solution
+{% solution "Solution" %}
 > > Option 4 is the solution.
 > > The pipe character `|` is used to feed the standard output from one process to
 > > the standard input of another.
 > > `>` is used to redirect standard output to a file.
 > > Try it in the `data-shell/molecules` directory!
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Why Does `uniq` Only Remove Adjacent Duplicates?
+{% challenge "Why Does `uniq` Only Remove Adjacent Duplicates?" %}
 >
 > The command `uniq` removes adjacent duplicated lines from its input.
 > For example, the file `data-shell/data/salmon.txt` contains:
@@ -699,15 +698,15 @@ so this matches all the valid data files she has.
 > (Hint: think about very large data sets.) What other command could
 > you combine with it in a pipe to remove all duplicated lines?
 >
-> > ## Solution
+{% solution "Solution" %}
 > > ```
 > > $ sort salmon.txt | uniq
 > > ```
 > > {: .bash}
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Pipe Reading Comprehension
+{% challenge "Pipe Reading Comprehension" %}
 >
 > A file called `animals.txt` (in the `data-shell/data` folder) contains the following data:
 >
@@ -730,9 +729,9 @@ so this matches all the valid data files she has.
 > ~~~
 > {: .bash}
 > Hint: build the pipeline up one command at a time to test your understanding
-{: .challenge}
+{% endchallenge %}
 
-> ## Pipe Construction
+{% challenge "Pipe Construction" %}
 >
 > For the file `animals.txt` from the previous exercise, the command:
 >
@@ -759,15 +758,15 @@ so this matches all the valid data files she has.
 > out what animals the file contains (without any duplicates in their
 > names)?
 >
-> > ## Solution
+{% solution "Solution" %}
 > > ```
 > > $ cut -d , -f 2 animals.txt | sort | uniq
 > > ```
 > > {: .bash}
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Removing Unneeded Files
+{% challenge "Removing Unneeded Files" %}
 >
 > Suppose you want to delete your processed data files, and only keep
 > your raw files and processing script to save storage.
@@ -780,7 +779,7 @@ so this matches all the valid data files she has.
 > 3. `rm * .txt`
 > 4. `rm *.*`
 >
-> > ## Solution
+{% solution "Solution" %}
 > > 1. This would remove `.txt` files with one-character names
 > > 2. This is correct answer
 > > 3. The shell would expand `*` to match everything in the current directory,
@@ -788,10 +787,10 @@ so this matches all the valid data files she has.
 > > file called `.txt`
 > > 4. The shell would expand `*.*` to match all files with any extension,
 > > so this command would delete all files
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Wildcard Expressions
+{% challenge "Wildcard Expressions" %}
 >
 > Wildcard expressions can be very complex, but you can sometimes write
 > them in ways that only use simple syntax, at the expense of being a bit
@@ -812,7 +811,7 @@ so this matches all the valid data files she has.
 > 3.  Under what circumstances would your new expression produce an error message
 >     where the original one would not?
 >
-> > ## Solution
+{% solution "Solution" %}
 > > 1. 
 > >
 > > 	```
@@ -823,10 +822,10 @@ so this matches all the valid data files she has.
 > > 2. The output from the new commands is separated because there are two commands.
 > > 3. When there are no files ending in `A.txt`, or there are no files ending in
 > > `B.txt`.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Which Pipe?
+{% challenge "Which Pipe?" %}
 >
 > The file `data-shell/data/animals.txt` contains 586 lines of data formatted as follows:
 >
@@ -850,14 +849,14 @@ so this matches all the valid data files she has.
 > 5.  `cut -d, -f 2 animals.txt | sort | uniq -c`
 > 6.  `cut -d, -f 2 animals.txt | sort | uniq -c | wc -l`
 >
-> > ## Solution
+{% solution "Solution" %}
 > > Option 5. is the correct answer.
 > > If you have difficulty understanding why, try running the commands, or sub-sections of
 > > the pipelines (make sure you are in the `data-shell/data` directory).
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Appending Data
+{% challenge "Appending Data" %}
 >
 > Consider the file `animals.txt`, used in previous exercise.
 > After these commands, select the answer that
@@ -874,10 +873,10 @@ so this matches all the valid data files she has.
 > 3. The first three lines and the last two lines of `animals.txt`
 > 4. The second and third lines of `animals.txt`
 >
-> > ## Solution
+{% solution "Solution" %}
 > > Option 3 is correct. 
 > > For option 1 to be correct we would only run the `head` command.
 > > For option 2 to be correct we would only run the `tail` command.
 > > For option 4 to be correct we would have to pipe the output of `head` into `tail -2` by doing `head -3 animals.txt | tail -2 >> animalsUpd.txt`
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}

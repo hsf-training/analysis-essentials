@@ -53,12 +53,12 @@ Software is like that.
 ~~~
 {: .output}
 
-> ## Forever, or Five Years
+{% callout "Forever, or Five Years" %}
 >
 > We haven't linked to the original haikus because they don't appear to be on *Salon*'s site any longer.
 > As [Jeff Rothenberg said](http://www.clir.org/pubs/archives/ensuring.pdf),
 > "Digital information lasts forever --- or five years, whichever comes first."
-{: .callout}
+{% endcallout %}
 
 Let's find lines that contain the word "not":
 
@@ -228,7 +228,7 @@ Miscellaneous:
 ~~~
 {: .output}
 
-> ## Wildcards
+{% callout "Wildcards" %}
 >
 > `grep`'s real power doesn't come from its options, though; it comes from
 > the fact that patterns can include wildcards. (The technical name for
@@ -256,7 +256,7 @@ Miscellaneous:
 > `^` in the pattern anchors the match to the start of the line. The `.`
 > matches a single character (just like `?` in the shell), while the `o`
 > matches an actual 'o'.
-{: .callout}
+{% endcallout %}
 
 While `grep` finds lines in files,
 the `find` command finds files themselves.
@@ -396,13 +396,13 @@ $ find . -name '*.txt'
 ~~~
 {: .output}
 
-> ## Listing vs. Finding
+{% callout "Listing vs. Finding" %}
 >
 > `ls` and `find` can be made to do similar things given the right options,
 > but under normal circumstances,
 > `ls` lists everything it can,
 > while `find` searches for things with certain properties and shows them.
-{: .callout}
+{% endcallout %}
 
 As we said earlier,
 the command line's power lies in combining tools.
@@ -459,7 +459,7 @@ $ grep "FE" $(find .. -name '*.pdb')
 ~~~
 {: .output}
 
-> ## Binary Files
+{% callout "Binary Files" %}
 >
 > We have focused exclusively on finding things in text files. What if
 > your data is stored as images, in databases, or in some other format?
@@ -482,7 +482,7 @@ $ grep "FE" $(find .. -name '*.pdb')
 > When the time comes to do this, don't be too hard on the shell: many
 > modern programming languages have borrowed a lot of
 > ideas from it, and imitation is also the sincerest form of praise.
-{: .callout}
+{% endcallout %}
 
 The Unix shell is older than most of the people who use it. It has
 survived so long because it is one of the most productive programming
@@ -495,7 +495,7 @@ North Whitehead wrote in 1911, "Civilization advances by extending the
 number of important operations which we can perform without thinking
 about them."
 
-> ## Using `grep`
+{% challenge "Using `grep`" %}
 >
 > Referring to `haiku.txt`
 > presented at the begin of this topic,
@@ -511,13 +511,13 @@ about them."
 > 3. `grep -w "of" haiku.txt`
 > 4. `grep -i "of" haiku.txt`
 >
-> > ## Solution
+{% solution "Solution" %}
 > > The correct answer is 3, because the `-w` flag looks only for whole-word matches.
 > > The other options will all match "of" when part of another word.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## `find` Pipeline Reading Comprehension
+{% challenge "`find` Pipeline Reading Comprehension" %}
 >
 > Write a short explanatory comment for the following shell script:
 >
@@ -526,14 +526,14 @@ about them."
 > ~~~
 > {: .bash}
 >
-> > ## Solution
+{% solution "Solution" %}
 > > 1. Find all files with a `.dat` extension in the current directory
 > > 2. Count the number of lines each of these files contains
 > > 3. Sort the output from step 2. numerically
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Matching and Subtracting
+{% challenge "Matching and Subtracting" %}
 >
 > The `-v` flag to `grep` inverts pattern matching, so that only lines
 > which do *not* match the pattern are printed. Given that, which of
@@ -548,7 +548,7 @@ about them."
 > 3.  `grep -v "temp" $(find data -name '*s.txt')`
 > 4.  None of the above.
 >
-> > ## Solution
+{% solution "Solution" %}
 > > The correct answer is 1. Putting the match expression in quotes prevents the shell
 > > expanding it, so it gets passed to the `find` command.
 > >
@@ -557,10 +557,10 @@ about them."
 > >
 > > Option 3 is incorrect because it searches the contents of the files for lines which
 > > do not match "temp", rather than searching the file names.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Tracking a Species
+{% challenge "Tracking a Species" %}
 > 
 > Leah has several hundred 
 > data files saved in one directory, each of which is formatted like this:
@@ -603,7 +603,7 @@ about them."
 >
 > An example of such a file is provided in `data-shell/data/animal-counts/animals.txt`
 >
-> > ## Solution
+{% solution "Solution" %}
 > >
 > > ```
 > > grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3  > $1.txt
@@ -616,10 +616,10 @@ about them."
 > > $ bash count-species.sh bear .
 > > ```
 > > {: .bash}
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Little Women
+{% challenge "Little Women" %}
 >
 > You and your friend, having just finished reading *Little Women* by
 > Louisa May Alcott, are in an argument.  Of the four sisters in the
@@ -637,7 +637,7 @@ about them."
 > particular solution is usually chosen based on a combination of
 > yielding the correct result, elegance, readability, and speed.
 >
-> > ## Solutions
+{% solution "Solutions" %}
 > > ```
 > > for sis in Jo Meg Beth Amy
 > > do
@@ -660,10 +660,10 @@ about them."
 > > This solution is inferior because `grep -c` only reports the number of lines matched.
 > > The total number of matches reported by this method will be lower if there is more
 > > than one match per line.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Finding Files With Different Properties
+{% challenge "Finding Files With Different Properties" %}
 > 
 > The `find` command can be given several other criteria known as "tests"
 > to locate files with specific attributes, such as creation time, size,
@@ -675,12 +675,12 @@ about them."
 >
 > Hint 2: The value for `-mtime` will need to be negative---why?
 >
-> > ## Solution
+{% solution "Solution" %}
 > > Assuming that Nelle’s home is our working directory we type:
 > >
 > > ~~~
 > > $ find ./ -type f -mtime -1 -user ahmed
 > > ~~~
 > > {: .bash}
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}

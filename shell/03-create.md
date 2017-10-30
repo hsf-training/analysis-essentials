@@ -74,15 +74,15 @@ molecules/  solar.pdf
 ~~~
 {: .output}
 
-> ## Two ways of doing the same thing
+{% callout "Two ways of doing the same thing" %}
 > Using the shell to create a directory is no different than using a file explorer.
 > If you open the current directory using your operating system's graphical file explorer,
 > the `thesis` directory will appear there too.
 > While they are two different ways of interacting with the files,
 > the files and directories themselves are the same.
-{: .callout}
+{% endcallout %}
 
-> ## Good names for files and directories
+{% callout "Good names for files and directories" %}
 >
 > Complicated names of files and directories can make your life painful
 > when working on the command line. Here we provide a few useful
@@ -108,7 +108,7 @@ molecules/  solar.pdf
 >
 > If you need to refer to names of files or directories that have whitespace
 > or another non-alphanumeric character, you should surround the name in quotes (`""`).
-{: .callout}
+{% endcallout %}
 
 Since we've just created the `thesis` directory, there's nothing in it yet:
 
@@ -126,7 +126,7 @@ $ nano draft.txt
 ~~~
 {: .bash}
 
-> ## Which Editor?
+{% callout "Which Editor?" %}
 >
 > When we say, "`nano` is a text editor," we really do mean "text": it can
 > only work with plain character data, not tables, images, or any other
@@ -148,7 +148,7 @@ $ nano draft.txt
 > your computer's start menu, it may want to save files in your desktop or
 > documents directory instead. You can change this by navigating to
 > another directory the first time you "Save As..."
-{: .callout}
+{% endcallout %}
 
 Let's type in a few lines of text.
 Once we're happy with our text, we can press `Ctrl-O` (press the Ctrl or Control key and, while
@@ -161,7 +161,7 @@ press Return to accept the suggested default of `draft.txt`).
 Once our file is saved, we can use `Ctrl-X` to quit the editor and
 return to the shell.
 
-> ## Control, Ctrl, or ^ Key
+{% callout "Control, Ctrl, or ^ Key" %}
 >
 > The Control key is also called the "Ctrl" key. There are various ways
 > in which using the Control key may be described. For example, you may
@@ -178,7 +178,7 @@ return to the shell.
 > In nano, along the bottom of the screen you'll see `^G Get Help ^O WriteOut`.
 > This means that you can use `Control-G` to get help and `Control-O` to save your
 > file.
-{: .callout}
+{% endcallout %}
 
 `nano` doesn't leave any output on the screen after it exits,
 but `ls` now shows that we have created a file called `draft.txt`:
@@ -210,7 +210,7 @@ $ ls
 ~~~
 {: .bash}
 
-> ## Deleting Is Forever
+{% callout "Deleting Is Forever" %}
 >
 > The Unix shell doesn't have a trash bin that we can recover deleted
 > files from (though most graphical interfaces to Unix do).  Instead,
@@ -219,7 +219,7 @@ $ ls
 > recovering deleted files do exist, but there's no guarantee they'll
 > work in any particular situation, since the computer may recycle the
 > file's disk space right away.
-{: .callout}
+{% endcallout %}
 
 Let's re-create that file
 and then move up one directory to `/Users/nelle/Desktop/data-shell` using `cd ..`:
@@ -273,7 +273,7 @@ $ rm -r thesis
 ~~~
 {: .bash}
 
-> ## With Great Power Comes Great Responsibility
+{% callout "With Great Power Comes Great Responsibility" %}
 >
 > Removing the files in a directory recursively can be very dangerous
 > operation. If we're concerned about what we might be deleting we can
@@ -290,7 +290,7 @@ $ rm -r thesis
 >
 > This removes everything in the directory, then the directory itself, asking
 > at each step for you to confirm the deletion.
-{: .callout}
+{% endcallout %}
 
 Let's create that directory and file one more time.
 (Note that this time we're running `nano` with the path `thesis/draft.txt`,
@@ -425,7 +425,7 @@ thesis/quotations.txt
 This time it tells us that it can't find `quotes.txt` in the current directory,
 but it does find the copy in `thesis` that we didn't delete.
 
-> ## What's In A Name?
+{% callout "What's In A Name?" %}
 >
 > You may have noticed that all of Nelle's files' names are "something dot
 > something", and in this part of the lesson, we always used the extension
@@ -447,9 +447,9 @@ but it does find the copy in `thesis` that we didn't delete.
 > magically turn it into a recording of whalesong, though it *might*
 > cause the operating system to try to open it with a music player
 > when someone double-clicks it.
-{: .callout}
+{% endcallout %}
 
-> ## Renaming Files
+{% challenge "Renaming Files" %}
 >
 > Suppose that you created a `.txt` file in your current directory to contain a list of the
 > statistical tests you will need to do to analyze your data, and named it: `statstics.txt`
@@ -462,7 +462,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > 3. `mv statstics.txt .`
 > 4. `cp statstics.txt .`
 >
-> > ## Solution
+{% solution "Solution" %}
 > > 1. No.  While this would create a file with the correct name, the incorrectly named file still exists in the directory
 > > and would need to be deleted.
 > > 2. Yes, this would work to rename the file.
@@ -470,10 +470,10 @@ but it does find the copy in `thesis` that we didn't delete.
 > > cannot be created.
 > > 4. No, the period(.) indicates where to copy the file, but does not provide a new file name; identical file names
 > > cannot be created.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Moving and Copying
+{% challenge "Moving and Copying" %}
 >
 > What is the output of the closing `ls` command in the sequence shown below?
 >
@@ -506,7 +506,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > 3.   `proteins.dat recombine`
 > 4.   `proteins-saved.dat`
 >
-> > ## Solution
+{% solution "Solution" %}
 > > We start in the `/Users/jamie/data` directory, and create a new folder called `recombine`.
 > > The second line moves (`mv`) the file `proteins.dat` to the new folder (`recombine`).
 > > The third line makes a copy of the file we just moved.  The tricky part here is where the file was
@@ -519,10 +519,10 @@ but it does find the copy in `thesis` that we didn't delete.
 > > 2. Yes
 > > 3. No, see explanation above.  `proteins.dat` is located at `/Users/jamie/data/recombine`
 > > 4. No, see explanation above.  `proteins-saved.dat` is located at `/Users/jamie`
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Organizing Directories and Files
+{% challenge "Organizing Directories and Files" %}
 >
 > Jamie is working on a project and she sees that her files aren't very well
 > organized:
@@ -557,7 +557,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > ~~~
 > {: .output}
 >
-> > ## Solution
+{% solution "Solution" %}
 > > ```
 > > mv *.dat analyzed
 > > ```
@@ -565,10 +565,10 @@ but it does find the copy in `thesis` that we didn't delete.
 > > Jamie needs to move her files `fructose.dat` and `sucrose.dat` to the `analyzed` directory.
 > > The shell will expand *.dat to match all .dat files in the current directory.
 > > The `mv` command then moves the list of .dat files to the "analyzed" directory.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Copy with Multiple Filenames
+{% challenge "Copy with Multiple Filenames" %}
 >
 > For this exercise, you can test the commands in the `data-shell/data directory`.
 >
@@ -595,7 +595,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > ~~~
 > {: .bash}
 >
-> > ## Solution
+{% solution "Solution" %}
 > > If given more than one file name followed by a directory name (i.e. the destination directory must 
 > > be the last argument), `cp` copies the files to the named directory.
 > >
@@ -606,10 +606,10 @@ but it does find the copy in `thesis` that we didn't delete.
 > > cp: target ‘morse.txt’ is not a directory
 > > ```
 > > {: .output}
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Listing Recursively and By Time
+{% challenge "Listing Recursively and By Time" %}
 >
 > The command `ls -R` lists the contents of directories recursively,
 > i.e., lists their sub-directories, sub-sub-directories, and so on
@@ -617,14 +617,14 @@ but it does find the copy in `thesis` that we didn't delete.
 > The command `ls -t` lists things by time of last change,
 > with most recently changed files or directories first.
 > In what order does `ls -R -t` display things?
-> > ## Solution
+{% solution "Solution" %}
 > > The command `ls -R -t` displays the directories recursively in 
 > > chronological order at each level, and the files in each directory
 > > are displayed chronologically.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Creating Files a Different Way
+{% challenge "Creating Files a Different Way" %}
 >
 > We have seen how to create text files using the `nano` editor.
 > Now, try the following command in your home directory:
@@ -643,7 +643,7 @@ but it does find the copy in `thesis` that we didn't delete.
 >
 > 3.  When might you want to create a file this way?
 >
-> > ## Solution
+{% solution "Solution" %}
 > > 1.  The touch command generates a new file called 'my_file.txt' in
 > >     your home directory.  If you are in your home directory, you
 > >     can observe this newly generated file by typing 'ls' at the 
@@ -660,10 +660,10 @@ but it does find the copy in `thesis` that we didn't delete.
 > >     populate with its output.  The touch command allows you to
 > >     efficiently generate a blank text file to be used by such
 > >     programs.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Moving to the Current Folder
+{% challenge "Moving to the Current Folder" %}
 >
 > After running the following commands,
 > Jamie realizes that she put the files `sucrose.dat` and `maltose.dat` into the wrong folder:
@@ -684,22 +684,22 @@ but it does find the copy in `thesis` that we didn't delete.
 > $ mv ___/sucrose.dat  ___/maltose.dat ___
 > ~~~
 > {: .bash}
-> > ## Solution
+{% solution "Solution" %}
 > > ```
 > > $ mv ../analyzed/sucrose.dat ../analyzed/maltose.dat .
 > > ```
 > > {: .bash}
 > > Recall that `..` refers to the parent directory (i.e. one above the current directory)
 > > and that `.` refers to the current directory.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Using `rm` Safely
+{% challenge "Using `rm` Safely" %}
 >
 > What happens when we type `rm -i thesis/quotations.txt`?
 > Why would we want this protection when using `rm`?
 >
-> > ## Solution
+{% solution "Solution" %}
 > > ```
 > > $ rm: remove regular file 'thesis/quotations.txt'?
 > > ```
@@ -707,10 +707,10 @@ but it does find the copy in `thesis` that we didn't delete.
 > > The -i option will prompt before every removal. 
 > > The Unix shell doesn't have a trash bin, so all the files removed will disappear forever. 
 > > By using the -i flag, we have the chance to check that we are deleting only the files that we want to remove.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Copy a folder structure sans files
+{% challenge "Copy a folder structure sans files" %}
 >
 > You're starting a new experiment, and would like to duplicate the file
 > structure from your previous experiment without the data files so you can
@@ -743,7 +743,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > ~~~
 > {: .bash}
 > >
-> > ## Solution
+{% solution "Solution" %}
 > > The first set of commands achieves this objective.
 > > First we have a recursive copy of a data folder.
 > > Then two `rm` commands which remove all files in the specified directories.
@@ -756,5 +756,5 @@ but it does find the copy in `thesis` that we didn't delete.
 > > The third set of commands would achieve the objective, but in a time-consuming way:
 > > the first command copies the directory recursively, but the second command deletes
 > > interactively, prompting for confirmation for each file and directory.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}

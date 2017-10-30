@@ -41,7 +41,7 @@ Several commands are frequently used to create, inspect, rename, and delete file
 To start exploring them,
 let's open a shell window:
 
-> ## Preparation Magic
+{% callout "Preparation Magic" %}
 >
 > If you type the command:
 > `PS1='$ '`
@@ -49,7 +49,7 @@ let's open a shell window:
 > your window should look like our example in this lesson.  
 > This isn't necessary to follow along (in fact, your prompt may have
 > other helpful information you want to know about).  This is up to you!  
-{: .callout}
+{% endcallout %}
 
 ~~~
 $
@@ -85,7 +85,7 @@ More specifically, when we type `whoami` the shell:
 4.  displays a new prompt to tell us that it's ready for more commands.
 
 
-> ## Username Variation
+{% callout "Username Variation" %}
 >
 > In this lesson, we have used the username `nelle` (associated
 > with our hypothetical scientist Nelle) in example input and output throughout.  
@@ -95,9 +95,9 @@ More specifically, when we type `whoami` the shell:
 > namely, the username associated with the user account on your computer.  This
 > username will be the output from `whoami`.  In
 > what follows, `nelle` should always be replaced by that username.  
-{: .callout}
+{% endcallout %}
 
-> ## Unknown commands
+{% callout "Unknown commands" %}
 > Remember, the Shell is a program that runs other programs rather than doing
 > calculations itself. So the commands you type must be the names of existing
 > programs.
@@ -118,7 +118,7 @@ More specifically, when we type `whoami` the shell:
 > because the program you are trying to run does not exist on your computer.
 > We will touch on quite a few commands in the course of this tutorial, but there
 > are actually many more than we can cover here.
-{: .callout}
+{% endcallout %}
 
 Next,
 let's find out where we are by running a command called `pwd`
@@ -143,7 +143,7 @@ $ pwd
 ~~~
 {: .output}
 
-> ## Home Directory Variation
+{% callout "Home Directory Variation" %}
 >
 > The home directory path will look different on different operating systems.
 > On Linux it may look like `/home/nelle`,
@@ -152,7 +152,7 @@ $ pwd
 > (Note that it may look slightly different for different versions of Windows.)
 > In future examples, we've used Mac output as the default - Linux and Windows
 > output may differ slightly, but should be generally similar.  
-{: .callout}
+{% endcallout %}
 
 To understand what a "home directory" is,
 let's have a look at how the file system as a whole is organized.  For the
@@ -183,13 +183,13 @@ Similarly,
 we know that `/Users` is stored inside the root directory `/`
 because its name begins with `/`.
 
-> ## Slashes
+{% callout "Slashes" %}
 >
 > Notice that there are two meanings for the `/` character.
 > When it appears at the front of a file or directory name,
 > it refers to the root directory. When it appears *inside* a name,
 > it's just a separator.
-{: .callout}
+{% endcallout %}
 
 Underneath `/Users`,
 we find one directory for each user with an account on Nelle's machine,
@@ -371,7 +371,7 @@ Many bash commands, and programs that people have written that can be
 run from within bash, support a `--help` flag to display more
 information on how to use the commands or programs.
 
-> ## Unsupported command-line options
+{% callout "Unsupported command-line options" %}
 > If you try to use an option (flag) that is not supported, `ls` and other programs
 > will print an error message similar to this:
 >
@@ -385,14 +385,14 @@ information on how to use the commands or programs.
 > Try 'ls --help' for more information.
 > ~~~
 > {: .error}
-{: .callout}
+{% endcallout %}
 
 For more information on how to use `ls` we can type `man ls`.
 `man` is the Unix "manual" command:
 it prints a description of a command and its options,
 and (if you're lucky) provides a few examples of how to use it.
 
-> ## `man` and Git for Windows
+{% callout "`man` and Git for Windows" %}
 >
 > The bash shell provided by Git for Windows does not
 > support the `man` command. Doing a web search for
@@ -405,7 +405,7 @@ and (if you're lucky) provides a few examples of how to use it.
 > and the
 > [core GNU utilities](http://www.gnu.org/software/coreutils/manual/coreutils.html),
 > which covers many commands introduced within this lesson.
-{: .callout}
+{% endcallout %}
 
 To navigate through the `man` pages,
 you may use the up and down arrow keys to move line-by-line,
@@ -421,7 +421,7 @@ without it,
 the shell thinks we're trying to run a command called `ls-F`,
 which doesn't exist.
 
-> ## Parameters vs. Arguments
+{% callout "Parameters vs. Arguments" %}
 >
 > According to [Wikipedia](https://en.wikipedia.org/wiki/Parameter_(computer_programming)#Parameters_and_arguments),
 > the terms **argument** and **parameter**
@@ -437,7 +437,7 @@ which doesn't exist.
 > {: .bash}
 > `ls` is the command, `-lh` are the flags (also called options),
 > and `Documents` is the argument.
-{: .callout}
+{% endcallout %}
 
 We can also use `ls` to see the contents of a different directory.  Let's take a
 look at our `Desktop` directory by running `ls -F Desktop`,
@@ -609,7 +609,7 @@ Note that in most command line tools, multiple arguments can be combined
 with a single `-` and no spaces between the arguments: `ls -F -a` is 
 equivalent to `ls -Fa`.
 
-> ## Other Hidden Files
+{% callout "Other Hidden Files" %}
 >
 > In addition to the hidden directories `..` and `.`, you may also see a file
 > called `.bash_profile`. This file usually contains shell configuration
@@ -618,9 +618,9 @@ equivalent to `ls -Fa`.
 > different programs on your computer. The prefix `.` is used to prevent these
 > configuration files from cluttering the terminal when a standard `ls` command
 > is used.
-{: .callout}
+{% endcallout %}
 
-> ## Orthogonality
+{% callout "Orthogonality" %}
 >
 > The special names `.` and `..` don't belong to `cd`;
 > they are interpreted the same way by every program.
@@ -631,7 +631,7 @@ equivalent to `ls -Fa`.
 > programmers say they are **orthogonal**:
 > Orthogonal systems tend to be easier for people to learn
 > because there are fewer special cases and exceptions to keep track of.
-{: .callout}
+{% endcallout %}
 
 These then, are the basic commands for navigating the filesystem on your computer:
 `pwd`, `ls` and `cd`.  Let's explore some variations on those commands.  What happens
@@ -706,7 +706,7 @@ $ cd /Users/nelle/Desktop/data-shell
 
 Run `pwd` and `ls -F` to ensure that we're in the directory we expect.  
 
-> ## Two More Shortcuts
+{% callout "Two More Shortcuts" %}
 >
 > The shell interprets the character `~` (tilde) at the start of a path to
 > mean "the current user's home directory". For example, if Nelle's home
@@ -720,7 +720,7 @@ Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 > and forth between directories. The difference between `cd ..` and `cd -` is
 > that the former brings you *up*, while the latter brings you *back*. You can
 > think of it as the *Last Channel* button on a TV remote.
-{: .callout}
+{% endcallout %}
 
 ### Nelle's Pipeline: Organizing Files
 
@@ -737,7 +737,7 @@ but she found them hard to understand after a couple of years.
 (The final straw was when she found herself creating
 a directory called `revised-revised-results-3`.)
 
-> ## Sorting Output
+{% callout "Sorting Output" %}
 >
 > Nelle names her directories "year-month-day",
 > with leading zeroes for months and days,
@@ -747,7 +747,7 @@ a directory called `revised-revised-results-3`.)
 > if she didn't use leading zeroes,
 > November ('11') would come before July ('7'). Similarly, putting the year first
 > means that June 2012 will come before June 2013.
-{: .callout}
+{% endcallout %}
 
 Each of her physical samples is labelled according to her lab's convention
 with a unique ten-character ID,
@@ -794,7 +794,7 @@ and so on.
 This is called **tab completion**,
 and we will see it in many other tools as we go on.
 
-> ## Absolute vs Relative Paths
+{% challenge "Absolute vs Relative Paths" %}
 >
 > Starting from `/Users/amanda/data/`,
 > which of the following commands could Amanda use to navigate to her home directory,
@@ -810,7 +810,7 @@ and we will see it in many other tools as we go on.
 > 8. `cd`
 > 9. `cd ..`
 >
-> > ## Solution
+{% solution "Solution" %}
 > > 1. No: `.` stands for the current directory.
 > > 2. No: `/` stands for the root directory.
 > > 3. No: Amanda's home directory is `/Users/amanda`.
@@ -820,10 +820,10 @@ and we will see it in many other tools as we go on.
 > > 7. Yes: unnecessarily complicated, but correct.
 > > 8. Yes: shortcut to go back to the user's home directory.
 > > 9. Yes: goes up one level.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Relative Path Resolution
+{% challenge "Relative Path Resolution" %}
 >
 > Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
 > what will `ls -F ../backup` display?
@@ -835,16 +835,16 @@ and we will see it in many other tools as we go on.
 >
 > ![File System for Challenge Questions](../fig/filesystem-challenge.svg)
 >
-> > ## Solution
+{% solution "Solution" %}
 > > 1. No: there *is* a directory `backup` in `/Users`.
 > > 2. No: this is the content of `Users/thing/backup`,
 > >    but with `..` we asked for one level further up.
 > > 3. No: see previous explanation.
 > > 4. Yes: `../backup/` refers to `/Users/backup/`.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## `ls` Reading Comprehension
+{% challenge "`ls` Reading Comprehension" %}
 >
 > Assuming a directory structure as in the above Figure
 > (File System for Challenge Questions), if `pwd` displays `/Users/backup`,
@@ -861,16 +861,16 @@ and we will see it in many other tools as we go on.
 > 3.  `ls -r -F /Users/backup`
 > 4.  Either #2 or #3 above, but not #1.
 >
-> > ## Solution
+{% solution "Solution" %}
 > >  1. No: `pwd` is not the name of a directory.
 > >  2. Yes: `ls` without directory argument lists files and directories
 > >     in the current directory.
 > >  3. Yes: uses the absolute path explicitly.
 > >  4. Correct: see explanations above.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Exploring More `ls` Flags
+{% challenge "Exploring More `ls` Flags" %}
 >
 > What does the command `ls` do when used with the `-l` and `-h` flags?
 >
@@ -878,15 +878,15 @@ and we will see it in many other tools as we go on.
 > as file permissions and ownership), but the rest should be useful
 > nevertheless.
 >
-> > ## Solution
+{% solution "Solution" %}
 > > The `-l` flag makes `ls` use a **l**ong listing format, showing not only
 > > the file/directory names but also additional information such as the file size
 > > and the time of its last modification. The `-h` flag makes the file size
 > > "**h**uman readable", i.e. display something like `5.3K` instead of `5369`.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Listing Recursively and By Time
+{% challenge "Listing Recursively and By Time" %}
 >
 > The command `ls -R` lists the contents of directories recursively, i.e., lists
 > their sub-directories, sub-sub-directories, and so on in alphabetical order
@@ -895,8 +895,8 @@ and we will see it in many other tools as we go on.
 > In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
 > format to view timestamps.
 >
-> > ## Solution
+{% solution "Solution" %}
 > > The directories are listed alphabetical at each level, the files/directories
 > > in each directory are sorted by time of last change.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}

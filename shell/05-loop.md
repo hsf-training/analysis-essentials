@@ -108,15 +108,15 @@ possible to put the names into curly braces to clearly delimit the variable
 name: `$filename` is equivalent to `${filename}`, but is different from
 `${file}name`. You may find this notation in other people's programs.
 
-> ## Follow the Prompt
+{% callout "Follow the Prompt" %}
 >
 > The shell prompt changes from `$` to `>` and back again as we were
 > typing in our loop. The second prompt, `>`, is different to remind
 > us that we haven't finished typing a complete command yet. A semicolon, `;`,
 > can be used to separate two commands written on a single line.
-{: .callout}
+{% endcallout %}
 
-> ## Same Symbols, Different Meanings
+{% callout "Same Symbols, Different Meanings" %}
 >
 > Here we see `>` being used a shell prompt, whereas `>` is also
 > used to redirect output.
@@ -128,7 +128,7 @@ name: `$filename` is equivalent to `${filename}`, but is different from
 >
 > If *you* type `>` or `$` yourself, it is an instruction from you that
 > the shell to redirect output or get the value of a variable.
-{: .callout}
+{% endcallout %}
 
 We have called the variable in this loop `filename`
 in order to make its purpose clearer to human readers.
@@ -209,7 +209,7 @@ the `head` and `tail` combination selects lines 81-100
 from whatever file is being processed
 (assuming the file has at least 100 lines).
 
-> ## Spaces in Names
+{% callout "Spaces in Names" %}
 >
 > Whitespace is used to separate the elements on the list
 > that we are going to loop over. If on the list we have elements
@@ -252,7 +252,7 @@ from whatever file is being processed
 > head: cannot open ‘unicorn.dat’ for reading: No such file or directory
 > ```
 > {: . output}
-{: .callout}
+{% endcallout %}
 
 Going back to our original file copying problem,
 we can solve it using this loop:
@@ -290,7 +290,7 @@ judicious use of `echo` is a good debugging technique.
 
 ![For Loop in Action](../fig/shell_script_for_loop_flow_chart.svg)
 
-## Nelle's Pipeline: Processing Files
+{% challenge "Nelle's Pipeline: Processing Files" %}
 
 Nelle is now ready to process her data files.
 Since she's still learning how to use the shell,
@@ -379,11 +379,11 @@ $ for datafile in NENE*[AB].txt; do echo $datafile; bash goostats $datafile stat
 ~~~
 {: .bash}
 
-> ## Beginning and End
+{% callout "Beginning and End" %}
 >
 > We can move to the beginning of a line in the shell by typing `Ctrl-a`
 > and to the end using `Ctrl-e`.
-{: .callout}
+{% endcallout %}
 
 When she runs her program now,
 it produces one line of output every five seconds or so:
@@ -407,7 +407,7 @@ to examine one of the output files.
 It looks good,
 so she decides to get some coffee and catch up on her reading.
 
-> ## Those Who Know History Can Choose to Repeat It
+{% callout "Those Who Know History Can Choose to Repeat It" %}
 >
 > Another way to repeat previous work is to use the `history` command to
 > get a list of the last few hundred commands that have been executed, and
@@ -429,9 +429,9 @@ so she decides to get some coffee and catch up on her reading.
 >
 > then she can re-run `goostats` on `NENE01729B.txt` simply by typing
 > `!458`.
-{: .callout}
+{% endcallout %}
 
-> ## Other History Commands
+{% callout "Other History Commands" %}
 >
 > There are a number of other shortcut commands for getting at the history.
 >
@@ -445,9 +445,9 @@ so she decides to get some coffee and catch up on her reading.
 > `bash goostats NENE01729B.txt stats-NENE01729B.txt`, you can type
 > `less !$` to look at the file `stats-NENE01729B.txt`, which is
 > quicker than doing up-arrow and editing the command-line.
-{: .callout}
+{% endcallout %}
 
-> ## Variables in Loops
+{% solution "Variables in Loops" %}
 >
 > This exercise refers to the `data-shell/molecules` directory.
 > `ls` gives the following output:
@@ -517,10 +517,10 @@ so she decides to get some coffee and catch up on her reading.
 > > propane.pdb
 > > ```
 > > {: .output}
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Saving to a File in a Loop - Part One
+{% challenge "Saving to a File in a Loop - Part One" %}
 >
 > In the same directory, what is the effect of this loop?
 >
@@ -541,14 +541,14 @@ so she decides to get some coffee and catch up on her reading.
 >     from `propane.pdb` will be saved to a file called `alkanes.pdb`.
 > 4.  None of the above.
 >
-> > ## Solution
+{% solution "Solution" %}
 > > 1. The text from each file in turn gets written to the `alkanes.pdb` file.
 > > However, the file gets overwritten on each loop interation, so the final content of `alkanes.pdb`
 > > is the text from the `propane.pdb` file.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Saving to a File in a Loop - Part Two
+{% challenge "Saving to a File in a Loop - Part Two" %}
 >
 > In the same directory, what would be the output of the following loop?
 >
@@ -568,14 +568,14 @@ so she decides to get some coffee and catch up on her reading.
 > 4.  All of the text from `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb`
 >     and `propane.pdb` would be printed to the screen and saved to a file called `all.pdb`.
 >
-> > ## Solution
+{% solution "Solution" %}
 > > 3 is the correct answer. `>>` appends to a file, rather than overwriting it with the redirected
 > > output from a command.
 > > Given the output from the `cat` command has been redirected, nothing is printed to the screen.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Limiting Sets of Files
+{% challenge "Limiting Sets of Files" %}
 >
 > In the same directory, what would be the output of the following loop?
 >
@@ -592,10 +592,10 @@ so she decides to get some coffee and catch up on her reading.
 > 3.  Only `cubane.pdb`, `octane.pdb` and `pentane.pdb` are listed.
 > 4.  Only `cubane.pdb` is listed.
 >
-> > ## Solution
+{% solution "Solution" %}
 > > 4 is the correct answer. `*` matches zero or more characters, so any file name starting with 
 > > the letter c, followed by zero or more other characters will be matched.
-> {: .solution}
+> 
 >
 > How would the output differ from using this command instead?
 >
@@ -613,13 +613,13 @@ so she decides to get some coffee and catch up on her reading.
 > 4.  The files `cubane.pdb` and `octane.pdb` will be listed.
 > 5.  Only the file `octane.pdb` will be listed.
 >
-> > ## Solution
+{% solution "Solution" %}
 > > 4 is the correct answer. `*` matches zero or more characters, so a file name with zero or more
 > > characters before a letter c and zero or more characters after the letter c will be matched.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Doing a Dry Run
+{% challenge "Doing a Dry Run" %}
 >
 > A loop is a way to do many things at once --- or to make many mistakes at
 > once if it does the wrong thing. One way to check what a loop *would* do
@@ -657,7 +657,7 @@ so she decides to get some coffee and catch up on her reading.
 > ~~~
 > {: .bash}
 >
-> > ## Solution
+{% solution "Solution" %}
 > > The second version is the one we want to run.
 > > This prints to screen everything enclosed in the quote marks, expanding the
 > > loop variable name because we have prefixed it with a dollar sign.
@@ -668,10 +668,10 @@ so she decides to get some coffee and catch up on her reading.
 > > 
 > > Try both versions for yourself to see the output! Be sure to open the 
 > > `analyzed-*.pdb` files to view their contents.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Nested Loops
+{% challenge "Nested Loops" %}
 >
 > Suppose we want to set up up a directory structure to organize
 > some experiments measuring reaction rate constants with different compounds
@@ -689,11 +689,11 @@ so she decides to get some coffee and catch up on her reading.
 > ~~~
 > {: .bash}
 >
-> > ## Solution
+{% solution "Solution" %}
 > > We have a nested loop, i.e. contained within another loop, so for each species
 > > in the outer loop, the inner loop (the nested loop) iterates over the list of
 > > temperatures, and creates a new directory for each combination.
 > >
 > > Try running the code for yourself to see which directories are created!
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}

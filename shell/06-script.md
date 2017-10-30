@@ -75,7 +75,7 @@ ATOM     13  H           1      -3.172  -1.337   0.206  1.00  0.00
 Sure enough,
 our script's output is exactly what we would get if we ran that pipeline directly.
 
-> ## Text vs. Whatever
+{% callout "Text vs. Whatever" %}
 >
 > We usually call programs like Microsoft Word or LibreOffice Writer "text
 > editors", but we need to be a bit more careful when it comes to
@@ -86,7 +86,7 @@ our script's output is exactly what we would get if we ran that pipeline directl
 > nothing but the letters, digits, and punctuation on a standard computer
 > keyboard. When editing programs, therefore, you must either use a plain
 > text editor, or be careful to save files as plain text.
-{: .callout}
+{% endcallout %}
 
 What if we want to select lines from an arbitrary file?
 We could edit `middle.sh` each time to change the filename,
@@ -139,12 +139,12 @@ ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00
 ~~~
 {: .output}
 
-> ## Double-Quotes Around Arguments
+{% callout "Double-Quotes Around Arguments" %}
 >
 > For the same reason that we put the loop variable inside double-quotes,
 > in case the filename happens to contain any spaces,
 > we surround `$1` with double-quotes.
-{: .callout}
+{% endcallout %}
 
 We still need to edit `middle.sh` each time we want to adjust the range of lines,
 though.
@@ -271,7 +271,7 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 ~~~
 {: .output}
 
-> ## Why Isn't It Doing Anything?
+{% callout "Why Isn't It Doing Anything?" %}
 >
 > What happens if a script is supposed to process a bunch of files, but we
 > don't give it any filenames? For example, what if we type:
@@ -293,7 +293,7 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 > process standard input, so it just sits there and waits for us to give
 > it some data interactively. From the outside, though, all we see is it
 > sitting there: the script doesn't appear to do anything.
-{: .callout}
+{% endcallout %}
 
 
 Suppose we have just run a series of commands that did something useful --- for example,
@@ -336,7 +336,7 @@ what they discover about their data and their workflow with one call to `history
 and a bit of editing to clean up the output
 and save it as a shell script.
 
-## Nelle's Pipeline: Creating a Script
+{% challenge "Nelle's Pipeline: Creating a Script" %}
 
 Nelle's supervisor insisted that all her analytics must be reproducible. The easiest way to capture all the steps is in a script.
 She runs the editor and writes the following:
@@ -394,7 +394,7 @@ she could modify her script to check for command-line arguments,
 and use `*[AB].txt` if none were provided.
 Of course, this introduces another tradeoff between flexibility and complexity.
 
-> ## Variables in Shell Scripts
+{% solution "Variables in Shell Scripts" %}
 >
 > In the `molecules` directory, imagine you have a shell script called `script.sh` containing the
 > following commands:
@@ -434,10 +434,10 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 > > The shell does not expand `'*.pdb'` because it is enclosed by quote marks.
 > > As such, the first argument to the script is `'*.pdb'` which gets expanded within the
 > > script by `head` and `tail`.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## List Unique Species
+{% challenge "List Unique Species" %}
 >
 > Leah has several hundred data files, each of which is formatted like this:
 >
@@ -460,7 +460,7 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 > `uniq` to print a list of the unique species appearing in each of
 > those files separately.
 >
-> > ## Solution
+{% solution "Solution" %}
 > >
 > > ```
 > > # Script to find unique species in csv files where species is the second data field
@@ -475,10 +475,10 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 > > done
 > > ```
 > > {: .source}
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Find the Longest File With a Given Extension
+{% challenge "Find the Longest File With a Given Extension" %}
 >
 > Write a shell script called `longest.sh` that takes the name of a
 > directory and a filename extension as its arguments, and prints
@@ -493,7 +493,7 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 > would print the name of the `.pdb` file in `/tmp/data` that has
 > the most lines.
 >
-> > ## Solution
+{% solution "Solution" %}
 > >
 > > ```
 > > # Shell script which takes two arguments: 
@@ -505,10 +505,10 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 > > wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
 > > ```
 > > {: .source}
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Why Record Commands in the History Before Running Them?
+{% challenge "Why Record Commands in the History Before Running Them?" %}
 >
 > If you run the command:
 >
@@ -522,15 +522,15 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 > running it. In fact, the shell *always* adds commands to the log
 > before running them. Why do you think it does this?
 >
-> > ## Solution
+{% solution "Solution" %}
 > > If a command causes something to crash or hang, it might be useful
 > > to know what that command was, in order to investigate the problem.
 > > Were the command only be recorded after running it, we would not
 > > have a record of the last command run in the event of a crash.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Script Reading Comprehension
+{% challenge "Script Reading Comprehension" %}
 >
 > For this question, consider the `data-shell/molecules` directory once again.
 > This contains a number of `.pdb` files in addition to any other files you
@@ -559,7 +559,7 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 > ~~~
 > {: .bash}
 >
-> > ## Solutions
+{% solution "Solutions" %}
 > > Script 1 would print out a list of all files containing a dot in their name.
 > >
 > > Script 2 would print the contents of the first 3 files matching the file extension.
@@ -568,10 +568,10 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 > > Script 3 would print all the arguments to the script (i.e. all the `.pdb` files),
 > > followed by `.pdb`.
 > > cubane.pdb ethane.pdb methane.pdb octane.pdb pentane.pdb propane.pdb.pdb
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
 
-> ## Debugging Scripts
+{% challenge "Debugging Scripts" %}
 >
 > Suppose you have saved the following script in a file called `do-errors.sh`
 > in Nelle's `north-pacific-gyre/2012-07-03` directory:
@@ -604,11 +604,11 @@ Of course, this introduces another tradeoff between flexibility and complexity.
 > What is the output showing you?
 > Which line is responsible for the error?
 >
-> > ## Solution
+{% solution "Solution" %}
 > > The `-x` flag causes `bash` to run in debug mode.
 > > This prints out each command as it is run, which will help you to locate errors.
 > > In this example, we can see that `echo` isn't printing anything. We have made a typo
 > > in the loop variable name, and the variable `datfile` doesn't exist, hence returning
 > > an empty string.
-> {: .solution}
-{: .challenge}
+> 
+{% endchallenge %}
