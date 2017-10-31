@@ -29,7 +29,7 @@ evaluated. If this also isn’t met, the `else` block is run. You can use as man
 `elif` conditions as you like, or none at all, and the `else` block is optional.
 
 {% callout "Ternary conditional operator" %}
-You can use a succint one-line syntax for conditional assignments like this:
+You can use a succinct one-line syntax for conditional assignments like this:
 
 ```python
 >>> x = 'ok' if pizzas[0] == 'Cheese' else 'not ok'
@@ -42,8 +42,8 @@ readability!
 {% endcallout %}
 
 
-Python evaluates a condition and sees whether it truth-like or not. If it is
-truth like, the code in the block is run.
+Python evaluates a condition and sees whether it is truth-like or not. If it is
+truth-like, the code in the block is run.
 
 ```python
 >>> if pizza[0] == 'Cheese':
@@ -100,6 +100,9 @@ True
 >>> not 1 < x
 False
 ```
+
+Note that `and`, `or` and `not` have lower precedence than `>`, `<` and `==`, but
+you can use parentheses to be more explicit. 
 
 Of course, we can compare everything we have played around with so far.
 

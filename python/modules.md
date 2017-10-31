@@ -167,7 +167,7 @@ Python distribution, your code will be easily portable.
 ## Modules from PyPi
 
 Many external modules can be found on [PyPi][pypi]. Some of those modules are
-already part of some Python distributons (such as [Anaconda][anaconda], which
+already part of some Python distributions (such as [Anaconda][anaconda], which
 comes with more than a thousand science-oriented modules preinstalled).
 
 If a certain module you need is not available on your distribution you can

@@ -194,7 +194,7 @@ So when we call _this_ method, we’ll get back what we put in, but plus 3.
 
 ```python
 >>> increment_one = make_incrementator(1)
->>> increment_two = make_incrementator(1)
+>>> increment_two = make_incrementator(2)
 >>> print increment_one(42), increment_two(42)
 43 44
 >>> print make_incrementator(3)(42) # Do it in one go!
