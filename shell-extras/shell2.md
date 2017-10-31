@@ -26,7 +26,7 @@ But what if we are looking for a command, but don’t know or don’t remember i
 In this case it might be useful to use the `apropos` command.
 For example, if we want to list the contents of a directory, we could look for something like
 
-```apropos “list directory”```
+```apropos "list directory"```
 
 which will return a list of (possibly) relevant commands, together with their descriptions.
 In this particular case:
@@ -61,8 +61,8 @@ For example, let's create a `bash` script named `StarWars.sh`, having the follow
 
 ```
 #!/bin/bash
-echo “Hello Star Wars' world!”
-export CHARACTER=“Anakin”
+echo "Hello Star Wars' world"
+export CHARACTER="Anakin"
 ```
 
 After saving and closing, we can run it from the shell with
@@ -166,12 +166,12 @@ Conditionals have the following syntax:
 ```
 if [ COND1 ]
 then
-    echo “COND1 evaluated to true”
+    echo "COND1 evaluated to true"
 elif [COND2 ]
 then
-    echo “COND2 evaluated to true”
+    echo "COND2 evaluated to true"
 else
-    echo “Test not passed”
+    echo "Test not passed"
 fi
 ```
 
@@ -202,13 +202,13 @@ The `;` means execute the first, then the second; the `&&` means execute the fir
 
 We already saw how to chain commands together, for example using the pipe to redirect the output of a command to a file or to feed it to another command.
 
-`Exercise (5 min)`: Save in a file the lines containing the word “force” searching for them in all the files in the `Material/StarWars` folder.
+`Exercise (5 min)`: Save in a file the lines containing the word "force" searching for them in all the files in the `Material/StarWars` folder.
 
 Solution:
 
 ```
 files=`ls StarWars/*.txt`
-for file in $files; do grep —color -w “force” $file >> Sentences.dat; done
+for file in $files; do grep —color -w "force" $file >> Sentences.dat; done
 ```
 
 `Exercise (5 min):` Now do the same, but searching for a string provided by the user.
@@ -221,9 +221,9 @@ Open `StarWars.sh` and add the following lines
 
 ```
 files=`ls StarWars/*.txt`
-echo “Enter the string to be looked for…”
+echo "Enter the string to be looked for…"
 read string
-echo “Looking for: ${string}”
+echo "Looking for: ${string}"
 for file in $files; do grep —color -w $string $file >> Sentences2.dat; done
 ```
 
@@ -232,7 +232,7 @@ Another solution is to replace the lines above with
 ```
 files=`ls StarWars/*.txt`
 string=$1
-echo “Looking for: ${string}”
+echo "Looking for: ${string}"
 for file in $files; do grep —color -w $string $file >> Sentences2.dat; done
 ```
 
@@ -254,11 +254,11 @@ What happens if we do not provide any argument?
 We need to check that the string has been assigned, which can be done by adding
 
 ```
-if [ -n “${string}” ]
+if [ -n "${string}" ]
 then
     for file in $files; do grep —color -w $string $file >> Sentences.dat; done
 else
-    echo “No string provided.”
+    echo "No string provided."
     return
 fi
 ```
