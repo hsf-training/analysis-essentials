@@ -24,7 +24,7 @@ specified when creating a dictionary:
 >>> d[0.1] = 3
 ```
 
-The "indicies" of a dictionary are called **keys**, and the things they map to
+The "indices" of a dictionary are called **keys**, and the things they map to
 are **values**. Together, each key-value pair is an **item**.
 
 ```python

@@ -128,4 +128,4 @@ _itself_ is interesting because it can represent a value, like the number
 `999`.
 
 It the next set of lessons, we’ll go through the different types of objects 
-like come with the Python language.
+that come with the Python language.
