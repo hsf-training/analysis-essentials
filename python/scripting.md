@@ -1,7 +1,7 @@
 # Scripting
 
-OK, so we’ve spent quite a long time in Python shells, but we can quit, we can
-only get back our work line-by-line (with IPython’s history). When we want to
+OK, so we’ve spent quite a long time in Python shells. But We can quit.
+With IPython’s history we can only get back our work line-by-line. When we want to
 persist what we’ve done, we write code to a file and then run the file.
 
 Let’s create a file called `pizzaiolo.py`, and write a little python in it.

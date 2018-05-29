@@ -22,11 +22,12 @@ Let’s rewrite `len` as an example.
 >>> length
 <function length at 0x7f83b2bc56e0>
 >>> help(length)
-Help on function foo in module __main__:
+Help on function length in module __main__:
 
-foo(x)
+length(obj)
     Return the number of elements in obj.
 
+    obj must be iterable.
 >>> length('A b c!')
 6
 >>> length(range(5))
@@ -43,7 +44,7 @@ There’s a lot going on here, so we will break it down line-by-line.
    a `for` or `if`, which means a _block_ of code follows (which must be
    indented).
 2. `"""Return the number of elements in obj."""`: This is the _docstring_. It’s
-   just a string, defined literally with three double quotes so that we can
+   just a documentation string, defined literally with three double quotes so that we can
    include linebreaks. By placing a string here, Python makes the string
    available to use when we pass our function to `help`. Documenting your
    functions is a very good idea! It makes it clear to others, and to
@@ -106,7 +107,9 @@ Methods can be called in several ways.
 >>> add(1, y=2)
 >>> add(y=2, x=1)
 >>> add(y=2, 1)
->>> add(y=2, 1)
+  File "<stdin>", line 1
+SyntaxError: non-keyword arg after keyword arg
+>>> add(y=2, =1)
   File "<stdin>", line 1
     add(y=2, =1)
              ^
@@ -235,17 +238,17 @@ Got 3 arguments: (1, 2, 3)
 ```
 
 The `*args` syntax says “stuff any arguments into a tuple and call it `args`”.
-This let’s us capture any number of arguments. As `args` is a tuple, when could
+This let’s us capture any number of arguments. As `args` is a tuple, one could
 loop over it, access a specific element, and so on.
 
-We can also _expand_ lists into separate arguments in with the same syntax when
+We can also _expand_ lists into separate arguments with the same syntax when
 _calling_ a method.
 
 ```python
 >>> def reverse_args(x, y):
 ...     return y, x
 ...
->>> l = [1, 2]
+>>> l = ['a', 'b']
 >>> reverse_args(l)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -288,10 +291,10 @@ Person yoda is -1
 Person thor is 5000
 ```
 
-It’s worth remembering thing because dictionaries are unordered, and the `**`
-syntax effectively creates a dictionary, the order of the keyword arguments
-used to call the method are not necessarily the same as those that the function
-block sees!
+The order of the keyword arguments used to call the method are not necessarily
+the same as those that the function block sees!
+This is because dictionaries are unordered, and the `**` syntax effectively creates a dictionary.
+
 
 {% challenge "The most generic method" %}
 The most generic method would take any number of positional arguments _and_ any
@@ -320,8 +323,8 @@ Some methods take other methods as arguments, like the built-in `map` method.
 ['0', '1', '2', '3', '4']
 ```
 
-`map` takes a function and a list, and applies the function to each element in
-the list. It returns a new list with the results. We can define and then pass
+`map` takes a function and an iterable, and applies the function to each element in
+the iterable. It returns a new list with the results. We can define and then pass
 our own functions.
 
 ```python
@@ -333,7 +336,7 @@ our own functions.
 [0, 1, 8, 27, 64]
 ```
 
-For such a simple method, this is a lot of typing! We can use `lambda` to
+For such a simple method, this is a lot of typing! We can use a `lambda` function to
 define such simple methods inline.
 
 ```python
@@ -362,6 +365,8 @@ variable just like any other object.
 >>> map(div2, range(5))
 [0.0, 0.5, 1.0, 1.5, 2.0]
 ```
+
+Note that we got real numbers back because we are using Python 2 with `from __future__ import division`.
 
 {% challenge "Sum in quadrature" %}
 Write a method that accepts an arbitrary number of arguments, and returns the
@@ -395,7 +400,7 @@ Another use case for `lambda` is the built-in `filter` method (see:
 `help(filter)`).
 
 ```python
->>> filter(lambda x: x % 2 == 0, range(10))
+>>> filter(lambda x: x % 2 == 0, range(10))   # filter and return the even numbers only
 [0, 2, 4, 6, 8]
 ```
 
