@@ -1,7 +1,8 @@
 # Modules
 
-Python comes with lots of useful stuff. We have already met the maths module, but
-did not talk about how we started using it.
+Python comes with lots of useful stuff, which is provided with modules
+(and submodules, see later).
+We have already met the maths module, but did not talk about how we started using it.
 
 ```python
 >>> import math
@@ -40,7 +41,7 @@ The module `random` contains functions useful for random number generation: with
 the `import` above, we have made the `random` module accessible, and everything
 within that module is accessible via the syntax `random.<name>`. For the record,
 the `uniform(x,y)` method returns a pseudo-random number within the range
-$$[0,1]$$.
+$$[x,y]$$.
 
 Sometimes you want to make only one or more things from a given module
 accessible: Python gives you the ability to import just those:
@@ -67,12 +68,13 @@ available without a prefix:
 -1.639334770284028
 ```
 
-This is quite not recommended as you generally do not know what is the extent
+This is not that recommended as you generally do not know what is the extent
 of what you are importing and you might end up with name clashes between your
-current code and the imported module.
+current code and the imported module, as it will all be in the same namespace,
+meaning directly available with no need for a `.<name>` syntax. 
 
-Lastly, it is possible to import modules, or specific names from a module under
-an alias:
+Lastly, it is possible to import modules, or specific names from a module,
+under an alias.
 
 ```python
 >>> from random import uniform as uni
@@ -108,8 +110,8 @@ must import them explicitly**:
 ```
 
 Note that due to the current Python implementation of the `os` module, `os.path`
-functions are _actually_ available _even without importing `os.path` but just
-`os`_, but you cannot rely on this implementation which represents an exception
+functions are _actually_ available _even without importing `os.path`. But just
+`os`_. You cannot and should not rely on this implementation, which represents an exception
 and might change in the future. Always import submodules explicitly!
 
 It is also possible to import several modules with a single import command:
@@ -128,7 +130,7 @@ readability:
 >>> import math
 ```
 
-If you need to import several names from a single modules, you can split an import
+If you need to import several names from a single module, you can split an import
 function over multiple lines:
 
 ```python
