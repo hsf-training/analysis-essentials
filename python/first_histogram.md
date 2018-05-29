@@ -15,10 +15,11 @@ PhaseSpaceSimulation.root
 {% callout "Installing python packages" %}
 One of the best things about Python is the huge number of packages available,
 for everything from art to machine learning to web development. While LCG
-provides a lot of useful packages there are sometimes things missing.
-Fortunately most packages can be easily installed into `~/.local/` using `pip`
-with the `--user` flag. In this lesson we will be using `root_pandas` which can
-be installed using:
+provides a lot of useful packages, there are sometimes things missing.
+Fortunately, most packages can be easily installed into `~/.local/` using `pip`
+with the `--user` flag. In this lesson we will be using
+[`root_pandas`](https://github.com/scikit-hep/root_pandas), which can
+be installed using
 
 ```bash
 pip install --user root_pandas
@@ -30,16 +31,16 @@ specifying their absolute path. This can be done by running
 ```bash
 export PATH=$(python -m site --user-base)/bin:$PATH
 ```
-see that bash lesson for more details about the `PATH` variable.
+see the bash lesson for more details about the `PATH` variable.
 
 We can even upgrade already installed packages using:
 ```bash
 pip install --user matplotlib --upgrade
 ```
 
-As LCG uses `PYTHONPATH` to make packages available any packages it provides
-have higher priority that the user installed package. In order to make it so
-the package installed with `--user` takes precedent you must run
+As LCG uses `PYTHONPATH` to make packages available, any packages it provides
+have higher priority than the user installed packages. In order to make it so
+that a package installed with `--user` takes precedence, you must run
 ```bash
 export PYTHONPATH=$(python -m site --user-site):$PYTHONPATH
 ```
@@ -48,8 +49,9 @@ installing user packages to upgrade LCG provided ones.
 {% endcallout %}
 
 All ROOT methods made available in Python using a set of automatically generated
-bindings, known as PyROOT. These are all available by using `import ROOT`. For
-example if we want to create a `TFile` using the aforementioned data we can
+bindings, known as [PyROOT](https://root.cern.ch/pyroot).
+These are all available by using `import ROOT`.
+For example if we want to create a `TFile` using the aforementioned data we can
 launch `ipython` and run:
 
 ```python
@@ -101,7 +103,7 @@ Out[9]:
 4          3.013242     10.988701   397.754571  1791.373059   40040.364159
 ```
 
-While it is nice to be able to view the data is is typically much more useful to
+While it is nice to be able to view the data, it is typically much more useful to
 be able to apply operations to it in bulk. In this example we have the momentum
 components for each of the child particles in the decay (`H1`, `H2` and `H3`)
 but not the transverse momentum. We can however apply expressions to each row
@@ -145,8 +147,8 @@ df.eval('B_P = sqrt('
 
 ## Plotting histograms
 
-Now we have the momentum of the $$B+$$ meson it would be useful to plot a
-histogram. We could use ROOT for this but the most popular Python library for
+Now that we have the momentum of the $$B+$$ meson, it would be useful to plot
+its distribution in a histogram. We could use ROOT for this but the most popular Python library for
 plotting is known as [`matplotlib`](https://matplotlib.org/) and this is what we
 will use here. The most common way `matplotlib` is used is with the `pyplot`
 interface imported as `plt` like so:
@@ -185,7 +187,7 @@ In [20]: plt.savefig('B_flight_distance_v2.pdf')
 That's not right! The new histogram has been plotted on top of our first one!
 
 This is normally useful as it allows us to layer plots on top of each other to
-compare them. Though in this case we don't want to that so we should first close
+compare them. Though in this case we don't want to do that so we should first close
 the previous plot before making our histogram. We should also add axis labels
 and a legend like so:
 

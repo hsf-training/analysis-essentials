@@ -1,6 +1,6 @@
 # Scripting
 
-OK, so we’ve spent quite a long time in Python shells. But We can quit.
+OK, so we’ve spent quite a long time in Python shells. But we can quit.
 With IPython’s history we can only get back our work line-by-line. When we want to
 persist what we’ve done, we write code to a file and then run the file.
 
@@ -253,7 +253,7 @@ optional arguments:
 Woah, nice! We didn’t even tell `argparse` to have a `--help` flag, but we have
 one automatically. (`argparse` will also add `-h` as an alias for `--help`.)
 
-Let's now prepare the traditional Pizza Margherita:
+Let's now prepare the traditional Pizza Margherita.
 
 ```shell
 $ python pizzaiolo.py 'tomato sauce' 'buffalo mozzarella' --verbose
@@ -266,6 +266,6 @@ Done!
 Finished
 ```
 
-The same result, but more cleanly expressed and with fewer lines of code!
+The same result is obtained, but more cleanly expressed and with fewer lines of code!
 
 [argparse]: https://docs.python.org/2/library/argparse.html

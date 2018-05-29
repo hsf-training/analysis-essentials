@@ -94,7 +94,7 @@ say: ‘you spend 90% of your time reading code, and 10% writing it’).
 
 Pythonic style emphasises clean, readable code, with consistent formatting and 
 useful comments. The most important thing is to be consistent. You can consult 
-[PEP8][pep8], the official Python style recommendations, if you're unsure or to 
+[PEP8][pep8], the official Python style recommendations, if you're unsure or
 want to settle a dispute like `lower_case_functions` versus 
 `upperCaseFunctions`. Which of these two methods is easier to read?
 
