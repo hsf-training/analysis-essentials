@@ -1,14 +1,15 @@
 # Running Python
 
 To start using Python, we need access to the `python` program in a terminal.
-The version installed on lxplus is 2.6.6 which is very old however we can get
-a newer version along with various useful by setting up an LCG environment:
+The version installed on lxplus is 2.6.6, which is very old. However, we can get
+a newer version along with various useful packages
+(see details on the [LCG stacks][lcg_stack]) by setting up an LCG environment:
 
 ```bash
-$ source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_91 x86_64-slc6-gcc62-opt
+$ source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_93 x86_64-slc6-gcc62-opt
 ```
 
-If you have a computers running MacOS or some Linux distribution, it will have 
+If you have a computer running MacOS or some Linux distribution, it will have
 come will Python pre-installed. Either way, a simple way to get Python on your 
 computer is to install [Anaconda][anaconda].
 
@@ -33,8 +34,8 @@ your code, this might seem refreshing:
 
 ```bash
 $ python
-Python 2.7.13 (default, Mar  8 2017, 14:28:24)
-[GCC 4.9.3] on linux2
+Python 2.7.13 (default, Dec  5 2017, 19:29:24)
+[GCC 6.2.0] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
 >>> a = 3.14
 >>> print a + 1
@@ -66,10 +67,11 @@ it’s a great way to experiment. An enhanced version of this session is called
 
 ```bash
 $ ipython
-Python 2.7.13 (default, Mar 15 2017, 12:07:52)
+
+Python 2.7.13 (default, Dec  5 2017, 19:29:24)
 Type "copyright", "credits" or "license" for more information.
 
-IPython 5.0.0 -- An enhanced Interactive Python.
+IPython 5.4.1 -- An enhanced Interactive Python.
 ?         -> Introduction and overview of IPython's features.
 %quickref -> Quick reference.
 help      -> Python's own help system.
@@ -152,3 +154,4 @@ In [11]: dir(math)
 
 [anaconda]: https://www.anaconda.com/download/
 [ipython]: https://ipython.org/
+[lcg_stack]: http://lcginfo.cern.ch/

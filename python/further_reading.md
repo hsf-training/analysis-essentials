@@ -1,7 +1,7 @@
 # More advanced topics in Python
 
 ## Nice standard libraries
-* os, sys, re, fnmatch, argsparse, subprocess
+* argsparse, datetime, fnmatch, glob, os, re, sys, subprocess
 
 ## Nice libraries for data analysis
 * numpy, pandas, matplotlib

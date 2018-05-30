@@ -212,7 +212,7 @@ Likewise, rather than comparing for False, we just use `not`.
 The last two lines show that we can use `not in` for checking that something
 _is not_ in a collection. This reads more naturally.
 
-All Python objects are truth-like unless the have the value `False`, the value
+All Python objects are truth-like unless they are the value `False`, the value
 `None`, or are empty collections (such as `""`, `[]`, `()`, `{}`).
 
 ```python
@@ -252,7 +252,7 @@ We’ve already seen that using conditions in these can be useful.
 Another way of iterating is with `while`.
 
 ```python
->>> i = 10
+>>> i = 5
 >>> while i > 0:
 ...     print 'T-minus {0} seconds'.format(i)
 ...     # Equivalent to `i = i - 1`

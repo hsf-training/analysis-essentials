@@ -350,7 +350,7 @@ value, and want a starting value of zero.
 
 This reads “give me a list of length 5, in steps of 1, starting from zero”.
 
-Now that we know how to easily generating sequences of numbers, we can write 
+Now that we know how to easily generate sequences of numbers, we can write 
 `enumerate` by hand!
 
 ```python
@@ -452,7 +452,7 @@ coordinate, nor to ‘delete’ a dimension. Generally, it can be useful if the
 data structure you’re using respects the _meaning_ of the data you’re storing.
 
 If you can’t think of a use for tuples yourself, its worth keeping in mind that 
-Python using creates tuples for groups of things by default. We saw that 
+Python creates tuples for groups of things by default. We saw that 
 earlier when we used `enumerate`.
 
 ```python

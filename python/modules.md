@@ -1,7 +1,8 @@
 # Modules
 
-Python comes with lots of useful stuff. We have already met the maths module, but
-did not talk about how we started using it.
+Python comes with lots of useful stuff, which is provided with modules
+(and submodules, see later).
+We have already met the maths module, but did not talk about how we started using it.
 
 ```python
 >>> import math
@@ -40,7 +41,7 @@ The module `random` contains functions useful for random number generation: with
 the `import` above, we have made the `random` module accessible, and everything
 within that module is accessible via the syntax `random.<name>`. For the record,
 the `uniform(x,y)` method returns a pseudo-random number within the range
-$$[0,1]$$.
+$$[x,y]$$.
 
 Sometimes you want to make only one or more things from a given module
 accessible: Python gives you the ability to import just those:
@@ -67,12 +68,13 @@ available without a prefix:
 -1.639334770284028
 ```
 
-This is quite not recommended as you generally do not know what is the extent
+This is not that recommended as you generally do not know what is the extent
 of what you are importing and you might end up with name clashes between your
-current code and the imported module.
+current code and the imported module, as it will all be in the same namespace,
+meaning directly available with no need for a `.<name>` syntax. 
 
-Lastly, it is possible to import modules, or specific names from a module under
-an alias:
+Lastly, it is possible to import modules, or specific names from a module,
+under an alias.
 
 ```python
 >>> from random import uniform as uni
@@ -108,8 +110,8 @@ must import them explicitly**:
 ```
 
 Note that due to the current Python implementation of the `os` module, `os.path`
-functions are _actually_ available _even without importing `os.path` but just
-`os`_, but you cannot rely on this implementation which represents an exception
+functions are _actually_ available _even without importing `os.path`. But just
+`os`_. You cannot and should not rely on this implementation, which represents an exception
 and might change in the future. Always import submodules explicitly!
 
 It is also possible to import several modules with a single import command:
@@ -128,7 +130,7 @@ readability:
 >>> import math
 ```
 
-If you need to import several names from a single modules, you can split an import
+If you need to import several names from a single module, you can split an import
 function over multiple lines:
 
 ```python
@@ -147,7 +149,7 @@ function over multiple lines:
 
 The set of things that Python comes with, from all of the types of objects to
 all of the different modules, is called the [standard library][stl]. It is
-recommend to browse through the standard library documentation to see what is
+recommended to browse through the standard library documentation to see what is
 available: Python is rich of standard modules, and you should reuse them as much
 as possible instead of rewriting code on your own.
 
@@ -166,17 +168,17 @@ Python distribution, your code will be easily portable.
 
 ## Modules from PyPi
 
-Many external modules can be found on [PyPi][pypi]. Some of those modules are
+Many external modules can be found on [PyPi][pypi], the Python Package Index repository.
+Some of those modules are
 already part of some Python distributions (such as [Anaconda][anaconda], which
 comes with more than a thousand science-oriented modules preinstalled).
 
 If a certain module you need is not available on your distribution you can
-easily install it with the `pip` shell command. Since you do not have write
-access to a standard Python installation's directories, `pip` allows you to
+easily install it with the `pip` shell command. Since you typically do not have write
+access to the standard Python installation's directories, `pip` allows you to
 install modules only for yourself, under your current user's home directory.
-
 It is recommended to set up in your shell startup script (such as `~/.bashrc`)
-the following two lines telling once for all where to install and search for
+the following two lines telling once and for all where to install and search for
 Python user modules:
 
 ```bash
@@ -222,9 +224,9 @@ By simply calling the file `myfirstmodule.py` we have made it available as a
 module named `myfirstmodule` - given that the file is in the same directory
 where we have launched the Python interpreter.
 
-{% callout "Module names restrictions" %}
-Note that you cannot pick any name you want for a module! From the [Python
-style guide][pep8-modulenames], we gather that we should use "short,
+{% callout "Module name restrictions" %}
+Note that you cannot pick any name you want for a module! From the
+[Python style guide][pep8-modulenames], we gather that we should use "short,
 all-lowercase names". As a matter of fact, if we used dashes in the file name,
 we would have ended up with a syntax error while trying to load it:
 
@@ -259,10 +261,10 @@ This means that our module is called `yabba`, and if we import it, functions
 from `__init__.py` will be available:
 
 ```python
->>> import myfirstmodule
->>> myfirstmodule.one()
+>>> import yabba
+>>> yabba.one()
 this is my first function
->>> myfirstmodule.two()
+>>> yabba.two()
 this is my second function
 ```
 
@@ -295,7 +297,7 @@ We have used the filter function above to list the functions we have defined
 in our module. Can you describe in detail what the commands above do?
 {% solution "Solution" %}
 The `dir(module)` command lists all _names_ (not necessarily functions, not
-necessarily defined by us) contained in a given module. We have used the
+necessarily defined by us) contained in a given imported module. We have used the
 `filter()` command to filter out all names starting with two underscores. Every
 item returned by `dir()` is passed as `x` to the lambda function which returns
 `True` or `False`, determining whether the `filter()` function should keep or
@@ -384,5 +386,6 @@ condition with a printout would not exist in real life.
 
 [stl]: https://docs.python.org/2/library/index.html
 [pep8-import]: https://www.python.org/dev/peps/pep-0008/#imports
+[pep8-modulenames]: https://www.python.org/dev/peps/pep-0008/#package-and-module-names
 [pypi]: https://pypi.python.org/pypi
 [anaconda]: https://www.anaconda.com/

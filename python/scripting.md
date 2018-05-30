@@ -1,7 +1,7 @@
 # Scripting
 
-OK, so we’ve spent quite a long time in Python shells, but we can quit, we can
-only get back our work line-by-line (with IPython’s history). When we want to
+OK, so we’ve spent quite a long time in Python shells. But we can quit.
+With IPython’s history we can only get back our work line-by-line. When we want to
 persist what we’ve done, we write code to a file and then run the file.
 
 Let’s create a file called `pizzaiolo.py`, and write a little python in it.
@@ -71,7 +71,7 @@ In [2]: exit()
 $
 ```
 
-One of most interesting things you can do in your own scripts is accept
+One of the most interesting things you can do in your own scripts is accept
 arguments. Wouldn’t it be great if we could decide what toppings our pizza has
 _from the command line_?
 
@@ -85,7 +85,7 @@ Done!
 ```
 
 Of course, nothing’s changed because our script doesn’t know how to handle such
-arguments. To add this, we use the `sys` module, which makes the command line
+arguments. To add this, we use for example the `sys` module, which makes the command line
 arguments available as the `argv` property. We can modify our script to print
 this out, to get a feeling for what’s going on. We’ll comment out our method
 call whilst we’re just playing around.
@@ -190,12 +190,12 @@ Done!
 Finished
 ```
 
-Great, everything seems to work. 🍕
+Great, everything seems to work.
 
 ## argparse
 
 The [`argparse` module][argparse] comes as part of the Python standard library,
-and allows us to define what arguments our scripts accepts much more easily
+and allows us to define what arguments our scripts accept much more easily
 than what we’ve shown. Under the hood, it just inspects `sys.argv` in exactly
 the same way as we’ve done, but it takes care of things like validation for us.
 
@@ -234,7 +234,7 @@ code, that can be specified multiple times `nargs='+'`, and a flag called
 `--verbose`. We ask that that flag can also be specified using the `-v`
 shorthand.
 
-Let’s start by asking for help.try again.
+Let’s start by asking for help again.
 
 ```shell
 $ python pizzaiolo.py --help
@@ -253,7 +253,7 @@ optional arguments:
 Woah, nice! We didn’t even tell `argparse` to have a `--help` flag, but we have
 one automatically. (`argparse` will also add `-h` as an alias for `--help`.)
 
-Let's now prepare the traditional Pizza Margherita:
+Let's now prepare the traditional Pizza Margherita.
 
 ```shell
 $ python pizzaiolo.py 'tomato sauce' 'buffalo mozzarella' --verbose
@@ -266,6 +266,6 @@ Done!
 Finished
 ```
 
-The same result, but more cleanly expressed and with fewer lines of code!
+The same result is obtained, but more cleanly expressed and with fewer lines of code!
 
 [argparse]: https://docs.python.org/2/library/argparse.html
