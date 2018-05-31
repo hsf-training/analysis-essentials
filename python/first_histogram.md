@@ -212,7 +212,7 @@ known as cutting.
 
 In pandas we can apply a cut to a DataFrame using the `query` method. For
 example to make a new DataFrame containing $$B^+$$ mesons with flight distances
-of less than 15mm we can use:
+of more than 15 mm we can use:
 
 ```python
 In [27]: df_with_cut = df.query('B_FlightDistance > 15')
