@@ -25,7 +25,7 @@ script:
   - make pdf
   - make test
 after_success:
-  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && make publish-travis > /dev/null 2>&1 || true'
+  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && make publish-travis || true'
 env:
   global:
     secure: "A4LX7iDTTSEiRaWFuT7rLhCTG2Za/AQ/i43oG+3KPz1iOw7fBDfrUTJjZwHll7LJJx8mEKmqr5MzIu4qLatJO7kHLA1cb+OeNJAeLi+mQf6AsGlFxtJX/h/cFgxFJbjjzTAJDVy1TlID0dHAzk6Uu9Uo+ciatERJFtXH1GVc4UcjQpuVxEoVEA1sWP2uIpyv6sUjPoQcFLNp5zQT776x04WszFpu8mBVmDaCzSMOhWFC9DCRBIhkGGSdIvoE2GAoJWpHUpNDXZsugsQ/d0Dtii5oTIeZJnMTZA6K3EvYhBOp+bslj9a/+qheqkxjef2wBusDy/N8XWe/1iL2h9uM1sZIYAQC4lAgb9/sm2cVUVhg2zC3oo187Zcm/SaNMQBVuHS7GUmQUX8NXxcRvr1jqK72cpg6zYAdydl0yKscCY9AwmIwxjhc8FJ+H8q82GQyPuNn13KiCQkXv173fB9pRvQqUSlAR9YO0Y222Y+aSJokOMXyTKUSiOTYc1F0FX/wK/wm/LfWvRmjNkOINj7gZMFMJXCj9zpvp7sUh1Hz6eTp6UiOcnSHA3puKOWuuREF/CN5ETNCMtT8i/Q50TRC5HXA/pWc9u2SxRCViq277UuXv6c96wGKAnw5Cm/Mshcdfq03rq0wWamFeKxwewopFMX9k7af66Liu3fh0IzfmoQ="
