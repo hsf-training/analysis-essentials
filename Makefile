@@ -29,3 +29,4 @@ clean:
 
 publish-travis: all pdf
 	@ghp-import -n ./_book && git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git gh-pages > /dev/null
+	@ghp-import -n ./_book && git push -fq https://${GH_TOKEN}@github.com/lhcb/analysis-essentials.git gh-pages > /dev/null

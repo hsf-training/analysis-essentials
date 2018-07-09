@@ -1,4 +1,4 @@
-# LHCb analysis essentials
+# HSF Analysis Essentials
 
 * [Introduction](README.md)
 
