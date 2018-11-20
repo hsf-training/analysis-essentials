@@ -177,9 +177,9 @@ throw an error if you don't indent:
 
 ```python
 >>> for i in b:
-... print i
+... print(i)
   File "<ipython-input-56-11d6523211c0>", line 2
-    print i
+    print(i)
         ^
 IndentationError: expected an indented block
 ```
@@ -190,10 +190,10 @@ once again:
 
 ```python
 >>> for i in b:
-...   print "I am in a loop"
-...     print i
+...   print("I am in a loop")
+...     print(i)
   File "<ipython-input-57-5c3d29e65ad9>", line 3
-    print i
+    print(i)
     ^
 IndentationError: unexpected indent
 ```
@@ -258,7 +258,7 @@ to multiple variables at the same time.
 
 ```python
 >>> one, two = [34, 43]
->>> print two, one
+>>> print(two, one)
 43 34
 ```
 
@@ -268,7 +268,7 @@ where each item was another list, each containing two numbers.
 ```python
 >>> nested = [[20, 29], [30, 34]]
 >>> for item in nested:
-...     print item
+...     print(item)
 ...
 [20, 29]
 [30, 34]
@@ -279,7 +279,7 @@ So, we can just assign each item in the sublist to separate variables in the
 
 ```python
 >>> for one, two in nested:
-...     print two, one
+...     print(two, one)
 ...
 29 20
 34 30
@@ -306,7 +306,7 @@ simultaneously, using the `zip` method.
 
 ```python
 >>> for item, item2 in zip(a, a_doubled):
-...     print item2, item
+...     print(item2, item)
 ...
 8 4
 4 2
@@ -327,8 +327,18 @@ You can see that the structure of the list that’s iterated over, the output of
 Finally, we’ll take a quick look at the `range` method.
 
 ```python
->>> range(0, 10)
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> for i in range(0, 10):
+        print(i)
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
 ```
 
 The arguments to `range` work just like slicing, the second argument is treated 
@@ -336,16 +346,26 @@ exclusively, as its value is excluded from the output. Again like slicing, we
 can specify a third argument as the step size for the iteration.
 
 ```python
->>> range(0, 10, 2)
-[0, 2, 4, 6, 8]
+>>> for i in range(0, 10, 2):
+        print(i)
+0
+2
+4
+6
+8
 ```
 
 If you only give a single argument to `range`, it assumes you’ve given the end 
 value, and want a starting value of zero.
 
 ```python
->>> range(5)
-[0, 1, 2, 3, 4]
+>>> for i in range(5)
+        print(i)
+0
+1
+2
+3
+4
 ```
 
 This reads “give me a list of length 5, in steps of 1, starting from zero”.
@@ -355,7 +375,7 @@ Now that we know how to easily generate sequences of numbers, we can write
 
 ```python
 >>> for index, item in zip(range(len(a)), a):
-...     print index, item
+...     print(index, item)
 ...
 0 4
 1 2
