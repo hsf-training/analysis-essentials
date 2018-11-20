@@ -106,7 +106,7 @@ analysis, and want to print the results.
 ```python
 >>> result1 = 123.0
 >>> result2 = 122.3
->>> print 'My results are: ' + str(result1) + ', ' + str(result2)
+>>> print('My results are: ' + str(result1) + ', ' + str(result2))
 My results are: 123.0, 122.3
 ```
 
@@ -116,7 +116,7 @@ special `{}` placeholders to say where we want the values to go in the string.
 
 ```python
 >>> template = 'My results are: {0}, {1}'
->>> print template.format(result1, result2)
+>>> print(template.format(result1, result2))
 My results are: 123.0, 122.3
 ```
 
@@ -131,7 +131,7 @@ can easily repeat placeholders in the string, but only pass the values once to
 
 ```python
 >>> template2 = 'My results are: {0}, {1}. But the best is {0}, obviously.'
->>> print template2.format(result1, result2)
+>>> print(template2.format(result1, result2))
 My results are: 123.0, 122.3. But the best is 123.0, obviously.
 ```
 
@@ -140,7 +140,7 @@ using the same name.
 
 ```python
 >>> template3 = 'My results are: {best}, {worst}. But the best is {best}, obviously.'
->>> print template3.format(best=result1, worst=result2)
+>>> print(template3.format(best=result1, worst=result2))
 My results are: 123.0, 122.3. But the best is 123.0, obviously.
 ```
 
@@ -149,7 +149,7 @@ This is nice because it gives more meaning to what the placeholders are for.
 There’s [a lot you can do inside the placeholders][strformat], such as specifying that you want to format a number with a certain number of decimal places.
 
 ```python
->>> print 'This number is great: {0:.3f}'.format(result1)
+>>> print('This number is great: {0:.3f}'.format(result1))
 This number is great: 123.000
 ```
 
@@ -158,7 +158,7 @@ escape it by doubling it, so that `{{` will become `{` and `}}` will become `}`.
 Here's an example:
 
 ```python
->>> print 'This number will be surrounded by curly braces: {{{0}}}'.format(123)
+>>> print('This number will be surrounded by curly braces: {{{0}}}'.format(123))
 This number will be surrounded by curly braces: {123}
 ```
 
