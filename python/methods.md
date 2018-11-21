@@ -56,8 +56,8 @@ There’s a lot going on here, so we will break it down line-by-line.
 >>> x = 1
 >>> def top_function():
 ...    """Do something silly."""
-...    print x
-...    print y
+...    print(x)
+...    print(y)
 ...
 >>> y = 2
 >>> top_function()
@@ -133,7 +133,7 @@ doing.
 ...    Optionally print the result before returning it.
 ...    """
 ...    if show:
-...        print x + y
+...        print(x + y)
 ...    return x + y
 ...
 >>> _ = add(1, 2, True) # Hmm, what is True doing again?
@@ -152,7 +152,7 @@ calling the method, but can optionally override it.
 ...    Optionally print the result before returning it.
 ...    """
 ...    if show:
-...        print x + y
+...        print(x + y)
 ...    return x + y
 ...
 >>> _ = add(1, 2) # No printing!
@@ -223,7 +223,7 @@ would be tedious to define many arguments explicitly.
 >>> def total(*args):
 ...     """Return the sum of the arguments."""
 ...     # For seeing what `*` does
-...     print 'Got {0} arguments: {1}'.format(len(args), args)
+...     print('Got {0} arguments: {1}'.format(len(args), args))
 ...     return sum(args)
 ...
 >>> total(1)
@@ -263,9 +263,9 @@ A similar syntax exists for keyword arguments.
 >>> def ages(**people):
 ...     """Print people's information."""
 ...     # For seeing what `**` does
-...     print 'Got {0} arguments: {1}'.format(len(people), people)
+...     print('Got {0} arguments: {1}'.format(len(people), people))
 ...     for person in people:
-...         print 'Person {0} is {1}'.format(person, people[person])
+...         print('Person {0} is {1}'.format(person, people[person]))
 ...
 >>> ages(steve=31)
 Got 1 arguments: {'steve': 31}
@@ -304,8 +304,8 @@ number of keyword arguments. What would this method look like?
 It would use both `*` and `**` syntax in defining the arguments.
 ```python
 >>> def generic(*args, **kwargs):
-...     print 'Got args: {0}'.format(args)
-...     print 'Got kwargs: {0}'.format(kwargs)
+...     print('Got args: {0}'.format(args))
+...     print('Got kwargs: {0}'.format(kwargs))
 ...
 >>> d = {'bing': 'baz'}
 >>> generic(1, 2, 'abc', foo='bar', **d)
