@@ -7,11 +7,11 @@ something’s value. Specifying _conditions_ like this is pretty simple in Pytho
 >>> pizzas = ['Pineapple', 'Cheese', 'Pepperoni', 'Hot dog']
 >>> for p in pizzas:
 ...     if p == 'Cheese':
-...         print 'Nice pizza!'
+...         print('Nice pizza!')
 ...     elif p == 'Pepperoni':
-...         print 'Amazing pizza!'
+...         print('Amazing pizza!')
 ...     else:
-...         print 'Weird pizza.'
+...         print('Weird pizza.')
 ...
 Weird pizza.
 Nice pizza!
@@ -47,7 +47,7 @@ truth-like, the code in the block is run.
 
 ```python
 >>> if pizza[0] == 'Cheese':
-...     print 'It is cheese, my dudes.'
+...     print('It is cheese, my dudes.')
 ...
 >>> pizza[0] == 'Cheese'
 False
@@ -138,9 +138,9 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'z' is not defined
 >>> if 'pizza' in z:
-...     print 'We have pizza', z['pizza']
+...     print('We have pizza', z['pizza'])
 ... else
-...     print 'No pizza :('
+...     print('No pizza :(')
 ```
 
 Note that `in` doesn’t dive into nested collections, but only looks at the top
@@ -189,10 +189,10 @@ It’s conventional not to explicitly compare a condition to `True`, because the
 
 ```python
 >>> if ('Pineapple' in pizzas) == True:
-...     print 'Weird.'
+...     (print 'Weird.')
 ...
 >>> if 'Pineapple' in pizzas:
-...     print 'Not weird.'
+...     print ('Not weird.')
 ...
 ```
 
@@ -200,10 +200,10 @@ Likewise, rather than comparing for False, we just use `not`.
 
 ```python
 >>> if ('Pineapple' in pizzas) == False:
-...     print 'Weird.'
+...     print ('Weird.')
 ...
 >>> if not 'Pineapple' in pizzas:
-...     print 'Not weird.'
+...     print ('Not weird.')
 ...
 >>> not 'Pineapple' in pizzas:
 >>> 'Pineapple' not in pizzas:
@@ -217,7 +217,7 @@ All Python objects are truth-like unless they are the value `False`, the value
 
 ```python
 >>> if list() or dict() or tuple() or str():
-...     print "You won’t see me!"
+...     print ("You won’t see me!")
 ```
 
 The value `None`, which is available as the variable named `None`, is often
@@ -230,9 +230,9 @@ used as placeholder for an empty value.
 ...         favourite = p
 ...
 >>> if favourite:
-...     print 'Found favourite: {0}'.format(favourite)
+...     print ('Found favourite: {0}'.format(favourite))
 ... else:
-...     print 'No favourite :('
+...     print ('No favourite :(')
 No favourite :(
 ```
 
@@ -257,7 +257,7 @@ Another way of iterating is with `while`.
 ...     print 'T-minus {0} seconds'.format(i)
 ...     # Equivalent to `i = i - 1`
 ...     i -= 1
-... print 'Blast off!'
+... print ('Blast off!')
 T-minus 5 seconds
 T-minus 4 seconds
 T-minus 3 seconds
@@ -273,7 +273,7 @@ condition, we will end up looping forever!
 ```python
 >>> i = 5
 >>> while i > 0:
-...     print 'All work and no play makes Jack a dull boy'
+...     print('All work and no play makes Jack a dull boy')
 ```
 
 Because we do not change the value of `i` in the loop, the condition always
