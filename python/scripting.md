@@ -11,11 +11,11 @@ import time
 
 def make_pizza(*toppings):
     """Make a delicious pizza from the toppings."""
-    print 'Making pizza...'
+    print('Making pizza...')
     for topping in toppings:
-        print 'Adding {0}'.format(topping)
+        print('Adding {0}'.format(topping))
         time.sleep(1)
-    print 'Done!'
+    print('Done!')
     return 'Pizza with toppings: {0}'.format(toppings)
 
 pizza = make_pizza('cheese', 'olives')
@@ -96,14 +96,14 @@ import time
 
 def make_pizza(*toppings):
     """Make a delicious pizza from the toppings."""
-    print 'Making pizza...'
+    print('Making pizza...')
     for topping in toppings:
-        print 'Adding {0}'.format(topping)
+        print('Adding {0}'.format(topping))
         time.sleep(1)
-    print 'Done!'
+    print('Done!')
     return 'Pizza with toppings: {0}'.format(toppings)
 
-print 'sys.argv:', sys.argv
+print('sys.argv:', sys.argv)
 # pizza = make_pizza('cheese', 'olives')
 ```
 
@@ -150,8 +150,8 @@ information.
 arguments = sys.argv[1:]
 
 if '--help' in arguments:
-    print 'Make a pizza.'
-    print 'Usage: pizzaiolo.py topping1 topping2 ...'
+    print('Make a pizza.')
+    print('Usage: pizzaiolo.py topping1 topping2 ...')
     sys.exit()
 
 if '--verbose' in arguments:
@@ -162,10 +162,10 @@ else:
     verbose = False
 
 if verbose:
-    print 'About to call make_pizza'
+    print('About to call make_pizza')
 pizza = make_pizza(*arguments)
 if verbose:
-    print 'Finished'
+    print('Finished')
 ```
 
 Let’s try running it.
@@ -207,11 +207,11 @@ import time
 
 def make_pizza(*toppings):
     """Make a delicious pizza from the toppings."""
-    print 'Making pizza...'
+    print('Making pizza...')
     for topping in toppings:
-        print 'Adding {0}'.format(topping)
+        print('Adding {0}'.format(topping))
         time.sleep(1)
-    print 'Done!'
+    print('Done!')
     return 'Pizza with toppings: {0}'.format(toppings)
 
 
@@ -223,10 +223,10 @@ parser.add_argument('--verbose', '-v', action='store_true',
 arguments = parser.parse_args()
 
 if arguments.verbose:
-    print 'About to call make_pizza'
+    print('About to call make_pizza')
 make_pizza(*arguments.toppings)
 if arguments.verbose:
-    print 'Finished'
+    print ('Finished')
 ```
 
 We say that we want an argument, that we will refer to as `toppings` in the
