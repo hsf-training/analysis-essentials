@@ -189,10 +189,10 @@ It’s conventional not to explicitly compare a condition to `True`, because the
 
 ```python
 >>> if ('Pineapple' in pizzas) == True:
-...     (print 'Weird.')
+...     print('Weird.')
 ...
 >>> if 'Pineapple' in pizzas:
-...     print ('Not weird.')
+...     print('Not weird.')
 ...
 ```
 
