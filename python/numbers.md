@@ -11,10 +11,10 @@ how we perform operations on them.
 ```
 
 
-{% callout "Integer division in python 2" %}
+{% callout "Integer division in Python 2" %}
 
-If for any reason (eg you want to use LHCb software) you have to use python 2, 
-beware of that Python2 has a few different _types_ of numbers, and they can 
+If for any reason (e.g. you want to use LHCb or Alice software) you have to use Python 2, 
+beware of that Python 2 has a few different _types_ of numbers, and they can 
 behave differently.
 
 ```python
