@@ -48,7 +48,7 @@ Woah! What just happened?
 2. We typed a line of code, `a = 3.14`, and hit enter;
 3. We typed another line of code, `print (a+1.1)`, and hit enter;
 4. The value `4.14` was printed to the terminal.
-5. We type the variable a.
+5. We type the variable `a`.
 6. The value of the variable a was printed.
 
 This interactive session is sometimes called a REPL: a **R**ead **E**valuate 
