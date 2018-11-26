@@ -12,10 +12,43 @@ B2HHH_MagnetUp.root
 PhaseSpaceSimulation.root
 ```
 
-{% callout "Installing python packages" %}
-One of the best things about Python is the huge number of packages available,
-for everything from art to machine learning to web development. While LCG
-provides a lot of useful packages, there are sometimes things missing.
+{% callout "Installing python packages inside a virtual environment" %}
+
+It is however usually preferable and safer to do everything inside a virtual environement.
+The latter is like a copy of your current environement. Thus you can modify your virtual 
+environement (including installing/deleting/updating modules) without affecting your default
+environement. If at some point you realize you have broken everything, you can always exit
+the virtual environement and go back to the default lxplus one.
+
+To build a virtual environement based on LCG views, you can use [LCG_virtualenv][lcg_virtualenv]:
+
+```bash
+git clone https://gitlab.cern.ch/cburr/lcg_virtualenv.git
+./lcg_virtualenv/create_lcg_virtualenv myVenv
+```
+To activate the virtual environement do:
+
+```bash
+source myVenv/bin/activate
+```
+
+You can then install stuff with `pip`. In this lesson we will be using
+[`root_pandas`](https://github.com/scikit-hep/root_pandas), which can
+be installed using:
+
+```bash
+pip install --upgrade root_pandas matplotlib
+python -c 'import pandas; print(f"Got pandas from {pandas.__file__}")'
+python -c 'import root_pandas; print(f"Got root_pandas from {root_pandas.__file__}")'
+python -c 'import matplotlib; print(f"Got matplotlib from {matplotlib.__file__}")'
+```
+
+You can go back to the default environement using the `deactivate` command.
+{% endcallout %}
+
+{% callout "Installing python packages directly (not the recommended way)" %}
+Even if not recommended, you can also install modules directly, without using a virtual environment.
+While LCG provides a lot of useful packages, there are sometimes things missing.
 Fortunately, most packages can be easily installed into `~/.local/` using `pip`
 with the `--user` flag. In this lesson we will be using
 [`root_pandas`](https://github.com/scikit-hep/root_pandas), which can
@@ -47,6 +80,7 @@ export PYTHONPATH=$(python -m site --user-site):$PYTHONPATH
 every time you run the `source` command above. This is **only** needed when
 installing user packages to upgrade LCG provided ones.
 {% endcallout %}
+
 
 All ROOT methods made available in Python using a set of automatically generated
 bindings, known as [PyROOT](https://root.cern.ch/pyroot).
@@ -230,8 +264,8 @@ bins = np.linspace(0, 150, 100)
 df_with_cut = df.query('B_P > 100000')
 
 plt.figure()
-plt.hist(df['B_FlightDistance'], bins=bins, histtype='step', normed=True, label='Without cut')
-plt.hist(df_with_cut['B_FlightDistance'], bins=bins, histtype='step', normed=True, label='With 100 GeV momentum cut')
+plt.hist(df['B_FlightDistance'], bins=bins, histtype='step', density=1, label='Without cut')
+plt.hist(df_with_cut['B_FlightDistance'], bins=bins, histtype='step', density=1, label='With 100 GeV momentum cut')
 
 plt.xlim(bins[0], bins[-1])
 plt.xlabel('Total momentum of $B^+$ meson')

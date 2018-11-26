@@ -194,6 +194,37 @@ the `root_pandas` module with:
 pip install --user root_pandas
 ```
 
+## Modules inside a virtual environment
+
+It is however usually preferable and safer to do everything inside a virtual environement.
+The latter is like a copy of your current environement. Thus you can modify your virtual 
+environement (including installing/deleting/updating modules) without affecting your default
+environement. If at some point you realize you have broken everything, you can always exit
+the virtual environement and go back to the default lxplus one.
+
+To build a virtual environement based on LCG views, you can use [LCG_virtualenv][lcg_virtualenv]:
+
+```bash
+git clone https://gitlab.cern.ch/cburr/lcg_virtualenv.git
+./lcg_virtualenv/create_lcg_virtualenv myVenv
+```
+To activate the virtual environement do:
+
+```bash
+source myVenv/bin/activate
+```
+
+You can then install stuff with `pip`, like for instance `root_pandas`:
+
+```bash
+pip install --upgrade root_pandas matplotlib
+python -c 'import pandas; print(f"Got pandas from {pandas.__file__}")'
+python -c 'import root_pandas; print(f"Got root_pandas from {root_pandas.__file__}")'
+python -c 'import matplotlib; print(f"Got matplotlib from {matplotlib.__file__}")'
+```
+
+You can go back to the default environement using the `deactivate` command.
+
 
 ## Write your first Python module
 
@@ -389,3 +420,4 @@ condition with a printout would not exist in real life.
 [pep8-modulenames]: https://www.python.org/dev/peps/pep-0008/#package-and-module-names
 [pypi]: https://pypi.python.org/pypi
 [anaconda]: https://www.anaconda.com/
+[lcg_virtualenv]: https://gitlab.cern.ch/cburr/lcg_virtualenv/

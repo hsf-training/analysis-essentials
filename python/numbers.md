@@ -10,8 +10,12 @@ how we perform operations on them.
 3
 ```
 
-The only thing to keep in mind is that Python has a few different _types_ of 
-numbers, and they can behave differently.
+
+{% callout "Integer division in Python 2" %}
+
+If for any reason (e.g. you want to use LHCb or Alice software) you have to use Python 2, 
+beware of that Python 2 has a few different _types_ of numbers, and they can 
+behave differently.
 
 ```python
 >>> 10/3
@@ -53,6 +57,7 @@ the `//` operation:
 >>> 10//3
 3
 ```
+{% endcallout %}
 
 {% callout "Operators" %}
 This behaviour can be explained in terms of operators and the double-underscore 

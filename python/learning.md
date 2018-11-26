@@ -66,7 +66,7 @@ hero thor
 >>> d = collections.OrderedDict([('foo', 'bar'), (123, 321)])
 >>> d.update([('hero', 'thor')])
 >>> for key, value in d.items():
-...     print key, value
+...     print(key, value)
 ...
 foo bar
 123 321
@@ -77,7 +77,7 @@ automatically create values when a previously undefined key is accessed.
 ```python
 >>> d = collections.defaultdict(int)
 >>> d['foo'] += 1
->>> print d, d['foo'], d['bar']
+>>> print(d, d['foo'], d['bar'])
 defaultdict(<type 'int'>, {'foo': 1}) 1 0
 ```
 
@@ -106,7 +106,7 @@ def myFunc(x,y,verbose = True, fast='yes'):
     """Do the thing."""
     z=( x *y ) /2
     if verbose == False:
-        print x,y, z
+        print(x,y, z)
     if not fast:
         time.sleep( 1 )
     return  z* z
@@ -123,7 +123,7 @@ def my_func(x, y, verbose=True, fast=True):
     z = (x*y)/2
 
     if verbose:
-        print x, y, z
+        print(x, y, z)
     # Should probably remove this functionality
     if not fast:
         time.sleep(1)

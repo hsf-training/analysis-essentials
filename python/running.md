@@ -6,26 +6,22 @@ a newer version along with various useful packages
 (see details on the [LCG stacks][lcg_stack]) by setting up an LCG environment:
 
 ```bash
-$ source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_93 x86_64-slc6-gcc62-opt
+$ source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_94python3 x86_64-slc6-gcc62-opt
 ```
 
 If you have a computer running MacOS or some Linux distribution, it will have
 come will Python pre-installed. Either way, a simple way to get Python on your 
 computer is to install [Anaconda][anaconda].
 
-{% callout "Python 3?" %}
-You might see material that talks about Python 3. Like a lot of other software, 
+{% callout "Python 2 or 3?" %}
+You might see material that talks about Python 3 or Python 2. Like a lot of other software, 
 Python is regularly updated and groups batches of updates, including bug fixes 
 and new features, into versions. The interesting thing about Python 3 is that 
 it isn’t _backwards compatible_ with Python 2. This means that code that works 
 when run with version 2 of Python may not necessarily work when run with 
-version 3. Python 2 was around for a long time, and so the process of migrating to Python 3 has been slow, which is why so many people talk about it.
+version 3. Python 2 was around for a long time, and so the process of migrating to Python 3 has been slow, which is why so many people talk about it. However the support for Python 2 will soon end, so now everyone is encouraged to use Python 3. That is why in this lesson, we will use Python 3.
 
-Indeed, LHCb software is not compatible with Python 3, and so we use Python 2 
-in these lessons. In general, and out in the real world, Python 3 is preferred 
-as it receives the most focus from the people who make Python. If you’re 
-starting a new project, and don’t have to use LHCb software, consider trying to 
-use Python 3. You can install both Python 2 and Python 3 using 
+Note that, for instance, Alice and LHCb software is not (yet) compatible with Python 3. We strongly encourage you to always use Python 3 and only switch to Python 2 when you have to (e.g. when you need to use some software which is not compatible with Python 3). You can install both Python 2 and Python 3 using 
 [Anaconda](https://www.anaconda.com/download/).
 {% endcallout %}
 
@@ -33,15 +29,16 @@ Python is a very user-friendly language. If you’re used to having to compile
 your code, this might seem refreshing:
 
 ```bash
-$ python
-Python 2.7.13 (default, Dec  5 2017, 19:29:24)
-[GCC 6.2.0] on linux2
+$python
+Python 3.6.3 (default, Dec 19 2017, 22:45:30) 
+[GCC 6.2.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> a = 3.14
->>> print a + 1
-4.14
+>>> print(a+1.1)
+4.24
 >>> a
 3.14
+
 ```
 
 Woah! What just happened?
@@ -49,8 +46,10 @@ Woah! What just happened?
 1. We started an _interactive Python session_, also known as a Python _shell_, 
    by executing the `python` command;
 2. We typed a line of code, `a = 3.14`, and hit enter;
-3. We typed another line of code, `print a`, and hit enter;
-4. The value `3.14` was printed to the terminal.
+3. We typed another line of code, `print (a+1.1)`, and hit enter;
+4. The value `4.14` was printed to the terminal.
+5. We type the variable `a`.
+6. The value of the variable a was printed.
 
 This interactive session is sometimes called a REPL: a **R**ead **E**valuate 
 **P**rint **L**oop. This is just like `bash`, where you type your command, run 
@@ -66,9 +65,8 @@ it’s a great way to experiment. An enhanced version of this session is called
 [IPython][ipython].
 
 ```bash
-$ ipython
-
-Python 2.7.13 (default, Dec  5 2017, 19:29:24)
+$ipython
+Python 3.6.3 (default, Dec 19 2017, 22:45:30) 
 Type "copyright", "credits" or "license" for more information.
 
 IPython 5.4.1 -- An enhanced Interactive Python.
@@ -77,8 +75,9 @@ IPython 5.4.1 -- An enhanced Interactive Python.
 help      -> Python's own help system.
 object?   -> Details about 'object', use 'object??' for extra details.
 
-In [1]: print 1 + 3
+In [1]: print(1 + 3)
 4
+
 ```
 
 There are a few advantages to using `ipython` over `python`:
@@ -134,22 +133,6 @@ information on something, just ask for `help`!
 In [7]: help()
 
 In [8]: help(math)
-```
-
-You can see what names are available to you by using the `dir` method.
-
-```python
-In [9]: dir()
-
-In [10]: __doc__
-'Automatically created module for IPython interactive environment'
-
-In [11]: dir(math)
-['__doc__',
- ...
- 'sin',
- ...
- 'trunc']
 ```
 
 [anaconda]: https://www.anaconda.com/download/

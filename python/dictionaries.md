@@ -29,9 +29,9 @@ are **values**. Together, each key-value pair is an **item**.
 
 ```python
 >>> d.keys()
-[1, 0.1, 'excellent index']
+dict_keys([1, 0.1, 'excellent index'])
 >>> d.values()
-[0.5, 2, <function math.sin>]
+dict_values([0.5, 2, <function math.sin>])
 >>> d
 {0.1: 2, 1: 0.5, 'excellent index': <function math.sin>}
 ```
@@ -51,7 +51,7 @@ to work flawlessly:
 
 ```python
 >>> for key, value in zip(d.keys(), d.values()):
-...     print key, ':', value
+...     print(key, ':', value)
 ...
 1 : 0.5
 0.1 : 3
@@ -63,7 +63,7 @@ gives us _tuples of key-value pairs_.
 
 ```python
 >>> for key, value in d.items():
-...     print key, ':', value
+...     print(key, ':', value)
 ...
 1 : 0.5
 0.1 : 3
