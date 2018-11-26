@@ -1,0 +1,1057 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Making your first histogram · LHCb analysis essentials</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="further_reading.html" />
+    
+    
+    <link rel="prev" href="learning.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="running.html">
+            
+                <a href="running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="operators.html">
+            
+                <a href="operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="numbers.html">
+            
+                <a href="numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="strings.html">
+            
+                <a href="strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="lists.html">
+            
+                <a href="lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="dictionaries.html">
+            
+                <a href="dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="conditions.html">
+            
+                <a href="conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="methods.html">
+            
+                <a href="methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="scripting.html">
+            
+                <a href="scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="modules.html">
+            
+                <a href="modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="learning.html">
+            
+                <a href="learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.12" data-path="first_histogram.html">
+            
+                <a href="first_histogram.html">
+            
+                    
+                    Making your first histogram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="further_reading.html">
+            
+                <a href="further_reading.html">
+            
+                    
+                    Further reading
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../shell/">
+            
+                <a href="../shell/">
+            
+                    
+                    Introducing the Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../shell/02-filedir.html">
+            
+                <a href="../shell/02-filedir.html">
+            
+                    
+                    Navigating Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../shell/03-create.html">
+            
+                <a href="../shell/03-create.html">
+            
+                    
+                    Working With Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../shell/04-pipefilter.html">
+            
+                <a href="../shell/04-pipefilter.html">
+            
+                    
+                    Pipes and Filters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../shell/05-loop.html">
+            
+                <a href="../shell/05-loop.html">
+            
+                    
+                    Loops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../shell/06-script.html">
+            
+                <a href="../shell/06-script.html">
+            
+                    
+                    Shell Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../shell/07-find.html">
+            
+                <a href="../shell/07-find.html">
+            
+                    
+                    Finding Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
+            
+                <a href="../shell-extras/">
+            
+                    
+                    Shell extras
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
+            
+                <a href="../shell-extras/screen.html">
+            
+                    
+                    Using screen to keep things running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
+            
+                <a href="../shell-extras/screen2.html">
+            
+                    
+                    Advanced screen topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
+            
+                <a href="../shell-extras/persistent-screen.html">
+            
+                    
+                    Persistent screen or tmux session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
+            
+                <a href="../shell-extras/shell2.html">
+            
+                    
+                    Advanced shell topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../git/">
+            
+                <a href="../git/">
+            
+                    
+                    Version control with Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../git/01-basics.html">
+            
+                <a href="../git/01-basics.html">
+            
+                    
+                    Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../git/02-setup.html">
+            
+                <a href="../git/02-setup.html">
+            
+                    
+                    Setting Up Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../git/03-create.html">
+            
+                <a href="../git/03-create.html">
+            
+                    
+                    Creating a Repository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../git/04-changes.html">
+            
+                <a href="../git/04-changes.html">
+            
+                    
+                    Tracking Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="../git/05-history.html">
+            
+                <a href="../git/05-history.html">
+            
+                    
+                    Exploring History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="../git/06-ignore.html">
+            
+                <a href="../git/06-ignore.html">
+            
+                    
+                    Ignoring Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="../git/07-gitlab.html">
+            
+                <a href="../git/07-gitlab.html">
+            
+                    
+                    Remotes in CERN GitLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.8" data-path="../git/08-share.html">
+            
+                <a href="../git/08-share.html">
+            
+                    
+                    Sharing a repository with others
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.9" data-path="../git/09-pullrequests.html">
+            
+                <a href="../git/09-pullrequests.html">
+            
+                    
+                    Collaborating with Pull Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="../git/10-conflict.html">
+            
+                <a href="../git/10-conflict.html">
+            
+                    
+                    Conflicts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.11" data-path="../git/11-ci.html">
+            
+                <a href="../git/11-ci.html">
+            
+                    
+                    GitLab CI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.12" data-path="../git/12-open.html">
+            
+                <a href="../git/12-open.html">
+            
+                    
+                    Open Science
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.13" data-path="../git/13-licensing.html">
+            
+                <a href="../git/13-licensing.html">
+            
+                    
+                    Licensing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.14" data-path="../git/14-citation.html">
+            
+                <a href="../git/14-citation.html">
+            
+                    
+                    Citation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <a target="_blank" href="ref://analysis-essentials.pdf">
+            
+                    
+                    Download PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Making your first histogram</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="making-your-first-histogram">Making your first histogram</h1>
+<p>In this section we are going to make our first plots using Python. For this we
+will use some public LHCb data for <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>B</mi><mo>+</mo></msup><mo>&#x2192;</mo><msup><mi>H</mi><mo>+</mo></msup><msup><mi>H</mi><mo>+</mo></msup><msup><mi>H</mi><mo>&#x2212;</mo></msup></mrow><annotation encoding="application/x-tex"> B^+ \rightarrow H^+ H^+ H^- </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.771331em;"></span><span class="strut bottom" style="height:0.771331em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mbin mtight">+</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">&#x2192;</span><span class="mord"><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mbin mtight">+</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord"><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mbin mtight">+</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord"><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mbin mtight">&#x2212;</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span> from the
+<a href="http://opendata.cern.ch/?ln=en" target="_blank">CERN open data portal</a>. This data is available
+on EOS:</p>
+<pre><code class="lang-bash">$ eos root://eospublic.cern.ch/ ls /eos/opendata/lhcb/AntimatterMatters2017/data
+B2HHH_MagnetDown.root
+B2HHH_MagnetUp.root
+PhaseSpaceSimulation.root
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6920711799);" id="installing-python-packages-inside-a-virtual-environment"><i class="fa fa-info-circle"></i> Installing python packages inside a virtual environment<span id="heading-6920711799"></span></h3></div><div class="panel-body" id="panel-6920711799"><p>It is however usually preferable and safer to do everything inside a virtual environement.
+The latter is like a copy of your current environement. Thus you can modify your virtual 
+environement (including installing/deleting/updating modules) without affecting your default
+environement. If at some point you realize you have broken everything, you can always exit
+the virtual environement and go back to the default lxplus one.</p>
+<p>To build a virtual environement based on LCG views, you can use [LCG_virtualenv][lcg_virtualenv]:</p>
+<pre><code class="lang-bash">git <span class="hljs-built_in">clone</span> https://gitlab.cern.ch/cburr/lcg_virtualenv.git
+./lcg_virtualenv/create_lcg_virtualenv myVenv
+</code></pre>
+<p>To activate the virtual environement do:</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">source</span> myVenv/bin/activate
+</code></pre>
+<p>You can then install stuff with <code>pip</code>. In this lesson we will be using
+<a href="https://github.com/scikit-hep/root_pandas" target="_blank"><code>root_pandas</code></a>, which can
+be installed using:</p>
+<pre><code class="lang-bash">pip install --upgrade root_pandas matplotlib
+python -c <span class="hljs-string">&apos;import pandas; print(f&quot;Got pandas from {pandas.__file__}&quot;)&apos;</span>
+python -c <span class="hljs-string">&apos;import root_pandas; print(f&quot;Got root_pandas from {root_pandas.__file__}&quot;)&apos;</span>
+python -c <span class="hljs-string">&apos;import matplotlib; print(f&quot;Got matplotlib from {matplotlib.__file__}&quot;)&apos;</span>
+</code></pre>
+<p>You can go back to the default environement using the <code>deactivate</code> command.</p>
+</div></div></p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3023826680);" id="installing-python-packages-directly-not-the-recommended-way"><i class="fa fa-info-circle"></i> Installing python packages directly (not the recommended way)<span id="heading-3023826680"></span></h3></div><div class="panel-body" id="panel-3023826680"><p>Even if not recommended, you can also install modules directly, without using a virtual environment.
+While LCG provides a lot of useful packages, there are sometimes things missing.
+Fortunately, most packages can be easily installed into <code>~/.local/</code> using <code>pip</code>
+with the <code>--user</code> flag. In this lesson we will be using
+<a href="https://github.com/scikit-hep/root_pandas" target="_blank"><code>root_pandas</code></a>, which can
+be installed using</p>
+<pre><code class="lang-bash">pip install --user root_pandas
+</code></pre>
+<p>Some packages, such as <a href="http://flake8.pycqa.org/" target="_blank">flake8</a>, provide executables
+which are useful to have included on your <code>PATH</code> so they are available without
+specifying their absolute path. This can be done by running</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">export</span> PATH=$(python -m site --user-base)/bin:<span class="hljs-variable">$PATH</span>
+</code></pre>
+<p>see the bash lesson for more details about the <code>PATH</code> variable.</p>
+<p>We can even upgrade already installed packages using:</p>
+<pre><code class="lang-bash">pip install --user matplotlib --upgrade
+</code></pre>
+<p>As LCG uses <code>PYTHONPATH</code> to make packages available, any packages it provides
+have higher priority than the user installed packages. In order to make it so
+that a package installed with <code>--user</code> takes precedence, you must run</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">export</span> PYTHONPATH=$(python -m site --user-site):<span class="hljs-variable">$PYTHONPATH</span>
+</code></pre>
+<p>every time you run the <code>source</code> command above. This is <strong>only</strong> needed when
+installing user packages to upgrade LCG provided ones.</p>
+</div></div></p>
+<p>All ROOT methods made available in Python using a set of automatically generated
+bindings, known as <a href="https://root.cern.ch/pyroot" target="_blank">PyROOT</a>.
+These are all available by using <code>import ROOT</code>.
+For example if we want to create a <code>TFile</code> using the aforementioned data we can
+launch <code>ipython</code> and run:</p>
+<pre><code class="lang-python">In [<span class="hljs-number">1</span>]: <span class="hljs-keyword">import</span> ROOT
+In [<span class="hljs-number">2</span>]: filename = <span class="hljs-string">&apos;root://eospublic.cern.ch//eos/opendata/lhcb/AntimatterMatters2017/data/B2HHH_MagnetDown.root&apos;</span>
+In [<span class="hljs-number">3</span>]: my_file = ROOT.TFile.Open(filename)
+In [<span class="hljs-number">4</span>]: my_file.ls()
+</code></pre>
+<pre><code>TNetXNGFile**       root://eospublic.cern.ch//eos/opendata/lhcb/AntimatterMatters2017/data/B2HHH_MagnetDown.root
+ TNetXNGFile*       root://eospublic.cern.ch//eos/opendata/lhcb/AntimatterMatters2017/data/B2HHH_MagnetDown.root
+  KEY: TTree    DecayTree;1 Tree continaing data for B- --&gt; h-h+h- decays
+In [5]: my_tree = my_file.Get(&apos;DecayTree&apos;)
+In [6]: my_tree.Print()
+******************************************************************************
+*Tree    :DecayTree : Tree continaing data for B- --&gt; h-h+h- decays          *
+*Entries :  5135823 : Total =       945201357 bytes  File  Size =  666480138 *
+*        :          : Tree compression factor =   1.42                       *
+******************************************************************************
+</code></pre><p>While it is very useful to be able to access all the ROOT functionality in this
+way, they are often slow and tedious to use. Luckily people have built more
+specialised bindings to allow ROOT to be used in a more pythonic way.</p>
+<h2 id="pandas">Pandas</h2>
+<p><a href="http://pandas.pydata.org/" target="_blank"><code>pandas</code></a> is a library for doing data analysis on
+tabular data, using a data structure known as dataframes. These typically have
+columns with labels (like <code>TLeaf</code>s in a <code>TTree</code>) with many rows. The
+<code>root_pandas</code> package we installed earlier can be used to create a pandas
+<code>DataFrame</code> from a root file:</p>
+<pre><code class="lang-python">In [<span class="hljs-number">7</span>]: <span class="hljs-keyword">import</span> root_pandas
+In [<span class="hljs-number">8</span>]: df = root_pandas.read_root(filename, key=<span class="hljs-string">&apos;DecayTree&apos;</span>)
+</code></pre>
+<p>We can then use <code>df.head(5)</code> to see the first 5 rows of the <code>DataFrame</code>:</p>
+<pre><code class="lang-python">In [<span class="hljs-number">9</span>]: df.head(<span class="hljs-number">5</span>)
+Out[<span class="hljs-number">9</span>]:
+   B_FlightDistance  B_VertexChi2        H1_PX        H1_PY          H1_PZ  \
+<span class="hljs-number">0</span>         <span class="hljs-number">25.301004</span>      <span class="hljs-number">1.497280</span>   <span class="hljs-number">375.284205</span>   <span class="hljs-number">831.308481</span>   <span class="hljs-number">51820.233718</span>
+<span class="hljs-number">1</span>         <span class="hljs-number">94.690700</span>      <span class="hljs-number">1.383338</span> <span class="hljs-number">-4985.130785</span>  <span class="hljs-number">5853.750057</span>  <span class="hljs-number">326157.454706</span>
+<span class="hljs-number">2</span>          <span class="hljs-number">8.284490</span>      <span class="hljs-number">5.187101</span> <span class="hljs-number">-1265.456544</span>  <span class="hljs-number">2330.050788</span>   <span class="hljs-number">90762.658032</span>
+<span class="hljs-number">3</span>          <span class="hljs-number">5.590769</span>      <span class="hljs-number">7.129099</span>  <span class="hljs-number">-720.797259</span>  <span class="hljs-number">3413.790588</span>   <span class="hljs-number">86793.058768</span>
+<span class="hljs-number">4</span>          <span class="hljs-number">3.013242</span>     <span class="hljs-number">10.988701</span>   <span class="hljs-number">397.754571</span>  <span class="hljs-number">1791.373059</span>   <span class="hljs-number">40040.364159</span>
+</code></pre>
+<p>While it is nice to be able to view the data, it is typically much more useful to
+be able to apply operations to it in bulk. In this example we have the momentum
+components for each of the child particles in the decay (<code>H1</code>, <code>H2</code> and <code>H3</code>)
+but not the transverse momentum. We can however apply expressions to each row
+of the data like so:</p>
+<pre><code class="lang-python">In [<span class="hljs-number">10</span>]: df.eval(<span class="hljs-string">&apos;sqrt(H2_PX**2 + H2_PY**2)&apos;</span>)
+Out [<span class="hljs-number">10</span>]: <span class="hljs-number">0</span>          <span class="hljs-number">1306.642724</span>
+<span class="hljs-number">1</span>           <span class="hljs-number">167.578904</span>
+<span class="hljs-number">2</span>          <span class="hljs-number">1273.457019</span>
+<span class="hljs-number">3</span>          <span class="hljs-number">1146.299204</span>
+             ...
+<span class="hljs-number">5135820</span>     <span class="hljs-number">210.430531</span>
+<span class="hljs-number">5135821</span>     <span class="hljs-number">762.344570</span>
+<span class="hljs-number">5135822</span>    <span class="hljs-number">1454.471057</span>
+dtype: float64
+</code></pre>
+<p>This gives us the transverse momentum for each particle as an array, however, we
+can also create a new column with this information by assigning to the name we
+want to create and doing the action &quot;inplace&quot;:</p>
+<pre><code class="lang-python">In [<span class="hljs-number">11</span>]: df.eval(<span class="hljs-string">&apos;H2_PT = sqrt(H2_PX**2 + H2_PY**2)&apos;</span>, inplace=<span class="hljs-keyword">True</span>)
+</code></pre>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5482126425);" id="adding-the-total-b-meson-momentum"><i class="fa fa-square-o"></i> Adding the total B+ meson momentum<span id="heading-5482126425"></span></h3></div><div class="panel-body" id="panel-5482126425"><p>Create a new column in the dataframe called <code>B_P</code> for the total momentum of the
+B+ meson.</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1720552365);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-1720552365">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-1720552365"><pre><code class="lang-python">df.eval(<span class="hljs-string">&apos;B_P = sqrt(&apos;</span>
+        <span class="hljs-string">&apos;(H1_PX + H2_PX + H3_PX)**2 + &apos;</span>
+        <span class="hljs-string">&apos;(H1_PY + H2_PY + H3_PY)**2 + &apos;</span>
+        <span class="hljs-string">&apos;(H1_PZ + H2_PZ + H3_PZ)**2&apos;</span>
+        <span class="hljs-string">&apos;)&apos;</span>, inplace=<span class="hljs-keyword">True</span>)
+</code></pre>
+</div></div></div></div></p>
+<h2 id="plotting-histograms">Plotting histograms</h2>
+<p>Now that we have the momentum of the <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mo>+</mo></mrow><annotation encoding="application/x-tex">B+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05017em;">B</span><span class="mord">+</span></span></span></span> meson, it would be useful to plot
+its distribution in a histogram. We could use ROOT for this but the most popular Python library for
+plotting is known as <a href="https://matplotlib.org/" target="_blank"><code>matplotlib</code></a> and this is what we
+will use here. The most common way <code>matplotlib</code> is used is with the <code>pyplot</code>
+interface imported as <code>plt</code> like so:</p>
+<pre><code class="lang-python">In [<span class="hljs-number">12</span>]: <span class="hljs-keyword">import</span> matplotlib
+In [<span class="hljs-number">13</span>]: matplotlib.use(<span class="hljs-string">&apos;Agg&apos;</span>)  <span class="hljs-comment"># Force matplotlib to not use any Xwindows backend.</span>
+In [<span class="hljs-number">14</span>]: <span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> pyplot <span class="hljs-keyword">as</span> plt
+In [<span class="hljs-number">15</span>]: plt.hist(df[<span class="hljs-string">&apos;B_FlightDistance&apos;</span>])
+In [<span class="hljs-number">16</span>]: plt.savefig(<span class="hljs-string">&apos;B_flight_distance.pdf&apos;</span>)
+</code></pre>
+<p><img src="figs/B_flight_distance.png" alt="B flight distance"></p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1290251589);" id="interactive-plotting"><i class="fa fa-info-circle"></i> Interactive plotting<span id="heading-1290251589"></span></h3></div><div class="panel-body" id="panel-1290251589"><p>There are various ways of viewing plots interactively such as:</p>
+<ul>
+<li><code>plt.show()</code> Opens a window with the current plot and pauses the Python
+interpreter until the window is closed</li>
+<li><code>plt.ion()</code> Allows plots to be viewed without pausing the Python interpreter</li>
+<li><a href="https://jupyter.org/" target="_blank"><code>jupyter</code></a> A web based interface for running various
+languages including python in &quot;notebooks&quot;. If you&apos;ve used <code>mathematica</code> or
+<code>matlab</code> before it&apos;s a similar interface with code, documentation and plots
+all shown together.</li>
+</ul>
+</div></div></p>
+<pre><code class="lang-python">In [<span class="hljs-number">17</span>]: <span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+In [<span class="hljs-number">18</span>]: bins = np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">150</span>, <span class="hljs-number">100</span>)
+In [<span class="hljs-number">19</span>]: plt.hist(df[<span class="hljs-string">&apos;B_FlightDistance&apos;</span>], bins=bins)
+In [<span class="hljs-number">20</span>]: plt.savefig(<span class="hljs-string">&apos;B_flight_distance_v2.pdf&apos;</span>)
+</code></pre>
+<p><img src="figs/B_flight_distance_v2.png" alt="B flight distance (v2)"></p>
+<p>That&apos;s not right! The new histogram has been plotted on top of our first one!</p>
+<p>This is normally useful as it allows us to layer plots on top of each other to
+compare them. Though in this case we don&apos;t want to do that so we should first close
+the previous plot before making our histogram. We should also add axis labels
+and a legend like so:</p>
+<pre><code class="lang-python">In [<span class="hljs-number">21</span>]: plt.close()  <span class="hljs-comment"># Close the previous plot</span>
+
+In [<span class="hljs-number">22</span>]: plt.hist(df[<span class="hljs-string">&apos;B_FlightDistance&apos;</span>], bins=bins, histtype=<span class="hljs-string">&apos;step&apos;</span>, label=<span class="hljs-string">&apos;My data label&apos;</span>)
+In [<span class="hljs-number">23</span>]: plt.xlim(bins[<span class="hljs-number">0</span>], bins[<span class="hljs-number">-1</span>])
+In [<span class="hljs-number">24</span>]: plt.xlabel(<span class="hljs-string">&apos;Flight distance of $B^+$ meson&apos;</span>)
+In [<span class="hljs-number">25</span>]: plt.legend(loc=<span class="hljs-string">&apos;best&apos;</span>)
+In [<span class="hljs-number">26</span>]: plt.savefig(<span class="hljs-string">&apos;B_flight_distance_v3.pdf&apos;</span>)
+</code></pre>
+<p><img src="figs/B_flight_distance_v3.png" alt="B flight distance (v3)"></p>
+<h2 id="applying-cuts">Applying cuts</h2>
+<p>When analysing data it is often useful to &quot;throw away&quot; some data in order to in
+order change the contributions of a sample. Most commonly this is to remove some
+background(s) so we can more precisely study a process of interest. This is
+known as cutting.</p>
+<p>In pandas we can apply a cut to a DataFrame using the <code>query</code> method. For
+example to make a new DataFrame containing <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>B</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">B^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.771331em;"></span><span class="strut bottom" style="height:0.771331em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mbin mtight">+</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span> mesons with flight distances
+of more than 15 mm we can use:</p>
+<pre><code class="lang-python">In [<span class="hljs-number">27</span>]: df_with_cut = df.query(<span class="hljs-string">&apos;B_FlightDistance &gt; 15&apos;</span>)
+</code></pre>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2690731817);" id="comparing-momentum-distributions"><i class="fa fa-square-o"></i> Comparing momentum distributions<span id="heading-2690731817"></span></h3></div><div class="panel-body" id="panel-2690731817"><p>It is often useful to compare the effect of a cut on the distribution of another
+variable. Try to plot a histogram showing the B+ lifetime distribution with and
+without a total B+ momentum cut of 100000 MeV.</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(764496419);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-764496419">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-764496419"><pre><code class="lang-python">bins = np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">150</span>, <span class="hljs-number">100</span>)
+df_with_cut = df.query(<span class="hljs-string">&apos;B_P &gt; 100000&apos;</span>)
+
+plt.figure()
+plt.hist(df[<span class="hljs-string">&apos;B_FlightDistance&apos;</span>], bins=bins, histtype=<span class="hljs-string">&apos;step&apos;</span>, density=<span class="hljs-number">1</span>, label=<span class="hljs-string">&apos;Without cut&apos;</span>)
+plt.hist(df_with_cut[<span class="hljs-string">&apos;B_FlightDistance&apos;</span>], bins=bins, histtype=<span class="hljs-string">&apos;step&apos;</span>, density=<span class="hljs-number">1</span>, label=<span class="hljs-string">&apos;With 100 GeV momentum cut&apos;</span>)
+
+plt.xlim(bins[<span class="hljs-number">0</span>], bins[<span class="hljs-number">-1</span>])
+plt.xlabel(<span class="hljs-string">&apos;Total momentum of $B^+$ meson&apos;</span>)
+plt.legend(loc=<span class="hljs-string">&apos;best&apos;</span>)
+plt.savefig(<span class="hljs-string">&apos;B_flight_distance_with_cut_compare.pdf&apos;</span>)
+</code></pre>
+<p>Here we also use the <code>normed=True</code> option with <code>plt.hist</code>, this plots the
+normalised distribution. This is typically more useful when comparing
+distributions as it make it easier to see differences in the shape without the
+independently of the total number of events.</p>
+<p><img src="figs/B_flight_distance_with_cut_compare.png" alt="B flight distance (v3)"></p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3354355654);" id="comparing-momentum-distributions"><i class="fa fa-square-o"></i> Comparing momentum distributions<span id="heading-3354355654"></span></h3></div><div class="panel-body" id="panel-3354355654"><p>Calculate and plot the B+ meson mass assuming that all three of the child
+hadrons are kaons.</p>
+</div></div></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="learning.html" class="navigation navigation-prev " aria-label="Previous page: Learning more">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="further_reading.html" class="navigation navigation-next " aria-label="Next page: Further reading">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Making your first histogram","level":"2.1.12","depth":2,"next":{"title":"Further reading","level":"2.1.13","depth":2,"path":"python/further_reading.md","ref":"python/further_reading.md","articles":[]},"previous":{"title":"Learning more","level":"2.1.11","depth":2,"path":"python/learning.md","ref":"python/learning.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"python/first_histogram.md","mtime":"2018-11-26T12:26:23.701Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

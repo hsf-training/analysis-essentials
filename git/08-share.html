@@ -1,0 +1,968 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Sharing a repository with others · LHCb analysis essentials</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="09-pullrequests.html" />
+    
+    
+    <link rel="prev" href="07-gitlab.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="../python/first_histogram.html">
+            
+                <a href="../python/first_histogram.html">
+            
+                    
+                    Making your first histogram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="../python/further_reading.html">
+            
+                <a href="../python/further_reading.html">
+            
+                    
+                    Further reading
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../shell/">
+            
+                <a href="../shell/">
+            
+                    
+                    Introducing the Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../shell/02-filedir.html">
+            
+                <a href="../shell/02-filedir.html">
+            
+                    
+                    Navigating Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../shell/03-create.html">
+            
+                <a href="../shell/03-create.html">
+            
+                    
+                    Working With Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../shell/04-pipefilter.html">
+            
+                <a href="../shell/04-pipefilter.html">
+            
+                    
+                    Pipes and Filters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../shell/05-loop.html">
+            
+                <a href="../shell/05-loop.html">
+            
+                    
+                    Loops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../shell/06-script.html">
+            
+                <a href="../shell/06-script.html">
+            
+                    
+                    Shell Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../shell/07-find.html">
+            
+                <a href="../shell/07-find.html">
+            
+                    
+                    Finding Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
+            
+                <a href="../shell-extras/">
+            
+                    
+                    Shell extras
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
+            
+                <a href="../shell-extras/screen.html">
+            
+                    
+                    Using screen to keep things running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
+            
+                <a href="../shell-extras/screen2.html">
+            
+                    
+                    Advanced screen topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
+            
+                <a href="../shell-extras/persistent-screen.html">
+            
+                    
+                    Persistent screen or tmux session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
+            
+                <a href="../shell-extras/shell2.html">
+            
+                    
+                    Advanced shell topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Version control with Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="01-basics.html">
+            
+                <a href="01-basics.html">
+            
+                    
+                    Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="02-setup.html">
+            
+                <a href="02-setup.html">
+            
+                    
+                    Setting Up Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="03-create.html">
+            
+                <a href="03-create.html">
+            
+                    
+                    Creating a Repository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="04-changes.html">
+            
+                <a href="04-changes.html">
+            
+                    
+                    Tracking Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="05-history.html">
+            
+                <a href="05-history.html">
+            
+                    
+                    Exploring History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="06-ignore.html">
+            
+                <a href="06-ignore.html">
+            
+                    
+                    Ignoring Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="07-gitlab.html">
+            
+                <a href="07-gitlab.html">
+            
+                    
+                    Remotes in CERN GitLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.1.8" data-path="08-share.html">
+            
+                <a href="08-share.html">
+            
+                    
+                    Sharing a repository with others
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.9" data-path="09-pullrequests.html">
+            
+                <a href="09-pullrequests.html">
+            
+                    
+                    Collaborating with Pull Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="10-conflict.html">
+            
+                <a href="10-conflict.html">
+            
+                    
+                    Conflicts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.11" data-path="11-ci.html">
+            
+                <a href="11-ci.html">
+            
+                    
+                    GitLab CI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.12" data-path="12-open.html">
+            
+                <a href="12-open.html">
+            
+                    
+                    Open Science
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.13" data-path="13-licensing.html">
+            
+                <a href="13-licensing.html">
+            
+                    
+                    Licensing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.14" data-path="14-citation.html">
+            
+                <a href="14-citation.html">
+            
+                    
+                    Citation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <a target="_blank" href="ref://analysis-essentials.pdf">
+            
+                    
+                    Download PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Sharing a repository with others</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="sharing-a-repository-with-others">Sharing a repository with others</h1>
+<p><div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2979776383);" id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives<span id="heading-2979776383"></span></h3></div><div class="panel-body" id="panel-2979776383"><ul>
+<li>Clone a remote repository.</li>
+<li>Collaborate pushing to a common repository.</li>
+</ul>
+</div></div></p>
+<p>For the next step, get into pairs.  One person will be the &quot;Owner&quot; and the other
+will be the &quot;Collaborator&quot;. The goal is that the Collaborator add changes into
+the Owner&apos;s repository. We will switch roles at the end, so both persons will
+play Owner and Collaborator.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4065021381);" id="practicing-by-yourself"><i class="fa fa-info-circle"></i> Practicing By Yourself<span id="heading-4065021381"></span></h3></div><div class="panel-body" id="panel-4065021381"><p>If you&apos;re working through this lesson on your own, you can carry on by opening
+a second terminal window.
+This window will represent your partner, working on another computer. You
+won&apos;t need to give anyone access on GitLab, because both &apos;partners&apos; are you.</p>
+</div></div></p>
+<p>The Owner needs to give the Collaborator access.  On GitLab, click the
+&quot;Members&quot; tab at the top, and enter your partner&apos;s username.</p>
+<p><img src="fig/gitlab-add-collaborators.png" alt="Adding Collaborators on GitLab"></p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6221750350);" id="understanding-gitlab-permissions"><i class="fa fa-info-circle"></i> Understanding GitLab permissions<span id="heading-6221750350"></span></h3></div><div class="panel-body" id="panel-6221750350"><p>GitLab permission levels might be complicated to understand. <a href="https://docs.gitlab.com/ee/user/permissions.html" target="_blank">This
+table</a> might come in handy.</p>
+</div></div></p>
+<p>Next, the Collaborator needs to download a copy of the Owner&apos;s repository to
+her machine. This is called &quot;cloning a repo&quot;. To clone the Owner&apos;s repo into
+her <code>Desktop</code> folder, the Collaborator enters:</p>
+<pre><code class="lang-bash">$ git <span class="hljs-built_in">clone</span> ssh://git@gitlab.cern.ch:7999/vlad/planets.git ~/Desktop/vlad-planets
+</code></pre>
+<p>Replace <code>vlad</code> with the Owner&apos;s username.</p>
+<p><img src="fig/github-collaboration.svg" alt="After Creating Clone of Repository"></p>
+<p>The Collaborator can now make a change in her clone of the Owner&apos;s repository,
+exactly the same way as we&apos;ve been doing before:</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> ~/Desktop/vlad-planets
+$ nano pluto.txt
+$ cat pluto.txt
+</code></pre>
+<pre><code>It is so a planet!
+</code></pre><pre><code class="lang-bash">$ git add pluto.txt
+$ git commit -m <span class="hljs-string">&quot;Add notes about Pluto&quot;</span>
+</code></pre>
+<pre><code> 1 file changed, 1 insertion(+)
+ create mode 100644 pluto.txt
+</code></pre><p>Then push the change to the <em>Owner&apos;s repository</em> on GitLab:</p>
+<pre><code class="lang-bash">$ git push origin master
+</code></pre>
+<pre><code>Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 306 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To ssh://gitlab.cern.ch:7999/vlad/planets.git
+   9272da5..29aba7c  master -&gt; master
+</code></pre><p>Note that we didn&apos;t have to create a remote called <code>origin</code>: Git uses this name
+by default when we clone a repository.  (This is why <code>origin</code> was a sensible
+choice earlier when we were setting up remotes by hand.)</p>
+<p>Take a look to the Owner&apos;s repository on its GitLab website now (maybe you need
+to refresh your browser.) You should be able to see the new commit made by the
+Collaborator.</p>
+<p>To download the Collaborator&apos;s changes from GitLab, the Owner now enters:</p>
+<pre><code class="lang-bash">$ git pull origin master
+</code></pre>
+<pre><code>remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From ssh://gitlab.cern.ch:7999/vlad/planets.git
+ * branch            master     -&gt; FETCH_HEAD
+Updating 9272da5..29aba7c
+Fast-forward
+ pluto.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 pluto.txt
+</code></pre><p>Now the three repositories (Owner&apos;s local, Collaborator&apos;s local, and Owner&apos;s on
+GitLab) are back in sync.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4509008810);" id="a-basic-collaborative-workflow"><i class="fa fa-info-circle"></i> A Basic Collaborative Workflow<span id="heading-4509008810"></span></h3></div><div class="panel-body" id="panel-4509008810"><p>In practice, it is good to be sure that you have an updated version of the
+repository you are collaborating on, so you should <code>git pull</code> before making
+our changes. The basic collaborative workflow would be:</p>
+<ul>
+<li>update your local repo with <code>git pull origin master</code>,</li>
+<li>make your changes and stage them with <code>git add</code>,</li>
+<li>commit your changes with <code>git commit -m</code>, and</li>
+<li>upload the changes to GitLab with <code>git push origin master</code></li>
+</ul>
+<p>It is better to make many commits with smaller changes rather than
+of one commit with massive changes: small commits are easier to
+read and review.</p>
+</div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(899660882);" id="switch-roles-and-repeat"><i class="fa fa-square-o"></i> Switch Roles and Repeat<span id="heading-899660882"></span></h3></div><div class="panel-body" id="panel-899660882"><p>Switch roles and repeat the whole process.</p>
+</div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1370480663);" id="review-changes"><i class="fa fa-square-o"></i> Review Changes<span id="heading-1370480663"></span></h3></div><div class="panel-body" id="panel-1370480663"><p>The Owner push commits to the repository without giving any information
+to the Collaborator. How can the Collaborator find out what has changed with
+command line? And on GitLab?</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7669070482);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-7669070482">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-7669070482"><p>On the command line, the Collaborator can use <code>git fetch origin master</code>
+to get the remote changes into the local repository, but without merging
+them. Then by running <code>git diff master origin/master</code> the Collaborator
+will see the changes output in the terminal.</p>
+<p>On GitLab, the Collaborator can go to their own fork of the repository and
+look right above the light blue latest commit bar for a gray bar saying
+&quot;This branch is 1 commit behind Our-Respository:master.&quot; On the far right of
+that gray bar is a Compare icon and link. On the Compare page the
+Collaborator should change the base fork to their own repository, then click
+the link in the paragraph above to &quot;compare across forks&quot;, and finally
+change the head fork to the main repository. This will show all the commits
+that are different.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7199983569);" id="comment-changes-in-gitlab"><i class="fa fa-square-o"></i> Comment Changes in GitLab<span id="heading-7199983569"></span></h3></div><div class="panel-body" id="panel-7199983569"><p>The Collaborator has some questions about one line change made by the Owner and
+has some suggestions to propose.</p>
+<p>With GitLab, it is possible to comment the diff of a commit. Over the line of
+code to comment, a blue comment icon appears to open a comment window.</p>
+<p>The Collaborator posts its comments and suggestions using GitLab interface.</p>
+</div></div>
+<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4798889810);" id="version-history-backup-and-version-control"><i class="fa fa-square-o"></i> Version History, Backup, and Version Control<span id="heading-4798889810"></span></h3></div><div class="panel-body" id="panel-4798889810"><p>Some backup software can keep a history of the versions of your files. They also
+allows you to recover specific versions. How is this functionality different from version control?
+What are some of the benifits of using version control, Git and GitLab?</p>
+</div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9347914682);" id="key-points"><i class="fa fa-key"></i> Key Points<span id="heading-9347914682"></span></h3></div><div class="panel-body" id="panel-9347914682"><ul>
+<li><code>git clone</code> copies a remote repository to create a local repository with a remote called <code>origin</code> automatically set up.</li>
+</ul>
+</div></div></p>
+<div class="ba-right"><p><a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">CC BY 4.0</a> - Based on <a href="https://github.com/swcarpentry/git-novice" target="_blank">git-novice</a> &#xA9; 2016&#x2013;2017 Software Carpentry Foundation</p></div>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="07-gitlab.html" class="navigation navigation-prev " aria-label="Previous page: Remotes in CERN GitLab">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="09-pullrequests.html" class="navigation navigation-next " aria-label="Next page: Collaborating with Pull Requests">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"teaching":25,"exercises":0,"questions":["How can I use version control to collaborate with other people?"],"title":"Sharing a repository with others","level":"5.1.8","depth":2,"next":{"title":"Collaborating with Pull Requests","level":"5.1.9","depth":2,"path":"git/09-pullrequests.md","ref":"git/09-pullrequests.md","articles":[]},"previous":{"title":"Remotes in CERN GitLab","level":"5.1.7","depth":2,"path":"git/07-gitlab.md","ref":"git/07-gitlab.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"git/08-share.md","mtime":"2018-11-26T12:26:23.661Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

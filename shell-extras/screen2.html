@@ -1,0 +1,886 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Advanced screen topics · LHCb analysis essentials</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="persistent-screen.html" />
+    
+    
+    <link rel="prev" href="screen.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="../python/first_histogram.html">
+            
+                <a href="../python/first_histogram.html">
+            
+                    
+                    Making your first histogram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="../python/further_reading.html">
+            
+                <a href="../python/further_reading.html">
+            
+                    
+                    Further reading
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../shell/">
+            
+                <a href="../shell/">
+            
+                    
+                    Introducing the Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../shell/02-filedir.html">
+            
+                <a href="../shell/02-filedir.html">
+            
+                    
+                    Navigating Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../shell/03-create.html">
+            
+                <a href="../shell/03-create.html">
+            
+                    
+                    Working With Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../shell/04-pipefilter.html">
+            
+                <a href="../shell/04-pipefilter.html">
+            
+                    
+                    Pipes and Filters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../shell/05-loop.html">
+            
+                <a href="../shell/05-loop.html">
+            
+                    
+                    Loops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../shell/06-script.html">
+            
+                <a href="../shell/06-script.html">
+            
+                    
+                    Shell Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../shell/07-find.html">
+            
+                <a href="../shell/07-find.html">
+            
+                    
+                    Finding Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Shell extras
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="screen.html">
+            
+                <a href="screen.html">
+            
+                    
+                    Using screen to keep things running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.1.2" data-path="screen2.html">
+            
+                <a href="screen2.html">
+            
+                    
+                    Advanced screen topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="persistent-screen.html">
+            
+                <a href="persistent-screen.html">
+            
+                    
+                    Persistent screen or tmux session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="shell2.html">
+            
+                <a href="shell2.html">
+            
+                    
+                    Advanced shell topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../git/">
+            
+                <a href="../git/">
+            
+                    
+                    Version control with Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../git/01-basics.html">
+            
+                <a href="../git/01-basics.html">
+            
+                    
+                    Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../git/02-setup.html">
+            
+                <a href="../git/02-setup.html">
+            
+                    
+                    Setting Up Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../git/03-create.html">
+            
+                <a href="../git/03-create.html">
+            
+                    
+                    Creating a Repository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../git/04-changes.html">
+            
+                <a href="../git/04-changes.html">
+            
+                    
+                    Tracking Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="../git/05-history.html">
+            
+                <a href="../git/05-history.html">
+            
+                    
+                    Exploring History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="../git/06-ignore.html">
+            
+                <a href="../git/06-ignore.html">
+            
+                    
+                    Ignoring Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="../git/07-gitlab.html">
+            
+                <a href="../git/07-gitlab.html">
+            
+                    
+                    Remotes in CERN GitLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.8" data-path="../git/08-share.html">
+            
+                <a href="../git/08-share.html">
+            
+                    
+                    Sharing a repository with others
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.9" data-path="../git/09-pullrequests.html">
+            
+                <a href="../git/09-pullrequests.html">
+            
+                    
+                    Collaborating with Pull Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="../git/10-conflict.html">
+            
+                <a href="../git/10-conflict.html">
+            
+                    
+                    Conflicts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.11" data-path="../git/11-ci.html">
+            
+                <a href="../git/11-ci.html">
+            
+                    
+                    GitLab CI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.12" data-path="../git/12-open.html">
+            
+                <a href="../git/12-open.html">
+            
+                    
+                    Open Science
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.13" data-path="../git/13-licensing.html">
+            
+                <a href="../git/13-licensing.html">
+            
+                    
+                    Licensing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.14" data-path="../git/14-citation.html">
+            
+                <a href="../git/14-citation.html">
+            
+                    
+                    Citation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <a target="_blank" href="ref://analysis-essentials.pdf">
+            
+                    
+                    Download PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Advanced screen topics</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="advanced-screen-topics">Advanced screen topics</h2>
+<h3 id="finding-lost-screens">Finding lost screens</h3>
+<p>Once you start a <code>screen</code> session you need to remember which
+<code>lxplus</code> node it is running on. If you forget to note that down
+you can use the following little snippet to find any <code>screen</code>
+sessions running on <code>lxplus</code> nodes:</p>
+<pre><code class="lang-bash"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> $(seq <span class="hljs-_">-f</span> <span class="hljs-string">&quot;%04g&quot;</span> 1 500); <span class="hljs-keyword">do</span>
+ ssh -o ConnectTimeout=10 -o PreferredAuthentications=gssapi-with-mic,gssapi -o GSSAPIAuthentication=yes -o StrictHostKeyChecking=no -o LogLevel=quiet lxplus<span class="hljs-variable">$i</span>.cern.ch <span class="hljs-string">&quot;(screen -list | head -1 | grep -q &apos;There is a screen on&apos;) &amp;&amp; hostname &amp;&amp; screen -list&quot;</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<p>This will connect to the first 500 lxplus nodes in
+turn, checking if a <code>screen</code> session is running and if
+yes prints the hostname and output of <code>screen -list</code>.</p>
+<h3 id="using-tabs-in-screen">Using tabs in screen</h3>
+<p>Screen supports some features beyond detaching a session. A very useful feature is different sessions in tab pages, all within a single instance of <code>screen</code>.
+In order to maximise the usefulness of this feature, you need to set the screen status bar. The simplest way to do this is by appending the following line to the file <code>~/.screenrc</code> (create it if it doesn&apos;t already exist):</p>
+<pre><code># Status lines
+hardstatus off
+hardstatus alwayslastline
+hardstatus string &apos;%{= BG}%{.g}[ %{.G}%H %{.g}][ %{= Bw}%?%-Lw%?%{Yr}%{.k}%n*%f%? %t%?%?(%u)%?%{.r}%{Bw}%?%+Lw%? %{.g}%=][%{.W} %Y-%m-%d %c %{.g}]&apos;
+</code></pre><p>Note that this has predefined colours and layout that you can easily change yourself, see eg. this <a href="http://sourceopen.com/2014/06/09/gnu-screen-status-bar-tips-tricks-basics/" target="_blank">detailed discussion</a>.</p>
+<p>The following commands should help you get started using multiple tabs in a screen window. Note that <code>^a</code> stands for <code>Ctrl-a</code> in this list.</p>
+<ul>
+<li>Create a new tab: <code>^a c</code></li>
+<li>Switch to tab number #: <code>^a #</code> (where # is a digit)</li>
+<li>Switch to the last visited tab: <code>^a ^a</code></li>
+<li>Close a tab: log out of the shell with <code>^d</code></li>
+<li>Kill a tab: <code>^a k</code> (only use if normal logout through <code>^d</code> doesn&apos;t work because a process has crashed)</li>
+<li>Change a tab&apos;s name: <code>^a A</code></li>
+</ul>
+<p>As one last note, you may find it easier if the tab numbers start with 1, rather than 0. To accomplish this, append the following lines to the aforementioned file <code>~/.screenrc</code>:</p>
+<pre><code># Start with window 1 (instead of 0)
+bind c screen 1
+bind ^c screen 1
+bind 0 select 10
+screen 1
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="screen.html" class="navigation navigation-prev " aria-label="Previous page: Using screen to keep things running">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="persistent-screen.html" class="navigation navigation-next " aria-label="Next page: Persistent screen or tmux session">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Advanced screen topics","level":"4.1.2","depth":2,"next":{"title":"Persistent screen or tmux session","level":"4.1.3","depth":2,"path":"shell-extras/persistent-screen.md","ref":"shell-extras/persistent-screen.md","articles":[]},"previous":{"title":"Using screen to keep things running","level":"4.1.1","depth":2,"path":"shell-extras/screen.md","ref":"shell-extras/screen.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"shell-extras/screen2.md","mtime":"2018-11-26T12:26:23.705Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

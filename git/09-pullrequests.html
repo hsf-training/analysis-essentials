@@ -1,0 +1,1181 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Collaborating with Pull Requests · LHCb analysis essentials</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="10-conflict.html" />
+    
+    
+    <link rel="prev" href="08-share.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="../python/first_histogram.html">
+            
+                <a href="../python/first_histogram.html">
+            
+                    
+                    Making your first histogram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="../python/further_reading.html">
+            
+                <a href="../python/further_reading.html">
+            
+                    
+                    Further reading
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../shell/">
+            
+                <a href="../shell/">
+            
+                    
+                    Introducing the Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../shell/02-filedir.html">
+            
+                <a href="../shell/02-filedir.html">
+            
+                    
+                    Navigating Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../shell/03-create.html">
+            
+                <a href="../shell/03-create.html">
+            
+                    
+                    Working With Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../shell/04-pipefilter.html">
+            
+                <a href="../shell/04-pipefilter.html">
+            
+                    
+                    Pipes and Filters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../shell/05-loop.html">
+            
+                <a href="../shell/05-loop.html">
+            
+                    
+                    Loops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../shell/06-script.html">
+            
+                <a href="../shell/06-script.html">
+            
+                    
+                    Shell Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../shell/07-find.html">
+            
+                <a href="../shell/07-find.html">
+            
+                    
+                    Finding Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
+            
+                <a href="../shell-extras/">
+            
+                    
+                    Shell extras
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
+            
+                <a href="../shell-extras/screen.html">
+            
+                    
+                    Using screen to keep things running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
+            
+                <a href="../shell-extras/screen2.html">
+            
+                    
+                    Advanced screen topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
+            
+                <a href="../shell-extras/persistent-screen.html">
+            
+                    
+                    Persistent screen or tmux session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
+            
+                <a href="../shell-extras/shell2.html">
+            
+                    
+                    Advanced shell topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Version control with Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="01-basics.html">
+            
+                <a href="01-basics.html">
+            
+                    
+                    Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="02-setup.html">
+            
+                <a href="02-setup.html">
+            
+                    
+                    Setting Up Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="03-create.html">
+            
+                <a href="03-create.html">
+            
+                    
+                    Creating a Repository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="04-changes.html">
+            
+                <a href="04-changes.html">
+            
+                    
+                    Tracking Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="05-history.html">
+            
+                <a href="05-history.html">
+            
+                    
+                    Exploring History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="06-ignore.html">
+            
+                <a href="06-ignore.html">
+            
+                    
+                    Ignoring Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="07-gitlab.html">
+            
+                <a href="07-gitlab.html">
+            
+                    
+                    Remotes in CERN GitLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.8" data-path="08-share.html">
+            
+                <a href="08-share.html">
+            
+                    
+                    Sharing a repository with others
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.1.9" data-path="09-pullrequests.html">
+            
+                <a href="09-pullrequests.html">
+            
+                    
+                    Collaborating with Pull Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="10-conflict.html">
+            
+                <a href="10-conflict.html">
+            
+                    
+                    Conflicts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.11" data-path="11-ci.html">
+            
+                <a href="11-ci.html">
+            
+                    
+                    GitLab CI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.12" data-path="12-open.html">
+            
+                <a href="12-open.html">
+            
+                    
+                    Open Science
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.13" data-path="13-licensing.html">
+            
+                <a href="13-licensing.html">
+            
+                    
+                    Licensing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.14" data-path="14-citation.html">
+            
+                <a href="14-citation.html">
+            
+                    
+                    Citation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <a target="_blank" href="ref://analysis-essentials.pdf">
+            
+                    
+                    Download PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Collaborating with Pull Requests</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="collaborating-with-pull-requests">Collaborating with Pull Requests</h1>
+<p><div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7641919030);" id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives<span id="heading-7641919030"></span></h3></div><div class="panel-body" id="panel-7641919030"><ul>
+<li>Collaborate to Git repositories by proposing changes</li>
+<li>Understand what a Pull (or Merge) Request is</li>
+<li>Use GitLab discussion and review tools to converge on a proposed change</li>
+</ul>
+</div></div></p>
+<p>In this lesson we are going to learn how the distributed nature of Git comes in
+handy when working on larger projects. We will also see how this approach turns
+out to be useful even when working on small projects with only three or four
+contributors.</p>
+<p>The most naive approach to Git collaboration is what we have <a href="08-share.html">previously
+seen</a>:</p>
+<ul>
+<li>We have a <strong>single remote repository</strong></li>
+<li>This repository has one or more <strong>owners</strong> who decide who can contribute</li>
+<li><strong>Contributors</strong> can push their changes directly on the repository</li>
+</ul>
+<p><a href="https://github.com" target="_blank">GitHub</a> has introduced the concept of <strong>Pull Requests</strong>,
+which has been subsequently adopted by its most famous clone,
+<a href="https://gitlab.com" target="_blank">GitLab</a>.</p>
+<h2 id="what-is-a-pull-or-merge-request">What is a Pull (or Merge) Request</h2>
+<p>Pull Requests are a way to <strong>propose changes</strong> to a remote repository without
+having write permissions to it, and therefore without pushing to it directly.
+Note that GitLab (which we are going to use for the following examples) uses the
+term &quot;Merge Requests&quot; but the concept stays the same.</p>
+<p>The general idea behind Pull Requests is:</p>
+<ul>
+<li>I would like to <strong>collaborate</strong> to a repository by adding some code</li>
+<li>I <strong>push</strong> this code <em>somewhere</em></li>
+<li>I submit this code for a review to the owners of the original project (this is
+where I open a <strong>Pull Request</strong>)</li>
+<li>Owners will decide whether to <strong>accept or reject</strong> my changes, and a Web-based
+interface allows people to <strong>comment and discuss</strong></li>
+</ul>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3845568336);" id="why-are-they-called-pull-requests"><i class="fa fa-info-circle"></i> Why are they called Pull Requests?<span id="heading-3845568336"></span></h3></div><div class="panel-body" id="panel-3845568336"><p>We have seen in a <a href="07-gitlab.html">previous lesson</a> that the act of
+incorporating remote changes into a repository is called &quot;pulling&quot; and it is
+achieved by variations of the command <code>git pull</code>.</p>
+<p>Projects using Pull Requests do not allow people to <code>git push</code> code to them.
+Instead, what you are doing is <strong>requesting them to pull your code</strong> instead,
+therefore the name.</p>
+</div></div></p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2965191077);" id="pull-requests-are-not-a-builtin-git-feature"><i class="fa fa-info-circle"></i> Pull Requests are not a builtin Git feature<span id="heading-2965191077"></span></h3></div><div class="panel-body" id="panel-2965191077"><p>The concept of Pull Requests leverages certain features of Git, but it&apos;s not
+part of the <code>git</code> tool itself: it depends on the hosting platform you use.</p>
+</div></div></p>
+<h2 id="fork-the-original-project-repository">Fork the original project repository</h2>
+<p>The first step when collaborating to a project is to create a <strong>fork</strong>
+of the remote repository. Let&apos;s see exactly what it means with an example.</p>
+<p>Connect to our example repository using a Web browser:</p>
+<blockquote>
+<p><a href="https://gitlab.cern.ch/starter-kit-scratch/starter-kit-example" target="_blank">https://gitlab.cern.ch/starter-kit-scratch/starter-kit-example</a></p>
+</blockquote>
+<p>and click on the &quot;Fork&quot; button:</p>
+<p><img src="fig/gitlab-pr-fork.png" alt="Fork a GitLab repository"></p>
+<p>If you have played already with GitLab groups you might have several fork
+destinations, if so, just select your user:</p>
+<p><img src="fig/gitlab-pr-wheretofork.png" alt="Select fork destination"></p>
+<p>Your GitLab account will now contain a repository with the same name as the
+original, <code>starter-kit-example</code>.</p>
+<p>At this point, CERN GitLab contains several copies of the same repositories:
+the main one, and all the forks you have just created. Those copies are <strong>remote
+clones</strong> for now, as they are not on your laptop yet.</p>
+<p>The main feature of your fork is that you (and by default you only) have <strong>write
+permissions</strong> to it. You cannot directly push to the original repository, but
+you can write to your fork.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2053793876);" id="forks-are-independent"><i class="fa fa-info-circle"></i> Forks are independent<span id="heading-2053793876"></span></h3></div><div class="panel-body" id="panel-2053793876"><p>When you create a fork, you make a snapshot of the original repository at a
+given moment in time. From that point on, the fork is independent from both the
+original repository and any forks made by other users.</p>
+</div></div></p>
+<h2 id="clone-a-remote-project-and-its-fork">Clone a remote project and its fork</h2>
+<p>Now it is time to open your terminal and clone the remote project. <a href="07-gitlab.html">As we have
+already seen</a> we can use the SSH URL for cloning the project:</p>
+<pre><code class="lang-bash">$ mkdir <span class="hljs-built_in">test</span>_merge_requests/
+$ <span class="hljs-built_in">cd</span> <span class="hljs-built_in">test</span>_merge_requests/
+$ git <span class="hljs-built_in">clone</span> ssh://git@gitlab.cern.ch:7999/starter-kit-scratch/starter-kit-example.git
+</code></pre>
+<pre><code>Cloning into &apos;starter-kit-example&apos;...
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (3/3), done.
+</code></pre><p>Now putting into practice <a href="07-gitlab.html">what we have already learnt</a> let&apos;s add
+our fork as a remote, it will have the same URL as the main repository except
+<code>starter-kit-scratch</code> is replaced with your CERN username:</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> starter-kit-example/
+git remote add YOUR_CERN_USERNAME ssh://git@gitlab.cern.ch:7999/YOUR_CERN_USERNAME/starter-kit-example.git
+</code></pre>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7631187235);" id="what-are-my-remotes-now"><i class="fa fa-square-o"></i> What are my remotes now?<span id="heading-7631187235"></span></h3></div><div class="panel-body" id="panel-7631187235"><ul>
+<li>How many remotes do you have now in your repository?</li>
+<li>What are their names?</li>
+</ul>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6144353095);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-6144353095">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-6144353095"><p>You can verify what are your remotes by using the <code>git remote</code> command:</p>
+<pre><code class="lang-bash">$ git remote -v
+</code></pre>
+<pre><code>dberzano    ssh://git@gitlab.cern.ch:7999/dberzano/starter-kit-example.git (fetch)
+dberzano    ssh://git@gitlab.cern.ch:7999/dberzano/starter-kit-example.git (push)
+origin    ssh://git@gitlab.cern.ch:7999/starter-kit-scratch/starter-kit-example.git (fetch)
+origin    ssh://git@gitlab.cern.ch:7999/starter-kit-scratch/starter-kit-example.git (push)
+</code></pre><p>You now have <strong>two remotes</strong>: the default one, corresponding to the upstream
+repository, is called <code>origin</code> and you have added it when you have cloned the
+repository. The second one is named after your CERN account and you have created
+it explicitly with <code>git remote add</code>.</p>
+</div></div></div></div></p>
+<h2 id="sync-your-local-repository-with-remote-changes">Sync your local repository with remote changes</h2>
+<p>You are now ready to start working on your new feature on your laptop. First off
+since you are using different remotes, make sure your local Git working
+directory is up-to-date with the upstream (<em>i.e.</em> the &quot;main&quot;, or <code>origin</code>)
+repository.</p>
+<p>If you don&apos;t have any pending local change, you can do:</p>
+<pre><code class="lang-bash">$ git pull
+</code></pre>
+<p>Since your current branch &quot;tracks&quot; by default the corresponding remote branch
+on the main (<code>origin</code>) repository, the <code>git pull</code> command will by default do the
+right thing. This is equivalent of explicitly telling <code>git</code> to fetch changes
+from <code>origin</code>:</p>
+<pre><code class="lang-bash">$ git pull origin
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8028493883);" id="syncing-using-the-nuclear-option"><i class="fa fa-info-circle"></i> Syncing using the nuclear option<span id="heading-8028493883"></span></h3></div><div class="panel-body" id="panel-8028493883"><p>In some cases you might end up with your working directory (and/or branch)
+&quot;messed up&quot; and the <code>git pull</code> command will not work seamlessly. If you are sure
+you are not going to lose anything important, you can simply reset your current
+working directory by <strong>ignoring any local modification and destroying it</strong>:</p>
+<pre><code class="lang-bash">$ git fetch --all  <span class="hljs-comment"># make local git aware of what changed remotely</span>
+$ git reset --hard origin/master  <span class="hljs-comment"># lose any local modification</span>
+$ git clean -fxd  <span class="hljs-comment"># get rid of any extra files not under version control</span>
+</code></pre>
+<p>You should be <strong>very careful</strong> about using the <code>git reset</code> and <code>git clean</code>
+commands, but they are very useful when your working area got messed up somehow.</p>
+</div></div></p>
+<h2 id="implement-your-new-feature">Implement your new feature</h2>
+<p>You can now implement your new &quot;feature&quot; by adding a bunch of files with some
+random content to your local repository. As an exercise, you can try to add a
+file named after your CERN username:</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;My name is Firstname Lastname&quot;</span> &gt; YOUR_CERN_USERNAME.txt
+</code></pre>
+<p>Replace <code>YOUR_CERN_USERNAME</code> with your CERN username to avoid <a href="10-conflict.html">conflicts</a>.</p>
+<p>You can now commit the changes:</p>
+<pre><code class="lang-bash">$ git add --all -v
+$ git commit -m <span class="hljs-string">&apos;Add user info for YOUR_CERN_USERNAME&apos;</span>
+</code></pre>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2523337982);" id="what-have-i-done"><i class="fa fa-square-o"></i> What have I done?<span id="heading-2523337982"></span></h3></div><div class="panel-body" id="panel-2523337982"><ul>
+<li>What did you do with <code>git add</code>?</li>
+<li>What did you do with <code>git commit</code>?</li>
+<li>Why is the commit message appropriate?</li>
+<li>Where are my changes now?</li>
+</ul>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1849325610);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-1849325610">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-1849325610"><p><code>git add --all</code> adds all untracked/modified files to the &quot;staging area&quot;, that
+is: the area containing the files which will be part of the next commit. The
+<code>-v</code> (as in <em>verbose</em>) switch is useful to spot unwanted additions, as it
+prints out every added file.</p>
+<p><code>git commit</code> creates a commit, whose message is appropriate as it is shorter than
+50 characters and meaningful, in other words it&apos;s <em>concise</em>.</p>
+<p>Your commit is only <strong>on your laptop only</strong> and it is not yet available in your
+fork, or on the upstream repository.</p>
+</div></div></div></div></p>
+<h2 id="push-changes">Push changes</h2>
+<p>Without further ado let&apos;s push:</p>
+<pre><code class="lang-bash">$ git push
+</code></pre>
+<p>Unfortunately it does not work (your message might actually be different):</p>
+<pre><code>Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 316 bytes | 316.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: GitLab: You are not allowed to push code to protected branches on this project.
+To ssh://gitlab.cern.ch:7999/starter-kit-scratch/starter-kit-example.git
+ ! [remote rejected] master -&gt; master (pre-receive hook declined)
+error: failed to push some refs to &apos;ssh://git@gitlab.cern.ch:7999/starter-kit-scratch/starter-kit-example.git&apos;
+</code></pre><p>By default, <code>git push</code> attempts to push to <code>origin</code>, which is forbidden in this
+case! All modifications must go through Pull Requests. This means the only way
+we have is to push our changes to our own fork:</p>
+<pre><code class="lang-bash">$ git push YOUR_CERN_USERNAME
+</code></pre>
+<p>This time we have had more luck:</p>
+<pre><code>Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 316 bytes | 316.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To ssh://gitlab.cern.ch:7999/dberzano/starter-kit-example.git
+   764051d..256c9b6  master -&gt; master
+</code></pre><p>OK, so your changes are now pushed to your private repository. Before opening
+the Pull Request let&apos;s check the status of the remote repositories.</p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3516243836);" id="status-of-remote-repositories"><i class="fa fa-square-o"></i> Status of remote repositories<span id="heading-3516243836"></span></h3></div><div class="panel-body" id="panel-3516243836"><p>How do you use <code>git log</code> to see exactly what the two remote repositories
+(<code>origin</code>, and your fork) contain?</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6393583405);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-6393583405">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-6393583405"><p>We use the <code>--decorate</code> option to show local and remote branches and tags (<code>-10</code>
+is to limit the history to 10 commits):</p>
+<pre><code class="lang-bash">$ git <span class="hljs-built_in">log</span> -10 --oneline --graph --decorate
+</code></pre>
+<p>This is the output (most recent commits are on top):</p>
+<pre><code>* 256c9b6 (HEAD -&gt; master, dberzano/master) Add user info for dberzano
+* 764051d (origin/master, origin/HEAD) Add initial README
+</code></pre><p>So you will see that:</p>
+<ul>
+<li>the main repository (<code>origin/master</code>) is <em>behind</em> yours</li>
+<li>your local repository (<code>master</code>) and your remote fork (<code>dberzano/master</code>) are
+in sync and contain the commit you&apos;ve just authored</li>
+</ul>
+</div></div></div></div></p>
+<h2 id="create-a-pull-or-merge-request">Create a Pull (or Merge) Request</h2>
+<p>As we have said before, Pull Requests are not part of Git but they depend on
+the provider hosting your Git repositories. On GitLab you need to point your
+Web browser to your repository:</p>
+<blockquote>
+<p><a href="https://gitlab.cern.ch/YOUR_CERN_USERNAME/starter-kit-example" target="_blank">https://gitlab.cern.ch/YOUR_CERN_USERNAME/starter-kit-example</a></p>
+</blockquote>
+<p>Then click on the <strong>+ (plus)</strong> button and select <strong>New merge request</strong>:</p>
+<p><img src="fig/gitlab-pr-newmergerequest.png" alt="New merge request"></p>
+<p>On the next screen, select <code>master</code> as <strong>Source branch</strong>:</p>
+<p><img src="fig/gitlab-pr-selectbranch.png" alt="Select branch"></p>
+<p>then click the green <strong>Compare branches and continue</strong> button. The next screen
+allows you to review the changes graphically (you need to go at the bottom of
+the page and click the <strong>Changes</strong> tab):</p>
+<p><img src="fig/gitlab-pr-diff.png" alt="Review changes"></p>
+<p>If the changes look good to you, assign a title to your Merge Request, and an
+extended description. You should follow the same policies you use for writing
+commit messages:</p>
+<ul>
+<li>keep the <strong>Title</strong> below 50 characters (well, you don&apos;t need to count, but do
+your best to keep it short!),</li>
+<li>add any extra information in the <strong>Description</strong> field.</li>
+</ul>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5986421030);" id="automatic-pull-request-title-and-description"><i class="fa fa-info-circle"></i> Automatic Pull Request title and description<span id="heading-5986421030"></span></h3></div><div class="panel-body" id="panel-5986421030"><p>If your Pull Request has only one commit, the <strong>Title</strong> and <strong>Description</strong>
+fields will be automatically filled for you.</p>
+</div></div></p>
+<p><img src="fig/gitlab-pr-title.png" alt="Title and description"></p>
+<p>When you are ready to proceed, click on the big green <strong>Submit merge request</strong>
+button.</p>
+<p>Now, sit back and relax!</p>
+<h2 id="discussing-amending-retiring-a-merge-request">Discussing, amending, retiring a Merge Request</h2>
+<p>Once a Merge Request is opened the repository owners are notified (usually via
+email), and they (or even somebody else, depending on the repository&apos;s
+permissions) can add comments and requests before accepting your changes.</p>
+<p>Merge Requests are each given a sequential number. The first ever merge request
+on the example respository can be found at:</p>
+<blockquote>
+<p><a href="https://gitlab.cern.ch/starter-kit-scratch/starter-kit-example/merge_requests/1" target="_blank">https://gitlab.cern.ch/starter-kit-scratch/starter-kit-example/merge_requests/1</a></p>
+</blockquote>
+<p>This is how a comment appears, and how you can reply to it:</p>
+<p><img src="fig/gitlab-pr-discussion.png" alt="Discussion"></p>
+<p>When you are ready just click on the <strong>Comment</strong> button.</p>
+<p>In our example, we have realized that we wanted to add something more to the
+Merge Request before proceeding. Doing so is as simple as authoring and pushing
+more commits.</p>
+<p>Let&apos;s go back to our local working directory, edit the file
+<code>YOUR_CERN_USERNAME.txt</code> and add a line to it:</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;I hereby certify that this information is true.&quot;</span> &gt;&gt; YOUR_CERN_USERNAME.txt
+</code></pre>
+<p>Now commit:</p>
+<pre><code class="lang-bash">$ git commit <span class="hljs-_">-a</span> -m <span class="hljs-string">&apos;Add information certification&apos;</span>
+</code></pre>
+<pre><code>[master d09c134] Add information certification
+ 1 file changed, 1 insertion(+)
+</code></pre><p>...and finally push (once again, remember to do it to your remote):</p>
+<pre><code class="lang-bash">$ git push YOUR_CERN_USERNAME
+</code></pre>
+<pre><code>Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 359 bytes | 359.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To ssh://gitlab.cern.ch:7999/dberzano/starter-kit-example.git
+   256c9b6..d09c134  master -&gt; master
+</code></pre><p>Voil&#xE0;, it&apos;s done: you have just added more commits to your Merge Request! Let&apos;s
+look on the Web at the commits you have added. Go to the Merge Request page
+and click on the <strong>Commits</strong> tab at the bottom, here is a direct link for the example:</p>
+<blockquote>
+<p><a href="https://gitlab.cern.ch/starter-kit-scratch/starter-kit-example/merge_requests/1/commits" target="_blank">https://gitlab.cern.ch/starter-kit-scratch/starter-kit-example/merge_requests/1/commits</a></p>
+</blockquote>
+<p><img src="fig/gitlab-pr-commits.png" alt="Commits"></p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2177812728);" id="how-come-has-this-worked"><i class="fa fa-info-circle"></i> How come has this worked?<span id="heading-2177812728"></span></h3></div><div class="panel-body" id="panel-2177812728"><p>Opening a Merge/Pull Request does not mean creating a static snapshot of your
+working area at the time when you have opened it; instead, your working area
+(<em>i.e.</em> your <em>branch</em> on your <em>remote</em>, note that we are only using one branch
+called <code>master</code>, which is the default, for simplicity) is dynamically linked to
+the Merge Request. The link disappears the moment the Merge Request is closed,
+or accepted.</p>
+</div></div></p>
+<p>Adding commits to an existing Merge Request is the very essence of using Merge
+Requests: you submit your content for scrutiny, and reviewers will say what
+they think before accepting it, giving you the ability to amend things as you
+go.</p>
+<p>If you or the maintainers of the project are not happy with a Pull Request it
+can be retired by clicking on the orange <strong>Close merge request</strong> button on top
+of the page:</p>
+<p><img src="fig/gitlab-pr-close.png" alt="Close"></p>
+<h2 id="accepting-a-pull-request">Accepting a Pull Request</h2>
+<p>When a Merge Request looks good, the repository owners will click on the
+<strong>Merge</strong> button:</p>
+<p><img src="fig/gitlab-pr-merge.png" alt="Merge"></p>
+<p>Your code is then finally included upstream. On your local repository, if you
+want to work on a new feature, you can simply start over by <a href="#sync-your-local-repository-with-remote-changes">fetching remote
+changes first as explained earlier</a>.</p>
+<h2 id="the-social-side-of-coding">The social side of coding</h2>
+<p>Using Pull Requests can seem overly complicated at first, but they are a very
+efficient way to truly collaborate on large projects.</p>
+<ul>
+<li><strong>A Pull Request represents an atomic unit of work.</strong> You can open a Pull
+Request for adding a certain feature, composed by several commits with work in
+progresses, minor fixes, major bug fixes. When merged, the feature is finally
+there and complete, available to every collaborator. You reduce the chance of
+having incomplete and/or buggy features in released versions of the code.</li>
+<li><strong>When writing a Pull Request, you know that your code will be viewed by
+someone.</strong> This makes you more attentive to what other persons will think
+when they see it, making you a better collaborator.</li>
+<li><strong>Sometimes, good code is like wine (it has to age a little bit to taste
+better).</strong> Pull Requests might stay open for a while before being accepted,
+do not be in a rush: having your code reviewed (sometimes by the most annoying
+and pickiest reviewer!) is a chance for improvement.</li>
+</ul>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6072206486);" id="behave-on-pull-request-discussions"><i class="fa fa-info-circle"></i> Behave on Pull Request discussions<span id="heading-6072206486"></span></h3></div><div class="panel-body" id="panel-6072206486"><p>Some Pull Requests on large projects can get rather controversial. Bear in mind
+that Pull Requests are about facilitating collaboration for a common goal, and -
+as in real life - try not to go on a rampage, at least not too quickly!</p>
+</div></div></p>
+<h2 id="automatic-testing">Automatic testing</h2>
+<p>Merge requests can be configured to prevent changes from being merged into the
+main branch of a repository if any of the project&apos;s builds or tests fail to run
+correctly. This is useful to try and ensure that the <code>master</code> branch always
+contains a &quot;good&quot; version of the project. See the <a href="11-ci.html">continuous integration</a>
+lesson for details on how to set this up with GitLab, along with a list of
+services that can be used with other git hosts.</p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7254193331);" id="key-points"><i class="fa fa-key"></i> Key Points<span id="heading-7254193331"></span></h3></div><div class="panel-body" id="panel-7254193331"><ul>
+<li>&quot;Forking&quot; means to create your private editable copy of a remote project on
+the servers</li>
+<li>&quot;Cloning&quot; means to download locally a remote repository and/or its fork</li>
+<li>&quot;Pull/Merge Requests&quot; allow for discussing code and content before including
+it</li>
+<li>Automatic testing on Pull/Merge Requests ensures better upstream code quality</li>
+</ul>
+</div></div></p>
+<div class="ba-right"><p><a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">CC BY 4.0</a> - Original
+content</p></div>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="08-share.html" class="navigation navigation-prev " aria-label="Previous page: Sharing a repository with others">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="10-conflict.html" class="navigation navigation-next " aria-label="Next page: Conflicts">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"teaching":25,"exercises":0,"questions":["How can I use version control to collaborate with other people?"],"title":"Collaborating with Pull Requests","level":"5.1.9","depth":2,"next":{"title":"Conflicts","level":"5.1.10","depth":2,"path":"git/10-conflict.md","ref":"git/10-conflict.md","articles":[]},"previous":{"title":"Sharing a repository with others","level":"5.1.8","depth":2,"path":"git/08-share.md","ref":"git/08-share.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"git/09-pullrequests.md","mtime":"2018-11-26T12:26:23.661Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

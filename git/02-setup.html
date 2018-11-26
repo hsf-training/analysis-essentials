@@ -1,0 +1,981 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Setting Up Git · LHCb analysis essentials</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03-create.html" />
+    
+    
+    <link rel="prev" href="01-basics.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="../python/first_histogram.html">
+            
+                <a href="../python/first_histogram.html">
+            
+                    
+                    Making your first histogram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="../python/further_reading.html">
+            
+                <a href="../python/further_reading.html">
+            
+                    
+                    Further reading
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../shell/">
+            
+                <a href="../shell/">
+            
+                    
+                    Introducing the Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../shell/02-filedir.html">
+            
+                <a href="../shell/02-filedir.html">
+            
+                    
+                    Navigating Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../shell/03-create.html">
+            
+                <a href="../shell/03-create.html">
+            
+                    
+                    Working With Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../shell/04-pipefilter.html">
+            
+                <a href="../shell/04-pipefilter.html">
+            
+                    
+                    Pipes and Filters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../shell/05-loop.html">
+            
+                <a href="../shell/05-loop.html">
+            
+                    
+                    Loops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../shell/06-script.html">
+            
+                <a href="../shell/06-script.html">
+            
+                    
+                    Shell Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../shell/07-find.html">
+            
+                <a href="../shell/07-find.html">
+            
+                    
+                    Finding Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
+            
+                <a href="../shell-extras/">
+            
+                    
+                    Shell extras
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
+            
+                <a href="../shell-extras/screen.html">
+            
+                    
+                    Using screen to keep things running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
+            
+                <a href="../shell-extras/screen2.html">
+            
+                    
+                    Advanced screen topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
+            
+                <a href="../shell-extras/persistent-screen.html">
+            
+                    
+                    Persistent screen or tmux session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
+            
+                <a href="../shell-extras/shell2.html">
+            
+                    
+                    Advanced shell topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Version control with Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="01-basics.html">
+            
+                <a href="01-basics.html">
+            
+                    
+                    Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.1.2" data-path="02-setup.html">
+            
+                <a href="02-setup.html">
+            
+                    
+                    Setting Up Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="03-create.html">
+            
+                <a href="03-create.html">
+            
+                    
+                    Creating a Repository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="04-changes.html">
+            
+                <a href="04-changes.html">
+            
+                    
+                    Tracking Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="05-history.html">
+            
+                <a href="05-history.html">
+            
+                    
+                    Exploring History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="06-ignore.html">
+            
+                <a href="06-ignore.html">
+            
+                    
+                    Ignoring Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="07-gitlab.html">
+            
+                <a href="07-gitlab.html">
+            
+                    
+                    Remotes in CERN GitLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.8" data-path="08-share.html">
+            
+                <a href="08-share.html">
+            
+                    
+                    Sharing a repository with others
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.9" data-path="09-pullrequests.html">
+            
+                <a href="09-pullrequests.html">
+            
+                    
+                    Collaborating with Pull Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="10-conflict.html">
+            
+                <a href="10-conflict.html">
+            
+                    
+                    Conflicts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.11" data-path="11-ci.html">
+            
+                <a href="11-ci.html">
+            
+                    
+                    GitLab CI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.12" data-path="12-open.html">
+            
+                <a href="12-open.html">
+            
+                    
+                    Open Science
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.13" data-path="13-licensing.html">
+            
+                <a href="13-licensing.html">
+            
+                    
+                    Licensing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.14" data-path="14-citation.html">
+            
+                <a href="14-citation.html">
+            
+                    
+                    Citation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <a target="_blank" href="ref://analysis-essentials.pdf">
+            
+                    
+                    Download PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Setting Up Git</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="setting-up-git">Setting Up Git</h1>
+<p><div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8438223672);" id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives<span id="heading-8438223672"></span></h3></div><div class="panel-body" id="panel-8438223672"><ul>
+<li>Configure <code>git</code> the first time it is used on a computer.</li>
+<li>Understand the meaning of the <code>--global</code> configuration flag.</li>
+</ul>
+</div></div></p>
+<p>When we use Git on a new computer for the first time,
+we need to configure a few things. Below are a few examples
+of configurations we will set as we get started with Git:</p>
+<ul>
+<li>our name and email address,</li>
+<li>to colorize our output,</li>
+<li>what our preferred text editor is,</li>
+<li>and that we want to use these settings globally (i.e. for every project)</li>
+</ul>
+<p>On a command line, Git commands are written as <code>git verb</code>,
+where <code>verb</code> is what we actually want to do. So here is how
+Dracula sets up his new laptop:</p>
+<pre><code class="lang-bash">$ git config --global user.name <span class="hljs-string">&quot;Vlad Dracula&quot;</span>
+$ git config --global user.email <span class="hljs-string">&quot;vlad@tran.sylvan.ia&quot;</span>
+$ git config --global color.ui <span class="hljs-string">&quot;auto&quot;</span>
+</code></pre>
+<p>Please use your own name and CERN email address instead of Dracula&apos;s. This user name and email will be associated with your subsequent Git activity,
+which means that any changes pushed to
+<a href="http://github.com/" target="_blank">GitHub</a>,
+<a href="http://bitbucket.org/" target="_blank">BitBucket</a>,
+<a href="http://gitlab.com/" target="_blank">GitLab</a> or
+another Git host server
+in a later lesson will include this information.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4412623900);" id="line-endings"><i class="fa fa-info-circle"></i> Line Endings<span id="heading-4412623900"></span></h3></div><div class="panel-body" id="panel-4412623900"><p>As with other keys, when you hit the &apos;return&apos; key on your keyboard,
+your computer encodes this input.
+For reasons that are long to explain, different operating systems
+use different character(s) to represent the end of a line.
+(You may also hear these referred to as newlines or line breaks.)
+Because git uses these characters to compare files,
+it may cause unexpected issues when editing a file on different machines.</p>
+<p>You can change the way git recognizes and encodes line endings
+using the &apos;core.autocrlf&apos; command to &apos;git config&apos;.
+The following settings are recommended:</p>
+<p>On OS X and Linux:</p>
+<pre><code class="lang-bash">$ git config --global core.autocrlf input
+</code></pre>
+<p>And on Windows:</p>
+<pre><code class="lang-bash">$ git config --global core.autocrlf <span class="hljs-literal">true</span>
+</code></pre>
+<p>You can read more about this issue
+<a href="https://help.github.com/articles/dealing-with-line-endings/" target="_blank">on this GitHub page</a>.</p>
+</div></div></p>
+<p>Dracula also has to set his favorite text editor, following this table:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Editor</th>
+<th style="text-align:left">Configuration command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Atom</td>
+<td style="text-align:left"><code>$ git config --global core.editor &quot;atom --wait&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">nano</td>
+<td style="text-align:left"><code>$ git config --global core.editor &quot;nano -w&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">BBEdit (Mac, with command line tools)</td>
+<td style="text-align:left"><code>$ git config --global core.editor &quot;edit -w&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Sublime Text (Mac)</td>
+<td style="text-align:left"><code>$ git config --global core.editor &quot;subl -n -w&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Sublime Text (Win, 32-bit install)</td>
+<td style="text-align:left"><code>$ git config --global core.editor &quot;&apos;c:/program files (x86)/sublime text 3/sublime_text.exe&apos; -w&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Sublime Text (Win, 64-bit install)</td>
+<td style="text-align:left"><code>$ git config --global core.editor &quot;&apos;c:/program files/sublime text 3/sublime_text.exe&apos; -w&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Notepad++ (Win, 32-bit install)</td>
+<td style="text-align:left"><code>$ git config --global core.editor &quot;&apos;c:/program files (x86)/Notepad++/notepad++.exe&apos; -multiInst -notabbar -nosession -noPlugin&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Notepad++ (Win, 64-bit install)</td>
+<td style="text-align:left"><code>$ git config --global core.editor &quot;&apos;c:/program files/Notepad++/notepad++.exe&apos; -multiInst -notabbar -nosession -noPlugin&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Kate (Linux)</td>
+<td style="text-align:left"><code>$ git config --global core.editor &quot;kate&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Gedit (Linux)</td>
+<td style="text-align:left"><code>$ git config --global core.editor &quot;gedit --wait --new-window&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Scratch (Linux)</td>
+<td style="text-align:left"><code>$ git config --global core.editor &quot;scratch-text-editor&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">emacs</td>
+<td style="text-align:left"><code>$ git config --global core.editor &quot;emacs&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">vim</td>
+<td style="text-align:left"><code>$ git config --global core.editor &quot;vim&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<p>It is possible to reconfigure the text editor for Git whenever you want to change it.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6316177795);" id="exiting-vim"><i class="fa fa-info-circle"></i> Exiting Vim<span id="heading-6316177795"></span></h3></div><div class="panel-body" id="panel-6316177795"><p>Note that <code>vim</code> is the default editor for many programs. If you haven&apos;t used <code>vim</code> before and wish to exit a session, type <code>Esc</code> then <code>:q!</code> and <code>Enter</code>.</p>
+</div></div></p>
+<p>The four commands we just ran above only need to be run once: the flag <code>--global</code> tells Git
+to use the settings for every project, in your user account, on this computer.</p>
+<p>You can check your settings at any time:</p>
+<pre><code class="lang-bash">$ git config --list
+</code></pre>
+<p>You can change your configuration as many times as you want: just use the
+same commands to choose another editor or update your email address.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6395772158);" id="git-help-and-manual"><i class="fa fa-info-circle"></i> Git Help and Manual<span id="heading-6395772158"></span></h3></div><div class="panel-body" id="panel-6395772158"><p>Always remember that if you forget a <code>git</code> command, you can access the list of commands by using <code>-h</code> and access the Git manual by using <code>--help</code> :</p>
+<pre><code class="lang-bash">$ git config -h
+$ git config --help
+</code></pre>
+</div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1890735380);" id="key-points"><i class="fa fa-key"></i> Key Points<span id="heading-1890735380"></span></h3></div><div class="panel-body" id="panel-1890735380"><ul>
+<li>&quot;Use <code>git config</code> to configure a user name, email address, editor, and other preferences once per machine.&quot;</li>
+</ul>
+</div></div></p>
+<div class="ba-right"><p><a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">CC BY 4.0</a> - Based on <a href="https://github.com/swcarpentry/git-novice" target="_blank">git-novice</a> &#xA9; 2016&#x2013;2017 Software Carpentry Foundation</p></div>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01-basics.html" class="navigation navigation-prev " aria-label="Previous page: Basics">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03-create.html" class="navigation navigation-next " aria-label="Next page: Creating a Repository">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"teaching":5,"exercises":0,"questions":["How do I get set up to use Git?"],"title":"Setting Up Git","level":"5.1.2","depth":2,"next":{"title":"Creating a Repository","level":"5.1.3","depth":2,"path":"git/03-create.md","ref":"git/03-create.md","articles":[]},"previous":{"title":"Basics","level":"5.1.1","depth":2,"path":"git/01-basics.md","ref":"git/01-basics.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"git/02-setup.md","mtime":"2018-11-26T12:26:23.661Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

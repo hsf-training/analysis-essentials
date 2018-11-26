@@ -1,0 +1,942 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Numbers · LHCb analysis essentials</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="strings.html" />
+    
+    
+    <link rel="prev" href="operators.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="running.html">
+            
+                <a href="running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="operators.html">
+            
+                <a href="operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.3" data-path="numbers.html">
+            
+                <a href="numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="strings.html">
+            
+                <a href="strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="lists.html">
+            
+                <a href="lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="dictionaries.html">
+            
+                <a href="dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="conditions.html">
+            
+                <a href="conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="methods.html">
+            
+                <a href="methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="scripting.html">
+            
+                <a href="scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="modules.html">
+            
+                <a href="modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="learning.html">
+            
+                <a href="learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="first_histogram.html">
+            
+                <a href="first_histogram.html">
+            
+                    
+                    Making your first histogram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="further_reading.html">
+            
+                <a href="further_reading.html">
+            
+                    
+                    Further reading
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../shell/">
+            
+                <a href="../shell/">
+            
+                    
+                    Introducing the Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../shell/02-filedir.html">
+            
+                <a href="../shell/02-filedir.html">
+            
+                    
+                    Navigating Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../shell/03-create.html">
+            
+                <a href="../shell/03-create.html">
+            
+                    
+                    Working With Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../shell/04-pipefilter.html">
+            
+                <a href="../shell/04-pipefilter.html">
+            
+                    
+                    Pipes and Filters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../shell/05-loop.html">
+            
+                <a href="../shell/05-loop.html">
+            
+                    
+                    Loops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../shell/06-script.html">
+            
+                <a href="../shell/06-script.html">
+            
+                    
+                    Shell Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../shell/07-find.html">
+            
+                <a href="../shell/07-find.html">
+            
+                    
+                    Finding Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
+            
+                <a href="../shell-extras/">
+            
+                    
+                    Shell extras
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
+            
+                <a href="../shell-extras/screen.html">
+            
+                    
+                    Using screen to keep things running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
+            
+                <a href="../shell-extras/screen2.html">
+            
+                    
+                    Advanced screen topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
+            
+                <a href="../shell-extras/persistent-screen.html">
+            
+                    
+                    Persistent screen or tmux session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
+            
+                <a href="../shell-extras/shell2.html">
+            
+                    
+                    Advanced shell topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../git/">
+            
+                <a href="../git/">
+            
+                    
+                    Version control with Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../git/01-basics.html">
+            
+                <a href="../git/01-basics.html">
+            
+                    
+                    Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../git/02-setup.html">
+            
+                <a href="../git/02-setup.html">
+            
+                    
+                    Setting Up Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../git/03-create.html">
+            
+                <a href="../git/03-create.html">
+            
+                    
+                    Creating a Repository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../git/04-changes.html">
+            
+                <a href="../git/04-changes.html">
+            
+                    
+                    Tracking Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="../git/05-history.html">
+            
+                <a href="../git/05-history.html">
+            
+                    
+                    Exploring History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="../git/06-ignore.html">
+            
+                <a href="../git/06-ignore.html">
+            
+                    
+                    Ignoring Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="../git/07-gitlab.html">
+            
+                <a href="../git/07-gitlab.html">
+            
+                    
+                    Remotes in CERN GitLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.8" data-path="../git/08-share.html">
+            
+                <a href="../git/08-share.html">
+            
+                    
+                    Sharing a repository with others
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.9" data-path="../git/09-pullrequests.html">
+            
+                <a href="../git/09-pullrequests.html">
+            
+                    
+                    Collaborating with Pull Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="../git/10-conflict.html">
+            
+                <a href="../git/10-conflict.html">
+            
+                    
+                    Conflicts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.11" data-path="../git/11-ci.html">
+            
+                <a href="../git/11-ci.html">
+            
+                    
+                    GitLab CI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.12" data-path="../git/12-open.html">
+            
+                <a href="../git/12-open.html">
+            
+                    
+                    Open Science
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.13" data-path="../git/13-licensing.html">
+            
+                <a href="../git/13-licensing.html">
+            
+                    
+                    Licensing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.14" data-path="../git/14-citation.html">
+            
+                <a href="../git/14-citation.html">
+            
+                    
+                    Citation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <a target="_blank" href="ref://analysis-essentials.pdf">
+            
+                    
+                    Download PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Numbers</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="numbers">Numbers</h1>
+<p>There&#x2019;s nothing magical about numbers in Python, and we&#x2019;ve already discovered 
+how we perform operations on them.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>(<span class="hljs-number">2</span>*(<span class="hljs-number">1</span> + <span class="hljs-number">3</span>) - <span class="hljs-number">5</span>)/<span class="hljs-number">0.5</span>
+<span class="hljs-number">2</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">11</span> % <span class="hljs-number">4</span>
+<span class="hljs-number">3</span>
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2922058196);" id="integer-division-in-python-2"><i class="fa fa-info-circle"></i> Integer division in Python 2<span id="heading-2922058196"></span></h3></div><div class="panel-body" id="panel-2922058196"><p>If for any reason (e.g. you want to use LHCb or Alice software) you have to use Python 2, 
+beware of that Python 2 has a few different <em>types</em> of numbers, and they can 
+behave differently.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">10</span>/<span class="hljs-number">3</span>
+<span class="hljs-number">3</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">10.0</span>/<span class="hljs-number">3.0</span>
+<span class="hljs-number">3.3333333333333335</span>
+</code></pre>
+<p>Interesting. Something different happens when we use numbers with and without 
+decimal places! This occurs because numbers given with decimal places, like 
+<code>3.14</code>  are <em>floats</em>, while those without, like <code>3</code>, are <em>integers</em>.</p>
+<p>For historical reasons, dividing two integers in Python 2 returns an integer, 
+where the intermediate result is always rounded down. Division using <em>at least 
+one</em> float gives us the more intuitive answer.</p>
+<p>In Python 3, division with integers works the same way as with floats. You can 
+ask to have this behaviour in Python 2.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> division
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">3</span>/<span class="hljs-number">4</span>
+<span class="hljs-number">0.75</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">3.0</span>/<span class="hljs-number">4.0</span>
+<span class="hljs-number">0.75</span>
+</code></pre>
+<p>Because the default behaviour in Python 2 is quite unintuitive, we recommend 
+using the <code>from __future__ import division</code> line everywhere. We&#x2019;ll come to what exactly this 
+line is doing shortly.</p>
+<p>If you _do_ want a rounding division, you then can ask for it explicitly with 
+the <code>//</code> operation:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">10</span>/<span class="hljs-number">3</span>
+<span class="hljs-number">3.3333333333333335</span>
+
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">10</span>//<span class="hljs-number">3</span>
+<span class="hljs-number">3</span>
+</code></pre>
+</div></div></p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9071964878);" id="operators"><i class="fa fa-info-circle"></i> Operators<span id="heading-9071964878"></span></h3></div><div class="panel-body" id="panel-9071964878"><p>This behaviour can be explained in terms of operators and the double-underscore 
+methods. You can see that numbers have two methods for division:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>dir(<span class="hljs-number">1</span>)
+[...,
+ <span class="hljs-string">&apos;__floordiv__&apos;</span>,
+ ...
+ <span class="hljs-string">&apos;__truediv__&apos;</span>,
+ ...]
+</code></pre>
+<p>In Python 2, the <code>/</code> operator corresponded to the <code>__floordiv__</code> method when 
+used with integers, but the <code>__truediv__</code> operator when used with floats. In 
+Python 3, and when using the <code>from __future__ import division</code> line, the <code>/</code> 
+operator always uses the <code>__truediv__</code> method.</p>
+</div></div></p>
+<p>Python also lets you manipulate complex numbers, using <code>j</code> to represent the 
+complex term.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a = <span class="hljs-number">1</span> + <span class="hljs-number">4j</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>b= <span class="hljs-number">4</span> - <span class="hljs-number">1j</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a - b
+(<span class="hljs-number">-3</span>+<span class="hljs-number">5j</span>)
+</code></pre>
+<p>Complex numbers are objects, of course, and have some useful functions and 
+properties attached to them.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a.conjugate()
+(<span class="hljs-number">1</span><span class="hljs-number">-4j</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>a.imag
+<span class="hljs-number">4.0</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>a.real
+<span class="hljs-number">1.0</span>
+</code></pre>
+<p>Somewhat confusingly, computing the magnitude of a complex number can be done 
+with the <code>abs</code> method, which is available globally.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>abs(a)
+<span class="hljs-number">4.123105625617661</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> math
+<span class="hljs-meta">&gt;&gt;&gt; </span>math.sqrt(a.real**<span class="hljs-number">2</span> + a.imag**<span class="hljs-number">2</span>)
+<span class="hljs-number">4.123105625617661</span>
+</code></pre>
+<p>This also demonstrates the <code>**</code> operator, which for real numbers corresponds to 
+exponentiation.</p>
+<p>Each type of number can be created <em>literally</em>, like we&#x2019;ve been doing, by just 
+typing the number into your shell or source code, and by using the correspond 
+methods.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>int()
+<span class="hljs-number">0</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>float()
+<span class="hljs-number">0.0</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>complex()
+<span class="hljs-number">0j</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="operators.html" class="navigation navigation-prev " aria-label="Previous page: Objects and operators">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="strings.html" class="navigation navigation-next " aria-label="Next page: Strings">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Numbers","level":"2.1.3","depth":2,"next":{"title":"Strings","level":"2.1.4","depth":2,"path":"python/strings.md","ref":"python/strings.md","articles":[]},"previous":{"title":"Objects and operators","level":"2.1.2","depth":2,"path":"python/operators.md","ref":"python/operators.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"python/numbers.md","mtime":"2018-11-26T12:26:23.701Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

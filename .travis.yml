@@ -1,0 +1,31 @@
+branches:
+  only:
+    - master
+sudo: false
+language: node_js
+addons:
+  apt:
+    packages:
+    - calibre
+    - calibre-bin
+install:
+  - npm install gitbook-cli -g
+  - npm install svgexport -g
+  - pip install --user beautifulsoup4
+  - pip install --user ghp-import
+node_js: '10.2'
+# Using xvfb to Run Tests That Require a GUI
+# https://docs.travis-ci.com/user/gui-and-headless-browsers/#Using-xvfb-to-Run-Tests-That-Require-a-GUI
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+script:
+  - make
+  - make pdf
+  - make test
+after_success:
+  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && make publish-travis > /dev/null 2>&1 || true'
+env:
+  global:
+    secure: "S+3Gu4EZXl6pOkoy93wo5RB3qawI+TEThIOCutyQCk3gwNw3s2QBgVzqTol6plzdi2JfhNpELE9KJovEqBr9RWK7eD7k0TJcw+PJzFaVEi/iV0ZpjYyTg2ttmAGTTPz382LuXeO+4L0GB3GYIVXN5P6waHppV6D8vPbqUARl/INaj6o/ik5Gsf1FUWSimshwECOpjuWdPQq7Ju5zoTLmnBFfubJmuXf79T4trTs5/XFCbgIC4zVLvMF6tW9XSdVSeBGQqF1QWjvMNRPorpGHj8kkaON86oEFxAN3Wnw/nfN+PKplV90XqpM1Z7kUM+vBz1jL32kbxeCYltv61CdLBzlaNaPi6F/V/jvM6ABU5g7i1BXCoBOGAdg3tzihqV8VH4vLRomCRZrp2GFpAE80ljkXcIwtAv1uNynQA5KbAVL78ocxwxlj3K100X+ZqWUtuWHJ6ZC5v3RIdyZb8m4zrvx6GAhk+5nDZauLHbCopcIPvFT2mwWkXd1dbExWP4o2190pk1CyUV5udF9B5NB1ReitVoCCgn1MTT5nWueWfsU9asSUcUZR9BqMPLQW9zXKJw9SRDeuuK6gWqWP0nze+ExOtZIabHcoJr5d+pMsbi7p+cS/JUbbFzbt9CVFjr5tYEezdlMRn91sqBE01I7VEavOxnr8/iAr7iBtBZpg6Dk="

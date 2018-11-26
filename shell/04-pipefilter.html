@@ -1,0 +1,1458 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Pipes and Filters · LHCb analysis essentials</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="05-loop.html" />
+    
+    
+    <link rel="prev" href="03-create.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="../python/first_histogram.html">
+            
+                <a href="../python/first_histogram.html">
+            
+                    
+                    Making your first histogram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="../python/further_reading.html">
+            
+                <a href="../python/further_reading.html">
+            
+                    
+                    Further reading
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introducing the Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="02-filedir.html">
+            
+                <a href="02-filedir.html">
+            
+                    
+                    Navigating Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="03-create.html">
+            
+                <a href="03-create.html">
+            
+                    
+                    Working With Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.3" data-path="04-pipefilter.html">
+            
+                <a href="04-pipefilter.html">
+            
+                    
+                    Pipes and Filters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="05-loop.html">
+            
+                <a href="05-loop.html">
+            
+                    
+                    Loops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="06-script.html">
+            
+                <a href="06-script.html">
+            
+                    
+                    Shell Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="07-find.html">
+            
+                <a href="07-find.html">
+            
+                    
+                    Finding Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
+            
+                <a href="../shell-extras/">
+            
+                    
+                    Shell extras
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
+            
+                <a href="../shell-extras/screen.html">
+            
+                    
+                    Using screen to keep things running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
+            
+                <a href="../shell-extras/screen2.html">
+            
+                    
+                    Advanced screen topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
+            
+                <a href="../shell-extras/persistent-screen.html">
+            
+                    
+                    Persistent screen or tmux session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
+            
+                <a href="../shell-extras/shell2.html">
+            
+                    
+                    Advanced shell topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../git/">
+            
+                <a href="../git/">
+            
+                    
+                    Version control with Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../git/01-basics.html">
+            
+                <a href="../git/01-basics.html">
+            
+                    
+                    Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../git/02-setup.html">
+            
+                <a href="../git/02-setup.html">
+            
+                    
+                    Setting Up Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../git/03-create.html">
+            
+                <a href="../git/03-create.html">
+            
+                    
+                    Creating a Repository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../git/04-changes.html">
+            
+                <a href="../git/04-changes.html">
+            
+                    
+                    Tracking Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="../git/05-history.html">
+            
+                <a href="../git/05-history.html">
+            
+                    
+                    Exploring History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="../git/06-ignore.html">
+            
+                <a href="../git/06-ignore.html">
+            
+                    
+                    Ignoring Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="../git/07-gitlab.html">
+            
+                <a href="../git/07-gitlab.html">
+            
+                    
+                    Remotes in CERN GitLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.8" data-path="../git/08-share.html">
+            
+                <a href="../git/08-share.html">
+            
+                    
+                    Sharing a repository with others
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.9" data-path="../git/09-pullrequests.html">
+            
+                <a href="../git/09-pullrequests.html">
+            
+                    
+                    Collaborating with Pull Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="../git/10-conflict.html">
+            
+                <a href="../git/10-conflict.html">
+            
+                    
+                    Conflicts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.11" data-path="../git/11-ci.html">
+            
+                <a href="../git/11-ci.html">
+            
+                    
+                    GitLab CI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.12" data-path="../git/12-open.html">
+            
+                <a href="../git/12-open.html">
+            
+                    
+                    Open Science
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.13" data-path="../git/13-licensing.html">
+            
+                <a href="../git/13-licensing.html">
+            
+                    
+                    Licensing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.14" data-path="../git/14-citation.html">
+            
+                <a href="../git/14-citation.html">
+            
+                    
+                    Citation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <a target="_blank" href="ref://analysis-essentials.pdf">
+            
+                    
+                    Download PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Pipes and Filters</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="pipes-and-filters">Pipes and Filters</h1>
+<p><div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9326237802);" id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives<span id="heading-9326237802"></span></h3></div><div class="panel-body" id="panel-9326237802"><ul>
+<li>Redirect a command&apos;s output to a file.</li>
+<li>Process a file instead of keyboard input using redirection.</li>
+<li>Construct command pipelines with two or more stages.</li>
+<li>Explain what usually happens if a program or pipeline isn&apos;t given any input to process.</li>
+<li>Explain Unix&apos;s &apos;small pieces, loosely joined&apos; philosophy.</li>
+<li><code>first | second</code> is a pipeline: the output of the first command is used as the input to the second.</li>
+<li>The best way to use the shell is to use pipes to combine simple single-purpose programs (filters).</li>
+</ul>
+</div></div></p>
+<p>Now that we know a few basic commands,
+we can finally look at the shell&apos;s most powerful feature:
+the ease with which it lets us combine existing programs in new ways.
+We&apos;ll start with a directory called <code>molecules</code>
+that contains six files describing some simple organic molecules.
+The <code>.pdb</code> extension indicates that these files are in Protein Data Bank format,
+a simple text format that specifies the type and position of each atom in the molecule.</p>
+<pre><code class="lang-bash">$ ls molecules
+</code></pre>
+<pre><code class="lang-output">cubane.pdb    ethane.pdb    methane.pdb
+octane.pdb    pentane.pdb   propane.pdb
+</code></pre>
+<p>Let&apos;s go into that directory with <code>cd</code> and run the command <code>wc *.pdb</code>.
+<code>wc</code> is the &quot;word count&quot; command:
+it counts the number of lines, words, and characters in files.
+The <code>*</code> in <code>*.pdb</code> matches zero or more characters,
+so the shell turns <code>*.pdb</code> into a list of all <code>.pdb</code> files in the current directory:</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> molecules
+$ wc *.pdb
+</code></pre>
+<pre><code class="lang-output">  20  156 1158 cubane.pdb
+  12   84  622 ethane.pdb
+   9   57  422 methane.pdb
+  30  246 1828 octane.pdb
+  21  165 1226 pentane.pdb
+  15  111  825 propane.pdb
+ 107  819 6081 total
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5328690551);" id="wildcards"><i class="fa fa-info-circle"></i> Wildcards<span id="heading-5328690551"></span></h3></div><div class="panel-body" id="panel-5328690551"><p><code>*</code> is a <strong>wildcard</strong>. It matches zero or more
+characters, so <code>*.pdb</code> matches <code>ethane.pdb</code>, <code>propane.pdb</code>, and every
+file that ends with &apos;.pdb&apos;. On the other hand, <code>p*.pdb</code> only matches
+<code>pentane.pdb</code> and <code>propane.pdb</code>, because the &apos;p&apos; at the front only
+matches filenames that begin with the letter &apos;p&apos;.</p>
+<p><code>?</code> is also a wildcard, but it only matches a single character. This
+means that <code>p?.pdb</code> would match <code>pi.pdb</code> or <code>p5.pdb</code> (if we had these two
+files in the <code>molecules</code> directory), but not <code>propane.pdb</code>.
+We can use any number of wildcards at a time: for example, <code>p*.p?*</code>
+matches anything that starts with a &apos;p&apos; and ends with &apos;.&apos;, &apos;p&apos;, and at
+least one more character (since the <code>?</code> has to match one character, and
+the final <code>*</code> can match any number of characters). Thus, <code>p*.p?*</code> would
+match <code>preferred.practice</code>, and even <code>p.pi</code> (since the first <code>*</code> can
+match no characters at all), but not <code>quality.practice</code> (doesn&apos;t start
+with &apos;p&apos;) or <code>preferred.p</code> (there isn&apos;t at least one character after the
+&apos;.p&apos;).</p>
+<p>When the shell sees a wildcard, it expands the wildcard to create a
+list of matching filenames <em>before</em> running the command that was
+asked for. As an exception, if a wildcard expression does not match
+any file, Bash will pass the expression as an argument to the command
+as it is. For example typing <code>ls *.pdf</code> in the <code>molecules</code> directory
+(which contains only files with names ending with <code>.pdb</code>) results in
+an error message that there is no file called <code>*.pdf</code>.
+However, generally commands like <code>wc</code> and <code>ls</code> see the lists of
+file names matching these expressions, but not the wildcards
+themselves. It is the shell, not the other programs, that deals with
+expanding wildcards, and this is another example of orthogonal design.</p>
+</div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1619276484);" id="using-wildcards"><i class="fa fa-square-o"></i> Using Wildcards<span id="heading-1619276484"></span></h3></div><div class="panel-body" id="panel-1619276484"><p>When run in the <code>molecules</code> directory, which <code>ls</code> command(s) will
+produce this output?</p>
+<p><code>ethane.pdb   methane.pdb</code></p>
+<ol>
+<li><code>ls *t*ane.pdb</code></li>
+<li><code>ls *t?ne.*</code></li>
+<li><code>ls *t??ne.pdb</code></li>
+<li><code>ls ethane.*</code></li>
+</ol>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8458453634);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-8458453634">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-8458453634"><blockquote>
+<blockquote>
+<p> The solution is <code>3.</code></p>
+<p><code>1.</code> shows all files that contain any number and combination of characters, followed by the letter <code>t</code>, another single character, and end with <code>ane.pdb</code>. This includes <code>octane.pdb</code> and <code>pentane.pdb</code>.</p>
+<p><code>2.</code> shows all files containing any number and combination of characters, <code>t</code>, another single character, <code>ne.</code> followed by any number and combination of characters. This will give us <code>octane.pdb</code> and <code>pentane.pdb</code> but doesn&apos;t match anything which ends in <code>thane.pdb</code>.</p>
+<p><code>3.</code> fixes the problems of option 2 by matching two characters between <code>t</code> and <code>ne</code>. This is the solution.</p>
+<p><code>4.</code> only shows files starting with <code>ethane.</code>.</p>
+</blockquote>
+</blockquote>
+</div></div></div></div></p>
+<p>If we run <code>wc -l</code> instead of just <code>wc</code>,
+the output shows only the number of lines per file:</p>
+<pre><code class="lang-bash">$ wc <span class="hljs-_">-l</span> *.pdb
+</code></pre>
+<pre><code class="lang-output">  20  cubane.pdb
+  12  ethane.pdb
+   9  methane.pdb
+  30  octane.pdb
+  21  pentane.pdb
+  15  propane.pdb
+ 107  total
+</code></pre>
+<p>We can also use <code>-w</code> to get only the number of words,
+or <code>-c</code> to get only the number of characters.</p>
+<p>Which of these files is shortest?
+It&apos;s an easy question to answer when there are only six files,
+but what if there were 6000?
+Our first step toward a solution is to run the command:</p>
+<pre><code class="lang-bash">$ wc <span class="hljs-_">-l</span> *.pdb &gt; lengths.txt
+</code></pre>
+<p>The greater than symbol, <code>&gt;</code>, tells the shell to <strong>redirect</strong> the command&apos;s output
+to a file instead of printing it to the screen. (This is why there is no screen output:
+everything that <code>wc</code> would have printed has gone into the
+file <code>lengths.txt</code> instead.)  The shell will create
+the file if it doesn&apos;t exist. If the file exists, it will be
+silently overwritten, which may lead to data loss and thus requires
+some caution.
+<code>ls lengths.txt</code> confirms that the file exists:</p>
+<pre><code class="lang-bash">$ ls lengths.txt
+</code></pre>
+<pre><code class="lang-output">lengths.txt
+</code></pre>
+<p>We can now send the content of <code>lengths.txt</code> to the screen using <code>cat lengths.txt</code>.
+<code>cat</code> stands for &quot;concatenate&quot;:
+it prints the contents of files one after another.
+There&apos;s only one file in this case,
+so <code>cat</code> just shows us what it contains:</p>
+<pre><code class="lang-bash">$ cat lengths.txt
+</code></pre>
+<pre><code class="lang-output">  20  cubane.pdb
+  12  ethane.pdb
+   9  methane.pdb
+  30  octane.pdb
+  21  pentane.pdb
+  15  propane.pdb
+ 107  total
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4256707150);" id="output-page-by-page"><i class="fa fa-info-circle"></i> Output Page by Page<span id="heading-4256707150"></span></h3></div><div class="panel-body" id="panel-4256707150"><p>We&apos;ll continue to use <code>cat</code> in this lesson, for convenience and consistency,
+but it has the disadvantage that it always dumps the whole file onto your screen.
+More useful in practice is the command <code>less</code>,
+which you use with <code>$ less lengths.txt</code>.
+This displays a screenful of the file, and then stops.
+You can go forward one screenful by pressing the spacebar,
+or back one by pressing <code>b</code>.  Press <code>q</code> to quit.</p>
+</div></div></p>
+<p>Now let&apos;s use the <code>sort</code> command to sort its contents.
+We will also use the <code>-n</code> flag to specify that the sort is
+numerical instead of alphabetical.
+This does <em>not</em> change the file;
+instead, it sends the sorted result to the screen:</p>
+<pre><code class="lang-bash">$ sort -n lengths.txt
+</code></pre>
+<pre><code class="lang-output">  9  methane.pdb
+ 12  ethane.pdb
+ 15  propane.pdb
+ 20  cubane.pdb
+ 21  pentane.pdb
+ 30  octane.pdb
+107  total
+</code></pre>
+<p>We can put the sorted list of lines in another temporary file called <code>sorted-lengths.txt</code>
+by putting <code>&gt; sorted-lengths.txt</code> after the command,
+just as we used <code>&gt; lengths.txt</code> to put the output of <code>wc</code> into <code>lengths.txt</code>.
+Once we&apos;ve done that,
+we can run another command called <code>head</code> to get the first few lines in <code>sorted-lengths.txt</code>:</p>
+<pre><code class="lang-bash">$ sort -n lengths.txt &gt; sorted-lengths.txt
+$ head -n 1 sorted-lengths.txt
+</code></pre>
+<pre><code class="lang-output">  9  methane.pdb
+</code></pre>
+<p>Using <code>-n 1</code> with <code>head</code> tells it that
+we only want the first line of the file;
+<code>-n 20</code> would get the first 20,
+and so on.
+Since <code>sorted-lengths.txt</code> contains the lengths of our files ordered from least to greatest,
+the output of <code>head</code> must be the file with the fewest lines.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4132645992);" id="redirecting-to-the-same-file"><i class="fa fa-info-circle"></i> Redirecting to the same file<span id="heading-4132645992"></span></h3></div><div class="panel-body" id="panel-4132645992"><p>It&apos;s a very bad idea to try redirecting
+the output of a command that operates on a file
+to the same file. For example:</p>
+<pre><code class="lang-bash">$ sort -n lengths.txt &gt; lengths.txt
+</code></pre>
+<p>Doing something like this may give you
+incorrect results and/or delete
+the contents of <code>lengths.txt</code>.</p>
+</div></div></p>
+<p>If you think this is confusing,
+you&apos;re in good company:
+even once you understand what <code>wc</code>, <code>sort</code>, and <code>head</code> do,
+all those intermediate files make it hard to follow what&apos;s going on.
+We can make it easier to understand by running <code>sort</code> and <code>head</code> together:</p>
+<pre><code class="lang-bash">$ sort -n lengths.txt | head -n 1
+</code></pre>
+<pre><code class="lang-output">  9  methane.pdb
+</code></pre>
+<p>The vertical bar, <code>|</code>, between the two commands is called a <strong>pipe</strong>.
+It tells the shell that we want to use
+the output of the command on the left
+as the input to the command on the right.
+The computer might create a temporary file if it needs to,
+or copy data from one program to the other in memory,
+or something else entirely;
+we don&apos;t have to know or care.</p>
+<p>Nothing prevents us from chaining pipes consecutively.
+That is, we can for example send the output of <code>wc</code> directly to <code>sort</code>,
+and then the resulting output to <code>head</code>.
+Thus we first use a pipe to send the output of <code>wc</code> to <code>sort</code>:</p>
+<pre><code class="lang-bash">$ wc <span class="hljs-_">-l</span> *.pdb | sort -n
+</code></pre>
+<pre><code class="lang-output">   9 methane.pdb
+  12 ethane.pdb
+  15 propane.pdb
+  20 cubane.pdb
+  21 pentane.pdb
+  30 octane.pdb
+ 107 total
+</code></pre>
+<p>And now we send the output of this pipe, through another pipe, to <code>head</code>, so that the full pipeline becomes:</p>
+<pre><code class="lang-bash">$ wc <span class="hljs-_">-l</span> *.pdb | sort -n | head -n 1
+</code></pre>
+<pre><code class="lang-output">   9  methane.pdb
+</code></pre>
+<p>This is exactly like a mathematician nesting functions like <em>log(3x)</em>
+and saying &quot;the log of three times <em>x</em>&quot;.
+In our case,
+the calculation is &quot;head of sort of line count of <code>*.pdb</code>&quot;.</p>
+<p>Here&apos;s what actually happens behind the scenes when we create a pipe.
+When a computer runs a program --- any program --- it creates a <strong>process</strong>
+in memory to hold the program&apos;s software and its current state.
+Every process has an input channel called <strong>standard input</strong>.
+(By this point, you may be surprised that the name is so memorable, but don&apos;t worry:
+most Unix programmers call it &quot;stdin&quot;).
+Every process also has a default output channel called <strong>standard output</strong>
+(or &quot;stdout&quot;). A second output channel called <strong>standard error</strong> (stderr) also
+exists. This channel is typically used for error or diagnostic messages, and it
+allows a user to pipe the output of one program into another while still receiving
+error messages in the terminal.</p>
+<p>The shell is actually just another program.
+Under normal circumstances,
+whatever we type on the keyboard is sent to the shell on its standard input,
+and whatever it produces on standard output is displayed on our screen.
+When we tell the shell to run a program,
+it creates a new process
+and temporarily sends whatever we type on our keyboard to that process&apos;s standard input,
+and whatever the process sends to standard output to the screen.</p>
+<p>Here&apos;s what happens when we run <code>wc -l *.pdb &gt; lengths.txt</code>.
+The shell starts by telling the computer to create a new process to run the <code>wc</code> program.
+Since we&apos;ve provided some filenames as arguments,
+<code>wc</code> reads from them instead of from standard input.
+And since we&apos;ve used <code>&gt;</code> to redirect output to a file,
+the shell connects the process&apos;s standard output to that file.</p>
+<p>If we run <code>wc -l *.pdb | sort -n</code> instead,
+the shell creates two processes
+(one for each process in the pipe)
+so that <code>wc</code> and <code>sort</code> run simultaneously.
+The standard output of <code>wc</code> is fed directly to the standard input of <code>sort</code>;
+since there&apos;s no redirection with <code>&gt;</code>,
+<code>sort</code>&apos;s output goes to the screen.
+And if we run <code>wc -l *.pdb | sort -n | head -n 1</code>,
+we get three processes with data flowing from the files,
+through <code>wc</code> to <code>sort</code>,
+and from <code>sort</code> through <code>head</code> to the screen.</p>
+<p><img src="fig/redirects-and-pipes.png" alt="Redirects and Pipes"></p>
+<p>This simple idea is why Unix has been so successful.
+Instead of creating enormous programs that try to do many different things,
+Unix programmers focus on creating lots of simple tools that each do one job well,
+and that work well with each other.
+This programming model is called &quot;pipes and filters&quot;.
+We&apos;ve already seen pipes;
+a <strong>filter</strong> is a program like <code>wc</code> or <code>sort</code>
+that transforms a stream of input into a stream of output.
+Almost all of the standard Unix tools can work this way:
+unless told to do otherwise,
+they read from standard input,
+do something with what they&apos;ve read,
+and write to standard output.</p>
+<p>The key is that any program that reads lines of text from standard input
+and writes lines of text to standard output
+can be combined with every other program that behaves this way as well.
+You can <em>and should</em> write your programs this way
+so that you and other people can put those programs into pipes to multiply their power.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9570633000);" id="redirecting-input"><i class="fa fa-info-circle"></i> Redirecting Input<span id="heading-9570633000"></span></h3></div><div class="panel-body" id="panel-9570633000"><p>As well as using <code>&gt;</code> to redirect a program&apos;s output, we can use <code>&lt;</code> to
+redirect its input, i.e., to read from a file instead of from standard
+input. For example, instead of writing <code>wc ammonia.pdb</code>, we could write
+<code>wc &lt; ammonia.pdb</code>. In the first case, <code>wc</code> gets a command line
+argument telling it what file to open. In the second, <code>wc</code> doesn&apos;t have
+any command line arguments, so it reads from standard input, but we
+have told the shell to send the contents of <code>ammonia.pdb</code> to <code>wc</code>&apos;s
+standard input.</p>
+</div></div></p>
+<h2 id="nelles-pipeline-checking-files">Nelle&apos;s Pipeline: Checking Files</h2>
+<p>Nelle has run her samples through the assay machines
+and created 17 files in the <code>north-pacific-gyre/2012-07-03</code> directory described earlier.
+As a quick sanity check, starting from her home directory, Nelle types:</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> north-pacific-gyre/2012-07-03
+$ wc <span class="hljs-_">-l</span> *.txt
+</code></pre>
+<p>The output is 18 lines that look like this:</p>
+<pre><code class="lang-output">300 NENE01729A.txt
+300 NENE01729B.txt
+300 NENE01736A.txt
+300 NENE01751A.txt
+300 NENE01751B.txt
+300 NENE01812A.txt
+... ...
+</code></pre>
+<p>Now she types this:</p>
+<pre><code class="lang-bash">$ wc <span class="hljs-_">-l</span> *.txt | sort -n | head -n 5
+</code></pre>
+<pre><code class="lang-output"> 240 NENE02018B.txt
+ 300 NENE01729A.txt
+ 300 NENE01729B.txt
+ 300 NENE01736A.txt
+ 300 NENE01751A.txt
+</code></pre>
+<p>Whoops: one of the files is 60 lines shorter than the others.
+When she goes back and checks it,
+she sees that she did that assay at 8:00 on a Monday morning --- someone
+was probably in using the machine on the weekend,
+and she forgot to reset it.
+Before re-running that sample,
+she checks to see if any files have too much data:</p>
+<pre><code class="lang-bash">$ wc <span class="hljs-_">-l</span> *.txt | sort -n | tail -n 5
+</code></pre>
+<pre><code class="lang-output"> 300 NENE02040B.txt
+ 300 NENE02040Z.txt
+ 300 NENE02043A.txt
+ 300 NENE02043B.txt
+5040 total
+</code></pre>
+<p>Those numbers look good --- but what&apos;s that &apos;Z&apos; doing there in the third-to-last line?
+All of her samples should be marked &apos;A&apos; or &apos;B&apos;;
+by convention,
+her lab uses &apos;Z&apos; to indicate samples with missing information.
+To find others like it, she does this:</p>
+<pre><code class="lang-bash">$ ls *Z.txt
+</code></pre>
+<pre><code class="lang-output">NENE01971Z.txt    NENE02040Z.txt
+</code></pre>
+<p>Sure enough,
+when she checks the log on her laptop,
+there&apos;s no depth recorded for either of those samples.
+Since it&apos;s too late to get the information any other way,
+she must exclude those two files from her analysis.
+She could just delete them using <code>rm</code>,
+but there are actually some analyses she might do later where depth doesn&apos;t matter,
+so instead, she&apos;ll just be careful later on to select files using the wildcard expression <code>*[AB].txt</code>.
+As always,
+the <code>*</code> matches any number of characters;
+the expression <code>[AB]</code> matches either an &apos;A&apos; or a &apos;B&apos;,
+so this matches all the valid data files she has.</p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5651839824);" id="what-does-sort--n-do"><i class="fa fa-square-o"></i> What Does <code>sort -n</code> Do?<span id="heading-5651839824"></span></h3></div><div class="panel-body" id="panel-5651839824"><p>If we run <code>sort</code> on this file:</p>
+<pre><code class="lang-source">10
+2
+19
+22
+6
+</code></pre>
+<p>the output is:</p>
+<pre><code class="lang-output">10
+19
+2
+22
+6
+</code></pre>
+<p>If we run <code>sort -n</code> on the same input, we get this instead:</p>
+<pre><code class="lang-output">2
+6
+10
+19
+22
+</code></pre>
+<p>Explain why <code>-n</code> has this effect.</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5067198849);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-5067198849">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-5067198849"><p>The <code>-n</code> flag specifies a numeric sort, rather than alphabetical.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3901308248);" id="what-does--mean"><i class="fa fa-square-o"></i> What Does <code>&lt;</code> Mean?<span id="heading-3901308248"></span></h3></div><div class="panel-body" id="panel-3901308248"><p>Change directory to <code>data-shell</code> (the top level of our downloaded example data).</p>
+<p>What is the difference between:</p>
+<pre><code class="lang-bash">$ wc <span class="hljs-_">-l</span> notes.txt
+</code></pre>
+<p>and:</p>
+<pre><code class="lang-bash">$ wc <span class="hljs-_">-l</span> &lt; notes.txt
+</code></pre>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8490775853);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-8490775853">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-8490775853"><p><code>&lt;</code> is used to redirect input to a command.</p>
+<p>In both examples, the shell returns the number of lines from the input to
+the <code>wc</code> command.
+In the first example, the input is the file <code>notes.txt</code> and the file name is
+given in the output from the <code>wc</code> command.
+In the second example, the contents of the file <code>notes.txt</code> are redirected to
+standard input.
+It is as if we have entered the contents of the file by typing at the prompt.
+Hence the file name is not given in the output - just the number of lines.
+Try this for yourself:</p>
+<pre><code>$ wc -l
+this
+is
+a test
+Ctrl-D # This lets the shell know you have finished typing the input
+</code></pre><p>{: .bash}</p>
+<pre><code>3
+</code></pre><p>{: .output}</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9719905241);" id="what-does--mean"><i class="fa fa-square-o"></i> What Does <code>&gt;&gt;</code> Mean?<span id="heading-9719905241"></span></h3></div><div class="panel-body" id="panel-9719905241"><p>What is the difference between:</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> hello &gt; testfile01.txt
+</code></pre>
+<p>and:</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> hello &gt;&gt; testfile02.txt
+</code></pre>
+<p>Hint: Try executing each command twice in a row and then examining the output files.</p>
+</div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1682850154);" id="more-on-wildcards"><i class="fa fa-square-o"></i> More on Wildcards<span id="heading-1682850154"></span></h3></div><div class="panel-body" id="panel-1682850154"><p>Sam has a directory containing calibration data, datasets, and descriptions of
+the datasets:</p>
+<pre><code class="lang-bash">2015-10-23-calibration.txt
+2015-10-23-dataset1.txt
+2015-10-23-dataset2.txt
+2015-10-23-dataset_overview.txt
+2015-10-26-calibration.txt
+2015-10-26-dataset1.txt
+2015-10-26-dataset2.txt
+2015-10-26-dataset_overview.txt
+2015-11-23-calibration.txt
+2015-11-23-dataset1.txt
+2015-11-23-dataset2.txt
+2015-11-23-dataset_overview.txt
+</code></pre>
+<p>Before heading off to another field trip, she wants to back up her data and
+send some datasets to her colleague Bob. Sam uses the following commands
+to get the job done:</p>
+<pre><code class="lang-bash">$ cp *dataset* /backup/datasets
+$ cp ____calibration____ /backup/calibration
+$ cp 2015-____-____ ~/send_to_bob/all_november_files/
+$ cp ____ ~/send_to_bob/all_datasets_created_on_a_23rd/
+</code></pre>
+<p>Help Sam by filling in the blanks.</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1406757908);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-1406757908">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-1406757908"><pre><code>$ cp *calibration.txt /backup/calibration
+$ cp 2015-11-* ~/send_to_bob/all_november_files/
+$ cp *-23-dataset* ~send_to_bob/all_datasets_created_on_a_23rd/
+</code></pre><p>{: .bash}</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2203200172);" id="piping-commands-together"><i class="fa fa-square-o"></i> Piping Commands Together<span id="heading-2203200172"></span></h3></div><div class="panel-body" id="panel-2203200172"><p>In our current directory, we want to find the 3 files which have the least number of
+lines. Which command listed below would work?</p>
+<ol>
+<li><code>wc -l * &gt; sort -n &gt; head -n 3</code></li>
+<li><code>wc -l * | sort -n | head -n 1-3</code></li>
+<li><code>wc -l * | head -n 3 | sort -n</code></li>
+<li><code>wc -l * | sort -n | head -n 3</code></li>
+</ol>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1131284289);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-1131284289">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-1131284289"><p>Option 4 is the solution.
+The pipe character <code>|</code> is used to feed the standard output from one process to
+the standard input of another.
+<code>&gt;</code> is used to redirect standard output to a file.
+Try it in the <code>data-shell/molecules</code> directory!</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1542256779);" id="why-does-uniq-only-remove-adjacent-duplicates"><i class="fa fa-square-o"></i> Why Does <code>uniq</code> Only Remove Adjacent Duplicates?<span id="heading-1542256779"></span></h3></div><div class="panel-body" id="panel-1542256779"><p>The command <code>uniq</code> removes adjacent duplicated lines from its input.
+For example, the file <code>data-shell/data/salmon.txt</code> contains:</p>
+<pre><code class="lang-source">coho
+coho
+steelhead
+coho
+steelhead
+steelhead
+</code></pre>
+<p>Running the command <code>uniq salmon.txt</code> from the <code>data-shell/data</code> directory produces:</p>
+<pre><code class="lang-output">coho
+steelhead
+coho
+steelhead
+</code></pre>
+<p>Why do you think <code>uniq</code> only removes <em>adjacent</em> duplicated lines?
+(Hint: think about very large data sets.) What other command could
+you combine with it in a pipe to remove all duplicated lines?</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2996209562);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-2996209562">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-2996209562"><pre><code>$ sort salmon.txt | uniq
+</code></pre><p>{: .bash}</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7592709494);" id="pipe-reading-comprehension"><i class="fa fa-square-o"></i> Pipe Reading Comprehension<span id="heading-7592709494"></span></h3></div><div class="panel-body" id="panel-7592709494"><p>A file called <code>animals.txt</code> (in the <code>data-shell/data</code> folder) contains the following data:</p>
+<pre><code class="lang-source">2012-11-05,deer
+2012-11-05,rabbit
+2012-11-05,raccoon
+2012-11-06,rabbit
+2012-11-06,deer
+2012-11-06,fox
+2012-11-07,rabbit
+2012-11-07,bear
+</code></pre>
+<p>What text passes through each of the pipes and the final redirect in the pipeline below?</p>
+<pre><code class="lang-bash">$ cat animals.txt | head -n 5 | tail -n 3 | sort -r &gt; final.txt
+</code></pre>
+<p>Hint: build the pipeline up one command at a time to test your understanding</p>
+</div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6828427034);" id="pipe-construction"><i class="fa fa-square-o"></i> Pipe Construction<span id="heading-6828427034"></span></h3></div><div class="panel-body" id="panel-6828427034"><p>For the file <code>animals.txt</code> from the previous exercise, the command:</p>
+<pre><code class="lang-bash">$ cut <span class="hljs-_">-d</span> , <span class="hljs-_">-f</span> 2 animals.txt
+</code></pre>
+<p>produces the following output:</p>
+<pre><code class="lang-output">deer
+rabbit
+raccoon
+rabbit
+deer
+fox
+rabbit
+bear
+</code></pre>
+<p>What other command(s) could be added to this in a pipeline to find
+out what animals the file contains (without any duplicates in their
+names)?</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9318264709);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-9318264709">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-9318264709"><pre><code>$ cut -d , -f 2 animals.txt | sort | uniq
+</code></pre><p>{: .bash}</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3670591274);" id="removing-unneeded-files"><i class="fa fa-square-o"></i> Removing Unneeded Files<span id="heading-3670591274"></span></h3></div><div class="panel-body" id="panel-3670591274"><p>Suppose you want to delete your processed data files, and only keep
+your raw files and processing script to save storage.
+The raw files end in <code>.dat</code> and the processed files end in <code>.txt</code>.
+Which of the following would remove all the processed data files,
+and <em>only</em> the processed data files?</p>
+<ol>
+<li><code>rm ?.txt</code></li>
+<li><code>rm *.txt</code></li>
+<li><code>rm * .txt</code></li>
+<li><code>rm *.*</code></li>
+</ol>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9043521030);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-9043521030">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-9043521030"><ol>
+<li>This would remove <code>.txt</code> files with one-character names</li>
+<li>This is correct answer</li>
+<li>The shell would expand <code>*</code> to match everything in the current directory,
+so the command would try to remove all matched files and an additional
+file called <code>.txt</code></li>
+<li>The shell would expand <code>*.*</code> to match all files with any extension,
+so this command would delete all files</li>
+</ol>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6834995773);" id="wildcard-expressions"><i class="fa fa-square-o"></i> Wildcard Expressions<span id="heading-6834995773"></span></h3></div><div class="panel-body" id="panel-6834995773"><p>Wildcard expressions can be very complex, but you can sometimes write
+them in ways that only use simple syntax, at the expense of being a bit
+more verbose.
+Consider the directory <code>data-shell/north-pacific-gyre/2012-07-03</code> :
+the wildcard expression <code>*[AB].txt</code>
+matches all files ending in <code>A.txt</code> or <code>B.txt</code>. Imagine you forgot about
+this.</p>
+<ol>
+<li><p>Can you match the same set of files with basic wildcard expressions
+that do not use the <code>[]</code> syntax? <em>Hint</em>: You may need more than one
+expression.</p>
+</li>
+<li><p>The expression that you found and the expression from the lesson match the
+same set of files in this example. What is the small difference between the
+outputs?</p>
+</li>
+<li><p>Under what circumstances would your new expression produce an error message
+where the original one would not?</p>
+</li>
+</ol>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2550633417);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-2550633417">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-2550633417"><p>1.</p>
+<pre><code>```
+$ ls *A.txt
+$ ls *B.txt
+```
+</code></pre><blockquote>
+<p>   {: .bash}</p>
+<ol start="2">
+<li>The output from the new commands is separated because there are two commands.</li>
+<li>When there are no files ending in <code>A.txt</code>, or there are no files ending in
+<code>B.txt</code>.</li>
+</ol>
+</blockquote>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8662728306);" id="which-pipe"><i class="fa fa-square-o"></i> Which Pipe?<span id="heading-8662728306"></span></h3></div><div class="panel-body" id="panel-8662728306"><p>The file <code>data-shell/data/animals.txt</code> contains 586 lines of data formatted as follows:</p>
+<pre><code class="lang-output">2012-11-05,deer
+2012-11-05,rabbit
+2012-11-05,raccoon
+2012-11-06,rabbit
+...
+</code></pre>
+<p>Assuming your current directory is <code>data-shell/data/</code>,
+what command would you use to produce a table that shows
+the total count of each type of animal in the file?</p>
+<ol>
+<li><code>grep {deer, rabbit, raccoon, deer, fox, bear} animals.txt | wc -l</code></li>
+<li><code>sort animals.txt | uniq -c</code></li>
+<li><code>sort -t, -k2,2 animals.txt | uniq -c</code></li>
+<li><code>cut -d, -f 2 animals.txt | uniq -c</code></li>
+<li><code>cut -d, -f 2 animals.txt | sort | uniq -c</code></li>
+<li><code>cut -d, -f 2 animals.txt | sort | uniq -c | wc -l</code></li>
+</ol>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2933876114);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-2933876114">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-2933876114"><p>Option 5. is the correct answer.
+If you have difficulty understanding why, try running the commands, or sub-sections of
+the pipelines (make sure you are in the <code>data-shell/data</code> directory).</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4475953563);" id="appending-data"><i class="fa fa-square-o"></i> Appending Data<span id="heading-4475953563"></span></h3></div><div class="panel-body" id="panel-4475953563"><p>Consider the file <code>animals.txt</code>, used in previous exercise.
+After these commands, select the answer that
+corresponds to the file <code>animalsUpd.txt</code>:</p>
+<pre><code class="lang-bash">$ head -3 animals.txt &gt; animalsUpd.txt
+$ tail -2 animals.txt &gt;&gt; animalsUpd.txt
+</code></pre>
+<ol>
+<li>The first three lines of <code>animals.txt</code></li>
+<li>The last two lines of <code>animals.txt</code></li>
+<li>The first three lines and the last two lines of <code>animals.txt</code></li>
+<li>The second and third lines of <code>animals.txt</code></li>
+</ol>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7005717113);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-7005717113">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-7005717113"><p>Option 3 is correct.
+For option 1 to be correct we would only run the <code>head</code> command.
+For option 2 to be correct we would only run the <code>tail</code> command.
+For option 4 to be correct we would have to pipe the output of <code>head</code> into <code>tail -2</code> by doing <code>head -3 animals.txt | tail -2 &gt;&gt; animalsUpd.txt</code></p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2019720577);" id="key-points"><i class="fa fa-key"></i> Key Points<span id="heading-2019720577"></span></h3></div><div class="panel-body" id="panel-2019720577"><ul>
+<li><code>cat</code> displays the contents of its inputs.</li>
+<li><code>head</code> displays the first few lines of its input.</li>
+<li><code>tail</code> displays the last few lines of its input.</li>
+<li><code>sort</code> sorts its inputs.</li>
+<li><code>wc</code> counts lines, words, and characters in its inputs.</li>
+<li><code>*</code> matches zero or more characters in a filename, so <code>*.txt</code> matches all files ending in <code>.txt</code>.</li>
+<li><code>?</code> matches any single character in a filename, so <code>?.txt</code> matches <code>a.txt</code> but not <code>any.txt</code>.</li>
+<li><code>command &gt; file</code> redirects a command&apos;s output to a file.</li>
+</ul>
+</div></div></p>
+<div class="ba-right"><p><a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">CC BY 4.0</a> - Based on <a href="https://github.com/swcarpentry/shell-novice" target="_blank">shell-novice</a> &#xA9; 2016&#x2013;2017 Software Carpentry Foundation</p></div>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03-create.html" class="navigation navigation-prev " aria-label="Previous page: Working With Files and Directories">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="05-loop.html" class="navigation navigation-next " aria-label="Next page: Loops">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Pipes and Filters","level":"3.1.3","depth":2,"next":{"title":"Loops","level":"3.1.4","depth":2,"path":"shell/05-loop.md","ref":"shell/05-loop.md","articles":[]},"previous":{"title":"Working With Files and Directories","level":"3.1.2","depth":2,"path":"shell/03-create.md","ref":"shell/03-create.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"shell/04-pipefilter.md","mtime":"2018-11-26T12:26:23.705Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

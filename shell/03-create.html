@@ -1,0 +1,1333 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Working With Files and Directories · LHCb analysis essentials</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04-pipefilter.html" />
+    
+    
+    <link rel="prev" href="02-filedir.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="../python/first_histogram.html">
+            
+                <a href="../python/first_histogram.html">
+            
+                    
+                    Making your first histogram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="../python/further_reading.html">
+            
+                <a href="../python/further_reading.html">
+            
+                    
+                    Further reading
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introducing the Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="02-filedir.html">
+            
+                <a href="02-filedir.html">
+            
+                    
+                    Navigating Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.2" data-path="03-create.html">
+            
+                <a href="03-create.html">
+            
+                    
+                    Working With Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="04-pipefilter.html">
+            
+                <a href="04-pipefilter.html">
+            
+                    
+                    Pipes and Filters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="05-loop.html">
+            
+                <a href="05-loop.html">
+            
+                    
+                    Loops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="06-script.html">
+            
+                <a href="06-script.html">
+            
+                    
+                    Shell Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="07-find.html">
+            
+                <a href="07-find.html">
+            
+                    
+                    Finding Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
+            
+                <a href="../shell-extras/">
+            
+                    
+                    Shell extras
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
+            
+                <a href="../shell-extras/screen.html">
+            
+                    
+                    Using screen to keep things running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
+            
+                <a href="../shell-extras/screen2.html">
+            
+                    
+                    Advanced screen topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
+            
+                <a href="../shell-extras/persistent-screen.html">
+            
+                    
+                    Persistent screen or tmux session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
+            
+                <a href="../shell-extras/shell2.html">
+            
+                    
+                    Advanced shell topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../git/">
+            
+                <a href="../git/">
+            
+                    
+                    Version control with Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../git/01-basics.html">
+            
+                <a href="../git/01-basics.html">
+            
+                    
+                    Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../git/02-setup.html">
+            
+                <a href="../git/02-setup.html">
+            
+                    
+                    Setting Up Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../git/03-create.html">
+            
+                <a href="../git/03-create.html">
+            
+                    
+                    Creating a Repository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../git/04-changes.html">
+            
+                <a href="../git/04-changes.html">
+            
+                    
+                    Tracking Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="../git/05-history.html">
+            
+                <a href="../git/05-history.html">
+            
+                    
+                    Exploring History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="../git/06-ignore.html">
+            
+                <a href="../git/06-ignore.html">
+            
+                    
+                    Ignoring Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="../git/07-gitlab.html">
+            
+                <a href="../git/07-gitlab.html">
+            
+                    
+                    Remotes in CERN GitLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.8" data-path="../git/08-share.html">
+            
+                <a href="../git/08-share.html">
+            
+                    
+                    Sharing a repository with others
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.9" data-path="../git/09-pullrequests.html">
+            
+                <a href="../git/09-pullrequests.html">
+            
+                    
+                    Collaborating with Pull Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="../git/10-conflict.html">
+            
+                <a href="../git/10-conflict.html">
+            
+                    
+                    Conflicts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.11" data-path="../git/11-ci.html">
+            
+                <a href="../git/11-ci.html">
+            
+                    
+                    GitLab CI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.12" data-path="../git/12-open.html">
+            
+                <a href="../git/12-open.html">
+            
+                    
+                    Open Science
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.13" data-path="../git/13-licensing.html">
+            
+                <a href="../git/13-licensing.html">
+            
+                    
+                    Licensing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.14" data-path="../git/14-citation.html">
+            
+                <a href="../git/14-citation.html">
+            
+                    
+                    Citation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <a target="_blank" href="ref://analysis-essentials.pdf">
+            
+                    
+                    Download PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Working With Files and Directories</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="working-with-files-and-directories">Working With Files and Directories</h1>
+<p><div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7106737959);" id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives<span id="heading-7106737959"></span></h3></div><div class="panel-body" id="panel-7106737959"><ul>
+<li>Create a directory hierarchy that matches a given diagram.</li>
+<li>Create files in that hierarchy using an editor or by copying and renaming existing files.</li>
+<li>Display the contents of a directory using the command line.</li>
+<li>Delete specified files and/or directories.</li>
+<li>The shell does not have a trash bin: once something is deleted, it&apos;s really gone.</li>
+<li>Depending on the type of work you do, you may need a more powerful text editor than Nano.</li>
+</ul>
+</div></div></p>
+<p>We now know how to explore files and directories,
+but how do we create them in the first place?
+Let&apos;s go back to our <code>data-shell</code> directory on the Desktop
+and use <code>ls -F</code> to see what it contains:</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">pwd</span>
+</code></pre>
+<pre><code class="lang-output">/Users/nelle/Desktop/data-shell
+</code></pre>
+<pre><code class="lang-bash">$ ls -F
+</code></pre>
+<pre><code class="lang-output">creatures/  molecules/           pizza.cfg
+data/       north-pacific-gyre/  solar.pdf
+Desktop/    notes.txt            writing/
+</code></pre>
+<p>Let&apos;s create a new directory called <code>thesis</code> using the command <code>mkdir thesis</code>
+(which has no output):</p>
+<pre><code class="lang-bash">$ mkdir thesis
+</code></pre>
+<p>As you might guess from its name,
+<code>mkdir</code> means &quot;make directory&quot;.
+Since <code>thesis</code> is a relative path
+(i.e., doesn&apos;t have a leading slash),
+the new directory is created in the current working directory:</p>
+<pre><code class="lang-bash">$ ls -F
+</code></pre>
+<pre><code class="lang-output">creatures/  north-pacific-gyre/  thesis/
+data/       notes.txt            writing/
+Desktop/    pizza.cfg
+molecules/  solar.pdf
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9855621918);" id="two-ways-of-doing-the-same-thing"><i class="fa fa-info-circle"></i> Two ways of doing the same thing<span id="heading-9855621918"></span></h3></div><div class="panel-body" id="panel-9855621918"><p>Using the shell to create a directory is no different than using a file explorer.
+If you open the current directory using your operating system&apos;s graphical file explorer,
+the <code>thesis</code> directory will appear there too.
+While they are two different ways of interacting with the files,
+the files and directories themselves are the same.</p>
+</div></div></p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9789287202);" id="good-names-for-files-and-directories"><i class="fa fa-info-circle"></i> Good names for files and directories<span id="heading-9789287202"></span></h3></div><div class="panel-body" id="panel-9789287202"><p>Complicated names of files and directories can make your life painful
+when working on the command line. Here we provide a few useful
+tips for the names of your files.</p>
+<ol>
+<li><p>Don&apos;t use whitespaces.</p>
+<p>Whitespaces can make a name more meaningful
+but since whitespace is used to break arguments on the command line
+is better to avoid them in names of files and directories.
+You can use <code>-</code> or <code>_</code> instead of whitespace.</p>
+</li>
+<li><p>Don&apos;t begin the name with <code>-</code> (dash).</p>
+<p>Commands treat names starting with <code>-</code> as options.</p>
+</li>
+<li><p>Stick with letters, numbers, <code>.</code> (period), <code>-</code> (dash) and <code>_</code> (underscore).</p>
+<p>Many other characters have special meanings on the command line.
+We will learn about some of these during this lesson.
+There are special characters that can cause your command to not work as
+expected and can even result in data loss.</p>
+</li>
+</ol>
+<p>If you need to refer to names of files or directories that have whitespace
+or another non-alphanumeric character, you should surround the name in quotes (<code>&quot;&quot;</code>).</p>
+</div></div></p>
+<p>Since we&apos;ve just created the <code>thesis</code> directory, there&apos;s nothing in it yet:</p>
+<pre><code class="lang-bash">$ ls -F thesis
+</code></pre>
+<p>Let&apos;s change our working directory to <code>thesis</code> using <code>cd</code>,
+then run a text editor called Nano to create a file called <code>draft.txt</code>:</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> thesis
+$ nano draft.txt
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5092204158);" id="which-editor"><i class="fa fa-info-circle"></i> Which Editor?<span id="heading-5092204158"></span></h3></div><div class="panel-body" id="panel-5092204158"><p>When we say, &quot;<code>nano</code> is a text editor,&quot; we really do mean &quot;text&quot;: it can
+only work with plain character data, not tables, images, or any other
+human-friendly media. We use it in examples because it is one of the
+least complex text editors. However, because of this trait, it may
+not be powerful enough or flexible enough for the work you need to do
+after this workshop. On Unix systems (such as Linux and Mac OS X),
+many programmers use <a href="http://www.gnu.org/software/emacs/" target="_blank">Emacs</a> or
+<a href="http://www.vim.org/" target="_blank">Vim</a> (both of which require more time to learn),
+or a graphical editor such as
+<a href="http://projects.gnome.org/gedit/" target="_blank">Gedit</a>. On Windows, you may wish to
+use <a href="http://notepad-plus-plus.org/" target="_blank">Notepad++</a>.  Windows also has a built-in
+editor called <code>notepad</code> that can be run from the command line in the same
+way as <code>nano</code> for the purposes of this lesson.</p>
+<p>No matter what editor you use, you will need to know where it searches
+for and saves files. If you start it from the shell, it will (probably)
+use your current working directory as its default location. If you use
+your computer&apos;s start menu, it may want to save files in your desktop or
+documents directory instead. You can change this by navigating to
+another directory the first time you &quot;Save As...&quot;</p>
+</div></div></p>
+<p>Let&apos;s type in a few lines of text.
+Once we&apos;re happy with our text, we can press <code>Ctrl-O</code> (press the Ctrl or Control key and, while
+holding it down, press the O key) to write our data to disk
+(we&apos;ll be asked what file we want to save this to:
+press Return to accept the suggested default of <code>draft.txt</code>).</p>
+<p><img src="fig/nano-screenshot.png" alt="Nano in Action"></p>
+<p>Once our file is saved, we can use <code>Ctrl-X</code> to quit the editor and
+return to the shell.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1347098787);" id="control-ctrl-or--key"><i class="fa fa-info-circle"></i> Control, Ctrl, or ^ Key<span id="heading-1347098787"></span></h3></div><div class="panel-body" id="panel-1347098787"><p>The Control key is also called the &quot;Ctrl&quot; key. There are various ways
+in which using the Control key may be described. For example, you may
+see an instruction to press the Control key and, while holding it down,
+press the X key, described as any of:</p>
+<ul>
+<li><code>Control-X</code></li>
+<li><code>Control+X</code></li>
+<li><code>Ctrl-X</code></li>
+<li><code>Ctrl+X</code></li>
+<li><code>^X</code></li>
+<li><code>C-x</code></li>
+</ul>
+<p>In nano, along the bottom of the screen you&apos;ll see <code>^G Get Help ^O WriteOut</code>.
+This means that you can use <code>Control-G</code> to get help and <code>Control-O</code> to save your
+file.</p>
+</div></div></p>
+<p><code>nano</code> doesn&apos;t leave any output on the screen after it exits,
+but <code>ls</code> now shows that we have created a file called <code>draft.txt</code>:</p>
+<pre><code class="lang-bash">$ ls
+</code></pre>
+<pre><code class="lang-output">draft.txt
+</code></pre>
+<p>Let&apos;s tidy up by running <code>rm draft.txt</code>:</p>
+<pre><code class="lang-bash">$ rm draft.txt
+</code></pre>
+<p>This command removes files (<code>rm</code> is short for &quot;remove&quot;).
+If we run <code>ls</code> again,
+its output is empty once more,
+which tells us that our file is gone:</p>
+<pre><code class="lang-bash">$ ls
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8781028143);" id="deleting-is-forever"><i class="fa fa-info-circle"></i> Deleting Is Forever<span id="heading-8781028143"></span></h3></div><div class="panel-body" id="panel-8781028143"><p>The Unix shell doesn&apos;t have a trash bin that we can recover deleted
+files from (though most graphical interfaces to Unix do).  Instead,
+when we delete files, they are unhooked from the file system so that
+their storage space on disk can be recycled. Tools for finding and
+recovering deleted files do exist, but there&apos;s no guarantee they&apos;ll
+work in any particular situation, since the computer may recycle the
+file&apos;s disk space right away.</p>
+</div></div></p>
+<p>Let&apos;s re-create that file
+and then move up one directory to <code>/Users/nelle/Desktop/data-shell</code> using <code>cd ..</code>:</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">pwd</span>
+</code></pre>
+<pre><code class="lang-output">/Users/nelle/Desktop/data-shell/thesis
+</code></pre>
+<pre><code class="lang-bash">$ nano draft.txt
+$ ls
+</code></pre>
+<pre><code class="lang-output">draft.txt
+</code></pre>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> ..
+</code></pre>
+<p>If we try to remove the entire <code>thesis</code> directory using <code>rm thesis</code>,
+we get an error message:</p>
+<pre><code class="lang-bash">$ rm thesis
+</code></pre>
+<pre><code class="lang-error">rm: cannot remove `thesis&apos;: Is a directory
+</code></pre>
+<p>This happens because <code>rm</code> by default only works on files, not directories.</p>
+<p>To really get rid of <code>thesis</code> we must also delete the file <code>draft.txt</code>.
+We can do this with the <a href="https://en.wikipedia.org/wiki/Recursion" target="_blank">recursive</a> option for <code>rm</code>:</p>
+<pre><code class="lang-bash">$ rm -r thesis
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8415612694);" id="with-great-power-comes-great-responsibility"><i class="fa fa-info-circle"></i> With Great Power Comes Great Responsibility<span id="heading-8415612694"></span></h3></div><div class="panel-body" id="panel-8415612694"><p>Removing the files in a directory recursively can be very dangerous
+operation. If we&apos;re concerned about what we might be deleting we can
+add the &quot;interactive&quot; flag <code>-i</code> to <code>rm</code> which will ask us for confirmation
+before each step</p>
+<pre><code class="lang-bash">$ rm -r -i thesis
+rm: descend into directory &#x2018;thesis&#x2019;? y
+rm: remove regular file &#x2018;thesis/draft.txt&#x2019;? y
+rm: remove directory &#x2018;thesis&#x2019;? y
+</code></pre>
+<p>This removes everything in the directory, then the directory itself, asking
+at each step for you to confirm the deletion.</p>
+</div></div></p>
+<p>Let&apos;s create that directory and file one more time.
+(Note that this time we&apos;re running <code>nano</code> with the path <code>thesis/draft.txt</code>,
+rather than going into the <code>thesis</code> directory and running <code>nano</code> on <code>draft.txt</code> there.)</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">pwd</span>
+</code></pre>
+<pre><code class="lang-output">/Users/nelle/Desktop/data-shell
+</code></pre>
+<pre><code class="lang-bash">$ mkdir thesis
+$ nano thesis/draft.txt
+$ ls thesis
+</code></pre>
+<pre><code class="lang-output">draft.txt
+</code></pre>
+<p><code>draft.txt</code> isn&apos;t a particularly informative name,
+so let&apos;s change the file&apos;s name using <code>mv</code>,
+which is short for &quot;move&quot;:</p>
+<pre><code class="lang-bash">$ mv thesis/draft.txt thesis/quotes.txt
+</code></pre>
+<p>The first argument tells <code>mv</code> what we&apos;re &quot;moving&quot;,
+while the second is where it&apos;s to go.
+In this case,
+we&apos;re moving <code>thesis/draft.txt</code> to <code>thesis/quotes.txt</code>,
+which has the same effect as renaming the file.
+Sure enough,
+<code>ls</code> shows us that <code>thesis</code> now contains one file called <code>quotes.txt</code>:</p>
+<pre><code class="lang-bash">$ ls thesis
+</code></pre>
+<pre><code class="lang-output">quotes.txt
+</code></pre>
+<p>One has to be careful when specifying the target file name, since <code>mv</code> will
+silently overwrite any existing file with the same name, which could
+lead to data loss. An additional flag, <code>mv -i</code> (or <code>mv --interactive</code>),
+can be used to make <code>mv</code> ask you for confirmation before overwriting.</p>
+<p>Just for the sake of consistency,
+<code>mv</code> also works on directories</p>
+<p>Let&apos;s move <code>quotes.txt</code> into the current working directory.
+We use <code>mv</code> once again,
+but this time we&apos;ll just use the name of a directory as the second argument
+to tell <code>mv</code> that we want to keep the filename,
+but put the file somewhere new.
+(This is why the command is called &quot;move&quot;.)
+In this case,
+the directory name we use is the special directory name <code>.</code> that we mentioned earlier.</p>
+<pre><code class="lang-bash">$ mv thesis/quotes.txt .
+</code></pre>
+<p>The effect is to move the file from the directory it was in to the current working directory.
+<code>ls</code> now shows us that <code>thesis</code> is empty:</p>
+<pre><code class="lang-bash">$ ls thesis
+</code></pre>
+<p>Further,
+<code>ls</code> with a filename or directory name as an argument only lists that file or directory.
+We can use this to see that <code>quotes.txt</code> is still in our current directory:</p>
+<pre><code class="lang-bash">$ ls quotes.txt
+</code></pre>
+<pre><code class="lang-output">quotes.txt
+</code></pre>
+<p>The <code>cp</code> command works very much like <code>mv</code>,
+except it copies a file instead of moving it.
+We can check that it did the right thing using <code>ls</code>
+with two paths as arguments --- like most Unix commands,
+<code>ls</code> can be given multiple paths at once:</p>
+<pre><code class="lang-bash">$ cp quotes.txt thesis/quotations.txt
+$ ls quotes.txt thesis/quotations.txt
+</code></pre>
+<pre><code class="lang-output">quotes.txt   thesis/quotations.txt
+</code></pre>
+<p>To prove that we made a copy,
+let&apos;s delete the <code>quotes.txt</code> file in the current directory
+and then run that same <code>ls</code> again.</p>
+<pre><code class="lang-bash">$ rm quotes.txt
+$ ls quotes.txt thesis/quotations.txt
+</code></pre>
+<pre><code class="lang-error">ls: cannot access quotes.txt: No such file or directory
+thesis/quotations.txt
+</code></pre>
+<p>This time it tells us that it can&apos;t find <code>quotes.txt</code> in the current directory,
+but it does find the copy in <code>thesis</code> that we didn&apos;t delete.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1603344349);" id="whats-in-a-name"><i class="fa fa-info-circle"></i> What&apos;s In A Name?<span id="heading-1603344349"></span></h3></div><div class="panel-body" id="panel-1603344349"><p>You may have noticed that all of Nelle&apos;s files&apos; names are &quot;something dot
+something&quot;, and in this part of the lesson, we always used the extension
+<code>.txt</code>.  This is just a convention: we can call a file <code>mythesis</code> or
+almost anything else we want. However, most people use two-part names
+most of the time to help them (and their programs) tell different kinds
+of files apart. The second part of such a name is called the
+<strong>filename extension</strong>, and indicates
+what type of data the file holds: <code>.txt</code> signals a plain text file, <code>.pdf</code>
+indicates a PDF document, <code>.cfg</code> is a configuration file full of parameters
+for some program or other, <code>.png</code> is a PNG image, and so on.</p>
+<p>This is just a convention, albeit an important one. Files contain
+bytes: it&apos;s up to us and our programs to interpret those bytes
+according to the rules for plain text files, PDF documents, configuration
+files, images, and so on.</p>
+<p>Naming a PNG image of a whale as <code>whale.mp3</code> doesn&apos;t somehow
+magically turn it into a recording of whalesong, though it <em>might</em>
+cause the operating system to try to open it with a music player
+when someone double-clicks it.</p>
+</div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(201263100);" id="renaming-files"><i class="fa fa-square-o"></i> Renaming Files<span id="heading-201263100"></span></h3></div><div class="panel-body" id="panel-201263100"><p>Suppose that you created a <code>.txt</code> file in your current directory to contain a list of the
+statistical tests you will need to do to analyze your data, and named it: <code>statstics.txt</code></p>
+<p>After creating and saving this file you realize you misspelled the filename! You want to
+correct the mistake, which of the following commands could you use to do so?</p>
+<ol>
+<li><code>cp statstics.txt statistics.txt</code></li>
+<li><code>mv statstics.txt statistics.txt</code></li>
+<li><code>mv statstics.txt .</code></li>
+<li><code>cp statstics.txt .</code></li>
+</ol>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5338950342);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-5338950342">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-5338950342"><ol>
+<li>No.  While this would create a file with the correct name, the incorrectly named file still exists in the directory
+and would need to be deleted.</li>
+<li>Yes, this would work to rename the file.</li>
+<li>No, the period(.) indicates where to move the file, but does not provide a new file name; identical file names
+cannot be created.</li>
+<li>No, the period(.) indicates where to copy the file, but does not provide a new file name; identical file names
+cannot be created.</li>
+</ol>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7162303603);" id="moving-and-copying"><i class="fa fa-square-o"></i> Moving and Copying<span id="heading-7162303603"></span></h3></div><div class="panel-body" id="panel-7162303603"><p>What is the output of the closing <code>ls</code> command in the sequence shown below?</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">pwd</span>
+</code></pre>
+<pre><code class="lang-output">/Users/jamie/data
+</code></pre>
+<pre><code class="lang-bash">$ ls
+</code></pre>
+<pre><code class="lang-output">proteins.dat
+</code></pre>
+<pre><code class="lang-bash">$ mkdir recombine
+$ mv proteins.dat recombine
+$ cp recombine/proteins.dat ../proteins-saved.dat
+$ ls
+</code></pre>
+<ol>
+<li><code>proteins-saved.dat recombine</code></li>
+<li><code>recombine</code></li>
+<li><code>proteins.dat recombine</code></li>
+<li><code>proteins-saved.dat</code></li>
+</ol>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9853448513);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-9853448513">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-9853448513"><p>We start in the <code>/Users/jamie/data</code> directory, and create a new folder called <code>recombine</code>.
+The second line moves (<code>mv</code>) the file <code>proteins.dat</code> to the new folder (<code>recombine</code>).
+The third line makes a copy of the file we just moved.  The tricky part here is where the file was
+copied to.  Recall that <code>..</code> means &quot;go up a level&quot;, so the copied file is now in <code>/Users/jamie</code>.
+Notice that <code>..</code> is interpreted with respect to the current working
+directory, <strong>not</strong> with respect to the location of the file being copied.
+So, the only thing that will show using ls (in <code>/Users/jamie/data</code>) is the recombine folder.</p>
+<ol>
+<li>No, see explanation above.  <code>proteins-saved.dat</code> is located at <code>/Users/jamie</code></li>
+<li>Yes</li>
+<li>No, see explanation above.  <code>proteins.dat</code> is located at <code>/Users/jamie/data/recombine</code></li>
+<li>No, see explanation above.  <code>proteins-saved.dat</code> is located at <code>/Users/jamie</code></li>
+</ol>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(131737308);" id="organizing-directories-and-files"><i class="fa fa-square-o"></i> Organizing Directories and Files<span id="heading-131737308"></span></h3></div><div class="panel-body" id="panel-131737308"><p>Jamie is working on a project and she sees that her files aren&apos;t very well
+organized:</p>
+<pre><code class="lang-bash">$ ls -F
+</code></pre>
+<pre><code class="lang-output">analyzed/  fructose.dat    raw/   sucrose.dat
+</code></pre>
+<p>The <code>fructose.dat</code> and <code>sucrose.dat</code> files contain output from her data
+analysis. What command(s) covered in this lesson does she need to run so that the commands below will
+produce the output shown?</p>
+<pre><code class="lang-bash">$ ls -F
+</code></pre>
+<pre><code class="lang-output">analyzed/   raw/
+</code></pre>
+<pre><code class="lang-bash">$ ls analyzed
+</code></pre>
+<pre><code class="lang-output">fructose.dat    sucrose.dat
+</code></pre>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4815723262);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-4815723262">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-4815723262"><pre><code>mv *.dat analyzed
+</code></pre><p>{: .bash}
+Jamie needs to move her files <code>fructose.dat</code> and <code>sucrose.dat</code> to the <code>analyzed</code> directory.
+The shell will expand *.dat to match all .dat files in the current directory.
+The <code>mv</code> command then moves the list of .dat files to the &quot;analyzed&quot; directory.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8235529200);" id="copy-with-multiple-filenames"><i class="fa fa-square-o"></i> Copy with Multiple Filenames<span id="heading-8235529200"></span></h3></div><div class="panel-body" id="panel-8235529200"><p>For this exercise, you can test the commands in the <code>data-shell/data directory</code>.</p>
+<p>In the example below, what does <code>cp</code> do when given several filenames and a directory name?</p>
+<pre><code class="lang-bash">$ mkdir backup
+$ cp amino-acids.txt animals.txt backup/
+</code></pre>
+<p>In the example below, what does <code>cp</code> do when given three or more file names?</p>
+<pre><code class="lang-bash">$ ls -F
+</code></pre>
+<pre><code class="lang-output">amino-acids.txt  animals.txt  backup/  elements/  morse.txt  pdb/  planets.txt  salmon.txt  sunspot.txt
+</code></pre>
+<pre><code class="lang-bash">$ cp amino-acids.txt animals.txt morse.txt
+</code></pre>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2268004291);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-2268004291">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-2268004291"><p>If given more than one file name followed by a directory name (i.e. the destination directory must
+be the last argument), <code>cp</code> copies the files to the named directory.</p>
+<p>If given three file names, <code>cp</code> throws an error because it is expecting a directory
+name as the last argument.</p>
+<pre><code>cp: target &#x2018;morse.txt&#x2019; is not a directory
+</code></pre><p>{: .output}</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9715327543);" id="listing-recursively-and-by-time"><i class="fa fa-square-o"></i> Listing Recursively and By Time<span id="heading-9715327543"></span></h3></div><div class="panel-body" id="panel-9715327543"><p>The command <code>ls -R</code> lists the contents of directories recursively,
+i.e., lists their sub-directories, sub-sub-directories, and so on
+in alphabetical order at each level.
+The command <code>ls -t</code> lists things by time of last change,
+with most recently changed files or directories first.
+In what order does <code>ls -R -t</code> display things?</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2407788642);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-2407788642">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-2407788642"><p>The command <code>ls -R -t</code> displays the directories recursively in
+chronological order at each level, and the files in each directory
+are displayed chronologically.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8067625535);" id="creating-files-a-different-way"><i class="fa fa-square-o"></i> Creating Files a Different Way<span id="heading-8067625535"></span></h3></div><div class="panel-body" id="panel-8067625535"><p>We have seen how to create text files using the <code>nano</code> editor.
+Now, try the following command in your home directory:</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span>                  <span class="hljs-comment"># go to your home directory</span>
+$ touch my_file.txt
+</code></pre>
+<ol>
+<li><p>What did the touch command do?
+When you look at your home directory using the GUI file explorer,
+does the file show up?</p>
+</li>
+<li><p>Use <code>ls -l</code> to inspect the files.  How large is <code>my_file.txt</code>?</p>
+</li>
+<li><p>When might you want to create a file this way?</p>
+</li>
+</ol>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1823595218);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-1823595218">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-1823595218"><ol>
+<li><p>The touch command generates a new file called &apos;my_file.txt&apos; in
+your home directory.  If you are in your home directory, you
+can observe this newly generated file by typing &apos;ls&apos; at the
+command line prompt.  &apos;my_file.txt&apos; can also be viewed in your
+GUI file explorer.</p>
+</li>
+<li><p>When you inspect the file with &apos;ls -l&apos;, note that the size of
+&apos;my_file.txt&apos; is 0kb.  In other words, it contains no data.
+If you open &apos;my_file.txt&apos; using your text editor it is blank.</p>
+</li>
+<li><p>Some programs do not generate output files themselves, but
+instead require that empty files have already been generated.
+When the program is run, it searches for an existing file to
+populate with its output.  The touch command allows you to
+efficiently generate a blank text file to be used by such
+programs.</p>
+</li>
+</ol>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9173498727);" id="moving-to-the-current-folder"><i class="fa fa-square-o"></i> Moving to the Current Folder<span id="heading-9173498727"></span></h3></div><div class="panel-body" id="panel-9173498727"><p>After running the following commands,
+Jamie realizes that she put the files <code>sucrose.dat</code> and <code>maltose.dat</code> into the wrong folder:</p>
+<pre><code class="lang-bash">$ ls -F
+raw/ analyzed/
+$ ls -F analyzed
+fructose.dat glucose.dat maltose.dat sucrose.dat
+$ <span class="hljs-built_in">cd</span> raw/
+</code></pre>
+<p>Fill in the blanks to move these files to the current folder
+(i.e., the one she is currently in):</p>
+<pre><code class="lang-bash">$ mv ___/sucrose.dat  ___/maltose.dat ___
+</code></pre>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7075244193);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-7075244193">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-7075244193"><pre><code>$ mv ../analyzed/sucrose.dat ../analyzed/maltose.dat .
+</code></pre><p>{: .bash}
+Recall that <code>..</code> refers to the parent directory (i.e. one above the current directory)
+and that <code>.</code> refers to the current directory.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8798599366);" id="using-rm-safely"><i class="fa fa-square-o"></i> Using <code>rm</code> Safely<span id="heading-8798599366"></span></h3></div><div class="panel-body" id="panel-8798599366"><p>What happens when we type <code>rm -i thesis/quotations.txt</code>?
+Why would we want this protection when using <code>rm</code>?</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4258070305);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-4258070305">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-4258070305"><pre><code>$ rm: remove regular file &apos;thesis/quotations.txt&apos;?
+</code></pre><p>{: .bash}
+The -i option will prompt before every removal.
+The Unix shell doesn&apos;t have a trash bin, so all the files removed will disappear forever.
+By using the -i flag, we have the chance to check that we are deleting only the files that we want to remove.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4827614074);" id="copy-a-folder-structure-sans-files"><i class="fa fa-square-o"></i> Copy a folder structure sans files<span id="heading-4827614074"></span></h3></div><div class="panel-body" id="panel-4827614074"><p>You&apos;re starting a new experiment, and would like to duplicate the file
+structure from your previous experiment without the data files so you can
+add new data.</p>
+<p>Assume that the file structure is in a folder called &apos;2016-05-18-data&apos;,
+which contains a <code>data</code> folder that in turn contains folders named <code>raw</code> and
+<code>processed</code> that contain data files.  The goal is to copy the file structure
+of the <code>2016-05-18-data</code> folder into a folder called <code>2016-05-20-data</code> and
+remove the data files from the directory you just created.</p>
+<p>Which of the following set of commands would achieve this objective?
+What would the other commands do?</p>
+<pre><code class="lang-bash">$ cp -r 2016-05-18-data/ 2016-05-20-data/
+$ rm 2016-05-20-data/raw/*
+$ rm 2016-05-20-data/processed/*
+</code></pre>
+<pre><code class="lang-bash">$ rm 2016-05-20-data/raw/*
+$ rm 2016-05-20-data/processed/*
+$ cp -r 2016-05-18-data/ 2016-5-20-data/
+</code></pre>
+<pre><code class="lang-bash">$ cp -r 2016-05-18-data/ 2016-05-20-data/
+$ rm -r -i 2016-05-20-data/
+</code></pre>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7647799665);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-7647799665">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-7647799665"><p>The first set of commands achieves this objective.
+First we have a recursive copy of a data folder.
+Then two <code>rm</code> commands which remove all files in the specified directories.
+The shell expands the &apos;*&apos; wild card to match all files and subdirectories.</p>
+<p>The second set of commands have the wrong order:
+attempting to delete files which haven&apos;t yet been copied,
+followed by the recursive copy command which would copy them.</p>
+<p>The third set of commands would achieve the objective, but in a time-consuming way:
+the first command copies the directory recursively, but the second command deletes
+interactively, prompting for confirmation for each file and directory.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(136810260);" id="key-points"><i class="fa fa-key"></i> Key Points<span id="heading-136810260"></span></h3></div><div class="panel-body" id="panel-136810260"><ul>
+<li><code>cp old new</code> copies a file.</li>
+<li><code>mkdir path</code> creates a new directory.</li>
+<li><code>mv old new</code> moves (renames) a file or directory.</li>
+<li><code>rm path</code> removes (deletes) a file.</li>
+<li>Use of the Control key may be described in many ways, including <code>Ctrl-X</code>, <code>Control-X</code>, and <code>^X</code>.</li>
+</ul>
+</div></div></p>
+<div class="ba-right"><p><a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">CC BY 4.0</a> - Based on <a href="https://github.com/swcarpentry/shell-novice" target="_blank">shell-novice</a> &#xA9; 2016&#x2013;2017 Software Carpentry Foundation</p></div>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-filedir.html" class="navigation navigation-prev " aria-label="Previous page: Navigating Files and Directories">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04-pipefilter.html" class="navigation navigation-next " aria-label="Next page: Pipes and Filters">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Working With Files and Directories","level":"3.1.2","depth":2,"next":{"title":"Pipes and Filters","level":"3.1.3","depth":2,"path":"shell/04-pipefilter.md","ref":"shell/04-pipefilter.md","articles":[]},"previous":{"title":"Navigating Files and Directories","level":"3.1.1","depth":2,"path":"shell/02-filedir.md","ref":"shell/02-filedir.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"shell/03-create.md","mtime":"2018-11-26T12:26:23.705Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

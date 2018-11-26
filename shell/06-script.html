@@ -1,0 +1,1238 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Shell Scripts · LHCb analysis essentials</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="07-find.html" />
+    
+    
+    <link rel="prev" href="05-loop.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="../python/first_histogram.html">
+            
+                <a href="../python/first_histogram.html">
+            
+                    
+                    Making your first histogram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="../python/further_reading.html">
+            
+                <a href="../python/further_reading.html">
+            
+                    
+                    Further reading
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introducing the Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="02-filedir.html">
+            
+                <a href="02-filedir.html">
+            
+                    
+                    Navigating Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="03-create.html">
+            
+                <a href="03-create.html">
+            
+                    
+                    Working With Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="04-pipefilter.html">
+            
+                <a href="04-pipefilter.html">
+            
+                    
+                    Pipes and Filters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="05-loop.html">
+            
+                <a href="05-loop.html">
+            
+                    
+                    Loops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.5" data-path="06-script.html">
+            
+                <a href="06-script.html">
+            
+                    
+                    Shell Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="07-find.html">
+            
+                <a href="07-find.html">
+            
+                    
+                    Finding Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
+            
+                <a href="../shell-extras/">
+            
+                    
+                    Shell extras
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
+            
+                <a href="../shell-extras/screen.html">
+            
+                    
+                    Using screen to keep things running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
+            
+                <a href="../shell-extras/screen2.html">
+            
+                    
+                    Advanced screen topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
+            
+                <a href="../shell-extras/persistent-screen.html">
+            
+                    
+                    Persistent screen or tmux session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
+            
+                <a href="../shell-extras/shell2.html">
+            
+                    
+                    Advanced shell topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../git/">
+            
+                <a href="../git/">
+            
+                    
+                    Version control with Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../git/01-basics.html">
+            
+                <a href="../git/01-basics.html">
+            
+                    
+                    Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../git/02-setup.html">
+            
+                <a href="../git/02-setup.html">
+            
+                    
+                    Setting Up Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../git/03-create.html">
+            
+                <a href="../git/03-create.html">
+            
+                    
+                    Creating a Repository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../git/04-changes.html">
+            
+                <a href="../git/04-changes.html">
+            
+                    
+                    Tracking Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="../git/05-history.html">
+            
+                <a href="../git/05-history.html">
+            
+                    
+                    Exploring History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="../git/06-ignore.html">
+            
+                <a href="../git/06-ignore.html">
+            
+                    
+                    Ignoring Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="../git/07-gitlab.html">
+            
+                <a href="../git/07-gitlab.html">
+            
+                    
+                    Remotes in CERN GitLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.8" data-path="../git/08-share.html">
+            
+                <a href="../git/08-share.html">
+            
+                    
+                    Sharing a repository with others
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.9" data-path="../git/09-pullrequests.html">
+            
+                <a href="../git/09-pullrequests.html">
+            
+                    
+                    Collaborating with Pull Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="../git/10-conflict.html">
+            
+                <a href="../git/10-conflict.html">
+            
+                    
+                    Conflicts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.11" data-path="../git/11-ci.html">
+            
+                <a href="../git/11-ci.html">
+            
+                    
+                    GitLab CI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.12" data-path="../git/12-open.html">
+            
+                <a href="../git/12-open.html">
+            
+                    
+                    Open Science
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.13" data-path="../git/13-licensing.html">
+            
+                <a href="../git/13-licensing.html">
+            
+                    
+                    Licensing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.14" data-path="../git/14-citation.html">
+            
+                <a href="../git/14-citation.html">
+            
+                    
+                    Citation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <a target="_blank" href="ref://analysis-essentials.pdf">
+            
+                    
+                    Download PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Shell Scripts</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="shell-scripts">Shell Scripts</h1>
+<p><div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(175112933);" id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives<span id="heading-175112933"></span></h3></div><div class="panel-body" id="panel-175112933"><ul>
+<li>Write a shell script that runs a command or series of commands for a fixed set of files.</li>
+<li>Run a shell script from the command line.</li>
+<li>Write a shell script that operates on a set of files defined by the user on the command line.</li>
+<li>Create pipelines that include shell scripts you, and others, have written.</li>
+</ul>
+</div></div></p>
+<p>We are finally ready to see what makes the shell such a powerful programming environment.
+We are going to take the commands we repeat frequently and save them in files
+so that we can re-run all those operations again later by typing a single command.
+For historical reasons,
+a bunch of commands saved in a file is usually called a <strong>shell script</strong>,
+but make no mistake:
+these are actually small programs.</p>
+<p>Let&apos;s start by going back to <code>molecules/</code> and creating a new file, <code>middle.sh</code> which will
+become our shell script:</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> molecules
+$ nano middle.sh
+</code></pre>
+<p>The command <code>nano middle.sh</code> opens the file <code>middle.sh</code> within the text editor &quot;nano&quot;
+(which runs within the shell).
+If the file does not exist, it will be created.
+We can use the text editor to directly edit the file -- we&apos;ll simply insert the following line:</p>
+<pre><code class="lang-source">head -n 15 octane.pdb | tail -n 5
+</code></pre>
+<p>This is a variation on the pipe we constructed earlier:
+it selects lines 11-15 of the file <code>octane.pdb</code>.
+Remember, we are <em>not</em> running it as a command just yet:
+we are putting the commands in a file.</p>
+<p>Then we save the file (<code>Ctrl-O</code> in nano),
+ and exit the text editor (<code>Ctrl-X</code> in nano).
+Check that the directory <code>molecules</code> now contains a file called <code>middle.sh</code>.</p>
+<p>Once we have saved the file,
+we can ask the shell to execute the commands it contains.
+Our shell is called <code>bash</code>, so we run the following command:</p>
+<pre><code class="lang-bash">$ bash middle.sh
+</code></pre>
+<pre><code class="lang-output">ATOM      9  H           1      -4.502   0.681   0.785  1.00  0.00
+ATOM     10  H           1      -5.254  -0.243  -0.537  1.00  0.00
+ATOM     11  H           1      -4.357   1.252  -0.895  1.00  0.00
+ATOM     12  H           1      -3.009  -0.741  -1.467  1.00  0.00
+ATOM     13  H           1      -3.172  -1.337   0.206  1.00  0.00
+</code></pre>
+<p>Sure enough,
+our script&apos;s output is exactly what we would get if we ran that pipeline directly.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(416411626);" id="text-vs-whatever"><i class="fa fa-info-circle"></i> Text vs. Whatever<span id="heading-416411626"></span></h3></div><div class="panel-body" id="panel-416411626"><p>We usually call programs like Microsoft Word or LibreOffice Writer &quot;text
+editors&quot;, but we need to be a bit more careful when it comes to
+programming. By default, Microsoft Word uses <code>.docx</code> files to store not
+only text, but also formatting information about fonts, headings, and so
+on. This extra information isn&apos;t stored as characters, and doesn&apos;t mean
+anything to tools like <code>head</code>: they expect input files to contain
+nothing but the letters, digits, and punctuation on a standard computer
+keyboard. When editing programs, therefore, you must either use a plain
+text editor, or be careful to save files as plain text.</p>
+</div></div></p>
+<p>What if we want to select lines from an arbitrary file?
+We could edit <code>middle.sh</code> each time to change the filename,
+but that would probably take longer than just retyping the command.
+Instead, let&apos;s edit <code>middle.sh</code> and make it more versatile:</p>
+<pre><code class="lang-bash">$ nano middle.sh
+</code></pre>
+<p>Now, within &quot;nano&quot;, replace the text <code>octane.pdb</code> with the special variable called <code>$1</code>:</p>
+<pre><code class="lang-output">head -n 15 &quot;$1&quot; | tail -n 5
+</code></pre>
+<p>Inside a shell script,
+<code>$1</code> means &quot;the first filename (or other argument) on the command line&quot;.
+We can now run our script like this:</p>
+<pre><code class="lang-bash">$ bash middle.sh octane.pdb
+</code></pre>
+<pre><code class="lang-output">ATOM      9  H           1      -4.502   0.681   0.785  1.00  0.00
+ATOM     10  H           1      -5.254  -0.243  -0.537  1.00  0.00
+ATOM     11  H           1      -4.357   1.252  -0.895  1.00  0.00
+ATOM     12  H           1      -3.009  -0.741  -1.467  1.00  0.00
+ATOM     13  H           1      -3.172  -1.337   0.206  1.00  0.00
+</code></pre>
+<p>or on a different file like this:</p>
+<pre><code class="lang-bash">$ bash middle.sh pentane.pdb
+</code></pre>
+<pre><code class="lang-output">ATOM      9  H           1       1.324   0.350  -1.332  1.00  0.00
+ATOM     10  H           1       1.271   1.378   0.122  1.00  0.00
+ATOM     11  H           1      -0.074  -0.384   1.288  1.00  0.00
+ATOM     12  H           1      -0.048  -1.362  -0.205  1.00  0.00
+ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7233220553);" id="double-quotes-around-arguments"><i class="fa fa-info-circle"></i> Double-Quotes Around Arguments<span id="heading-7233220553"></span></h3></div><div class="panel-body" id="panel-7233220553"><p>For the same reason that we put the loop variable inside double-quotes,
+in case the filename happens to contain any spaces,
+we surround <code>$1</code> with double-quotes.</p>
+</div></div></p>
+<p>We still need to edit <code>middle.sh</code> each time we want to adjust the range of lines,
+though.
+Let&apos;s fix that by using the special variables <code>$2</code> and <code>$3</code> for the
+number of lines to be passed to <code>head</code> and <code>tail</code> respectively:</p>
+<pre><code class="lang-bash">$ nano middle.sh
+</code></pre>
+<pre><code class="lang-output">head -n &quot;$2&quot; &quot;$1&quot; | tail -n &quot;$3&quot;
+</code></pre>
+<p>We can now run:</p>
+<pre><code class="lang-bash">$ bash middle.sh pentane.pdb 15 5
+</code></pre>
+<pre><code class="lang-output">ATOM      9  H           1       1.324   0.350  -1.332  1.00  0.00
+ATOM     10  H           1       1.271   1.378   0.122  1.00  0.00
+ATOM     11  H           1      -0.074  -0.384   1.288  1.00  0.00
+ATOM     12  H           1      -0.048  -1.362  -0.205  1.00  0.00
+ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00
+</code></pre>
+<p>By changing the arguments to our command we can change our script&apos;s
+behaviour:</p>
+<pre><code class="lang-bash">$ bash middle.sh pentane.pdb 20 5
+</code></pre>
+<pre><code class="lang-output">ATOM     14  H           1      -1.259   1.420   0.112  1.00  0.00
+ATOM     15  H           1      -2.608  -0.407   1.130  1.00  0.00
+ATOM     16  H           1      -2.540  -1.303  -0.404  1.00  0.00
+ATOM     17  H           1      -3.393   0.254  -0.321  1.00  0.00
+TER      18              1
+</code></pre>
+<p>This works,
+but it may take the next person who reads <code>middle.sh</code> a moment to figure out what it does.
+We can improve our script by adding some <strong>comments</strong> at the top:</p>
+<pre><code class="lang-bash">$ nano middle.sh
+</code></pre>
+<pre><code class="lang-output"># Select lines from the middle of a file.
+# Usage: bash middle.sh filename end_line num_lines
+head -n &quot;$2&quot; &quot;$1&quot; | tail -n &quot;$3&quot;
+</code></pre>
+<p>A comment starts with a <code>#</code> character and runs to the end of the line.
+The computer ignores comments,
+but they&apos;re invaluable for helping people (including your future self) understand and use scripts.
+The only caveat is that each time you modify the script,
+you should check that the comment is still accurate:
+an explanation that sends the reader in the wrong direction is worse than none at all.</p>
+<p>What if we want to process many files in a single pipeline?
+For example, if we want to sort our <code>.pdb</code> files by length, we would type:</p>
+<pre><code class="lang-bash">$ wc <span class="hljs-_">-l</span> *.pdb | sort -n
+</code></pre>
+<p>because <code>wc -l</code> lists the number of lines in the files
+(recall that <code>wc</code> stands for &apos;word count&apos;, adding the <code>-l</code> flag means &apos;count lines&apos; instead)
+and <code>sort -n</code> sorts things numerically.
+We could put this in a file,
+but then it would only ever sort a list of <code>.pdb</code> files in the current directory.
+If we want to be able to get a sorted list of other kinds of files,
+we need a way to get all those names into the script.
+We can&apos;t use <code>$1</code>, <code>$2</code>, and so on
+because we don&apos;t know how many files there are.
+Instead, we use the special variable <code>$@</code>,
+which means,
+&quot;All of the command-line arguments to the shell script.&quot;
+We also should put <code>$@</code> inside double-quotes
+to handle the case of arguments containing spaces
+(<code>&quot;$@&quot;</code> is equivalent to <code>&quot;$1&quot;</code> <code>&quot;$2&quot;</code> ...)
+Here&apos;s an example:</p>
+<pre><code class="lang-bash">$ nano sorted.sh
+</code></pre>
+<pre><code class="lang-output"># Sort filenames by their length.
+# Usage: bash sorted.sh one_or_more_filenames
+wc -l &quot;$@&quot; | sort -n
+</code></pre>
+<pre><code class="lang-bash">$ bash sorted.sh *.pdb ../creatures/*.dat
+</code></pre>
+<pre><code class="lang-output">9 methane.pdb
+12 ethane.pdb
+15 propane.pdb
+20 cubane.pdb
+21 pentane.pdb
+30 octane.pdb
+163 ../creatures/basilisk.dat
+163 ../creatures/unicorn.dat
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2121423956);" id="why-isnt-it-doing-anything"><i class="fa fa-info-circle"></i> Why Isn&apos;t It Doing Anything?<span id="heading-2121423956"></span></h3></div><div class="panel-body" id="panel-2121423956"><p>What happens if a script is supposed to process a bunch of files, but we
+don&apos;t give it any filenames? For example, what if we type:</p>
+<pre><code class="lang-bash">$ bash sorted.sh
+</code></pre>
+<p>but don&apos;t say <code>*.dat</code> (or anything else)? In this case, <code>$@</code> expands to
+nothing at all, so the pipeline inside the script is effectively:</p>
+<pre><code class="lang-bash">$ wc <span class="hljs-_">-l</span> | sort -n
+</code></pre>
+<p>Since it doesn&apos;t have any filenames, <code>wc</code> assumes it is supposed to
+process standard input, so it just sits there and waits for us to give
+it some data interactively. From the outside, though, all we see is it
+sitting there: the script doesn&apos;t appear to do anything.</p>
+</div></div></p>
+<p>Suppose we have just run a series of commands that did something useful --- for example,
+that created a graph we&apos;d like to use in a paper.
+We&apos;d like to be able to re-create the graph later if we need to,
+so we want to save the commands in a file.
+Instead of typing them in again
+(and potentially getting them wrong)
+we can do this:</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">history</span> | tail -n 5 &gt; redo-figure-3.sh
+</code></pre>
+<p>The file <code>redo-figure-3.sh</code> now contains:</p>
+<pre><code class="lang-source">297 bash goostats NENE01729B.txt stats-NENE01729B.txt
+298 bash goodiff stats-NENE01729B.txt /data/validated/01729.txt &gt; 01729-differences.txt
+299 cut -d &apos;,&apos; -f 2-3 01729-differences.txt &gt; 01729-time-series.txt
+300 ygraph --format scatter --color bw --borders none 01729-time-series.txt figure-3.png
+301 history | tail -n 5 &gt; redo-figure-3.sh
+</code></pre>
+<p>(<code>goostats</code> is a shell script which calculates some complicated statistics from a protein sample file -- the first argument -- and writes them to a file -- the second argument.
+<code>goodiff</code>is a shell script for comparing statistics between two files, provides as arguments. Nelle&apos;s supervisor provided them without too many explanations.)</p>
+<p>After a moment&apos;s work in an editor to remove the serial numbers on the commands,
+and to remove the final line where we called the <code>history</code> command,
+we have a completely accurate record of how we created that figure.</p>
+<p>In practice, most people develop shell scripts by running commands at the shell prompt a few times
+to make sure they&apos;re doing the right thing,
+then saving them in a file for re-use.
+This style of work allows people to recycle
+what they discover about their data and their workflow with one call to <code>history</code>
+and a bit of editing to clean up the output
+and save it as a shell script.</p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(120070465);" id="nelles-pipeline-creating-a-script"><i class="fa fa-square-o"></i> Nelle&apos;s Pipeline: Creating a Script<span id="heading-120070465"></span></h3></div><div class="panel-body" id="panel-120070465"><p>Nelle&apos;s supervisor insisted that all her analytics must be reproducible. The easiest way to capture all the steps is in a script.
+She runs the editor and writes the following:</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># Calculate stats for data files.</span>
+<span class="hljs-keyword">for</span> datafile <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>
+<span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$datafile</span>
+    bash goostats <span class="hljs-variable">$datafile</span> stats-<span class="hljs-variable">$datafile</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<p>She saves this in a file called <code>do-stats.sh</code>
+so that she can now re-do the first stage of her analysis by typing:</p>
+<pre><code class="lang-bash">$ bash <span class="hljs-keyword">do</span>-stats.sh *[AB].txt
+</code></pre>
+<p>She can also do this:</p>
+<pre><code class="lang-bash">$ bash <span class="hljs-keyword">do</span>-stats.sh *[AB].txt | wc <span class="hljs-_">-l</span>
+</code></pre>
+<p>so that the output is just the number of files processed
+rather than the names of the files that were processed.</p>
+<p>One thing to note about Nelle&apos;s script is that
+it lets the person running it decide what files to process.
+She could have written it as:</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># Calculate stats for Site A and Site B data files.</span>
+<span class="hljs-keyword">for</span> datafile <span class="hljs-keyword">in</span> *[AB].txt
+<span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$datafile</span>
+    bash goostats <span class="hljs-variable">$datafile</span> stats-<span class="hljs-variable">$datafile</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<p>The advantage is that this always selects the right files:
+she doesn&apos;t have to remember to exclude the &apos;Z&apos; files.
+The disadvantage is that it <em>always</em> selects just those files --- she can&apos;t run it on all files
+(including the &apos;Z&apos; files),
+or on the &apos;G&apos; or &apos;H&apos; files her colleagues in Antarctica are producing,
+without editing the script.
+If she wanted to be more adventurous,
+she could modify her script to check for command-line arguments,
+and use <code>*[AB].txt</code> if none were provided.
+Of course, this introduces another tradeoff between flexibility and complexity.</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7190997498);" id="variables-in-shell-scriptsclick-to-expand"><i class="fa fa-line-chart"></i> Variables in Shell Scripts<span id="heading-7190997498">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-7190997498"><p>In the <code>molecules</code> directory, imagine you have a shell script called <code>script.sh</code> containing the
+following commands:</p>
+<pre><code class="lang-bash">head -n <span class="hljs-variable">$2</span> <span class="hljs-variable">$1</span>
+tail -n <span class="hljs-variable">$3</span> <span class="hljs-variable">$1</span>
+</code></pre>
+<p>While you are in the <code>molecules</code> directory, you type the following command:</p>
+<pre><code class="lang-bash">bash script.sh <span class="hljs-string">&apos;*.pdb&apos;</span> 1 1
+</code></pre>
+<p>Which of the following outputs would you expect to see?</p>
+<ol>
+<li>All of the lines between the first and the last lines of each file ending in <code>.pdb</code>
+in the <code>molecules</code> directory</li>
+<li>The first and the last line of each file ending in <code>.pdb</code> in the <code>molecules</code> directory</li>
+<li>The first and the last line of each file in the <code>molecules</code> directory</li>
+<li>An error because of the quotes around <code>*.pdb</code></li>
+</ol>
+<h2 id="solution">Solution</h2>
+<p>The correct answer is 2.</p>
+<p>The special variables $1, $2 and $3 represent the command line arguments given to the
+script, such that the commands run are:</p>
+<pre><code>$ head -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
+$ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
+</code></pre><p>{: .bash}
+The shell does not expand <code>&apos;*.pdb&apos;</code> because it is enclosed by quote marks.
+As such, the first argument to the script is <code>&apos;*.pdb&apos;</code> which gets expanded within the
+script by <code>head</code> and <code>tail</code>.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8102525912);" id="list-unique-species"><i class="fa fa-square-o"></i> List Unique Species<span id="heading-8102525912"></span></h3></div><div class="panel-body" id="panel-8102525912"><p>Leah has several hundred data files, each of which is formatted like this:</p>
+<pre><code class="lang-source">2013-11-05,deer,5
+2013-11-05,rabbit,22
+2013-11-05,raccoon,7
+2013-11-06,rabbit,19
+2013-11-06,deer,2
+2013-11-06,fox,1
+2013-11-07,rabbit,18
+2013-11-07,bear,1
+</code></pre>
+<p>An example of this type of file is given in <code>data-shell/data/animal-counts/animals.txt</code>.</p>
+<p>Write a shell script called <code>species.sh</code> that takes any number of
+filenames as command-line arguments, and uses <code>cut</code>, <code>sort</code>, and
+<code>uniq</code> to print a list of the unique species appearing in each of
+those files separately.</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8437298814);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-8437298814">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-8437298814"><pre><code># Script to find unique species in csv files where species is the second data field
+# This script accepts any number of file names as command line arguments
+
+# Loop over all files
+for file in $@
+do
+    echo &quot;Unique species in $file:&quot;
+    # Extract species names
+    cut -d , -f 2 $file | sort | uniq
+done
+</code></pre><p>{: .source}</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8292480421);" id="find-the-longest-file-with-a-given-extension"><i class="fa fa-square-o"></i> Find the Longest File With a Given Extension<span id="heading-8292480421"></span></h3></div><div class="panel-body" id="panel-8292480421"><p>Write a shell script called <code>longest.sh</code> that takes the name of a
+directory and a filename extension as its arguments, and prints
+out the name of the file with the most lines in that directory
+with that extension. For example:</p>
+<pre><code class="lang-bash">$ bash longest.sh /tmp/data pdb
+</code></pre>
+<p>would print the name of the <code>.pdb</code> file in <code>/tmp/data</code> that has
+the most lines.</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8547233179);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-8547233179">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-8547233179"><pre><code># Shell script which takes two arguments:
+#    1. a directory name
+#    2. a file extension
+# and prints the name of the file in that directory
+# with the most lines which matches the file extension.
+
+wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
+</code></pre><p>{: .source}</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9400124439);" id="why-record-commands-in-the-history-before-running-them"><i class="fa fa-square-o"></i> Why Record Commands in the History Before Running Them?<span id="heading-9400124439"></span></h3></div><div class="panel-body" id="panel-9400124439"><p>If you run the command:</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">history</span> | tail -n 5 &gt; recent.sh
+</code></pre>
+<p>the last command in the file is the <code>history</code> command itself, i.e.,
+the shell has added <code>history</code> to the command log before actually
+running it. In fact, the shell <em>always</em> adds commands to the log
+before running them. Why do you think it does this?</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1771821575);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-1771821575">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-1771821575"><p>If a command causes something to crash or hang, it might be useful
+to know what that command was, in order to investigate the problem.
+Were the command only be recorded after running it, we would not
+have a record of the last command run in the event of a crash.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2607379068);" id="script-reading-comprehension"><i class="fa fa-square-o"></i> Script Reading Comprehension<span id="heading-2607379068"></span></h3></div><div class="panel-body" id="panel-2607379068"><p>For this question, consider the <code>data-shell/molecules</code> directory once again.
+This contains a number of <code>.pdb</code> files in addition to any other files you
+may have created.
+Explain what a script called <code>example.sh</code> would do when run as
+<code>bash example.sh *.pdb</code> if it contained the following lines:</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># Script 1</span>
+<span class="hljs-built_in">echo</span> *.*
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-comment"># Script 2</span>
+<span class="hljs-keyword">for</span> filename <span class="hljs-keyword">in</span> <span class="hljs-variable">$1</span> <span class="hljs-variable">$2</span> <span class="hljs-variable">$3</span>
+<span class="hljs-keyword">do</span>
+    cat <span class="hljs-variable">$filename</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-comment"># Script 3</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$@</span>.pdb
+</code></pre>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1386901221);" id="solutionsclick-to-expand"><i class="fa fa-line-chart"></i> Solutions<span id="heading-1386901221">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-1386901221"><p>Script 1 would print out a list of all files containing a dot in their name.</p>
+<p>Script 2 would print the contents of the first 3 files matching the file extension.
+The shell expands the wildcard before passing the arguments to the <code>example.sh</code> script.</p>
+<p>Script 3 would print all the arguments to the script (i.e. all the <code>.pdb</code> files),
+followed by <code>.pdb</code>.
+cubane.pdb ethane.pdb methane.pdb octane.pdb pentane.pdb propane.pdb.pdb</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7779726889);" id="debugging-scripts"><i class="fa fa-square-o"></i> Debugging Scripts<span id="heading-7779726889"></span></h3></div><div class="panel-body" id="panel-7779726889"><p>Suppose you have saved the following script in a file called <code>do-errors.sh</code>
+in Nelle&apos;s <code>north-pacific-gyre/2012-07-03</code> directory:</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># Calculate stats for data files.</span>
+<span class="hljs-keyword">for</span> datafile <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>
+<span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$datfile</span>
+    bash goostats <span class="hljs-variable">$datafile</span> stats-<span class="hljs-variable">$datafile</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<p>When you run it:</p>
+<pre><code class="lang-bash">$ bash <span class="hljs-keyword">do</span>-errors.sh *[AB].txt
+</code></pre>
+<p>the output is blank.
+To figure out why, re-run the script using the <code>-x</code> option:</p>
+<pre><code class="lang-bash">bash -x <span class="hljs-keyword">do</span>-errors.sh *[AB].txt
+</code></pre>
+<p>What is the output showing you?
+Which line is responsible for the error?</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1899340839);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-1899340839">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-1899340839"><p>The <code>-x</code> flag causes <code>bash</code> to run in debug mode.
+This prints out each command as it is run, which will help you to locate errors.
+In this example, we can see that <code>echo</code> isn&apos;t printing anything. We have made a typo
+in the loop variable name, and the variable <code>datfile</code> doesn&apos;t exist, hence returning
+an empty string.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6541729286);" id="key-points"><i class="fa fa-key"></i> Key Points<span id="heading-6541729286"></span></h3></div><div class="panel-body" id="panel-6541729286"><ul>
+<li>Save commands in files (usually called shell scripts) for re-use.</li>
+<li><code>bash filename</code> runs the commands saved in a file.</li>
+<li><code>$@</code> refers to all of a shell script&apos;s command-line arguments.</li>
+<li><code>$1</code>, <code>$2</code>, etc., refer to the first command-line argument, the second command-line argument, etc.</li>
+<li>Place variables in quotes if the values might have spaces in them.</li>
+<li>Letting users decide what files to process is more flexible and more consistent with built-in Unix commands.</li>
+</ul>
+</div></div></p>
+<div class="ba-right"><p><a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">CC BY 4.0</a> - Based on <a href="https://github.com/swcarpentry/shell-novice" target="_blank">shell-novice</a> &#xA9; 2016&#x2013;2017 Software Carpentry Foundation</p></div>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05-loop.html" class="navigation navigation-prev " aria-label="Previous page: Loops">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="07-find.html" class="navigation navigation-next " aria-label="Next page: Finding Things">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Shell Scripts","level":"3.1.5","depth":2,"next":{"title":"Finding Things","level":"3.1.6","depth":2,"path":"shell/07-find.md","ref":"shell/07-find.md","articles":[]},"previous":{"title":"Loops","level":"3.1.4","depth":2,"path":"shell/05-loop.md","ref":"shell/05-loop.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"shell/06-script.md","mtime":"2018-11-26T12:26:23.705Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

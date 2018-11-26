@@ -1,0 +1,1002 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Ignoring Things · LHCb analysis essentials</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="07-gitlab.html" />
+    
+    
+    <link rel="prev" href="05-history.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="../python/first_histogram.html">
+            
+                <a href="../python/first_histogram.html">
+            
+                    
+                    Making your first histogram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="../python/further_reading.html">
+            
+                <a href="../python/further_reading.html">
+            
+                    
+                    Further reading
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../shell/">
+            
+                <a href="../shell/">
+            
+                    
+                    Introducing the Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../shell/02-filedir.html">
+            
+                <a href="../shell/02-filedir.html">
+            
+                    
+                    Navigating Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../shell/03-create.html">
+            
+                <a href="../shell/03-create.html">
+            
+                    
+                    Working With Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../shell/04-pipefilter.html">
+            
+                <a href="../shell/04-pipefilter.html">
+            
+                    
+                    Pipes and Filters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../shell/05-loop.html">
+            
+                <a href="../shell/05-loop.html">
+            
+                    
+                    Loops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../shell/06-script.html">
+            
+                <a href="../shell/06-script.html">
+            
+                    
+                    Shell Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../shell/07-find.html">
+            
+                <a href="../shell/07-find.html">
+            
+                    
+                    Finding Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
+            
+                <a href="../shell-extras/">
+            
+                    
+                    Shell extras
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
+            
+                <a href="../shell-extras/screen.html">
+            
+                    
+                    Using screen to keep things running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
+            
+                <a href="../shell-extras/screen2.html">
+            
+                    
+                    Advanced screen topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
+            
+                <a href="../shell-extras/persistent-screen.html">
+            
+                    
+                    Persistent screen or tmux session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
+            
+                <a href="../shell-extras/shell2.html">
+            
+                    
+                    Advanced shell topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Version control with Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="01-basics.html">
+            
+                <a href="01-basics.html">
+            
+                    
+                    Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="02-setup.html">
+            
+                <a href="02-setup.html">
+            
+                    
+                    Setting Up Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="03-create.html">
+            
+                <a href="03-create.html">
+            
+                    
+                    Creating a Repository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="04-changes.html">
+            
+                <a href="04-changes.html">
+            
+                    
+                    Tracking Changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="05-history.html">
+            
+                <a href="05-history.html">
+            
+                    
+                    Exploring History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.1.6" data-path="06-ignore.html">
+            
+                <a href="06-ignore.html">
+            
+                    
+                    Ignoring Things
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="07-gitlab.html">
+            
+                <a href="07-gitlab.html">
+            
+                    
+                    Remotes in CERN GitLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.8" data-path="08-share.html">
+            
+                <a href="08-share.html">
+            
+                    
+                    Sharing a repository with others
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.9" data-path="09-pullrequests.html">
+            
+                <a href="09-pullrequests.html">
+            
+                    
+                    Collaborating with Pull Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="10-conflict.html">
+            
+                <a href="10-conflict.html">
+            
+                    
+                    Conflicts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.11" data-path="11-ci.html">
+            
+                <a href="11-ci.html">
+            
+                    
+                    GitLab CI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.12" data-path="12-open.html">
+            
+                <a href="12-open.html">
+            
+                    
+                    Open Science
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.13" data-path="13-licensing.html">
+            
+                <a href="13-licensing.html">
+            
+                    
+                    Licensing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.14" data-path="14-citation.html">
+            
+                <a href="14-citation.html">
+            
+                    
+                    Citation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <a target="_blank" href="ref://analysis-essentials.pdf">
+            
+                    
+                    Download PDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Ignoring Things</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ignoring-things">Ignoring Things</h1>
+<p><div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8530646085);" id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives<span id="heading-8530646085"></span></h3></div><div class="panel-body" id="panel-8530646085"><ul>
+<li>Configure Git to ignore specific files.</li>
+<li>Explain why ignoring files can be useful.</li>
+</ul>
+</div></div></p>
+<p>What if we have files that we do not want Git to track for us,
+like backup files created by our editor
+or intermediate files created during data analysis.
+Let&apos;s create a few dummy files:</p>
+<pre><code class="lang-bash">$ mkdir results
+$ touch a.dat b.dat c.dat results/a.out results/b.out
+</code></pre>
+<p>and see what Git says:</p>
+<pre><code class="lang-bash">$ git status
+</code></pre>
+<pre><code>On branch master
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+
+    a.dat
+    b.dat
+    c.dat
+    results/
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</code></pre><p>Putting these files under version control would be a waste of disk space.
+What&apos;s worse,
+having them all listed could distract us from changes that actually matter,
+so let&apos;s tell Git to ignore them.</p>
+<p>We do this by creating a file in the root directory of our project called <code>.gitignore</code>:</p>
+<pre><code class="lang-bash">$ nano .gitignore
+$ cat .gitignore
+</code></pre>
+<pre><code>*.dat
+results/
+</code></pre><p>These patterns tell Git to ignore any file whose name ends in <code>.dat</code>
+and everything in the <code>results</code> directory.
+(If any of these files were already being tracked,
+Git would continue to track them.)</p>
+<p>Once we have created this file,
+the output of <code>git status</code> is much cleaner:</p>
+<pre><code class="lang-bash">$ git status
+</code></pre>
+<pre><code>On branch master
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+
+    .gitignore
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</code></pre><p>The only thing Git notices now is the newly-created <code>.gitignore</code> file.
+You might think we wouldn&apos;t want to track it,
+but everyone we&apos;re sharing our repository with will probably want to ignore
+the same things that we&apos;re ignoring.
+Let&apos;s add and commit <code>.gitignore</code>:</p>
+<pre><code class="lang-bash">$ git add .gitignore
+$ git commit -m <span class="hljs-string">&quot;Add the ignore file&quot;</span>
+$ git status
+</code></pre>
+<pre><code># On branch master
+nothing to commit, working directory clean
+</code></pre><p>As a bonus, using <code>.gitignore</code> helps us avoid accidentally adding to the
+repository files that we don&apos;t want to track:</p>
+<pre><code class="lang-bash">$ git add a.dat
+</code></pre>
+<pre><code>The following paths are ignored by one of your .gitignore files:
+a.dat
+Use -f if you really want to add them.
+</code></pre><p>If we really want to override our ignore settings,
+we can use <code>git add -f</code> to force Git to add something. For example,
+<code>git add -f a.dat</code>.
+We can also always see the status of ignored files if we want:</p>
+<pre><code class="lang-bash">$ git status --ignored
+</code></pre>
+<pre><code>On branch master
+Ignored files:
+ (use &quot;git add -f &lt;file&gt;...&quot; to include in what will be committed)
+
+        a.dat
+        b.dat
+        c.dat
+        results/
+
+nothing to commit, working directory clean
+</code></pre><p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(300429875);" id="ignoring-nested-files"><i class="fa fa-square-o"></i> Ignoring Nested Files<span id="heading-300429875"></span></h3></div><div class="panel-body" id="panel-300429875"><p>Given a directory structure that looks like:</p>
+<pre><code>results/data
+results/plots
+</code></pre><p>How would you ignore only <code>results/plots</code> and not <code>results/data</code>?</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4654728809);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-4654728809">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-4654728809"><p>As with most programming issues, there are a few ways that you
+could solve this. If you only want to ignore the contents of
+<code>results/plots</code>, you can change your <code>.gitignore</code> to ignore
+only the <code>/plots/</code> subfolder by adding the following line to
+your .gitignore:</p>
+<p><code>results/plots/</code></p>
+<p>If, instead, you want to ignore everything in <code>/results/</code>, but wanted to track
+<code>results/data</code>, then you can add <code>results/</code> to your .gitignore
+and create an exception for the <code>results/data/</code> folder.
+The next challenge will cover this type of solution.</p>
+<p>Sometimes the <code>**</code> pattern comes in handy, too, which matches
+multiple directory levels. E.g. <code>**/results/plots/*</code> would make git ignore
+the <code>results/plots</code> directory in any root directory.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3709950664);" id="including-specific-files"><i class="fa fa-square-o"></i> Including Specific Files<span id="heading-3709950664"></span></h3></div><div class="panel-body" id="panel-3709950664"><p>How would you ignore all <code>.data</code> files in your root directory except for
+<code>final.data</code>?
+Hint: Find out what <code>!</code> (the exclamation point operator) does</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3534533915);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-3534533915">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-3534533915"><p>You would add the following two lines to your .gitignore:</p>
+<pre><code>*.data           # ignore all data files
+!final.data      # except final.data
+</code></pre><p>The exclamation point operator will include a previously excluded entry.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9372335641);" id="ignoring-all-data-files-in-a-directory"><i class="fa fa-square-o"></i> Ignoring all data Files in a Directory<span id="heading-9372335641"></span></h3></div><div class="panel-body" id="panel-9372335641"><p>Given a directory structure that looks like:</p>
+<pre><code>results/data/position/gps/a.data
+results/data/position/gps/b.data
+results/data/position/gps/c.data
+results/data/position/gps/info.txt
+results/plots
+</code></pre><p>What&apos;s the shortest <code>.gitignore</code> rule you could write to ignore all <code>.data</code>
+files in <code>result/data/position/gps</code>? Do not ignore the <code>info.txt</code>.</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9452836355);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-9452836355">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-9452836355"><p>Appending <code>results/data/position/gps/*.data</code> will match every file in
+<code>results/data/position/gps</code> that ends with <code>.data</code>.  The file
+<code>results/data/position/gps/info.txt</code> will not be ignored.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(655879873);" id="the-order-of-rules"><i class="fa fa-square-o"></i> The Order of Rules<span id="heading-655879873"></span></h3></div><div class="panel-body" id="panel-655879873"><p>Given a <code>.gitignore</code> file with the following contents:</p>
+<pre><code>*.data
+!*.data
+</code></pre><p>What will be the result?</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7140321830);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-7140321830">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-7140321830"><p>The <code>!</code> modifier will negate an entry from a previously defined ignore pattern.
+Because the <code>!*.data</code> entry negates all of the previous <code>.data</code> files in the
+<code>.gitignore</code>, none of them will be ignored, and all <code>.data</code> files will be
+tracked.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2607977842);" id="log-files"><i class="fa fa-square-o"></i> Log Files<span id="heading-2607977842"></span></h3></div><div class="panel-body" id="panel-2607977842"><p>You wrote a script that creates many intermediate log-files of the form <code>log_01</code>, <code>log_02</code>, <code>log_03</code>, etc.
+You want to keep them but you do not want to track them through <code>git</code>.</p>
+<ol>
+<li><p>Write <strong>one</strong> <code>.gitignore</code> entry that excludes files of the form <code>log_01</code>, <code>log_02</code>, etc.</p>
+</li>
+<li><p>Test your &quot;ignore pattern&quot; by creating some dummy files of the form <code>log_01</code>, etc.</p>
+</li>
+<li><p>You find that the file <code>log_01</code> is very important after all, add it to the tracked files without changing the <code>.gitignore</code> again.</p>
+</li>
+<li><p>Discuss with your neighbor what other types of files could reside in your directory that you do not want to track and thus would exclude via <code>.gitignore</code>.</p>
+</li>
+</ol>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5946175970);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-5946175970">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-5946175970"><ol>
+<li>append either <code>log_*</code>  or  <code>log*</code>  as a new entry in your .gitignore</li>
+<li>track <code>log_01</code> using   <code>git add -f log_01</code></li>
+</ol>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1915202239);" id="key-points"><i class="fa fa-key"></i> Key Points<span id="heading-1915202239"></span></h3></div><div class="panel-body" id="panel-1915202239"><ul>
+<li>The <code>.gitignore</code> file tells Git what files to ignore.</li>
+</ul>
+</div></div></p>
+<div class="ba-right"><p><a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">CC BY 4.0</a> - Based on <a href="https://github.com/swcarpentry/git-novice" target="_blank">git-novice</a> &#xA9; 2016&#x2013;2017 Software Carpentry Foundation</p></div>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05-history.html" class="navigation navigation-prev " aria-label="Previous page: Exploring History">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="07-gitlab.html" class="navigation navigation-next " aria-label="Next page: Remotes in CERN GitLab">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"teaching":5,"exercises":0,"questions":["How can I tell Git to ignore files I don't want to track?"],"title":"Ignoring Things","level":"5.1.6","depth":2,"next":{"title":"Remotes in CERN GitLab","level":"5.1.7","depth":2,"path":"git/07-gitlab.md","ref":"git/07-gitlab.md","articles":[]},"previous":{"title":"Exploring History","level":"5.1.5","depth":2,"path":"git/05-history.md","ref":"git/05-history.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"git/06-ignore.md","mtime":"2018-11-26T12:26:23.661Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
