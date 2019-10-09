@@ -64,10 +64,12 @@ side of the name tell you that there’s something special about it; in this cas
 it means that you can use the plus operator `+` instead.
 
 {% challenge "Methods for other operators" %}
+
 The other operators that you can use with numbers have corresponding methods. 
 What other operator methods are available? Try some of them out, and see how 
 they compare with using the operator like normal.
 {% solution "Solution" %}
+
 We’ve already met two ways that you can find out what things are attached to 
 something. In IPython, you can try `(1).__<tab>`, or you can always use the 
 `dir` method.
@@ -92,6 +94,7 @@ right. The `__sub__` name looks like ‘subtraction’, and similarly `__mul__` 
 >>> (1).__truediv__(5)
 0.2
 ```
+
 {% endchallenge %}
 
 Of course, there’s also a method for the dot operator! It’s called 

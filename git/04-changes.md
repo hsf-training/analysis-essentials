@@ -1,17 +1,11 @@
----
-teaching: 20
-exercises: 0
-questions:
-- How do I record changes in Git?
-- How do I check the status of my version control repository?
-- How do I record notes about what changes I made and why?
----
 # Tracking Changes
 
 {% objectives "Learning Objectives" %}
+
 - Go through the modify-add-commit cycle for one or more files.
 - Explain where information is stored at each stage of Git commit workflow.
 - Distinguish between descriptive and non-descriptive commit messages.
+
 {% endobjectives %}
 
 First let's make sure we're still in the right directory.
@@ -169,11 +163,13 @@ and the log message Git was given when the commit was created.
 
 {% callout "Where Are My Changes?" %}
 
+
 If we run `ls` at this point, we will still see just one file called `mars.txt`.
 That's because Git saves information about files' history
 in the special `.git` directory mentioned earlier
 so that our filesystem doesn't become cluttered
 (and so that we can't accidentally edit or delete an old version).
+
 {% endcallout %}
 
 Now suppose Dracula adds more information to the file.
@@ -299,6 +295,7 @@ but not yet committed.
 
 {% callout "Staging Area" %}
 
+
 If you think of Git as taking snapshots of changes over the life of a project,
 `git add` specifies *what* will go in a snapshot
 (putting things in the staging area),
@@ -315,6 +312,7 @@ the stage for the snapshot because you used `-a`!)
 Try to stage things manually,
 or you might find yourself searching for "git undo commit" more
 than you would like!
+
 {% endcallout %}
 
 ![The Git Staging Area](fig/git-staging-area.svg)
@@ -431,13 +429,16 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 
 {% callout "Word-based diffing" %}
 
+
 Sometimes, e.g. in the case of the text documments a line-wise
 diff is too coarse. That is where the `--color-words` option of
 `git diff` comes in very useful as it highlights the changed
 words using colors.
+
 {% endcallout %}
 
 {% callout "Paging the Log" %}
+
 
 When the output of `git log` is too long to fit in your screen,
 `git` uses a program to split it into pages of the size of your screen.
@@ -448,9 +449,11 @@ screen is a `:`, instead of your usual prompt.
 *   To move to the next page, press the space bar.
 *   To search for `some_word` in all pages, type `/some_word`
     and navigate through matches pressing `n`.
+
 {% endcallout %}
 
 {% callout "Limit Log Size" %}
+
 
 To avoid having `git log` cover your entire terminal screen, you can limit the
 number of commits that Git lists by using `-N`, where `N` is the number of
@@ -491,9 +494,11 @@ $ git log --oneline --graph --all --decorate
 * 34961b1 Add concerns about effects of Mars' moons on Wolfman
 * f22b25e Start notes on Mars as a base
 ```
+
 {% endcallout %}
 
 {% callout "Directories" %}
+
 
 Two important facts you should know about directories in Git.
 
@@ -522,6 +527,7 @@ you can add all files in the directory at once by:
 git add <directory-with-files>
 ```
 
+
 {% endcallout %}
 
 To recap, when we want to add changes to our repository,
@@ -533,6 +539,7 @@ repository (`git commit`):
 
 {% challenge "Choosing a Commit Message" %}
 
+
 Which of the following commit messages would be most appropriate for the
 last commit made to `mars.txt`?
 
@@ -541,13 +548,17 @@ last commit made to `mars.txt`?
 3. "Discuss effects of Mars' climate on the Mummy"
 
 {% solution "Solution" %}
+
 Answer 1 is not descriptive enough,
 and answer 2 is too descriptive and redundant,
 but answer 3 is good: short but descriptive.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Committing Changes to Git" %}
+
 
 Which command(s) below would save the changes of `myfile.txt`
 to my local Git repository?
@@ -564,14 +575,18 @@ to my local Git repository?
 
 {% solution "Solution" %}
 
+
 1. Would only create a commit if files have already been staged.
 2. Would try to create a new repository.
 3. Is correct: first add the file to the staging area, then commit.
 4. Would try to commit a file "my recent changes" with the message myfile.txt.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Committing Multiple Files" %}
+
 
 The staging area can hold changes from any number of files
 that you want to commit as a single snapshot.
@@ -584,6 +599,7 @@ about Venus as a base for you and your friends
 and commit those changes.
 
 {% solution "Solution" %}
+
 
 First we make our changes to the `mars.txt` and `venus.txt` files:
 ```bash
@@ -621,9 +637,12 @@ $ git commit -m "Write plans to start a base on Venus"
  create mode 100644 venus.txt
 ```
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Author and Committer" %}
+
 
 For each of the commits you have done, Git stored your name twice.
 You are named as the author and as the committer. You can observe
@@ -646,6 +665,7 @@ author. Run `git log` and `git log --format=full`. Think about ways
 how that can allow you to collaborate with your colleagues.
 
 {% solution "Solution" %}
+
 
 ```bash
 $ git add me.txt
@@ -670,17 +690,22 @@ Commit: Vlad Dracula <vlad@tran.sylvan.ia>
 Vlad's initial bio.
 ```
 
+{% endsolution %}
+
 {% endchallenge %}
 
-[commit-messages]: http://chris.beams.io/posts/git-commit/
+[commit-messages]: https://chris.beams.io/posts/git-commit/
 
 
 {% keypoints "Key Points" %}
+
 - `git status` shows the status of a repository.
 - Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded).
 - `git add` puts files in the staging area.
 - `git commit` saves the staged content as a new commit in the local repository.
 - Always write a log message when committing changes.
+
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
+{% endright %}

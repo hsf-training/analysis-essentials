@@ -36,3 +36,24 @@ Sounds good? Then let’s get going!
 [python]: https://www.python.org/
 [starterkit]: https://lhcb.github.io/starterkit/
 [learn]: https://www.google.com/search?q=learn+python
+
+```eval_rst
+.. toctree::
+    :maxdepth: 3
+    :includehidden:
+    :caption: Contents:
+
+    running.md
+    operators.md
+    numbers.md
+    strings.md
+    lists.md
+    dictionaries.md
+    conditions.md
+    methods.md
+    scripting.md
+    modules.md
+    learning.md
+    first_histogram.md
+    further_reading.md
+```

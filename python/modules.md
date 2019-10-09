@@ -41,7 +41,7 @@ The module `random` contains functions useful for random number generation: with
 the `import` above, we have made the `random` module accessible, and everything
 within that module is accessible via the syntax `random.<name>`. For the record,
 the `uniform(x,y)` method returns a pseudo-random number within the range
-$$[x,y]$$.
+`$ [x,y] $`.
 
 Sometimes you want to make only one or more things from a given module
 accessible: Python gives you the ability to import just those:
@@ -256,6 +256,7 @@ module named `myfirstmodule` - given that the file is in the same directory
 where we have launched the Python interpreter.
 
 {% callout "Module name restrictions" %}
+
 Note that you cannot pick any name you want for a module! From the
 [Python style guide][pep8-modulenames], we gather that we should use "short,
 all-lowercase names". As a matter of fact, if we used dashes in the file name,
@@ -270,6 +271,7 @@ SyntaxError: invalid syntax
 ```
 
 Python treats `-` as a minus and does not understand your intentions.
+
 {% endcallout %}
 
 
@@ -324,15 +326,20 @@ this function will return the number three
 ```
 
 {% challenge "What have I done with the filter function?" %}
+
 We have used the filter function above to list the functions we have defined
 in our module. Can you describe in detail what the commands above do?
 {% solution "Solution" %}
+
 The `dir(module)` command lists all _names_ (not necessarily functions, not
 necessarily defined by us) contained in a given imported module. We have used the
 `filter()` command to filter out all names starting with two underscores. Every
 item returned by `dir()` is passed as `x` to the lambda function which returns
 `True` or `False`, determining whether the `filter()` function should keep or
 discard the current element.
+
+{% endsolution %}
+
 {% endchallenge %}
 
 
@@ -418,6 +425,6 @@ condition with a printout would not exist in real life.
 [stl]: https://docs.python.org/2/library/index.html
 [pep8-import]: https://www.python.org/dev/peps/pep-0008/#imports
 [pep8-modulenames]: https://www.python.org/dev/peps/pep-0008/#package-and-module-names
-[pypi]: https://pypi.python.org/pypi
-[anaconda]: https://www.anaconda.com/
+[pypi]: https://pypi.org/
+[anaconda]: https://www.anaconda.com/distribution/
 [lcg_virtualenv]: https://gitlab.cern.ch/cburr/lcg_virtualenv/

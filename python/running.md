@@ -14,6 +14,7 @@ come will Python pre-installed. Either way, a simple way to get Python on your
 computer is to install [Anaconda][anaconda].
 
 {% callout "Python 2 or 3?" %}
+
 You might see material that talks about Python 3 or Python 2. Like a lot of other software, 
 Python is regularly updated and groups batches of updates, including bug fixes 
 and new features, into versions. The interesting thing about Python 3 is that 
@@ -22,7 +23,8 @@ when run with version 2 of Python may not necessarily work when run with
 version 3. Python 2 was around for a long time, and so the process of migrating to Python 3 has been slow, which is why so many people talk about it. However the support for Python 2 will soon end, so now everyone is encouraged to use Python 3. That is why in this lesson, we will use Python 3.
 
 Note that, for instance, Alice and LHCb software is not (yet) compatible with Python 3. We strongly encourage you to always use Python 3 and only switch to Python 2 when you have to (e.g. when you need to use some software which is not compatible with Python 3). You can install both Python 2 and Python 3 using 
-[Anaconda](https://www.anaconda.com/download/).
+[Anaconda](https://www.anaconda.com/distribution/).
+
 {% endcallout %}
 
 Python is a very user-friendly language. If you’re used to having to compile 
@@ -105,7 +107,7 @@ In [5]: math.s<tab>
 
 * Easily **run shell commands** by starting your line with an exclamation mark.
 
-```python
+```
 In [6]: !cal
     October 2017
 Su Mo Tu We Th Fr Sa
@@ -135,6 +137,6 @@ In [7]: help()
 In [8]: help(math)
 ```
 
-[anaconda]: https://www.anaconda.com/download/
+[anaconda]: https://www.anaconda.com/distribution/
 [ipython]: https://ipython.org/
 [lcg_stack]: http://lcginfo.cern.ch/

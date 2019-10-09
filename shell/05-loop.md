@@ -1,12 +1,14 @@
 # Loops
 
 {% objectives "Learning Objectives" %}
+
 - Write a loop that applies one or more commands separately to each file in a set of files.
 - Trace the values taken on by a loop variable during execution of the loop.
 - Explain the difference between a variable's name and its value.
 - Explain why spaces and some punctuation characters shouldn't be used in file names.
 - Demonstrate how to see what commands have recently been executed.
 - Re-run recently executed commands without retyping them.
+
 {% endobjectives %}
 
 **Loops** are key to productivity improvements through automation as they allow us to execute
@@ -32,7 +34,7 @@ $ cp basilisk.dat unicorn.dat original-*.dat
 
 This wouldn't back up our files, instead we get an error:
 
-```error
+```
 cp: target `original-*.dat' is not a directory
 ```
 
@@ -52,7 +54,7 @@ do
 done
 ```
 
-```output
+```
 COMMON NAME: basilisk
 CLASSIFICATION: basiliscus vulgaris
 UPDATED: 1745-05-02
@@ -92,13 +94,16 @@ name: `$filename` is equivalent to `${filename}`, but is different from
 
 {% callout "Follow the Prompt" %}
 
+
 The shell prompt changes from `$` to `>` and back again as we were
 typing in our loop. The second prompt, `>`, is different to remind
 us that we haven't finished typing a complete command yet. A semicolon, `;`,
 can be used to separate two commands written on a single line.
+
 {% endcallout %}
 
 {% callout "Same Symbols, Different Meanings" %}
+
 
 Here we see `>` being used a shell prompt, whereas `>` is also
 used to redirect output.
@@ -110,6 +115,7 @@ and the symbol is a prompt.
 
 If *you* type `>` or `$` yourself, it is an instruction from you that
 the shell to redirect output or get the value of a variable.
+
 {% endcallout %}
 
 We have called the variable in this loop `filename`
@@ -161,7 +167,7 @@ $ echo hello there
 
 prints:
 
-```output
+```
 hello there
 ```
 
@@ -187,13 +193,14 @@ from whatever file is being processed
 
 {% callout "Spaces in Names" %}
 
+
 Whitespace is used to separate the elements on the list
 that we are going to loop over. If on the list we have elements
 with whitespace we need to quote those elements
 and our variable when using it.
 Suppose our data files are named:
 
-```source
+```
 red dragon.dat
 purple unicorn.dat
 ```
@@ -216,7 +223,7 @@ expecting:
 head: cannot open ‘red dragon.dat’ for reading: No such file or directory
 head: cannot open ‘purple unicorn.dat’ for reading: No such file or directory
 ```
-{: .output}
+
 Try removing the quotes around `$filename` in the loop above to see the effect of the quote
 marks on whitespace:
 ```
@@ -226,6 +233,7 @@ head: cannot open ‘purple’ for reading: No such file or directory
 head: cannot open ‘unicorn.dat’ for reading: No such file or directory
 ```
 {: . output}
+
 {% endcallout %}
 
 Going back to our original file copying problem,
@@ -263,6 +271,7 @@ judicious use of `echo` is a good debugging technique.
 
 {% challenge "Nelle's Pipeline: Processing Files" %}
 
+
 Nelle is now ready to process her data files.
 Since she's still learning how to use the shell,
 she decides to build up the required commands in stages.
@@ -277,7 +286,7 @@ do
 done
 ```
 
-```output
+```
 NENE01729A.txt
 NENE01729B.txt
 NENE01736A.txt
@@ -298,7 +307,7 @@ do
 done
 ```
 
-```output
+```
 NENE01729A.txt stats-NENE01729A.txt
 NENE01729B.txt stats-NENE01729B.txt
 NENE01736A.txt stats-NENE01736A.txt
@@ -345,14 +354,16 @@ $ for datafile in NENE*[AB].txt; do echo $datafile; bash goostats $datafile stat
 
 {% callout "Beginning and End" %}
 
+
 We can move to the beginning of a line in the shell by typing `Ctrl-a`
 and to the end using `Ctrl-e`.
+
 {% endcallout %}
 
 When she runs her program now,
 it produces one line of output every five seconds or so:
 
-```output
+```
 NENE01729A.txt
 NENE01729B.txt
 NENE01736A.txt
@@ -372,6 +383,7 @@ so she decides to get some coffee and catch up on her reading.
 
 {% callout "Those Who Know History Can Choose to Repeat It" %}
 
+
 Another way to repeat previous work is to use the `history` command to
 get a list of the last few hundred commands that have been executed, and
 then to use `!123` (where "123" is replaced by the command number) to
@@ -380,7 +392,7 @@ repeat one of those commands. For example, if Nelle types this:
 ```bash
 $ history | tail -n 5
 ```
-```output
+```
   456  ls -l NENE0*.txt
   457  rm stats-NENE01729B.txt.txt
   458  bash goostats NENE01729B.txt stats-NENE01729B.txt
@@ -390,9 +402,11 @@ $ history | tail -n 5
 
 then she can re-run `goostats` on `NENE01729B.txt` simply by typing
 `!458`.
+
 {% endcallout %}
 
 {% callout "Other History Commands" %}
+
 
 There are a number of other shortcut commands for getting at the history.
 
@@ -406,6 +420,7 @@ That's useful more often than you might expect: after
 `bash goostats NENE01729B.txt stats-NENE01729B.txt`, you can type
 `less !$` to look at the file `stats-NENE01729B.txt`, which is
 quicker than doing up-arrow and editing the command-line.
+
 {% endcallout %}
 
 {% solution "Variables in Loops" %}
@@ -413,7 +428,7 @@ quicker than doing up-arrow and editing the command-line.
 This exercise refers to the `data-shell/molecules` directory.
 `ls` gives the following output:
 
-```output
+```
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 ```
 
@@ -437,20 +452,20 @@ done
 
 Why do these two loops give different outputs?
 
-## Solution
+{% solution "Variables in Loops" %}
+
 The first code block gives the same output on each iteration through
 the loop.
 Bash expands the wildcard `*.pdb` within the loop body (as well as
 before the loop starts) to match all files ending in `.pdb`
 and then lists them using `ls`.
 The expanded loop would look like this:
-```
+```bash
 for datafile in cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 do
 >	ls cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 done
 ```
-{: .bash}
 
 ```
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
@@ -460,7 +475,6 @@ cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 ```
-{: .output}
 
 The second code block lists a different file on each loop iteration.
 The value of the `datafile` variable is evaluated using `$datafile`,
@@ -474,11 +488,15 @@ octane.pdb
 pentane.pdb
 propane.pdb
 ```
-{: .output}
+
+{% endsolution %}
+
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "Saving to a File in a Loop - Part One" %}
+
 
 In the same directory, what is the effect of this loop?
 
@@ -499,13 +517,17 @@ done
 4.  None of the above.
 
 {% solution "Solution" %}
+
 1. The text from each file in turn gets written to the `alkanes.pdb` file.
 However, the file gets overwritten on each loop interation, so the final content of `alkanes.pdb`
 is the text from the `propane.pdb` file.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Saving to a File in a Loop - Part Two" %}
+
 
 In the same directory, what would be the output of the following loop?
 
@@ -525,13 +547,17 @@ done
     and `propane.pdb` would be printed to the screen and saved to a file called `all.pdb`.
 
 {% solution "Solution" %}
+
 3 is the correct answer. `>>` appends to a file, rather than overwriting it with the redirected
 output from a command.
 Given the output from the `cat` command has been redirected, nothing is printed to the screen.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Limiting Sets of Files" %}
+
 
 In the same directory, what would be the output of the following loop?
 
@@ -548,6 +574,7 @@ done
 4.  Only `cubane.pdb` is listed.
 
 {% solution "Solution" %}
+
 4 is the correct answer. `*` matches zero or more characters, so any file name starting with
 the letter c, followed by zero or more other characters will be matched.
 
@@ -567,13 +594,19 @@ done
 4.  The files `cubane.pdb` and `octane.pdb` will be listed.
 5.  Only the file `octane.pdb` will be listed.
 
+{% endsolution %}
+
 {% solution "Solution" %}
+
 4 is the correct answer. `*` matches zero or more characters, so a file name with zero or more
 characters before a letter c and zero or more characters after the letter c will be matched.
+
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "Doing a Dry Run" %}
+
 
 A loop is a way to do many things at once --- or to make many mistakes at
 once if it does the wrong thing. One way to check what a loop *would* do
@@ -609,6 +642,7 @@ done
 ```
 
 {% solution "Solution" %}
+
 The second version is the one we want to run.
 This prints to screen everything enclosed in the quote marks, expanding the
 loop variable name because we have prefixed it with a dollar sign.
@@ -620,9 +654,12 @@ a file, `analyzed-$file`. A series of files is generated: `analyzed-cubane.pdb`,
 Try both versions for yourself to see the output! Be sure to open the
 `analyzed-*.pdb` files to view their contents.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Nested Loops" %}
+
 
 Suppose we want to set up up a directory structure to organize
 some experiments measuring reaction rate constants with different compounds
@@ -640,15 +677,19 @@ done
 ```
 
 {% solution "Solution" %}
+
 We have a nested loop, i.e. contained within another loop, so for each species
 in the outer loop, the inner loop (the nested loop) iterates over the list of
 temperatures, and creates a new directory for each combination.
 
 Try running the code for yourself to see which directories are created!
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% keypoints "Key Points" %}
+
 - A `for` loop repeats commands once for every thing in a list.
 - Every `for` loop needs a variable to refer to the thing it is currently operating on.
 - Use `$name` to expand a variable (i.e., get its value). `${name}` can also be used.
@@ -657,5 +698,8 @@ Try running the code for yourself to see which directories are created!
 - Use the up-arrow key to scroll up through previous commands to edit and repeat them.
 - Use `Ctrl-R` to search through the previously entered commands.
 - Use `history` to display recent commands, and `!number` to repeat a command by number.
+
 {% endkeypoints %}
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
+
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation 
+{% endright %}

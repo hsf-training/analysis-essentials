@@ -1,13 +1,9 @@
----
-teaching: 10
-exercises: 0
-questions:
-- Where does Git store information?
----
 # Creating a Repository
 
 {% objectives "Learning Objectives" %}
+
 - Create a local Git repository.
+
 {% endobjectives %}
 
 Once Git is configured,
@@ -59,6 +55,7 @@ nothing to commit (create/copy files and use "git add" to track)
 
 {% challenge "Places to Create Git Repositories" %}
 
+
 Dracula starts a new project, `moons`, related to his `planets` project.
 Despite Wolfman's concerns, he enters the following sequence of commands to
 create one Git repository inside another:
@@ -77,6 +74,7 @@ Why is it a bad idea to do this? (Notice here that the `planets` project is now 
 How can Dracula undo his last `git init`?
 
 {% solution "Solution" %}
+
 
 Git repositories can interfere with each other if they are "nested" in the
 directory of another: the outer repository will try to version-control
@@ -123,11 +121,16 @@ But be careful! Running this command in the wrong directory, will remove
 the entire git-history of a project you might wanted to keep. Therefore, always check your current directory using the
 command `pwd`.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 
 {% keypoints "Key Points" %}
+
 - `git init` initializes a repository.
+
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
+{% endright %}

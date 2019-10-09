@@ -1,19 +1,16 @@
----
-teaching: 5
-exercises: 5
-questions:
-- How can version control help me make my work more open?
----
 # Open Science
 
 {% objectives "Learning Objectives" %}
+
 - Explain how a version control system can be leveraged as an electronic lab notebook for computational work.
+
 {% endobjectives %}
 
 > The opposite of "open" isn't "closed".
 > The opposite of "open" is "broken".
 
-{% right %} John Wilbanks {% endright %}
+{% right %} John Wilbanks 
+{% endright %}
 
 Free sharing of information might be the ideal in science,
 but the reality is often more complicated.
@@ -45,12 +42,12 @@ though,
 the process looks like this:
 
 *   The data that the scientist collects is stored in an open access repository
-    like [figshare](http://figshare.com/) or
-    [Zenodo](http://zenodo.org), possibly as soon as it's collected,
+    like [figshare](https://figshare.com/) or
+    [Zenodo](https://zenodo.org), possibly as soon as it's collected,
     and given its own
     [Digital Object Identifier](https://en.wikipedia.org/wiki/Digital_object_identifier) (DOI).
     Or the data was already published and is stored in
-    [Dryad](http://datadryad.org/).
+    [Dryad](https://datadryad.org/stash).
 *   The scientist creates a new repository on GitHub to hold her work.
 *   As she does her analysis,
     she pushes changes to her scripts
@@ -59,7 +56,7 @@ the process looks like this:
     She also uses the repository for her paper;
     that repository is then the hub for collaboration with her colleagues.
 *   When she's happy with the state of her paper,
-    she posts a version to [arXiv](http://arxiv.org/)
+    she posts a version to [arXiv](https://arxiv.org/)
     or some other preprint server
     to invite feedback from peers.
 *   Based on that feedback,
@@ -72,10 +69,10 @@ the process looks like this:
 
 This open model accelerates discovery:
 the more open work is,
-[the more widely it is cited and re-used](http://dx.doi.org/10.1371/journal.pone.0000308).
+[the more widely it is cited and re-used](https://dx.doi.org/10.1371/journal.pone.0000308).
 However,
 people who want to work this way need to make some decisions
-about what exactly "open" means and how to do it. You can find more on the different aspects of Open Science in [this book](http://link.springer.com/book/10.1007/978-3-319-00026-8).
+about what exactly "open" means and how to do it. You can find more on the different aspects of Open Science in [this book](https://link.springer.com/book/10.1007/978-3-319-00026-8).
 
 This is one of the (many) reasons we teach version control.
 When used diligently,
@@ -95,33 +92,40 @@ by acting as a shareable electronic lab notebook for computational work:
 
 {% callout "Making Code Citable" %}
 
+
 [This short guide](https://guides.github.com/activities/citable-code/) from GitHub
 explains how to create a Digital Object Identifier (DOI) for your code,
 your papers,
 or anything else hosted in a version control repository.
+
 {% endcallout %}
 
 {% challenge "How Reproducible Is My Work?" %}
+
 
 Ask one of your labmates to reproduce a result you recently obtained
 using only what they can find in your papers or on the web.
 Try to do the same for one of their results,
 then try to do it for a result from a lab you work with.
+
 {% endchallenge %}
 
 {% challenge "How to Find an Appropriate Data Repository?" %}
 
+
 Surf the internet for a couple of minutes and check out the data repositories
-mentioned above: [Figshare](http://figshare.com/), [Zenodo](http://zenodo.org),
-[Dryad](http://datadryad.org/). Depending on your field of research, you might
+mentioned above: [Figshare](https://figshare.com/), [Zenodo](https://zenodo.org),
+[Dryad](https://datadryad.org/stash). Depending on your field of research, you might
 find community-recognized repositories that are well-known in your field.
 You might also find useful [these data repositories recommended by Nature](
-http://www.nature.com/sdata/data-policies/repositories).
+https://www.nature.com/sdata/data-policies/repositories).
 Discuss with your neighbor which data repository you might want to
 approach for your current project and explain why.
+
 {% endchallenge %}
 
 {% challenge "Can I Also Publish Code?" %}
+
 
 There are many new ways to publish code and to make it citable. One
 way is described [on the homepage of GitHub itself](
@@ -129,11 +133,15 @@ https://guides.github.com/activities/citable-code/).
 Basically it's a combination of GitHub (where the code is) and Zenodo (the
 repository creating the DOI). Read through this page while being aware
 that this is only one of many ways to making your code citable.
+
 {% endchallenge %}
 
 
 {% keypoints "Key Points" %}
+
 - Open scientific work is more useful and more highly cited than closed.
+
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
+{% endright %}

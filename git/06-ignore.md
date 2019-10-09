@@ -1,14 +1,10 @@
----
-teaching: 5
-exercises: 0
-questions:
-- How can I tell Git to ignore files I don't want to track?
----
 # Ignoring Things
 
 {% objectives "Learning Objectives" %}
+
 - Configure Git to ignore specific files.
 - Explain why ignoring files can be useful.
+
 {% endobjectives %}
 
 What if we have files that we do not want Git to track for us,
@@ -125,6 +121,7 @@ nothing to commit, working directory clean
 
 {% challenge "Ignoring Nested Files" %}
 
+
 Given a directory structure that looks like:
 
 ```
@@ -135,6 +132,7 @@ results/plots
 How would you ignore only `results/plots` and not `results/data`?
 
 {% solution "Solution" %}
+
 
 As with most programming issues, there are a few ways that you
 could solve this. If you only want to ignore the contents of
@@ -153,15 +151,19 @@ Sometimes the `**` pattern comes in handy, too, which matches
 multiple directory levels. E.g. `**/results/plots/*` would make git ignore
 the `results/plots` directory in any root directory.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Including Specific Files" %}
+
 
 How would you ignore all `.data` files in your root directory except for
 `final.data`?
 Hint: Find out what `!` (the exclamation point operator) does
 
 {% solution "Solution" %}
+
 
 You would add the following two lines to your .gitignore:
 
@@ -172,9 +174,12 @@ You would add the following two lines to your .gitignore:
 
 The exclamation point operator will include a previously excluded entry.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Ignoring all data Files in a Directory" %}
+
 
 Given a directory structure that looks like:
 
@@ -191,13 +196,17 @@ files in `result/data/position/gps`? Do not ignore the `info.txt`.
 
 {% solution "Solution" %}
 
+
 Appending `results/data/position/gps/*.data` will match every file in
 `results/data/position/gps` that ends with `.data`.  The file
 `results/data/position/gps/info.txt` will not be ignored.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "The Order of Rules" %}
+
 
 Given a `.gitignore` file with the following contents:
 
@@ -215,10 +224,12 @@ Because the `!*.data` entry negates all of the previous `.data` files in the
 `.gitignore`, none of them will be ignored, and all `.data` files will be
 tracked.
 
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "Log Files" %}
+
 
 You wrote a script that creates many intermediate log-files of the form `log_01`, `log_02`, `log_03`, etc.
 You want to keep them but you do not want to track them through `git`.
@@ -233,14 +244,20 @@ You want to keep them but you do not want to track them through `git`.
 
 {% solution "Solution" %}
 
+
 1. append either `log_*`  or  `log*`  as a new entry in your .gitignore
 3. track `log_01` using   `git add -f log_01`
+
+{% endsolution %}
 
 {% endchallenge %}
 
 
 {% keypoints "Key Points" %}
+
 - The `.gitignore` file tells Git what files to ignore.
+
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
+{% endright %}

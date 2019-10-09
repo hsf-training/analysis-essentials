@@ -29,6 +29,7 @@ evaluated. If this also isn’t met, the `else` block is run. You can use as man
 `elif` conditions as you like, or none at all, and the `else` block is optional.
 
 {% callout "Ternary conditional operator" %}
+
 You can use a succinct one-line syntax for conditional assignments like this:
 
 ```python
@@ -39,6 +40,7 @@ You can use a succinct one-line syntax for conditional assignments like this:
 
 Make sure your line does not get too long in order not to impair its
 readability!
+
 {% endcallout %}
 
 
@@ -154,10 +156,12 @@ True
 ```
 
 {% challenge "The `in` operator" %}
+
 Find the double-underscore method on lists and dictionaries that corresponds to
 the `in` operator, and check that it does the same thing as the operator.
 
 {% solution "Solution" %}
+
 Taking lists as an example, the `dir` method can tell us what methods are
 available. The `__contains__` method sounds promising.
 
@@ -168,6 +172,9 @@ True
 >>> x.__contains__(2)
 False
 ```
+
+{% endsolution %}
+
 {% endchallenge %}
 
 Strings work a lot like lists, which makes sense because they are effectively

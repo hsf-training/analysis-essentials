@@ -21,4 +21,26 @@ We hope that at the end of the day (or at least after the first time Git has
 saved you from losing your progress) you will accept that it is _the best and
 only way_ to version anything from your diary to your future company's software.
 
-[![XKCD about Git](http://imgs.xkcd.com/comics/git.png)](http://xkcd.com/1597/)
+[![XKCD about Git](https://imgs.xkcd.com/comics/git.png)](https://xkcd.com/1597/)
+
+```eval_rst
+.. toctree::
+    :maxdepth: 3
+    :includehidden:
+    :caption: Contents:
+
+    01-basics.md
+    02-setup.md
+    03-create.md
+    04-changes.md
+    05-history.md
+    06-ignore.md
+    07-gitlab.md
+    08-share.md
+    09-pullrequests.md
+    10-conflict.md
+    11-ci.md
+    12-open.md
+    13-licensing.md
+    14-citation.md
+```

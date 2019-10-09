@@ -69,9 +69,11 @@ specific indices from the list.
 ```
 
 {% callout "Functions and keywords" %}
+
 `del` is a language keyword representing an action, and not a function. The
 syntactic difference is that functions take their arguments between parentheses,
 such as `my_function(1, 2, 3)`, whereas `del` does not.
+
 {% endcallout %}
 
 You can retrieve sub-lists by using _slice_ notation whilst indexing.
@@ -137,9 +139,11 @@ meaning _take out 0 elements from the list starting a position 2 and insert the
 content of the list `[6]` in that position_.
 
 {% challenge "Copying a list" %}
+
 Slicing creates a copy, so what notation could you use to copy the full list?
 
 {% solution "Solution" %}
+
 You need to slice from the very beginning to the very end of the list.
 ```python
 >>> a[:]
@@ -150,6 +154,9 @@ This is equivalent to specifying the indices explicitly.
 >>> a[0:len(a)]
 [4, 2, 9, 45]
 ```
+
+{% endsolution %}
+
 {% endchallenge %}
 
 ## Looping
@@ -171,6 +178,7 @@ We have to indent the code inside the `for` loop to tell Python that these
 lines should be run for every iteration.
 
 {% callout "Indentation in Python" %}
+
 The `for` loop is a block, and every Python block requires indentation, unlike
 other "free-form" languages such as C++ or Java. This means that Python will
 throw an error if you don't indent:
@@ -204,6 +212,7 @@ indentation forces you to make your code more readable!
 
 Note that it does not matter how many spaces you use for indentation. **As a
 convention, we are using four spaces.**
+
 {% endcallout %}
 
 The variable name `item` can be whatever we want, but its value is changed by 
@@ -467,7 +476,7 @@ itself. For example, you could express coordinates as a tuple.
 >>> x, y = coords
 ```
 
-This is nice because it doesn’t make sense to append to an $$(x, y)$$ 
+This is nice because it doesn’t make sense to append to an `$ (x, y) $` 
 coordinate, nor to ‘delete’ a dimension. Generally, it can be useful if the 
 data structure you’re using respects the _meaning_ of the data you’re storing.
 
@@ -483,6 +492,7 @@ earlier when we used `enumerate`.
 Each element of the list is a tuple.
 
 {% challenge "Write a list comprehension yourself" %}
+
 Compute the square of the magnitude of the sum of the following two 
 three-vectors, using a single list comprehension and the global `sum` method.
 ```python
@@ -493,6 +503,7 @@ It might help to first think about how you’d compute the quantity for a single
 vector.
 
 {% solution "Solution" %}
+
 Not sure what the `sum` method does? Ask for `help`!
 ```python
 >>> help(sum)
@@ -503,4 +514,7 @@ components are the sum of the two input vectors.
 >>> magsq = sum([(k + pi)**2 for k, pi in zip(kaon, pion)])
 ```
 The square root of this is around 40.42.
+
+{% endsolution %}
+
 {% endchallenge %}

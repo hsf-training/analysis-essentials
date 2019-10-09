@@ -13,6 +13,7 @@ how we perform operations on them.
 
 {% callout "Integer division in Python 2" %}
 
+
 If for any reason (e.g. you want to use LHCb or Alice software) you have to use Python 2, 
 beware of that Python 2 has a few different _types_ of numbers, and they can 
 behave differently.
@@ -57,9 +58,11 @@ the `//` operation:
 >>> 10//3
 3
 ```
+
 {% endcallout %}
 
 {% callout "Operators" %}
+
 This behaviour can be explained in terms of operators and the double-underscore 
 methods. You can see that numbers have two methods for division:
 
@@ -76,6 +79,7 @@ In Python 2, the `/` operator corresponded to the `__floordiv__` method when
 used with integers, but the `__truediv__` operator when used with floats. In 
 Python 3, and when using the `from __future__ import division` line, the `/` 
 operator always uses the `__truediv__` method.
+
 {% endcallout %}
 
 Python also lets you manipulate complex numbers, using `j` to represent the 

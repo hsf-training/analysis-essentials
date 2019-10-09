@@ -1,12 +1,14 @@
 # Navigating Files and Directories
 
 {% objectives "Learning Objectives" %}
+
 - Explain the similarities and differences between a file and a directory.
 - Translate an absolute path into a relative path and vice versa.
 - Construct absolute and relative paths that identify specific files and directories.
 - Explain the steps in the shell's read-run-print cycle.
 - Identify the actual command, flags, and filenames in a command-line call.
 - Demonstrate the use of tab completion, and explain its advantages.
+
 {% endobjectives %}
 
 The part of the operating system responsible for managing files and directories
@@ -22,12 +24,14 @@ let's open a shell window:
 
 {% callout "Preparation Magic" %}
 
+
 If you type the command:
 `PS1='$ '`
 into your shell, followed by pressing the 'enter' key,
 your window should look like our example in this lesson.
 This isn't necessary to follow along (in fact, your prompt may have
 other helpful information you want to know about).  This is up to you!
+
 {% endcallout %}
 
 ```bash
@@ -49,7 +53,7 @@ it shows us who the shell thinks we are:
 $ whoami
 ```
 
-```output
+```
 nelle
 ```
 
@@ -63,6 +67,7 @@ More specifically, when we type `whoami` the shell:
 
 {% callout "Username Variation" %}
 
+
 In this lesson, we have used the username `nelle` (associated
 with our hypothetical scientist Nelle) in example input and output throughout.
 However, when
@@ -71,9 +76,11 @@ you should see and use something different,
 namely, the username associated with the user account on your computer.  This
 username will be the output from `whoami`.  In
 what follows, `nelle` should always be replaced by that username.
+
 {% endcallout %}
 
 {% callout "Unknown commands" %}
+
 Remember, the Shell is a program that runs other programs rather than doing
 calculations itself. So the commands you type must be the names of existing
 programs.
@@ -84,7 +91,7 @@ will see an error message similar to this:
 $ mycommand
 ```
 
-```error
+```
 -bash: mycommand: command not found
 ```
 
@@ -92,6 +99,7 @@ The Shell (Bash) tells you that it cannot find the program `mycommand`
 because the program you are trying to run does not exist on your computer.
 We will touch on quite a few commands in the course of this tutorial, but there
 are actually many more than we can cover here.
+
 {% endcallout %}
 
 Next,
@@ -111,11 +119,12 @@ which is Nelle's **home directory**:
 $ pwd
 ```
 
-```output
+```
 /Users/nelle
 ```
 
 {% callout "Home Directory Variation" %}
+
 
 The home directory path will look different on different operating systems.
 On Linux it may look like `/home/nelle`,
@@ -133,6 +142,7 @@ If your CERN username is `cernuser` then your home directory will be:
 
 In future examples, we've used Mac output as the default - Linux and Windows
 output may differ slightly, but should be generally similar.
+
 {% endcallout %}
 
 To understand what a "home directory" is,
@@ -166,10 +176,12 @@ because its name begins with `/`.
 
 {% callout "Slashes" %}
 
+
 Notice that there are two meanings for the `/` character.
 When it appears at the front of a file or directory name,
 it refers to the root directory. When it appears *inside* a name,
 it's just a separator.
+
 {% endcallout %}
 
 Underneath `/Users`,
@@ -193,7 +205,7 @@ which stands for "listing":
 $ ls
 ```
 
-```output
+```
 Applications Documents    Library      Music        Public
 Desktop      Downloads    Movies       Pictures
 ```
@@ -212,7 +224,7 @@ which tells `ls` to add a trailing `/` to the names of directories:
 $ ls -F
 ```
 
-```output
+```
 Applications/ Documents/    Library/      Music/        Public/
 Desktop/      Downloads/    Movies/       Pictures/
 ```
@@ -223,7 +235,7 @@ Desktop/      Downloads/    Movies/       Pictures/
 $ ls --help
 ```
 
-```output
+```
 Usage: ls [OPTION]... [FILE]...
 List information about the FILEs (the current directory by default).
 Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
@@ -347,6 +359,7 @@ run from within bash, support a `--help` flag to display more
 information on how to use the commands or programs.
 
 {% callout "Unsupported command-line options" %}
+
 If you try to use an option (flag) that is not supported, `ls` and other programs
 will print an error message similar to this:
 
@@ -354,10 +367,11 @@ will print an error message similar to this:
 $ ls -j
 ```
 
-```error
+```
 ls: invalid option -- 'j'
 Try 'ls --help' for more information.
 ```
+
 {% endcallout %}
 
 For more information on how to use `ls` we can type `man ls`.
@@ -366,6 +380,7 @@ it prints a description of a command and its options,
 and (if you're lucky) provides a few examples of how to use it.
 
 {% callout "`man` and Git for Windows" %}
+
 
 The bash shell provided by Git for Windows does not
 support the `man` command. Doing a web search for
@@ -378,6 +393,7 @@ these include [grep](http://www.gnu.org/software/grep/manual/),
 and the
 [core GNU utilities](http://www.gnu.org/software/coreutils/manual/coreutils.html),
 which covers many commands introduced within this lesson.
+
 {% endcallout %}
 
 To navigate through the `man` pages,
@@ -396,6 +412,7 @@ which doesn't exist.
 
 {% callout "Parameters vs. Arguments" %}
 
+
 According to [Wikipedia](https://en.wikipedia.org/wiki/Parameter_(computer_programming)#Parameters_and_arguments),
 the terms **argument** and **parameter**
 mean slightly different things.
@@ -411,6 +428,7 @@ ls -lh Documents
 
 `ls` is the command, `-lh` are the flags (also called options),
 and `Documents` is the argument.
+
 {% endcallout %}
 
 We can also use `ls` to see the contents of a different directory.  Let's take a
@@ -424,7 +442,7 @@ we want a listing of something other than our current working directory:
 $ ls -F Desktop
 ```
 
-```output
+```
 data-shell/
 ```
 
@@ -450,7 +468,7 @@ a directory name to `ls`:
 $ ls -F Desktop/data-shell
 ```
 
-```output
+```
 creatures/          molecules/          notes.txt           solar.pdf
 data/               north-pacific-gyre/ pizza.cfg           writing/
 ```
@@ -487,7 +505,7 @@ because that's where we now are:
 $ pwd
 ```
 
-```output
+```
 /Users/nelle/Desktop/data-shell/data
 ```
 
@@ -495,7 +513,7 @@ $ pwd
 $ ls -F
 ```
 
-```output
+```
 amino-acids.txt   elements/     pdb/	        salmon.txt
 animals.txt       morse.txt     planets.txt     sunspot.txt
 ```
@@ -507,7 +525,7 @@ how do we go up?  We might try the following:
 $ cd data-shell
 ```
 
-```error
+```
 -bash: cd: data-shell: No such file or directory
 ```
 
@@ -536,7 +554,7 @@ if we run `pwd` after running `cd ..`, we're back in `/Users/nelle/Desktop/data-
 $ pwd
 ```
 
-```output
+```
 /Users/nelle/Desktop/data-shell
 ```
 
@@ -547,7 +565,7 @@ to display it, we can give `ls` the `-a` flag:
 $ ls -F -a
 ```
 
-```output
+```
 ./                  creatures/          notes.txt
 ../                 data/               pizza.cfg
 .bash_profile       molecules/          solar.pdf
@@ -569,6 +587,7 @@ equivalent to `ls -Fa`.
 
 {% callout "Other Hidden Files" %}
 
+
 In addition to the hidden directories `..` and `.`, you may also see a file
 called `.bash_profile`. This file usually contains shell configuration
 settings. You may also see other files and directories beginning
@@ -576,9 +595,11 @@ with `.`. These are usually files and directories that are used to configure
 different programs on your computer. The prefix `.` is used to prevent these
 configuration files from cluttering the terminal when a standard `ls` command
 is used.
+
 {% endcallout %}
 
 {% callout "Orthogonality" %}
+
 
 The special names `.` and `..` don't belong to `cd`;
 they are interpreted the same way by every program.
@@ -589,6 +610,7 @@ When the meanings of the parts are the same no matter how they're combined,
 programmers say they are **orthogonal**:
 Orthogonal systems tend to be easier for people to learn
 because there are fewer special cases and exceptions to keep track of.
+
 {% endcallout %}
 
 These then, are the basic commands for navigating the filesystem on your computer:
@@ -606,7 +628,7 @@ How can you check what happened?  `pwd` gives us the answer!
 $ pwd
 ```
 
-```output
+```
 /Users/nelle
 ```
 
@@ -647,7 +669,7 @@ to move to `data-shell`.
 $ pwd
 ```
 
-```output
+```
 /Users/nelle/Desktop/data-shell/data
 ```
 
@@ -658,6 +680,7 @@ $ cd /Users/nelle/Desktop/data-shell
 Run `pwd` and `ls -F` to ensure that we're in the directory we expect.
 
 {% callout "Two More Shortcuts" %}
+
 
 The shell interprets the character `~` (tilde) at the start of a path to
 mean "the current user's home directory". For example, if Nelle's home
@@ -671,6 +694,7 @@ then type, the full path.  This is a *very* efficient way of moving back
 and forth between directories. The difference between `cd ..` and `cd -` is
 that the former brings you *up*, while the latter brings you *back*. You can
 think of it as the *Last Channel* button on a TV remote.
+
 {% endcallout %}
 
 ### Nelle's Pipeline: Organizing Files
@@ -690,6 +714,7 @@ a directory called `revised-revised-results-3`.)
 
 {% callout "Sorting Output" %}
 
+
 Nelle names her directories "year-month-day",
 with leading zeroes for months and days,
 because the shell displays file and directory names in alphabetical order.
@@ -698,6 +723,7 @@ December would come before July;
 if she didn't use leading zeroes,
 November ('11') would come before July ('7'). Similarly, putting the year first
 means that June 2012 will come before June 2013.
+
 {% endcallout %}
 
 Each of her physical samples is labelled according to her lab's convention
@@ -744,6 +770,7 @@ and we will see it in many other tools as we go on.
 
 {% challenge "Absolute vs Relative Paths" %}
 
+
 Starting from `/Users/amanda/data/`,
 which of the following commands could Amanda use to navigate to her home directory,
 which is `/Users/amanda`?
@@ -759,6 +786,7 @@ which is `/Users/amanda`?
 9. `cd ..`
 
 {% solution "Solution" %}
+
 1. No: `.` stands for the current directory.
 2. No: `/` stands for the root directory.
 3. No: Amanda's home directory is `/Users/amanda`.
@@ -769,9 +797,12 @@ which is `/Users/amanda`?
 8. Yes: shortcut to go back to the user's home directory.
 9. Yes: goes up one level.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Relative Path Resolution" %}
+
 
 Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
 what will `ls -F ../backup` display?
@@ -784,22 +815,26 @@ what will `ls -F ../backup` display?
 ![File System for Challenge Questions](fig/filesystem-challenge.svg)
 
 {% solution "Solution" %}
+
 1. No: there *is* a directory `backup` in `/Users`.
 2. No: this is the content of `Users/thing/backup`,
    but with `..` we asked for one level further up.
 3. No: see previous explanation.
 4. Yes: `../backup/` refers to `/Users/backup/`.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "`ls` Reading Comprehension" %}
+
 
 Assuming a directory structure as in the above Figure
 (File System for Challenge Questions), if `pwd` displays `/Users/backup`,
 and `-r` tells `ls` to display things in reverse order,
 what command will display:
 
-```output
+```
 pnas_sub/ pnas_final/ original/
 ```
 
@@ -809,15 +844,19 @@ pnas_sub/ pnas_final/ original/
 4.  Either #2 or #3 above, but not #1.
 
 {% solution "Solution" %}
+
  1. No: `pwd` is not the name of a directory.
  2. Yes: `ls` without directory argument lists files and directories
     in the current directory.
  3. Yes: uses the absolute path explicitly.
  4. Correct: see explanations above.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Exploring More `ls` Flags" %}
+
 
 What does the command `ls` do when used with the `-l` and `-h` flags?
 
@@ -826,14 +865,18 @@ as file permissions and ownership), but the rest should be useful
 nevertheless.
 
 {% solution "Solution" %}
+
 The `-l` flag makes `ls` use a **l**ong listing format, showing not only
 the file/directory names but also additional information such as the file size
 and the time of its last modification. The `-h` flag makes the file size
 "**h**uman readable", i.e. display something like `5.3K` instead of `5369`.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Listing Recursively and By Time" %}
+
 
 The command `ls -R` lists the contents of directories recursively, i.e., lists
 their sub-directories, sub-sub-directories, and so on in alphabetical order
@@ -843,12 +886,16 @@ In what order does `ls -R -t` display things? Hint: `ls -l` uses a long listing
 format to view timestamps.
 
 {% solution "Solution" %}
+
 The directories are listed alphabetical at each level, the files/directories
 in each directory are sorted by time of last change.
+
+{% endsolution %}
 
 {% endchallenge %}
 
 {% keypoints "Key Points" %}
+
 - The file system is responsible for managing information on the disk.
 - Information is stored in files, which are stored in directories (folders).
 - Directories can also store other directories, which forms a directory tree.
@@ -863,5 +910,8 @@ in each directory are sorted by time of last change.
 - `..` means 'the directory above the current one'; `.` on its own means 'the current directory'.
 - Most files' names are `something.extension`. The extension isn't required, and doesn't guarantee anything, but is normally used to indicate the type of data in the file.
 - Most commands take options (flags) which begin with a `-`.
+
 {% endkeypoints %}
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
+
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation
+{% endright %}

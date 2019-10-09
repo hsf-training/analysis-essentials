@@ -1,11 +1,14 @@
 # Introducing the Shell
 
 {% objectives "Learning Objectives" %}
+
 - Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs.
 - Explain when and why command-line interfaces should be used instead of graphical interfaces.
+
 {% endobjectives %}
 
 {% prereq "Prerequisites" %}
+
 In this lesson we will use the example `data-shell` directory to provide a
 common set of files that everyone has access to. In order to create these files
 and directories, login to lxplus and run:
@@ -16,6 +19,7 @@ mkdir Desktop; cd Desktop && wget -O data-shell.zip https://cern.ch/go/9rKZ && u
 
 For now it does not matter if you understand this command, hopefully by the end
 of this lesson you will!
+
 {% endprereq %}
 
 ### Background
@@ -34,7 +38,7 @@ Although most modern desktop operating systems communicate with their human user
 means of windows, icons and pointers, these software technologies didn't become
 widespread until the 1980s. The roots of such *graphical user interfaces* go back
 to Doug Engelbart's work in the 1960s, which you can see in what has been
-called "[The Mother of All Demos](http://www.youtube.com/watch?v=a11JDLBXtPQ)".
+called "[The Mother of All Demos](https://www.youtube.com/watch?v=a11JDLBXtPQ)".
 
 ### The Command-Line Interface
 Going back even further,
@@ -79,6 +83,7 @@ Bash is the default shell on most modern implementations of Unix
 and in most packages that provide Unix-like tools for Windows.
 
 {% callout "Available shells at CERN" %}
+
 At CERN the `bash` is set as the default shell, however other shells are
 supported by the CERN IT department and can be set [on the account management
 page](https://resources.web.cern.ch/resources/Manage/Linux/Settings.aspx).
@@ -88,6 +93,7 @@ configuration.
 
 Regardless of your default shell you can always use a different shell by running
 the relevant executable (i.e. `bash`, `tcsh`, `zsh`, ...) after logging in.
+
 {% endcallout %}
 
 ### Why bother?
@@ -113,9 +119,9 @@ to tackle a wide range of scientific questions and computational challenges.
 
 Nelle Nemo, a marine biologist,
 has just returned from a six-month survey of the
-[North Pacific Gyre](http://en.wikipedia.org/wiki/North_Pacific_Gyre),
+[North Pacific Gyre](https://en.wikipedia.org/wiki/North_Pacific_Gyre),
 where she has been sampling gelatinous marine life in the
-[Great Pacific Garbage Patch](http://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch).
+[Great Pacific Garbage Patch](https://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch).
 She has 1520 samples in all and now needs to:
 
 1.  Run each sample through an assay machine
@@ -139,7 +145,7 @@ this step will "only" take about two weeks.
 
 The bad news is that if she has to run `goostats` and `goodiff` by hand,
 she'll have to enter filenames and click "OK" 46,370 times
-(1520 runs of `goostats`, plus 300*299/2 (half of 300 times 299) runs of `goodiff`).
+(1520 runs of `goostats`, plus 300\*299/2 (half of 300 times 299) runs of `goodiff`).
 At 30 seconds each,
 that will take more than two weeks.
 Not only would she miss her paper deadline,
@@ -156,11 +162,29 @@ she will be able to use it again whenever she collects more data.
 
 
 {% keypoints "Key Points" %}
+
 - Explain the similarities and differences between a file and a directory.
 - Translate an absolute path into a relative path and vice versa.
 - Construct absolute and relative paths that identify specific files and directories.
 - Explain the steps in the shell's read-run-print cycle.
 - Identify the actual command, flags, and filenames in a command-line call.
 - Demonstrate the use of tab completion and explain its advantages.
+
 {% endkeypoints %}
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
+
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation
+{% endright %}
+
+```eval_rst
+.. toctree::
+    :maxdepth: 3
+    :includehidden:
+    :caption: Contents:
+
+    02-filedir.md
+    03-create.md
+    04-pipefilter.md
+    05-loop.md
+    06-script.md
+    07-find.md
+```

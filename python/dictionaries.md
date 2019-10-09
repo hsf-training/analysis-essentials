@@ -106,6 +106,7 @@ tuples, but not lists. This restriction is a trade-off that allows Python to
 make accessing values in a dictionary by key very fast.
 
 {% callout "Hashing" %}
+
 Immutable data types in Python have a `__hash__()` function, you can test it
 yourself:
 
@@ -130,6 +131,7 @@ Looking up numbers instead of strings or tuples is considerably faster, but
 since two different strings can have the same hash, their content has to be
 compared as well to really tell whether they are equal. If two hashes are
 different on the other hand we are sure that the objects are different as well.
+
 {% endcallout %}
 
 Iteration over dictionaries is over their keys.
@@ -147,6 +149,7 @@ We have already seen how to iterate over values (using `d.values()`) or keys
 and values simultaneously (using `d.items()`).
 
 {% callout "On the efficiency of items()" %}
+
 In Python 2, using items copies the keys and values of a dictionary, and gives
 you back those copies. This can be problematic for large dictionaries as the
 amount of memory your program uses can double. Python 3 uses a much more
@@ -159,9 +162,11 @@ Note that there are also similar methods for keys and values, called
 `viewkeys()` and `viewvalues()`, and that all of these view methods are only
 available from
 Python 2.7.
+
 {% endcallout %}
 
 {% challenge "Alphabet mapping" %}
+
 Map each letter of the alphabet to a number with a dictionary comprehension,
 starting with `0` for `a` and ending with `25` for `z`.
 
@@ -186,7 +191,9 @@ z
 ```
 Then, create the "reverse" dictionary, again with a comprehension, mapping
 letters to numbers.
+
 {% solution "Solution" %}
+
 You need to have a list containing one number per letter, and to loop over that
 list along with the characters in the string. This is exactly the same as
 looping over items in a list alongside the index, so we can use `enumerate`.
@@ -201,4 +208,7 @@ comprehension.
 ```python
 >>> reverse_map = {c: i for i, c in alphabet_map.items()}
 ```
+
+{% endsolution %}
+
 {% endchallenge %}

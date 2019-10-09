@@ -1,14 +1,10 @@
----
-teaching: 15
-exercises: 0
-questions:
-- What do I do when my changes conflict with someone else's?
----
 # Conflicts
 
 {% objectives "Learning Objectives" %}
+
 - Explain what conflicts are and when they can occur.
 - Resolve conflicts resulting from a merge.
+
 {% endobjectives %}
 
 As soon as people can work in parallel, it's likely someone's going to step on someone
@@ -270,15 +266,18 @@ Conflicts can also be minimized with project management strategies:
 
 {% challenge "Solving Conflicts that You Create" %}
 
+
 Clone the repository created by your instructor.
 Add a new file to it,
 and modify an existing file (your instructor will tell you which one).
 When asked by your instructor,
 pull her changes from the repository to create a conflict,
 then resolve it.
+
 {% endchallenge %}
 
 {% challenge "Conflicts on Non-textual files" %}
+
 
 What does Git do
 when there is a conflict in an image or some other non-textual file
@@ -426,9 +425,12 @@ $ git commit -m "Use two images: surface and sky"
 Now both images of Mars are checked into the repository, and `mars.jpg`
 no longer exists.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "A Typical Work Session" %}
+
 
 You sit down at your computer to work on a shared project that is tracked in a
 remote Git repository. During your work session, you take the following
@@ -458,6 +460,7 @@ started.
 
 {% solution "Solution" %}
 
+
 |order|action . . . . . . |command . . . . . . . . . . . . . . . . . . . |
 |-----|-------------------|----------------------------------------------|
 |1    | Update local      | `git pull origin master`                     |
@@ -467,13 +470,17 @@ started.
 |5    | Update remote     | `git push origin master`                     |
 |6    | Celebrate!        | `AFK`                                        |
 
+{% endsolution %}
 
 {% endchallenge %}
 
 
 {% keypoints "Key Points" %}
+
 - Conflicts occur when two or more people change the same file(s) at the same time.
 - The version control system does not allow people to overwrite each other's changes blindly, but highlights conflicts so that they can be resolved.
+
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
+{% endright %}
