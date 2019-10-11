@@ -27,6 +27,7 @@ repository.
     :caption: Contents:
 
     python/README.md
+    advanced-python/README.md
     shell/README.md
     shell-extras/README.md
     git/README.md

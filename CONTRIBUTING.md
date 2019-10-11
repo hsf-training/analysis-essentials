@@ -28,9 +28,8 @@ You also agree to abide by our [contributor code of conduct][conduct].
 
 To build the lessons locally, install the following:
 
-1. [sphinx](https://www.sphinx-doc.org/en/master/usage/installation.html)
-2. [sphinx-rtd-theme](https://sphinx-rtd-theme.readthedocs.io/en/stable/)
-2. [recommonmark](https://recommonmark.readthedocs.io/en/latest/)
+1. [starterkit-ci](https://pypi.org/project/starterkit-ci/)
+2. TODO: List dependencies of notebooks in `advanced-python`
 
 Then build the pages:
 
@@ -46,6 +45,11 @@ $ cd build
 $ python -m http.server 8000
 ```
 You can see your local version by using a web-browser to navigate to `http://localhost:8000` or wherever it says it's serving the book.
+
+## Contributing notebooks
+
+Notebooks should contain no output to help keep the size of this repository manageable.
+The output for each cell will be filled automatically as part of the deployment process.
 
 [conduct]: CONDUCT.md
 [repo]: https://github.com/lhcb/starterkit-lessons
