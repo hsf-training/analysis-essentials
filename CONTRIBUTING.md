@@ -29,7 +29,14 @@ You also agree to abide by our [contributor code of conduct][conduct].
 To build the lessons locally, install the following:
 
 1. [starterkit-ci](https://pypi.org/project/starterkit-ci/)
-2. TODO: List dependencies of notebooks in `advanced-python`
+2. [Matplotlib](https://matplotlib.org/)
+3. [uproot](https://pypi.org/project/uproot/)
+4. [NumPy](https://numpy.org/)
+5. [pandas](https://pandas.pydata.org/)
+6. [root_pandas](https://github.com/scikit-hep/root_pandas)
+7. [SciPy](https://www.scipy.org/)
+8. [TensorFlow](https://www.tensorflow.org/)
+9. [XGBoost](https://xgboost.readthedocs.io/en/latest/)
 
 Then build the pages:
 
