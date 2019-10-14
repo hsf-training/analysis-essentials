@@ -17,11 +17,11 @@ You also agree to abide by our [contributor code of conduct][conduct].
 
 2.  To build the lessons please install the [dependencies](#DEPENDENCIES).
 
-2.  For our lessons, you should branch from and submit pull requests against the `master` branch.
+3.  For our lessons, you should branch from and submit pull requests against the `master` branch.
 
-3.  When editing lesson pages, you need only commit changes to the Markdown source files.
+4.  When editing lesson pages, you need only commit changes to the Markdown source files.
 
-4.  If you're looking for things to work on, please see [the list of issues for this repository][issues].
+5.  If you're looking for things to work on, please see [the list of issues for this repository][issues].
     Comments on issues and reviews of pull requests are equally welcome.
 
 ## Dependencies
