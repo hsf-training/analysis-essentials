@@ -39,4 +39,4 @@ setup.extra_setup_funcs += [hsf_ci_setup]
 nbsphinx_execute = 'always'
 nbsphinx_timeout = 60*20
 # FIXME: This should be removed
-nbsphinx_execute = 'never'
+# nbsphinx_execute = 'never'
