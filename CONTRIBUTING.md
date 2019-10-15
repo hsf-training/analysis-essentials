@@ -17,11 +17,11 @@ You also agree to abide by our [contributor code of conduct][conduct].
 
 2.  To build the lessons please install the [dependencies](#DEPENDENCIES).
 
-2.  For our lessons, you should branch from and submit pull requests against the `master` branch.
+3.  For our lessons, you should branch from and submit pull requests against the `master` branch.
 
-3.  When editing lesson pages, you need only commit changes to the Markdown source files.
+4.  When editing lesson pages, you need only commit changes to the Markdown source files.
 
-4.  If you're looking for things to work on, please see [the list of issues for this repository][issues].
+5.  If you're looking for things to work on, please see [the list of issues for this repository][issues].
     Comments on issues and reviews of pull requests are equally welcome.
 
 ## Dependencies
@@ -29,7 +29,14 @@ You also agree to abide by our [contributor code of conduct][conduct].
 To build the lessons locally, install the following:
 
 1. [starterkit-ci](https://pypi.org/project/starterkit-ci/)
-2. TODO: List dependencies of notebooks in `advanced-python`
+2. [Matplotlib](https://matplotlib.org/)
+3. [uproot](https://pypi.org/project/uproot/)
+4. [NumPy](https://numpy.org/)
+5. [pandas](https://pandas.pydata.org/)
+6. [root_pandas](https://github.com/scikit-hep/root_pandas)
+7. [SciPy](https://www.scipy.org/)
+8. [TensorFlow](https://www.tensorflow.org/)
+9. [XGBoost](https://xgboost.readthedocs.io/en/latest/)
 
 Then build the pages:
 
