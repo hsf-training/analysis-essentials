@@ -60,5 +60,5 @@ SOFTWARE.
 
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
 [cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode
-[mit-license]: http://opensource.org/licenses/mit-license.html
-[osi]: http://opensource.org
+[mit-license]: https://opensource.org/licenses/mit-license.html
+[osi]: https://opensource.org

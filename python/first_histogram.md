@@ -1,7 +1,7 @@
 # Making your first histogram
 
 In this section we are going to make our first plots using Python. For this we
-will use some public LHCb data for $$ B^+ \rightarrow H^+ H^+ H^- $$ from the
+will use some public LHCb data for `$ B^+ \rightarrow H^+ H^+ H^-  $` from the
 [CERN open data portal](http://opendata.cern.ch/?ln=en). This data is available
 on EOS:
 
@@ -13,6 +13,7 @@ PhaseSpaceSimulation.root
 ```
 
 {% callout "Installing python packages inside a virtual environment" %}
+
 
 It is however usually preferable and safer to do everything inside a virtual environement.
 The latter is like a copy of your current environement. Thus you can modify your virtual 
@@ -44,9 +45,11 @@ python -c 'import matplotlib; print(f"Got matplotlib from {matplotlib.__file__}"
 ```
 
 You can go back to the default environement using the `deactivate` command.
+
 {% endcallout %}
 
 {% callout "Installing python packages directly (not the recommended way)" %}
+
 Even if not recommended, you can also install modules directly, without using a virtual environment.
 While LCG provides a lot of useful packages, there are sometimes things missing.
 Fortunately, most packages can be easily installed into `~/.local/` using `pip`
@@ -79,6 +82,7 @@ export PYTHONPATH=$(python -m site --user-site):$PYTHONPATH
 ```
 every time you run the `source` command above. This is **only** needed when
 installing user packages to upgrade LCG provided ones.
+
 {% endcallout %}
 
 
@@ -113,7 +117,7 @@ specialised bindings to allow ROOT to be used in a more pythonic way.
 
 ## Pandas
 
-[`pandas`](http://pandas.pydata.org/) is a library for doing data analysis on
+[`pandas`](https://pandas.pydata.org/) is a library for doing data analysis on
 tabular data, using a data structure known as dataframes. These typically have
 columns with labels (like `TLeaf`s in a `TTree`) with many rows. The
 `root_pandas` package we installed earlier can be used to create a pandas
@@ -166,10 +170,12 @@ In [11]: df.eval('H2_PT = sqrt(H2_PX**2 + H2_PY**2)', inplace=True)
 
 {% challenge "Adding the total B+ meson momentum" %}
 
+
 Create a new column in the dataframe called `B_P` for the total momentum of the
 B+ meson.
 
 {% solution "Solution" %}
+
 ```python
 df.eval('B_P = sqrt('
         '(H1_PX + H2_PX + H3_PX)**2 + '
@@ -177,11 +183,14 @@ df.eval('B_P = sqrt('
         '(H1_PZ + H2_PZ + H3_PZ)**2'
         ')', inplace=True)
 ```
+
+{% endsolution %}
+
 {% endchallenge %}
 
 ## Plotting histograms
 
-Now that we have the momentum of the $$B+$$ meson, it would be useful to plot
+Now that we have the momentum of the `$ B+ $` meson, it would be useful to plot
 its distribution in a histogram. We could use ROOT for this but the most popular Python library for
 plotting is known as [`matplotlib`](https://matplotlib.org/) and this is what we
 will use here. The most common way `matplotlib` is used is with the `pyplot`
@@ -198,6 +207,7 @@ In [16]: plt.savefig('B_flight_distance.pdf')
 ![B flight distance](figs/B_flight_distance.png)
 
 {% callout "Interactive plotting" %}
+
 There are various ways of viewing plots interactively such as:
 
  - `plt.show()` Opens a window with the current plot and pauses the Python
@@ -207,6 +217,7 @@ There are various ways of viewing plots interactively such as:
    languages including python in "notebooks". If you've used `mathematica` or
    `matlab` before it's a similar interface with code, documentation and plots
    all shown together.
+
 {% endcallout %}
 
 ```python
@@ -245,7 +256,7 @@ background(s) so we can more precisely study a process of interest. This is
 known as cutting.
 
 In pandas we can apply a cut to a DataFrame using the `query` method. For
-example to make a new DataFrame containing $$B^+$$ mesons with flight distances
+example to make a new DataFrame containing `$ B^+ $` mesons with flight distances
 of more than 15 mm we can use:
 
 ```python
@@ -254,11 +265,13 @@ In [27]: df_with_cut = df.query('B_FlightDistance > 15')
 
 {% challenge "Comparing momentum distributions" %}
 
+
 It is often useful to compare the effect of a cut on the distribution of another
 variable. Try to plot a histogram showing the B+ lifetime distribution with and
 without a total B+ momentum cut of 100000 MeV.
 
 {% solution "Solution" %}
+
 ```python
 bins = np.linspace(0, 150, 100)
 df_with_cut = df.query('B_P > 100000')
@@ -280,9 +293,13 @@ independently of the total number of events.
 
 ![B flight distance (v3)](figs/B_flight_distance_with_cut_compare.png)
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Comparing momentum distributions" %}
+
 Calculate and plot the B+ meson mass assuming that all three of the child
 hadrons are kaons.
+
 {% endchallenge %}

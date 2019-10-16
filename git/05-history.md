@@ -1,18 +1,12 @@
----
-teaching: 25
-exercises: 0
-questions:
-- How can I identify old versions of files?
-- How do I review my changes?
-- How can I recover old versions of files?
----
 # Exploring History
 
 {% objectives "Learning Objectives" %}
+
 - Explain what the HEAD of a repository is and how to use it.
 - Identify and use Git commit numbers.
 - Compare various versions of tracked files.
 - Restore old versions of files.
+
 {% endobjectives %}
 
 As we saw in the previous lesson, we can refer to commits by their
@@ -237,6 +231,7 @@ $ git checkout -f master mars.txt
 
 {% callout "Don't Lose Your HEAD" %}
 
+
 Above we used
 
 ```bash
@@ -246,7 +241,8 @@ $ git checkout f22b25e mars.txt
 to revert `mars.txt` to its state after the commit `f22b25e`.
 If you forget `mars.txt` in that command, Git will tell you that "You are in
 'detached HEAD' state." In this state, you shouldn't make any changes.
-You can fix this by reattaching your head using ``git checkout master``
+You can fix this by reattaching your head using `git checkout master`
+
 {% endcallout %}
 
 It's important to remember that
@@ -266,6 +262,7 @@ here's how Git works in cartoon form:
 
 {% callout "Simplifying the Common Case" %}
 
+
 If you read the output of `git status` carefully,
 you'll see that it includes this hint:
 
@@ -279,6 +276,7 @@ The double dash `--` is needed to separate the names of the files being recovere
 from the command itself:
 without it,
 Git would try to use the name of the file as the commit identifier.
+
 {% endcallout %}
 
 The fact that files can be reverted one by one
@@ -291,6 +289,7 @@ on the other hand,
 moving backward and forward in time becomes much easier.
 
 {% challenge "Recovering Older Versions of a File" %}
+
 
 Jennifer has made changes to the Python script that she has been working on for weeks, and the
 modifications she made this morning "broke" the script and it no longer runs. She has spent
@@ -309,9 +308,11 @@ let her recover the last committed version of her Python script called
 4. `$ git checkout <unique ID of last commit> data_cruncher.py`
 
 5. Both 2 and 4
+
 {% endchallenge %}
 
 {% challenge "Reverting a Commit" %}
+
 
 Jennifer is collaborating on her Python script with her colleagues and
 realizes her last commit to the group repository is wrong and wants to
@@ -332,9 +333,11 @@ Jennifer to use `git revert`, what is the missing command?
 4. Type in the new commit message.
 
 5. Save and close
+
 {% endchallenge %}
 
 {% challenge "Understanding Workflow and History" %}
+
 
 What is the output of cat venus.txt at the end of this set of commands?
 
@@ -375,6 +378,7 @@ Error because you have changed venus.txt without committing the changes
 
 {% solution "Solution" %}
 
+
 Line by line:
 ```bash
 $ cd planets
@@ -411,10 +415,12 @@ $ cat venus.txt #this will print the contents of venus.txt to the screen
 ```
 If we print venus.txt we will get answer 2.
 
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "Checking Understanding of `git diff`" %}
+
 
 Consider this command: `git diff HEAD~3 mars.txt`. What do you predict this command
 will do if you execute it? What happens when you do execute it? Why?
@@ -422,17 +428,21 @@ will do if you execute it? What happens when you do execute it? Why?
 Try another command, `git diff [ID] mars.txt`, where [ID] is replaced with
 the unique identifier for your most recent commit. What do you think will happen,
 and what does happen?
+
 {% endchallenge %}
 
 {% challenge "Getting Rid of Staged Changes" %}
+
 
 `git checkout` can be used to restore a previous commit when unstaged changes have
 been made, but will it also work for changes that have been staged but not committed?
 Make a change to `mars.txt`, add that change, and use `git checkout` to see if
 you can remove your change.
+
 {% endchallenge %}
 
 {% challenge "Explore and Summarize Histories" %}
+
 
 Exploring history is an important part of git, often it is a challenge to find
 the right commit ID, especially if the commit is from several months ago.
@@ -466,12 +476,16 @@ Question: What does the following command do?
 ```bash
 $ git log --patch HEAD~3 *.txt
 ```
+
 {% endchallenge %}
 
 
 {% keypoints "Key Points" %}
+
 - `git diff` displays differences between commits.
 - `git checkout` recovers old versions of files.
+
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
+{% endright %}

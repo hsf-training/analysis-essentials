@@ -1,10 +1,12 @@
 # Shell Scripts
 
 {% objectives "Learning Objectives" %}
+
 - Write a shell script that runs a command or series of commands for a fixed set of files.
 - Run a shell script from the command line.
 - Write a shell script that operates on a set of files defined by the user on the command line.
 - Create pipelines that include shell scripts you, and others, have written.
+
 {% endobjectives %}
 
 We are finally ready to see what makes the shell such a powerful programming environment.
@@ -28,7 +30,7 @@ The command `nano middle.sh` opens the file `middle.sh` within the text editor "
 If the file does not exist, it will be created.
 We can use the text editor to directly edit the file -- we'll simply insert the following line:
 
-```source
+```bash
 head -n 15 octane.pdb | tail -n 5
 ```
 
@@ -49,7 +51,7 @@ Our shell is called `bash`, so we run the following command:
 $ bash middle.sh
 ```
 
-```output
+```
 ATOM      9  H           1      -4.502   0.681   0.785  1.00  0.00
 ATOM     10  H           1      -5.254  -0.243  -0.537  1.00  0.00
 ATOM     11  H           1      -4.357   1.252  -0.895  1.00  0.00
@@ -62,6 +64,7 @@ our script's output is exactly what we would get if we ran that pipeline directl
 
 {% callout "Text vs. Whatever" %}
 
+
 We usually call programs like Microsoft Word or LibreOffice Writer "text
 editors", but we need to be a bit more careful when it comes to
 programming. By default, Microsoft Word uses `.docx` files to store not
@@ -71,6 +74,7 @@ anything to tools like `head`: they expect input files to contain
 nothing but the letters, digits, and punctuation on a standard computer
 keyboard. When editing programs, therefore, you must either use a plain
 text editor, or be careful to save files as plain text.
+
 {% endcallout %}
 
 What if we want to select lines from an arbitrary file?
@@ -84,7 +88,7 @@ $ nano middle.sh
 
 Now, within "nano", replace the text `octane.pdb` with the special variable called `$1`:
 
-```output
+```
 head -n 15 "$1" | tail -n 5
 ```
 
@@ -96,7 +100,7 @@ We can now run our script like this:
 $ bash middle.sh octane.pdb
 ```
 
-```output
+```
 ATOM      9  H           1      -4.502   0.681   0.785  1.00  0.00
 ATOM     10  H           1      -5.254  -0.243  -0.537  1.00  0.00
 ATOM     11  H           1      -4.357   1.252  -0.895  1.00  0.00
@@ -110,7 +114,7 @@ or on a different file like this:
 $ bash middle.sh pentane.pdb
 ```
 
-```output
+```
 ATOM      9  H           1       1.324   0.350  -1.332  1.00  0.00
 ATOM     10  H           1       1.271   1.378   0.122  1.00  0.00
 ATOM     11  H           1      -0.074  -0.384   1.288  1.00  0.00
@@ -120,9 +124,11 @@ ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00
 
 {% callout "Double-Quotes Around Arguments" %}
 
+
 For the same reason that we put the loop variable inside double-quotes,
 in case the filename happens to contain any spaces,
 we surround `$1` with double-quotes.
+
 {% endcallout %}
 
 We still need to edit `middle.sh` each time we want to adjust the range of lines,
@@ -134,7 +140,7 @@ number of lines to be passed to `head` and `tail` respectively:
 $ nano middle.sh
 ```
 
-```output
+```
 head -n "$2" "$1" | tail -n "$3"
 ```
 
@@ -144,7 +150,7 @@ We can now run:
 $ bash middle.sh pentane.pdb 15 5
 ```
 
-```output
+```
 ATOM      9  H           1       1.324   0.350  -1.332  1.00  0.00
 ATOM     10  H           1       1.271   1.378   0.122  1.00  0.00
 ATOM     11  H           1      -0.074  -0.384   1.288  1.00  0.00
@@ -159,7 +165,7 @@ behaviour:
 $ bash middle.sh pentane.pdb 20 5
 ```
 
-```output
+```
 ATOM     14  H           1      -1.259   1.420   0.112  1.00  0.00
 ATOM     15  H           1      -2.608  -0.407   1.130  1.00  0.00
 ATOM     16  H           1      -2.540  -1.303  -0.404  1.00  0.00
@@ -175,7 +181,7 @@ We can improve our script by adding some **comments** at the top:
 $ nano middle.sh
 ```
 
-```output
+```
 # Select lines from the middle of a file.
 # Usage: bash middle.sh filename end_line num_lines
 head -n "$2" "$1" | tail -n "$3"
@@ -216,7 +222,7 @@ Here's an example:
 $ nano sorted.sh
 ```
 
-```output
+```
 # Sort filenames by their length.
 # Usage: bash sorted.sh one_or_more_filenames
 wc -l "$@" | sort -n
@@ -226,7 +232,7 @@ wc -l "$@" | sort -n
 $ bash sorted.sh *.pdb ../creatures/*.dat
 ```
 
-```output
+```
 9 methane.pdb
 12 ethane.pdb
 15 propane.pdb
@@ -238,6 +244,7 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 ```
 
 {% callout "Why Isn't It Doing Anything?" %}
+
 
 What happens if a script is supposed to process a bunch of files, but we
 don't give it any filenames? For example, what if we type:
@@ -257,6 +264,7 @@ Since it doesn't have any filenames, `wc` assumes it is supposed to
 process standard input, so it just sits there and waits for us to give
 it some data interactively. From the outside, though, all we see is it
 sitting there: the script doesn't appear to do anything.
+
 {% endcallout %}
 
 
@@ -274,7 +282,7 @@ $ history | tail -n 5 > redo-figure-3.sh
 
 The file `redo-figure-3.sh` now contains:
 
-```source
+```bash
 297 bash goostats NENE01729B.txt stats-NENE01729B.txt
 298 bash goodiff stats-NENE01729B.txt /data/validated/01729.txt > 01729-differences.txt
 299 cut -d ',' -f 2-3 01729-differences.txt > 01729-time-series.txt
@@ -299,6 +307,7 @@ and a bit of editing to clean up the output
 and save it as a shell script.
 
 {% challenge "Nelle's Pipeline: Creating a Script" %}
+
 
 Nelle's supervisor insisted that all her analytics must be reproducible. The easiest way to capture all the steps is in a script.
 She runs the editor and writes the following:
@@ -376,28 +385,34 @@ Which of the following outputs would you expect to see?
 3. The first and the last line of each file in the `molecules` directory
 4. An error because of the quotes around `*.pdb`
 
-## Solution
+{% solution "Variables in Shell Scripts" %}
+
 The correct answer is 2.
 
 The special variables $1, $2 and $3 represent the command line arguments given to the
 script, such that the commands run are:
 
-```
+```bash
 $ head -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
 $ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
 ```
-{: .bash}
+
 The shell does not expand `'*.pdb'` because it is enclosed by quote marks.
 As such, the first argument to the script is `'*.pdb'` which gets expanded within the
 script by `head` and `tail`.
+
+{% endsolution %}
+
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "List Unique Species" %}
 
+
 Leah has several hundred data files, each of which is formatted like this:
 
-```source
+```bash
 2013-11-05,deer,5
 2013-11-05,rabbit,22
 2013-11-05,raccoon,7
@@ -417,7 +432,8 @@ those files separately.
 
 {% solution "Solution" %}
 
-```
+
+```bash
 # Script to find unique species in csv files where species is the second data field
 # This script accepts any number of file names as command line arguments
 
@@ -429,11 +445,13 @@ do
 	cut -d , -f 2 $file | sort | uniq
 done
 ```
-{: .source}
+
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "Find the Longest File With a Given Extension" %}
+
 
 Write a shell script called `longest.sh` that takes the name of a
 directory and a filename extension as its arguments, and prints
@@ -449,7 +467,7 @@ the most lines.
 
 {% solution "Solution" %}
 
-```
+```bash
 # Shell script which takes two arguments:
 #    1. a directory name
 #    2. a file extension
@@ -458,11 +476,13 @@ the most lines.
 
 wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
 ```
-{: .source}
+
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "Why Record Commands in the History Before Running Them?" %}
+
 
 If you run the command:
 
@@ -476,14 +496,18 @@ running it. In fact, the shell *always* adds commands to the log
 before running them. Why do you think it does this?
 
 {% solution "Solution" %}
+
 If a command causes something to crash or hang, it might be useful
 to know what that command was, in order to investigate the problem.
 Were the command only be recorded after running it, we would not
 have a record of the last command run in the event of a crash.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Script Reading Comprehension" %}
+
 
 For this question, consider the `data-shell/molecules` directory once again.
 This contains a number of `.pdb` files in addition to any other files you
@@ -510,6 +534,7 @@ echo $@.pdb
 ```
 
 {% solution "Solutions" %}
+
 Script 1 would print out a list of all files containing a dot in their name.
 
 Script 2 would print the contents of the first 3 files matching the file extension.
@@ -519,9 +544,12 @@ Script 3 would print all the arguments to the script (i.e. all the `.pdb` files)
 followed by `.pdb`.
 cubane.pdb ethane.pdb methane.pdb octane.pdb pentane.pdb propane.pdb.pdb
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Debugging Scripts" %}
+
 
 Suppose you have saved the following script in a file called `do-errors.sh`
 in Nelle's `north-pacific-gyre/2012-07-03` directory:
@@ -552,20 +580,27 @@ What is the output showing you?
 Which line is responsible for the error?
 
 {% solution "Solution" %}
+
 The `-x` flag causes `bash` to run in debug mode.
 This prints out each command as it is run, which will help you to locate errors.
 In this example, we can see that `echo` isn't printing anything. We have made a typo
 in the loop variable name, and the variable `datfile` doesn't exist, hence returning
 an empty string.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% keypoints "Key Points" %}
+
 - Save commands in files (usually called shell scripts) for re-use.
 - `bash filename` runs the commands saved in a file.
 - `$@` refers to all of a shell script's command-line arguments.
 - `$1`, `$2`, etc., refer to the first command-line argument, the second command-line argument, etc.
 - Place variables in quotes if the values might have spaces in them.
 - Letting users decide what files to process is more flexible and more consistent with built-in Unix commands.
+
 {% endkeypoints %}
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
+
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation 
+{% endright %}

@@ -1,14 +1,10 @@
----
-teaching: 5
-exercises: 0
-questions:
-- What is version control and why should I use it?
----
 # Automated Version Control
 
 {% objectives "Learning Objectives" %}
+
 - Understand the benefits of an automated version control system.
 - Understand the basics of how Git works.
+
 {% endobjectives %}
 
 We'll start by exploring how version control can be used
@@ -16,9 +12,9 @@ to keep track of what one person did and when.
 Even if you aren't collaborating with other people,
 automated version control is much better than this situation:
 
-[![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com/comics/archive_print.php?comicid=1531](fig/phd101212s.png)](http://www.phdcomics.com)
+[![Piled Higher and Deeper by Jorge Cham, https://phdcomics.com/comics/archive_print.php?comicid=1531](fig/phd101212s.png)](https://phdcomics.com)
 
-"Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com
+"Piled Higher and Deeper" by Jorge Cham, https://phdcomics.com
 
 We've all been in this situation before: it seems ridiculous to have
 multiple nearly-identical versions of the same document. Some word
@@ -56,16 +52,19 @@ across different computers facilitating collaboration among different people.
 
 {% callout "The Long History of Version Control Systems" %}
 
+
 Automated version control systems are nothing new.
 Tools like RCS, CVS, or Subversion have been around since the early 1980s and are used by many large companies.
 However, many of these are now becoming considered as legacy systems due to various limitations in their capabilities.
-In particular, the more modern systems, such as Git and [Mercurial](http://swcarpentry.github.io/hg-novice/)
+In particular, the more modern systems, such as Git and [Mercurial](https://swcarpentry.github.io/hg-novice/)
 are *distributed*, meaning that they do not need a centralized server to host the repository.
 These modern systems also include powerful merging tools that make it possible for multiple authors to work within
 the same files concurrently.
+
 {% endcallout %}
 
 {% challenge "Paper Writing" %}
+
 
 *   Imagine you drafted an excellent paragraph for a paper you are writing, but later ruin it. How would you retrieve
     the *excellent* version of your conclusion? Is it even possible?
@@ -73,12 +72,16 @@ the same files concurrently.
 *   Imagine you have 5 co-authors. How would you manage the changes and comments they make to your paper?
     If you use LibreOffice Writer or Microsoft Word, what happens if you accept changes made using the
     `Track Changes` option? Do you have a history of those changes?
+
 {% endchallenge %}
 
 
 {% keypoints "Key Points" %}
+
 - Version control is like an unlimited 'undo'.
 - Version control also allows many people to work in parallel.
+
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
+{% endright %}

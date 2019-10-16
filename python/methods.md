@@ -174,6 +174,7 @@ Of course, function arguments can be anything, even other functions!
 ```
 
 {% challenge "Methods returning methods" %}
+
 What does this method do?
 
 ```python
@@ -184,6 +185,7 @@ What does this method do?
 ```
 
 {% solution "Solution" %}
+
 It returns a function whose `increment` value has been filled by the argument
 to `make_incrementor`. If we called `make_incrementor(3)`, then `increment` has
 the value 3, and we can fill in the returned method in our heads.
@@ -203,6 +205,9 @@ So when we call _this_ method, we’ll get back what we put in, but plus 3.
 >>> print make_incrementator(3)(42) # Do it in one go!
 45
 ```
+
+{% endsolution %}
+
 {% endchallenge %}
 
 What if you like to accept an arbitrary number of arguments? For example, we
@@ -297,10 +302,12 @@ This is because dictionaries are unordered, and the `**` syntax effectively crea
 
 
 {% challenge "The most generic method" %}
+
 The most generic method would take any number of positional arguments _and_ any
 number of keyword arguments. What would this method look like?
 
 {% solution "Solution" %}
+
 It would use both `*` and `**` syntax in defining the arguments.
 ```python
 >>> def generic(*args, **kwargs):
@@ -312,6 +319,9 @@ It would use both `*` and `**` syntax in defining the arguments.
 Got args: (1, 2, 'abc')
 Got kwargs: {'bing': 'baz', 'foo': 'bar'}
 ```
+
+{% endsolution %}
+
 {% endchallenge %}
 
 ## Inline methods
@@ -369,6 +379,7 @@ variable just like any other object.
 Note that we got real numbers back because we are using Python 2 with `from __future__ import division`.
 
 {% challenge "Sum in quadrature" %}
+
 Write a method that accepts an arbitrary number of arguments, and returns the
 sum of the arguments computed in quadrature. A “sum in quadrature” is the
 square root of the sum of the squares of each number. You should use `lambda`
@@ -376,6 +387,7 @@ to define a squaring and a square root function, and `map` to apply the
 squaring method.
 
 {% solution "Solution" %}
+
 We need a little square root method and a method to square its input.
 ```python
 >>> square = lambda x: x*x
@@ -394,6 +406,9 @@ arguments. Then we can call `sum` on the result, and then `sqrt`.
 >>> 2**0.5
 1.4142135623730951
 ```
+
+{% endsolution %}
+
 {% endchallenge %}
 
 Another use case for `lambda` is the built-in `filter` method (see:
@@ -405,12 +420,17 @@ Another use case for `lambda` is the built-in `filter` method (see:
 ```
 
 {% challenge "List comprehension" %}
+
 How would you rewrite the `filter` example above using a list comprehension?
 {% solution "Solution" %}
+
 ```python
 >>> [ x for x in range(10) if x % 2 == 0 ]
 [0, 2, 4, 6, 8]
 ```
+
+{% endsolution %}
+
 {% endchallenge %}
 
 Generally, you should only use `lambda` methods to define little throw-away

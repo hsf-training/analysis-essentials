@@ -1,10 +1,12 @@
 # Finding Things
 
 {% objectives "Learning Objectives" %}
+
 - Use `grep` to select lines from text files that match simple patterns.
 - Use `find` to find files whose names match simple patterns.
 - Use the output of one command as the command-line argument(s) to another command.
 - Explain what is meant by 'text' and 'binary' files, and why many common tools don't handle the latter well.
+
 {% endobjectives %}
 
 In the same way that many of us now use "Google" as a
@@ -26,7 +28,7 @@ $ cd writing
 $ cat haiku.txt
 ```
 
-```output
+```
 The Tao that is seen
 Is not the true Tao, until
 You bring fresh toner.
@@ -42,9 +44,11 @@ Software is like that.
 
 {% callout "Forever, or Five Years" %}
 
+
 We haven't linked to the original haikus because they don't appear to be on *Salon*'s site any longer.
-As [Jeff Rothenberg said](http://www.clir.org/pubs/archives/ensuring.pdf),
+As [Jeff Rothenberg said](https://www.clir.org/wp-content/uploads/sites/6/ensuring.pdf),
 "Digital information lasts forever --- or five years, whichever comes first."
+
 {% endcallout %}
 
 Let's find lines that contain the word "not":
@@ -53,7 +57,7 @@ Let's find lines that contain the word "not":
 $ grep not haiku.txt
 ```
 
-```output
+```
 Is not the true Tao, until
 "My Thesis" not found
 Today it is not working
@@ -69,7 +73,7 @@ Let's try a different pattern: "The".
 $ grep The haiku.txt
 ```
 
-```output
+```
 The Tao that is seen
 "My Thesis" not found.
 ```
@@ -87,7 +91,7 @@ This will limit matches to word boundaries.
 $ grep -w The haiku.txt
 ```
 
-```output
+```
 The Tao that is seen
 ```
 
@@ -101,7 +105,7 @@ want to search for a single word, but a phrase. This is also easy to do with
 $ grep -w "is not" haiku.txt
 ```
 
-```output
+```
 Today it is not working
 ```
 
@@ -117,7 +121,7 @@ Another useful option is `-n`, which numbers the lines that match:
 $ grep -n "it" haiku.txt
 ```
 
-```output
+```
 5:With searching comes loss
 9:Yesterday it worked
 10:Today it is not working
@@ -133,7 +137,7 @@ the option `-w` to find the lines that contain the word "the" and `-n` to number
 $ grep -n -w "the" haiku.txt
 ```
 
-```output
+```
 2:Is not the true Tao, until
 6:and the presence of absence:
 ```
@@ -144,7 +148,7 @@ Now we want to use the option `-i` to make our search case-insensitive:
 $ grep -n -w -i "the" haiku.txt
 ```
 
-```output
+```
 1:The Tao that is seen
 2:Is not the true Tao, until
 6:and the presence of absence:
@@ -157,7 +161,7 @@ the lines that do not contain the word "the".
 $ grep -n -w -v "the" haiku.txt
 ```
 
-```output
+```
 1:The Tao that is seen
 3:You bring fresh toner.
 4:
@@ -175,7 +179,7 @@ $ grep -n -w -v "the" haiku.txt
 $ grep --help
 ```
 
-```output
+```
 Usage: grep [OPTION]... PATTERN [FILE]...
 Search for PATTERN in each FILE or standard input.
 PATTERN is, by default, a basic regular expression (BRE).
@@ -199,19 +203,20 @@ Miscellaneous:
 
 {% callout "Wildcards" %}
 
+
 `grep`'s real power doesn't come from its options, though; it comes from
 the fact that patterns can include wildcards. (The technical name for
 these is **regular expressions**, which
 is what the "re" in "grep" stands for.) Regular expressions are both complex
 and powerful; if you want to do complex searches, please look at the lesson
-on [our website](http://v4.software-carpentry.org/regexp/index.html). As a taster, we can
+on [our website](https://v4.software-carpentry.org/regexp/index.html). As a taster, we can
 find lines that have an 'o' in the second position like this:
 
 ```bash
 $ grep -E '^.o' haiku.txt
 ```
 
-```output
+```
 You bring fresh toner.
 Today it is not working
 Software is like that.
@@ -223,6 +228,7 @@ example, the shell would try to expand it before running `grep`.) The
 `^` in the pattern anchors the match to the start of the line. The `.`
 matches a single character (just like `?` in the shell), while the `o`
 matches an actual 'o'.
+
 {% endcallout %}
 
 While `grep` finds lines in files,
@@ -247,7 +253,7 @@ let's run `find .`.
 $ find .
 ```
 
-```output
+```
 .
 ./old
 ./old/.gitkeep
@@ -284,7 +290,7 @@ Sure enough,
 $ find . -type d
 ```
 
-```output
+```
 ./
 ./old
 ./data
@@ -301,7 +307,7 @@ we get a listing of all the files instead:
 $ find . -type f
 ```
 
-```output
+```
 ./haiku.txt
 ./old/.gitkeep
 ./tools/stats
@@ -319,7 +325,7 @@ Now let's try matching by name:
 $ find . -name *.txt
 ```
 
-```output
+```
 ./haiku.txt
 ```
 
@@ -345,7 +351,7 @@ This way,
 $ find . -name '*.txt'
 ```
 
-```output
+```
 ./data/one.txt
 ./data/LittleWomen.txt
 ./data/two.txt
@@ -354,10 +360,12 @@ $ find . -name '*.txt'
 
 {% callout "Listing vs. Finding" %}
 
+
 `ls` and `find` can be made to do similar things given the right options,
 but under normal circumstances,
 `ls` lists everything it can,
 while `find` searches for things with certain properties and shows them.
+
 {% endcallout %}
 
 As we said earlier,
@@ -374,7 +382,7 @@ The simplest way is to put the `find` command inside `$()`:
 $ wc -l $(find . -name '*.txt')
 ```
 
-```output
+```
 11 ./haiku.txt
 300 ./data/two.txt
 21022 ./data/LittleWomen.txt
@@ -406,11 +414,12 @@ by looking for the string "FE" in all the `.pdb` files above the current directo
 $ grep "FE" $(find .. -name '*.pdb')
 ```
 
-```output
+```
 ../data/pdb/heme.pdb:ATOM     25 FE           1      -0.924   0.535  -0.518
 ```
 
 {% callout "Binary Files" %}
+
 
 We have focused exclusively on finding things in text files. What if
 your data is stored as images, in databases, or in some other format?
@@ -433,6 +442,7 @@ their limits, and to use another programming language.
 When the time comes to do this, don't be too hard on the shell: many
 modern programming languages have borrowed a lot of
 ideas from it, and imitation is also the sincerest form of praise.
+
 {% endcallout %}
 
 The Unix shell is older than most of the people who use it. It has
@@ -448,11 +458,12 @@ about them."
 
 {% challenge "Using `grep`" %}
 
+
 Referring to `haiku.txt`
 presented at the begin of this topic,
 which command would result in the following output:
 
-```output
+```
 and the presence of absence:
 ```
 
@@ -462,12 +473,16 @@ and the presence of absence:
 4. `grep -i "of" haiku.txt`
 
 {% solution "Solution" %}
+
 The correct answer is 3, because the `-w` flag looks only for whole-word matches.
 The other options will all match "of" when part of another word.
+
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "`find` Pipeline Reading Comprehension" %}
+
 
 Write a short explanatory comment for the following shell script:
 
@@ -476,13 +491,17 @@ wc -l $(find . -name '*.dat') | sort -n
 ```
 
 {% solution "Solution" %}
+
 1. Find all files with a `.dat` extension in the current directory
 2. Count the number of lines each of these files contains
 3. Sort the output from step 2. numerically
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Matching and Subtracting" %}
+
 
 The `-v` flag to `grep` inverts pattern matching, so that only lines
 which do *not* match the pattern are printed. Given that, which of
@@ -498,6 +517,7 @@ directory.
 4.  None of the above.
 
 {% solution "Solution" %}
+
 The correct answer is 1. Putting the match expression in quotes prevents the shell
 expanding it, so it gets passed to the `find` command.
 
@@ -507,14 +527,17 @@ expression to `find`.
 Option 3 is incorrect because it searches the contents of the files for lines which
 do not match "temp", rather than searching the file names.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Tracking a Species" %}
 
+
 Leah has several hundred
 data files saved in one directory, each of which is formatted like this:
 
-```source
+```
 2013-11-05,deer,5
 2013-11-05,rabbit,22
 2013-11-05,raccoon,7
@@ -527,7 +550,7 @@ and a directory as the second argument. The script should return one file called
 containing a list of dates and the number of that species seen on each date.
 For example using the data shown above, `rabbits.txt` would contain:
 
-```source
+```
 2013-11-05,22
 2013-11-06,19
 ```
@@ -551,21 +574,23 @@ An example of such a file is provided in `data-shell/data/animal-counts/animals.
 
 {% solution "Solution" %}
 
-```
+
+```bash
 grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3  > $1.txt
 ```
-{: .source}
 
 You would call the script above like this:
 
-```
+```bash
 $ bash count-species.sh bear .
 ```
-{: .bash}
+
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "Little Women" %}
+
 
 You and your friend, having just finished reading *Little Women* by
 Louisa May Alcott, are in an argument.  Of the four sisters in the
@@ -584,32 +609,34 @@ particular solution is usually chosen based on a combination of
 yielding the correct result, elegance, readability, and speed.
 
 {% solution "Solutions" %}
-```
+
+```bash
 for sis in Jo Meg Beth Amy
 do
 	echo $sis:
 >	grep -ow $sis LittleWomen.txt | wc -l
 done
 ```
-{: .source}
 
 Alternative, slightly inferior solution:
-```
+```bash
 for sis in Jo Meg Beth Amy
 do
 	echo $sis:
 >	grep -ocw $sis LittleWomen.txt
 done
 ```
-{: .source}
 
 This solution is inferior because `grep -c` only reports the number of lines matched.
 The total number of matches reported by this method will be lower if there is more
 than one match per line.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Finding Files With Different Properties" %}
+
 
 The `find` command can be given several other criteria known as "tests"
 to locate files with specific attributes, such as creation time, size,
@@ -622,19 +649,26 @@ Hint 1: you will need to use three tests: `-type`, `-mtime`, and `-user`.
 Hint 2: The value for `-mtime` will need to be negative---why?
 
 {% solution "Solution" %}
+
 Assuming that Nelle’s home is our working directory we type:
 
 ```bash
 $ find ./ -type f -mtime -1 -user ahmed
 ```
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% keypoints "Key Points" %}
+
 - `find` finds files with specific properties that match patterns.
 - `grep` selects lines in files that match patterns.
 - `--help` is a flag supported by many bash commands, and programs that can be run from within Bash, to display more information on how to use these commands or programs.
 - `man command` displays the manual page for a given command.
 - `$(command)` inserts a command's output in place.
+
 {% endkeypoints %}
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
+
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation 
+{% endright %}

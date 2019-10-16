@@ -1,10 +1,12 @@
 ## Using screen to keep things running
 {% objectives "Learning Objectives" %}
+
 * Create a new `screen` session
 * Disconnect from a `screen` session
 * Reconnect to an existing `screen` session
 * End an existing `screen` session
 * Handling of Kerberos tokens
+
 {% endobjectives %}
 
 Often we want to run a program for a long time on a computer we
@@ -32,13 +34,13 @@ session". Let's type some commands that generate some output:
 ```bash
 $ uptime
 ```
-```output
+```
  11:48:02 up 15 days, 20:36, 105 users,  load average: 2.26, 2.10, 3.16
 ```
 ```bash
 $ date
 ```
-```output
+```
 Thu Apr 16 11:48:32 CEST 2015
 ```
 
@@ -50,7 +52,7 @@ list all active sessions:
 ```bash
 $ screen -list
 ```
-```output
+```
 There is a screen on:
       25593.pts-44.lxplus0234   (Detached)
 1 Socket in /var/run/screen/S-thead.
@@ -82,7 +84,7 @@ When connecting to `lxplus` you are assigned to a random computer, but you can f
 ```bash
 $ hostname
 ```
-```output
+```
 lxplus0081.cern.ch
 ```
 
@@ -115,6 +117,7 @@ $ kinit
 ```
 
 {% callout "tmux" %}
+
 `tmux` is another program you can use to keep things running remotely. 
 In practice, it is very similar to screen, but it has some minor 
 differences. You can find syntax guides easily online, including guides 
@@ -125,4 +128,5 @@ here's a quick list of equivalent commands to those used in this lesson:
 * `Ctrl-b d` to detach instead of `Ctrl-a d` (`tmux` in general uses 
   `Ctrl-b` instead of `Ctrl-a`)
 * `tmux a` or `tmux attach` instead of `screen -rD`
+
 {% endcallout %}

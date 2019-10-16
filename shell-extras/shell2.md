@@ -79,8 +79,8 @@ or with
 
 the latter after changing the file permissions with `chmod u+x StarWars.sh`, so that the script can actually be executed.
 The file permissions tell us who is allowed to do what to a given file or directory.
-There are three basic [permission types](http://linuxcommand.org/lts0070.php) (read, write, and execute) and three sets of people to be given permissions (owner, users in the group, and users not in the group, where the group is defined for each file or directory and the group membership is configurable).
-The owner and the group can be managed by the [`chown`](http://www.linfo.org/chown.html) and [`chgrp`](http://www.computerhope.com/unix/uchgrp.htm) commands.
+There are three basic [permission types](http://linuxcommand.org/lc3_lts0090.php) (read, write, and execute) and three sets of people to be given permissions (owner, users in the group, and users not in the group, where the group is defined for each file or directory and the group membership is configurable).
+The owner and the group can be managed by the [`chown`](http://www.linfo.org/chown.html) and [`chgrp`](https://www.computerhope.com/unix/uchgrp.htm) commands.
 
 What happens if we now write `echo $CHARACTER` in the terminal? Can you explain why?
 

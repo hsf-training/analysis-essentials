@@ -1,14 +1,10 @@
----
-teaching: 5
-exercises: 0
-questions:
-- How do I get set up to use Git?
----
 # Setting Up Git
 
 {% objectives "Learning Objectives" %}
+
 - Configure `git` the first time it is used on a computer.
 - Understand the meaning of the `--global` configuration flag.
+
 {% endobjectives %}
 
 When we use Git on a new computer for the first time,
@@ -32,13 +28,14 @@ $ git config --global color.ui "auto"
 
 Please use your own name and CERN email address instead of Dracula's. This user name and email will be associated with your subsequent Git activity,
 which means that any changes pushed to
-[GitHub](http://github.com/),
-[BitBucket](http://bitbucket.org/),
-[GitLab](http://gitlab.com/) or
+[GitHub](https://github.com/),
+[BitBucket](https://bitbucket.org/),
+[GitLab](https://gitlab.com/) or
 another Git host server
 in a later lesson will include this information.
 
 {% callout "Line Endings" %}
+
 
 As with other keys, when you hit the 'return' key on your keyboard,
 your computer encodes this input.
@@ -65,7 +62,8 @@ $ git config --global core.autocrlf true
 ```
 
 You can read more about this issue
-[on this GitHub page](https://help.github.com/articles/dealing-with-line-endings/).
+[on this GitHub page](https://help.github.com/en/articles/configuring-git-to-handle-line-endings).
+
 {% endcallout %}
 
 Dracula also has to set his favorite text editor, following this table:
@@ -90,7 +88,9 @@ It is possible to reconfigure the text editor for Git whenever you want to chang
 
 {% callout "Exiting Vim" %}
 
+
 Note that `vim` is the default editor for many programs. If you haven't used `vim` before and wish to exit a session, type `Esc` then `:q!` and `Enter`.
+
 {% endcallout %}
 
 The four commands we just ran above only need to be run once: the flag `--global` tells Git
@@ -107,19 +107,24 @@ same commands to choose another editor or update your email address.
 
 {% callout "Git Help and Manual" %}
 
+
 Always remember that if you forget a `git` command, you can access the list of commands by using `-h` and access the Git manual by using `--help` :
 
 ```bash
 $ git config -h
 $ git config --help
 ```
+
 {% endcallout %}
 
 [git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
 
 
 {% keypoints "Key Points" %}
+
 -   "Use `git config` to configure a user name, email address, editor, and other preferences once per machine."
+
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
+{% endright %}

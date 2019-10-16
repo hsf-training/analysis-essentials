@@ -1,16 +1,12 @@
----
-teaching: 25
-exercises: 0
-questions:
-- How can I use version control to collaborate with other people?
----
 
 # Collaborating with Pull Requests
 
 {% objectives "Learning Objectives" %}
+
 * Collaborate to Git repositories by proposing changes
 * Understand what a Pull (or Merge) Request is
 * Use GitLab discussion and review tools to converge on a proposed change
+
 {% endobjectives %}
 
 In this lesson we are going to learn how the distributed nature of Git comes in
@@ -47,6 +43,7 @@ The general idea behind Pull Requests is:
   interface allows people to **comment and discuss**
 
 {% callout "Why are they called Pull Requests?" %}
+
 We have seen in a [previous lesson](07-gitlab.md) that the act of
 incorporating remote changes into a repository is called "pulling" and it is
 achieved by variations of the command `git pull`.
@@ -54,11 +51,14 @@ achieved by variations of the command `git pull`.
 Projects using Pull Requests do not allow people to `git push` code to them.
 Instead, what you are doing is **requesting them to pull your code** instead,
 therefore the name.
+
 {% endcallout %}
 
 {% callout "Pull Requests are not a builtin Git feature" %}
+
 The concept of Pull Requests leverages certain features of Git, but it's not
 part of the `git` tool itself: it depends on the hosting platform you use.
+
 {% endcallout %}
 
 
@@ -92,9 +92,11 @@ permissions** to it. You cannot directly push to the original repository, but
 you can write to your fork.
 
 {% callout "Forks are independent" %}
+
 When you create a fork, you make a snapshot of the original repository at a
 given moment in time. From that point on, the fork is independent from both the
 original repository and any forks made by other users.
+
 {% endcallout %}
 
 
@@ -126,9 +128,12 @@ git remote add YOUR_CERN_USERNAME ssh://git@gitlab.cern.ch:7999/YOUR_CERN_USERNA
 ```
 
 {% challenge "What are my remotes now?" %}
+
 * How many remotes do you have now in your repository?
 * What are their names?
+
 {% solution "Solution" %}
+
 You can verify what are your remotes by using the `git remote` command:
 
 ```bash
@@ -145,6 +150,9 @@ You now have **two remotes**: the default one, corresponding to the upstream
 repository, is called `origin` and you have added it when you have cloned the
 repository. The second one is named after your CERN account and you have created
 it explicitly with `git remote add`.
+
+{% endsolution %}
+
 {% endchallenge %}
 
 
@@ -171,6 +179,7 @@ $ git pull origin
 ```
 
 {% callout "Syncing using the nuclear option" %}
+
 In some cases you might end up with your working directory (and/or branch)
 "messed up" and the `git pull` command will not work seamlessly. If you are sure
 you are not going to lose anything important, you can simply reset your current
@@ -184,6 +193,7 @@ $ git clean -fxd  # get rid of any extra files not under version control
 
 You should be **very careful** about using the `git reset` and `git clean`
 commands, but they are very useful when your working area got messed up somehow.
+
 {% endcallout %}
 
 
@@ -207,11 +217,14 @@ $ git commit -m 'Add user info for YOUR_CERN_USERNAME'
 ```
 
 {% challenge "What have I done?" %}
+
 * What did you do with `git add`?
 * What did you do with `git commit`?
 * Why is the commit message appropriate?
 * Where are my changes now?
+
 {% solution "Solution" %}
+
 `git add --all` adds all untracked/modified files to the "staging area", that
 is: the area containing the files which will be part of the next commit. The
 `-v` (as in *verbose*) switch is useful to spot unwanted additions, as it
@@ -222,6 +235,9 @@ prints out every added file.
 
 Your commit is only **on your laptop only** and it is not yet available in your
 fork, or on the upstream repository.
+
+{% endsolution %}
+
 {% endchallenge %}
 
 
@@ -271,10 +287,12 @@ OK, so your changes are now pushed to your private repository. Before opening
 the Pull Request let's check the status of the remote repositories.
 
 {% challenge "Status of remote repositories" %}
+
 How do you use `git log` to see exactly what the two remote repositories
 (`origin`, and your fork) contain?
 
 {% solution "Solution" %}
+
 We use the `--decorate` option to show local and remote branches and tags (`-10`
 is to limit the history to 10 commits):
 
@@ -294,6 +312,9 @@ So you will see that:
 * the main repository (`origin/master`) is *behind* yours
 * your local repository (`master`) and your remote fork (`dberzano/master`) are
   in sync and contain the commit you've just authored
+
+{% endsolution %}
+
 {% endchallenge %}
 
 
@@ -328,8 +349,10 @@ commit messages:
 * add any extra information in the **Description** field.
 
 {% callout "Automatic Pull Request title and description" %}
+
 If your Pull Request has only one commit, the **Title** and **Description**
 fields will be automatically filled for you.
+
 {% endcallout %}
 
 ![Title and description](fig/gitlab-pr-title.png)
@@ -402,12 +425,14 @@ and click on the **Commits** tab at the bottom, here is a direct link for the ex
 ![Commits](fig/gitlab-pr-commits.png)
 
 {% callout "How come has this worked?" %}
+
 Opening a Merge/Pull Request does not mean creating a static snapshot of your
 working area at the time when you have opened it; instead, your working area
 (*i.e.* your *branch* on your *remote*, note that we are only using one branch
 called `master`, which is the default, for simplicity) is dynamically linked to
 the Merge Request. The link disappears the moment the Merge Request is closed,
 or accepted.
+
 {% endcallout %}
 
 Adding commits to an existing Merge Request is the very essence of using Merge
@@ -453,9 +478,11 @@ efficient way to truly collaborate on large projects.
   and pickiest reviewer!) is a chance for improvement.
 
 {% callout "Behave on Pull Request discussions" %}
+
 Some Pull Requests on large projects can get rather controversial. Bear in mind
 that Pull Requests are about facilitating collaboration for a common goal, and -
 as in real life - try not to go on a rampage, at least not too quickly!
+
 {% endcallout %}
 
 
@@ -470,14 +497,17 @@ services that can be used with other git hosts.
 
 
 {% keypoints "Key Points" %}
+
 * "Forking" means to create your private editable copy of a remote project on
   the servers
 * "Cloning" means to download locally a remote repository and/or its fork
 * "Pull/Merge Requests" allow for discussing code and content before including
   it
 * Automatic testing on Pull/Merge Requests ensures better upstream code quality
+
 {% endkeypoints %}
 
 {% right %}
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Original
-content {% endright %}
+content 
+{% endright %}

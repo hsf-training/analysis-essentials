@@ -1,4 +1,4 @@
-# Analysis essentials [![Build Status](https://travis-ci.org/hsf-training/analysis-essentials.svg?branch=master)](https://travis-ci.org/hsf-training/analysis-essentials)
+# Analysis essentials [![Build Status](https://api.travis-ci.org/hsf-training/analysis-essentials.svg?branch=master)](https://travis-ci.org/hsf-training/analysis-essentials)
 
 This is the source material for the [analysis essentials website][website], a 
 series of lessons for helping high-energy physics analysts become more 
@@ -15,7 +15,21 @@ Contributions to the lessons are highly encouraged. Please see the
 If you have any problems or questions, you can [open an issue][issues] on this 
 repository.
 
-[website]: http://hsf-training.github.io/analysis-essentials/
+[website]: https://hsf-training.github.io/analysis-essentials/
 [starterkit]: https://lhcb.github.io/starterkit/
 [contributing]: CONTRIBUTING.md
 [issues]: https://github.com/hsf-training/analysis-essentials/issues
+
+```eval_rst
+.. toctree::
+    :maxdepth: 3
+    :includehidden:
+    :caption: Contents:
+
+    python/README.md
+    advanced-python/README.md
+    shell/README.md
+    shell-extras/README.md
+    git/README.md
+    CONTRIBUTING.md
+```

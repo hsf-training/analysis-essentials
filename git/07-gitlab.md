@@ -1,17 +1,14 @@
----
-teaching: 30
-exercises: 0
-questions:
-- How do I share my changes with others on the web?
----
 # Remotes in CERN GitLab
 
 {% objectives "Learning Objectives" %}
+
 - Explain what remote repositories are and why they are useful.
 - Push to or pull from a remote repository.
+
 {% endobjectives %}
 
 {% prereq "Prerequisites" %}
+
 - A SSH Key added to your CERN GitLab account, see [here](https://docs.gitlab.com/ce/ssh/README.html)
   for instructions.
 - You can test if this is working by runnning `ssh git@gitlab.cern.ch -T -p 7999`.
@@ -20,6 +17,7 @@ questions:
 ```
 Welcome to GitLab, Santa Claus!
 ```
+
 {% endprereq %}
 
 Version control really comes into its own when we begin to collaborate with
@@ -29,14 +27,14 @@ only thing missing is to copy changes from one repository to another.
 Systems like Git allow us to move work between any two repositories.  In
 practice, though, it's easiest to use one copy as a central hub, and to keep it
 on the web rather than on someone's laptop.  Most programmers use hosting
-services like [GitHub](http://github.com), [BitBucket](http://bitbucket.org) or
-[GitLab](http://gitlab.com/) to hold those master copies. All of these services
+services like [GitHub](https://github.com), [BitBucket](https://bitbucket.org) or
+[GitLab](https://gitlab.com/) to hold those master copies. All of these services
 are the same from the perspective of the git command line however each
 provider's website offers slightly different features. In this lesson we will
 use [CERN's instance of GitLab](https://gitlab.cern.ch/). This is the similar to
 the public GitLab instance except it is hosted by CERN and is integrated with
-various CERN services such as [Single Sign On](http://information-technology.web.cern.ch/services/SSO-Service)
-and [JIRA](http://information-technology.web.cern.ch/services/JIRA-service).
+various CERN services such as [Single Sign On](https://information-technology.web.cern.ch/services/SSO-Service)
+and [JIRA](https://information-technology.web.cern.ch/services/JIRA-service).
 
 Let's start by sharing the changes we've made to our current project with the
 world.  Log in to [CERN GitLab](https://gitlab.cern.ch/), then click on the +
@@ -127,11 +125,13 @@ Our local and remote repositories are now in this state:
 
 {% callout "The '-u' Flag" %}
 
+
 You may see a `-u` option used with `git push` in some documentation.  This
 option is synonymous with the `--set-upstream-to` option for the `git branch`
 command, and is used to associate the current branch with a remote branch so
 that the `git pull` command can be used without any arguments. To do this,
 simply use `git push -u origin master` once the remote has been set up.
+
 {% endcallout %}
 
 We can pull changes from the remote repository to the local one as well:
@@ -151,6 +151,7 @@ GitLab, though, this command would download them to our local repository.
 
 {% challenge "GitLab GUI" %}
 
+
 Browse to your `planets` repository on GitLab.
 Under the "Project" tab, find and click on the text that says "XX commits"
 (where "XX" is some number).
@@ -159,6 +160,7 @@ What information can you gather/explore from these buttons?
 How would you get that same information in the shell?
 
 {% solution "Solution" %}
+
 The button with the picture of a clipboard copies the full
 identifier of the commit to the clipboard. In the shell, ```git log``` will show
 you the full commit identifier for each commit.
@@ -176,9 +178,12 @@ repository at that particular time. We can do this with ```git checkout ID```
 where ID is the identifier of the commit we want to look at. If we do this, we
 need to remember to put the repository back to the right state afterwards!
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "GitLab Timestamp" %}
+
 
 Create a remote repository on GitLab.  Push the contents of your local
 repository to the remote.  Make changes to your local repository and push
@@ -187,25 +192,33 @@ timestamps of the files.  How does
 GitLab record times, and why?
 
 {% solution "Solution" %}
+
 GitLab displays timestamps in a human readable relative format (i.e.
 "22 hours ago" or "three weeks ago"). However, if you hover over the timestamp,
 you can see the exact time at which the last change to the file occurred.
+
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "Push vs. Commit" %}
 
+
 In this lesson, we introduced the "git push" command.
 How is "git push" different from "git commit"?
 
 {% solution "Solution" %}
+
 When we push changes, we're interacting with a remote repository to update it
 with the changes we've made locally (often this corresponds to sharing the
 changes we've made with others). Commit only updates your local repository.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Fixing Remote Settings" %}
+
 
 It happens quite often in practice that you made a typo in the
 remote URL. This exercise is about how to fix this kind of issues.
@@ -222,18 +235,24 @@ valid? Can you figure out how to fix the URL (tip: use `git remote
 done with this exercise.
 
 {% solution "Solution" %}
+
 We don't see any error message when we add the remote (adding the remote tells
 git about it, but doesn't try to use it yet). As soon as we try to use
 ```git push``` we'll see an error message. The command ```git remote set-url```
 allows us to change the remote's URL to fix it.
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% keypoints "Key Points" %}
+
 - A local Git repository can be connected to one or more remote repositories.
 - Use the SSH protocol to connect to remote repositories.
 - `git push` copies changes from a local repository to a remote repository.
 - `git pull` copies changes from a remote repository to a local repository.
+
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
+{% endright %}

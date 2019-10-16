@@ -1,6 +1,7 @@
 # Pipes and Filters
 
 {% objectives "Learning Objectives" %}
+
 - Redirect a command's output to a file.
 - Process a file instead of keyboard input using redirection.
 - Construct command pipelines with two or more stages.
@@ -8,6 +9,7 @@
 - Explain Unix's 'small pieces, loosely joined' philosophy.
 - `first | second` is a pipeline: the output of the first command is used as the input to the second.
 - The best way to use the shell is to use pipes to combine simple single-purpose programs (filters).
+
 {% endobjectives %}
 
 Now that we know a few basic commands,
@@ -22,7 +24,7 @@ a simple text format that specifies the type and position of each atom in the mo
 $ ls molecules
 ```
 
-```output
+```
 cubane.pdb    ethane.pdb    methane.pdb
 octane.pdb    pentane.pdb   propane.pdb
 ```
@@ -38,7 +40,7 @@ $ cd molecules
 $ wc *.pdb
 ```
 
-```output
+```
   20  156 1158 cubane.pdb
   12   84  622 ethane.pdb
    9   57  422 methane.pdb
@@ -49,6 +51,7 @@ $ wc *.pdb
 ```
 
 {% callout "Wildcards" %}
+
 
 `*` is a **wildcard**. It matches zero or more
 characters, so `*.pdb` matches `ethane.pdb`, `propane.pdb`, and every
@@ -79,9 +82,11 @@ However, generally commands like `wc` and `ls` see the lists of
 file names matching these expressions, but not the wildcards
 themselves. It is the shell, not the other programs, that deals with
 expanding wildcards, and this is another example of orthogonal design.
+
 {% endcallout %}
 
 {% challenge "Using Wildcards" %}
+
 
 When run in the `molecules` directory, which `ls` command(s) will
 produce this output?
@@ -94,6 +99,7 @@ produce this output?
 4. `ls ethane.*`
 
 {% solution "Solution" %}
+
 >>  The solution is `3.`
 >>
 >> `1.` shows all files that contain any number and combination of characters, followed by the letter `t`, another single character, and end with `ane.pdb`. This includes `octane.pdb` and `pentane.pdb`.
@@ -103,6 +109,9 @@ produce this output?
 >> `3.` fixes the problems of option 2 by matching two characters between `t` and `ne`. This is the solution.
 >>
 >> `4.` only shows files starting with `ethane.`.
+
+{% endsolution %}
+
 {% endchallenge %}
 
 If we run `wc -l` instead of just `wc`,
@@ -112,7 +121,7 @@ the output shows only the number of lines per file:
 $ wc -l *.pdb
 ```
 
-```output
+```
   20  cubane.pdb
   12  ethane.pdb
    9  methane.pdb
@@ -147,7 +156,7 @@ some caution.
 $ ls lengths.txt
 ```
 
-```output
+```
 lengths.txt
 ```
 
@@ -161,7 +170,7 @@ so `cat` just shows us what it contains:
 $ cat lengths.txt
 ```
 
-```output
+```
   20  cubane.pdb
   12  ethane.pdb
    9  methane.pdb
@@ -173,6 +182,7 @@ $ cat lengths.txt
 
 {% callout "Output Page by Page" %}
 
+
 We'll continue to use `cat` in this lesson, for convenience and consistency,
 but it has the disadvantage that it always dumps the whole file onto your screen.
 More useful in practice is the command `less`,
@@ -180,6 +190,7 @@ which you use with `$ less lengths.txt`.
 This displays a screenful of the file, and then stops.
 You can go forward one screenful by pressing the spacebar,
 or back one by pressing `b`.  Press `q` to quit.
+
 {% endcallout %}
 
 Now let's use the `sort` command to sort its contents.
@@ -192,7 +203,7 @@ instead, it sends the sorted result to the screen:
 $ sort -n lengths.txt
 ```
 
-```output
+```
   9  methane.pdb
  12  ethane.pdb
  15  propane.pdb
@@ -213,7 +224,7 @@ $ sort -n lengths.txt > sorted-lengths.txt
 $ head -n 1 sorted-lengths.txt
 ```
 
-```output
+```
   9  methane.pdb
 ```
 
@@ -226,6 +237,7 @@ the output of `head` must be the file with the fewest lines.
 
 {% callout "Redirecting to the same file" %}
 
+
 It's a very bad idea to try redirecting
 the output of a command that operates on a file
 to the same file. For example:
@@ -237,6 +249,7 @@ $ sort -n lengths.txt > lengths.txt
 Doing something like this may give you
 incorrect results and/or delete
 the contents of `lengths.txt`.
+
 {% endcallout %}
 
 If you think this is confusing,
@@ -249,7 +262,7 @@ We can make it easier to understand by running `sort` and `head` together:
 $ sort -n lengths.txt | head -n 1
 ```
 
-```output
+```
   9  methane.pdb
 ```
 
@@ -271,7 +284,7 @@ Thus we first use a pipe to send the output of `wc` to `sort`:
 $ wc -l *.pdb | sort -n
 ```
 
-```output
+```
    9 methane.pdb
   12 ethane.pdb
   15 propane.pdb
@@ -287,7 +300,7 @@ And now we send the output of this pipe, through another pipe, to `head`, so tha
 $ wc -l *.pdb | sort -n | head -n 1
 ```
 
-```output
+```
    9  methane.pdb
 ```
 
@@ -360,6 +373,7 @@ so that you and other people can put those programs into pipes to multiply their
 
 {% callout "Redirecting Input" %}
 
+
 As well as using `>` to redirect a program's output, we can use `<` to
 redirect its input, i.e., to read from a file instead of from standard
 input. For example, instead of writing `wc ammonia.pdb`, we could write
@@ -368,6 +382,7 @@ argument telling it what file to open. In the second, `wc` doesn't have
 any command line arguments, so it reads from standard input, but we
 have told the shell to send the contents of `ammonia.pdb` to `wc`'s
 standard input.
+
 {% endcallout %}
 
 ## Nelle's Pipeline: Checking Files
@@ -383,7 +398,7 @@ $ wc -l *.txt
 
 The output is 18 lines that look like this:
 
-```output
+```
 300 NENE01729A.txt
 300 NENE01729B.txt
 300 NENE01736A.txt
@@ -399,7 +414,7 @@ Now she types this:
 $ wc -l *.txt | sort -n | head -n 5
 ```
 
-```output
+```
  240 NENE02018B.txt
  300 NENE01729A.txt
  300 NENE01729B.txt
@@ -419,7 +434,7 @@ she checks to see if any files have too much data:
 $ wc -l *.txt | sort -n | tail -n 5
 ```
 
-```output
+```
  300 NENE02040B.txt
  300 NENE02040Z.txt
  300 NENE02043A.txt
@@ -437,7 +452,7 @@ To find others like it, she does this:
 $ ls *Z.txt
 ```
 
-```output
+```
 NENE01971Z.txt    NENE02040Z.txt
 ```
 
@@ -456,9 +471,10 @@ so this matches all the valid data files she has.
 
 {% challenge "What Does `sort -n` Do?" %}
 
+
 If we run `sort` on this file:
 
-```source
+```
 10
 2
 19
@@ -468,7 +484,7 @@ If we run `sort` on this file:
 
 the output is:
 
-```output
+```
 10
 19
 2
@@ -478,7 +494,7 @@ the output is:
 
 If we run `sort -n` on the same input, we get this instead:
 
-```output
+```
 2
 6
 10
@@ -489,11 +505,15 @@ If we run `sort -n` on the same input, we get this instead:
 Explain why `-n` has this effect.
 
 {% solution "Solution" %}
+
 The `-n` flag specifies a numeric sort, rather than alphabetical.
+
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "What Does `<` Mean?" %}
+
 
 Change directory to `data-shell` (the top level of our downloaded example data).
 
@@ -510,6 +530,7 @@ $ wc -l < notes.txt
 ```
 
 {% solution "Solution" %}
+
 `<` is used to redirect input to a command.
 
 In both examples, the shell returns the number of lines from the input to
@@ -522,23 +543,24 @@ It is as if we have entered the contents of the file by typing at the prompt.
 Hence the file name is not given in the output - just the number of lines.
 Try this for yourself:
 
-```
+```bash
 $ wc -l
 this
 is
 a test
 Ctrl-D # This lets the shell know you have finished typing the input
 ```
-{: .bash}
 
 ```
 3
 ```
-{: .output}
+
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "What Does `>>` Mean?" %}
+
 
 What is the difference between:
 
@@ -553,9 +575,11 @@ $ echo hello >> testfile02.txt
 ```
 
 Hint: Try executing each command twice in a row and then examining the output files.
+
 {% endchallenge %}
 
 {% challenge "More on Wildcards" %}
+
 
 Sam has a directory containing calibration data, datasets, and descriptions of
 the datasets:
@@ -589,16 +613,19 @@ $ cp ____ ~/send_to_bob/all_datasets_created_on_a_23rd/
 Help Sam by filling in the blanks.
 
 {% solution "Solution" %}
-```
+
+```bash
 $ cp *calibration.txt /backup/calibration
 $ cp 2015-11-* ~/send_to_bob/all_november_files/
 $ cp *-23-dataset* ~send_to_bob/all_datasets_created_on_a_23rd/
 ```
-{: .bash}
+
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "Piping Commands Together" %}
+
 
 In our current directory, we want to find the 3 files which have the least number of
 lines. Which command listed below would work?
@@ -609,20 +636,24 @@ lines. Which command listed below would work?
 4. `wc -l * | sort -n | head -n 3`
 
 {% solution "Solution" %}
+
 Option 4 is the solution.
 The pipe character `|` is used to feed the standard output from one process to
 the standard input of another.
 `>` is used to redirect standard output to a file.
 Try it in the `data-shell/molecules` directory!
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Why Does `uniq` Only Remove Adjacent Duplicates?" %}
 
+
 The command `uniq` removes adjacent duplicated lines from its input.
 For example, the file `data-shell/data/salmon.txt` contains:
 
-```source
+```
 coho
 coho
 steelhead
@@ -633,7 +664,7 @@ steelhead
 
 Running the command `uniq salmon.txt` from the `data-shell/data` directory produces:
 
-```output
+```
 coho
 steelhead
 coho
@@ -645,18 +676,21 @@ Why do you think `uniq` only removes *adjacent* duplicated lines?
 you combine with it in a pipe to remove all duplicated lines?
 
 {% solution "Solution" %}
-```
+
+```bash
 $ sort salmon.txt | uniq
 ```
-{: .bash}
+
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "Pipe Reading Comprehension" %}
 
+
 A file called `animals.txt` (in the `data-shell/data` folder) contains the following data:
 
-```source
+```
 2012-11-05,deer
 2012-11-05,rabbit
 2012-11-05,raccoon
@@ -673,9 +707,11 @@ What text passes through each of the pipes and the final redirect in the pipelin
 $ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt
 ```
 Hint: build the pipeline up one command at a time to test your understanding
+
 {% endchallenge %}
 
 {% challenge "Pipe Construction" %}
+
 
 For the file `animals.txt` from the previous exercise, the command:
 
@@ -685,7 +721,7 @@ $ cut -d , -f 2 animals.txt
 
 produces the following output:
 
-```output
+```
 deer
 rabbit
 raccoon
@@ -701,14 +737,17 @@ out what animals the file contains (without any duplicates in their
 names)?
 
 {% solution "Solution" %}
-```
+
+```bash
 $ cut -d , -f 2 animals.txt | sort | uniq
 ```
-{: .bash}
+
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "Removing Unneeded Files" %}
+
 
 Suppose you want to delete your processed data files, and only keep
 your raw files and processing script to save storage.
@@ -722,6 +761,7 @@ and *only* the processed data files?
 4. `rm *.*`
 
 {% solution "Solution" %}
+
 1. This would remove `.txt` files with one-character names
 2. This is correct answer
 3. The shell would expand `*` to match everything in the current directory,
@@ -730,9 +770,12 @@ file called `.txt`
 4. The shell would expand `*.*` to match all files with any extension,
 so this command would delete all files
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Wildcard Expressions" %}
+
 
 Wildcard expressions can be very complex, but you can sometimes write
 them in ways that only use simple syntax, at the expense of being a bit
@@ -754,24 +797,28 @@ this.
     where the original one would not?
 
 {% solution "Solution" %}
+
 1.
 
-	```
-	$ ls *A.txt
-	$ ls *B.txt
-	```
->	{: .bash}
+```bash
+$ ls *A.txt
+$ ls *B.txt
+```
+
 2. The output from the new commands is separated because there are two commands.
 3. When there are no files ending in `A.txt`, or there are no files ending in
 `B.txt`.
+
+{% endsolution %}
 
 {% endchallenge %}
 
 {% challenge "Which Pipe?" %}
 
+
 The file `data-shell/data/animals.txt` contains 586 lines of data formatted as follows:
 
-```output
+```
 2012-11-05,deer
 2012-11-05,rabbit
 2012-11-05,raccoon
@@ -791,13 +838,17 @@ the total count of each type of animal in the file?
 6.  `cut -d, -f 2 animals.txt | sort | uniq -c | wc -l`
 
 {% solution "Solution" %}
+
 Option 5. is the correct answer.
 If you have difficulty understanding why, try running the commands, or sub-sections of
 the pipelines (make sure you are in the `data-shell/data` directory).
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Appending Data" %}
+
 
 Consider the file `animals.txt`, used in previous exercise.
 After these commands, select the answer that
@@ -814,14 +865,18 @@ $ tail -2 animals.txt >> animalsUpd.txt
 4. The second and third lines of `animals.txt`
 
 {% solution "Solution" %}
+
 Option 3 is correct.
 For option 1 to be correct we would only run the `head` command.
 For option 2 to be correct we would only run the `tail` command.
 For option 4 to be correct we would have to pipe the output of `head` into `tail -2` by doing `head -3 animals.txt | tail -2 >> animalsUpd.txt`
 
+{% endsolution %}
+
 {% endchallenge %}
 
 {% keypoints "Key Points" %}
+
 - `cat` displays the contents of its inputs.
 - `head` displays the first few lines of its input.
 - `tail` displays the last few lines of its input.
@@ -830,5 +885,8 @@ For option 4 to be correct we would have to pipe the output of `head` into `tail
 - `*` matches zero or more characters in a filename, so `*.txt` matches all files ending in `.txt`.
 - `?` matches any single character in a filename, so `?.txt` matches `a.txt` but not `any.txt`.
 - `command > file` redirects a command's output to a file.
+
 {% endkeypoints %}
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation {% endright %}
+
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation 
+{% endright %}
