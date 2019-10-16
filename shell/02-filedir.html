@@ -1,835 +1,563 @@
 
-<!DOCTYPE HTML>
-<html lang="" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Navigating Files and Directories · LHCb analysis essentials</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
 
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Navigating Files and Directories &mdash; Analysis essentials  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
     
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/panels.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
 
-    
-        
-        <link rel="stylesheet" href="../css/website.css">
-        
-    
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Working With Files and Directories" href="03-create.html" />
+    <link rel="prev" title="Introducing the Shell" href="README.html" /> 
+</head>
 
-        
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+<body class="wy-body-for-nav">
 
+   
+  <div class="wy-grid-for-nav">
     
-    <link rel="next" href="03-create.html" />
-    
-    
-    <link rel="prev" href="./" />
-    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
 
-    </head>
-    <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
+          
+            <a href="../index.html" class="icon icon-home"> Analysis essentials
+          
+
+          
             
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+            <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-            
-                <nav role="navigation">
-                
+          
+        </div>
 
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="2.1" data-path="../python/">
-            
-                <a href="../python/">
-            
-                    
-                    Python
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.1.1" data-path="../python/running.html">
-            
-                <a href="../python/running.html">
-            
-                    
-                    Running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.2" data-path="../python/operators.html">
-            
-                <a href="../python/operators.html">
-            
-                    
-                    Objects and operators
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.3" data-path="../python/numbers.html">
-            
-                <a href="../python/numbers.html">
-            
-                    
-                    Numbers
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.4" data-path="../python/strings.html">
-            
-                <a href="../python/strings.html">
-            
-                    
-                    Strings
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.5" data-path="../python/lists.html">
-            
-                <a href="../python/lists.html">
-            
-                    
-                    Lists and looping
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.6" data-path="../python/dictionaries.html">
-            
-                <a href="../python/dictionaries.html">
-            
-                    
-                    Dictionaries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.7" data-path="../python/conditions.html">
-            
-                <a href="../python/conditions.html">
-            
-                    
-                    Conditions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.8" data-path="../python/methods.html">
-            
-                <a href="../python/methods.html">
-            
-                    
-                    Methods
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.9" data-path="../python/scripting.html">
-            
-                <a href="../python/scripting.html">
-            
-                    
-                    Scripting
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.10" data-path="../python/modules.html">
-            
-                <a href="../python/modules.html">
-            
-                    
-                    Modules
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.11" data-path="../python/learning.html">
-            
-                <a href="../python/learning.html">
-            
-                    
-                    Learning more
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.12" data-path="../python/first_histogram.html">
-            
-                <a href="../python/first_histogram.html">
-            
-                    
-                    Making your first histogram
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.13" data-path="../python/further_reading.html">
-            
-                <a href="../python/further_reading.html">
-            
-                    
-                    Further reading
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="3.1" data-path="./">
-            
-                <a href="./">
-            
-                    
-                    Introducing the Shell
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter active" data-level="3.1.1" data-path="02-filedir.html">
-            
-                <a href="02-filedir.html">
-            
-                    
-                    Navigating Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.2" data-path="03-create.html">
-            
-                <a href="03-create.html">
-            
-                    
-                    Working With Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.3" data-path="04-pipefilter.html">
-            
-                <a href="04-pipefilter.html">
-            
-                    
-                    Pipes and Filters
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.4" data-path="05-loop.html">
-            
-                <a href="05-loop.html">
-            
-                    
-                    Loops
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.5" data-path="06-script.html">
-            
-                <a href="06-script.html">
-            
-                    
-                    Shell Scripts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.6" data-path="07-find.html">
-            
-                <a href="07-find.html">
-            
-                    
-                    Finding Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
-            
-                <a href="../shell-extras/">
-            
-                    
-                    Shell extras
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
-            
-                <a href="../shell-extras/screen.html">
-            
-                    
-                    Using screen to keep things running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
-            
-                <a href="../shell-extras/screen2.html">
-            
-                    
-                    Advanced screen topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
-            
-                <a href="../shell-extras/persistent-screen.html">
-            
-                    
-                    Persistent screen or tmux session
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
-            
-                <a href="../shell-extras/shell2.html">
-            
-                    
-                    Advanced shell topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="5.1" data-path="../git/">
-            
-                <a href="../git/">
-            
-                    
-                    Version control with Git
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1.1" data-path="../git/01-basics.html">
-            
-                <a href="../git/01-basics.html">
-            
-                    
-                    Basics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.2" data-path="../git/02-setup.html">
-            
-                <a href="../git/02-setup.html">
-            
-                    
-                    Setting Up Git
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.3" data-path="../git/03-create.html">
-            
-                <a href="../git/03-create.html">
-            
-                    
-                    Creating a Repository
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.4" data-path="../git/04-changes.html">
-            
-                <a href="../git/04-changes.html">
-            
-                    
-                    Tracking Changes
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.5" data-path="../git/05-history.html">
-            
-                <a href="../git/05-history.html">
-            
-                    
-                    Exploring History
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.6" data-path="../git/06-ignore.html">
-            
-                <a href="../git/06-ignore.html">
-            
-                    
-                    Ignoring Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.7" data-path="../git/07-gitlab.html">
-            
-                <a href="../git/07-gitlab.html">
-            
-                    
-                    Remotes in CERN GitLab
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.8" data-path="../git/08-share.html">
-            
-                <a href="../git/08-share.html">
-            
-                    
-                    Sharing a repository with others
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.9" data-path="../git/09-pullrequests.html">
-            
-                <a href="../git/09-pullrequests.html">
-            
-                    
-                    Collaborating with Pull Requests
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.10" data-path="../git/10-conflict.html">
-            
-                <a href="../git/10-conflict.html">
-            
-                    
-                    Conflicts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.11" data-path="../git/11-ci.html">
-            
-                <a href="../git/11-ci.html">
-            
-                    
-                    GitLab CI
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.12" data-path="../git/12-open.html">
-            
-                <a href="../git/12-open.html">
-            
-                    
-                    Open Science
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.13" data-path="../git/13-licensing.html">
-            
-                <a href="../git/13-licensing.html">
-            
-                    
-                    Licensing
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.14" data-path="../git/14-citation.html">
-            
-                <a href="../git/14-citation.html">
-            
-                    
-                    Citation
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="6.1" >
-            
-                <a target="_blank" href="ref://analysis-essentials.pdf">
-            
-                    
-                    Download PDF
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/README.html">An introduction to Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/README.html#aim-of-these-lessons">Aim of these lessons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/running.html">Running Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/strings.html">Strings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/strings.html#formatting">Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html">Lists and looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#looping">Looping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#list-comprehension">List comprehension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#tuples">Tuples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html">Dictionaries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/conditions.html#truthiness">Truthiness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/conditions.html#conditions-in-loops">Conditions in loops</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/methods.html#inline-methods">Inline methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#the-standard-library">The standard library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#modules-from-pypi">Modules from PyPi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#write-your-first-python-module">Write your first Python module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/learning.html">Learning more</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/learning.html#exploring-python">Exploring Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/learning.html#conventional-coding">Conventional coding</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html">Making your first histogram</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/first_histogram.html#pandas">Pandas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/first_histogram.html#plotting-histograms">Plotting histograms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/first_histogram.html#applying-cuts">Applying cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html">More advanced topics in Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/further_reading.html#nice-standard-libraries">Nice standard libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/further_reading.html#nice-libraries-for-data-analysis">Nice libraries for data analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/further_reading.html#python-and-root">Python and ROOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-python/README.html">Advanced Python Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/1Basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Importing-modules">Importing modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html">2: First look at data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#5.-The-toy-dataset">5. The toy dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#6.-Plotting-a-histogram-with-matplotlib">6. Plotting a histogram with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Adding-variables">Adding variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Using-rectangular-cuts">Using rectangular cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/3Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/3Classification.html#Using-a-classifier">Using a classifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/3Classification.html#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">TODO Add a diagram of a decision tree for the above plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/4Extension.html">4: Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Distributions-in-the-Dalitz-features-for-signal-and-background">Distributions in the Dalitz features for signal and background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Preparation-of-train/test-datasets">Preparation of train/test datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Setting-up-classifiers,-training">Setting up classifiers, training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Let’s-look-at-the-results-of-training">Let’s look at the results of training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#ROC-curves-after-training">ROC curves after training</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html">6: Neural networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Downloading-a-dataset">Downloading a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-training-a-network">Example of training a network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Creating-your-own-neural-network">Creating your own neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-a-very-specific-neural-network">Example of a very specific neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Fitting-very-specific-expressions-as-estimators">Fitting very specific expressions as estimators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Writing-custom-pretransformer">Writing custom pretransformer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Ensembling-of-neural-neworks">Ensembling of neural neworks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/7DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Original-distributions">Original distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Comparing-some-simple-expressions:">Comparing some simple expressions:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination">GB-discrimination</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/8sPlot.html">8: sPlot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Applying-sWeights">Applying sWeights</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Compare">Compare</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#More-complex-case">More complex case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Building-sPlot-over-mass">Building sPlot over mass</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Of-course-we-don’t-have-labels-which-events-are-signal-and-which-are-background-beforehand">Of course we don’t have labels which events are signal and which are background beforehand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#We-have-no-information-about-real-labels">We have no information about real labels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Under-assumption-of-linearity:">Under assumption of linearity:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Minimization-of-variation">Minimization of variation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Uncorrelatedness">Uncorrelatedness</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">Introducing the Shell</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="README.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#the-command-line-interface">The Command-Line Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#the-shell">The Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#why-bother">Why bother?</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="README.html#nelle-s-pipeline-starting-point">Nelle’s Pipeline: Starting Point</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Navigating Files and Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#nelle-s-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03-create.html">Working With Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04-pipefilter.html">Pipes and Filters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="04-pipefilter.html#nelle-s-pipeline-checking-files">Nelle’s Pipeline: Checking Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="05-loop.html">Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06-script.html">Shell Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07-find.html">Finding Things</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell-extras/README.html">UNIX shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen.html">Using screen to keep things running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen2.html">Advanced screen topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#finding-lost-screens">Finding lost screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#using-tabs-in-screen">Using tabs in screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/persistent-screen.html">Persistent screen or tmux session on lxplus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#setting-up-password-less-kerberos-token">Setting up password-less kerberos token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#making-use-of-the-keytab">Making use of the keytab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token">Using k5reauth to automatically refresh your kerberos token</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/shell2.html">More about the UNIX shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#types-of-shell">Types of shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#manual-pages">Manual pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#environment-variables">Environment variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/shell2.html#let-s-now-try-the-following-callout">Let’s now try the following: {.callout}</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#differences-among-files">Differences among files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#looping-over-files">Looping over files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#conditionals">Conditionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#linking-commands">Linking commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#pipes-and-redirection">Pipes and redirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#bash-security">Bash security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#complexity">Complexity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-viewers">Text viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-editors">Text editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#disk-space">Disk space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/README.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/01-basics.html">Automated Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/02-setup.html">Setting Up Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/03-create.html">Creating a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/04-changes.html">Tracking Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/05-history.html">Exploring History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/06-ignore.html">Ignoring Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/07-gitlab.html">Remotes in CERN GitLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/08-share.html">Sharing a repository with others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/09-pullrequests.html">Collaborating with Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#what-is-a-pull-or-merge-request">What is a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#fork-the-original-project-repository">Fork the original project repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#clone-a-remote-project-and-its-fork">Clone a remote project and its fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#sync-your-local-repository-with-remote-changes">Sync your local repository with remote changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#implement-your-new-feature">Implement your new feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#push-changes">Push changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#create-a-pull-or-merge-request">Create a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#discussing-amending-retiring-a-merge-request">Discussing, amending, retiring a Merge Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#accepting-a-pull-request">Accepting a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#the-social-side-of-coding">The social side of coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#automatic-testing">Automatic testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../git/10-conflict.html">Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/11-ci.html">GitLab CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/12-open.html">Open Science</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/13-licensing.html">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/14-citation.html">Citation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributing-notebooks">Contributing notebooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
-
-                </nav>
             
-        
-    </div>
+          
+        </div>
+      </div>
+    </nav>
 
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-<div class="book-header" role="navigation">
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis essentials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
     
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="README.html">Introducing the Shell</a> &raquo;</li>
+        
+      <li>Navigating Files and Directories</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/shell/02-filedir.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Navigating Files and Directories</a>
-    </h1>
+  
+  <hr/>
 </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
 
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
 
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
 
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
 
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="navigating-files-and-directories">Navigating Files and Directories</h1>
-<p><div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1960547915);" id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives<span id="heading-1960547915"></span></h3></div><div class="panel-body" id="panel-1960547915"><ul>
-<li>Explain the similarities and differences between a file and a directory.</li>
-<li>Translate an absolute path into a relative path and vice versa.</li>
-<li>Construct absolute and relative paths that identify specific files and directories.</li>
-<li>Explain the steps in the shell&apos;s read-run-print cycle.</li>
-<li>Identify the actual command, flags, and filenames in a command-line call.</li>
-<li>Demonstrate the use of tab completion, and explain its advantages.</li>
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="navigating-files-and-directories">
+<h1>Navigating Files and Directories<a class="headerlink" href="#navigating-files-and-directories" title="Permalink to this headline">¶</a></h1>
+<div class="panel panel-objectives docutils container">
+<div class="panel-header open docutils container">
+<p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
+</div>
+<div class="panel-body docutils container">
+<ul class="simple">
+<li><p>Explain the similarities and differences between a file and a directory.</p></li>
+<li><p>Translate an absolute path into a relative path and vice versa.</p></li>
+<li><p>Construct absolute and relative paths that identify specific files and directories.</p></li>
+<li><p>Explain the steps in the shell’s read-run-print cycle.</p></li>
+<li><p>Identify the actual command, flags, and filenames in a command-line call.</p></li>
+<li><p>Demonstrate the use of tab completion, and explain its advantages.</p></li>
 </ul>
-</div></div></p>
+</div>
+</div>
 <p>The part of the operating system responsible for managing files and directories
 is called the <strong>file system</strong>.
 It organizes our data into files,
 which hold information,
-and directories (also called &quot;folders&quot;),
+and directories (also called “folders”),
 which hold files or other directories.</p>
 <p>Several commands are frequently used to create, inspect, rename, and delete files and directories.
 To start exploring them,
-let&apos;s open a shell window:</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4310394536);" id="preparation-magic"><i class="fa fa-info-circle"></i> Preparation Magic<span id="heading-4310394536"></span></h3></div><div class="panel-body" id="panel-4310394536"><p>If you type the command:
-<code>PS1=&apos;$ &apos;</code>
-into your shell, followed by pressing the &apos;enter&apos; key,
+let’s open a shell window:</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="preparation-magic"><i class="fa fa-info-circle"></i> Preparation Magic</p>
+</div>
+<div class="panel-body docutils container">
+<p>If you type the command:
+<code class="docutils literal notranslate"><span class="pre">PS1='$</span> <span class="pre">'</span></code>
+into your shell, followed by pressing the ‘enter’ key,
 your window should look like our example in this lesson.
-This isn&apos;t necessary to follow along (in fact, your prompt may have
+This isn’t necessary to follow along (in fact, your prompt may have
 other helpful information you want to know about).  This is up to you!</p>
-</div></div></p>
-<pre><code class="lang-bash">$
-</code></pre>
+</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$
+</pre></div>
+</div>
 <p>The dollar sign is a <strong>prompt</strong>, which shows us that the shell is waiting for input;
 your shell may use a different character as a prompt and may add information before
 the prompt. When typing commands, either from these lessons or from other sources,
 do not type the prompt, only the commands that follow it.</p>
-<p>Type the command <code>whoami</code>,
+<p>Type the command <code class="docutils literal notranslate"><span class="pre">whoami</span></code>,
 then press the Enter key (sometimes marked Return) to send the command to the shell.
-The command&apos;s output is the ID of the current user,
+The command’s output is the ID of the current user,
 i.e.,
 it shows us who the shell thinks we are:</p>
-<pre><code class="lang-bash">$ whoami
-</code></pre>
-<pre><code class="lang-output">nelle
-</code></pre>
-<p>More specifically, when we type <code>whoami</code> the shell:</p>
-<ol>
-<li>finds a program called <code>whoami</code>,</li>
-<li>runs that program,</li>
-<li>displays that program&apos;s output, then</li>
-<li>displays a new prompt to tell us that it&apos;s ready for more commands.</li>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ whoami
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nelle
+</pre></div>
+</div>
+<p>More specifically, when we type <code class="docutils literal notranslate"><span class="pre">whoami</span></code> the shell:</p>
+<ol class="simple">
+<li><p>finds a program called <code class="docutils literal notranslate"><span class="pre">whoami</span></code>,</p></li>
+<li><p>runs that program,</p></li>
+<li><p>displays that program’s output, then</p></li>
+<li><p>displays a new prompt to tell us that it’s ready for more commands.</p></li>
 </ol>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9522294581);" id="username-variation"><i class="fa fa-info-circle"></i> Username Variation<span id="heading-9522294581"></span></h3></div><div class="panel-body" id="panel-9522294581"><p>In this lesson, we have used the username <code>nelle</code> (associated
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="username-variation"><i class="fa fa-info-circle"></i> Username Variation</p>
+</div>
+<div class="panel-body docutils container">
+<p>In this lesson, we have used the username <code class="docutils literal notranslate"><span class="pre">nelle</span></code> (associated
 with our hypothetical scientist Nelle) in example input and output throughout.
 However, when
-you type this lesson&apos;s commands on your computer,
+you type this lesson’s commands on your computer,
 you should see and use something different,
 namely, the username associated with the user account on your computer.  This
-username will be the output from <code>whoami</code>.  In
-what follows, <code>nelle</code> should always be replaced by that username.</p>
-</div></div></p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5095003813);" id="unknown-commands"><i class="fa fa-info-circle"></i> Unknown commands<span id="heading-5095003813"></span></h3></div><div class="panel-body" id="panel-5095003813"><p>Remember, the Shell is a program that runs other programs rather than doing
+username will be the output from <code class="docutils literal notranslate"><span class="pre">whoami</span></code>.  In
+what follows, <code class="docutils literal notranslate"><span class="pre">nelle</span></code> should always be replaced by that username.</p>
+</div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="unknown-commands"><i class="fa fa-info-circle"></i> Unknown commands</p>
+</div>
+<div class="panel-body docutils container">
+<p>Remember, the Shell is a program that runs other programs rather than doing
 calculations itself. So the commands you type must be the names of existing
 programs.
 If you type the name of a program that does not exist and hit enter, you
 will see an error message similar to this:</p>
-<pre><code class="lang-bash">$ mycommand
-</code></pre>
-<pre><code class="lang-error">-bash: mycommand: command not found
-</code></pre>
-<p>The Shell (Bash) tells you that it cannot find the program <code>mycommand</code>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mycommand
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-bash: mycommand: command not found
+</pre></div>
+</div>
+<p>The Shell (Bash) tells you that it cannot find the program <code class="docutils literal notranslate"><span class="pre">mycommand</span></code>
 because the program you are trying to run does not exist on your computer.
 We will touch on quite a few commands in the course of this tutorial, but there
 are actually many more than we can cover here.</p>
-</div></div></p>
+</div>
+</div>
 <p>Next,
-let&apos;s find out where we are by running a command called <code>pwd</code>
-(which stands for &quot;print working directory&quot;).
+let’s find out where we are by running a command called <code class="docutils literal notranslate"><span class="pre">pwd</span></code>
+(which stands for “print working directory”).
 At any moment,
 our <strong>current working directory</strong>
 is our current default directory,
@@ -837,87 +565,108 @@ i.e.,
 the directory that the computer assumes we want to run commands in
 unless we explicitly specify something else.
 Here,
-the computer&apos;s response is <code>/Users/nelle</code>,
-which is Nelle&apos;s <strong>home directory</strong>:</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">pwd</span>
-</code></pre>
-<pre><code class="lang-output">/Users/nelle
-</code></pre>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5468593867);" id="home-directory-variation"><i class="fa fa-info-circle"></i> Home Directory Variation<span id="heading-5468593867"></span></h3></div><div class="panel-body" id="panel-5468593867"><p>The home directory path will look different on different operating systems.
-On Linux it may look like <code>/home/nelle</code>,
-and on Windows it will be similar to <code>C:\Documents and Settings\nelle</code> or
-<code>C:\Users\nelle</code>.
+the computer’s response is <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code>,
+which is Nelle’s <strong>home directory</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/Users/nelle
+</pre></div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="home-directory-variation"><i class="fa fa-info-circle"></i> Home Directory Variation</p>
+</div>
+<div class="panel-body docutils container">
+<p>The home directory path will look different on different operating systems.
+On Linux it may look like <code class="docutils literal notranslate"><span class="pre">/home/nelle</span></code>,
+and on Windows it will be similar to <code class="docutils literal notranslate"><span class="pre">C:\Documents</span> <span class="pre">and</span> <span class="pre">Settings\nelle</span></code> or
+<code class="docutils literal notranslate"><span class="pre">C:\Users\nelle</span></code>.
 (Note that it may look slightly different for different versions of Windows.)</p>
 <p>On lxplus your home directory is placed on a filesystem which can be shared
-between multiple computers called <a href="https://en.wikipedia.org/wiki/Andrew_File_System" target="_blank">AFS</a>.
-If your CERN username is <code>cernuser</code> then your home directory will be:</p>
-<pre><code>/afs/cern.ch/user/c/cernuser/
-</code></pre><p>In future examples, we&apos;ve used Mac output as the default - Linux and Windows
+between multiple computers called <a class="reference external" href="https://en.wikipedia.org/wiki/Andrew_File_System">AFS</a>.
+If your CERN username is <code class="docutils literal notranslate"><span class="pre">cernuser</span></code> then your home directory will be:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/afs/cern.ch/user/c/cernuser/
+</pre></div>
+</div>
+<p>In future examples, we’ve used Mac output as the default - Linux and Windows
 output may differ slightly, but should be generally similar.</p>
-</div></div></p>
-<p>To understand what a &quot;home directory&quot; is,
-let&apos;s have a look at how the file system as a whole is organized.  For the
-sake of this example, we&apos;ll be
-illustrating the filesystem on our scientist Nelle&apos;s computer.  After this
-illustration, you&apos;ll be learning commands to explore your own filesystem,
+</div>
+</div>
+<p>To understand what a “home directory” is,
+let’s have a look at how the file system as a whole is organized.  For the
+sake of this example, we’ll be
+illustrating the filesystem on our scientist Nelle’s computer.  After this
+illustration, you’ll be learning commands to explore your own filesystem,
 which will be constructed in a similar way, but not be exactly identical.</p>
-<p>On Nelle&apos;s computer, the filesystem looks like this:</p>
-<p><img src="fig/filesystem.svg" alt="The File System"></p>
+<p>On Nelle’s computer, the filesystem looks like this:</p>
+<p><img alt="The File System" src="../_images/filesystem.svg" /></p>
 <p>At the top is the <strong>root directory</strong>
 that holds everything else.
-We refer to it using a slash character <code>/</code> on its own;
-this is the leading slash in <code>/Users/nelle</code>.</p>
+We refer to it using a slash character <code class="docutils literal notranslate"><span class="pre">/</span></code> on its own;
+this is the leading slash in <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code>.</p>
 <p>Inside that directory are several other directories:
-<code>bin</code> (which is where some built-in programs are stored),
-<code>data</code> (for miscellaneous data files),
-<code>Users</code> (where users&apos; personal directories are located),
-<code>tmp</code> (for temporary files that don&apos;t need to be stored long-term),
+<code class="docutils literal notranslate"><span class="pre">bin</span></code> (which is where some built-in programs are stored),
+<code class="docutils literal notranslate"><span class="pre">data</span></code> (for miscellaneous data files),
+<code class="docutils literal notranslate"><span class="pre">Users</span></code> (where users’ personal directories are located),
+<code class="docutils literal notranslate"><span class="pre">tmp</span></code> (for temporary files that don’t need to be stored long-term),
 and so on.</p>
-<p>We know that our current working directory <code>/Users/nelle</code> is stored inside <code>/Users</code>
-because <code>/Users</code> is the first part of its name.
+<p>We know that our current working directory <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code> is stored inside <code class="docutils literal notranslate"><span class="pre">/Users</span></code>
+because <code class="docutils literal notranslate"><span class="pre">/Users</span></code> is the first part of its name.
 Similarly,
-we know that <code>/Users</code> is stored inside the root directory <code>/</code>
-because its name begins with <code>/</code>.</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6420003918);" id="slashes"><i class="fa fa-info-circle"></i> Slashes<span id="heading-6420003918"></span></h3></div><div class="panel-body" id="panel-6420003918"><p>Notice that there are two meanings for the <code>/</code> character.
+we know that <code class="docutils literal notranslate"><span class="pre">/Users</span></code> is stored inside the root directory <code class="docutils literal notranslate"><span class="pre">/</span></code>
+because its name begins with <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="slashes"><i class="fa fa-info-circle"></i> Slashes</p>
+</div>
+<div class="panel-body docutils container">
+<p>Notice that there are two meanings for the <code class="docutils literal notranslate"><span class="pre">/</span></code> character.
 When it appears at the front of a file or directory name,
 it refers to the root directory. When it appears <em>inside</em> a name,
-it&apos;s just a separator.</p>
-</div></div></p>
-<p>Underneath <code>/Users</code>,
-we find one directory for each user with an account on Nelle&apos;s machine,
+it’s just a separator.</p>
+</div>
+</div>
+<p>Underneath <code class="docutils literal notranslate"><span class="pre">/Users</span></code>,
+we find one directory for each user with an account on Nelle’s machine,
 her colleagues the Mummy and Wolfman.</p>
-<p><img src="fig/home-directories.svg" alt="Home Directories"></p>
-<p>The Mummy&apos;s files are stored in <code>/Users/imhotep</code>,
-Wolfman&apos;s in <code>/Users/larry</code>,
-and Nelle&apos;s in <code>/Users/nelle</code>.  Because Nelle is the user in our
-examples here, this is why we get <code>/Users/nelle</code> as our home directory.
+<p><img alt="Home Directories" src="../_images/home-directories.svg" /></p>
+<p>The Mummy’s files are stored in <code class="docutils literal notranslate"><span class="pre">/Users/imhotep</span></code>,
+Wolfman’s in <code class="docutils literal notranslate"><span class="pre">/Users/larry</span></code>,
+and Nelle’s in <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code>.  Because Nelle is the user in our
+examples here, this is why we get <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code> as our home directory.
 Typically, when you open a new command prompt you will be in
 your home directory to start.</p>
-<p>Now let&apos;s learn the command that will let us see the contents of our
-own filesystem.  We can see what&apos;s in our home directory by running <code>ls</code>,
-which stands for &quot;listing&quot;:</p>
-<pre><code class="lang-bash">$ ls
-</code></pre>
-<pre><code class="lang-output">Applications Documents    Library      Music        Public
+<p>Now let’s learn the command that will let us see the contents of our
+own filesystem.  We can see what’s in our home directory by running <code class="docutils literal notranslate"><span class="pre">ls</span></code>,
+which stands for “listing”:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Applications Documents    Library      Music        Public
 Desktop      Downloads    Movies       Pictures
-</code></pre>
+</pre></div>
+</div>
 <p>(Again, your results may be slightly different depending on your operating
 system and how you have customized your filesystem.)</p>
-<p><code>ls</code> prints the names of the files and directories in the current directory in
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> prints the names of the files and directories in the current directory in
 alphabetical order,
 arranged neatly into columns.
-We can make its output more comprehensible by using the <strong>flag</strong> <code>-F</code>
+We can make its output more comprehensible by using the <strong>flag</strong> <code class="docutils literal notranslate"><span class="pre">-F</span></code>
 (also known as a <strong>switch</strong> or an <strong>option</strong>) ,
-which tells <code>ls</code> to add a trailing <code>/</code> to the names of directories:</p>
-<pre><code class="lang-bash">$ ls -F
-</code></pre>
-<pre><code class="lang-output">Applications/ Documents/    Library/      Music/        Public/
+which tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> to add a trailing <code class="docutils literal notranslate"><span class="pre">/</span></code> to the names of directories:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls -F
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Applications/ Documents/    Library/      Music/        Public/
 Desktop/      Downloads/    Movies/       Pictures/
-</code></pre>
-<p><code>ls</code> has lots of other <strong>flags</strong>. To find out what they are, we can type:</p>
-<pre><code class="lang-bash">$ ls --help
-</code></pre>
-<pre><code class="lang-output">Usage: ls [OPTION]... [FILE]...
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> has lots of other <strong>flags</strong>. To find out what they are, we can type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls --help
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: ls [OPTION]... [FILE]...
 List information about the FILEs (the current directory by default).
 Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
 
@@ -927,7 +676,7 @@ Mandatory arguments to long options are mandatory for short options too.
       --author               with -l, print the author of each file
   -b, --escape               print C-style escapes for nongraphic characters
       --block-size=SIZE      scale sizes by SIZE before printing them; e.g.,
-                               &apos;--block-size=M&apos; prints sizes in units of
+                               &#39;--block-size=M&#39; prints sizes in units of
                                1,048,576 bytes; see SIZE format below
   -B, --ignore-backups       do not list implied entries ending with ~
   -c                         with -lt: sort by, and show, ctime (time of last
@@ -935,13 +684,13 @@ Mandatory arguments to long options are mandatory for short options too.
                                with -l: show ctime and sort by name;
                                otherwise: sort by ctime, newest first
   -C                         list entries by columns
-      --color[=WHEN]         colorize the output; WHEN can be &apos;always&apos; (default
-                               if omitted), &apos;auto&apos;, or &apos;never&apos;; more info below
+      --color[=WHEN]         colorize the output; WHEN can be &#39;always&#39; (default
+                               if omitted), &#39;auto&#39;, or &#39;never&#39;; more info below
   -d, --directory            list directories themselves, not their contents
-  -D, --dired                generate output designed for Emacs&apos; dired mode
+  -D, --dired                generate output designed for Emacs&#39; dired mode
   -f                         do not sort, enable -aU, disable -ls --color
   -F, --classify             append indicator (one of */=&gt;@|) to entries
-      --file-type            likewise, except do not append &apos;*&apos;
+      --file-type            likewise, except do not append &#39;*&#39;
       --format=WORD          across -x, commas -m, horizontal -x, long -l,
                                single-column -1, verbose -l, vertical -C
       --full-time            like -l --time-style=full-iso
@@ -950,7 +699,7 @@ Mandatory arguments to long options are mandatory for short options too.
                              group directories before files;
                                can be augmented with a --sort option, but any
                                use of --sort=none (-U) disables grouping
-  -G, --no-group             in a long listing, don&apos;t print group names
+  -G, --no-group             in a long listing, don&#39;t print group names
   -h, --human-readable       with -l and/or -s, print human readable sizes
                                (e.g., 1K 234M 2G)
       --si                   likewise, but use powers of 1000 not 1024
@@ -973,14 +722,14 @@ Mandatory arguments to long options are mandatory for short options too.
                                references rather than for the link itself
   -m                         fill width with a comma separated list of entries
   -n, --numeric-uid-gid      like -l, but list numeric user and group IDs
-  -N, --literal              print raw entry names (don&apos;t treat e.g. control
+  -N, --literal              print raw entry names (don&#39;t treat e.g. control
                                characters specially)
   -o                         like -l, but do not list group information
   -p, --indicator-style=slash
                              append / indicator to directories
   -q, --hide-control-chars   print ? instead of nongraphic characters
       --show-control-chars   show nongraphic characters as-is (the default,
-                               unless program is &apos;ls&apos; and output is a terminal)
+                               unless program is &#39;ls&#39; and output is a terminal)
   -Q, --quote-name           enclose entry names in double quotes
       --quoting-style=WORD   use quoting style WORD for entry names:
                                literal, locale, shell, shell-always,
@@ -997,10 +746,10 @@ Mandatory arguments to long options are mandatory for short options too.
                                as sort key if --sort=time (newest first)
       --time-style=STYLE     with -l, show times using style STYLE:
                                full-iso, long-iso, iso, locale, or +FORMAT;
-                               FORMAT is interpreted like in &apos;date&apos;; if FORMAT
+                               FORMAT is interpreted like in &#39;date&#39;; if FORMAT
                                is FORMAT1&lt;newline&gt;FORMAT2, then FORMAT1 applies
                                to non-recent files and FORMAT2 to recent files;
-                               if STYLE is prefixed with &apos;posix-&apos;, STYLE
+                               if STYLE is prefixed with &#39;posix-&#39;, STYLE
                                takes effect only outside the POSIX locale
   -t                         sort by modification time, newest first
   -T, --tabsize=COLS         assume tab stops at each COLS instead of 8
@@ -1013,7 +762,7 @@ Mandatory arguments to long options are mandatory for short options too.
   -x                         list entries by lines instead of by columns
   -X                         sort alphabetically by entry extension
   -Z, --context              print any security context of each file
-  -1                         list one file per line.  Avoid &apos;\n&apos; with -q or -b
+  -1                         list one file per line.  Avoid &#39;\n&#39; with -q or -b
       --help     display this help and exit
       --version  output version information and exit
 
@@ -1032,48 +781,68 @@ Exit status:
 
 GNU coreutils online help: &lt;http://www.gnu.org/software/coreutils/&gt;
 Full documentation at: &lt;http://www.gnu.org/software/coreutils/ls&gt;
-or available locally via: info &apos;(coreutils) ls invocation&apos;
-</code></pre>
+or available locally via: info &#39;(coreutils) ls invocation&#39;
+</pre></div>
+</div>
 <p>Many bash commands, and programs that people have written that can be
-run from within bash, support a <code>--help</code> flag to display more
+run from within bash, support a <code class="docutils literal notranslate"><span class="pre">--help</span></code> flag to display more
 information on how to use the commands or programs.</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8626942358);" id="unsupported-command-line-options"><i class="fa fa-info-circle"></i> Unsupported command-line options<span id="heading-8626942358"></span></h3></div><div class="panel-body" id="panel-8626942358"><p>If you try to use an option (flag) that is not supported, <code>ls</code> and other programs
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="unsupported-command-line-options"><i class="fa fa-info-circle"></i> Unsupported command-line options</p>
+</div>
+<div class="panel-body docutils container">
+<p>If you try to use an option (flag) that is not supported, <code class="docutils literal notranslate"><span class="pre">ls</span></code> and other programs
 will print an error message similar to this:</p>
-<pre><code class="lang-bash">$ ls -j
-</code></pre>
-<pre><code class="lang-error">ls: invalid option -- &apos;j&apos;
-Try &apos;ls --help&apos; for more information.
-</code></pre>
-</div></div></p>
-<p>For more information on how to use <code>ls</code> we can type <code>man ls</code>.
-<code>man</code> is the Unix &quot;manual&quot; command:
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls -j
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ls: invalid option -- &#39;j&#39;
+Try &#39;ls --help&#39; for more information.
+</pre></div>
+</div>
+</div>
+</div>
+<p>For more information on how to use <code class="docutils literal notranslate"><span class="pre">ls</span></code> we can type <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">ls</span></code>.
+<code class="docutils literal notranslate"><span class="pre">man</span></code> is the Unix “manual” command:
 it prints a description of a command and its options,
-and (if you&apos;re lucky) provides a few examples of how to use it.</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4878703651);" id="man-and-git-for-windows"><i class="fa fa-info-circle"></i> <code>man</code> and Git for Windows<span id="heading-4878703651"></span></h3></div><div class="panel-body" id="panel-4878703651"><p>The bash shell provided by Git for Windows does not
-support the <code>man</code> command. Doing a web search for
-<code>unix man page COMMAND</code> (e.g. <code>unix man page grep</code>)
+and (if you’re lucky) provides a few examples of how to use it.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="man-and-git-for-windows"><i class="fa fa-info-circle"></i> man and Git for Windows</p>
+</div>
+<div class="panel-body docutils container">
+<p>The bash shell provided by Git for Windows does not
+support the <code class="docutils literal notranslate"><span class="pre">man</span></code> command. Doing a web search for
+<code class="docutils literal notranslate"><span class="pre">unix</span> <span class="pre">man</span> <span class="pre">page</span> <span class="pre">COMMAND</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">unix</span> <span class="pre">man</span> <span class="pre">page</span> <span class="pre">grep</span></code>)
 provides links to numerous copies of the Unix manual
 pages online.
 For example, GNU provides links to its
-<a href="http://www.gnu.org/manual/manual.html" target="_blank">manuals</a>:
-these include <a href="http://www.gnu.org/software/grep/manual/" target="_blank">grep</a>,
+<a class="reference external" href="http://www.gnu.org/manual/manual.html">manuals</a>:
+these include <a class="reference external" href="http://www.gnu.org/software/grep/manual/">grep</a>,
 and the
-<a href="http://www.gnu.org/software/coreutils/manual/coreutils.html" target="_blank">core GNU utilities</a>,
+<a class="reference external" href="http://www.gnu.org/software/coreutils/manual/coreutils.html">core GNU utilities</a>,
 which covers many commands introduced within this lesson.</p>
-</div></div></p>
-<p>To navigate through the <code>man</code> pages,
+</div>
+</div>
+<p>To navigate through the <code class="docutils literal notranslate"><span class="pre">man</span></code> pages,
 you may use the up and down arrow keys to move line-by-line,
-or try the &quot;b&quot; and spacebar keys to skip up and down by a full page.
-Quit the <code>man</code> pages by typing &quot;q&quot;.</p>
+or try the “b” and spacebar keys to skip up and down by a full page.
+Quit the <code class="docutils literal notranslate"><span class="pre">man</span></code> pages by typing “q”.</p>
 <p>Here,
 we can see that our home directory contains mostly <strong>sub-directories</strong>.
-Any names in your output that don&apos;t have trailing slashes,
+Any names in your output that don’t have trailing slashes,
 are plain old <strong>files</strong>.
-And note that there is a space between <code>ls</code> and <code>-F</code>:
+And note that there is a space between <code class="docutils literal notranslate"><span class="pre">ls</span></code> and <code class="docutils literal notranslate"><span class="pre">-F</span></code>:
 without it,
-the shell thinks we&apos;re trying to run a command called <code>ls-F</code>,
-which doesn&apos;t exist.</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8552677872);" id="parameters-vs-arguments"><i class="fa fa-info-circle"></i> Parameters vs. Arguments<span id="heading-8552677872"></span></h3></div><div class="panel-body" id="panel-8552677872"><p>According to <a href="https://en.wikipedia.org/wiki/Parameter_(computer_programming" target="_blank">Wikipedia</a>#Parameters_and_arguments),
+the shell thinks we’re trying to run a command called <code class="docutils literal notranslate"><span class="pre">ls-F</span></code>,
+which doesn’t exist.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="parameters-vs.-arguments"><i class="fa fa-info-circle"></i> Parameters vs. Arguments</p>
+</div>
+<div class="panel-body docutils container">
+<p>According to <a class="reference external" href="https://en.wikipedia.org/wiki/Parameter_(computer_programming)#Parameters_and_arguments">Wikipedia</a>,
 the terms <strong>argument</strong> and <strong>parameter</strong>
 mean slightly different things.
 In practice,
@@ -1081,429 +850,518 @@ however,
 most people use them interchangeably
 to refer to the input term(s) given to a command.
 Consider the example below:</p>
-<pre><code class="lang-bash">ls -lh Documents
-</code></pre>
-<p><code>ls</code> is the command, <code>-lh</code> are the flags (also called options),
-and <code>Documents</code> is the argument.</p>
-</div></div></p>
-<p>We can also use <code>ls</code> to see the contents of a different directory.  Let&apos;s take a
-look at our <code>Desktop</code> directory by running <code>ls -F Desktop</code>,
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -lh Documents
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> is the command, <code class="docutils literal notranslate"><span class="pre">-lh</span></code> are the flags (also called options),
+and <code class="docutils literal notranslate"><span class="pre">Documents</span></code> is the argument.</p>
+</div>
+</div>
+<p>We can also use <code class="docutils literal notranslate"><span class="pre">ls</span></code> to see the contents of a different directory.  Let’s take a
+look at our <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> directory by running <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">Desktop</span></code>,
 i.e.,
-the command <code>ls</code> with the <code>-F</code> <strong>flag</strong> and the <strong>argument</strong>  <code>Desktop</code>.
-The argument <code>Desktop</code> tells <code>ls</code> that
+the command <code class="docutils literal notranslate"><span class="pre">ls</span></code> with the <code class="docutils literal notranslate"><span class="pre">-F</span></code> <strong>flag</strong> and the <strong>argument</strong>  <code class="docutils literal notranslate"><span class="pre">Desktop</span></code>.
+The argument <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> that
 we want a listing of something other than our current working directory:</p>
-<pre><code class="lang-bash">$ ls -F Desktop
-</code></pre>
-<pre><code class="lang-output">data-shell/
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls -F Desktop
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>data-shell/
+</pre></div>
+</div>
 <p>Your output should be a list of all the files and sub-directories on your
-Desktop, including the <a href="ref://files/data-shell.zip" target="_blank"><code>data-shell</code></a> directory you downloaded at
+Desktop, including the <a class="reference external" href="ref://files/data-shell.zip"><code class="docutils literal notranslate"><span class="pre">data-shell</span></code></a> directory you downloaded at
 the start of the lesson.  Take a look at your Desktop to confirm that
 your output is accurate.</p>
 <p>As you may now see, using a bash shell is strongly dependent on the idea that
 your files are organized in a hierarchical file system.
 Organizing things hierarchically in this way helps us keep track of our work:
-it&apos;s possible to put hundreds of files in our home directory,
-just as it&apos;s possible to pile hundreds of printed papers on our desk,
-but it&apos;s a self-defeating strategy.</p>
-<p>Now that we know the <code>data-shell</code> directory is located on our Desktop, we
+it’s possible to put hundreds of files in our home directory,
+just as it’s possible to pile hundreds of printed papers on our desk,
+but it’s a self-defeating strategy.</p>
+<p>Now that we know the <code class="docutils literal notranslate"><span class="pre">data-shell</span></code> directory is located on our Desktop, we
 can do two things.</p>
 <p>First, we can look at its contents, using the same strategy as before, passing
-a directory name to <code>ls</code>:</p>
-<pre><code class="lang-bash">$ ls -F Desktop/data-shell
-</code></pre>
-<pre><code class="lang-output">creatures/          molecules/          notes.txt           solar.pdf
+a directory name to <code class="docutils literal notranslate"><span class="pre">ls</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls -F Desktop/data-shell
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>creatures/          molecules/          notes.txt           solar.pdf
 data/               north-pacific-gyre/ pizza.cfg           writing/
-</code></pre>
+</pre></div>
+</div>
 <p>Second, we can actually change our location to a different directory, so
 we are no longer located in
 our home directory.</p>
-<p>The command to change locations is <code>cd</code> followed by a
+<p>The command to change locations is <code class="docutils literal notranslate"><span class="pre">cd</span></code> followed by a
 directory name to change our working directory.
-<code>cd</code> stands for &quot;change directory&quot;,
+<code class="docutils literal notranslate"><span class="pre">cd</span></code> stands for “change directory”,
 which is a bit misleading:
-the command doesn&apos;t change the directory,
-it changes the shell&apos;s idea of what directory we are in.</p>
-<p>Let&apos;s say we want to move to the <code>data</code> directory we saw above.  We can
+the command doesn’t change the directory,
+it changes the shell’s idea of what directory we are in.</p>
+<p>Let’s say we want to move to the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory we saw above.  We can
 use the following series of commands to get there:</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> Desktop
-$ <span class="hljs-built_in">cd</span> data-shell
-$ <span class="hljs-built_in">cd</span> data
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> Desktop
+$ <span class="nb">cd</span> data-shell
+$ <span class="nb">cd</span> data
+</pre></div>
+</div>
 <p>These commands will move us from our home directory onto our Desktop, then into
-the <code>data-shell</code> directory, then into the <code>data</code> directory.  <code>cd</code> doesn&apos;t print anything,
-but if we run <code>pwd</code> after it, we can see that we are now
-in <code>/Users/nelle/Desktop/data-shell/data</code>.
-If we run <code>ls</code> without arguments now,
-it lists the contents of <code>/Users/nelle/Desktop/data-shell/data</code>,
-because that&apos;s where we now are:</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">pwd</span>
-</code></pre>
-<pre><code class="lang-output">/Users/nelle/Desktop/data-shell/data
-</code></pre>
-<pre><code class="lang-bash">$ ls -F
-</code></pre>
-<pre><code class="lang-output">amino-acids.txt   elements/     pdb/            salmon.txt
+the <code class="docutils literal notranslate"><span class="pre">data-shell</span></code> directory, then into the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory.  <code class="docutils literal notranslate"><span class="pre">cd</span></code> doesn’t print anything,
+but if we run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> after it, we can see that we are now
+in <code class="docutils literal notranslate"><span class="pre">/Users/nelle/Desktop/data-shell/data</span></code>.
+If we run <code class="docutils literal notranslate"><span class="pre">ls</span></code> without arguments now,
+it lists the contents of <code class="docutils literal notranslate"><span class="pre">/Users/nelle/Desktop/data-shell/data</span></code>,
+because that’s where we now are:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/Users/nelle/Desktop/data-shell/data
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls -F
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>amino-acids.txt   elements/     pdb/	        salmon.txt
 animals.txt       morse.txt     planets.txt     sunspot.txt
-</code></pre>
+</pre></div>
+</div>
 <p>We now know how to go down the directory tree, but
 how do we go up?  We might try the following:</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> data-shell
-</code></pre>
-<pre><code class="lang-error">-bash: cd: data-shell: No such file or directory
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> data-shell
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-bash: cd: data-shell: No such file or directory
+</pre></div>
+</div>
 <p>But we get an error!  Why is this?</p>
 <p>With our methods so far,
-<code>cd</code> can only see sub-directories inside your current directory.  There are
-different ways to see directories above your current location; we&apos;ll start
+<code class="docutils literal notranslate"><span class="pre">cd</span></code> can only see sub-directories inside your current directory.  There are
+different ways to see directories above your current location; we’ll start
 with the simplest.</p>
 <p>There is a shortcut in the shell to move up one directory level
 that looks like this:</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> ..
-</code></pre>
-<p><code>..</code> is a special directory name meaning
-&quot;the directory containing this one&quot;,
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ..
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">..</span></code> is a special directory name meaning
+“the directory containing this one”,
 or more succinctly,
 the <strong>parent</strong> of the current directory.
 Sure enough,
-if we run <code>pwd</code> after running <code>cd ..</code>, we&apos;re back in <code>/Users/nelle/Desktop/data-shell</code>:</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">pwd</span>
-</code></pre>
-<pre><code class="lang-output">/Users/nelle/Desktop/data-shell
-</code></pre>
-<p>The special directory <code>..</code> doesn&apos;t usually show up when we run <code>ls</code>.  If we want
-to display it, we can give <code>ls</code> the <code>-a</code> flag:</p>
-<pre><code class="lang-bash">$ ls -F <span class="hljs-_">-a</span>
-</code></pre>
-<pre><code class="lang-output">./                  creatures/          notes.txt
+if we run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> after running <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>, we’re back in <code class="docutils literal notranslate"><span class="pre">/Users/nelle/Desktop/data-shell</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/Users/nelle/Desktop/data-shell
+</pre></div>
+</div>
+<p>The special directory <code class="docutils literal notranslate"><span class="pre">..</span></code> doesn’t usually show up when we run <code class="docutils literal notranslate"><span class="pre">ls</span></code>.  If we want
+to display it, we can give <code class="docutils literal notranslate"><span class="pre">ls</span></code> the <code class="docutils literal notranslate"><span class="pre">-a</span></code> flag:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls -F -a
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./                  creatures/          notes.txt
 ../                 data/               pizza.cfg
 .bash_profile       molecules/          solar.pdf
 Desktop/            north-pacific-gyre/ writing/
-</code></pre>
-<p><code>-a</code> stands for &quot;show all&quot;;
-it forces <code>ls</code> to show us file and directory names that begin with <code>.</code>,
-such as <code>..</code> (which, if we&apos;re in <code>/Users/nelle</code>, refers to the <code>/Users</code> directory)
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-a</span></code> stands for “show all”;
+it forces <code class="docutils literal notranslate"><span class="pre">ls</span></code> to show us file and directory names that begin with <code class="docutils literal notranslate"><span class="pre">.</span></code>,
+such as <code class="docutils literal notranslate"><span class="pre">..</span></code> (which, if we’re in <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code>, refers to the <code class="docutils literal notranslate"><span class="pre">/Users</span></code> directory)
 As you can see,
-it also displays another special directory that&apos;s just called <code>.</code>,
-which means &quot;the current working directory&quot;.
+it also displays another special directory that’s just called <code class="docutils literal notranslate"><span class="pre">.</span></code>,
+which means “the current working directory”.
 It may seem redundant to have a name for it,
-but we&apos;ll see some uses for it soon.</p>
+but we’ll see some uses for it soon.</p>
 <p>Note that in most command line tools, multiple arguments can be combined
-with a single <code>-</code> and no spaces between the arguments: <code>ls -F -a</code> is
-equivalent to <code>ls -Fa</code>.</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(139500348);" id="other-hidden-files"><i class="fa fa-info-circle"></i> Other Hidden Files<span id="heading-139500348"></span></h3></div><div class="panel-body" id="panel-139500348"><p>In addition to the hidden directories <code>..</code> and <code>.</code>, you may also see a file
-called <code>.bash_profile</code>. This file usually contains shell configuration
+with a single <code class="docutils literal notranslate"><span class="pre">-</span></code> and no spaces between the arguments: <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">-a</span></code> is
+equivalent to <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-Fa</span></code>.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="other-hidden-files"><i class="fa fa-info-circle"></i> Other Hidden Files</p>
+</div>
+<div class="panel-body docutils container">
+<p>In addition to the hidden directories <code class="docutils literal notranslate"><span class="pre">..</span></code> and <code class="docutils literal notranslate"><span class="pre">.</span></code>, you may also see a file
+called <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code>. This file usually contains shell configuration
 settings. You may also see other files and directories beginning
-with <code>.</code>. These are usually files and directories that are used to configure
-different programs on your computer. The prefix <code>.</code> is used to prevent these
-configuration files from cluttering the terminal when a standard <code>ls</code> command
+with <code class="docutils literal notranslate"><span class="pre">.</span></code>. These are usually files and directories that are used to configure
+different programs on your computer. The prefix <code class="docutils literal notranslate"><span class="pre">.</span></code> is used to prevent these
+configuration files from cluttering the terminal when a standard <code class="docutils literal notranslate"><span class="pre">ls</span></code> command
 is used.</p>
-</div></div></p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1463236874);" id="orthogonality"><i class="fa fa-info-circle"></i> Orthogonality<span id="heading-1463236874"></span></h3></div><div class="panel-body" id="panel-1463236874"><p>The special names <code>.</code> and <code>..</code> don&apos;t belong to <code>cd</code>;
+</div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="orthogonality"><i class="fa fa-info-circle"></i> Orthogonality</p>
+</div>
+<div class="panel-body docutils container">
+<p>The special names <code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">..</span></code> don’t belong to <code class="docutils literal notranslate"><span class="pre">cd</span></code>;
 they are interpreted the same way by every program.
 For example,
-if we are in <code>/Users/nelle/data</code>,
-the command <code>ls ..</code> will give us a listing of <code>/Users/nelle</code>.
-When the meanings of the parts are the same no matter how they&apos;re combined,
+if we are in <code class="docutils literal notranslate"><span class="pre">/Users/nelle/data</span></code>,
+the command <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">..</span></code> will give us a listing of <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code>.
+When the meanings of the parts are the same no matter how they’re combined,
 programmers say they are <strong>orthogonal</strong>:
 Orthogonal systems tend to be easier for people to learn
 because there are fewer special cases and exceptions to keep track of.</p>
-</div></div></p>
+</div>
+</div>
 <p>These then, are the basic commands for navigating the filesystem on your computer:
-<code>pwd</code>, <code>ls</code> and <code>cd</code>.  Let&apos;s explore some variations on those commands.  What happens
-if you type <code>cd</code> on its own, without giving
+<code class="docutils literal notranslate"><span class="pre">pwd</span></code>, <code class="docutils literal notranslate"><span class="pre">ls</span></code> and <code class="docutils literal notranslate"><span class="pre">cd</span></code>.  Let’s explore some variations on those commands.  What happens
+if you type <code class="docutils literal notranslate"><span class="pre">cd</span></code> on its own, without giving
 a directory?</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span>
-</code></pre>
-<p>How can you check what happened?  <code>pwd</code> gives us the answer!</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">pwd</span>
-</code></pre>
-<pre><code class="lang-output">/Users/nelle
-</code></pre>
-<p>It turns out that <code>cd</code> without an argument will return you to your home directory,
-which is great if you&apos;ve gotten lost in your own filesystem.</p>
-<p>Let&apos;s try returning to the <code>data</code> directory from before.  Last time, we used
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span>
+</pre></div>
+</div>
+<p>How can you check what happened?  <code class="docutils literal notranslate"><span class="pre">pwd</span></code> gives us the answer!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/Users/nelle
+</pre></div>
+</div>
+<p>It turns out that <code class="docutils literal notranslate"><span class="pre">cd</span></code> without an argument will return you to your home directory,
+which is great if you’ve gotten lost in your own filesystem.</p>
+<p>Let’s try returning to the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory from before.  Last time, we used
 three commands, but we can actually string together the list of directories
-to move to <code>data</code> in one step:</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> Desktop/data-shell/data
-</code></pre>
-<p>Check that we&apos;ve moved to the right place by running <code>pwd</code> and <code>ls -F</code></p>
-<p>If we want to move up one level from the data directory, we could use <code>cd ..</code>.  But
+to move to <code class="docutils literal notranslate"><span class="pre">data</span></code> in one step:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> Desktop/data-shell/data
+</pre></div>
+</div>
+<p>Check that we’ve moved to the right place by running <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span></code></p>
+<p>If we want to move up one level from the data directory, we could use <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>.  But
 there is another way to move to any directory, regardless of your
 current location.</p>
 <p>So far, when specifying directory names, or even a directory path (as above),
 we have been using <strong>relative paths</strong>.  When you use a relative path with a command
-like <code>ls</code> or <code>cd</code>, it tries to find that location  from where we are,
+like <code class="docutils literal notranslate"><span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">cd</span></code>, it tries to find that location  from where we are,
 rather than from the root of the file system.</p>
 <p>However, it is possible to specify the <strong>absolute path</strong> to a directory by
 including its entire path from the root directory, which is indicated by a
-leading slash.  The leading <code>/</code> tells the computer to follow the path from
+leading slash.  The leading <code class="docutils literal notranslate"><span class="pre">/</span></code> tells the computer to follow the path from
 the root of the file system, so it always refers to exactly one directory,
 no matter where we are when we run the command.</p>
-<p>This allows us to move to our <code>data-shell</code> directory from anywhere on
-the filesystem (including from inside <code>data</code>).  To find the absolute path
-we&apos;re looking for, we can use <code>pwd</code> and then extract the piece we need
-to move to <code>data-shell</code>.</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">pwd</span>
-</code></pre>
-<pre><code class="lang-output">/Users/nelle/Desktop/data-shell/data
-</code></pre>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> /Users/nelle/Desktop/data-shell
-</code></pre>
-<p>Run <code>pwd</code> and <code>ls -F</code> to ensure that we&apos;re in the directory we expect.</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5055259923);" id="two-more-shortcuts"><i class="fa fa-info-circle"></i> Two More Shortcuts<span id="heading-5055259923"></span></h3></div><div class="panel-body" id="panel-5055259923"><p>The shell interprets the character <code>~</code> (tilde) at the start of a path to
-mean &quot;the current user&apos;s home directory&quot;. For example, if Nelle&apos;s home
-directory is <code>/Users/nelle</code>, then <code>~/data</code> is equivalent to
-<code>/Users/nelle/data</code>. This only works if it is the first character in the
-path: <code>here/there/~/elsewhere</code> is <em>not</em> <code>here/there/Users/nelle/elsewhere</code>.</p>
-<p>Another shortcut is the <code>-</code> (dash) character.  <code>cd</code> will translate <code>-</code> into
+<p>This allows us to move to our <code class="docutils literal notranslate"><span class="pre">data-shell</span></code> directory from anywhere on
+the filesystem (including from inside <code class="docutils literal notranslate"><span class="pre">data</span></code>).  To find the absolute path
+we’re looking for, we can use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and then extract the piece we need
+to move to <code class="docutils literal notranslate"><span class="pre">data-shell</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/Users/nelle/Desktop/data-shell/data
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /Users/nelle/Desktop/data-shell
+</pre></div>
+</div>
+<p>Run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span></code> to ensure that we’re in the directory we expect.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="two-more-shortcuts"><i class="fa fa-info-circle"></i> Two More Shortcuts</p>
+</div>
+<div class="panel-body docutils container">
+<p>The shell interprets the character <code class="docutils literal notranslate"><span class="pre">~</span></code> (tilde) at the start of a path to
+mean “the current user’s home directory”. For example, if Nelle’s home
+directory is <code class="docutils literal notranslate"><span class="pre">/Users/nelle</span></code>, then <code class="docutils literal notranslate"><span class="pre">~/data</span></code> is equivalent to
+<code class="docutils literal notranslate"><span class="pre">/Users/nelle/data</span></code>. This only works if it is the first character in the
+path: <code class="docutils literal notranslate"><span class="pre">here/there/~/elsewhere</span></code> is <em>not</em> <code class="docutils literal notranslate"><span class="pre">here/there/Users/nelle/elsewhere</span></code>.</p>
+<p>Another shortcut is the <code class="docutils literal notranslate"><span class="pre">-</span></code> (dash) character.  <code class="docutils literal notranslate"><span class="pre">cd</span></code> will translate <code class="docutils literal notranslate"><span class="pre">-</span></code> into
 <em>the previous directory I was in</em>, which is faster than having to remember,
 then type, the full path.  This is a <em>very</em> efficient way of moving back
-and forth between directories. The difference between <code>cd ..</code> and <code>cd -</code> is
+and forth between directories. The difference between <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> and <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">-</span></code> is
 that the former brings you <em>up</em>, while the latter brings you <em>back</em>. You can
 think of it as the <em>Last Channel</em> button on a TV remote.</p>
-</div></div></p>
-<h3 id="nelles-pipeline-organizing-files">Nelle&apos;s Pipeline: Organizing Files</h3>
+</div>
+</div>
+<div class="section" id="nelle-s-pipeline-organizing-files">
+<h2>Nelle’s Pipeline: Organizing Files<a class="headerlink" href="#nelle-s-pipeline-organizing-files" title="Permalink to this headline">¶</a></h2>
 <p>Knowing just this much about files and directories,
 Nelle is ready to organize the files that the protein assay machine will create.
 First,
-she creates a directory called <code>north-pacific-gyre</code>
+she creates a directory called <code class="docutils literal notranslate"><span class="pre">north-pacific-gyre</span></code>
 (to remind herself where the data came from).
 Inside that,
-she creates a directory called <code>2012-07-03</code>,
+she creates a directory called <code class="docutils literal notranslate"><span class="pre">2012-07-03</span></code>,
 which is the date she started processing the samples.
-She used to use names like <code>conference-paper</code> and <code>revised-results</code>,
+She used to use names like <code class="docutils literal notranslate"><span class="pre">conference-paper</span></code> and <code class="docutils literal notranslate"><span class="pre">revised-results</span></code>,
 but she found them hard to understand after a couple of years.
 (The final straw was when she found herself creating
-a directory called <code>revised-revised-results-3</code>.)</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2168989352);" id="sorting-output"><i class="fa fa-info-circle"></i> Sorting Output<span id="heading-2168989352"></span></h3></div><div class="panel-body" id="panel-2168989352"><p>Nelle names her directories &quot;year-month-day&quot;,
+a directory called <code class="docutils literal notranslate"><span class="pre">revised-revised-results-3</span></code>.)</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="sorting-output"><i class="fa fa-info-circle"></i> Sorting Output</p>
+</div>
+<div class="panel-body docutils container">
+<p>Nelle names her directories “year-month-day”,
 with leading zeroes for months and days,
 because the shell displays file and directory names in alphabetical order.
 If she used month names,
 December would come before July;
-if she didn&apos;t use leading zeroes,
-November (&apos;11&apos;) would come before July (&apos;7&apos;). Similarly, putting the year first
+if she didn’t use leading zeroes,
+November (‘11’) would come before July (‘7’). Similarly, putting the year first
 means that June 2012 will come before June 2013.</p>
-</div></div></p>
-<p>Each of her physical samples is labelled according to her lab&apos;s convention
+</div>
+</div>
+<p>Each of her physical samples is labelled according to her lab’s convention
 with a unique ten-character ID,
-such as &quot;NENE01729A&quot;.
+such as “NENE01729A”.
 This is what she used in her collection log
 to record the location, time, depth, and other characteristics of the sample,
-so she decides to use it as part of each data file&apos;s name.
-Since the assay machine&apos;s output is plain text,
-she will call her files <code>NENE01729A.txt</code>, <code>NENE01812A.txt</code>, and so on.
+so she decides to use it as part of each data file’s name.
+Since the assay machine’s output is plain text,
+she will call her files <code class="docutils literal notranslate"><span class="pre">NENE01729A.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">NENE01812A.txt</span></code>, and so on.
 All 1520 files will go into the same directory.</p>
-<p>Now in her current directory <code>data-shell</code>,
+<p>Now in her current directory <code class="docutils literal notranslate"><span class="pre">data-shell</span></code>,
 Nelle can see what files she has using the command:</p>
-<pre><code class="lang-bash">$ ls north-pacific-gyre/2012-07-03/
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls north-pacific-gyre/2012-07-03/
+</pre></div>
+</div>
 <p>This is a lot to type,
 but she can let the shell do most of the work through what is called <strong>tab completion</strong>.
 If she types:</p>
-<pre><code class="lang-bash">$ ls nor
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls nor
+</pre></div>
+</div>
 <p>and then presses tab (the tab key on her keyboard),
 the shell automatically completes the directory name for her:</p>
-<pre><code class="lang-bash">$ ls north-pacific-gyre/
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls north-pacific-gyre/
+</pre></div>
+</div>
 <p>If she presses tab again,
-Bash will add <code>2012-07-03/</code> to the command,
-since it&apos;s the only possible completion.
+Bash will add <code class="docutils literal notranslate"><span class="pre">2012-07-03/</span></code> to the command,
+since it’s the only possible completion.
 Pressing tab again does nothing,
 since there are 19 possibilities;
 pressing tab twice brings up a list of all the files,
 and so on.
 This is called <strong>tab completion</strong>,
 and we will see it in many other tools as we go on.</p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3022975281);" id="absolute-vs-relative-paths"><i class="fa fa-square-o"></i> Absolute vs Relative Paths<span id="heading-3022975281"></span></h3></div><div class="panel-body" id="panel-3022975281"><p>Starting from <code>/Users/amanda/data/</code>,
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="absolute-vs-relative-paths"><i class="fa fa-square-o"></i> Absolute vs Relative Paths</p>
+</div>
+<div class="panel-body docutils container">
+<p>Starting from <code class="docutils literal notranslate"><span class="pre">/Users/amanda/data/</span></code>,
 which of the following commands could Amanda use to navigate to her home directory,
-which is <code>/Users/amanda</code>?</p>
-<ol>
-<li><code>cd .</code></li>
-<li><code>cd /</code></li>
-<li><code>cd /home/amanda</code></li>
-<li><code>cd ../..</code></li>
-<li><code>cd ~</code></li>
-<li><code>cd home</code></li>
-<li><code>cd ~/data/..</code></li>
-<li><code>cd</code></li>
-<li><code>cd ..</code></li>
+which is <code class="docutils literal notranslate"><span class="pre">/Users/amanda</span></code>?</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/home/amanda</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">../..</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">home</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/data/..</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code></p></li>
 </ol>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5464388769);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-5464388769">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-5464388769"><ol>
-<li>No: <code>.</code> stands for the current directory.</li>
-<li>No: <code>/</code> stands for the root directory.</li>
-<li>No: Amanda&apos;s home directory is <code>/Users/amanda</code>.</li>
-<li>No: this goes up two levels, i.e. ends in <code>/Users</code>.</li>
-<li>Yes: <code>~</code> stands for the user&apos;s home directory, in this case <code>/Users/amanda</code>.</li>
-<li>No: this would navigate into a directory <code>home</code> in the current directory if it exists.</li>
-<li>Yes: unnecessarily complicated, but correct.</li>
-<li>Yes: shortcut to go back to the user&apos;s home directory.</li>
-<li>Yes: goes up one level.</li>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<ol class="simple">
+<li><p>No: <code class="docutils literal notranslate"><span class="pre">.</span></code> stands for the current directory.</p></li>
+<li><p>No: <code class="docutils literal notranslate"><span class="pre">/</span></code> stands for the root directory.</p></li>
+<li><p>No: Amanda’s home directory is <code class="docutils literal notranslate"><span class="pre">/Users/amanda</span></code>.</p></li>
+<li><p>No: this goes up two levels, i.e. ends in <code class="docutils literal notranslate"><span class="pre">/Users</span></code>.</p></li>
+<li><p>Yes: <code class="docutils literal notranslate"><span class="pre">~</span></code> stands for the user’s home directory, in this case <code class="docutils literal notranslate"><span class="pre">/Users/amanda</span></code>.</p></li>
+<li><p>No: this would navigate into a directory <code class="docutils literal notranslate"><span class="pre">home</span></code> in the current directory if it exists.</p></li>
+<li><p>Yes: unnecessarily complicated, but correct.</p></li>
+<li><p>Yes: shortcut to go back to the user’s home directory.</p></li>
+<li><p>Yes: goes up one level.</p></li>
 </ol>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9028572391);" id="relative-path-resolution"><i class="fa fa-square-o"></i> Relative Path Resolution<span id="heading-9028572391"></span></h3></div><div class="panel-body" id="panel-9028572391"><p>Using the filesystem diagram below, if <code>pwd</code> displays <code>/Users/thing</code>,
-what will <code>ls -F ../backup</code> display?</p>
-<ol>
-<li><code>../backup: No such file or directory</code></li>
-<li><code>2012-12-01 2013-01-08 2013-01-27</code></li>
-<li><code>2012-12-01/ 2013-01-08/ 2013-01-27/</code></li>
-<li><code>original/ pnas_final/ pnas_sub/</code></li>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="relative-path-resolution"><i class="fa fa-square-o"></i> Relative Path Resolution</p>
+</div>
+<div class="panel-body docutils container">
+<p>Using the filesystem diagram below, if <code class="docutils literal notranslate"><span class="pre">pwd</span></code> displays <code class="docutils literal notranslate"><span class="pre">/Users/thing</span></code>,
+what will <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">../backup</span></code> display?</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">../backup:</span> <span class="pre">No</span> <span class="pre">such</span> <span class="pre">file</span> <span class="pre">or</span> <span class="pre">directory</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2012-12-01</span> <span class="pre">2013-01-08</span> <span class="pre">2013-01-27</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2012-12-01/</span> <span class="pre">2013-01-08/</span> <span class="pre">2013-01-27/</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">original/</span> <span class="pre">pnas_final/</span> <span class="pre">pnas_sub/</span></code></p></li>
 </ol>
-<p><img src="fig/filesystem-challenge.svg" alt="File System for Challenge Questions"></p>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1931011488);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-1931011488">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-1931011488"><ol>
-<li>No: there <em>is</em> a directory <code>backup</code> in <code>/Users</code>.</li>
-<li>No: this is the content of <code>Users/thing/backup</code>,
-but with <code>..</code> we asked for one level further up.</li>
-<li>No: see previous explanation.</li>
-<li>Yes: <code>../backup/</code> refers to <code>/Users/backup/</code>.</li>
+<p><img alt="File System for Challenge Questions" src="../_images/filesystem-challenge.svg" /></p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<ol class="simple">
+<li><p>No: there <em>is</em> a directory <code class="docutils literal notranslate"><span class="pre">backup</span></code> in <code class="docutils literal notranslate"><span class="pre">/Users</span></code>.</p></li>
+<li><p>No: this is the content of <code class="docutils literal notranslate"><span class="pre">Users/thing/backup</span></code>,
+but with <code class="docutils literal notranslate"><span class="pre">..</span></code> we asked for one level further up.</p></li>
+<li><p>No: see previous explanation.</p></li>
+<li><p>Yes: <code class="docutils literal notranslate"><span class="pre">../backup/</span></code> refers to <code class="docutils literal notranslate"><span class="pre">/Users/backup/</span></code>.</p></li>
 </ol>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2085000800);" id="ls-reading-comprehension"><i class="fa fa-square-o"></i> <code>ls</code> Reading Comprehension<span id="heading-2085000800"></span></h3></div><div class="panel-body" id="panel-2085000800"><p>Assuming a directory structure as in the above Figure
-(File System for Challenge Questions), if <code>pwd</code> displays <code>/Users/backup</code>,
-and <code>-r</code> tells <code>ls</code> to display things in reverse order,
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="ls-reading-comprehension"><i class="fa fa-square-o"></i> ls Reading Comprehension</p>
+</div>
+<div class="panel-body docutils container">
+<p>Assuming a directory structure as in the above Figure
+(File System for Challenge Questions), if <code class="docutils literal notranslate"><span class="pre">pwd</span></code> displays <code class="docutils literal notranslate"><span class="pre">/Users/backup</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">-r</span></code> tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> to display things in reverse order,
 what command will display:</p>
-<pre><code class="lang-output">pnas_sub/ pnas_final/ original/
-</code></pre>
-<ol>
-<li><code>ls pwd</code></li>
-<li><code>ls -r -F</code></li>
-<li><code>ls -r -F /Users/backup</code></li>
-<li>Either #2 or #3 above, but not #1.</li>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pnas_sub/ pnas_final/ original/
+</pre></div>
+</div>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">pwd</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-r</span> <span class="pre">-F</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-r</span> <span class="pre">-F</span> <span class="pre">/Users/backup</span></code></p></li>
+<li><p>Either #2 or #3 above, but not #1.</p></li>
 </ol>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7053078037);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-7053078037">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-7053078037"><ol>
-<li>No: <code>pwd</code> is not the name of a directory.</li>
-<li>Yes: <code>ls</code> without directory argument lists files and directories
-in the current directory.</li>
-<li>Yes: uses the absolute path explicitly.</li>
-<li>Correct: see explanations above.</li>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<ol class="simple">
+<li><p>No: <code class="docutils literal notranslate"><span class="pre">pwd</span></code> is not the name of a directory.</p></li>
+<li><p>Yes: <code class="docutils literal notranslate"><span class="pre">ls</span></code> without directory argument lists files and directories
+in the current directory.</p></li>
+<li><p>Yes: uses the absolute path explicitly.</p></li>
+<li><p>Correct: see explanations above.</p></li>
 </ol>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4226978350);" id="exploring-more-ls-flags"><i class="fa fa-square-o"></i> Exploring More <code>ls</code> Flags<span id="heading-4226978350"></span></h3></div><div class="panel-body" id="panel-4226978350"><p>What does the command <code>ls</code> do when used with the <code>-l</code> and <code>-h</code> flags?</p>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="exploring-more-ls-flags"><i class="fa fa-square-o"></i> Exploring More ls Flags</p>
+</div>
+<div class="panel-body docutils container">
+<p>What does the command <code class="docutils literal notranslate"><span class="pre">ls</span></code> do when used with the <code class="docutils literal notranslate"><span class="pre">-l</span></code> and <code class="docutils literal notranslate"><span class="pre">-h</span></code> flags?</p>
 <p>Some of its output is about properties that we do not cover in this lesson (such
 as file permissions and ownership), but the rest should be useful
 nevertheless.</p>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6016541531);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-6016541531">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-6016541531"><p>The <code>-l</code> flag makes <code>ls</code> use a <strong>l</strong>ong listing format, showing not only
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>The <code class="docutils literal notranslate"><span class="pre">-l</span></code> flag makes <code class="docutils literal notranslate"><span class="pre">ls</span></code> use a <strong>l</strong>ong listing format, showing not only
 the file/directory names but also additional information such as the file size
-and the time of its last modification. The <code>-h</code> flag makes the file size
-&quot;<strong>h</strong>uman readable&quot;, i.e. display something like <code>5.3K</code> instead of <code>5369</code>.</p>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7293601571);" id="listing-recursively-and-by-time"><i class="fa fa-square-o"></i> Listing Recursively and By Time<span id="heading-7293601571"></span></h3></div><div class="panel-body" id="panel-7293601571"><p>The command <code>ls -R</code> lists the contents of directories recursively, i.e., lists
+and the time of its last modification. The <code class="docutils literal notranslate"><span class="pre">-h</span></code> flag makes the file size
+“<strong>h</strong>uman readable”, i.e. display something like <code class="docutils literal notranslate"><span class="pre">5.3K</span></code> instead of <code class="docutils literal notranslate"><span class="pre">5369</span></code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="listing-recursively-and-by-time"><i class="fa fa-square-o"></i> Listing Recursively and By Time</p>
+</div>
+<div class="panel-body docutils container">
+<p>The command <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-R</span></code> lists the contents of directories recursively, i.e., lists
 their sub-directories, sub-sub-directories, and so on in alphabetical order
-at each level. The command <code>ls -t</code> lists things by time of last change, with
+at each level. The command <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-t</span></code> lists things by time of last change, with
 most recently changed files or directories first.
-In what order does <code>ls -R -t</code> display things? Hint: <code>ls -l</code> uses a long listing
+In what order does <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-R</span> <span class="pre">-t</span></code> display things? Hint: <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code> uses a long listing
 format to view timestamps.</p>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6502971013);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-6502971013">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-6502971013"><p>The directories are listed alphabetical at each level, the files/directories
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>The directories are listed alphabetical at each level, the files/directories
 in each directory are sorted by time of last change.</p>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3482102644);" id="key-points"><i class="fa fa-key"></i> Key Points<span id="heading-3482102644"></span></h3></div><div class="panel-body" id="panel-3482102644"><ul>
-<li>The file system is responsible for managing information on the disk.</li>
-<li>Information is stored in files, which are stored in directories (folders).</li>
-<li>Directories can also store other directories, which forms a directory tree.</li>
-<li><code>cd path</code> changes the current working directory.</li>
-<li><code>ls path</code> prints a listing of a specific file or directory; <code>ls</code> on its own lists the current working directory.</li>
-<li><code>pwd</code> prints the user&apos;s current working directory.</li>
-<li><code>whoami</code> shows the user&apos;s current identity.</li>
-<li><code>/</code> on its own is the root directory of the whole file system.</li>
-<li>A relative path specifies a location starting from the current location.</li>
-<li>An absolute path specifies a location from the root of the file system.</li>
-<li>Directory names in a path are separated with <code>/</code> on Unix, but <code>\\\\</code> on Windows.</li>
-<li><code>..</code> means &apos;the directory above the current one&apos;; <code>.</code> on its own means &apos;the current directory&apos;.</li>
-<li>Most files&apos; names are <code>something.extension</code>. The extension isn&apos;t required, and doesn&apos;t guarantee anything, but is normally used to indicate the type of data in the file.</li>
-<li>Most commands take options (flags) which begin with a <code>-</code>.</li>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-keypoints docutils container">
+<div class="panel-header open docutils container">
+<p id="key-points"><i class="fa fa-key"></i> Key Points</p>
+</div>
+<div class="panel-body docutils container">
+<ul class="simple">
+<li><p>The file system is responsible for managing information on the disk.</p></li>
+<li><p>Information is stored in files, which are stored in directories (folders).</p></li>
+<li><p>Directories can also store other directories, which forms a directory tree.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">path</span></code> changes the current working directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">path</span></code> prints a listing of a specific file or directory; <code class="docutils literal notranslate"><span class="pre">ls</span></code> on its own lists the current working directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code> prints the user’s current working directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">whoami</span></code> shows the user’s current identity.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> on its own is the root directory of the whole file system.</p></li>
+<li><p>A relative path specifies a location starting from the current location.</p></li>
+<li><p>An absolute path specifies a location from the root of the file system.</p></li>
+<li><p>Directory names in a path are separated with <code class="docutils literal notranslate"><span class="pre">/</span></code> on Unix, but <code class="docutils literal notranslate"><span class="pre">\\\\</span></code> on Windows.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span></code> means ‘the directory above the current one’; <code class="docutils literal notranslate"><span class="pre">.</span></code> on its own means ‘the current directory’.</p></li>
+<li><p>Most files’ names are <code class="docutils literal notranslate"><span class="pre">something.extension</span></code>. The extension isn’t required, and doesn’t guarantee anything, but is normally used to indicate the type of data in the file.</p></li>
+<li><p>Most commands take options (flags) which begin with a <code class="docutils literal notranslate"><span class="pre">-</span></code>.</p></li>
 </ul>
-</div></div></p>
-<div class="ba-right"><p><a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">CC BY 4.0</a> - Based on <a href="https://github.com/swcarpentry/shell-novice" target="_blank">shell-novice</a> &#xA9; 2016&#x2013;2017 Software Carpentry Foundation</p></div>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+</div>
+</div>
+<p>{% right %} <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a> - Based on <a class="reference external" href="https://github.com/swcarpentry/shell-novice">shell-novice</a> © 2016–2017 Software Carpentry Foundation
+{% endright %}</p>
+</div>
 </div>
 
-                        </div>
-                    </div>
-                
-            </div>
 
-            
-                
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introducing the Shell">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="03-create.html" class="navigation navigation-next " aria-label="Next page: Working With Files and Directories">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="03-create.html" class="btn btn-neutral float-right" title="Working With Files and Directories" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="README.html" class="btn btn-neutral float-left" title="Introducing the Shell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Navigating Files and Directories","level":"3.1.1","depth":2,"next":{"title":"Working With Files and Directories","level":"3.1.2","depth":2,"path":"shell/03-create.md","ref":"shell/03-create.md","articles":[]},"previous":{"title":"Introducing the Shell","level":"3.1","depth":1,"path":"shell/README.md","ref":"shell/README.md","articles":[{"title":"Navigating Files and Directories","level":"3.1.1","depth":2,"path":"shell/02-filedir.md","ref":"shell/02-filedir.md","articles":[]},{"title":"Working With Files and Directories","level":"3.1.2","depth":2,"path":"shell/03-create.md","ref":"shell/03-create.md","articles":[]},{"title":"Pipes and Filters","level":"3.1.3","depth":2,"path":"shell/04-pipefilter.md","ref":"shell/04-pipefilter.md","articles":[]},{"title":"Loops","level":"3.1.4","depth":2,"path":"shell/05-loop.md","ref":"shell/05-loop.md","articles":[]},{"title":"Shell Scripts","level":"3.1.5","depth":2,"path":"shell/06-script.md","ref":"shell/06-script.md","articles":[]},{"title":"Finding Things","level":"3.1.6","depth":2,"path":"shell/07-find.md","ref":"shell/07-find.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"shell/02-filedir.md","mtime":"2018-11-26T12:26:23.705Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
-</div>
+  <hr/>
 
-        
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation
 
-    </body>
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+    Hello world
+
+
+</body>
 </html>
-

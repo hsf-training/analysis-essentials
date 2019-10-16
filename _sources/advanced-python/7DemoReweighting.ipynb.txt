@@ -1,0 +1,443 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 7: Demonstration of distribution reweighting\n",
+    "\n",
+    "* Reweighting in HEP is used to minimize difference between real data and Monte-Carlo simulation.\n",
+    "* Known process is used, for which real data can be obtained.\n",
+    "* Target of reweighting: assign weights to MC such that MC and real data distributions coincide.\n",
+    "\n",
+    "**hep_ml.reweight** contains methods to reweight distributions. \n",
+    "Typically we use reweighting of monte-carlo to fight drawbacks of simulation, though there are many applications.\n",
+    "\n",
+    "In this example we reweight multidimensional distibutions: `original` and `target`, the aim is to find new weights for original distribution, such that these multidimensional distributions will coincide. \n",
+    "\n",
+    "Here we have a __toy example__ without a real physics meaning.\n",
+    "\n",
+    "Pay attention: equality of distibutions for each feature $\\neq$ equality of multivariate distributions.\n",
+    "\n",
+    "All samples are divided into **training** and **validation** part. Training part is used to fit reweighting rule and test part is used to estimate reweighting quality."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "%matplotlib inline\n",
+    "\n",
+    "import numpy\n",
+    "import uproot\n",
+    "import pandas\n",
+    "from hep_ml import reweight\n",
+    "from matplotlib import pyplot as plt"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Downloading data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "columns = ['hSPD', 'pt_b', 'pt_phi', 'vchi2_b', 'mu_pt_sum']\n",
+    "\n",
+    "original_file = uproot.open('https://cern.ch/starterkit/data/advanced-python-2019/MC_distribution.root',\n",
+    "                            httpsource={'chunkbytes': 1024*1024, 'limitbytes': 33554432, 'parallel': 64}\n",
+    "                            )\n",
+    "target_file = uproot.open('https://cern.ch/starterkit/data/advanced-python-2019/RD_distribution.root',\n",
+    "                          httpsource={'chunkbytes': 1024*1024, 'limitbytes': 33554432, 'parallel': 64}\n",
+    "                          )\n",
+    "original_tree = original_file['tree']\n",
+    "target_tree = target_file['tree']\n",
+    "original = original_tree.pandas.df()\n",
+    "target = target_tree.pandas.df()\n",
+    "original_weights = numpy.ones(len(original))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### prepare train and test samples\n",
+    "\n",
+    "* train part is used to train reweighting rule\n",
+    "* test part is used to evaluate reweighting rule comparing the following things: \n",
+    "    * Kolmogorov-Smirnov distances for 1d projections\n",
+    "    * n-dim distibutions using ML (see below)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from sklearn.model_selection import train_test_split\n",
+    "# divide original samples into training ant test parts\n",
+    "original_train, original_test = train_test_split(original)\n",
+    "# divide target samples into training ant test parts\n",
+    "target_train, target_test = train_test_split(target)\n",
+    "\n",
+    "original_weights_train = numpy.ones(len(original_train))\n",
+    "original_weights_test = numpy.ones(len(original_test))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from hep_ml.metrics_utils import ks_2samp_weighted\n",
+    "hist_settings = {'bins': 100, 'density': True, 'alpha': 0.7}\n",
+    "\n",
+    "def draw_distributions(original, target, new_original_weights):\n",
+    "    plt.figure(figsize=[15, 7])\n",
+    "    for id, column in enumerate(columns, 1):\n",
+    "        xlim = numpy.percentile(numpy.hstack([target[column]]), [0.01, 99.99])\n",
+    "        plt.subplot(2, 3, id)\n",
+    "        plt.hist(original[column], weights=new_original_weights, range=xlim, **hist_settings)\n",
+    "        plt.hist(target[column], range=xlim, **hist_settings)\n",
+    "        plt.title(column)\n",
+    "        print('KS over ', column, ' = ', ks_2samp_weighted(original[column], target[column], \n",
+    "                                         weights1=new_original_weights, weights2=numpy.ones(len(target), dtype=float)))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Original distributions\n",
+    "KS = Kolmogorov-Smirnov distance: a measure of how well two distributions agree, the lower the distance, the better the agreement. In this case we want a low KS value."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# pay attention, actually we have very few data\n",
+    "len(original), len(target)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "draw_distributions(original, target, original_weights)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### train part of original distribution"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "draw_distributions(original_train, target_train, original_weights_train)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### test part for target distribution"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "draw_distributions(original_test, target_test, original_weights_test)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Bins-based reweighting in n dimensions\n",
+    "\n",
+    "Typical way to reweight distributions is based on bins.\n",
+    "\n",
+    "\n",
+    "Usually histogram reweighting is used, in each bin the weight of original\n",
+    "distribution is multiplied by:\n",
+    "\n",
+    "$m_{bin} = \\frac{w_{target}}{w_{original}}$\n",
+    "\n",
+    "where $w_{target}$ and $w_{original}$ are the total weight of events in each bin for target and original distributions.\n",
+    "\n",
+    "1. Simple and fast!\n",
+    "2. Very few (typically, one or two) variables\n",
+    "3. Reweighting one variable may bring disagreement in others\n",
+    "4. Which variable to use in reweighting?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "bins_reweighter = reweight.BinsReweighter(n_bins=20, n_neighs=1.)\n",
+    "bins_reweighter.fit(original_train, target_train)\n",
+    "\n",
+    "bins_weights_test = bins_reweighter.predict_weights(original_test)\n",
+    "# validate reweighting rule on the test part comparing 1d projections\n",
+    "draw_distributions(original_test, target_test, bins_weights_test)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Gradient Boosted Reweighter\n",
+    "\n",
+    "This algorithm is inspired by gradient boosting and is able to fight curse of dimensionality.\n",
+    "It uses decision trees and special loss functiion (**ReweightLossFunction**).\n",
+    "\n",
+    "A classifier is trained to discriminate between real data and MC. This means we are able to reweight in several variables rather than just one.\n",
+    "`GBReweighter` from `hep_ml` is able to handle many variables and requires less data (for the same performance).\n",
+    "\n",
+    "**GBReweighter** supports negative weights (to reweight MC to splotted real data)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "reweighter = reweight.GBReweighter(n_estimators=50, learning_rate=0.1, max_depth=3, min_samples_leaf=1000, \n",
+    "                                   gb_args={'subsample': 0.4})\n",
+    "reweighter.fit(original_train, target_train)\n",
+    "\n",
+    "gb_weights_test = reweighter.predict_weights(original_test)\n",
+    "# validate reweighting rule on the test part comparing 1d projections\n",
+    "draw_distributions(original_test, target_test, gb_weights_test)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Comparing some simple expressions:\n",
+    "The most interesting is checking some other variables in multidimensional distributions (those are expressed via original variables).\n",
+    "Here we can check the KS distance in multidimensional distributions. (The lower the value, the better agreement of distributions.)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def check_ks_of_expression(expression):\n",
+    "    col_original = original_test.eval(expression, engine='python')\n",
+    "    col_target = target_test.eval(expression, engine='python')\n",
+    "    w_target = numpy.ones(len(col_target), dtype='float')\n",
+    "    print('No reweight   KS:', ks_2samp_weighted(col_original, col_target, \n",
+    "                                                 weights1=original_weights_test, weights2=w_target))\n",
+    "    print('Bins reweight KS:', ks_2samp_weighted(col_original, col_target, \n",
+    "                                                 weights1=bins_weights_test, weights2=w_target))\n",
+    "    print('GB Reweight   KS:', ks_2samp_weighted(col_original, col_target,\n",
+    "                                                 weights1=gb_weights_test, weights2=w_target))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "check_ks_of_expression('hSPD')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "check_ks_of_expression('hSPD * pt_phi')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "check_ks_of_expression('hSPD * pt_phi * vchi2_b')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "check_ks_of_expression('pt_b * pt_phi / hSPD ')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "check_ks_of_expression('hSPD * pt_b * vchi2_b / pt_phi')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### GB-discrimination\n",
+    "Let's check how well a classifier is able to distinguish these distributions. \n",
+    "\n",
+    "For this puprose we split the data into train and test, then we train a classifier to distinguish between the real data and MC distributions.\n",
+    "\n",
+    "We can use the ROC Area Under Curve as a measure of performance.\n",
+    "If ROC AUC = 0.5 on the test sample, the distibutions are identical, if ROC AUC = 1.0, they are ideally separable. So we want a ROC AUC as close to 0.5 as possible to know that we cannot separate the reweighted distributions.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from sklearn.ensemble import GradientBoostingClassifier\n",
+    "from sklearn.model_selection import train_test_split\n",
+    "from sklearn.metrics import roc_auc_score\n",
+    "\n",
+    "data = numpy.concatenate([original_test, target_test])\n",
+    "labels = numpy.array([0] * len(original_test) + [1] * len(target_test))\n",
+    "\n",
+    "weights = {}\n",
+    "weights['original'] = original_weights_test\n",
+    "weights['bins'] = bins_weights_test\n",
+    "weights['gb_weights'] = gb_weights_test\n",
+    "\n",
+    "\n",
+    "for name, new_weights in weights.items():\n",
+    "    W = numpy.concatenate([new_weights / new_weights.sum() * len(target_test), [1] * len(target_test)])\n",
+    "    Xtr, Xts, Ytr, Yts, Wtr, Wts = train_test_split(data, labels, W, random_state=42, train_size=0.51)\n",
+    "    clf = GradientBoostingClassifier(subsample=0.3, n_estimators=50).fit(Xtr, Ytr, sample_weight=Wtr)\n",
+    "    \n",
+    "    print(name, roc_auc_score(Yts, clf.predict_proba(Xts)[:, 1], sample_weight=Wts))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Folding reweighter\n",
+    "\n",
+    "`FoldingReweighter` uses k folding in order to obtain unbiased weights for the whole distribution."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# define base reweighter\n",
+    "reweighter_base = reweight.GBReweighter(n_estimators=50, \n",
+    "                                        learning_rate=0.1, max_depth=3, min_samples_leaf=1000, \n",
+    "                                        gb_args={'subsample': 0.4})\n",
+    "reweighter = reweight.FoldingReweighter(reweighter_base, n_folds=2)\n",
+    "# it is not needed divide data into train/test parts; rewighter can be train on the whole samples\n",
+    "reweighter.fit(original, target)\n",
+    "\n",
+    "# predict method provides unbiased weights prediction for the whole sample\n",
+    "# folding reweighter contains two reweighters, each is trained on one half of samples\n",
+    "# during predictions each reweighter predicts another half of samples not used in training\n",
+    "folding_weights = reweighter.predict_weights(original)\n",
+    "\n",
+    "draw_distributions(original, target, folding_weights)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### GB discrimination for reweighting rule"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data = numpy.concatenate([original, target])\n",
+    "labels = numpy.array([0] * len(original) + [1] * len(target))\n",
+    "\n",
+    "weights = {}\n",
+    "weights['original'] = original_weights\n",
+    "weights['2-folding'] = folding_weights\n",
+    "\n",
+    "\n",
+    "for name, new_weights in weights.items():\n",
+    "    W = numpy.concatenate([new_weights / new_weights.sum() * len(target), [1] * len(target)])\n",
+    "    Xtr, Xts, Ytr, Yts, Wtr, Wts = train_test_split(data, labels, W, random_state=42, train_size=0.51)\n",
+    "    clf = GradientBoostingClassifier(subsample=0.3, n_estimators=30).fit(Xtr, Ytr, sample_weight=Wtr)\n",
+    "    \n",
+    "    print(name, roc_auc_score(Yts, clf.predict_proba(Xts)[:, 1], sample_weight=Wts))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

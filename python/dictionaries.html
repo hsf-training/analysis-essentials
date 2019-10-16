@@ -1,791 +1,492 @@
 
-<!DOCTYPE HTML>
-<html lang="" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Dictionaries · LHCb analysis essentials</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
 
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Dictionaries &mdash; Analysis essentials  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
     
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/panels.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
 
-    
-        
-        <link rel="stylesheet" href="../css/website.css">
-        
-    
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Conditions" href="conditions.html" />
+    <link rel="prev" title="Lists and looping" href="lists.html" /> 
+</head>
 
-        
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+<body class="wy-body-for-nav">
 
+   
+  <div class="wy-grid-for-nav">
     
-    <link rel="next" href="conditions.html" />
-    
-    
-    <link rel="prev" href="lists.html" />
-    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
 
-    </head>
-    <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
+          
+            <a href="../index.html" class="icon icon-home"> Analysis essentials
+          
+
+          
             
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+            <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-            
-                <nav role="navigation">
-                
+          
+        </div>
 
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="2.1" data-path="./">
-            
-                <a href="./">
-            
-                    
-                    Python
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.1.1" data-path="running.html">
-            
-                <a href="running.html">
-            
-                    
-                    Running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.2" data-path="operators.html">
-            
-                <a href="operators.html">
-            
-                    
-                    Objects and operators
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.3" data-path="numbers.html">
-            
-                <a href="numbers.html">
-            
-                    
-                    Numbers
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.4" data-path="strings.html">
-            
-                <a href="strings.html">
-            
-                    
-                    Strings
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.5" data-path="lists.html">
-            
-                <a href="lists.html">
-            
-                    
-                    Lists and looping
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="2.1.6" data-path="dictionaries.html">
-            
-                <a href="dictionaries.html">
-            
-                    
-                    Dictionaries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.7" data-path="conditions.html">
-            
-                <a href="conditions.html">
-            
-                    
-                    Conditions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.8" data-path="methods.html">
-            
-                <a href="methods.html">
-            
-                    
-                    Methods
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.9" data-path="scripting.html">
-            
-                <a href="scripting.html">
-            
-                    
-                    Scripting
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.10" data-path="modules.html">
-            
-                <a href="modules.html">
-            
-                    
-                    Modules
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.11" data-path="learning.html">
-            
-                <a href="learning.html">
-            
-                    
-                    Learning more
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.12" data-path="first_histogram.html">
-            
-                <a href="first_histogram.html">
-            
-                    
-                    Making your first histogram
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.13" data-path="further_reading.html">
-            
-                <a href="further_reading.html">
-            
-                    
-                    Further reading
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="3.1" data-path="../shell/">
-            
-                <a href="../shell/">
-            
-                    
-                    Introducing the Shell
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.1.1" data-path="../shell/02-filedir.html">
-            
-                <a href="../shell/02-filedir.html">
-            
-                    
-                    Navigating Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.2" data-path="../shell/03-create.html">
-            
-                <a href="../shell/03-create.html">
-            
-                    
-                    Working With Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.3" data-path="../shell/04-pipefilter.html">
-            
-                <a href="../shell/04-pipefilter.html">
-            
-                    
-                    Pipes and Filters
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.4" data-path="../shell/05-loop.html">
-            
-                <a href="../shell/05-loop.html">
-            
-                    
-                    Loops
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.5" data-path="../shell/06-script.html">
-            
-                <a href="../shell/06-script.html">
-            
-                    
-                    Shell Scripts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.6" data-path="../shell/07-find.html">
-            
-                <a href="../shell/07-find.html">
-            
-                    
-                    Finding Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
-            
-                <a href="../shell-extras/">
-            
-                    
-                    Shell extras
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
-            
-                <a href="../shell-extras/screen.html">
-            
-                    
-                    Using screen to keep things running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
-            
-                <a href="../shell-extras/screen2.html">
-            
-                    
-                    Advanced screen topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
-            
-                <a href="../shell-extras/persistent-screen.html">
-            
-                    
-                    Persistent screen or tmux session
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
-            
-                <a href="../shell-extras/shell2.html">
-            
-                    
-                    Advanced shell topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="5.1" data-path="../git/">
-            
-                <a href="../git/">
-            
-                    
-                    Version control with Git
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1.1" data-path="../git/01-basics.html">
-            
-                <a href="../git/01-basics.html">
-            
-                    
-                    Basics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.2" data-path="../git/02-setup.html">
-            
-                <a href="../git/02-setup.html">
-            
-                    
-                    Setting Up Git
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.3" data-path="../git/03-create.html">
-            
-                <a href="../git/03-create.html">
-            
-                    
-                    Creating a Repository
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.4" data-path="../git/04-changes.html">
-            
-                <a href="../git/04-changes.html">
-            
-                    
-                    Tracking Changes
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.5" data-path="../git/05-history.html">
-            
-                <a href="../git/05-history.html">
-            
-                    
-                    Exploring History
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.6" data-path="../git/06-ignore.html">
-            
-                <a href="../git/06-ignore.html">
-            
-                    
-                    Ignoring Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.7" data-path="../git/07-gitlab.html">
-            
-                <a href="../git/07-gitlab.html">
-            
-                    
-                    Remotes in CERN GitLab
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.8" data-path="../git/08-share.html">
-            
-                <a href="../git/08-share.html">
-            
-                    
-                    Sharing a repository with others
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.9" data-path="../git/09-pullrequests.html">
-            
-                <a href="../git/09-pullrequests.html">
-            
-                    
-                    Collaborating with Pull Requests
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.10" data-path="../git/10-conflict.html">
-            
-                <a href="../git/10-conflict.html">
-            
-                    
-                    Conflicts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.11" data-path="../git/11-ci.html">
-            
-                <a href="../git/11-ci.html">
-            
-                    
-                    GitLab CI
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.12" data-path="../git/12-open.html">
-            
-                <a href="../git/12-open.html">
-            
-                    
-                    Open Science
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.13" data-path="../git/13-licensing.html">
-            
-                <a href="../git/13-licensing.html">
-            
-                    
-                    Licensing
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.14" data-path="../git/14-citation.html">
-            
-                <a href="../git/14-citation.html">
-            
-                    
-                    Citation
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="6.1" >
-            
-                <a target="_blank" href="ref://analysis-essentials.pdf">
-            
-                    
-                    Download PDF
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">An introduction to Python</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="README.html#aim-of-these-lessons">Aim of these lessons</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="running.html">Running Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="operators.html">Objects and operators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="operators.html#objects">Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="numbers.html">Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strings.html">Strings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="strings.html#formatting">Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html">Lists and looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lists.html#looping">Looping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lists.html#list-comprehension">List comprehension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lists.html#tuples">Tuples</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Dictionaries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dictionary-keys">Dictionary keys</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conditions.html">Conditions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conditions.html#truthiness">Truthiness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conditions.html#conditions-in-loops">Conditions in loops</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="methods.html">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="methods.html#inline-methods">Inline methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scripting.html">Scripting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scripting.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html">Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#the-standard-library">The standard library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#modules-from-pypi">Modules from PyPi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#write-your-first-python-module">Write your first Python module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="learning.html">Learning more</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="learning.html#exploring-python">Exploring Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning.html#conventional-coding">Conventional coding</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="first_histogram.html">Making your first histogram</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="first_histogram.html#pandas">Pandas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="first_histogram.html#plotting-histograms">Plotting histograms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="first_histogram.html#applying-cuts">Applying cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="further_reading.html">More advanced topics in Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="further_reading.html#nice-standard-libraries">Nice standard libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="further_reading.html#nice-libraries-for-data-analysis">Nice libraries for data analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="further_reading.html#python-and-root">Python and ROOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-python/README.html">Advanced Python Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/1Basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Importing-modules">Importing modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html">2: First look at data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#5.-The-toy-dataset">5. The toy dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#6.-Plotting-a-histogram-with-matplotlib">6. Plotting a histogram with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Adding-variables">Adding variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Using-rectangular-cuts">Using rectangular cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/3Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/3Classification.html#Using-a-classifier">Using a classifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/3Classification.html#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">TODO Add a diagram of a decision tree for the above plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/4Extension.html">4: Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Distributions-in-the-Dalitz-features-for-signal-and-background">Distributions in the Dalitz features for signal and background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Preparation-of-train/test-datasets">Preparation of train/test datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Setting-up-classifiers,-training">Setting up classifiers, training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Let’s-look-at-the-results-of-training">Let’s look at the results of training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#ROC-curves-after-training">ROC curves after training</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html">6: Neural networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Downloading-a-dataset">Downloading a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-training-a-network">Example of training a network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Creating-your-own-neural-network">Creating your own neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-a-very-specific-neural-network">Example of a very specific neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Fitting-very-specific-expressions-as-estimators">Fitting very specific expressions as estimators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Writing-custom-pretransformer">Writing custom pretransformer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Ensembling-of-neural-neworks">Ensembling of neural neworks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/7DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Original-distributions">Original distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Comparing-some-simple-expressions:">Comparing some simple expressions:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination">GB-discrimination</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/8sPlot.html">8: sPlot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Applying-sWeights">Applying sWeights</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Compare">Compare</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#More-complex-case">More complex case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Building-sPlot-over-mass">Building sPlot over mass</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Of-course-we-don’t-have-labels-which-events-are-signal-and-which-are-background-beforehand">Of course we don’t have labels which events are signal and which are background beforehand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#We-have-no-information-about-real-labels">We have no information about real labels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Under-assumption-of-linearity:">Under assumption of linearity:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Minimization-of-variation">Minimization of variation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Uncorrelatedness">Uncorrelatedness</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/README.html">Introducing the Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-command-line-interface">The Command-Line Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-shell">The Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#why-bother">Why bother?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#nelle-s-pipeline-starting-point">Nelle’s Pipeline: Starting Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell/02-filedir.html">Navigating Files and Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/02-filedir.html#nelle-s-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/03-create.html">Working With Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/04-pipefilter.html">Pipes and Filters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/04-pipefilter.html#nelle-s-pipeline-checking-files">Nelle’s Pipeline: Checking Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/05-loop.html">Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/06-script.html">Shell Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/07-find.html">Finding Things</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell-extras/README.html">UNIX shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen.html">Using screen to keep things running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen2.html">Advanced screen topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#finding-lost-screens">Finding lost screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#using-tabs-in-screen">Using tabs in screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/persistent-screen.html">Persistent screen or tmux session on lxplus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#setting-up-password-less-kerberos-token">Setting up password-less kerberos token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#making-use-of-the-keytab">Making use of the keytab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token">Using k5reauth to automatically refresh your kerberos token</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/shell2.html">More about the UNIX shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#types-of-shell">Types of shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#manual-pages">Manual pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#environment-variables">Environment variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/shell2.html#let-s-now-try-the-following-callout">Let’s now try the following: {.callout}</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#differences-among-files">Differences among files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#looping-over-files">Looping over files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#conditionals">Conditionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#linking-commands">Linking commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#pipes-and-redirection">Pipes and redirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#bash-security">Bash security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#complexity">Complexity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-viewers">Text viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-editors">Text editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#disk-space">Disk space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/README.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/01-basics.html">Automated Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/02-setup.html">Setting Up Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/03-create.html">Creating a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/04-changes.html">Tracking Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/05-history.html">Exploring History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/06-ignore.html">Ignoring Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/07-gitlab.html">Remotes in CERN GitLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/08-share.html">Sharing a repository with others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/09-pullrequests.html">Collaborating with Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#what-is-a-pull-or-merge-request">What is a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#fork-the-original-project-repository">Fork the original project repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#clone-a-remote-project-and-its-fork">Clone a remote project and its fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#sync-your-local-repository-with-remote-changes">Sync your local repository with remote changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#implement-your-new-feature">Implement your new feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#push-changes">Push changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#create-a-pull-or-merge-request">Create a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#discussing-amending-retiring-a-merge-request">Discussing, amending, retiring a Merge Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#accepting-a-pull-request">Accepting a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#the-social-side-of-coding">The social side of coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#automatic-testing">Automatic testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../git/10-conflict.html">Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/11-ci.html">GitLab CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/12-open.html">Open Science</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/13-licensing.html">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/14-citation.html">Citation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributing-notebooks">Contributing notebooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
-
-                </nav>
             
-        
-    </div>
+          
+        </div>
+      </div>
+    </nav>
 
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-<div class="book-header" role="navigation">
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis essentials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
     
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="README.html">An introduction to Python</a> &raquo;</li>
+        
+      <li>Dictionaries</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/python/dictionaries.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Dictionaries</a>
-    </h1>
+  
+  <hr/>
 </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
 
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
 
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
 
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
 
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="dictionaries">Dictionaries</h1>
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="dictionaries">
+<h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
 <p>You can think of lists as a <em>mapping</em> from indices to values. The indices are
-always integers and go from <code>0</code> to <code>len(the_list)</code>, and the values are the
+always integers and go from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">len(the_list)</span></code>, and the values are the
 items.</p>
 <p>Dictionaries are collections, just like lists, but they have important
 differences:</p>
-<ul>
-<li>lists map sequential numeric indices to items, whereas dictionaries can map
-most object types to any object,</li>
-<li>lists are <em>ordered</em> collections of items, whereas dictionaries have no
-ordering.</li>
+<ul class="simple">
+<li><p>lists map sequential numeric indices to items, whereas dictionaries can map
+most object types to any object,</p></li>
+<li><p>lists are <em>ordered</em> collections of items, whereas dictionaries have no
+ordering.</p></li>
 </ul>
 <p>Since anything can be used as index for an item, indices must be always
 specified when creating a dictionary:</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>d = {<span class="hljs-number">1</span>: <span class="hljs-number">0.5</span>, <span class="hljs-string">&apos;excellent index&apos;</span>: math.sin, <span class="hljs-number">0.1</span>: <span class="hljs-number">2</span>}
-<span class="hljs-meta">&gt;&gt;&gt; </span>d[<span class="hljs-number">1</span>]
-<span class="hljs-number">0.5</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span>d[<span class="hljs-string">&apos;excellent index&apos;</span>]
-&lt;built-<span class="hljs-keyword">in</span> function sin&gt;
-<span class="hljs-meta">&gt;&gt;&gt; </span>d[<span class="hljs-number">0.1</span>] = <span class="hljs-number">3</span>
-</code></pre>
-<p>The &quot;indices&quot; of a dictionary are called <strong>keys</strong>, and the things they map to
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;excellent index&#39;</span><span class="p">:</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;excellent index&#39;</span><span class="p">]</span>
+<span class="go">&lt;built-in function sin&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="mf">0.1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>The “indices” of a dictionary are called <strong>keys</strong>, and the things they map to
 are <strong>values</strong>. Together, each key-value pair is an <strong>item</strong>.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>d.keys()
-dict_keys([<span class="hljs-number">1</span>, <span class="hljs-number">0.1</span>, <span class="hljs-string">&apos;excellent index&apos;</span>])
-<span class="hljs-meta">&gt;&gt;&gt; </span>d.values()
-dict_values([<span class="hljs-number">0.5</span>, <span class="hljs-number">2</span>, &lt;function math.sin&gt;])
-<span class="hljs-meta">&gt;&gt;&gt; </span>d
-{<span class="hljs-number">0.1</span>: <span class="hljs-number">2</span>, <span class="hljs-number">1</span>: <span class="hljs-number">0.5</span>, <span class="hljs-string">&apos;excellent index&apos;</span>: &lt;function math.sin&gt;}
-</code></pre>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">dict_keys([1, 0.1, &#39;excellent index&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="go">dict_values([0.5, 2, &lt;function math.sin&gt;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span>
+<span class="go">{0.1: 2, 1: 0.5, &#39;excellent index&#39;: &lt;function math.sin&gt;}</span>
+</pre></div>
+</div>
 <p>As you can see, the values of a dictionary can be whatever we like, and need not
 be the same type of object.</p>
 <p>You can see that the order of the keys, values and items we get back are not the
@@ -793,207 +494,207 @@ same as the order we created the dictionary with. If you run the same example on
 your own you might get a different ordering. This is what we mean when we define
 dictionaries as <em>unordered collections</em>: when you iterate over its content, you
 cannot rely on the ordering.</p>
-<p>It is however guaranteed that the <em>n</em>-th item returned by <code>keys()</code> corresponds
-to the <em>n</em>-th item returned by <code>values()</code>. This allows the following example
+<p>It is however guaranteed that the <em>n</em>-th item returned by <code class="docutils literal notranslate"><span class="pre">keys()</span></code> corresponds
+to the <em>n</em>-th item returned by <code class="docutils literal notranslate"><span class="pre">values()</span></code>. This allows the following example
 to work flawlessly:</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> zip(d.keys(), d.values()):
-<span class="hljs-meta">... </span>    print(key, <span class="hljs-string">&apos;:&apos;</span>, value)
-...
-<span class="hljs-number">1</span> : <span class="hljs-number">0.5</span>
-<span class="hljs-number">0.1</span> : <span class="hljs-number">3</span>
-excellent index : &lt;built-<span class="hljs-keyword">in</span> function sin&gt;
-</code></pre>
-<p>Of course, this could be considerably simpler just by using <code>items()</code>, which
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">1 : 0.5</span>
+<span class="go">0.1 : 3</span>
+<span class="go">excellent index : &lt;built-in function sin&gt;</span>
+</pre></div>
+</div>
+<p>Of course, this could be considerably simpler just by using <code class="docutils literal notranslate"><span class="pre">items()</span></code>, which
 gives us <em>tuples of key-value pairs</em>.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> d.items():
-<span class="hljs-meta">... </span>    print(key, <span class="hljs-string">&apos;:&apos;</span>, value)
-...
-<span class="hljs-number">1</span> : <span class="hljs-number">0.5</span>
-<span class="hljs-number">0.1</span> : <span class="hljs-number">3</span>
-excellent index : &lt;built-<span class="hljs-keyword">in</span> function sin&gt;
-</code></pre>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">1 : 0.5</span>
+<span class="go">0.1 : 3</span>
+<span class="go">excellent index : &lt;built-in function sin&gt;</span>
+</pre></div>
+</div>
 <p>We can create dictionaries from lists of 2-item lists.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>dict(enumerate([<span class="hljs-string">&apos;a thing&apos;</span>, <span class="hljs-string">&apos;another&apos;</span>]))
-{<span class="hljs-number">0</span>: <span class="hljs-string">&apos;a thing&apos;</span>, <span class="hljs-number">1</span>: <span class="hljs-string">&apos;another&apos;</span>}
-</code></pre>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;a thing&#39;</span><span class="p">,</span> <span class="s1">&#39;another&#39;</span><span class="p">]))</span>
+<span class="go">{0: &#39;a thing&#39;, 1: &#39;another&#39;}</span>
+</pre></div>
+</div>
 <p>And also with <em>dictionary comprehensions</em>, in a similar manner to list
 comprehensions, with the additional specification of the key.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>{i: i**i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">5</span>) <span class="hljs-keyword">if</span> i != <span class="hljs-number">3</span>}
-{<span class="hljs-number">0</span>: <span class="hljs-number">1</span>, <span class="hljs-number">1</span>: <span class="hljs-number">1</span>, <span class="hljs-number">2</span>: <span class="hljs-number">4</span>, <span class="hljs-number">4</span>: <span class="hljs-number">256</span>, <span class="hljs-number">5</span>: <span class="hljs-number">3125</span>}
-</code></pre>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">}</span>
+<span class="go">{0: 1, 1: 1, 2: 4, 4: 256, 5: 3125}</span>
+</pre></div>
+</div>
 <p>Note that dictionary comprehensions require at least Python 2.7 to work.</p>
-<h2 id="dictionary-keys">Dictionary keys</h2>
-<p>There&#x2019;s no restriction on values a dictionary might hold, but there is on keys.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>l = [<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>]
-<span class="hljs-meta">&gt;&gt;&gt; </span>dd = {}
-<span class="hljs-meta">&gt;&gt;&gt; </span>dd[l] = <span class="hljs-number">0</span>
-Traceback (most recent call last):
-  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
-TypeError: unhashable type: <span class="hljs-string">&apos;list&apos;</span>
-</code></pre>
+<div class="section" id="dictionary-keys">
+<h2>Dictionary keys<a class="headerlink" href="#dictionary-keys" title="Permalink to this headline">¶</a></h2>
+<p>There’s no restriction on values a dictionary might hold, but there is on keys.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dd</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dd</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">unhashable type: &#39;list&#39;</span>
+</pre></div>
+</div>
 <p>In essence, keys must not be mutable. This includes numbers, strings, and
 tuples, but not lists. This restriction is a trade-off that allows Python to
 make accessing values in a dictionary by key very fast.</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5240711189);" id="hashing"><i class="fa fa-info-circle"></i> Hashing<span id="heading-5240711189"></span></h3></div><div class="panel-body" id="panel-5240711189"><p>Immutable data types in Python have a <code>__hash__()</code> function, you can test it
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="hashing"><i class="fa fa-info-circle"></i> Hashing</p>
+</div>
+<div class="panel-body docutils container">
+<p>Immutable data types in Python have a <code class="docutils literal notranslate"><span class="pre">__hash__()</span></code> function, you can test it
 yourself:</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>s = <span class="hljs-string">&quot;a string&quot;</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span>s.__hash__()
-<span class="hljs-number">-8411828025894108412</span>
-</code></pre>
-<p><a href="https://en.wikipedia.org/wiki/Hash_function" target="_blank">A hashing function</a> creates an
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;a string&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="fm">__hash__</span><span class="p">()</span>
+<span class="go">-8411828025894108412</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Hash_function">A hashing function</a> creates an
 encoded (but not unique) representation of the object as a number. When you
-look up an item in a Python dictionary with <code>my_dict[&quot;my_key&quot;]</code>, what happens
+look up an item in a Python dictionary with <code class="docutils literal notranslate"><span class="pre">my_dict[&quot;my_key&quot;]</span></code>, what happens
 internally is:</p>
-<ul>
-<li>hash of <code>&quot;my_key&quot;</code> is calculated,</li>
-<li>this number is compared to every hash of every key in the dictionary, until a
-match between the hashes is found,</li>
-<li>if two hashes match, <em>and</em> the two objects are really identical, the
-corresponding dictionary item is returned.</li>
+<ul class="simple">
+<li><p>hash of <code class="docutils literal notranslate"><span class="pre">&quot;my_key&quot;</span></code> is calculated,</p></li>
+<li><p>this number is compared to every hash of every key in the dictionary, until a
+match between the hashes is found,</p></li>
+<li><p>if two hashes match, <em>and</em> the two objects are really identical, the
+corresponding dictionary item is returned.</p></li>
 </ul>
 <p>Looking up numbers instead of strings or tuples is considerably faster, but
 since two different strings can have the same hash, their content has to be
 compared as well to really tell whether they are equal. If two hashes are
 different on the other hand we are sure that the objects are different as well.</p>
-</div></div></p>
+</div>
+</div>
 <p>Iteration over dictionaries is over their keys.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> d:
-<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> key, <span class="hljs-string">&apos;:&apos;</span> d[key]
-...
-<span class="hljs-number">1</span> : <span class="hljs-number">0.5</span>
-<span class="hljs-number">0.1</span> : <span class="hljs-number">3</span>
-excellent index : &lt;built-<span class="hljs-keyword">in</span> function sin&gt;
-</code></pre>
-<p>We have already seen how to iterate over values (using <code>d.values()</code>) or keys
-and values simultaneously (using <code>d.items()</code>).</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1049500960);" id="on-the-efficiency-of-items"><i class="fa fa-info-circle"></i> On the efficiency of items()<span id="heading-1049500960"></span></h3></div><div class="panel-body" id="panel-1049500960"><p>In Python 2, using items copies the keys and values of a dictionary, and gives
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span> <span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="gp">...</span>
+<span class="go">1 : 0.5</span>
+<span class="go">0.1 : 3</span>
+<span class="go">excellent index : &lt;built-in function sin&gt;</span>
+</pre></div>
+</div>
+<p>We have already seen how to iterate over values (using <code class="docutils literal notranslate"><span class="pre">d.values()</span></code>) or keys
+and values simultaneously (using <code class="docutils literal notranslate"><span class="pre">d.items()</span></code>).</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="on-the-efficiency-of-items()"><i class="fa fa-info-circle"></i> On the efficiency of items()</p>
+</div>
+<div class="panel-body docutils container">
+<p>In Python 2, using items copies the keys and values of a dictionary, and gives
 you back those copies. This can be problematic for large dictionaries as the
 amount of memory your program uses can double. Python 3 uses a much more
-memory-efficient way of implementing items so that you don&apos;t have to worry.</p>
-<p>If you&apos;re having memory problems with using items in Python 2, you can use
-<code>viewitems()</code> instead, which behaves the same way as items does in Python 3.</p>
+memory-efficient way of implementing items so that you don’t have to worry.</p>
+<p>If you’re having memory problems with using items in Python 2, you can use
+<code class="docutils literal notranslate"><span class="pre">viewitems()</span></code> instead, which behaves the same way as items does in Python 3.</p>
 <p>Note that there are also similar methods for keys and values, called
-<code>viewkeys()</code> and <code>viewvalues()</code>, and that all of these view methods are only
+<code class="docutils literal notranslate"><span class="pre">viewkeys()</span></code> and <code class="docutils literal notranslate"><span class="pre">viewvalues()</span></code>, and that all of these view methods are only
 available from
 Python 2.7.</p>
-</div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7594823439);" id="alphabet-mapping"><i class="fa fa-square-o"></i> Alphabet mapping<span id="heading-7594823439"></span></h3></div><div class="panel-body" id="panel-7594823439"><p>Map each letter of the alphabet to a number with a dictionary comprehension,
-starting with <code>0</code> for <code>a</code> and ending with <code>25</code> for <code>z</code>.</p>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="alphabet-mapping"><i class="fa fa-square-o"></i> Alphabet mapping</p>
+</div>
+<div class="panel-body docutils container">
+<p>Map each letter of the alphabet to a number with a dictionary comprehension,
+starting with <code class="docutils literal notranslate"><span class="pre">0</span></code> for <code class="docutils literal notranslate"><span class="pre">a</span></code> and ending with <code class="docutils literal notranslate"><span class="pre">25</span></code> for <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
 <p>You can get a string containing the letters of the alphabet like this:</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> string
-<span class="hljs-meta">&gt;&gt;&gt; </span>string.ascii_lowercase
-<span class="hljs-string">&apos;abcdefghijklmnopqrstuvwxyz&apos;</span>
-</code></pre>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">string</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span>
+<span class="go">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>
+</pre></div>
+</div>
 <p>You can iterate over a string exactly like a list.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> character <span class="hljs-keyword">in</span> string.ascii_lowercase:
-<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> character
-...
-a
-b
-...
-z
-</code></pre>
-<p>Then, create the &quot;reverse&quot; dictionary, again with a comprehension, mapping
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="n">character</span>
+<span class="gp">...</span>
+<span class="go">a</span>
+<span class="go">b</span>
+<span class="gp">...</span>
+<span class="go">z</span>
+</pre></div>
+</div>
+<p>Then, create the “reverse” dictionary, again with a comprehension, mapping
 letters to numbers.</p>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5923368405);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-5923368405">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-5923368405"><p>You need to have a list containing one number per letter, and to loop over that
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>You need to have a list containing one number per letter, and to loop over that
 list along with the characters in the string. This is exactly the same as
-looping over items in a list alongside the index, so we can use <code>enumerate</code>.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>alphabet_map = {i: c <span class="hljs-keyword">for</span> i, c <span class="hljs-keyword">in</span> enumerate(string.ascii_lowercase)}
-</code></pre>
+looping over items in a list alongside the index, so we can use <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alphabet_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">c</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">)}</span>
+</pre></div>
+</div>
 <p>We can create the inverse map by swapping the key and value in the
 comprehension.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>reverse_map = {c: i <span class="hljs-keyword">for</span> i, c <span class="hljs-keyword">in</span> alphabet_map.items()}
-</code></pre>
-</div></div></div></div></p>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">reverse_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">alphabet_map</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
-                        </div>
-                    </div>
-                
-            </div>
 
-            
-                
-                <a href="lists.html" class="navigation navigation-prev " aria-label="Previous page: Lists and looping">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="conditions.html" class="navigation navigation-next " aria-label="Next page: Conditions">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="conditions.html" class="btn btn-neutral float-right" title="Conditions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lists.html" class="btn btn-neutral float-left" title="Lists and looping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Dictionaries","level":"2.1.6","depth":2,"next":{"title":"Conditions","level":"2.1.7","depth":2,"path":"python/conditions.md","ref":"python/conditions.md","articles":[]},"previous":{"title":"Lists and looping","level":"2.1.5","depth":2,"path":"python/lists.md","ref":"python/lists.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"python/dictionaries.md","mtime":"2018-11-26T12:26:23.697Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
-</div>
+  <hr/>
 
-        
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation
 
-    </body>
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+    Hello world
+
+
+</body>
 </html>
-

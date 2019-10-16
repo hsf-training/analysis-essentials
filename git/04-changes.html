@@ -1,1216 +1,1085 @@
 
-<!DOCTYPE HTML>
-<html lang="" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Tracking Changes · LHCb analysis essentials</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
 
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tracking Changes &mdash; Analysis essentials  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
     
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/panels.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
 
-    
-        
-        <link rel="stylesheet" href="../css/website.css">
-        
-    
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exploring History" href="05-history.html" />
+    <link rel="prev" title="Creating a Repository" href="03-create.html" /> 
+</head>
 
-        
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+<body class="wy-body-for-nav">
 
+   
+  <div class="wy-grid-for-nav">
     
-    <link rel="next" href="05-history.html" />
-    
-    
-    <link rel="prev" href="03-create.html" />
-    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
 
-    </head>
-    <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
+          
+            <a href="../index.html" class="icon icon-home"> Analysis essentials
+          
+
+          
             
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+            <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-            
-                <nav role="navigation">
-                
+          
+        </div>
 
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="2.1" data-path="../python/">
-            
-                <a href="../python/">
-            
-                    
-                    Python
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.1.1" data-path="../python/running.html">
-            
-                <a href="../python/running.html">
-            
-                    
-                    Running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.2" data-path="../python/operators.html">
-            
-                <a href="../python/operators.html">
-            
-                    
-                    Objects and operators
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.3" data-path="../python/numbers.html">
-            
-                <a href="../python/numbers.html">
-            
-                    
-                    Numbers
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.4" data-path="../python/strings.html">
-            
-                <a href="../python/strings.html">
-            
-                    
-                    Strings
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.5" data-path="../python/lists.html">
-            
-                <a href="../python/lists.html">
-            
-                    
-                    Lists and looping
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.6" data-path="../python/dictionaries.html">
-            
-                <a href="../python/dictionaries.html">
-            
-                    
-                    Dictionaries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.7" data-path="../python/conditions.html">
-            
-                <a href="../python/conditions.html">
-            
-                    
-                    Conditions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.8" data-path="../python/methods.html">
-            
-                <a href="../python/methods.html">
-            
-                    
-                    Methods
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.9" data-path="../python/scripting.html">
-            
-                <a href="../python/scripting.html">
-            
-                    
-                    Scripting
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.10" data-path="../python/modules.html">
-            
-                <a href="../python/modules.html">
-            
-                    
-                    Modules
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.11" data-path="../python/learning.html">
-            
-                <a href="../python/learning.html">
-            
-                    
-                    Learning more
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.12" data-path="../python/first_histogram.html">
-            
-                <a href="../python/first_histogram.html">
-            
-                    
-                    Making your first histogram
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.13" data-path="../python/further_reading.html">
-            
-                <a href="../python/further_reading.html">
-            
-                    
-                    Further reading
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="3.1" data-path="../shell/">
-            
-                <a href="../shell/">
-            
-                    
-                    Introducing the Shell
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.1.1" data-path="../shell/02-filedir.html">
-            
-                <a href="../shell/02-filedir.html">
-            
-                    
-                    Navigating Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.2" data-path="../shell/03-create.html">
-            
-                <a href="../shell/03-create.html">
-            
-                    
-                    Working With Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.3" data-path="../shell/04-pipefilter.html">
-            
-                <a href="../shell/04-pipefilter.html">
-            
-                    
-                    Pipes and Filters
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.4" data-path="../shell/05-loop.html">
-            
-                <a href="../shell/05-loop.html">
-            
-                    
-                    Loops
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.5" data-path="../shell/06-script.html">
-            
-                <a href="../shell/06-script.html">
-            
-                    
-                    Shell Scripts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.6" data-path="../shell/07-find.html">
-            
-                <a href="../shell/07-find.html">
-            
-                    
-                    Finding Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
-            
-                <a href="../shell-extras/">
-            
-                    
-                    Shell extras
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
-            
-                <a href="../shell-extras/screen.html">
-            
-                    
-                    Using screen to keep things running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
-            
-                <a href="../shell-extras/screen2.html">
-            
-                    
-                    Advanced screen topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
-            
-                <a href="../shell-extras/persistent-screen.html">
-            
-                    
-                    Persistent screen or tmux session
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
-            
-                <a href="../shell-extras/shell2.html">
-            
-                    
-                    Advanced shell topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="5.1" data-path="./">
-            
-                <a href="./">
-            
-                    
-                    Version control with Git
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1.1" data-path="01-basics.html">
-            
-                <a href="01-basics.html">
-            
-                    
-                    Basics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.2" data-path="02-setup.html">
-            
-                <a href="02-setup.html">
-            
-                    
-                    Setting Up Git
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.3" data-path="03-create.html">
-            
-                <a href="03-create.html">
-            
-                    
-                    Creating a Repository
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="5.1.4" data-path="04-changes.html">
-            
-                <a href="04-changes.html">
-            
-                    
-                    Tracking Changes
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.5" data-path="05-history.html">
-            
-                <a href="05-history.html">
-            
-                    
-                    Exploring History
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.6" data-path="06-ignore.html">
-            
-                <a href="06-ignore.html">
-            
-                    
-                    Ignoring Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.7" data-path="07-gitlab.html">
-            
-                <a href="07-gitlab.html">
-            
-                    
-                    Remotes in CERN GitLab
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.8" data-path="08-share.html">
-            
-                <a href="08-share.html">
-            
-                    
-                    Sharing a repository with others
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.9" data-path="09-pullrequests.html">
-            
-                <a href="09-pullrequests.html">
-            
-                    
-                    Collaborating with Pull Requests
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.10" data-path="10-conflict.html">
-            
-                <a href="10-conflict.html">
-            
-                    
-                    Conflicts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.11" data-path="11-ci.html">
-            
-                <a href="11-ci.html">
-            
-                    
-                    GitLab CI
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.12" data-path="12-open.html">
-            
-                <a href="12-open.html">
-            
-                    
-                    Open Science
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.13" data-path="13-licensing.html">
-            
-                <a href="13-licensing.html">
-            
-                    
-                    Licensing
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.14" data-path="14-citation.html">
-            
-                <a href="14-citation.html">
-            
-                    
-                    Citation
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="6.1" >
-            
-                <a target="_blank" href="ref://analysis-essentials.pdf">
-            
-                    
-                    Download PDF
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/README.html">An introduction to Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/README.html#aim-of-these-lessons">Aim of these lessons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/running.html">Running Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/strings.html">Strings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/strings.html#formatting">Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html">Lists and looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#looping">Looping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#list-comprehension">List comprehension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#tuples">Tuples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html">Dictionaries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/conditions.html#truthiness">Truthiness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/conditions.html#conditions-in-loops">Conditions in loops</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/methods.html#inline-methods">Inline methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#the-standard-library">The standard library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#modules-from-pypi">Modules from PyPi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#write-your-first-python-module">Write your first Python module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/learning.html">Learning more</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/learning.html#exploring-python">Exploring Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/learning.html#conventional-coding">Conventional coding</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html">Making your first histogram</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/first_histogram.html#pandas">Pandas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/first_histogram.html#plotting-histograms">Plotting histograms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/first_histogram.html#applying-cuts">Applying cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html">More advanced topics in Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/further_reading.html#nice-standard-libraries">Nice standard libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/further_reading.html#nice-libraries-for-data-analysis">Nice libraries for data analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/further_reading.html#python-and-root">Python and ROOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-python/README.html">Advanced Python Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/1Basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Importing-modules">Importing modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html">2: First look at data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#5.-The-toy-dataset">5. The toy dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#6.-Plotting-a-histogram-with-matplotlib">6. Plotting a histogram with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Adding-variables">Adding variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Using-rectangular-cuts">Using rectangular cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/3Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/3Classification.html#Using-a-classifier">Using a classifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/3Classification.html#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">TODO Add a diagram of a decision tree for the above plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/4Extension.html">4: Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Distributions-in-the-Dalitz-features-for-signal-and-background">Distributions in the Dalitz features for signal and background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Preparation-of-train/test-datasets">Preparation of train/test datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Setting-up-classifiers,-training">Setting up classifiers, training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Let’s-look-at-the-results-of-training">Let’s look at the results of training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#ROC-curves-after-training">ROC curves after training</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html">6: Neural networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Downloading-a-dataset">Downloading a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-training-a-network">Example of training a network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Creating-your-own-neural-network">Creating your own neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-a-very-specific-neural-network">Example of a very specific neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Fitting-very-specific-expressions-as-estimators">Fitting very specific expressions as estimators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Writing-custom-pretransformer">Writing custom pretransformer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Ensembling-of-neural-neworks">Ensembling of neural neworks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/7DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Original-distributions">Original distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Comparing-some-simple-expressions:">Comparing some simple expressions:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination">GB-discrimination</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/8sPlot.html">8: sPlot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Applying-sWeights">Applying sWeights</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Compare">Compare</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#More-complex-case">More complex case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Building-sPlot-over-mass">Building sPlot over mass</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Of-course-we-don’t-have-labels-which-events-are-signal-and-which-are-background-beforehand">Of course we don’t have labels which events are signal and which are background beforehand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#We-have-no-information-about-real-labels">We have no information about real labels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Under-assumption-of-linearity:">Under assumption of linearity:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Minimization-of-variation">Minimization of variation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Uncorrelatedness">Uncorrelatedness</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/README.html">Introducing the Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-command-line-interface">The Command-Line Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-shell">The Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#why-bother">Why bother?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#nelle-s-pipeline-starting-point">Nelle’s Pipeline: Starting Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell/02-filedir.html">Navigating Files and Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/02-filedir.html#nelle-s-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/03-create.html">Working With Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/04-pipefilter.html">Pipes and Filters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/04-pipefilter.html#nelle-s-pipeline-checking-files">Nelle’s Pipeline: Checking Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/05-loop.html">Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/06-script.html">Shell Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/07-find.html">Finding Things</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell-extras/README.html">UNIX shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen.html">Using screen to keep things running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen2.html">Advanced screen topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#finding-lost-screens">Finding lost screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#using-tabs-in-screen">Using tabs in screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/persistent-screen.html">Persistent screen or tmux session on lxplus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#setting-up-password-less-kerberos-token">Setting up password-less kerberos token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#making-use-of-the-keytab">Making use of the keytab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token">Using k5reauth to automatically refresh your kerberos token</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/shell2.html">More about the UNIX shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#types-of-shell">Types of shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#manual-pages">Manual pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#environment-variables">Environment variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/shell2.html#let-s-now-try-the-following-callout">Let’s now try the following: {.callout}</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#differences-among-files">Differences among files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#looping-over-files">Looping over files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#conditionals">Conditionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#linking-commands">Linking commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#pipes-and-redirection">Pipes and redirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#bash-security">Bash security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#complexity">Complexity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-viewers">Text viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-editors">Text editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#disk-space">Disk space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">Git</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-basics.html">Automated Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-setup.html">Setting Up Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-create.html">Creating a Repository</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tracking Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-history.html">Exploring History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-ignore.html">Ignoring Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07-gitlab.html">Remotes in CERN GitLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08-share.html">Sharing a repository with others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09-pullrequests.html">Collaborating with Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09-pullrequests.html#what-is-a-pull-or-merge-request">What is a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09-pullrequests.html#fork-the-original-project-repository">Fork the original project repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09-pullrequests.html#clone-a-remote-project-and-its-fork">Clone a remote project and its fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09-pullrequests.html#sync-your-local-repository-with-remote-changes">Sync your local repository with remote changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09-pullrequests.html#implement-your-new-feature">Implement your new feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09-pullrequests.html#push-changes">Push changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09-pullrequests.html#create-a-pull-or-merge-request">Create a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09-pullrequests.html#discussing-amending-retiring-a-merge-request">Discussing, amending, retiring a Merge Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09-pullrequests.html#accepting-a-pull-request">Accepting a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09-pullrequests.html#the-social-side-of-coding">The social side of coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09-pullrequests.html#automatic-testing">Automatic testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="10-conflict.html">Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-ci.html">GitLab CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12-open.html">Open Science</a></li>
+<li class="toctree-l2"><a class="reference internal" href="13-licensing.html">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14-citation.html">Citation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributing-notebooks">Contributing notebooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
-
-                </nav>
             
-        
-    </div>
+          
+        </div>
+      </div>
+    </nav>
 
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-<div class="book-header" role="navigation">
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis essentials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
     
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="README.html">Git</a> &raquo;</li>
+        
+      <li>Tracking Changes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/git/04-changes.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Tracking Changes</a>
-    </h1>
+  
+  <hr/>
 </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
 
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
 
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
 
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
 
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="tracking-changes">Tracking Changes</h1>
-<p><div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7445647523);" id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives<span id="heading-7445647523"></span></h3></div><div class="panel-body" id="panel-7445647523"><ul>
-<li>Go through the modify-add-commit cycle for one or more files.</li>
-<li>Explain where information is stored at each stage of Git commit workflow.</li>
-<li>Distinguish between descriptive and non-descriptive commit messages.</li>
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="tracking-changes">
+<h1>Tracking Changes<a class="headerlink" href="#tracking-changes" title="Permalink to this headline">¶</a></h1>
+<div class="panel panel-objectives docutils container">
+<div class="panel-header open docutils container">
+<p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
+</div>
+<div class="panel-body docutils container">
+<ul class="simple">
+<li><p>Go through the modify-add-commit cycle for one or more files.</p></li>
+<li><p>Explain where information is stored at each stage of Git commit workflow.</p></li>
+<li><p>Distinguish between descriptive and non-descriptive commit messages.</p></li>
 </ul>
-</div></div></p>
-<p>First let&apos;s make sure we&apos;re still in the right directory.
-You should be in the <code>planets</code> directory.</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">pwd</span>
-</code></pre>
-<p>If you are still in <code>moons</code> navigate back up to <code>planets</code></p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> ..
-</code></pre>
-<p>Let&apos;s create a file called <code>mars.txt</code> that contains some notes
-about the Red Planet&apos;s suitability as a base.
-We&apos;ll use <code>nano</code> to edit the file;
+</div>
+</div>
+<p>First let’s make sure we’re still in the right directory.
+You should be in the <code class="docutils literal notranslate"><span class="pre">planets</span></code> directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>If you are still in <code class="docutils literal notranslate"><span class="pre">moons</span></code> navigate back up to <code class="docutils literal notranslate"><span class="pre">planets</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ..
+</pre></div>
+</div>
+<p>Let’s create a file called <code class="docutils literal notranslate"><span class="pre">mars.txt</span></code> that contains some notes
+about the Red Planet’s suitability as a base.
+We’ll use <code class="docutils literal notranslate"><span class="pre">nano</span></code> to edit the file;
 you can use whatever editor you like.
-In particular, this does not have to be the <code>core.editor</code> you set globally earlier. But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be <code>nano</code>). For a refresher on text editors, check out <a href="https://swcarpentry.github.io/shell-novice/03-create/" target="_blank">&quot;Which Editor?&quot;</a> in <a href="https://swcarpentry.github.io/shell-novice/" target="_blank">The Unix Shell</a> lesson.</p>
-<pre><code class="lang-bash">$ nano mars.txt
-</code></pre>
-<p>Type the text below into the <code>mars.txt</code> file:</p>
-<pre><code>Cold and dry, but everything is my favorite color
-</code></pre><p><code>mars.txt</code> now contains a single line, which we can see by running:</p>
-<pre><code class="lang-bash">$ ls
-</code></pre>
-<pre><code>mars.txt
-</code></pre><pre><code class="lang-bash">$ cat mars.txt
-</code></pre>
-<pre><code>Cold and dry, but everything is my favorite color
-</code></pre><p>If we check the status of our project again,
-Git tells us that it&apos;s noticed the new file:</p>
-<pre><code class="lang-bash">$ git status
-</code></pre>
-<pre><code>On branch master
+In particular, this does not have to be the <code class="docutils literal notranslate"><span class="pre">core.editor</span></code> you set globally earlier. But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be <code class="docutils literal notranslate"><span class="pre">nano</span></code>). For a refresher on text editors, check out <a class="reference external" href="https://swcarpentry.github.io/shell-novice/03-create/">“Which Editor?”</a> in <a class="reference external" href="https://swcarpentry.github.io/shell-novice/">The Unix Shell</a> lesson.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ nano mars.txt
+</pre></div>
+</div>
+<p>Type the text below into the <code class="docutils literal notranslate"><span class="pre">mars.txt</span></code> file:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Cold and dry, but everything is my favorite color
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mars.txt</span></code> now contains a single line, which we can see by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mars.txt
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat mars.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Cold and dry, but everything is my favorite color
+</pre></div>
+</div>
+<p>If we check the status of our project again,
+Git tells us that it’s noticed the new file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>On branch master
 
 Initial commit
 
 Untracked files:
    (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
 
-    mars.txt
+	mars.txt
 nothing added to commit but untracked files present (use &quot;git add&quot; to track)
-</code></pre><p>The &quot;untracked files&quot; message means that there&apos;s a file in the directory
-that Git isn&apos;t keeping track of.
-We can tell Git to track a file using <code>git add</code>:</p>
-<pre><code class="lang-bash">$ git add mars.txt
-</code></pre>
+</pre></div>
+</div>
+<p>The “untracked files” message means that there’s a file in the directory
+that Git isn’t keeping track of.
+We can tell Git to track a file using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add mars.txt
+</pre></div>
+</div>
 <p>and then check that the right thing happened:</p>
-<pre><code class="lang-bash">$ git status
-</code></pre>
-<pre><code>On branch master
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>On branch master
 
 Initial commit
 
 Changes to be committed:
   (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
 
-    new file:   mars.txt
-</code></pre><p>Git now knows that it&apos;s supposed to keep track of <code>mars.txt</code>,
-but it hasn&apos;t recorded these changes as a commit yet.
+	new file:   mars.txt
+</pre></div>
+</div>
+<p>Git now knows that it’s supposed to keep track of <code class="docutils literal notranslate"><span class="pre">mars.txt</span></code>,
+but it hasn’t recorded these changes as a commit yet.
 To get it to do that,
 we need to run one more command:</p>
-<pre><code class="lang-bash">$ git commit -m <span class="hljs-string">&quot;Start notes on Mars as a base&quot;</span>
-</code></pre>
-<pre><code>[master (root-commit) f22b25e] Start notes on Mars as a base
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;Start notes on Mars as a base&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[master (root-commit) f22b25e] Start notes on Mars as a base
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt
-</code></pre><p>When we run <code>git commit</code>,
-Git takes everything we have told it to save by using <code>git add</code>
-and stores a copy permanently inside the special <code>.git</code> directory.
+</pre></div>
+</div>
+<p>When we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>,
+Git takes everything we have told it to save by using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>
+and stores a copy permanently inside the special <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory.
 This permanent copy is called a commit
-(or revision) and its short identifier is <code>f22b25e</code>
+(or revision) and its short identifier is <code class="docutils literal notranslate"><span class="pre">f22b25e</span></code>
 (your commit will have a different identifier.)</p>
-<p>We use the <code>-m</code> flag (for &quot;message&quot;)
+<p>We use the <code class="docutils literal notranslate"><span class="pre">-m</span></code> flag (for “message”)
 to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
-If we just run <code>git commit</code> without the <code>-m</code> option,
-Git will launch <code>nano</code> (or whatever other editor we configured as <code>core.editor</code>)
+If we just run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> without the <code class="docutils literal notranslate"><span class="pre">-m</span></code> option,
+Git will launch <code class="docutils literal notranslate"><span class="pre">nano</span></code> (or whatever other editor we configured as <code class="docutils literal notranslate"><span class="pre">core.editor</span></code>)
 so that we can write a longer message.</p>
-<p><a href="http://chris.beams.io/posts/git-commit/" target="_blank">Good commit messages</a> start with a brief (&lt;50 characters) summary of
+<p><a class="reference external" href="https://chris.beams.io/posts/git-commit/">Good commit messages</a> start with a brief (&lt;50 characters) summary of
 changes made in the commit.  If you want to go into more detail, add
 a blank line between the summary line and your additional notes.</p>
-<p>If we run <code>git status</code> now:</p>
-<pre><code class="lang-bash">$ git status
-</code></pre>
-<pre><code>On branch master
+<p>If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> now:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>On branch master
 nothing to commit, working directory clean
-</code></pre><p>it tells us everything is up to date.
-If we want to know what we&apos;ve done recently,
-we can ask Git to show us the project&apos;s history using <code>git log</code>:</p>
-<pre><code class="lang-bash">$ git <span class="hljs-built_in">log</span>
-</code></pre>
-<pre><code>commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
+</pre></div>
+</div>
+<p>it tells us everything is up to date.
+If we want to know what we’ve done recently,
+we can ask Git to show us the project’s history using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git log
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
     Start notes on Mars as a base
-</code></pre><p><code>git log</code> lists all commits  made to a repository in reverse chronological order.
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> lists all commits  made to a repository in reverse chronological order.
 The listing for each commit includes
-the commit&apos;s full identifier
+the commit’s full identifier
 (which starts with the same characters as
-the short identifier printed by the <code>git commit</code> command earlier),
-the commit&apos;s author,
+the short identifier printed by the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command earlier),
+the commit’s author,
 when it was created,
 and the log message Git was given when the commit was created.</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4179008676);" id="where-are-my-changes"><i class="fa fa-info-circle"></i> Where Are My Changes?<span id="heading-4179008676"></span></h3></div><div class="panel-body" id="panel-4179008676"><p>If we run <code>ls</code> at this point, we will still see just one file called <code>mars.txt</code>.
-That&apos;s because Git saves information about files&apos; history
-in the special <code>.git</code> directory mentioned earlier
-so that our filesystem doesn&apos;t become cluttered
-(and so that we can&apos;t accidentally edit or delete an old version).</p>
-</div></div></p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="where-are-my-changes?"><i class="fa fa-info-circle"></i> Where Are My Changes?</p>
+</div>
+<div class="panel-body docutils container">
+<p>If we run <code class="docutils literal notranslate"><span class="pre">ls</span></code> at this point, we will still see just one file called <code class="docutils literal notranslate"><span class="pre">mars.txt</span></code>.
+That’s because Git saves information about files’ history
+in the special <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory mentioned earlier
+so that our filesystem doesn’t become cluttered
+(and so that we can’t accidentally edit or delete an old version).</p>
+</div>
+</div>
 <p>Now suppose Dracula adds more information to the file.
-(Again, we&apos;ll edit with <code>nano</code> and then <code>cat</code> the file to show its contents;
-you may use a different editor, and don&apos;t need to <code>cat</code>.)</p>
-<pre><code class="lang-bash">$ nano mars.txt
-</code></pre>
-<pre><code class="lang-bash">$ cat mars.txt
-</code></pre>
-<pre><code>Cold and dry, but everything is my favorite color
+(Again, we’ll edit with <code class="docutils literal notranslate"><span class="pre">nano</span></code> and then <code class="docutils literal notranslate"><span class="pre">cat</span></code> the file to show its contents;
+you may use a different editor, and don’t need to <code class="docutils literal notranslate"><span class="pre">cat</span></code>.)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ nano mars.txt
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat mars.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
-</code></pre><p>When we run <code>git status</code> now,
+</pre></div>
+</div>
+<p>When we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> now,
 it tells us that a file it already knows about has been modified:</p>
-<pre><code class="lang-bash">$ git status
-</code></pre>
-<pre><code>On branch master
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>On branch master
 Changes not staged for commit:
   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
 
-    modified:   mars.txt
+	modified:   mars.txt
 
 no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</code></pre><p>The last line is the key phrase:
-&quot;no changes added to commit&quot;.
+</pre></div>
+</div>
+<p>The last line is the key phrase:
+“no changes added to commit”.
 We have changed this file,
-but we haven&apos;t told Git we will want to save those changes
-(which we do with <code>git add</code>)
-nor have we saved them (which we do with <code>git commit</code>).
-So let&apos;s do that now. It is good practice to always review
-our changes before saving them. We do this using <code>git diff</code>.
+but we haven’t told Git we will want to save those changes
+(which we do with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>)
+nor have we saved them (which we do with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>).
+So let’s do that now. It is good practice to always review
+our changes before saving them. We do this using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>.
 This shows us the differences between the current state
 of the file and the most recently saved version:</p>
-<pre><code class="lang-bash">$ git diff
-</code></pre>
-<pre><code class="lang-diff">diff --git a/mars.txt b/mars.txt
-index df0654a..315bf3a 100644
-<span class="hljs-comment">--- a/mars.txt</span>
-<span class="hljs-comment">+++ b/mars.txt</span>
-@@ -1 +1,2 @@
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git diff
+</pre></div>
+</div>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/mars.txt b/mars.txt</span>
+<span class="gh">index df0654a..315bf3a 100644</span>
+<span class="gd">--- a/mars.txt</span>
+<span class="gi">+++ b/mars.txt</span>
+<span class="gu">@@ -1 +1,2 @@</span>
  Cold and dry, but everything is my favorite color
-<span class="hljs-addition">+The two moons may be a problem for Wolfman</span>
-</code></pre>
+<span class="gi">+The two moons may be a problem for Wolfman</span>
+</pre></div>
+</div>
 <p>The output is cryptic because
-it is actually a series of commands for tools like editors and <code>patch</code>
+it is actually a series of commands for tools like editors and <code class="docutils literal notranslate"><span class="pre">patch</span></code>
 telling them how to reconstruct one file given the other.
 If we break it down into pieces:</p>
-<ol>
-<li>The first line tells us that Git is producing output similar to the Unix <code>diff</code> command
-comparing the old and new versions of the file.</li>
-<li>The second line tells exactly which versions of the file
+<ol class="simple">
+<li><p>The first line tells us that Git is producing output similar to the Unix <code class="docutils literal notranslate"><span class="pre">diff</span></code> command
+comparing the old and new versions of the file.</p></li>
+<li><p>The second line tells exactly which versions of the file
 Git is comparing;
-<code>df0654a</code> and <code>315bf3a</code> are unique computer-generated labels for those versions.</li>
-<li>The third and fourth lines once again show the name of the file being changed.</li>
-<li>The remaining lines are the most interesting, they show us the actual differences
+<code class="docutils literal notranslate"><span class="pre">df0654a</span></code> and <code class="docutils literal notranslate"><span class="pre">315bf3a</span></code> are unique computer-generated labels for those versions.</p></li>
+<li><p>The third and fourth lines once again show the name of the file being changed.</p></li>
+<li><p>The remaining lines are the most interesting, they show us the actual differences
 and the lines on which they occur.
 In particular,
-the <code>+</code> marker in the first column shows where we added a line.</li>
+the <code class="docutils literal notranslate"><span class="pre">+</span></code> marker in the first column shows where we added a line.</p></li>
 </ol>
-<p>After reviewing our change, it&apos;s time to commit it:</p>
-<pre><code class="lang-bash">$ git commit -m <span class="hljs-string">&quot;Add concerns about effects of Mars&apos; moons on Wolfman&quot;</span>
+<p>After reviewing our change, it’s time to commit it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;Add concerns about effects of Mars&#39; moons on Wolfman&quot;</span>
 $ git status
-</code></pre>
-<pre><code>On branch master
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>On branch master
 Changes not staged for commit:
   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
 
-    modified:   mars.txt
+	modified:   mars.txt
 
 no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</code></pre><p>Whoops:
-Git won&apos;t commit because we didn&apos;t use <code>git add</code> first.
-Let&apos;s fix that:</p>
-<pre><code class="lang-bash">$ git add mars.txt
-$ git commit -m <span class="hljs-string">&quot;Add concerns about effects of Mars&apos; moons on Wolfman&quot;</span>
-</code></pre>
-<pre><code>[master 34961b1] Add concerns about effects of Mars&apos; moons on Wolfman
+</pre></div>
+</div>
+<p>Whoops:
+Git won’t commit because we didn’t use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> first.
+Let’s fix that:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add mars.txt
+$ git commit -m <span class="s2">&quot;Add concerns about effects of Mars&#39; moons on Wolfman&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[master 34961b1] Add concerns about effects of Mars&#39; moons on Wolfman
  1 file changed, 1 insertion(+)
-</code></pre><p>Git insists that we add files to the set we want to commit
+</pre></div>
+</div>
+<p>Git insists that we add files to the set we want to commit
 before actually committing anything. This allows us to commit our
 changes in stages and capture changes in logical portions rather than
 only large batches.
 For example,
-suppose we&apos;re adding a few citations to our supervisor&apos;s work
+suppose we’re adding a few citations to our supervisor’s work
 to our thesis.
 We might want to commit those additions,
 and the corresponding addition to the bibliography,
-but <em>not</em> commit the work we&apos;re doing on the conclusion
-(which we haven&apos;t finished yet).</p>
+but <em>not</em> commit the work we’re doing on the conclusion
+(which we haven’t finished yet).</p>
 <p>To allow for this,
 Git has a special <em>staging area</em>
 where it keeps track of things that have been added to
 the current changeset
 but not yet committed.</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6702687728);" id="staging-area"><i class="fa fa-info-circle"></i> Staging Area<span id="heading-6702687728"></span></h3></div><div class="panel-body" id="panel-6702687728"><p>If you think of Git as taking snapshots of changes over the life of a project,
-<code>git add</code> specifies <em>what</em> will go in a snapshot
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="staging-area"><i class="fa fa-info-circle"></i> Staging Area</p>
+</div>
+<div class="panel-body docutils container">
+<p>If you think of Git as taking snapshots of changes over the life of a project,
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> specifies <em>what</em> will go in a snapshot
 (putting things in the staging area),
-and <code>git commit</code> then <em>actually takes</em> the snapshot, and
+and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> then <em>actually takes</em> the snapshot, and
 makes a permanent record of it (as a commit).
-If you don&apos;t have anything staged when you type <code>git commit</code>,
-Git will prompt you to use <code>git commit -a</code> or <code>git commit --all</code>,
+If you don’t have anything staged when you type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>,
+Git will prompt you to use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span></code> or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--all</span></code>,
 which is kind of like gathering <em>everyone</em> for the picture!
-However, it&apos;s almost always better to
+However, it’s almost always better to
 explicitly add things to the staging area, because you might
 commit changes you forgot you made. (Going back to snapshots,
 you might get the extra with incomplete makeup walking on
-the stage for the snapshot because you used <code>-a</code>!)
+the stage for the snapshot because you used <code class="docutils literal notranslate"><span class="pre">-a</span></code>!)
 Try to stage things manually,
-or you might find yourself searching for &quot;git undo commit&quot; more
+or you might find yourself searching for “git undo commit” more
 than you would like!</p>
-</div></div></p>
-<p><img src="fig/git-staging-area.svg" alt="The Git Staging Area"></p>
-<p>Let&apos;s watch as our changes to a file move from our editor
+</div>
+</div>
+<p><img alt="The Git Staging Area" src="../_images/git-staging-area.svg" /></p>
+<p>Let’s watch as our changes to a file move from our editor
 to the staging area
 and into long-term storage.
 First,
-we&apos;ll add another line to the file:</p>
-<pre><code class="lang-bash">$ nano mars.txt
+we’ll add another line to the file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ nano mars.txt
 $ cat mars.txt
-</code></pre>
-<pre><code>Cold and dry, but everything is my favorite color
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-</code></pre><pre><code class="lang-bash">$ git diff
-</code></pre>
-<pre><code class="lang-diff">diff --git a/mars.txt b/mars.txt
-index 315bf3a..b36abfd 100644
-<span class="hljs-comment">--- a/mars.txt</span>
-<span class="hljs-comment">+++ b/mars.txt</span>
-<span class="hljs-meta">@@ -1,2 +1,3 @@</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git diff
+</pre></div>
+</div>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/mars.txt b/mars.txt</span>
+<span class="gh">index 315bf3a..b36abfd 100644</span>
+<span class="gd">--- a/mars.txt</span>
+<span class="gi">+++ b/mars.txt</span>
+<span class="gu">@@ -1,2 +1,3 @@</span>
  Cold and dry, but everything is my favorite color
  The two moons may be a problem for Wolfman
-<span class="hljs-addition">+But the Mummy will appreciate the lack of humidity</span>
-</code></pre>
+<span class="gi">+But the Mummy will appreciate the lack of humidity</span>
+</pre></div>
+</div>
 <p>So far, so good:
-we&apos;ve added one line to the end of the file
-(shown with a <code>+</code> in the first column).
-Now let&apos;s put that change in the staging area
-and see what <code>git diff</code> reports:</p>
-<pre><code class="lang-bash">$ git add mars.txt
+we’ve added one line to the end of the file
+(shown with a <code class="docutils literal notranslate"><span class="pre">+</span></code> in the first column).
+Now let’s put that change in the staging area
+and see what <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> reports:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add mars.txt
 $ git diff
-</code></pre>
+</pre></div>
+</div>
 <p>There is no output:
 as far as Git can tell,
-there&apos;s no difference between what it&apos;s been asked to save permanently
-and what&apos;s currently in the directory.
+there’s no difference between what it’s been asked to save permanently
+and what’s currently in the directory.
 However,
 if we do this:</p>
-<pre><code class="lang-bash">$ git diff --staged
-</code></pre>
-<pre><code class="lang-diff">diff --git a/mars.txt b/mars.txt
-index 315bf3a..b36abfd 100644
-<span class="hljs-comment">--- a/mars.txt</span>
-<span class="hljs-comment">+++ b/mars.txt</span>
-<span class="hljs-meta">@@ -1,2 +1,3 @@</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git diff --staged
+</pre></div>
+</div>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/mars.txt b/mars.txt</span>
+<span class="gh">index 315bf3a..b36abfd 100644</span>
+<span class="gd">--- a/mars.txt</span>
+<span class="gi">+++ b/mars.txt</span>
+<span class="gu">@@ -1,2 +1,3 @@</span>
  Cold and dry, but everything is my favorite color
  The two moons may be a problem for Wolfman
-<span class="hljs-addition">+But the Mummy will appreciate the lack of humidity</span>
-</code></pre>
+<span class="gi">+But the Mummy will appreciate the lack of humidity</span>
+</pre></div>
+</div>
 <p>it shows us the difference between
 the last committed change
-and what&apos;s in the staging area.
-Let&apos;s save our changes:</p>
-<pre><code class="lang-bash">$ git commit -m <span class="hljs-string">&quot;Discuss concerns about Mars&apos; climate for Mummy&quot;</span>
-</code></pre>
-<pre><code>[master 005937f] Discuss concerns about Mars&apos; climate for Mummy
+and what’s in the staging area.
+Let’s save our changes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;Discuss concerns about Mars&#39; climate for Mummy&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[master 005937f] Discuss concerns about Mars&#39; climate for Mummy
  1 file changed, 1 insertion(+)
-</code></pre><p>check our status:</p>
-<pre><code class="lang-bash">$ git status
-</code></pre>
-<pre><code>On branch master
+</pre></div>
+</div>
+<p>check our status:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>On branch master
 nothing to commit, working directory clean
-</code></pre><p>and look at the history of what we&apos;ve done so far:</p>
-<pre><code class="lang-bash">$ git <span class="hljs-built_in">log</span>
-</code></pre>
-<pre><code>commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
+</pre></div>
+</div>
+<p>and look at the history of what we’ve done so far:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git log
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
 Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-    Discuss concerns about Mars&apos; climate for Mummy
+    Discuss concerns about Mars&#39; climate for Mummy
 
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
 Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add concerns about effects of Mars&apos; moons on Wolfman
+    Add concerns about effects of Mars&#39; moons on Wolfman
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
     Start notes on Mars as a base
-</code></pre><p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(306052818);" id="word-based-diffing"><i class="fa fa-info-circle"></i> Word-based diffing<span id="heading-306052818"></span></h3></div><div class="panel-body" id="panel-306052818"><p>Sometimes, e.g. in the case of the text documments a line-wise
-diff is too coarse. That is where the <code>--color-words</code> option of
-<code>git diff</code> comes in very useful as it highlights the changed
+</pre></div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="word-based-diffing"><i class="fa fa-info-circle"></i> Word-based diffing</p>
+</div>
+<div class="panel-body docutils container">
+<p>Sometimes, e.g. in the case of the text documments a line-wise
+diff is too coarse. That is where the <code class="docutils literal notranslate"><span class="pre">--color-words</span></code> option of
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> comes in very useful as it highlights the changed
 words using colors.</p>
-</div></div></p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1918333890);" id="paging-the-log"><i class="fa fa-info-circle"></i> Paging the Log<span id="heading-1918333890"></span></h3></div><div class="panel-body" id="panel-1918333890"><p>When the output of <code>git log</code> is too long to fit in your screen,
-<code>git</code> uses a program to split it into pages of the size of your screen.
-When this &quot;pager&quot; is called, you will notice that the last line in your
-screen is a <code>:</code>, instead of your usual prompt.</p>
-<ul>
-<li>To get out of the pager, press <code>q</code>.</li>
-<li>To move to the next page, press the space bar.</li>
-<li>To search for <code>some_word</code> in all pages, type <code>/some_word</code>
-and navigate through matches pressing <code>n</code>.</li>
+</div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="paging-the-log"><i class="fa fa-info-circle"></i> Paging the Log</p>
+</div>
+<div class="panel-body docutils container">
+<p>When the output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> is too long to fit in your screen,
+<code class="docutils literal notranslate"><span class="pre">git</span></code> uses a program to split it into pages of the size of your screen.
+When this “pager” is called, you will notice that the last line in your
+screen is a <code class="docutils literal notranslate"><span class="pre">:</span></code>, instead of your usual prompt.</p>
+<ul class="simple">
+<li><p>To get out of the pager, press <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p></li>
+<li><p>To move to the next page, press the space bar.</p></li>
+<li><p>To search for <code class="docutils literal notranslate"><span class="pre">some_word</span></code> in all pages, type <code class="docutils literal notranslate"><span class="pre">/some_word</span></code>
+and navigate through matches pressing <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p></li>
 </ul>
-</div></div></p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6167877191);" id="limit-log-size"><i class="fa fa-info-circle"></i> Limit Log Size<span id="heading-6167877191"></span></h3></div><div class="panel-body" id="panel-6167877191"><p>To avoid having <code>git log</code> cover your entire terminal screen, you can limit the
-number of commits that Git lists by using <code>-N</code>, where <code>N</code> is the number of
+</div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="limit-log-size"><i class="fa fa-info-circle"></i> Limit Log Size</p>
+</div>
+<div class="panel-body docutils container">
+<p>To avoid having <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> cover your entire terminal screen, you can limit the
+number of commits that Git lists by using <code class="docutils literal notranslate"><span class="pre">-N</span></code>, where <code class="docutils literal notranslate"><span class="pre">N</span></code> is the number of
 commits that you want to view. For example, if you only want information from
 the last commit you can use:</p>
-<pre><code class="lang-bash">$ git <span class="hljs-built_in">log</span> -1
-</code></pre>
-<pre><code>commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git log -1
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
 Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-   Discuss concerns about Mars&apos; climate for Mummy
-</code></pre><p>You can also reduce the quantity of information using the
-<code>--oneline</code> option:</p>
-<pre><code class="lang-bash">$ git <span class="hljs-built_in">log</span> --oneline
-</code></pre>
-<pre><code>* 005937f Discuss concerns about Mars&apos; climate for Mummy
-* 34961b1 Add concerns about effects of Mars&apos; moons on Wolfman
+   Discuss concerns about Mars&#39; climate for Mummy
+</pre></div>
+</div>
+<p>You can also reduce the quantity of information using the
+<code class="docutils literal notranslate"><span class="pre">--oneline</span></code> option:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git log --oneline
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* 005937f Discuss concerns about Mars&#39; climate for Mummy
+* 34961b1 Add concerns about effects of Mars&#39; moons on Wolfman
 * f22b25e Start notes on Mars as a base
-</code></pre><p>You can also combine the <code>--oneline</code> options with others. One useful
+</pre></div>
+</div>
+<p>You can also combine the <code class="docutils literal notranslate"><span class="pre">--oneline</span></code> options with others. One useful
 combination is:</p>
-<pre><code class="lang-bash">$ git <span class="hljs-built_in">log</span> --oneline --graph --all --decorate
-</code></pre>
-<pre><code>* 005937f Discuss concerns about Mars&apos; climate for Mummy (HEAD, master)
-* 34961b1 Add concerns about effects of Mars&apos; moons on Wolfman
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git log --oneline --graph --all --decorate
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* 005937f Discuss concerns about Mars&#39; climate for Mummy (HEAD, master)
+* 34961b1 Add concerns about effects of Mars&#39; moons on Wolfman
 * f22b25e Start notes on Mars as a base
-</code></pre></div></div></p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8112733778);" id="directories"><i class="fa fa-info-circle"></i> Directories<span id="heading-8112733778"></span></h3></div><div class="panel-body" id="panel-8112733778"><p>Two important facts you should know about directories in Git.</p>
-<ol>
-<li>Git does not track directories on their own, only files within them.
-Try it for yourself:</li>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="directories"><i class="fa fa-info-circle"></i> Directories</p>
+</div>
+<div class="panel-body docutils container">
+<p>Two important facts you should know about directories in Git.</p>
+<ol class="simple">
+<li><p>Git does not track directories on their own, only files within them.
+Try it for yourself:</p></li>
 </ol>
-<pre><code class="lang-bash">$ mkdir directory
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir directory
 $ git status
 $ git add directory
 $ git status
-</code></pre>
-<p>Note, our newly created empty directory <code>directory</code> does not appear in
-the list of untracked files even if we explicitly add it (<em>via</em> <code>git add</code>) to our
-repository. This is the reason why you will sometimes see <code>.gitkeep</code> files
-in otherwise empty directories. Unlike <code>.gitignore</code>, these files are not special
+</pre></div>
+</div>
+<p>Note, our newly created empty directory <code class="docutils literal notranslate"><span class="pre">directory</span></code> does not appear in
+the list of untracked files even if we explicitly add it (<em>via</em> <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>) to our
+repository. This is the reason why you will sometimes see <code class="docutils literal notranslate"><span class="pre">.gitkeep</span></code> files
+in otherwise empty directories. Unlike <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>, these files are not special
 and their sole purpose is to populate a directory so that Git adds it to
 the repository. In fact, you can name such files anything you like.</p>
-<p>{:start=&quot;2&quot;}</p>
-<ol start="2">
-<li>If you create a directory in your Git repository and populate it with files,
-you can add all files in the directory at once by:</li>
-</ol>
-<pre><code>git add &lt;directory-with-files&gt;
-</code></pre></div></div></p>
+<p>{:start=”2”}
+2. If you create a directory in your Git repository and populate it with files,
+you can add all files in the directory at once by:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git add &lt;directory-with-files&gt;
+</pre></div>
+</div>
+</div>
+</div>
 <p>To recap, when we want to add changes to our repository,
 we first need to add the changed files to the staging area
-(<code>git add</code>) and then commit the staged changes to the
-repository (<code>git commit</code>):</p>
-<p><img src="fig/git-committing.svg" alt="The Git Commit Workflow"></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6414032483);" id="choosing-a-commit-message"><i class="fa fa-square-o"></i> Choosing a Commit Message<span id="heading-6414032483"></span></h3></div><div class="panel-body" id="panel-6414032483"><p>Which of the following commit messages would be most appropriate for the
-last commit made to <code>mars.txt</code>?</p>
-<ol>
-<li>&quot;Changes&quot;</li>
-<li>&quot;Added line &apos;But the Mummy will appreciate the lack of humidity&apos; to mars.txt&quot;</li>
-<li>&quot;Discuss effects of Mars&apos; climate on the Mummy&quot;</li>
+(<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>) and then commit the staged changes to the
+repository (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>):</p>
+<p><img alt="The Git Commit Workflow" src="../_images/git-committing.svg" /></p>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="choosing-a-commit-message"><i class="fa fa-square-o"></i> Choosing a Commit Message</p>
+</div>
+<div class="panel-body docutils container">
+<p>Which of the following commit messages would be most appropriate for the
+last commit made to <code class="docutils literal notranslate"><span class="pre">mars.txt</span></code>?</p>
+<ol class="simple">
+<li><p>“Changes”</p></li>
+<li><p>“Added line ‘But the Mummy will appreciate the lack of humidity’ to mars.txt”</p></li>
+<li><p>“Discuss effects of Mars’ climate on the Mummy”</p></li>
 </ol>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1802667842);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-1802667842">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-1802667842"><p>Answer 1 is not descriptive enough,
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>Answer 1 is not descriptive enough,
 and answer 2 is too descriptive and redundant,
 but answer 3 is good: short but descriptive.</p>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1955229961);" id="committing-changes-to-git"><i class="fa fa-square-o"></i> Committing Changes to Git<span id="heading-1955229961"></span></h3></div><div class="panel-body" id="panel-1955229961"><p>Which command(s) below would save the changes of <code>myfile.txt</code>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="committing-changes-to-git"><i class="fa fa-square-o"></i> Committing Changes to Git</p>
+</div>
+<div class="panel-body docutils container">
+<p>Which command(s) below would save the changes of <code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>
 to my local Git repository?</p>
-<ol>
-<li><p><code>$ git commit -m &quot;my recent changes&quot;</code></p>
-</li>
-<li><p><code>$ git init myfile.txt</code>
-<code>$ git commit -m &quot;my recent changes&quot;</code></p>
-</li>
-<li><p><code>$ git add myfile.txt</code>
-<code>$ git commit -m &quot;my recent changes&quot;</code></p>
-</li>
-<li><p><code>$ git commit -m myfile.txt &quot;my recent changes&quot;</code></p>
-</li>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;my</span> <span class="pre">recent</span> <span class="pre">changes&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">init</span> <span class="pre">myfile.txt</span></code>
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;my</span> <span class="pre">recent</span> <span class="pre">changes&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">add</span> <span class="pre">myfile.txt</span></code>
+<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;my</span> <span class="pre">recent</span> <span class="pre">changes&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">myfile.txt</span> <span class="pre">&quot;my</span> <span class="pre">recent</span> <span class="pre">changes&quot;</span></code></p></li>
 </ol>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5748418058);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-5748418058">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-5748418058"><ol>
-<li>Would only create a commit if files have already been staged.</li>
-<li>Would try to create a new repository.</li>
-<li>Is correct: first add the file to the staging area, then commit.</li>
-<li>Would try to commit a file &quot;my recent changes&quot; with the message myfile.txt.</li>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<ol class="simple">
+<li><p>Would only create a commit if files have already been staged.</p></li>
+<li><p>Would try to create a new repository.</p></li>
+<li><p>Is correct: first add the file to the staging area, then commit.</p></li>
+<li><p>Would try to commit a file “my recent changes” with the message myfile.txt.</p></li>
 </ol>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4317728344);" id="committing-multiple-files"><i class="fa fa-square-o"></i> Committing Multiple Files<span id="heading-4317728344"></span></h3></div><div class="panel-body" id="panel-4317728344"><p>The staging area can hold changes from any number of files
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="committing-multiple-files"><i class="fa fa-square-o"></i> Committing Multiple Files</p>
+</div>
+<div class="panel-body docutils container">
+<p>The staging area can hold changes from any number of files
 that you want to commit as a single snapshot.</p>
-<ol>
-<li>Add some text to <code>mars.txt</code> noting your decision
-to consider Venus as a base</li>
-<li>Create a new file <code>venus.txt</code> with your initial thoughts
-about Venus as a base for you and your friends</li>
-<li>Add changes from both files to the staging area,
-and commit those changes.</li>
+<ol class="simple">
+<li><p>Add some text to <code class="docutils literal notranslate"><span class="pre">mars.txt</span></code> noting your decision
+to consider Venus as a base</p></li>
+<li><p>Create a new file <code class="docutils literal notranslate"><span class="pre">venus.txt</span></code> with your initial thoughts
+about Venus as a base for you and your friends</p></li>
+<li><p>Add changes from both files to the staging area,
+and commit those changes.</p></li>
 </ol>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1715749897);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-1715749897">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-1715749897"><p>First we make our changes to the <code>mars.txt</code> and <code>venus.txt</code> files:</p>
-<pre><code class="lang-bash">$ nano mars.txt
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>First we make our changes to the <code class="docutils literal notranslate"><span class="pre">mars.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">venus.txt</span></code> files:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ nano mars.txt
 $ cat mars.txt
-</code></pre>
-<pre><code>Maybe I should start with a base on Venus.
-</code></pre><pre><code class="lang-bash">$ nano venus.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Maybe I should start with a base on Venus.
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ nano venus.txt
 $ cat venus.txt
-</code></pre>
-<pre><code>Venus is a nice planet and I definitely should consider it as a base.
-</code></pre><p>Now you can add both files to the staging area. We can do that in one line:</p>
-<pre><code class="lang-bash">$ git add mars.txt venus.txt
-</code></pre>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Venus is a nice planet and I definitely should consider it as a base.
+</pre></div>
+</div>
+<p>Now you can add both files to the staging area. We can do that in one line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add mars.txt venus.txt
+</pre></div>
+</div>
 <p>Or with multiple commands:</p>
-<pre><code class="lang-bash">$ git add mars.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add mars.txt
 $ git add venus.txt
-</code></pre>
-<p>Now the files are ready to commit. You can check that using <code>git status</code>. If you are ready to commit use:</p>
-<pre><code class="lang-bash">$ git commit -m <span class="hljs-string">&quot;Write plans to start a base on Venus&quot;</span>
-</code></pre>
-<pre><code>[master cc127c2]
+</pre></div>
+</div>
+<p>Now the files are ready to commit. You can check that using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>. If you are ready to commit use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;Write plans to start a base on Venus&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[master cc127c2]
  Write plans to start a base on Venus
  2 files changed, 2 insertions(+)
  create mode 100644 venus.txt
-</code></pre></div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4793223464);" id="author-and-committer"><i class="fa fa-square-o"></i> Author and Committer<span id="heading-4793223464"></span></h3></div><div class="panel-body" id="panel-4793223464"><p>For each of the commits you have done, Git stored your name twice.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="author-and-committer"><i class="fa fa-square-o"></i> Author and Committer</p>
+</div>
+<div class="panel-body docutils container">
+<p>For each of the commits you have done, Git stored your name twice.
 You are named as the author and as the committer. You can observe
 that by telling Git to show you more information about your last
 commits:</p>
-<pre><code class="lang-bash">$ git <span class="hljs-built_in">log</span> --format=full
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git log --format<span class="o">=</span>full
+</pre></div>
+</div>
 <p>When commiting you can name someone else as the author:</p>
-<pre><code class="lang-bash">$ git commit --author=<span class="hljs-string">&quot;Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;&quot;</span>
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git commit --author<span class="o">=</span><span class="s2">&quot;Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;&quot;</span>
+</pre></div>
+</div>
 <p>Create a new repository and create two commits: one without the
-<code>--author</code> option and one by naming a colleague of yours as the
-author. Run <code>git log</code> and <code>git log --format=full</code>. Think about ways
+<code class="docutils literal notranslate"><span class="pre">--author</span></code> option and one by naming a colleague of yours as the
+author. Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--format=full</span></code>. Think about ways
 how that can allow you to collaborate with your colleagues.</p>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5724008980);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-5724008980">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-5724008980"><pre><code class="lang-bash">$ git add me.txt
-$ git commit -m <span class="hljs-string">&quot;Update Vlad&apos;s bio.&quot;</span> --author=<span class="hljs-string">&quot;Frank N. Stein &lt;franky@monster.com&gt;&quot;</span>
-</code></pre>
-<pre><code>[master 4162a51] Update Vlad&apos;s bio.
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add me.txt
+$ git commit -m <span class="s2">&quot;Update Vlad&#39;s bio.&quot;</span> --author<span class="o">=</span><span class="s2">&quot;Frank N. Stein &lt;franky@monster.com&gt;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[master 4162a51] Update Vlad&#39;s bio.
 Author: Frank N. Stein &lt;franky@monster.com&gt;
 1 file changed, 2 insertions(+), 2 deletions(-)
 
@@ -1219,112 +1088,86 @@ commit 4162a51b273ba799a9d395dd70c45d96dba4e2ff
 Author: Frank N. Stein &lt;franky@monster.com&gt;
 Commit: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
 
-Update Vlad&apos;s bio.
+Update Vlad&#39;s bio.
 
 commit aaa3271e5e26f75f11892718e83a3e2743fab8ea
 Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
 Commit: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
 
-Vlad&apos;s initial bio.
-</code></pre></div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5466326979);" id="key-points"><i class="fa fa-key"></i> Key Points<span id="heading-5466326979"></span></h3></div><div class="panel-body" id="panel-5466326979"><ul>
-<li><code>git status</code> shows the status of a repository.</li>
-<li>Files can be stored in a project&apos;s working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded).</li>
-<li><code>git add</code> puts files in the staging area.</li>
-<li><code>git commit</code> saves the staged content as a new commit in the local repository.</li>
-<li>Always write a log message when committing changes.</li>
+Vlad&#39;s initial bio.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-keypoints docutils container">
+<div class="panel-header open docutils container">
+<p id="key-points"><i class="fa fa-key"></i> Key Points</p>
+</div>
+<div class="panel-body docutils container">
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> shows the status of a repository.</p></li>
+<li><p>Files can be stored in a project’s working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> puts files in the staging area.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> saves the staged content as a new commit in the local repository.</p></li>
+<li><p>Always write a log message when committing changes.</p></li>
 </ul>
-</div></div></p>
-<div class="ba-right"><p><a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">CC BY 4.0</a> - Based on <a href="https://github.com/swcarpentry/git-novice" target="_blank">git-novice</a> &#xA9; 2016&#x2013;2017 Software Carpentry Foundation</p></div>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+</div>
+</div>
+<p>{% right %} <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a> - Based on <a class="reference external" href="https://github.com/swcarpentry/git-novice">git-novice</a> © 2016–2017 Software Carpentry Foundation
+{% endright %}</p>
 </div>
 
-                        </div>
-                    </div>
-                
-            </div>
 
-            
-                
-                <a href="03-create.html" class="navigation navigation-prev " aria-label="Previous page: Creating a Repository">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="05-history.html" class="navigation navigation-next " aria-label="Next page: Exploring History">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="05-history.html" class="btn btn-neutral float-right" title="Exploring History" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="03-create.html" class="btn btn-neutral float-left" title="Creating a Repository" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"teaching":20,"exercises":0,"questions":["How do I record changes in Git?","How do I check the status of my version control repository?","How do I record notes about what changes I made and why?"],"title":"Tracking Changes","level":"5.1.4","depth":2,"next":{"title":"Exploring History","level":"5.1.5","depth":2,"path":"git/05-history.md","ref":"git/05-history.md","articles":[]},"previous":{"title":"Creating a Repository","level":"5.1.3","depth":2,"path":"git/03-create.md","ref":"git/03-create.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"git/04-changes.md","mtime":"2018-11-26T12:26:23.661Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
-</div>
+  <hr/>
 
-        
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation
 
-    </body>
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+    Hello world
+
+
+</body>
 </html>
-

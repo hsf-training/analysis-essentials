@@ -1,0 +1,881 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 1: Basics"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "In this Advanced Python Tutorial we will cover some useful python skills and tips. The lessons are as follows:\n",
+    "\n",
+    "* Basics\n",
+    "* Loading data and plotting with matplotlib\n",
+    "* Cut based selction\n",
+    "* Multivariate Analysis with Scikit Learn\n",
+    "* uBoost with hep_ml\n",
+    "* Neural Network Demo\n",
+    "* Mutivariate kinematic reweighting\n",
+    "* The sPlot technique\n",
+    "\n",
+    "The first lesson will be on some python basics:\n",
+    "\n",
+    "* Mutable and immutable objects in python\n",
+    "* List and dictionaries and comprehensions\n",
+    "* Writing code in markdown\n",
+    "* Jupyter notebook basics\n",
+    "* Importing moduels"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Basics"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Mutability**\n",
+    "\n",
+    "* Let's start by comparing some **mutable** and **immutable** objects.\n",
+    "* In python lists and strings are **mutable** and tuples are **immutable**.\n",
+    "* What happens when you run the code below?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['a', 'hello', 'c']\n",
+      "['a', 'hello', 'c']\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = ['a', 'b', 'c']\n",
+    "b = a\n",
+    "b[1] = 'hello'\n",
+    "\n",
+    "print(a)\n",
+    "print(b)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'a': '0', 'b': 'hello', 'c': '2'}\n",
+      "{'a': '0', 'b': 'hello', 'c': '2'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = {'a': '0', 'b': '1', 'c': '2'}\n",
+    "b = a\n",
+    "b['b'] = 'hello'\n",
+    "\n",
+    "print(a)\n",
+    "print(b)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "foo\n",
+      "bar\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = 'foo'\n",
+    "b = 'bar'\n",
+    "for c in [a, b]:\n",
+    "    c += '!'\n",
+    "\n",
+    "print(a)\n",
+    "print(b)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**List comprehensions**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Sum of squares for 10 is 285\n"
+     ]
+    }
+   ],
+   "source": [
+    "N = 10\n",
+    "\n",
+    "list_of_squares = [i**2 for i in range(N)]\n",
+    "sum_of_squares = sum(list_of_squares)\n",
+    "\n",
+    "print('Sum of squares for', N, 'is', sum_of_squares)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Dictionary comprehensions**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}\n"
+     ]
+    }
+   ],
+   "source": [
+    "squares = {i: i**2 for i in range(10)}\n",
+    "print(squares)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The square of 5 is 25\n"
+     ]
+    }
+   ],
+   "source": [
+    "N = 5\n",
+    "print('The square of', N, 'is', squares[N])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Markdown"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Write comments inline about your code:\n",
+    "\n",
+    "Use LaTeX:\n",
+    "\n",
+    "$A = \\frac{1}{B+C}$\n",
+    "\n",
+    "Show lists:\n",
+    "\n",
+    "* A wonderful\n",
+    "* List\n",
+    "* This is\n",
+    "\n",
+    "Show code with syntax highlighting:\n",
+    "\n",
+    "**Python:** (but in a sad grey world)\n",
+    "\n",
+    "```\n",
+    "print('Hello world')\n",
+    "```\n",
+    "\n",
+    "**Python:**\n",
+    "\n",
+    "```python\n",
+    "print('Hello world')\n",
+    "```\n",
+    "\n",
+    "**C++:**\n",
+    "\n",
+    "```cpp\n",
+    "#include <iostream>\n",
+    "\n",
+    "std::cout << \"Hello world\" << std::endl;\n",
+    "```\n",
+    "\n",
+    "**Bash:**\n",
+    "\n",
+    "```bash\n",
+    "echo \"Hello world\"\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**f-strings**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(PT > 1789.23) & (2 < ETA < 5)\n"
+     ]
+    }
+   ],
+   "source": [
+    "pt_cut = 1789.234567890987654\n",
+    "eta_low = 2\n",
+    "eta_high = 5\n",
+    "\n",
+    "cut_string = f'(PT > {pt_cut:.2f}) & ({eta_low} < ETA < {eta_high})'\n",
+    "print(cut_string)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Jupyter\n",
+    "\n",
+    "Jupyter has some very useful features included that can help make trying things out faster..."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Cells have a return value which is shown after the finish runing if it's not `None`:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Hello starterkitters'"
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\"Hello starterkitters\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "None"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Run a shell command:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1Basics.ipynb               8sPlot.ipynb\n",
+      "2DataAndPlotting.ipynb      README.md\n",
+      "3Classification.ipynb       \u001b[34mdata\u001b[m\u001b[m\n",
+      "4Extension.ipynb            index.html\n",
+      "\u001b[31m5BoostingToUniformity.ipynb\u001b[m\u001b[m real_data.root\n",
+      "6DemoNeuralNetworks.ipynb   simulated_data.root\n",
+      "7DemoReweighting.ipynb\n"
+     ]
+    }
+   ],
+   "source": [
+    "!ls "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "--2019-10-11 13:23:11--  https://example.com/index.html\n",
+      "Resolving example.com (example.com)... 2606:2800:220:1:248:1893:25c8:1946, 93.184.216.34\n",
+      "Connecting to example.com (example.com)|2606:2800:220:1:248:1893:25c8:1946|:443... connected.\n",
+      "HTTP request sent, awaiting response... 200 OK\n",
+      "Length: 1270 (1.2K) [text/html]\n",
+      "Saving to: ‘index.html.1’\n",
+      "\n",
+      "index.html.1        100%[===================>]   1.24K  --.-KB/s    in 0s      \n",
+      "\n",
+      "2019-10-11 13:23:12 (37.8 MB/s) - ‘index.html.1’ saved [1270/1270]\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "!wget https://example.com/index.html"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Time how long something takes for one line:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "CPU times: user 3.42 ms, sys: 340 µs, total: 3.76 ms\n",
+      "Wall time: 3.8 ms\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "333283335000"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "%time sum([i**2 for i in range(10000)])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Time how long an entire cell takes:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "CPU times: user 12.2 ms, sys: 491 µs, total: 12.7 ms\n",
+      "Wall time: 12.6 ms\n"
+     ]
+    }
+   ],
+   "source": [
+    "%%time\n",
+    "a = sum([i**2 for i in range(10000)])\n",
+    "b = sum([i**2 for i in range(10000)])\n",
+    "c = sum([i**2 for i in range(10000)])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "If something takes longer than you expect, you can profile it to find out where it spends it's time:"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "metadata": {},
+   "source": [
+    "# Maybe skip this\n",
+    "%%prun -s cumtime\n",
+    "a = sum([np.sqrt(i) for i in range(100000)])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Jupyter also makes it easy to look at documentation, just add a question mark to the end of the line"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def my_print(my_string):\n",
+    "    print(my_string)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\u001b[0;31mSignature:\u001b[0m \u001b[0mmy_print\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mmy_string\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+       "\u001b[0;31mDocstring:\u001b[0m <no docstring>\n",
+       "\u001b[0;31mFile:\u001b[0m      ~/Development/analysis-essentials-1/advanced-python/<ipython-input-14-5048fdec001b>\n",
+       "\u001b[0;31mType:\u001b[0m      function\n"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "my_print?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Two question marks allows you to see the code that is in the function"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\u001b[0;31mSignature:\u001b[0m \u001b[0mmy_print\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mmy_string\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+       "\u001b[0;31mDocstring:\u001b[0m <no docstring>\n",
+       "\u001b[0;31mSource:\u001b[0m   \n",
+       "\u001b[0;32mdef\u001b[0m \u001b[0mmy_print\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mmy_string\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\n",
+       "\u001b[0;34m\u001b[0m    \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mmy_string\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+       "\u001b[0;31mFile:\u001b[0m      ~/Development/analysis-essentials-1/advanced-python/<ipython-input-14-5048fdec001b>\n",
+       "\u001b[0;31mType:\u001b[0m      function\n"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "my_print??"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\u001b[0;31mInit signature:\u001b[0m \u001b[0mrange\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m/\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m*\u001b[0m\u001b[0margs\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mkwargs\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+       "\u001b[0;31mDocstring:\u001b[0m     \n",
+       "range(stop) -> range object\n",
+       "range(start, stop[, step]) -> range object\n",
+       "\n",
+       "Return an object that produces a sequence of integers from start (inclusive)\n",
+       "to stop (exclusive) by step.  range(i, j) produces i, i+1, i+2, ..., j-1.\n",
+       "start defaults to 0, and stop is omitted!  range(4) produces 0, 1, 2, 3.\n",
+       "These are exactly the valid indices for a list of 4 elements.\n",
+       "When step is given, it specifies the increment (or decrement).\n",
+       "\u001b[0;31mType:\u001b[0m           type\n",
+       "\u001b[0;31mSubclasses:\u001b[0m     \n"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "range?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Note that this is done without running the actual line of code so sometimes you need to use a junk variable to make it work"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Object `get` not found.\n"
+     ]
+    }
+   ],
+   "source": [
+    "{'a': 'b'}.get?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "{'a': 'b'}.get"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<function dict.get(key, default=None, /)>"
+      ]
+     },
+     "execution_count": 19,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "{'a': 'b'}.get"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<function dict.get(key, default=None, /)>"
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "{'a': 'b'}.get"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<function dict.get(key, default=None, /)>"
+      ]
+     },
+     "execution_count": 21,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "{'a': 'b'}.get"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<function dict.get(key, default=None, /)>"
+      ]
+     },
+     "execution_count": 22,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "{'a': 'b'}.get"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<function dict.get(key, default=None, /)>"
+      ]
+     },
+     "execution_count": 23,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "{'a': 'b'}.get"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\u001b[0;31mSignature:\u001b[0m \u001b[0mjunk\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mdefault\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mNone\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m/\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+       "\u001b[0;31mDocstring:\u001b[0m Return the value for key if key is in the dictionary, else default.\n",
+       "\u001b[0;31mType:\u001b[0m      builtin_function_or_method\n"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "junk = {'a': 'b'}.get\n",
+    "junk?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Importing modules"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* It is good practice to import all modules at the beginning of your python script or notebook\n",
+    "* Avoid using **wildcard imports** as you it makes it unclear where things come from: for example ```from math import *```\n",
+    "* Below we now have two ```max``` functions and trying to use ```max``` will return an error"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "15"
+      ]
+     },
+     "execution_count": 25,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "max(10, 15)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "metadata": {
+    "tags": [
+     "raises-exception"
+    ]
+   },
+   "outputs": [
+    {
+     "ename": "AxisError",
+     "evalue": "axis 15 is out of bounds for array of dimension 0",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mAxisError\u001b[0m                                 Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-26-e21ac5744269>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mfrom\u001b[0m \u001b[0mnumpy\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mmax\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0mmax\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;36m10\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;36m15\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;32m<__array_function__ internals>\u001b[0m in \u001b[0;36mamax\u001b[0;34m(*args, **kwargs)\u001b[0m\n",
+      "\u001b[0;32m~/miniconda3/envs/starterkit-lessons-new-theme/lib/python3.7/site-packages/numpy/core/fromnumeric.py\u001b[0m in \u001b[0;36mamax\u001b[0;34m(a, axis, out, keepdims, initial, where)\u001b[0m\n\u001b[1;32m   2619\u001b[0m     \"\"\"\n\u001b[1;32m   2620\u001b[0m     return _wrapreduction(a, np.maximum, 'max', axis, None, out,\n\u001b[0;32m-> 2621\u001b[0;31m                           keepdims=keepdims, initial=initial, where=where)\n\u001b[0m\u001b[1;32m   2622\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   2623\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/miniconda3/envs/starterkit-lessons-new-theme/lib/python3.7/site-packages/numpy/core/fromnumeric.py\u001b[0m in \u001b[0;36m_wrapreduction\u001b[0;34m(obj, ufunc, method, axis, dtype, out, **kwargs)\u001b[0m\n\u001b[1;32m     88\u001b[0m                 \u001b[0;32mreturn\u001b[0m \u001b[0mreduction\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0maxis\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0maxis\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mout\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mout\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mpasskwargs\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     89\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 90\u001b[0;31m     \u001b[0;32mreturn\u001b[0m \u001b[0mufunc\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mreduce\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mobj\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0maxis\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mdtype\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mout\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mpasskwargs\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     91\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     92\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mAxisError\u001b[0m: axis 15 is out of bounds for array of dimension 0"
+     ]
+    }
+   ],
+   "source": [
+    "from numpy import max\n",
+    "max(10, 15)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "To avoid this people often import `numpy` and then use `numpy.max` or, if they don't like typing, import it as `np` like we have above:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "2"
+      ]
+     },
+     "execution_count": 27,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "np.max([0, 1, 2])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Some common abrivations for packages are:\n",
+    "\n",
+    "```python\n",
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "from matplotlib import pyplot as plt\n",
+    "import ROOT as R\n",
+    "```\n",
+    "\n",
+    "Typially the nicest code uses a mixture of `import X` and `from X import Y` like we have above.\n",
+    "\n",
+    "If you're interested in following best practices for style look there is an offical style guide called [PEP8](https://www.python.org/dev/peps/pep-0008/). The document itself is quite long but you can also get automated sytle checkers called 'linters'. Look into [flake8](https://gitlab.com/pycqa/flake8/), either as a command line application or as a plugin for your favourite text editor. Take care though, it's occasionally better to break style rules to make code easier to read!\n",
+    "\n",
+    "* Restart the kernal to fix ```max```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "15"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "max(10, 15)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.3"
+  },
+  "nbsphinx": {
+   "execute": "auto"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

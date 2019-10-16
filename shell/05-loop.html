@@ -1,988 +1,739 @@
 
-<!DOCTYPE HTML>
-<html lang="" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Loops · LHCb analysis essentials</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
 
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Loops &mdash; Analysis essentials  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
     
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/panels.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
 
-    
-        
-        <link rel="stylesheet" href="../css/website.css">
-        
-    
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Shell Scripts" href="06-script.html" />
+    <link rel="prev" title="Pipes and Filters" href="04-pipefilter.html" /> 
+</head>
 
-        
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+<body class="wy-body-for-nav">
 
+   
+  <div class="wy-grid-for-nav">
     
-    <link rel="next" href="06-script.html" />
-    
-    
-    <link rel="prev" href="04-pipefilter.html" />
-    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
 
-    </head>
-    <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
+          
+            <a href="../index.html" class="icon icon-home"> Analysis essentials
+          
+
+          
             
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+            <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-            
-                <nav role="navigation">
-                
+          
+        </div>
 
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="2.1" data-path="../python/">
-            
-                <a href="../python/">
-            
-                    
-                    Python
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.1.1" data-path="../python/running.html">
-            
-                <a href="../python/running.html">
-            
-                    
-                    Running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.2" data-path="../python/operators.html">
-            
-                <a href="../python/operators.html">
-            
-                    
-                    Objects and operators
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.3" data-path="../python/numbers.html">
-            
-                <a href="../python/numbers.html">
-            
-                    
-                    Numbers
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.4" data-path="../python/strings.html">
-            
-                <a href="../python/strings.html">
-            
-                    
-                    Strings
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.5" data-path="../python/lists.html">
-            
-                <a href="../python/lists.html">
-            
-                    
-                    Lists and looping
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.6" data-path="../python/dictionaries.html">
-            
-                <a href="../python/dictionaries.html">
-            
-                    
-                    Dictionaries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.7" data-path="../python/conditions.html">
-            
-                <a href="../python/conditions.html">
-            
-                    
-                    Conditions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.8" data-path="../python/methods.html">
-            
-                <a href="../python/methods.html">
-            
-                    
-                    Methods
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.9" data-path="../python/scripting.html">
-            
-                <a href="../python/scripting.html">
-            
-                    
-                    Scripting
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.10" data-path="../python/modules.html">
-            
-                <a href="../python/modules.html">
-            
-                    
-                    Modules
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.11" data-path="../python/learning.html">
-            
-                <a href="../python/learning.html">
-            
-                    
-                    Learning more
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.12" data-path="../python/first_histogram.html">
-            
-                <a href="../python/first_histogram.html">
-            
-                    
-                    Making your first histogram
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.13" data-path="../python/further_reading.html">
-            
-                <a href="../python/further_reading.html">
-            
-                    
-                    Further reading
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="3.1" data-path="./">
-            
-                <a href="./">
-            
-                    
-                    Introducing the Shell
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.1.1" data-path="02-filedir.html">
-            
-                <a href="02-filedir.html">
-            
-                    
-                    Navigating Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.2" data-path="03-create.html">
-            
-                <a href="03-create.html">
-            
-                    
-                    Working With Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.3" data-path="04-pipefilter.html">
-            
-                <a href="04-pipefilter.html">
-            
-                    
-                    Pipes and Filters
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="3.1.4" data-path="05-loop.html">
-            
-                <a href="05-loop.html">
-            
-                    
-                    Loops
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.5" data-path="06-script.html">
-            
-                <a href="06-script.html">
-            
-                    
-                    Shell Scripts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.6" data-path="07-find.html">
-            
-                <a href="07-find.html">
-            
-                    
-                    Finding Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
-            
-                <a href="../shell-extras/">
-            
-                    
-                    Shell extras
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
-            
-                <a href="../shell-extras/screen.html">
-            
-                    
-                    Using screen to keep things running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
-            
-                <a href="../shell-extras/screen2.html">
-            
-                    
-                    Advanced screen topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
-            
-                <a href="../shell-extras/persistent-screen.html">
-            
-                    
-                    Persistent screen or tmux session
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
-            
-                <a href="../shell-extras/shell2.html">
-            
-                    
-                    Advanced shell topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="5.1" data-path="../git/">
-            
-                <a href="../git/">
-            
-                    
-                    Version control with Git
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1.1" data-path="../git/01-basics.html">
-            
-                <a href="../git/01-basics.html">
-            
-                    
-                    Basics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.2" data-path="../git/02-setup.html">
-            
-                <a href="../git/02-setup.html">
-            
-                    
-                    Setting Up Git
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.3" data-path="../git/03-create.html">
-            
-                <a href="../git/03-create.html">
-            
-                    
-                    Creating a Repository
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.4" data-path="../git/04-changes.html">
-            
-                <a href="../git/04-changes.html">
-            
-                    
-                    Tracking Changes
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.5" data-path="../git/05-history.html">
-            
-                <a href="../git/05-history.html">
-            
-                    
-                    Exploring History
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.6" data-path="../git/06-ignore.html">
-            
-                <a href="../git/06-ignore.html">
-            
-                    
-                    Ignoring Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.7" data-path="../git/07-gitlab.html">
-            
-                <a href="../git/07-gitlab.html">
-            
-                    
-                    Remotes in CERN GitLab
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.8" data-path="../git/08-share.html">
-            
-                <a href="../git/08-share.html">
-            
-                    
-                    Sharing a repository with others
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.9" data-path="../git/09-pullrequests.html">
-            
-                <a href="../git/09-pullrequests.html">
-            
-                    
-                    Collaborating with Pull Requests
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.10" data-path="../git/10-conflict.html">
-            
-                <a href="../git/10-conflict.html">
-            
-                    
-                    Conflicts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.11" data-path="../git/11-ci.html">
-            
-                <a href="../git/11-ci.html">
-            
-                    
-                    GitLab CI
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.12" data-path="../git/12-open.html">
-            
-                <a href="../git/12-open.html">
-            
-                    
-                    Open Science
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.13" data-path="../git/13-licensing.html">
-            
-                <a href="../git/13-licensing.html">
-            
-                    
-                    Licensing
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.14" data-path="../git/14-citation.html">
-            
-                <a href="../git/14-citation.html">
-            
-                    
-                    Citation
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="6.1" >
-            
-                <a target="_blank" href="ref://analysis-essentials.pdf">
-            
-                    
-                    Download PDF
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/README.html">An introduction to Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/README.html#aim-of-these-lessons">Aim of these lessons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/running.html">Running Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/strings.html">Strings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/strings.html#formatting">Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html">Lists and looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#looping">Looping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#list-comprehension">List comprehension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#tuples">Tuples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html">Dictionaries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/conditions.html#truthiness">Truthiness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/conditions.html#conditions-in-loops">Conditions in loops</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/methods.html#inline-methods">Inline methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#the-standard-library">The standard library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#modules-from-pypi">Modules from PyPi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#write-your-first-python-module">Write your first Python module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/learning.html">Learning more</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/learning.html#exploring-python">Exploring Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/learning.html#conventional-coding">Conventional coding</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html">Making your first histogram</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/first_histogram.html#pandas">Pandas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/first_histogram.html#plotting-histograms">Plotting histograms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/first_histogram.html#applying-cuts">Applying cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html">More advanced topics in Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/further_reading.html#nice-standard-libraries">Nice standard libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/further_reading.html#nice-libraries-for-data-analysis">Nice libraries for data analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/further_reading.html#python-and-root">Python and ROOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-python/README.html">Advanced Python Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/1Basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Importing-modules">Importing modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html">2: First look at data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#5.-The-toy-dataset">5. The toy dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#6.-Plotting-a-histogram-with-matplotlib">6. Plotting a histogram with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Adding-variables">Adding variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Using-rectangular-cuts">Using rectangular cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/3Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/3Classification.html#Using-a-classifier">Using a classifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/3Classification.html#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">TODO Add a diagram of a decision tree for the above plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/4Extension.html">4: Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Distributions-in-the-Dalitz-features-for-signal-and-background">Distributions in the Dalitz features for signal and background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Preparation-of-train/test-datasets">Preparation of train/test datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Setting-up-classifiers,-training">Setting up classifiers, training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Let’s-look-at-the-results-of-training">Let’s look at the results of training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#ROC-curves-after-training">ROC curves after training</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html">6: Neural networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Downloading-a-dataset">Downloading a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-training-a-network">Example of training a network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Creating-your-own-neural-network">Creating your own neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-a-very-specific-neural-network">Example of a very specific neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Fitting-very-specific-expressions-as-estimators">Fitting very specific expressions as estimators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Writing-custom-pretransformer">Writing custom pretransformer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Ensembling-of-neural-neworks">Ensembling of neural neworks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/7DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Original-distributions">Original distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Comparing-some-simple-expressions:">Comparing some simple expressions:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination">GB-discrimination</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/8sPlot.html">8: sPlot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Applying-sWeights">Applying sWeights</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Compare">Compare</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#More-complex-case">More complex case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Building-sPlot-over-mass">Building sPlot over mass</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Of-course-we-don’t-have-labels-which-events-are-signal-and-which-are-background-beforehand">Of course we don’t have labels which events are signal and which are background beforehand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#We-have-no-information-about-real-labels">We have no information about real labels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Under-assumption-of-linearity:">Under assumption of linearity:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Minimization-of-variation">Minimization of variation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Uncorrelatedness">Uncorrelatedness</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">Introducing the Shell</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="README.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#the-command-line-interface">The Command-Line Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#the-shell">The Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#why-bother">Why bother?</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="README.html#nelle-s-pipeline-starting-point">Nelle’s Pipeline: Starting Point</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="02-filedir.html">Navigating Files and Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="02-filedir.html#nelle-s-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03-create.html">Working With Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04-pipefilter.html">Pipes and Filters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="04-pipefilter.html#nelle-s-pipeline-checking-files">Nelle’s Pipeline: Checking Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06-script.html">Shell Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07-find.html">Finding Things</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell-extras/README.html">UNIX shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen.html">Using screen to keep things running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen2.html">Advanced screen topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#finding-lost-screens">Finding lost screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#using-tabs-in-screen">Using tabs in screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/persistent-screen.html">Persistent screen or tmux session on lxplus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#setting-up-password-less-kerberos-token">Setting up password-less kerberos token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#making-use-of-the-keytab">Making use of the keytab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token">Using k5reauth to automatically refresh your kerberos token</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/shell2.html">More about the UNIX shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#types-of-shell">Types of shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#manual-pages">Manual pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#environment-variables">Environment variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/shell2.html#let-s-now-try-the-following-callout">Let’s now try the following: {.callout}</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#differences-among-files">Differences among files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#looping-over-files">Looping over files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#conditionals">Conditionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#linking-commands">Linking commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#pipes-and-redirection">Pipes and redirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#bash-security">Bash security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#complexity">Complexity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-viewers">Text viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-editors">Text editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#disk-space">Disk space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/README.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/01-basics.html">Automated Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/02-setup.html">Setting Up Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/03-create.html">Creating a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/04-changes.html">Tracking Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/05-history.html">Exploring History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/06-ignore.html">Ignoring Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/07-gitlab.html">Remotes in CERN GitLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/08-share.html">Sharing a repository with others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/09-pullrequests.html">Collaborating with Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#what-is-a-pull-or-merge-request">What is a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#fork-the-original-project-repository">Fork the original project repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#clone-a-remote-project-and-its-fork">Clone a remote project and its fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#sync-your-local-repository-with-remote-changes">Sync your local repository with remote changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#implement-your-new-feature">Implement your new feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#push-changes">Push changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#create-a-pull-or-merge-request">Create a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#discussing-amending-retiring-a-merge-request">Discussing, amending, retiring a Merge Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#accepting-a-pull-request">Accepting a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#the-social-side-of-coding">The social side of coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#automatic-testing">Automatic testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../git/10-conflict.html">Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/11-ci.html">GitLab CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/12-open.html">Open Science</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/13-licensing.html">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/14-citation.html">Citation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributing-notebooks">Contributing notebooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
-
-                </nav>
             
-        
-    </div>
+          
+        </div>
+      </div>
+    </nav>
 
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-<div class="book-header" role="navigation">
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis essentials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
     
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="README.html">Introducing the Shell</a> &raquo;</li>
+        
+      <li>Loops</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/shell/05-loop.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Loops</a>
-    </h1>
+  
+  <hr/>
 </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
 
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
 
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
 
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
 
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="loops">Loops</h1>
-<p><div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6613006840);" id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives<span id="heading-6613006840"></span></h3></div><div class="panel-body" id="panel-6613006840"><ul>
-<li>Write a loop that applies one or more commands separately to each file in a set of files.</li>
-<li>Trace the values taken on by a loop variable during execution of the loop.</li>
-<li>Explain the difference between a variable&apos;s name and its value.</li>
-<li>Explain why spaces and some punctuation characters shouldn&apos;t be used in file names.</li>
-<li>Demonstrate how to see what commands have recently been executed.</li>
-<li>Re-run recently executed commands without retyping them.</li>
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="loops">
+<h1>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h1>
+<div class="panel panel-objectives docutils container">
+<div class="panel-header open docutils container">
+<p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
+</div>
+<div class="panel-body docutils container">
+<ul class="simple">
+<li><p>Write a loop that applies one or more commands separately to each file in a set of files.</p></li>
+<li><p>Trace the values taken on by a loop variable during execution of the loop.</p></li>
+<li><p>Explain the difference between a variable’s name and its value.</p></li>
+<li><p>Explain why spaces and some punctuation characters shouldn’t be used in file names.</p></li>
+<li><p>Demonstrate how to see what commands have recently been executed.</p></li>
+<li><p>Re-run recently executed commands without retyping them.</p></li>
 </ul>
-</div></div></p>
+</div>
+</div>
 <p><strong>Loops</strong> are key to productivity improvements through automation as they allow us to execute
 commands repetitively. Similar to wildcards and tab completion, using loops also reduces the
 amount of typing (and typing mistakes).
-Suppose we have several hundred genome data files named <code>basilisk.dat</code>, <code>unicorn.dat</code>, and so on.
+Suppose we have several hundred genome data files named <code class="docutils literal notranslate"><span class="pre">basilisk.dat</span></code>, <code class="docutils literal notranslate"><span class="pre">unicorn.dat</span></code>, and so on.
 In this example,
-we&apos;ll use the <code>creatures</code> directory which only has two example files,
+we’ll use the <code class="docutils literal notranslate"><span class="pre">creatures</span></code> directory which only has two example files,
 but the principles can be applied to many many more files at once.
 We would like to modify these files, but also save a version of the original files, naming the copies
-<code>original-basilisk.dat</code> and <code>original-unicorn.dat</code>.
-We can&apos;t use:</p>
-<pre><code class="lang-bash">$ cp *.dat original-*.dat
-</code></pre>
+<code class="docutils literal notranslate"><span class="pre">original-basilisk.dat</span></code> and <code class="docutils literal notranslate"><span class="pre">original-unicorn.dat</span></code>.
+We can’t use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cp *.dat original-*.dat
+</pre></div>
+</div>
 <p>because that would expand to:</p>
-<pre><code class="lang-bash">$ cp basilisk.dat unicorn.dat original-*.dat
-</code></pre>
-<p>This wouldn&apos;t back up our files, instead we get an error:</p>
-<pre><code class="lang-error">cp: target `original-*.dat&apos; is not a directory
-</code></pre>
-<p>This problem arises when <code>cp</code> receives more than two inputs. When this happens, it
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cp basilisk.dat unicorn.dat original-*.dat
+</pre></div>
+</div>
+<p>This wouldn’t back up our files, instead we get an error:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cp: target `original-*.dat&#39; is not a directory
+</pre></div>
+</div>
+<p>This problem arises when <code class="docutils literal notranslate"><span class="pre">cp</span></code> receives more than two inputs. When this happens, it
 expects the last input to be a directory where it can copy all the files it was passed.
-Since there is no directory named <code>original-*.dat</code> in the <code>creatures</code> directory we get an
+Since there is no directory named <code class="docutils literal notranslate"><span class="pre">original-*.dat</span></code> in the <code class="docutils literal notranslate"><span class="pre">creatures</span></code> directory we get an
 error.</p>
 <p>Instead, we can use a <strong>loop</strong>
 to do some operation once for each thing in a list.
-Here&apos;s a simple example that displays the first three lines of each file in turn:</p>
-<pre><code class="lang-bash">$ <span class="hljs-keyword">for</span> filename <span class="hljs-keyword">in</span> basilisk.dat unicorn.dat
-<span class="hljs-keyword">do</span>
-   head -n 3 <span class="hljs-variable">$filename</span>
-<span class="hljs-keyword">done</span>
-</code></pre>
-<pre><code class="lang-output">COMMON NAME: basilisk
+Here’s a simple example that displays the first three lines of each file in turn:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="k">for</span> filename in basilisk.dat unicorn.dat
+<span class="k">do</span>
+   head -n <span class="m">3</span> <span class="nv">$filename</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>COMMON NAME: basilisk
 CLASSIFICATION: basiliscus vulgaris
 UPDATED: 1745-05-02
 COMMON NAME: unicorn
 CLASSIFICATION: equus monoceros
 UPDATED: 1738-11-24
-</code></pre>
-<p>When the shell sees the keyword <code>for</code>,
-it knows to repeat a command (or group of commands) once for each thing <code>in</code> a list.
+</pre></div>
+</div>
+<p>When the shell sees the keyword <code class="docutils literal notranslate"><span class="pre">for</span></code>,
+it knows to repeat a command (or group of commands) once for each thing <code class="docutils literal notranslate"><span class="pre">in</span></code> a list.
 Each time the loop runs (called an iteration), an item in the list is assigned in sequence to
 the <strong>variable</strong>, and the commands inside the loop are executed, before moving on to
 the next item in the list.
 Inside the loop,
-we call for the variable&apos;s value by putting <code>$</code> in front of it.
-The <code>$</code> tells the shell interpreter to treat
+we call for the variable’s value by putting <code class="docutils literal notranslate"><span class="pre">$</span></code> in front of it.
+The <code class="docutils literal notranslate"><span class="pre">$</span></code> tells the shell interpreter to treat
 the <strong>variable</strong> as a variable name and substitute its value in its place,
 rather than treat it as text or an external command.</p>
-<p>In this example, the list is two filenames: <code>basilisk.dat</code> and <code>unicorn.dat</code>.
-Each time the loop iterates, it will assign a file name to the variable <code>filename</code>
-and run the <code>head</code> command.
+<p>In this example, the list is two filenames: <code class="docutils literal notranslate"><span class="pre">basilisk.dat</span></code> and <code class="docutils literal notranslate"><span class="pre">unicorn.dat</span></code>.
+Each time the loop iterates, it will assign a file name to the variable <code class="docutils literal notranslate"><span class="pre">filename</span></code>
+and run the <code class="docutils literal notranslate"><span class="pre">head</span></code> command.
 The first time through the loop,
-<code>$filename</code> is <code>basilisk.dat</code>.
-The interpreter runs the command <code>head</code> on <code>basilisk.dat</code>,
+<code class="docutils literal notranslate"><span class="pre">$filename</span></code> is <code class="docutils literal notranslate"><span class="pre">basilisk.dat</span></code>.
+The interpreter runs the command <code class="docutils literal notranslate"><span class="pre">head</span></code> on <code class="docutils literal notranslate"><span class="pre">basilisk.dat</span></code>,
 and the prints the
-first three lines of <code>basilisk.dat</code>.
-For the second iteration, <code>$filename</code> becomes
-<code>unicorn.dat</code>. This time, the shell runs <code>head</code> on <code>unicorn.dat</code>
-and prints the first three lines of <code>unicorn.dat</code>.
-Since the list was only two items, the shell exits the <code>for</code> loop.</p>
+first three lines of <code class="docutils literal notranslate"><span class="pre">basilisk.dat</span></code>.
+For the second iteration, <code class="docutils literal notranslate"><span class="pre">$filename</span></code> becomes
+<code class="docutils literal notranslate"><span class="pre">unicorn.dat</span></code>. This time, the shell runs <code class="docutils literal notranslate"><span class="pre">head</span></code> on <code class="docutils literal notranslate"><span class="pre">unicorn.dat</span></code>
+and prints the first three lines of <code class="docutils literal notranslate"><span class="pre">unicorn.dat</span></code>.
+Since the list was only two items, the shell exits the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 <p>When using variables it is also
 possible to put the names into curly braces to clearly delimit the variable
-name: <code>$filename</code> is equivalent to <code>${filename}</code>, but is different from
-<code>${file}name</code>. You may find this notation in other people&apos;s programs.</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4442099902);" id="follow-the-prompt"><i class="fa fa-info-circle"></i> Follow the Prompt<span id="heading-4442099902"></span></h3></div><div class="panel-body" id="panel-4442099902"><p>The shell prompt changes from <code>$</code> to <code>&gt;</code> and back again as we were
-typing in our loop. The second prompt, <code>&gt;</code>, is different to remind
-us that we haven&apos;t finished typing a complete command yet. A semicolon, <code>;</code>,
+name: <code class="docutils literal notranslate"><span class="pre">$filename</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">${filename}</span></code>, but is different from
+<code class="docutils literal notranslate"><span class="pre">${file}name</span></code>. You may find this notation in other people’s programs.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="follow-the-prompt"><i class="fa fa-info-circle"></i> Follow the Prompt</p>
+</div>
+<div class="panel-body docutils container">
+<p>The shell prompt changes from <code class="docutils literal notranslate"><span class="pre">$</span></code> to <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> and back again as we were
+typing in our loop. The second prompt, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, is different to remind
+us that we haven’t finished typing a complete command yet. A semicolon, <code class="docutils literal notranslate"><span class="pre">;</span></code>,
 can be used to separate two commands written on a single line.</p>
-</div></div></p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5089797715);" id="same-symbols-different-meanings"><i class="fa fa-info-circle"></i> Same Symbols, Different Meanings<span id="heading-5089797715"></span></h3></div><div class="panel-body" id="panel-5089797715"><p>Here we see <code>&gt;</code> being used a shell prompt, whereas <code>&gt;</code> is also
+</div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="same-symbols,-different-meanings"><i class="fa fa-info-circle"></i> Same Symbols, Different Meanings</p>
+</div>
+<div class="panel-body docutils container">
+<p>Here we see <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> being used a shell prompt, whereas <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> is also
 used to redirect output.
-Similarly, <code>$</code> is used as a shell prompt, but, as we saw earlier,
+Similarly, <code class="docutils literal notranslate"><span class="pre">$</span></code> is used as a shell prompt, but, as we saw earlier,
 it is also used to ask the shell to get the value of a variable.</p>
-<p>If the <em>shell</em> prints <code>&gt;</code> or <code>$</code> then it expects you to type something,
+<p>If the <em>shell</em> prints <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">$</span></code> then it expects you to type something,
 and the symbol is a prompt.</p>
-<p>If <em>you</em> type <code>&gt;</code> or <code>$</code> yourself, it is an instruction from you that
+<p>If <em>you</em> type <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">$</span></code> yourself, it is an instruction from you that
 the shell to redirect output or get the value of a variable.</p>
-</div></div></p>
-<p>We have called the variable in this loop <code>filename</code>
+</div>
+</div>
+<p>We have called the variable in this loop <code class="docutils literal notranslate"><span class="pre">filename</span></code>
 in order to make its purpose clearer to human readers.
-The shell itself doesn&apos;t care what the variable is called;
+The shell itself doesn’t care what the variable is called;
 if we wrote this loop as:</p>
-<pre><code class="lang-bash"><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> basilisk.dat unicorn.dat
-<span class="hljs-keyword">do</span>
-    head -n 3 <span class="hljs-variable">$x</span>
-<span class="hljs-keyword">done</span>
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> x in basilisk.dat unicorn.dat
+<span class="k">do</span>
+    head -n <span class="m">3</span> <span class="nv">$x</span>
+<span class="k">done</span>
+</pre></div>
+</div>
 <p>or:</p>
-<pre><code class="lang-bash"><span class="hljs-keyword">for</span> temperature <span class="hljs-keyword">in</span> basilisk.dat unicorn.dat
-<span class="hljs-keyword">do</span>
-    head -n 3 <span class="hljs-variable">$temperature</span>
-<span class="hljs-keyword">done</span>
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> temperature in basilisk.dat unicorn.dat
+<span class="k">do</span>
+    head -n <span class="m">3</span> <span class="nv">$temperature</span>
+<span class="k">done</span>
+</pre></div>
+</div>
 <p>it would work exactly the same way.
-<em>Don&apos;t do this.</em>
+<em>Don’t do this.</em>
 Programs are only useful if people can understand them,
-so meaningless names (like <code>x</code>) or misleading names (like <code>temperature</code>)
-increase the odds that the program won&apos;t do what its readers think it does.</p>
-<p>Here&apos;s a slightly more complicated loop:</p>
-<pre><code class="lang-bash"><span class="hljs-keyword">for</span> filename <span class="hljs-keyword">in</span> *.dat
-<span class="hljs-keyword">do</span>
-    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$filename</span>
-    head -n 100 <span class="hljs-variable">$filename</span> | tail -n 20
-<span class="hljs-keyword">done</span>
-</code></pre>
-<p>The shell starts by expanding <code>*.dat</code> to create the list of files it will process.
+so meaningless names (like <code class="docutils literal notranslate"><span class="pre">x</span></code>) or misleading names (like <code class="docutils literal notranslate"><span class="pre">temperature</span></code>)
+increase the odds that the program won’t do what its readers think it does.</p>
+<p>Here’s a slightly more complicated loop:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> filename in *.dat
+<span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$filename</span>
+    head -n <span class="m">100</span> <span class="nv">$filename</span> <span class="p">|</span> tail -n <span class="m">20</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>The shell starts by expanding <code class="docutils literal notranslate"><span class="pre">*.dat</span></code> to create the list of files it will process.
 The <strong>loop body</strong>
 then executes two commands for each of those files.
-The first, <code>echo</code>, just prints its command-line arguments to standard output.
+The first, <code class="docutils literal notranslate"><span class="pre">echo</span></code>, just prints its command-line arguments to standard output.
 For example:</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">echo</span> hello there
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">echo</span> hello there
+</pre></div>
+</div>
 <p>prints:</p>
-<pre><code class="lang-output">hello there
-</code></pre>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>hello there
+</pre></div>
+</div>
 <p>In this case,
-since the shell expands <code>$filename</code> to be the name of a file,
-<code>echo $filename</code> just prints the name of the file.
-Note that we can&apos;t write this as:</p>
-<pre><code class="lang-bash"><span class="hljs-keyword">for</span> filename <span class="hljs-keyword">in</span> *.dat
-<span class="hljs-keyword">do</span>
-    <span class="hljs-variable">$filename</span>
-    head -n 100 <span class="hljs-variable">$filename</span> | tail -n 20
-<span class="hljs-keyword">done</span>
-</code></pre>
+since the shell expands <code class="docutils literal notranslate"><span class="pre">$filename</span></code> to be the name of a file,
+<code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$filename</span></code> just prints the name of the file.
+Note that we can’t write this as:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> filename in *.dat
+<span class="k">do</span>
+    <span class="nv">$filename</span>
+    head -n <span class="m">100</span> <span class="nv">$filename</span> <span class="p">|</span> tail -n <span class="m">20</span>
+<span class="k">done</span>
+</pre></div>
+</div>
 <p>because then the first time through the loop,
-when <code>$filename</code> expanded to <code>basilisk.dat</code>, the shell would try to run <code>basilisk.dat</code> as a program.
+when <code class="docutils literal notranslate"><span class="pre">$filename</span></code> expanded to <code class="docutils literal notranslate"><span class="pre">basilisk.dat</span></code>, the shell would try to run <code class="docutils literal notranslate"><span class="pre">basilisk.dat</span></code> as a program.
 Finally,
-the <code>head</code> and <code>tail</code> combination selects lines 81-100
+the <code class="docutils literal notranslate"><span class="pre">head</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code> combination selects lines 81-100
 from whatever file is being processed
 (assuming the file has at least 100 lines).</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8070588409);" id="spaces-in-names"><i class="fa fa-info-circle"></i> Spaces in Names<span id="heading-8070588409"></span></h3></div><div class="panel-body" id="panel-8070588409"><p>Whitespace is used to separate the elements on the list
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="spaces-in-names"><i class="fa fa-info-circle"></i> Spaces in Names</p>
+</div>
+<div class="panel-body docutils container">
+<p>Whitespace is used to separate the elements on the list
 that we are going to loop over. If on the list we have elements
 with whitespace we need to quote those elements
 and our variable when using it.
 Suppose our data files are named:</p>
-<pre><code class="lang-source">red dragon.dat
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>red dragon.dat
 purple unicorn.dat
-</code></pre>
+</pre></div>
+</div>
 <p>We need to use</p>
-<pre><code class="lang-bash"><span class="hljs-keyword">for</span> filename <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;red dragon.dat&quot;</span> <span class="hljs-string">&quot;purple unicorn.dat&quot;</span>
-<span class="hljs-keyword">do</span>
-    head -n 100 <span class="hljs-string">&quot;<span class="hljs-variable">$filename</span>&quot;</span> | tail -n 20
-<span class="hljs-keyword">done</span>
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> filename in <span class="s2">&quot;red dragon.dat&quot;</span> <span class="s2">&quot;purple unicorn.dat&quot;</span>
+<span class="k">do</span>
+    head -n <span class="m">100</span> <span class="s2">&quot;</span><span class="nv">$filename</span><span class="s2">&quot;</span> <span class="p">|</span> tail -n <span class="m">20</span>
+<span class="k">done</span>
+</pre></div>
+</div>
 <p>It is simpler just to avoid using whitespaces (or other special characters) in filenames.</p>
-<p>The files above don&apos;t exist, so if we run the above code, the <code>head</code> command will be unable
+<p>The files above don’t exist, so if we run the above code, the <code class="docutils literal notranslate"><span class="pre">head</span></code> command will be unable
 to find them, however the error message returned will show the name of the files it is
 expecting:</p>
-<pre><code>head: cannot open &#x2018;red dragon.dat&#x2019; for reading: No such file or directory
-head: cannot open &#x2018;purple unicorn.dat&#x2019; for reading: No such file or directory
-</code></pre><p>{: .output}
-Try removing the quotes around <code>$filename</code> in the loop above to see the effect of the quote
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>head: cannot open ‘red dragon.dat’ for reading: No such file or directory
+head: cannot open ‘purple unicorn.dat’ for reading: No such file or directory
+</pre></div>
+</div>
+<p>Try removing the quotes around <code class="docutils literal notranslate"><span class="pre">$filename</span></code> in the loop above to see the effect of the quote
 marks on whitespace:</p>
-<pre><code>head: cannot open &#x2018;red&#x2019; for reading: No such file or directory
-head: cannot open &#x2018;dragon.dat&#x2019; for reading: No such file or directory
-head: cannot open &#x2018;purple&#x2019; for reading: No such file or directory
-head: cannot open &#x2018;unicorn.dat&#x2019; for reading: No such file or directory
-</code></pre><p>{: . output}</p>
-</div></div></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>head: cannot open ‘red’ for reading: No such file or directory
+head: cannot open ‘dragon.dat’ for reading: No such file or directory
+head: cannot open ‘purple’ for reading: No such file or directory
+head: cannot open ‘unicorn.dat’ for reading: No such file or directory
+</pre></div>
+</div>
+<p>{: . output}</p>
+</div>
+</div>
 <p>Going back to our original file copying problem,
 we can solve it using this loop:</p>
-<pre><code class="lang-bash"><span class="hljs-keyword">for</span> filename <span class="hljs-keyword">in</span> *.dat
-<span class="hljs-keyword">do</span>
-    cp <span class="hljs-variable">$filename</span> original-<span class="hljs-variable">$filename</span>
-<span class="hljs-keyword">done</span>
-</code></pre>
-<p>This loop runs the <code>cp</code> command once for each filename.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> filename in *.dat
+<span class="k">do</span>
+    cp <span class="nv">$filename</span> original-<span class="nv">$filename</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>This loop runs the <code class="docutils literal notranslate"><span class="pre">cp</span></code> command once for each filename.
 The first time,
-when <code>$filename</code> expands to <code>basilisk.dat</code>,
+when <code class="docutils literal notranslate"><span class="pre">$filename</span></code> expands to <code class="docutils literal notranslate"><span class="pre">basilisk.dat</span></code>,
 the shell executes:</p>
-<pre><code class="lang-bash">cp basilisk.dat original-basilisk.dat
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp basilisk.dat original-basilisk.dat
+</pre></div>
+</div>
 <p>The second time, the command is:</p>
-<pre><code class="lang-bash">cp unicorn.dat original-unicorn.dat
-</code></pre>
-<p>Since the <code>cp</code> command does not normally produce any output, it&apos;s hard to check
-that the loop is doing the correct thing. By prefixing the command with <code>echo</code>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp unicorn.dat original-unicorn.dat
+</pre></div>
+</div>
+<p>Since the <code class="docutils literal notranslate"><span class="pre">cp</span></code> command does not normally produce any output, it’s hard to check
+that the loop is doing the correct thing. By prefixing the command with <code class="docutils literal notranslate"><span class="pre">echo</span></code>
 it is possible to see each command as it <em>would</em> be executed. The following diagram
 shows what happens when the modified script is executed, and demonstrates how the
-judicious use of <code>echo</code> is a good debugging technique.</p>
-<p><img src="fig/shell_script_for_loop_flow_chart.svg" alt="For Loop in Action"></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8543782176);" id="nelles-pipeline-processing-files"><i class="fa fa-square-o"></i> Nelle&apos;s Pipeline: Processing Files<span id="heading-8543782176"></span></h3></div><div class="panel-body" id="panel-8543782176"><p>Nelle is now ready to process her data files.
-Since she&apos;s still learning how to use the shell,
+judicious use of <code class="docutils literal notranslate"><span class="pre">echo</span></code> is a good debugging technique.</p>
+<p><img alt="For Loop in Action" src="../_images/shell_script_for_loop_flow_chart.svg" /></p>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="nelle's-pipeline:-processing-files"><i class="fa fa-square-o"></i> Nelle’s Pipeline: Processing Files</p>
+</div>
+<div class="panel-body docutils container">
+<p>Nelle is now ready to process her data files.
+Since she’s still learning how to use the shell,
 she decides to build up the required commands in stages.
-Her first step is to make sure that she can select the right files --- remember,
-these are ones whose names end in &apos;A&apos; or &apos;B&apos;, rather than &apos;Z&apos;. Starting from her home directory, Nelle types:</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> north-pacific-gyre/2012-07-03
-$ <span class="hljs-keyword">for</span> datafile <span class="hljs-keyword">in</span> NENE*[AB].txt
-<span class="hljs-keyword">do</span>
-    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$datafile</span>
-<span class="hljs-keyword">done</span>
-</code></pre>
-<pre><code class="lang-output">NENE01729A.txt
+Her first step is to make sure that she can select the right files — remember,
+these are ones whose names end in ‘A’ or ‘B’, rather than ‘Z’. Starting from her home directory, Nelle types:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> north-pacific-gyre/2012-07-03
+$ <span class="k">for</span> datafile in NENE*<span class="o">[</span>AB<span class="o">]</span>.txt
+<span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$datafile</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>NENE01729A.txt
 NENE01729B.txt
 NENE01736A.txt
 ...
 NENE02043A.txt
 NENE02043B.txt
-</code></pre>
+</pre></div>
+</div>
 <p>Her next step is to decide
-what to call the files that the <code>goostats</code> analysis program will create.
-Prefixing each input file&apos;s name with &quot;stats&quot; seems simple,
+what to call the files that the <code class="docutils literal notranslate"><span class="pre">goostats</span></code> analysis program will create.
+Prefixing each input file’s name with “stats” seems simple,
 so she modifies her loop to do that:</p>
-<pre><code class="lang-bash">$ <span class="hljs-keyword">for</span> datafile <span class="hljs-keyword">in</span> NENE*[AB].txt
-<span class="hljs-keyword">do</span>
-    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$datafile</span> stats-<span class="hljs-variable">$datafile</span>
-<span class="hljs-keyword">done</span>
-</code></pre>
-<pre><code class="lang-output">NENE01729A.txt stats-NENE01729A.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="k">for</span> datafile in NENE*<span class="o">[</span>AB<span class="o">]</span>.txt
+<span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$datafile</span> stats-<span class="nv">$datafile</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>NENE01729A.txt stats-NENE01729A.txt
 NENE01729B.txt stats-NENE01729B.txt
 NENE01736A.txt stats-NENE01736A.txt
 ...
 NENE02043A.txt stats-NENE02043A.txt
 NENE02043B.txt stats-NENE02043B.txt
-</code></pre>
-<p>She hasn&apos;t actually run <code>goostats</code> yet,
-but now she&apos;s sure she can select the right files and generate the right output filenames.</p>
+</pre></div>
+</div>
+<p>She hasn’t actually run <code class="docutils literal notranslate"><span class="pre">goostats</span></code> yet,
+but now she’s sure she can select the right files and generate the right output filenames.</p>
 <p>Typing in commands over and over again is becoming tedious,
 though,
 and Nelle is worried about making mistakes,
@@ -991,291 +742,433 @@ she presses the up arrow.
 In response,
 the shell redisplays the whole loop on one line
 (using semi-colons to separate the pieces):</p>
-<pre><code class="lang-bash">$ <span class="hljs-keyword">for</span> datafile <span class="hljs-keyword">in</span> NENE*[AB].txt; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$datafile</span> stats-<span class="hljs-variable">$datafile</span>; <span class="hljs-keyword">done</span>
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="k">for</span> datafile in NENE*<span class="o">[</span>AB<span class="o">]</span>.txt<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="nv">$datafile</span> stats-<span class="nv">$datafile</span><span class="p">;</span> <span class="k">done</span>
+</pre></div>
+</div>
 <p>Using the left arrow key,
-Nelle backs up and changes the command <code>echo</code> to <code>bash goostats</code>:</p>
-<pre><code class="lang-bash">$ <span class="hljs-keyword">for</span> datafile <span class="hljs-keyword">in</span> NENE*[AB].txt; <span class="hljs-keyword">do</span> bash goostats <span class="hljs-variable">$datafile</span> stats-<span class="hljs-variable">$datafile</span>; <span class="hljs-keyword">done</span>
-</code></pre>
+Nelle backs up and changes the command <code class="docutils literal notranslate"><span class="pre">echo</span></code> to <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">goostats</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="k">for</span> datafile in NENE*<span class="o">[</span>AB<span class="o">]</span>.txt<span class="p">;</span> <span class="k">do</span> bash goostats <span class="nv">$datafile</span> stats-<span class="nv">$datafile</span><span class="p">;</span> <span class="k">done</span>
+</pre></div>
+</div>
 <p>When she presses Enter,
 the shell runs the modified command.
-However, nothing appears to happen --- there is no output.
-After a moment, Nelle realizes that since her script doesn&apos;t print anything to the screen any longer,
+However, nothing appears to happen — there is no output.
+After a moment, Nelle realizes that since her script doesn’t print anything to the screen any longer,
 she has no idea whether it is running, much less how quickly.
-She kills the running command by typing <code>Ctrl-C</code>,
+She kills the running command by typing <code class="docutils literal notranslate"><span class="pre">Ctrl-C</span></code>,
 uses up-arrow to repeat the command,
 and edits it to read:</p>
-<pre><code class="lang-bash">$ <span class="hljs-keyword">for</span> datafile <span class="hljs-keyword">in</span> NENE*[AB].txt; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$datafile</span>; bash goostats <span class="hljs-variable">$datafile</span> stats-<span class="hljs-variable">$datafile</span>; <span class="hljs-keyword">done</span>
-</code></pre>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9406024296);" id="variables-in-loopsclick-to-expand"><i class="fa fa-line-chart"></i> Variables in Loops<span id="heading-9406024296">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-9406024296"><p>This exercise refers to the <code>data-shell/molecules</code> directory.
-<code>ls</code> gives the following output:</p>
-<pre><code class="lang-output">cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="k">for</span> datafile in NENE*<span class="o">[</span>AB<span class="o">]</span>.txt<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="nv">$datafile</span><span class="p">;</span> bash goostats <span class="nv">$datafile</span> stats-<span class="nv">$datafile</span><span class="p">;</span> <span class="k">done</span>
+</pre></div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="beginning-and-end"><i class="fa fa-info-circle"></i> Beginning and End</p>
+</div>
+<div class="panel-body docutils container">
+<p>We can move to the beginning of a line in the shell by typing <code class="docutils literal notranslate"><span class="pre">Ctrl-a</span></code>
+and to the end using <code class="docutils literal notranslate"><span class="pre">Ctrl-e</span></code>.</p>
+</div>
+</div>
+<p>When she runs her program now,
+it produces one line of output every five seconds or so:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>NENE01729A.txt
+NENE01729B.txt
+NENE01736A.txt
+...
+</pre></div>
+</div>
+<p>1518 times 5 seconds,
+divided by 60,
+tells her that her script will take about two hours to run.
+As a final check,
+she opens another terminal window,
+goes into <code class="docutils literal notranslate"><span class="pre">north-pacific-gyre/2012-07-03</span></code>,
+and uses <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">stats-NENE01729B.txt</span></code>
+to examine one of the output files.
+It looks good,
+so she decides to get some coffee and catch up on her reading.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="those-who-know-history-can-choose-to-repeat-it"><i class="fa fa-info-circle"></i> Those Who Know History Can Choose to Repeat It</p>
+</div>
+<div class="panel-body docutils container">
+<p>Another way to repeat previous work is to use the <code class="docutils literal notranslate"><span class="pre">history</span></code> command to
+get a list of the last few hundred commands that have been executed, and
+then to use <code class="docutils literal notranslate"><span class="pre">!123</span></code> (where “123” is replaced by the command number) to
+repeat one of those commands. For example, if Nelle types this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">history</span> <span class="p">|</span> tail -n <span class="m">5</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  456  ls -l NENE0*.txt
+  457  rm stats-NENE01729B.txt.txt
+  458  bash goostats NENE01729B.txt stats-NENE01729B.txt
+  459  ls -l NENE0*.txt
+  460  history
+</pre></div>
+</div>
+<p>then she can re-run <code class="docutils literal notranslate"><span class="pre">goostats</span></code> on <code class="docutils literal notranslate"><span class="pre">NENE01729B.txt</span></code> simply by typing
+<code class="docutils literal notranslate"><span class="pre">!458</span></code>.</p>
+</div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="other-history-commands"><i class="fa fa-info-circle"></i> Other History Commands</p>
+</div>
+<div class="panel-body docutils container">
+<p>There are a number of other shortcut commands for getting at the history.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl-R</span></code> enters a history search mode “reverse-i-search” and finds the
+most recent command in your history that matches the text you enter next.
+Press <code class="docutils literal notranslate"><span class="pre">Ctrl-R</span></code> one or more additional times to search for earlier matches.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!!</span></code> retrieves the immediately preceding command
+(you may or may not find this more convenient than using the up-arrow)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!$</span></code> retrieves the last word of the last command.
+That’s useful more often than you might expect: after
+<code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">goostats</span> <span class="pre">NENE01729B.txt</span> <span class="pre">stats-NENE01729B.txt</span></code>, you can type
+<code class="docutils literal notranslate"><span class="pre">less</span> <span class="pre">!$</span></code> to look at the file <code class="docutils literal notranslate"><span class="pre">stats-NENE01729B.txt</span></code>, which is
+quicker than doing up-arrow and editing the command-line.</p></li>
+</ul>
+</div>
+</div>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="variables-in-loops"><i class="fa fa-check-square-o"></i> Variables in Loops</p>
+</div>
+<div class="panel-body docutils container">
+<p>This exercise refers to the <code class="docutils literal notranslate"><span class="pre">data-shell/molecules</span></code> directory.
+<code class="docutils literal notranslate"><span class="pre">ls</span></code> gives the following output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
+</pre></div>
+</div>
 <p>What is the output of the following code?</p>
-<pre><code class="lang-bash"><span class="hljs-keyword">for</span> datafile <span class="hljs-keyword">in</span> *.pdb
-<span class="hljs-keyword">do</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> datafile in *.pdb
+<span class="k">do</span>
     ls *.pdb
-<span class="hljs-keyword">done</span>
-</code></pre>
+<span class="k">done</span>
+</pre></div>
+</div>
 <p>Now, what is the output of the following code?</p>
-<pre><code class="lang-bash"><span class="hljs-keyword">for</span> datafile <span class="hljs-keyword">in</span> *.pdb
-<span class="hljs-keyword">do</span>
-&gt;    ls <span class="hljs-variable">$datafile</span>
-<span class="hljs-keyword">done</span>
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> datafile in *.pdb
+<span class="k">do</span>
+&gt;	ls <span class="nv">$datafile</span>
+<span class="k">done</span>
+</pre></div>
+</div>
 <p>Why do these two loops give different outputs?</p>
-<h2 id="solution">Solution</h2>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="variables-in-loops"><i class="fa fa-check-square-o"></i> Variables in Loops</p>
+</div>
+<div class="panel-body docutils container">
 <p>The first code block gives the same output on each iteration through
 the loop.
-Bash expands the wildcard <code>*.pdb</code> within the loop body (as well as
-before the loop starts) to match all files ending in <code>.pdb</code>
-and then lists them using <code>ls</code>.
+Bash expands the wildcard <code class="docutils literal notranslate"><span class="pre">*.pdb</span></code> within the loop body (as well as
+before the loop starts) to match all files ending in <code class="docutils literal notranslate"><span class="pre">.pdb</span></code>
+and then lists them using <code class="docutils literal notranslate"><span class="pre">ls</span></code>.
 The expanded loop would look like this:</p>
-<pre><code>for datafile in cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
-do
-&gt;    ls cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
-done
-</code></pre><p>{: .bash}</p>
-<pre><code>cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> datafile in cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
+<span class="k">do</span>
+&gt;	ls cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
+<span class="k">done</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
-</code></pre><p>{: .output}</p>
+</pre></div>
+</div>
 <p>The second code block lists a different file on each loop iteration.
-The value of the <code>datafile</code> variable is evaluated using <code>$datafile</code>,
-and then listed using <code>ls</code>.</p>
-<pre><code>cubane.pdb
+The value of the <code class="docutils literal notranslate"><span class="pre">datafile</span></code> variable is evaluated using <code class="docutils literal notranslate"><span class="pre">$datafile</span></code>,
+and then listed using <code class="docutils literal notranslate"><span class="pre">ls</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cubane.pdb
 ethane.pdb
 methane.pdb
 octane.pdb
 pentane.pdb
 propane.pdb
-</code></pre><p>{: .output}</p>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2831706417);" id="saving-to-a-file-in-a-loop---part-one"><i class="fa fa-square-o"></i> Saving to a File in a Loop - Part One<span id="heading-2831706417"></span></h3></div><div class="panel-body" id="panel-2831706417"><p>In the same directory, what is the effect of this loop?</p>
-<pre><code class="lang-bash"><span class="hljs-keyword">for</span> alkanes <span class="hljs-keyword">in</span> *.pdb
-<span class="hljs-keyword">do</span>
-    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$alkanes</span>
-    cat <span class="hljs-variable">$alkanes</span> &gt; alkanes.pdb
-<span class="hljs-keyword">done</span>
-</code></pre>
-<ol>
-<li>Prints <code>cubane.pdb</code>, <code>ethane.pdb</code>, <code>methane.pdb</code>, <code>octane.pdb</code>, <code>pentane.pdb</code> and <code>propane.pdb</code>,
-and the text from <code>propane.pdb</code> will be saved to a file called <code>alkanes.pdb</code>.</li>
-<li>Prints <code>cubane.pdb</code>, <code>ethane.pdb</code>, and <code>methane.pdb</code>, and the text from all three files would be
-concatenated and saved to a file called <code>alkanes.pdb</code>.</li>
-<li>Prints <code>cubane.pdb</code>, <code>ethane.pdb</code>, <code>methane.pdb</code>, <code>octane.pdb</code>, and <code>pentane.pdb</code>, and the text
-from <code>propane.pdb</code> will be saved to a file called <code>alkanes.pdb</code>.</li>
-<li>None of the above.</li>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="saving-to-a-file-in-a-loop---part-one"><i class="fa fa-square-o"></i> Saving to a File in a Loop - Part One</p>
+</div>
+<div class="panel-body docutils container">
+<p>In the same directory, what is the effect of this loop?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> alkanes in *.pdb
+<span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$alkanes</span>
+    cat <span class="nv">$alkanes</span> &gt; alkanes.pdb
+<span class="k">done</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Prints <code class="docutils literal notranslate"><span class="pre">cubane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">ethane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">methane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">octane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">pentane.pdb</span></code> and <code class="docutils literal notranslate"><span class="pre">propane.pdb</span></code>,
+and the text from <code class="docutils literal notranslate"><span class="pre">propane.pdb</span></code> will be saved to a file called <code class="docutils literal notranslate"><span class="pre">alkanes.pdb</span></code>.</p></li>
+<li><p>Prints <code class="docutils literal notranslate"><span class="pre">cubane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">ethane.pdb</span></code>, and <code class="docutils literal notranslate"><span class="pre">methane.pdb</span></code>, and the text from all three files would be
+concatenated and saved to a file called <code class="docutils literal notranslate"><span class="pre">alkanes.pdb</span></code>.</p></li>
+<li><p>Prints <code class="docutils literal notranslate"><span class="pre">cubane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">ethane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">methane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">octane.pdb</span></code>, and <code class="docutils literal notranslate"><span class="pre">pentane.pdb</span></code>, and the text
+from <code class="docutils literal notranslate"><span class="pre">propane.pdb</span></code> will be saved to a file called <code class="docutils literal notranslate"><span class="pre">alkanes.pdb</span></code>.</p></li>
+<li><p>None of the above.</p></li>
 </ol>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4498343041);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-4498343041">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-4498343041"><ol>
-<li>The text from each file in turn gets written to the <code>alkanes.pdb</code> file.
-However, the file gets overwritten on each loop interation, so the final content of <code>alkanes.pdb</code>
-is the text from the <code>propane.pdb</code> file.</li>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<ol class="simple">
+<li><p>The text from each file in turn gets written to the <code class="docutils literal notranslate"><span class="pre">alkanes.pdb</span></code> file.
+However, the file gets overwritten on each loop interation, so the final content of <code class="docutils literal notranslate"><span class="pre">alkanes.pdb</span></code>
+is the text from the <code class="docutils literal notranslate"><span class="pre">propane.pdb</span></code> file.</p></li>
 </ol>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1370635703);" id="saving-to-a-file-in-a-loop---part-two"><i class="fa fa-square-o"></i> Saving to a File in a Loop - Part Two<span id="heading-1370635703"></span></h3></div><div class="panel-body" id="panel-1370635703"><p>In the same directory, what would be the output of the following loop?</p>
-<pre><code class="lang-bash"><span class="hljs-keyword">for</span> datafile <span class="hljs-keyword">in</span> *.pdb
-<span class="hljs-keyword">do</span>
-    cat <span class="hljs-variable">$datafile</span> &gt;&gt; all.pdb
-<span class="hljs-keyword">done</span>
-</code></pre>
-<ol>
-<li>All of the text from <code>cubane.pdb</code>, <code>ethane.pdb</code>, <code>methane.pdb</code>, <code>octane.pdb</code>, and
-<code>pentane.pdb</code> would be concatenated and saved to a file called <code>all.pdb</code>.</li>
-<li>The text from <code>ethane.pdb</code> will be saved to a file called <code>all.pdb</code>.</li>
-<li>All of the text from <code>cubane.pdb</code>, <code>ethane.pdb</code>, <code>methane.pdb</code>, <code>octane.pdb</code>, <code>pentane.pdb</code>
-and <code>propane.pdb</code> would be concatenated and saved to a file called <code>all.pdb</code>.</li>
-<li>All of the text from <code>cubane.pdb</code>, <code>ethane.pdb</code>, <code>methane.pdb</code>, <code>octane.pdb</code>, <code>pentane.pdb</code>
-and <code>propane.pdb</code> would be printed to the screen and saved to a file called <code>all.pdb</code>.</li>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="saving-to-a-file-in-a-loop---part-two"><i class="fa fa-square-o"></i> Saving to a File in a Loop - Part Two</p>
+</div>
+<div class="panel-body docutils container">
+<p>In the same directory, what would be the output of the following loop?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> datafile in *.pdb
+<span class="k">do</span>
+    cat <span class="nv">$datafile</span> &gt;&gt; all.pdb
+<span class="k">done</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>All of the text from <code class="docutils literal notranslate"><span class="pre">cubane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">ethane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">methane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">octane.pdb</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">pentane.pdb</span></code> would be concatenated and saved to a file called <code class="docutils literal notranslate"><span class="pre">all.pdb</span></code>.</p></li>
+<li><p>The text from <code class="docutils literal notranslate"><span class="pre">ethane.pdb</span></code> will be saved to a file called <code class="docutils literal notranslate"><span class="pre">all.pdb</span></code>.</p></li>
+<li><p>All of the text from <code class="docutils literal notranslate"><span class="pre">cubane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">ethane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">methane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">octane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">pentane.pdb</span></code>
+and <code class="docutils literal notranslate"><span class="pre">propane.pdb</span></code> would be concatenated and saved to a file called <code class="docutils literal notranslate"><span class="pre">all.pdb</span></code>.</p></li>
+<li><p>All of the text from <code class="docutils literal notranslate"><span class="pre">cubane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">ethane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">methane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">octane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">pentane.pdb</span></code>
+and <code class="docutils literal notranslate"><span class="pre">propane.pdb</span></code> would be printed to the screen and saved to a file called <code class="docutils literal notranslate"><span class="pre">all.pdb</span></code>.</p></li>
 </ol>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6829195990);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-6829195990">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-6829195990"><p>3 is the correct answer. <code>&gt;&gt;</code> appends to a file, rather than overwriting it with the redirected
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>3 is the correct answer. <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> appends to a file, rather than overwriting it with the redirected
 output from a command.
-Given the output from the <code>cat</code> command has been redirected, nothing is printed to the screen.</p>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7317679753);" id="limiting-sets-of-files"><i class="fa fa-square-o"></i> Limiting Sets of Files<span id="heading-7317679753"></span></h3></div><div class="panel-body" id="panel-7317679753"><p>In the same directory, what would be the output of the following loop?</p>
-<pre><code class="lang-bash"><span class="hljs-keyword">for</span> filename <span class="hljs-keyword">in</span> c*
-<span class="hljs-keyword">do</span>
-    ls <span class="hljs-variable">$filename</span>
-<span class="hljs-keyword">done</span>
-</code></pre>
-<ol>
-<li>No files are listed.</li>
-<li>All files are listed.</li>
-<li>Only <code>cubane.pdb</code>, <code>octane.pdb</code> and <code>pentane.pdb</code> are listed.</li>
-<li>Only <code>cubane.pdb</code> is listed.</li>
+Given the output from the <code class="docutils literal notranslate"><span class="pre">cat</span></code> command has been redirected, nothing is printed to the screen.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="limiting-sets-of-files"><i class="fa fa-square-o"></i> Limiting Sets of Files</p>
+</div>
+<div class="panel-body docutils container">
+<p>In the same directory, what would be the output of the following loop?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> filename in c*
+<span class="k">do</span>
+    ls <span class="nv">$filename</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>No files are listed.</p></li>
+<li><p>All files are listed.</p></li>
+<li><p>Only <code class="docutils literal notranslate"><span class="pre">cubane.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">octane.pdb</span></code> and <code class="docutils literal notranslate"><span class="pre">pentane.pdb</span></code> are listed.</p></li>
+<li><p>Only <code class="docutils literal notranslate"><span class="pre">cubane.pdb</span></code> is listed.</p></li>
 </ol>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3545146218);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-3545146218">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-3545146218"><p>4 is the correct answer. <code>*</code> matches zero or more characters, so any file name starting with
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>4 is the correct answer. <code class="docutils literal notranslate"><span class="pre">*</span></code> matches zero or more characters, so any file name starting with
 the letter c, followed by zero or more other characters will be matched.</p>
 <p>How would the output differ from using this command instead?</p>
-<pre><code class="lang-bash"><span class="hljs-keyword">for</span> filename <span class="hljs-keyword">in</span> *c*
-<span class="hljs-keyword">do</span>
-    ls <span class="hljs-variable">$filename</span>
-<span class="hljs-keyword">done</span>
-</code></pre>
-<ol>
-<li>The same files would be listed.</li>
-<li>All the files are listed this time.</li>
-<li>No files are listed this time.</li>
-<li>The files <code>cubane.pdb</code> and <code>octane.pdb</code> will be listed.</li>
-<li>Only the file <code>octane.pdb</code> will be listed.</li>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> filename in *c*
+<span class="k">do</span>
+    ls <span class="nv">$filename</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>The same files would be listed.</p></li>
+<li><p>All the files are listed this time.</p></li>
+<li><p>No files are listed this time.</p></li>
+<li><p>The files <code class="docutils literal notranslate"><span class="pre">cubane.pdb</span></code> and <code class="docutils literal notranslate"><span class="pre">octane.pdb</span></code> will be listed.</p></li>
+<li><p>Only the file <code class="docutils literal notranslate"><span class="pre">octane.pdb</span></code> will be listed.</p></li>
 </ol>
-</div></div><div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3270396629);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-3270396629">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-3270396629"><p>4 is the correct answer. <code>*</code> matches zero or more characters, so a file name with zero or more
+</div>
+</div>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>4 is the correct answer. <code class="docutils literal notranslate"><span class="pre">*</span></code> matches zero or more characters, so a file name with zero or more
 characters before a letter c and zero or more characters after the letter c will be matched.</p>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9672570241);" id="doing-a-dry-run"><i class="fa fa-square-o"></i> Doing a Dry Run<span id="heading-9672570241"></span></h3></div><div class="panel-body" id="panel-9672570241"><p>A loop is a way to do many things at once --- or to make many mistakes at
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="doing-a-dry-run"><i class="fa fa-square-o"></i> Doing a Dry Run</p>
+</div>
+<div class="panel-body docutils container">
+<p>A loop is a way to do many things at once — or to make many mistakes at
 once if it does the wrong thing. One way to check what a loop <em>would</em> do
-is to <code>echo</code> the commands it would run instead of actually running them.</p>
+is to <code class="docutils literal notranslate"><span class="pre">echo</span></code> the commands it would run instead of actually running them.</p>
 <p>Suppose we want to preview the commands the following loop will execute
 without actually running those commands:</p>
-<pre><code class="lang-bash"><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> *.pdb
-<span class="hljs-keyword">do</span>
-  analyze <span class="hljs-variable">$file</span> &gt; analyzed-<span class="hljs-variable">$file</span>
-<span class="hljs-keyword">done</span>
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> file in *.pdb
+<span class="k">do</span>
+  analyze <span class="nv">$file</span> &gt; analyzed-<span class="nv">$file</span>
+<span class="k">done</span>
+</pre></div>
+</div>
 <p>What is the difference between the two loops below, and which one would we
 want to run?</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># Version 1</span>
-<span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> *.pdb
-<span class="hljs-keyword">do</span>
-  <span class="hljs-built_in">echo</span> analyze <span class="hljs-variable">$file</span> &gt; analyzed-<span class="hljs-variable">$file</span>
-<span class="hljs-keyword">done</span>
-</code></pre>
-<pre><code class="lang-bash"><span class="hljs-comment"># Version 2</span>
-<span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> *.pdb
-<span class="hljs-keyword">do</span>
-  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;analyze <span class="hljs-variable">$file</span> &gt; analyzed-<span class="hljs-variable">$file</span>&quot;</span>
-<span class="hljs-keyword">done</span>
-</code></pre>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4179616926);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-4179616926">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-4179616926"><p>The second version is the one we want to run.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Version 1</span>
+<span class="k">for</span> file in *.pdb
+<span class="k">do</span>
+  <span class="nb">echo</span> analyze <span class="nv">$file</span> &gt; analyzed-<span class="nv">$file</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Version 2</span>
+<span class="k">for</span> file in *.pdb
+<span class="k">do</span>
+  <span class="nb">echo</span> <span class="s2">&quot;analyze </span><span class="nv">$file</span><span class="s2"> &gt; analyzed-</span><span class="nv">$file</span><span class="s2">&quot;</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>The second version is the one we want to run.
 This prints to screen everything enclosed in the quote marks, expanding the
 loop variable name because we have prefixed it with a dollar sign.</p>
-<p>The first version redirects the output from the command <code>echo analyze $file</code> to
-a file, <code>analyzed-$file</code>. A series of files is generated: <code>analyzed-cubane.pdb</code>,
-<code>analyzed-ethane.pdb</code> etc.</p>
+<p>The first version redirects the output from the command <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">analyze</span> <span class="pre">$file</span></code> to
+a file, <code class="docutils literal notranslate"><span class="pre">analyzed-$file</span></code>. A series of files is generated: <code class="docutils literal notranslate"><span class="pre">analyzed-cubane.pdb</span></code>,
+<code class="docutils literal notranslate"><span class="pre">analyzed-ethane.pdb</span></code> etc.</p>
 <p>Try both versions for yourself to see the output! Be sure to open the
-<code>analyzed-*.pdb</code> files to view their contents.</p>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3564848798);" id="nested-loops"><i class="fa fa-square-o"></i> Nested Loops<span id="heading-3564848798"></span></h3></div><div class="panel-body" id="panel-3564848798"><p>Suppose we want to set up up a directory structure to organize
+<code class="docutils literal notranslate"><span class="pre">analyzed-*.pdb</span></code> files to view their contents.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="nested-loops"><i class="fa fa-square-o"></i> Nested Loops</p>
+</div>
+<div class="panel-body docutils container">
+<p>Suppose we want to set up up a directory structure to organize
 some experiments measuring reaction rate constants with different compounds
 <em>and</em> different temperatures.  What would be the
 result of the following code:</p>
-<pre><code class="lang-bash"><span class="hljs-keyword">for</span> species <span class="hljs-keyword">in</span> cubane ethane methane
-<span class="hljs-keyword">do</span>
-    <span class="hljs-keyword">for</span> temperature <span class="hljs-keyword">in</span> 25 30 37 40
-    <span class="hljs-keyword">do</span>
-        mkdir <span class="hljs-variable">$species</span>-<span class="hljs-variable">$temperature</span>
-    <span class="hljs-keyword">done</span>
-<span class="hljs-keyword">done</span>
-</code></pre>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9543539292);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-9543539292">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-9543539292"><p>We have a nested loop, i.e. contained within another loop, so for each species
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> species in cubane ethane methane
+<span class="k">do</span>
+    <span class="k">for</span> temperature in <span class="m">25</span> <span class="m">30</span> <span class="m">37</span> <span class="m">40</span>
+    <span class="k">do</span>
+        mkdir <span class="nv">$species</span>-<span class="nv">$temperature</span>
+    <span class="k">done</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>We have a nested loop, i.e. contained within another loop, so for each species
 in the outer loop, the inner loop (the nested loop) iterates over the list of
 temperatures, and creates a new directory for each combination.</p>
 <p>Try running the code for yourself to see which directories are created!</p>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5818852087);" id="key-points"><i class="fa fa-key"></i> Key Points<span id="heading-5818852087"></span></h3></div><div class="panel-body" id="panel-5818852087"><ul>
-<li>A <code>for</code> loop repeats commands once for every thing in a list.</li>
-<li>Every <code>for</code> loop needs a variable to refer to the thing it is currently operating on.</li>
-<li>Use <code>$name</code> to expand a variable (i.e., get its value). <code>${name}</code> can also be used.</li>
-<li>Do not use spaces, quotes, or wildcard characters such as &apos;*&apos; or &apos;?&apos; in filenames, as it complicates variable expansion.</li>
-<li>Give files consistent names that are easy to match with wildcard patterns to make it easy to select them for looping.</li>
-<li>Use the up-arrow key to scroll up through previous commands to edit and repeat them.</li>
-<li>Use <code>Ctrl-R</code> to search through the previously entered commands.</li>
-<li>Use <code>history</code> to display recent commands, and <code>!number</code> to repeat a command by number.</li>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-keypoints docutils container">
+<div class="panel-header open docutils container">
+<p id="key-points"><i class="fa fa-key"></i> Key Points</p>
+</div>
+<div class="panel-body docutils container">
+<ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop repeats commands once for every thing in a list.</p></li>
+<li><p>Every <code class="docutils literal notranslate"><span class="pre">for</span></code> loop needs a variable to refer to the thing it is currently operating on.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">$name</span></code> to expand a variable (i.e., get its value). <code class="docutils literal notranslate"><span class="pre">${name}</span></code> can also be used.</p></li>
+<li><p>Do not use spaces, quotes, or wildcard characters such as ‘*’ or ‘?’ in filenames, as it complicates variable expansion.</p></li>
+<li><p>Give files consistent names that are easy to match with wildcard patterns to make it easy to select them for looping.</p></li>
+<li><p>Use the up-arrow key to scroll up through previous commands to edit and repeat them.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">Ctrl-R</span></code> to search through the previously entered commands.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">history</span></code> to display recent commands, and <code class="docutils literal notranslate"><span class="pre">!number</span></code> to repeat a command by number.</p></li>
 </ul>
-</div></div></p>
-<div class="ba-right"><p><a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">CC BY 4.0</a> - Based on <a href="https://github.com/swcarpentry/shell-novice" target="_blank">shell-novice</a> &#xA9; 2016&#x2013;2017 Software Carpentry Foundation</p></div>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+</div>
+</div>
+<p>{% right %} <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a> - Based on <a class="reference external" href="https://github.com/swcarpentry/shell-novice">shell-novice</a> © 2016–2017 Software Carpentry Foundation
+{% endright %}</p>
 </div>
 
-                        </div>
-                    </div>
-                
-            </div>
 
-            
-                
-                <a href="04-pipefilter.html" class="navigation navigation-prev " aria-label="Previous page: Pipes and Filters">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="06-script.html" class="navigation navigation-next " aria-label="Next page: Shell Scripts">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="06-script.html" class="btn btn-neutral float-right" title="Shell Scripts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="04-pipefilter.html" class="btn btn-neutral float-left" title="Pipes and Filters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Loops","level":"3.1.4","depth":2,"next":{"title":"Shell Scripts","level":"3.1.5","depth":2,"path":"shell/06-script.md","ref":"shell/06-script.md","articles":[]},"previous":{"title":"Pipes and Filters","level":"3.1.3","depth":2,"path":"shell/04-pipefilter.md","ref":"shell/04-pipefilter.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"shell/05-loop.md","mtime":"2018-11-26T12:26:23.705Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
-</div>
+  <hr/>
 
-        
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation
 
-    </body>
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+    Hello world
+
+
+</body>
 </html>
-

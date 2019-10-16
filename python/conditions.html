@@ -1,1085 +1,790 @@
 
-<!DOCTYPE HTML>
-<html lang="" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Conditions · LHCb analysis essentials</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
 
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Conditions &mdash; Analysis essentials  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
     
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/panels.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
 
-    
-        
-        <link rel="stylesheet" href="../css/website.css">
-        
-    
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Methods" href="methods.html" />
+    <link rel="prev" title="Dictionaries" href="dictionaries.html" /> 
+</head>
 
-        
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+<body class="wy-body-for-nav">
 
+   
+  <div class="wy-grid-for-nav">
     
-    <link rel="next" href="methods.html" />
-    
-    
-    <link rel="prev" href="dictionaries.html" />
-    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
 
-    </head>
-    <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
+          
+            <a href="../index.html" class="icon icon-home"> Analysis essentials
+          
+
+          
             
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+            <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-            
-                <nav role="navigation">
-                
+          
+        </div>
 
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="2.1" data-path="./">
-            
-                <a href="./">
-            
-                    
-                    Python
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.1.1" data-path="running.html">
-            
-                <a href="running.html">
-            
-                    
-                    Running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.2" data-path="operators.html">
-            
-                <a href="operators.html">
-            
-                    
-                    Objects and operators
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.3" data-path="numbers.html">
-            
-                <a href="numbers.html">
-            
-                    
-                    Numbers
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.4" data-path="strings.html">
-            
-                <a href="strings.html">
-            
-                    
-                    Strings
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.5" data-path="lists.html">
-            
-                <a href="lists.html">
-            
-                    
-                    Lists and looping
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.6" data-path="dictionaries.html">
-            
-                <a href="dictionaries.html">
-            
-                    
-                    Dictionaries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="2.1.7" data-path="conditions.html">
-            
-                <a href="conditions.html">
-            
-                    
-                    Conditions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.8" data-path="methods.html">
-            
-                <a href="methods.html">
-            
-                    
-                    Methods
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.9" data-path="scripting.html">
-            
-                <a href="scripting.html">
-            
-                    
-                    Scripting
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.10" data-path="modules.html">
-            
-                <a href="modules.html">
-            
-                    
-                    Modules
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.11" data-path="learning.html">
-            
-                <a href="learning.html">
-            
-                    
-                    Learning more
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.12" data-path="first_histogram.html">
-            
-                <a href="first_histogram.html">
-            
-                    
-                    Making your first histogram
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.13" data-path="further_reading.html">
-            
-                <a href="further_reading.html">
-            
-                    
-                    Further reading
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="3.1" data-path="../shell/">
-            
-                <a href="../shell/">
-            
-                    
-                    Introducing the Shell
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.1.1" data-path="../shell/02-filedir.html">
-            
-                <a href="../shell/02-filedir.html">
-            
-                    
-                    Navigating Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.2" data-path="../shell/03-create.html">
-            
-                <a href="../shell/03-create.html">
-            
-                    
-                    Working With Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.3" data-path="../shell/04-pipefilter.html">
-            
-                <a href="../shell/04-pipefilter.html">
-            
-                    
-                    Pipes and Filters
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.4" data-path="../shell/05-loop.html">
-            
-                <a href="../shell/05-loop.html">
-            
-                    
-                    Loops
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.5" data-path="../shell/06-script.html">
-            
-                <a href="../shell/06-script.html">
-            
-                    
-                    Shell Scripts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.6" data-path="../shell/07-find.html">
-            
-                <a href="../shell/07-find.html">
-            
-                    
-                    Finding Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
-            
-                <a href="../shell-extras/">
-            
-                    
-                    Shell extras
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
-            
-                <a href="../shell-extras/screen.html">
-            
-                    
-                    Using screen to keep things running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
-            
-                <a href="../shell-extras/screen2.html">
-            
-                    
-                    Advanced screen topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
-            
-                <a href="../shell-extras/persistent-screen.html">
-            
-                    
-                    Persistent screen or tmux session
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
-            
-                <a href="../shell-extras/shell2.html">
-            
-                    
-                    Advanced shell topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="5.1" data-path="../git/">
-            
-                <a href="../git/">
-            
-                    
-                    Version control with Git
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1.1" data-path="../git/01-basics.html">
-            
-                <a href="../git/01-basics.html">
-            
-                    
-                    Basics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.2" data-path="../git/02-setup.html">
-            
-                <a href="../git/02-setup.html">
-            
-                    
-                    Setting Up Git
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.3" data-path="../git/03-create.html">
-            
-                <a href="../git/03-create.html">
-            
-                    
-                    Creating a Repository
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.4" data-path="../git/04-changes.html">
-            
-                <a href="../git/04-changes.html">
-            
-                    
-                    Tracking Changes
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.5" data-path="../git/05-history.html">
-            
-                <a href="../git/05-history.html">
-            
-                    
-                    Exploring History
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.6" data-path="../git/06-ignore.html">
-            
-                <a href="../git/06-ignore.html">
-            
-                    
-                    Ignoring Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.7" data-path="../git/07-gitlab.html">
-            
-                <a href="../git/07-gitlab.html">
-            
-                    
-                    Remotes in CERN GitLab
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.8" data-path="../git/08-share.html">
-            
-                <a href="../git/08-share.html">
-            
-                    
-                    Sharing a repository with others
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.9" data-path="../git/09-pullrequests.html">
-            
-                <a href="../git/09-pullrequests.html">
-            
-                    
-                    Collaborating with Pull Requests
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.10" data-path="../git/10-conflict.html">
-            
-                <a href="../git/10-conflict.html">
-            
-                    
-                    Conflicts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.11" data-path="../git/11-ci.html">
-            
-                <a href="../git/11-ci.html">
-            
-                    
-                    GitLab CI
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.12" data-path="../git/12-open.html">
-            
-                <a href="../git/12-open.html">
-            
-                    
-                    Open Science
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.13" data-path="../git/13-licensing.html">
-            
-                <a href="../git/13-licensing.html">
-            
-                    
-                    Licensing
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.14" data-path="../git/14-citation.html">
-            
-                <a href="../git/14-citation.html">
-            
-                    
-                    Citation
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="6.1" >
-            
-                <a target="_blank" href="ref://analysis-essentials.pdf">
-            
-                    
-                    Download PDF
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">An introduction to Python</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="README.html#aim-of-these-lessons">Aim of these lessons</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="running.html">Running Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="operators.html">Objects and operators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="operators.html#objects">Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="numbers.html">Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strings.html">Strings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="strings.html#formatting">Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html">Lists and looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lists.html#looping">Looping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lists.html#list-comprehension">List comprehension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lists.html#tuples">Tuples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dictionaries.html">Dictionaries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Conditions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#truthiness">Truthiness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conditions-in-loops">Conditions in loops</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="methods.html">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="methods.html#inline-methods">Inline methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scripting.html">Scripting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scripting.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html">Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#the-standard-library">The standard library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#modules-from-pypi">Modules from PyPi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#write-your-first-python-module">Write your first Python module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="learning.html">Learning more</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="learning.html#exploring-python">Exploring Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning.html#conventional-coding">Conventional coding</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="first_histogram.html">Making your first histogram</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="first_histogram.html#pandas">Pandas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="first_histogram.html#plotting-histograms">Plotting histograms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="first_histogram.html#applying-cuts">Applying cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="further_reading.html">More advanced topics in Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="further_reading.html#nice-standard-libraries">Nice standard libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="further_reading.html#nice-libraries-for-data-analysis">Nice libraries for data analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="further_reading.html#python-and-root">Python and ROOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-python/README.html">Advanced Python Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/1Basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Importing-modules">Importing modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html">2: First look at data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#5.-The-toy-dataset">5. The toy dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#6.-Plotting-a-histogram-with-matplotlib">6. Plotting a histogram with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Adding-variables">Adding variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Using-rectangular-cuts">Using rectangular cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/3Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/3Classification.html#Using-a-classifier">Using a classifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/3Classification.html#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">TODO Add a diagram of a decision tree for the above plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/4Extension.html">4: Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Distributions-in-the-Dalitz-features-for-signal-and-background">Distributions in the Dalitz features for signal and background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Preparation-of-train/test-datasets">Preparation of train/test datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Setting-up-classifiers,-training">Setting up classifiers, training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Let’s-look-at-the-results-of-training">Let’s look at the results of training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#ROC-curves-after-training">ROC curves after training</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html">6: Neural networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Downloading-a-dataset">Downloading a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-training-a-network">Example of training a network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Creating-your-own-neural-network">Creating your own neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-a-very-specific-neural-network">Example of a very specific neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Fitting-very-specific-expressions-as-estimators">Fitting very specific expressions as estimators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Writing-custom-pretransformer">Writing custom pretransformer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Ensembling-of-neural-neworks">Ensembling of neural neworks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/7DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Original-distributions">Original distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Comparing-some-simple-expressions:">Comparing some simple expressions:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination">GB-discrimination</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/8sPlot.html">8: sPlot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Applying-sWeights">Applying sWeights</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Compare">Compare</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#More-complex-case">More complex case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Building-sPlot-over-mass">Building sPlot over mass</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Of-course-we-don’t-have-labels-which-events-are-signal-and-which-are-background-beforehand">Of course we don’t have labels which events are signal and which are background beforehand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#We-have-no-information-about-real-labels">We have no information about real labels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Under-assumption-of-linearity:">Under assumption of linearity:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Minimization-of-variation">Minimization of variation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Uncorrelatedness">Uncorrelatedness</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/README.html">Introducing the Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-command-line-interface">The Command-Line Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-shell">The Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#why-bother">Why bother?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#nelle-s-pipeline-starting-point">Nelle’s Pipeline: Starting Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell/02-filedir.html">Navigating Files and Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/02-filedir.html#nelle-s-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/03-create.html">Working With Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/04-pipefilter.html">Pipes and Filters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/04-pipefilter.html#nelle-s-pipeline-checking-files">Nelle’s Pipeline: Checking Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/05-loop.html">Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/06-script.html">Shell Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/07-find.html">Finding Things</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell-extras/README.html">UNIX shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen.html">Using screen to keep things running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen2.html">Advanced screen topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#finding-lost-screens">Finding lost screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#using-tabs-in-screen">Using tabs in screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/persistent-screen.html">Persistent screen or tmux session on lxplus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#setting-up-password-less-kerberos-token">Setting up password-less kerberos token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#making-use-of-the-keytab">Making use of the keytab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token">Using k5reauth to automatically refresh your kerberos token</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/shell2.html">More about the UNIX shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#types-of-shell">Types of shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#manual-pages">Manual pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#environment-variables">Environment variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/shell2.html#let-s-now-try-the-following-callout">Let’s now try the following: {.callout}</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#differences-among-files">Differences among files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#looping-over-files">Looping over files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#conditionals">Conditionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#linking-commands">Linking commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#pipes-and-redirection">Pipes and redirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#bash-security">Bash security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#complexity">Complexity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-viewers">Text viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-editors">Text editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#disk-space">Disk space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/README.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/01-basics.html">Automated Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/02-setup.html">Setting Up Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/03-create.html">Creating a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/04-changes.html">Tracking Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/05-history.html">Exploring History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/06-ignore.html">Ignoring Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/07-gitlab.html">Remotes in CERN GitLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/08-share.html">Sharing a repository with others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/09-pullrequests.html">Collaborating with Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#what-is-a-pull-or-merge-request">What is a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#fork-the-original-project-repository">Fork the original project repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#clone-a-remote-project-and-its-fork">Clone a remote project and its fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#sync-your-local-repository-with-remote-changes">Sync your local repository with remote changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#implement-your-new-feature">Implement your new feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#push-changes">Push changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#create-a-pull-or-merge-request">Create a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#discussing-amending-retiring-a-merge-request">Discussing, amending, retiring a Merge Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#accepting-a-pull-request">Accepting a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#the-social-side-of-coding">The social side of coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#automatic-testing">Automatic testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../git/10-conflict.html">Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/11-ci.html">GitLab CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/12-open.html">Open Science</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/13-licensing.html">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/14-citation.html">Citation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributing-notebooks">Contributing notebooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
-
-                </nav>
             
-        
-    </div>
+          
+        </div>
+      </div>
+    </nav>
 
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-<div class="book-header" role="navigation">
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis essentials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
     
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="README.html">An introduction to Python</a> &raquo;</li>
+        
+      <li>Conditions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/python/conditions.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Conditions</a>
-    </h1>
+  
+  <hr/>
 </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
 
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
 
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
 
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
 
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="conditions">Conditions</h1>
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="conditions">
+<h1>Conditions<a class="headerlink" href="#conditions" title="Permalink to this headline">¶</a></h1>
 <p>Sometimes, often while looping, you only want to do things depending on
-something&#x2019;s value. Specifying <em>conditions</em> like this is pretty simple in Python.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>pizzas = [<span class="hljs-string">&apos;Pineapple&apos;</span>, <span class="hljs-string">&apos;Cheese&apos;</span>, <span class="hljs-string">&apos;Pepperoni&apos;</span>, <span class="hljs-string">&apos;Hot dog&apos;</span>]
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> pizzas:
-<span class="hljs-meta">... </span>    <span class="hljs-keyword">if</span> p == <span class="hljs-string">&apos;Cheese&apos;</span>:
-<span class="hljs-meta">... </span>        print(<span class="hljs-string">&apos;Nice pizza!&apos;</span>)
-<span class="hljs-meta">... </span>    <span class="hljs-keyword">elif</span> p == <span class="hljs-string">&apos;Pepperoni&apos;</span>:
-<span class="hljs-meta">... </span>        print(<span class="hljs-string">&apos;Amazing pizza!&apos;</span>)
-<span class="hljs-meta">... </span>    <span class="hljs-keyword">else</span>:
-<span class="hljs-meta">... </span>        print(<span class="hljs-string">&apos;Weird pizza.&apos;</span>)
-...
-Weird pizza.
-Nice pizza!
-Amazing pizza!
-Weird pizza.
-</code></pre>
-<p>Like the &quot;body&quot; of the <code>for</code> loop, called a <em>block</em>, the block in the <code>if</code>,
-<code>elif</code>, and <code>else</code> statements must be indented. The convention we adopt is to
+something’s value. Specifying <em>conditions</em> like this is pretty simple in Python.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pizzas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Pineapple&#39;</span><span class="p">,</span> <span class="s1">&#39;Cheese&#39;</span><span class="p">,</span> <span class="s1">&#39;Pepperoni&#39;</span><span class="p">,</span> <span class="s1">&#39;Hot dog&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="s1">&#39;Cheese&#39;</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Nice pizza!&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">elif</span> <span class="n">p</span> <span class="o">==</span> <span class="s1">&#39;Pepperoni&#39;</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Amazing pizza!&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">else</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Weird pizza.&#39;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">Weird pizza.</span>
+<span class="go">Nice pizza!</span>
+<span class="go">Amazing pizza!</span>
+<span class="go">Weird pizza.</span>
+</pre></div>
+</div>
+<p>Like the “body” of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, called a <em>block</em>, the block in the <code class="docutils literal notranslate"><span class="pre">if</span></code>,
+<code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements must be indented. The convention we adopt is to
 use four spaces for indentation.</p>
-<p>The <code>if</code> statement starts with <code>if</code> (duh!) and what follows is a <em>condition</em>.
-If this condition isn&#x2019;t met, the next <code>elif</code> (for &quot;else-if&quot;) condition is
-evaluated. If this also isn&#x2019;t met, the <code>else</code> block is run. You can use as many
-<code>elif</code> conditions as you like, or none at all, and the <code>else</code> block is optional.</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6680594942);" id="ternary-conditional-operator"><i class="fa fa-info-circle"></i> Ternary conditional operator<span id="heading-6680594942"></span></h3></div><div class="panel-body" id="panel-6680594942"><p>You can use a succinct one-line syntax for conditional assignments like this:</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>x = <span class="hljs-string">&apos;ok&apos;</span> <span class="hljs-keyword">if</span> pizzas[<span class="hljs-number">0</span>] == <span class="hljs-string">&apos;Cheese&apos;</span> <span class="hljs-keyword">else</span> <span class="hljs-string">&apos;not ok&apos;</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span>x
-<span class="hljs-string">&apos;not ok&apos;</span>
-</code></pre>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement starts with <code class="docutils literal notranslate"><span class="pre">if</span></code> (duh!) and what follows is a <em>condition</em>.
+If this condition isn’t met, the next <code class="docutils literal notranslate"><span class="pre">elif</span></code> (for “else-if”) condition is
+evaluated. If this also isn’t met, the <code class="docutils literal notranslate"><span class="pre">else</span></code> block is run. You can use as many
+<code class="docutils literal notranslate"><span class="pre">elif</span></code> conditions as you like, or none at all, and the <code class="docutils literal notranslate"><span class="pre">else</span></code> block is optional.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="ternary-conditional-operator"><i class="fa fa-info-circle"></i> Ternary conditional operator</p>
+</div>
+<div class="panel-body docutils container">
+<p>You can use a succinct one-line syntax for conditional assignments like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;ok&#39;</span> <span class="k">if</span> <span class="n">pizzas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Cheese&#39;</span> <span class="k">else</span> <span class="s1">&#39;not ok&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
+<span class="go">&#39;not ok&#39;</span>
+</pre></div>
+</div>
 <p>Make sure your line does not get too long in order not to impair its
 readability!</p>
-</div></div></p>
+</div>
+</div>
 <p>Python evaluates a condition and sees whether it is truth-like or not. If it is
 truth-like, the code in the block is run.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">if</span> pizza[<span class="hljs-number">0</span>] == <span class="hljs-string">&apos;Cheese&apos;</span>:
-<span class="hljs-meta">... </span>    print(<span class="hljs-string">&apos;It is cheese, my dudes.&apos;</span>)
-...
-<span class="hljs-meta">&gt;&gt;&gt; </span>pizza[<span class="hljs-number">0</span>] == <span class="hljs-string">&apos;Cheese&apos;</span>
-<span class="hljs-keyword">False</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span>pizza[<span class="hljs-number">1</span>] == <span class="hljs-string">&apos;Cheese&apos;</span>
-<span class="hljs-keyword">True</span>
-</code></pre>
-<p><code>False</code> and <code>True</code> are variables and they can actually be reassigned to some
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">pizza</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Cheese&#39;</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;It is cheese, my dudes.&#39;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pizza</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Cheese&#39;</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pizza</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Cheese&#39;</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">False</span></code> and <code class="docutils literal notranslate"><span class="pre">True</span></code> are variables and they can actually be reassigned to some
 other value (though it is quite pointless and dangerous to do that!) They
 correspond to the possible values a boolean variable can have. Here is why you
 should never touch those variables:</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">True</span> = <span class="hljs-number">1</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">True</span>
-<span class="hljs-number">1</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">True</span> = <span class="hljs-keyword">False</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">True</span> == <span class="hljs-keyword">False</span>
-<span class="hljs-keyword">True</span>
-</code></pre>
-<p>The result of a comparison is <code>True</code> or <code>False</code>, and we can perform comparisons
-using several operators, like <code>==</code> for equality, <code>!=</code> for inequality, <code>&gt;</code> and
-<code>&lt;</code> for relative magnitude, and so on.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">True</span>, <span class="hljs-keyword">False</span>
-(<span class="hljs-keyword">True</span>, <span class="hljs-keyword">False</span>)
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">False</span>
-<span class="hljs-keyword">False</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">True</span> == <span class="hljs-keyword">False</span>
-<span class="hljs-keyword">False</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">True</span> != <span class="hljs-keyword">False</span>
-<span class="hljs-keyword">True</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">1</span> &gt; <span class="hljs-number">2</span>
-<span class="hljs-keyword">False</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span>(<span class="hljs-number">1</span> &gt; <span class="hljs-number">2</span>) == <span class="hljs-keyword">False</span>
-<span class="hljs-keyword">True</span>
-</code></pre>
-<p>This shows that we can combine comparison operators, just like with <code>+</code> and
-friends. We can also use <code>and</code> to require multiple conditions, <code>or</code> to require
-at least one, and <code>not</code> to negate a result.</p>
-<pre><code class="lang-python">x = <span class="hljs-number">2</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">1</span> &lt; x <span class="hljs-keyword">and</span> x &lt; <span class="hljs-number">3</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">3</span> &lt; x <span class="hljs-keyword">or</span> <span class="hljs-number">1</span> &lt; x
-<span class="hljs-keyword">True</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">not</span> <span class="hljs-number">1</span> &lt; x
-<span class="hljs-keyword">False</span>
-</code></pre>
-<p>Note that <code>and</code>, <code>or</code> and <code>not</code> have lower precedence than <code>&gt;</code>, <code>&lt;</code> and <code>==</code>, but
-you can use parentheses to be more explicit. </p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span> <span class="o">==</span> <span class="bp">False</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>The result of a comparison is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, and we can perform comparisons
+using several operators, like <code class="docutils literal notranslate"><span class="pre">==</span></code> for equality, <code class="docutils literal notranslate"><span class="pre">!=</span></code> for inequality, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> and
+<code class="docutils literal notranslate"><span class="pre">&lt;</span></code> for relative magnitude, and so on.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span>
+<span class="go">(True, False)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="bp">False</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span> <span class="o">==</span> <span class="bp">False</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span> <span class="o">!=</span> <span class="bp">False</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>This shows that we can combine comparison operators, just like with <code class="docutils literal notranslate"><span class="pre">+</span></code> and
+friends. We can also use <code class="docutils literal notranslate"><span class="pre">and</span></code> to require multiple conditions, <code class="docutils literal notranslate"><span class="pre">or</span></code> to require
+at least one, and <code class="docutils literal notranslate"><span class="pre">not</span></code> to negate a result.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="ow">or</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">x</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ow">not</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">x</span>
+<span class="bp">False</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span></code> have lower precedence than <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">==</span></code>, but
+you can use parentheses to be more explicit.</p>
 <p>Of course, we can compare everything we have played around with so far.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>x = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
-<span class="hljs-meta">&gt;&gt;&gt; </span>y = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
-<span class="hljs-meta">&gt;&gt;&gt; </span>z = {<span class="hljs-string">&apos;hero&apos;</span>: <span class="hljs-string">&apos;thor&apos;</span>}
-<span class="hljs-meta">&gt;&gt;&gt; </span>x == y
-<span class="hljs-keyword">True</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span>y == z
-<span class="hljs-keyword">False</span>
-</code></pre>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;hero&#39;</span><span class="p">:</span> <span class="s1">&#39;thor&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">==</span> <span class="n">z</span>
+<span class="go">False</span>
+</pre></div>
+</div>
 <p>For collection objects like lists, tuples, and dictionaries, we can easily ask
-them if they contain something in particular using the <code>in</code> operator.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">3</span> <span class="hljs-keyword">in</span> x
-<span class="hljs-keyword">False</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">2</span> <span class="hljs-keyword">in</span> y
-<span class="hljs-keyword">True</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&apos;thor&apos;</span> <span class="hljs-keyword">in</span> z
-<span class="hljs-keyword">False</span>
-</code></pre>
-<p>The last statement is <code>False</code> because <code>in</code> queries a dictionaries <em>keys</em>, not 
-its values. This is useful if you want to access a key in a dictionary that 
+them if they contain something in particular using the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="ow">in</span> <span class="n">x</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="ow">in</span> <span class="n">y</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;thor&#39;</span> <span class="ow">in</span> <span class="n">z</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>The last statement is <code class="docutils literal notranslate"><span class="pre">False</span></code> because <code class="docutils literal notranslate"><span class="pre">in</span></code> queries a dictionaries <em>keys</em>, not
+its values. This is useful if you want to access a key in a dictionary that
 might not exist:</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>z[<span class="hljs-string">&apos;pizza&apos;</span>]
-Traceback (most recent call last):
-  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
-NameError: name <span class="hljs-string">&apos;z&apos;</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> defined
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">if</span> <span class="hljs-string">&apos;pizza&apos;</span> <span class="hljs-keyword">in</span> z:
-<span class="hljs-meta">... </span>    print(<span class="hljs-string">&apos;We have pizza&apos;</span>, z[<span class="hljs-string">&apos;pizza&apos;</span>])
-<span class="hljs-meta">... </span><span class="hljs-keyword">else</span>
-<span class="hljs-meta">... </span>    print(<span class="hljs-string">&apos;No pizza :(&apos;</span>)
-</code></pre>
-<p>Note that <code>in</code> doesn&#x2019;t dive into nested collections, but only looks at the top
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="p">[</span><span class="s1">&#39;pizza&#39;</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">NameError</span>: <span class="n">name &#39;z&#39; is not defined</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="s1">&#39;pizza&#39;</span> <span class="ow">in</span> <span class="n">z</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;We have pizza&#39;</span><span class="p">,</span> <span class="n">z</span><span class="p">[</span><span class="s1">&#39;pizza&#39;</span><span class="p">])</span>
+<span class="gp">... </span><span class="k">else</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;No pizza :(&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">in</span></code> doesn’t dive into nested collections, but only looks at the top
 level.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">1</span> <span class="hljs-keyword">in</span> [[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]]
-<span class="hljs-keyword">False</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>] <span class="hljs-keyword">in</span> [[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]]
-<span class="hljs-keyword">True</span>
-</code></pre>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(946946137);" id="the-in-operator"><i class="fa fa-square-o"></i> The <code>in</code> operator<span id="heading-946946137"></span></h3></div><div class="panel-body" id="panel-946946137"><p>Find the double-underscore method on lists and dictionaries that corresponds to
-the <code>in</code> operator, and check that it does the same thing as the operator.</p>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7499718169);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-7499718169">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-7499718169"><p>Taking lists as an example, the <code>dir</code> method can tell us what methods are
-available. The <code>__contains__</code> method sounds promising.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>x= [<span class="hljs-number">1</span>]
-<span class="hljs-meta">&gt;&gt;&gt; </span>x.__contains__(<span class="hljs-number">1</span>)
-<span class="hljs-keyword">True</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span>x.__contains__(<span class="hljs-number">2</span>)
-<span class="hljs-keyword">False</span>
-</code></pre>
-</div></div></div></div></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="ow">in</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="the-in-operator"><i class="fa fa-square-o"></i> The in operator</p>
+</div>
+<div class="panel-body docutils container">
+<p>Find the double-underscore method on lists and dictionaries that corresponds to
+the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator, and check that it does the same thing as the operator.</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>Taking lists as an example, the <code class="docutils literal notranslate"><span class="pre">dir</span></code> method can tell us what methods are
+available. The <code class="docutils literal notranslate"><span class="pre">__contains__</span></code> method sounds promising.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="fm">__contains__</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="fm">__contains__</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>Strings work a lot like lists, which makes sense because they are effectively
 collections of single characters. This means we can also query string contents
-with <code>in</code>.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>fact = <span class="hljs-string">&apos;The best hero is Thor.&apos;</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&apos;Thor&apos;</span> <span class="hljs-keyword">in</span> fact
-<span class="hljs-keyword">True</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&apos;Iron Man&apos;</span> <span class="hljs-keyword">in</span> fact
-<span class="hljs-keyword">False</span>
-</code></pre>
-<h2 id="truthiness">Truthiness</h2>
-<p>It&#x2019;s conventional not to explicitly compare a condition to <code>True</code>, because the
-<code>if</code> statement already does that for us.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">if</span> (<span class="hljs-string">&apos;Pineapple&apos;</span> <span class="hljs-keyword">in</span> pizzas) == <span class="hljs-keyword">True</span>:
-<span class="hljs-meta">... </span>    print(<span class="hljs-string">&apos;Weird.&apos;</span>)
-...
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">if</span> <span class="hljs-string">&apos;Pineapple&apos;</span> <span class="hljs-keyword">in</span> pizzas:
-<span class="hljs-meta">... </span>    print(<span class="hljs-string">&apos;Not weird.&apos;</span>)
-...
-</code></pre>
-<p>Likewise, rather than comparing for False, we just use <code>not</code>.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">if</span> (<span class="hljs-string">&apos;Pineapple&apos;</span> <span class="hljs-keyword">in</span> pizzas) == <span class="hljs-keyword">False</span>:
-<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> (<span class="hljs-string">&apos;Weird.&apos;</span>)
-...
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-string">&apos;Pineapple&apos;</span> <span class="hljs-keyword">in</span> pizzas:
-<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> (<span class="hljs-string">&apos;Not weird.&apos;</span>)
-...
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">not</span> <span class="hljs-string">&apos;Pineapple&apos;</span> <span class="hljs-keyword">in</span> pizzas:
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&apos;Pineapple&apos;</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> pizzas:
-</code></pre>
-<p>The last two lines show that we can use <code>not in</code> for checking that something
+with <code class="docutils literal notranslate"><span class="pre">in</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fact</span> <span class="o">=</span> <span class="s1">&#39;The best hero is Thor.&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;Thor&#39;</span> <span class="ow">in</span> <span class="n">fact</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;Iron Man&#39;</span> <span class="ow">in</span> <span class="n">fact</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="section" id="truthiness">
+<h2>Truthiness<a class="headerlink" href="#truthiness" title="Permalink to this headline">¶</a></h2>
+<p>It’s conventional not to explicitly compare a condition to <code class="docutils literal notranslate"><span class="pre">True</span></code>, because the
+<code class="docutils literal notranslate"><span class="pre">if</span></code> statement already does that for us.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="p">(</span><span class="s1">&#39;Pineapple&#39;</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">)</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Weird.&#39;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="s1">&#39;Pineapple&#39;</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Not weird.&#39;</span><span class="p">)</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p>Likewise, rather than comparing for False, we just use <code class="docutils literal notranslate"><span class="pre">not</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="p">(</span><span class="s1">&#39;Pineapple&#39;</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Weird.&#39;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;Pineapple&#39;</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Not weird.&#39;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="ow">not</span> <span class="s1">&#39;Pineapple&#39;</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;Pineapple&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>The last two lines show that we can use <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> for checking that something
 <em>is not</em> in a collection. This reads more naturally.</p>
-<p>All Python objects are truth-like unless they are the value <code>False</code>, the value
-<code>None</code>, or are empty collections (such as <code>&quot;&quot;</code>, <code>[]</code>, <code>()</code>, <code>{}</code>).</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">if</span> list() <span class="hljs-keyword">or</span> dict() <span class="hljs-keyword">or</span> tuple() <span class="hljs-keyword">or</span> str():
-<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;You won&#x2019;t see me!&quot;</span>)
-</code></pre>
-<p>The value <code>None</code>, which is available as the variable named <code>None</code>, is often
+<p>All Python objects are truth-like unless they are the value <code class="docutils literal notranslate"><span class="pre">False</span></code>, the value
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, or are empty collections (such as <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">[]</span></code>, <code class="docutils literal notranslate"><span class="pre">()</span></code>, <code class="docutils literal notranslate"><span class="pre">{}</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="nb">list</span><span class="p">()</span> <span class="ow">or</span> <span class="nb">dict</span><span class="p">()</span> <span class="ow">or</span> <span class="nb">tuple</span><span class="p">()</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You won’t see me!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The value <code class="docutils literal notranslate"><span class="pre">None</span></code>, which is available as the variable named <code class="docutils literal notranslate"><span class="pre">None</span></code>, is often
 used as placeholder for an empty value.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>favourite = <span class="hljs-keyword">None</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> pizzas:
-<span class="hljs-meta">... </span>    <span class="hljs-keyword">if</span> <span class="hljs-string">&apos;Olives&apos;</span> <span class="hljs-keyword">in</span> p:
-<span class="hljs-meta">... </span>        favourite = p
-...
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">if</span> favourite:
-<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> (<span class="hljs-string">&apos;Found favourite: {0}&apos;</span>.format(favourite))
-<span class="hljs-meta">... </span><span class="hljs-keyword">else</span>:
-<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> (<span class="hljs-string">&apos;No favourite :(&apos;</span>)
-No favourite :(
-</code></pre>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">favourite</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="s1">&#39;Olives&#39;</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">favourite</span> <span class="o">=</span> <span class="n">p</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">favourite</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Found favourite: {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">favourite</span><span class="p">))</span>
+<span class="gp">... </span><span class="k">else</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;No favourite :(&#39;</span><span class="p">)</span>
+<span class="go">No favourite :(</span>
+</pre></div>
+</div>
 <p>It behaves as false-y value in conditions.</p>
-<h2 id="conditions-in-loops">Conditions in loops</h2>
-<p><code>for</code> loops and comprehensions are the most common ways of iterating in Python.
-We&#x2019;ve already seen that using conditions in these can be useful.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>not_cheesy = [p <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> pizzas <span class="hljs-keyword">if</span> <span class="hljs-string">&apos;cheese&apos;</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> p.lower()]
-<span class="hljs-meta">&gt;&gt;&gt; </span>not_cheesy
-[<span class="hljs-string">&apos;Pineapple&apos;</span>, <span class="hljs-string">&apos;Pepperoni&apos;</span>, <span class="hljs-string">&apos;Hot dog&apos;</span>]
-</code></pre>
-<p>Another way of iterating is with <code>while</code>.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>i = <span class="hljs-number">5</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">while</span> i &gt; <span class="hljs-number">0</span>:
-<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;T-minus {0} seconds&apos;</span>.format(i)
-<span class="hljs-meta">... </span>    <span class="hljs-comment"># Equivalent to `i = i - 1`</span>
-<span class="hljs-meta">... </span>    i -= <span class="hljs-number">1</span>
-<span class="hljs-meta">... </span><span class="hljs-keyword">print</span> (<span class="hljs-string">&apos;Blast off!&apos;</span>)
-T-minus <span class="hljs-number">5</span> seconds
-T-minus <span class="hljs-number">4</span> seconds
-T-minus <span class="hljs-number">3</span> seconds
-T-minus <span class="hljs-number">2</span> seconds
-T-minus <span class="hljs-number">1</span> seconds
-Blast off!
-</code></pre>
-<p>The <code>while</code> loop checks the condition, runs the block, and then re-checks the
-condition. If we don&#x2019;t do something in the loop to change the result of the
+</div>
+<div class="section" id="conditions-in-loops">
+<h2>Conditions in loops<a class="headerlink" href="#conditions-in-loops" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops and comprehensions are the most common ways of iterating in Python.
+We’ve already seen that using conditions in these can be useful.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">not_cheesy</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pizzas</span> <span class="k">if</span> <span class="s1">&#39;cheese&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">not_cheesy</span>
+<span class="go">[&#39;Pineapple&#39;, &#39;Pepperoni&#39;, &#39;Hot dog&#39;]</span>
+</pre></div>
+</div>
+<p>Another way of iterating is with <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="s1">&#39;T-minus {0} seconds&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="c1"># Equivalent to `i = i - 1`</span>
+<span class="gp">... </span>    <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="gp">... </span><span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Blast off!&#39;</span><span class="p">)</span>
+<span class="go">T-minus 5 seconds</span>
+<span class="go">T-minus 4 seconds</span>
+<span class="go">T-minus 3 seconds</span>
+<span class="go">T-minus 2 seconds</span>
+<span class="go">T-minus 1 seconds</span>
+<span class="go">Blast off!</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop checks the condition, runs the block, and then re-checks the
+condition. If we don’t do something in the loop to change the result of the
 condition, we will end up looping forever!</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>i = <span class="hljs-number">5</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">while</span> i &gt; <span class="hljs-number">0</span>:
-<span class="hljs-meta">... </span>    print(<span class="hljs-string">&apos;All work and no play makes Jack a dull boy&apos;</span>)
-</code></pre>
-<p>Because we do not change the value of <code>i</code> in the loop, the condition always
-evaluates to <code>True</code>, so we&#x2019;re stuck. You can stop Python running the code by
-typing the <code>Ctrl-c</code> key combination.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;All work and no play makes Jack a dull boy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Because we do not change the value of <code class="docutils literal notranslate"><span class="pre">i</span></code> in the loop, the condition always
+evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>, so we’re stuck. You can stop Python running the code by
+typing the <code class="docutils literal notranslate"><span class="pre">Ctrl-c</span></code> key combination.</p>
 <p>Sometimes you want to stop iterating when some condition is met. You could
-achieve this with a <code>while</code> loop.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>ok = <span class="hljs-keyword">False</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span>i = <span class="hljs-number">0</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">while</span> <span class="hljs-keyword">not</span> ok:
-<span class="hljs-meta">... </span>    ok =  <span class="hljs-string">&apos;cheese&apos;</span> <span class="hljs-keyword">in</span> pizza[i].lower()
-<span class="hljs-meta">... </span>    <span class="hljs-comment"># Equivalent to `i = i + 1`</span>
-<span class="hljs-meta">... </span>    i += <span class="hljs-number">1</span>
-...
-<span class="hljs-meta">&gt;&gt;&gt; </span>i
-<span class="hljs-number">2</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span>pizza[i - <span class="hljs-number">1</span>]
-<span class="hljs-string">&apos;Cheese&apos;</span>
-</code></pre>
-<p>It is not nice to have to keep track of these <code>ok</code> and <code>i</code> variables. Instead,
-we can use a <code>for</code> loop, which feels much more natural when iterating over a
-collection, and <code>break</code> to stop looping.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> pizza <span class="hljs-keyword">in</span> pizzas:
-<span class="hljs-meta">... </span>    <span class="hljs-keyword">if</span> <span class="hljs-string">&apos;cheese&apos;</span> <span class="hljs-keyword">in</span> pizza.lower():
-<span class="hljs-meta">... </span>        yum = pizza
-<span class="hljs-meta">... </span>        <span class="hljs-keyword">break</span>
-...
-<span class="hljs-meta">&gt;&gt;&gt; </span>yum
-<span class="hljs-string">&apos;Cheese&apos;</span>
-</code></pre>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+achieve this with a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ok</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="ow">not</span> <span class="n">ok</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">ok</span> <span class="o">=</span>  <span class="s1">&#39;cheese&#39;</span> <span class="ow">in</span> <span class="n">pizza</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="c1"># Equivalent to `i = i + 1`</span>
+<span class="gp">... </span>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pizza</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;Cheese&#39;</span>
+</pre></div>
+</div>
+<p>It is not nice to have to keep track of these <code class="docutils literal notranslate"><span class="pre">ok</span></code> and <code class="docutils literal notranslate"><span class="pre">i</span></code> variables. Instead,
+we can use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, which feels much more natural when iterating over a
+collection, and <code class="docutils literal notranslate"><span class="pre">break</span></code> to stop looping.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">pizza</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="s1">&#39;cheese&#39;</span> <span class="ow">in</span> <span class="n">pizza</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+<span class="gp">... </span>        <span class="n">yum</span> <span class="o">=</span> <span class="n">pizza</span>
+<span class="gp">... </span>        <span class="k">break</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">yum</span>
+<span class="go">&#39;Cheese&#39;</span>
+</pre></div>
+</div>
+</div>
 </div>
 
-                        </div>
-                    </div>
-                
-            </div>
 
-            
-                
-                <a href="dictionaries.html" class="navigation navigation-prev " aria-label="Previous page: Dictionaries">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="methods.html" class="navigation navigation-next " aria-label="Next page: Methods">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="methods.html" class="btn btn-neutral float-right" title="Methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dictionaries.html" class="btn btn-neutral float-left" title="Dictionaries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Conditions","level":"2.1.7","depth":2,"next":{"title":"Methods","level":"2.1.8","depth":2,"path":"python/methods.md","ref":"python/methods.md","articles":[]},"previous":{"title":"Dictionaries","level":"2.1.6","depth":2,"path":"python/dictionaries.md","ref":"python/dictionaries.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"python/conditions.md","mtime":"2018-11-26T12:26:23.697Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
-</div>
+  <hr/>
 
-        
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation
 
-    </body>
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+    Hello world
+
+
+</body>
 </html>
-

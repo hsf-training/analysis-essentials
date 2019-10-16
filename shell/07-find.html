@@ -1,785 +1,491 @@
 
-<!DOCTYPE HTML>
-<html lang="" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Finding Things · LHCb analysis essentials</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
 
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Finding Things &mdash; Analysis essentials  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
     
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/panels.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
 
-    
-        
-        <link rel="stylesheet" href="../css/website.css">
-        
-    
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="UNIX shell" href="../shell-extras/README.html" />
+    <link rel="prev" title="Shell Scripts" href="06-script.html" /> 
+</head>
 
-        
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+<body class="wy-body-for-nav">
 
+   
+  <div class="wy-grid-for-nav">
     
-    <link rel="next" href="../shell-extras/" />
-    
-    
-    <link rel="prev" href="06-script.html" />
-    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
 
-    </head>
-    <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
+          
+            <a href="../index.html" class="icon icon-home"> Analysis essentials
+          
+
+          
             
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+            <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-            
-                <nav role="navigation">
-                
+          
+        </div>
 
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="2.1" data-path="../python/">
-            
-                <a href="../python/">
-            
-                    
-                    Python
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.1.1" data-path="../python/running.html">
-            
-                <a href="../python/running.html">
-            
-                    
-                    Running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.2" data-path="../python/operators.html">
-            
-                <a href="../python/operators.html">
-            
-                    
-                    Objects and operators
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.3" data-path="../python/numbers.html">
-            
-                <a href="../python/numbers.html">
-            
-                    
-                    Numbers
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.4" data-path="../python/strings.html">
-            
-                <a href="../python/strings.html">
-            
-                    
-                    Strings
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.5" data-path="../python/lists.html">
-            
-                <a href="../python/lists.html">
-            
-                    
-                    Lists and looping
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.6" data-path="../python/dictionaries.html">
-            
-                <a href="../python/dictionaries.html">
-            
-                    
-                    Dictionaries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.7" data-path="../python/conditions.html">
-            
-                <a href="../python/conditions.html">
-            
-                    
-                    Conditions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.8" data-path="../python/methods.html">
-            
-                <a href="../python/methods.html">
-            
-                    
-                    Methods
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.9" data-path="../python/scripting.html">
-            
-                <a href="../python/scripting.html">
-            
-                    
-                    Scripting
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.10" data-path="../python/modules.html">
-            
-                <a href="../python/modules.html">
-            
-                    
-                    Modules
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.11" data-path="../python/learning.html">
-            
-                <a href="../python/learning.html">
-            
-                    
-                    Learning more
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.12" data-path="../python/first_histogram.html">
-            
-                <a href="../python/first_histogram.html">
-            
-                    
-                    Making your first histogram
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.13" data-path="../python/further_reading.html">
-            
-                <a href="../python/further_reading.html">
-            
-                    
-                    Further reading
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="3.1" data-path="./">
-            
-                <a href="./">
-            
-                    
-                    Introducing the Shell
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.1.1" data-path="02-filedir.html">
-            
-                <a href="02-filedir.html">
-            
-                    
-                    Navigating Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.2" data-path="03-create.html">
-            
-                <a href="03-create.html">
-            
-                    
-                    Working With Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.3" data-path="04-pipefilter.html">
-            
-                <a href="04-pipefilter.html">
-            
-                    
-                    Pipes and Filters
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.4" data-path="05-loop.html">
-            
-                <a href="05-loop.html">
-            
-                    
-                    Loops
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.5" data-path="06-script.html">
-            
-                <a href="06-script.html">
-            
-                    
-                    Shell Scripts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="3.1.6" data-path="07-find.html">
-            
-                <a href="07-find.html">
-            
-                    
-                    Finding Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
-            
-                <a href="../shell-extras/">
-            
-                    
-                    Shell extras
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
-            
-                <a href="../shell-extras/screen.html">
-            
-                    
-                    Using screen to keep things running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
-            
-                <a href="../shell-extras/screen2.html">
-            
-                    
-                    Advanced screen topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
-            
-                <a href="../shell-extras/persistent-screen.html">
-            
-                    
-                    Persistent screen or tmux session
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
-            
-                <a href="../shell-extras/shell2.html">
-            
-                    
-                    Advanced shell topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="5.1" data-path="../git/">
-            
-                <a href="../git/">
-            
-                    
-                    Version control with Git
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1.1" data-path="../git/01-basics.html">
-            
-                <a href="../git/01-basics.html">
-            
-                    
-                    Basics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.2" data-path="../git/02-setup.html">
-            
-                <a href="../git/02-setup.html">
-            
-                    
-                    Setting Up Git
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.3" data-path="../git/03-create.html">
-            
-                <a href="../git/03-create.html">
-            
-                    
-                    Creating a Repository
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.4" data-path="../git/04-changes.html">
-            
-                <a href="../git/04-changes.html">
-            
-                    
-                    Tracking Changes
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.5" data-path="../git/05-history.html">
-            
-                <a href="../git/05-history.html">
-            
-                    
-                    Exploring History
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.6" data-path="../git/06-ignore.html">
-            
-                <a href="../git/06-ignore.html">
-            
-                    
-                    Ignoring Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.7" data-path="../git/07-gitlab.html">
-            
-                <a href="../git/07-gitlab.html">
-            
-                    
-                    Remotes in CERN GitLab
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.8" data-path="../git/08-share.html">
-            
-                <a href="../git/08-share.html">
-            
-                    
-                    Sharing a repository with others
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.9" data-path="../git/09-pullrequests.html">
-            
-                <a href="../git/09-pullrequests.html">
-            
-                    
-                    Collaborating with Pull Requests
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.10" data-path="../git/10-conflict.html">
-            
-                <a href="../git/10-conflict.html">
-            
-                    
-                    Conflicts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.11" data-path="../git/11-ci.html">
-            
-                <a href="../git/11-ci.html">
-            
-                    
-                    GitLab CI
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.12" data-path="../git/12-open.html">
-            
-                <a href="../git/12-open.html">
-            
-                    
-                    Open Science
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.13" data-path="../git/13-licensing.html">
-            
-                <a href="../git/13-licensing.html">
-            
-                    
-                    Licensing
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.14" data-path="../git/14-citation.html">
-            
-                <a href="../git/14-citation.html">
-            
-                    
-                    Citation
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="6.1" >
-            
-                <a target="_blank" href="ref://analysis-essentials.pdf">
-            
-                    
-                    Download PDF
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/README.html">An introduction to Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/README.html#aim-of-these-lessons">Aim of these lessons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/running.html">Running Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/strings.html">Strings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/strings.html#formatting">Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html">Lists and looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#looping">Looping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#list-comprehension">List comprehension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#tuples">Tuples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html">Dictionaries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/conditions.html#truthiness">Truthiness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/conditions.html#conditions-in-loops">Conditions in loops</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/methods.html#inline-methods">Inline methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#the-standard-library">The standard library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#modules-from-pypi">Modules from PyPi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#write-your-first-python-module">Write your first Python module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/learning.html">Learning more</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/learning.html#exploring-python">Exploring Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/learning.html#conventional-coding">Conventional coding</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html">Making your first histogram</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/first_histogram.html#pandas">Pandas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/first_histogram.html#plotting-histograms">Plotting histograms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/first_histogram.html#applying-cuts">Applying cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html">More advanced topics in Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/further_reading.html#nice-standard-libraries">Nice standard libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/further_reading.html#nice-libraries-for-data-analysis">Nice libraries for data analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../python/further_reading.html#python-and-root">Python and ROOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-python/README.html">Advanced Python Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/1Basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Importing-modules">Importing modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html">2: First look at data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#5.-The-toy-dataset">5. The toy dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#6.-Plotting-a-histogram-with-matplotlib">6. Plotting a histogram with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Adding-variables">Adding variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Using-rectangular-cuts">Using rectangular cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/3Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/3Classification.html#Using-a-classifier">Using a classifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/3Classification.html#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">TODO Add a diagram of a decision tree for the above plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/4Extension.html">4: Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Distributions-in-the-Dalitz-features-for-signal-and-background">Distributions in the Dalitz features for signal and background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Preparation-of-train/test-datasets">Preparation of train/test datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Setting-up-classifiers,-training">Setting up classifiers, training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Let’s-look-at-the-results-of-training">Let’s look at the results of training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#ROC-curves-after-training">ROC curves after training</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html">6: Neural networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Downloading-a-dataset">Downloading a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-training-a-network">Example of training a network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Creating-your-own-neural-network">Creating your own neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-a-very-specific-neural-network">Example of a very specific neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Fitting-very-specific-expressions-as-estimators">Fitting very specific expressions as estimators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Writing-custom-pretransformer">Writing custom pretransformer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Ensembling-of-neural-neworks">Ensembling of neural neworks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/7DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Original-distributions">Original distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Comparing-some-simple-expressions:">Comparing some simple expressions:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination">GB-discrimination</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/8sPlot.html">8: sPlot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Applying-sWeights">Applying sWeights</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Compare">Compare</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#More-complex-case">More complex case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Building-sPlot-over-mass">Building sPlot over mass</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Of-course-we-don’t-have-labels-which-events-are-signal-and-which-are-background-beforehand">Of course we don’t have labels which events are signal and which are background beforehand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#We-have-no-information-about-real-labels">We have no information about real labels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Under-assumption-of-linearity:">Under assumption of linearity:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Minimization-of-variation">Minimization of variation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Uncorrelatedness">Uncorrelatedness</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">Introducing the Shell</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="README.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#the-command-line-interface">The Command-Line Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#the-shell">The Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#why-bother">Why bother?</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="README.html#nelle-s-pipeline-starting-point">Nelle’s Pipeline: Starting Point</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="02-filedir.html">Navigating Files and Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="02-filedir.html#nelle-s-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03-create.html">Working With Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04-pipefilter.html">Pipes and Filters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="04-pipefilter.html#nelle-s-pipeline-checking-files">Nelle’s Pipeline: Checking Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="05-loop.html">Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06-script.html">Shell Scripts</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Finding Things</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell-extras/README.html">UNIX shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen.html">Using screen to keep things running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen2.html">Advanced screen topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#finding-lost-screens">Finding lost screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#using-tabs-in-screen">Using tabs in screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/persistent-screen.html">Persistent screen or tmux session on lxplus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#setting-up-password-less-kerberos-token">Setting up password-less kerberos token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#making-use-of-the-keytab">Making use of the keytab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token">Using k5reauth to automatically refresh your kerberos token</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/shell2.html">More about the UNIX shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#types-of-shell">Types of shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#manual-pages">Manual pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#environment-variables">Environment variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/shell2.html#let-s-now-try-the-following-callout">Let’s now try the following: {.callout}</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#differences-among-files">Differences among files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#looping-over-files">Looping over files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#conditionals">Conditionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#linking-commands">Linking commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#pipes-and-redirection">Pipes and redirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#bash-security">Bash security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#complexity">Complexity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-viewers">Text viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-editors">Text editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#disk-space">Disk space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/README.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/01-basics.html">Automated Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/02-setup.html">Setting Up Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/03-create.html">Creating a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/04-changes.html">Tracking Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/05-history.html">Exploring History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/06-ignore.html">Ignoring Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/07-gitlab.html">Remotes in CERN GitLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/08-share.html">Sharing a repository with others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/09-pullrequests.html">Collaborating with Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#what-is-a-pull-or-merge-request">What is a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#fork-the-original-project-repository">Fork the original project repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#clone-a-remote-project-and-its-fork">Clone a remote project and its fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#sync-your-local-repository-with-remote-changes">Sync your local repository with remote changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#implement-your-new-feature">Implement your new feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#push-changes">Push changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#create-a-pull-or-merge-request">Create a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#discussing-amending-retiring-a-merge-request">Discussing, amending, retiring a Merge Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#accepting-a-pull-request">Accepting a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#the-social-side-of-coding">The social side of coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#automatic-testing">Automatic testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../git/10-conflict.html">Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/11-ci.html">GitLab CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/12-open.html">Open Science</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/13-licensing.html">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/14-citation.html">Citation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributing-notebooks">Contributing notebooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
-
-                </nav>
             
-        
-    </div>
+          
+        </div>
+      </div>
+    </nav>
 
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-<div class="book-header" role="navigation">
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis essentials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
     
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="README.html">Introducing the Shell</a> &raquo;</li>
+        
+      <li>Finding Things</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/shell/07-find.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Finding Things</a>
-    </h1>
+  
+  <hr/>
 </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
 
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
 
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
 
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
 
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="finding-things">Finding Things</h1>
-<p><div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7449212261);" id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives<span id="heading-7449212261"></span></h3></div><div class="panel-body" id="panel-7449212261"><ul>
-<li>Use <code>grep</code> to select lines from text files that match simple patterns.</li>
-<li>Use <code>find</code> to find files whose names match simple patterns.</li>
-<li>Use the output of one command as the command-line argument(s) to another command.</li>
-<li>Explain what is meant by &apos;text&apos; and &apos;binary&apos; files, and why many common tools don&apos;t handle the latter well.</li>
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="finding-things">
+<h1>Finding Things<a class="headerlink" href="#finding-things" title="Permalink to this headline">¶</a></h1>
+<div class="panel panel-objectives docutils container">
+<div class="panel-header open docutils container">
+<p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
+</div>
+<div class="panel-body docutils container">
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">grep</span></code> to select lines from text files that match simple patterns.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">find</span></code> to find files whose names match simple patterns.</p></li>
+<li><p>Use the output of one command as the command-line argument(s) to another command.</p></li>
+<li><p>Explain what is meant by ‘text’ and ‘binary’ files, and why many common tools don’t handle the latter well.</p></li>
 </ul>
-</div></div></p>
-<p>In the same way that many of us now use &quot;Google&quot; as a
-verb meaning &quot;to find&quot;, Unix programmers often use the
-word &quot;grep&quot;.
-&quot;grep&quot; is a contraction of &quot;global/regular expression/print&quot;,
+</div>
+</div>
+<p>In the same way that many of us now use “Google” as a
+verb meaning “to find”, Unix programmers often use the
+word “grep”.
+“grep” is a contraction of “global/regular expression/print”,
 a common sequence of operations in early Unix text editors.
 It is also the name of a very useful command-line program.</p>
-<p><code>grep</code> finds and prints lines in files that match a pattern.
+<p><code class="docutils literal notranslate"><span class="pre">grep</span></code> finds and prints lines in files that match a pattern.
 For our examples,
 we will use a file that contains three haikus taken from a
 1998 competition in <em>Salon</em> magazine. For this set of examples,
-we&apos;re going to be working in the writing subdirectory:</p>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span>
-$ <span class="hljs-built_in">cd</span> writing
+we’re going to be working in the writing subdirectory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span>
+$ <span class="nb">cd</span> writing
 $ cat haiku.txt
-</code></pre>
-<pre><code class="lang-output">The Tao that is seen
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The Tao that is seen
 Is not the true Tao, until
 You bring fresh toner.
 
@@ -790,79 +496,101 @@ and the presence of absence:
 Yesterday it worked
 Today it is not working
 Software is like that.
-</code></pre>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8874004491);" id="forever-or-five-years"><i class="fa fa-info-circle"></i> Forever, or Five Years<span id="heading-8874004491"></span></h3></div><div class="panel-body" id="panel-8874004491"><p>We haven&apos;t linked to the original haikus because they don&apos;t appear to be on <em>Salon</em>&apos;s site any longer.
-As <a href="http://www.clir.org/pubs/archives/ensuring.pdf" target="_blank">Jeff Rothenberg said</a>,
-&quot;Digital information lasts forever --- or five years, whichever comes first.&quot;</p>
-</div></div></p>
-<p>Let&apos;s find lines that contain the word &quot;not&quot;:</p>
-<pre><code class="lang-bash">$ grep not haiku.txt
-</code></pre>
-<pre><code class="lang-output">Is not the true Tao, until
+</pre></div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="forever,-or-five-years"><i class="fa fa-info-circle"></i> Forever, or Five Years</p>
+</div>
+<div class="panel-body docutils container">
+<p>We haven’t linked to the original haikus because they don’t appear to be on <em>Salon</em>’s site any longer.
+As <a class="reference external" href="https://www.clir.org/wp-content/uploads/sites/6/ensuring.pdf">Jeff Rothenberg said</a>,
+“Digital information lasts forever — or five years, whichever comes first.”</p>
+</div>
+</div>
+<p>Let’s find lines that contain the word “not”:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep not haiku.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Is not the true Tao, until
 &quot;My Thesis&quot; not found
 Today it is not working
-</code></pre>
-<p>Here, <code>not</code> is the pattern we&apos;re searching for. The grep command searches through the file, looking for matches to the pattern specified. To use it type <code>grep</code>, then the pattern we&apos;re searching for and finally the name of the file (or files) we&apos;re searching in.</p>
-<p>The output is the three lines in the file that contain the letters &quot;not&quot;.</p>
-<p>Let&apos;s try a different pattern: &quot;The&quot;.</p>
-<pre><code class="lang-bash">$ grep The haiku.txt
-</code></pre>
-<pre><code class="lang-output">The Tao that is seen
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">not</span></code> is the pattern we’re searching for. The grep command searches through the file, looking for matches to the pattern specified. To use it type <code class="docutils literal notranslate"><span class="pre">grep</span></code>, then the pattern we’re searching for and finally the name of the file (or files) we’re searching in.</p>
+<p>The output is the three lines in the file that contain the letters “not”.</p>
+<p>Let’s try a different pattern: “The”.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep The haiku.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The Tao that is seen
 &quot;My Thesis&quot; not found.
-</code></pre>
+</pre></div>
+</div>
 <p>This time,
-two lines that include the letters &quot;The&quot; are outputted.
+two lines that include the letters “The” are outputted.
 However, one instance of those letters is contained within a larger word,
-&quot;Thesis&quot;.</p>
-<p>To restrict matches to lines containing the word &quot;The&quot; on its own,
-we can give <code>grep</code> with the <code>-w</code> flag.
+“Thesis”.</p>
+<p>To restrict matches to lines containing the word “The” on its own,
+we can give <code class="docutils literal notranslate"><span class="pre">grep</span></code> with the <code class="docutils literal notranslate"><span class="pre">-w</span></code> flag.
 This will limit matches to word boundaries.</p>
-<pre><code class="lang-bash">$ grep -w The haiku.txt
-</code></pre>
-<pre><code class="lang-output">The Tao that is seen
-</code></pre>
-<p>Note that a &quot;word boundary&quot; includes the start and end of a line, so not
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -w The haiku.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The Tao that is seen
+</pre></div>
+</div>
+<p>Note that a “word boundary” includes the start and end of a line, so not
 just letters surrounded by spaces.
-Sometimes we don&apos;t
+Sometimes we don’t
 want to search for a single word, but a phrase. This is also easy to do with
-<code>grep</code> by putting the phrase in quotes.</p>
-<pre><code class="lang-bash">$ grep -w <span class="hljs-string">&quot;is not&quot;</span> haiku.txt
-</code></pre>
-<pre><code class="lang-output">Today it is not working
-</code></pre>
-<p>We&apos;ve now seen that you don&apos;t have to have quotes around single words,
+<code class="docutils literal notranslate"><span class="pre">grep</span></code> by putting the phrase in quotes.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -w <span class="s2">&quot;is not&quot;</span> haiku.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Today it is not working
+</pre></div>
+</div>
+<p>We’ve now seen that you don’t have to have quotes around single words,
 but it is useful to use quotes when searching for multiple words.
 It also helps to make it easier to distinguish between the search term or phrase
 and the file being searched.
 We will use quotes in the remaining examples.</p>
-<p>Another useful option is <code>-n</code>, which numbers the lines that match:</p>
-<pre><code class="lang-bash">$ grep -n <span class="hljs-string">&quot;it&quot;</span> haiku.txt
-</code></pre>
-<pre><code class="lang-output">5:With searching comes loss
+<p>Another useful option is <code class="docutils literal notranslate"><span class="pre">-n</span></code>, which numbers the lines that match:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -n <span class="s2">&quot;it&quot;</span> haiku.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>5:With searching comes loss
 9:Yesterday it worked
 10:Today it is not working
-</code></pre>
-<p>Here, we can see that lines 5, 9, and 10 contain the letters &quot;it&quot;.</p>
+</pre></div>
+</div>
+<p>Here, we can see that lines 5, 9, and 10 contain the letters “it”.</p>
 <p>We can combine options (i.e. flags) as we do with other Unix commands.
-For example, let&apos;s find the lines that contain the word &quot;the&quot;. We can combine
-the option <code>-w</code> to find the lines that contain the word &quot;the&quot; and <code>-n</code> to number the lines that match:</p>
-<pre><code class="lang-bash">$ grep -n -w <span class="hljs-string">&quot;the&quot;</span> haiku.txt
-</code></pre>
-<pre><code class="lang-output">2:Is not the true Tao, until
+For example, let’s find the lines that contain the word “the”. We can combine
+the option <code class="docutils literal notranslate"><span class="pre">-w</span></code> to find the lines that contain the word “the” and <code class="docutils literal notranslate"><span class="pre">-n</span></code> to number the lines that match:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -n -w <span class="s2">&quot;the&quot;</span> haiku.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2:Is not the true Tao, until
 6:and the presence of absence:
-</code></pre>
-<p>Now we want to use the option <code>-i</code> to make our search case-insensitive:</p>
-<pre><code class="lang-bash">$ grep -n -w -i <span class="hljs-string">&quot;the&quot;</span> haiku.txt
-</code></pre>
-<pre><code class="lang-output">1:The Tao that is seen
+</pre></div>
+</div>
+<p>Now we want to use the option <code class="docutils literal notranslate"><span class="pre">-i</span></code> to make our search case-insensitive:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -n -w -i <span class="s2">&quot;the&quot;</span> haiku.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1:The Tao that is seen
 2:Is not the true Tao, until
 6:and the presence of absence:
-</code></pre>
-<p>Now, we want to use the option <code>-v</code> to invert our search, i.e., we want to output
-the lines that do not contain the word &quot;the&quot;.</p>
-<pre><code class="lang-bash">$ grep -n -w -v <span class="hljs-string">&quot;the&quot;</span> haiku.txt
-</code></pre>
-<pre><code class="lang-output">1:The Tao that is seen
+</pre></div>
+</div>
+<p>Now, we want to use the option <code class="docutils literal notranslate"><span class="pre">-v</span></code> to invert our search, i.e., we want to output
+the lines that do not contain the word “the”.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -n -w -v <span class="s2">&quot;the&quot;</span> haiku.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1:The Tao that is seen
 3:You bring fresh toner.
 4:
 5:With searching comes loss
@@ -871,14 +599,16 @@ the lines that do not contain the word &quot;the&quot;.</p>
 9:Yesterday it worked
 10:Today it is not working
 11:Software is like that.
-</code></pre>
-<p><code>grep</code> has lots of other options. To find out what they are, we can type:</p>
-<pre><code class="lang-bash">$ grep --help
-</code></pre>
-<pre><code class="lang-output">Usage: grep [OPTION]... PATTERN [FILE]...
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">grep</span></code> has lots of other options. To find out what they are, we can type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep --help
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: grep [OPTION]... PATTERN [FILE]...
 Search for PATTERN in each FILE or standard input.
 PATTERN is, by default, a basic regular expression (BRE).
-Example: grep -i &apos;hello world&apos; menu.h main.c
+Example: grep -i &#39;hello world&#39; menu.h main.c
 
 Regexp selection and interpretation:
   -E, --extended-regexp     PATTERN is an extended regular expression (ERE)
@@ -894,44 +624,54 @@ Regexp selection and interpretation:
 
 Miscellaneous:
 ...        ...        ...
-</code></pre>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9384081618);" id="wildcards"><i class="fa fa-info-circle"></i> Wildcards<span id="heading-9384081618"></span></h3></div><div class="panel-body" id="panel-9384081618"><p><code>grep</code>&apos;s real power doesn&apos;t come from its options, though; it comes from
+</pre></div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="wildcards"><i class="fa fa-info-circle"></i> Wildcards</p>
+</div>
+<div class="panel-body docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">grep</span></code>’s real power doesn’t come from its options, though; it comes from
 the fact that patterns can include wildcards. (The technical name for
 these is <strong>regular expressions</strong>, which
-is what the &quot;re&quot; in &quot;grep&quot; stands for.) Regular expressions are both complex
+is what the “re” in “grep” stands for.) Regular expressions are both complex
 and powerful; if you want to do complex searches, please look at the lesson
-on <a href="http://v4.software-carpentry.org/regexp/index.html" target="_blank">our website</a>. As a taster, we can
-find lines that have an &apos;o&apos; in the second position like this:</p>
-<pre><code class="lang-bash">$ grep -E <span class="hljs-string">&apos;^.o&apos;</span> haiku.txt
-</code></pre>
-<pre><code class="lang-output">You bring fresh toner.
+on <a class="reference external" href="https://v4.software-carpentry.org/regexp/index.html">our website</a>. As a taster, we can
+find lines that have an ‘o’ in the second position like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -E <span class="s1">&#39;^.o&#39;</span> haiku.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>You bring fresh toner.
 Today it is not working
 Software is like that.
-</code></pre>
-<p>We use the <code>-E</code> flag and put the pattern in quotes to prevent the shell
-from trying to interpret it. (If the pattern contained a <code>*</code>, for
-example, the shell would try to expand it before running <code>grep</code>.) The
-<code>^</code> in the pattern anchors the match to the start of the line. The <code>.</code>
-matches a single character (just like <code>?</code> in the shell), while the <code>o</code>
-matches an actual &apos;o&apos;.</p>
-</div></div></p>
-<p>While <code>grep</code> finds lines in files,
-the <code>find</code> command finds files themselves.
+</pre></div>
+</div>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">-E</span></code> flag and put the pattern in quotes to prevent the shell
+from trying to interpret it. (If the pattern contained a <code class="docutils literal notranslate"><span class="pre">*</span></code>, for
+example, the shell would try to expand it before running <code class="docutils literal notranslate"><span class="pre">grep</span></code>.) The
+<code class="docutils literal notranslate"><span class="pre">^</span></code> in the pattern anchors the match to the start of the line. The <code class="docutils literal notranslate"><span class="pre">.</span></code>
+matches a single character (just like <code class="docutils literal notranslate"><span class="pre">?</span></code> in the shell), while the <code class="docutils literal notranslate"><span class="pre">o</span></code>
+matches an actual ‘o’.</p>
+</div>
+</div>
+<p>While <code class="docutils literal notranslate"><span class="pre">grep</span></code> finds lines in files,
+the <code class="docutils literal notranslate"><span class="pre">find</span></code> command finds files themselves.
 Again,
 it has a lot of options;
-to show how the simplest ones work, we&apos;ll use the directory tree shown below.</p>
-<p><img src="fig/find-file-tree.svg" alt="File Tree for Find Example"></p>
-<p>Nelle&apos;s <code>writing</code> directory contains one file called <code>haiku.txt</code> and five subdirectories:
-<code>thesis</code> (which contains a sadly empty file, <code>empty-draft.md</code>),
-<code>data</code> (which contains three files <code>LittleWomen.txt</code>, <code>one.txt</code> and <code>two.txt</code>),
-<code>old</code> (which contains the empty file <code>.gitkeep</code>, an artifact of how git works, not part of this episode),
-a <code>tools</code> directory that contains the programs <code>format</code> and <code>stats</code>,
-and a subdirectory called <code>old</code>, with a file <code>oldtool</code>.</p>
+to show how the simplest ones work, we’ll use the directory tree shown below.</p>
+<p><img alt="File Tree for Find Example" src="../_images/find-file-tree.svg" /></p>
+<p>Nelle’s <code class="docutils literal notranslate"><span class="pre">writing</span></code> directory contains one file called <code class="docutils literal notranslate"><span class="pre">haiku.txt</span></code> and five subdirectories:
+<code class="docutils literal notranslate"><span class="pre">thesis</span></code> (which contains a sadly empty file, <code class="docutils literal notranslate"><span class="pre">empty-draft.md</span></code>),
+<code class="docutils literal notranslate"><span class="pre">data</span></code> (which contains three files <code class="docutils literal notranslate"><span class="pre">LittleWomen.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">one.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">two.txt</span></code>),
+<code class="docutils literal notranslate"><span class="pre">old</span></code> (which contains the empty file <code class="docutils literal notranslate"><span class="pre">.gitkeep</span></code>, an artifact of how git works, not part of this episode),
+a <code class="docutils literal notranslate"><span class="pre">tools</span></code> directory that contains the programs <code class="docutils literal notranslate"><span class="pre">format</span></code> and <code class="docutils literal notranslate"><span class="pre">stats</span></code>,
+and a subdirectory called <code class="docutils literal notranslate"><span class="pre">old</span></code>, with a file <code class="docutils literal notranslate"><span class="pre">oldtool</span></code>.</p>
 <p>For our first command,
-let&apos;s run <code>find .</code>.</p>
-<pre><code class="lang-bash">$ find .
-</code></pre>
-<pre><code class="lang-output">.
+let’s run <code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">.</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ find .
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.
 ./old
 ./old/.gitkeep
 ./data
@@ -946,35 +686,39 @@ let&apos;s run <code>find .</code>.</p>
 ./haiku.txt
 ./thesis
 ./thesis/empty-draft.md
-</code></pre>
+</pre></div>
+</div>
 <p>As always,
-the <code>.</code> on its own means the current working directory,
+the <code class="docutils literal notranslate"><span class="pre">.</span></code> on its own means the current working directory,
 which is where we want our search to start.
-<code>find</code>&apos;s output is the names of every file <strong>and</strong> directory
+<code class="docutils literal notranslate"><span class="pre">find</span></code>’s output is the names of every file <strong>and</strong> directory
 under the current working directory.
-This can seem useless at first but <code>find</code> has many options
+This can seem useless at first but <code class="docutils literal notranslate"><span class="pre">find</span></code> has many options
 to filter the output and in this lesson we will discover some
 of them.</p>
 <p>The first option in our list is
-<code>-type d</code> that means &quot;things that are directories&quot;.
+<code class="docutils literal notranslate"><span class="pre">-type</span> <span class="pre">d</span></code> that means “things that are directories”.
 Sure enough,
-<code>find</code>&apos;s output is the names of the six directories in our little tree
-(including <code>.</code>):</p>
-<pre><code class="lang-bash">$ find . -type d
-</code></pre>
-<pre><code class="lang-output">./
+<code class="docutils literal notranslate"><span class="pre">find</span></code>’s output is the names of the six directories in our little tree
+(including <code class="docutils literal notranslate"><span class="pre">.</span></code>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ find . -type d
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./
 ./old
 ./data
 ./thesis
 ./tools
 ./tools/old
-</code></pre>
-<p>Notice that the objects <code>find</code> finds are not listed in any particular order.
-If we change <code>-type d</code> to <code>-type f</code>,
+</pre></div>
+</div>
+<p>Notice that the objects <code class="docutils literal notranslate"><span class="pre">find</span></code> finds are not listed in any particular order.
+If we change <code class="docutils literal notranslate"><span class="pre">-type</span> <span class="pre">d</span></code> to <code class="docutils literal notranslate"><span class="pre">-type</span> <span class="pre">f</span></code>,
 we get a listing of all the files instead:</p>
-<pre><code class="lang-bash">$ find . -type f
-</code></pre>
-<pre><code class="lang-output">./haiku.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ find . -type f
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./haiku.txt
 ./old/.gitkeep
 ./tools/stats
 ./tools/old/oldtool
@@ -983,318 +727,398 @@ we get a listing of all the files instead:</p>
 ./data/one.txt
 ./data/LittleWomen.txt
 ./data/two.txt
-</code></pre>
-<p>Now let&apos;s try matching by name:</p>
-<pre><code class="lang-bash">$ find . -name *.txt
-</code></pre>
-<pre><code class="lang-output">./haiku.txt
-</code></pre>
+</pre></div>
+</div>
+<p>Now let’s try matching by name:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ find . -name *.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./haiku.txt
+</pre></div>
+</div>
 <p>We expected it to find all the text files,
-but it only prints out <code>./haiku.txt</code>.
-The problem is that the shell expands wildcard characters like <code>*</code> <em>before</em> commands run.
-Since <code>*.txt</code> in the current directory expands to <code>haiku.txt</code>,
+but it only prints out <code class="docutils literal notranslate"><span class="pre">./haiku.txt</span></code>.
+The problem is that the shell expands wildcard characters like <code class="docutils literal notranslate"><span class="pre">*</span></code> <em>before</em> commands run.
+Since <code class="docutils literal notranslate"><span class="pre">*.txt</span></code> in the current directory expands to <code class="docutils literal notranslate"><span class="pre">haiku.txt</span></code>,
 the command we actually ran was:</p>
-<pre><code class="lang-bash">$ find . -name haiku.txt
-</code></pre>
-<p><code>find</code> did what we asked; we just asked for the wrong thing.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ find . -name haiku.txt
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">find</span></code> did what we asked; we just asked for the wrong thing.</p>
 <p>To get what we want,
-let&apos;s do what we did with <code>grep</code>:
-put <code>*.txt</code> in single quotes to prevent the shell from expanding the <code>*</code> wildcard.
+let’s do what we did with <code class="docutils literal notranslate"><span class="pre">grep</span></code>:
+put <code class="docutils literal notranslate"><span class="pre">*.txt</span></code> in single quotes to prevent the shell from expanding the <code class="docutils literal notranslate"><span class="pre">*</span></code> wildcard.
 This way,
-<code>find</code> actually gets the pattern <code>*.txt</code>, not the expanded filename <code>haiku.txt</code>:</p>
-<pre><code class="lang-bash">$ find . -name <span class="hljs-string">&apos;*.txt&apos;</span>
-</code></pre>
-<pre><code class="lang-output">./data/one.txt
+<code class="docutils literal notranslate"><span class="pre">find</span></code> actually gets the pattern <code class="docutils literal notranslate"><span class="pre">*.txt</span></code>, not the expanded filename <code class="docutils literal notranslate"><span class="pre">haiku.txt</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ find . -name <span class="s1">&#39;*.txt&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./data/one.txt
 ./data/LittleWomen.txt
 ./data/two.txt
 ./haiku.txt
-</code></pre>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(456926805);" id="listing-vs-finding"><i class="fa fa-info-circle"></i> Listing vs. Finding<span id="heading-456926805"></span></h3></div><div class="panel-body" id="panel-456926805"><p><code>ls</code> and <code>find</code> can be made to do similar things given the right options,
+</pre></div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="listing-vs.-finding"><i class="fa fa-info-circle"></i> Listing vs. Finding</p>
+</div>
+<div class="panel-body docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> and <code class="docutils literal notranslate"><span class="pre">find</span></code> can be made to do similar things given the right options,
 but under normal circumstances,
-<code>ls</code> lists everything it can,
-while <code>find</code> searches for things with certain properties and shows them.</p>
-</div></div></p>
+<code class="docutils literal notranslate"><span class="pre">ls</span></code> lists everything it can,
+while <code class="docutils literal notranslate"><span class="pre">find</span></code> searches for things with certain properties and shows them.</p>
+</div>
+</div>
 <p>As we said earlier,
-the command line&apos;s power lies in combining tools.
-We&apos;ve seen how to do that with pipes;
-let&apos;s look at another technique.
+the command line’s power lies in combining tools.
+We’ve seen how to do that with pipes;
+let’s look at another technique.
 As we just saw,
-<code>find . -name &apos;*.txt&apos;</code> gives us a list of all text files in or below the current directory.
-How can we combine that with <code>wc -l</code> to count the lines in all those files?</p>
-<p>The simplest way is to put the <code>find</code> command inside <code>$()</code>:</p>
-<pre><code class="lang-bash">$ wc <span class="hljs-_">-l</span> $(find . -name <span class="hljs-string">&apos;*.txt&apos;</span>)
-</code></pre>
-<pre><code class="lang-output">11 ./haiku.txt
+<code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-name</span> <span class="pre">'*.txt'</span></code> gives us a list of all text files in or below the current directory.
+How can we combine that with <code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span></code> to count the lines in all those files?</p>
+<p>The simplest way is to put the <code class="docutils literal notranslate"><span class="pre">find</span></code> command inside <code class="docutils literal notranslate"><span class="pre">$()</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wc -l <span class="k">$(</span>find . -name <span class="s1">&#39;*.txt&#39;</span><span class="k">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>11 ./haiku.txt
 300 ./data/two.txt
 21022 ./data/LittleWomen.txt
 70 ./data/one.txt
 21403 total
-</code></pre>
+</pre></div>
+</div>
 <p>When the shell executes this command,
-the first thing it does is run whatever is inside the <code>$()</code>.
-It then replaces the <code>$()</code> expression with that command&apos;s output.
-Since the output of <code>find</code> is the four filenames <code>./data/one.txt</code>, <code>./data/LittleWomen.txt</code>, <code>./data/two.txt</code>, and <code>./haiku.txt</code>,
+the first thing it does is run whatever is inside the <code class="docutils literal notranslate"><span class="pre">$()</span></code>.
+It then replaces the <code class="docutils literal notranslate"><span class="pre">$()</span></code> expression with that command’s output.
+Since the output of <code class="docutils literal notranslate"><span class="pre">find</span></code> is the four filenames <code class="docutils literal notranslate"><span class="pre">./data/one.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">./data/LittleWomen.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">./data/two.txt</span></code>, and <code class="docutils literal notranslate"><span class="pre">./haiku.txt</span></code>,
 the shell constructs the command:</p>
-<pre><code class="lang-bash">$ wc <span class="hljs-_">-l</span> ./data/one.txt ./data/LittleWomen.txt ./data/two.txt ./haiku.txt
-</code></pre>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wc -l ./data/one.txt ./data/LittleWomen.txt ./data/two.txt ./haiku.txt
+</pre></div>
+</div>
 <p>which is what we wanted.
-This expansion is exactly what the shell does when it expands wildcards like <code>*</code> and <code>?</code>,
-but lets us use any command we want as our own &quot;wildcard&quot;.</p>
-<p>It&apos;s very common to use <code>find</code> and <code>grep</code> together.
+This expansion is exactly what the shell does when it expands wildcards like <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">?</span></code>,
+but lets us use any command we want as our own “wildcard”.</p>
+<p>It’s very common to use <code class="docutils literal notranslate"><span class="pre">find</span></code> and <code class="docutils literal notranslate"><span class="pre">grep</span></code> together.
 The first finds files that match a pattern;
 the second looks for lines inside those files that match another pattern.
 Here, for example, we can find PDB files that contain iron atoms
-by looking for the string &quot;FE&quot; in all the <code>.pdb</code> files above the current directory:</p>
-<pre><code class="lang-bash">$ grep <span class="hljs-string">&quot;FE&quot;</span> $(find .. -name <span class="hljs-string">&apos;*.pdb&apos;</span>)
-</code></pre>
-<pre><code class="lang-output">../data/pdb/heme.pdb:ATOM     25 FE           1      -0.924   0.535  -0.518
-</code></pre>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7649560774);" id="binary-files"><i class="fa fa-info-circle"></i> Binary Files<span id="heading-7649560774"></span></h3></div><div class="panel-body" id="panel-7649560774"><p>We have focused exclusively on finding things in text files. What if
+by looking for the string “FE” in all the <code class="docutils literal notranslate"><span class="pre">.pdb</span></code> files above the current directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep <span class="s2">&quot;FE&quot;</span> <span class="k">$(</span>find .. -name <span class="s1">&#39;*.pdb&#39;</span><span class="k">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>../data/pdb/heme.pdb:ATOM     25 FE           1      -0.924   0.535  -0.518
+</pre></div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="binary-files"><i class="fa fa-info-circle"></i> Binary Files</p>
+</div>
+<div class="panel-body docutils container">
+<p>We have focused exclusively on finding things in text files. What if
 your data is stored as images, in databases, or in some other format?
-One option would be to extend tools like <code>grep</code> to handle those formats.
-This hasn&apos;t happened, and probably won&apos;t, because there are too many
+One option would be to extend tools like <code class="docutils literal notranslate"><span class="pre">grep</span></code> to handle those formats.
+This hasn’t happened, and probably won’t, because there are too many
 formats to support.</p>
 <p>The second option is to convert the data to text, or extract the
 text-ish bits from the data. This is probably the most common approach,
 since it only requires people to build one tool per data format (to
 extract information). On the one hand, it makes simple things easy to
 do. On the negative side, complex things are usually impossible. For
-example, it&apos;s easy enough to write a program that will extract X and Y
-dimensions from image files for <code>grep</code> to play with, but how would you
+example, it’s easy enough to write a program that will extract X and Y
+dimensions from image files for <code class="docutils literal notranslate"><span class="pre">grep</span></code> to play with, but how would you
 write something to find values in a spreadsheet whose cells contained
 formulas?</p>
 <p>The third choice is to recognize that the shell and text processing have
 their limits, and to use another programming language.
-When the time comes to do this, don&apos;t be too hard on the shell: many
+When the time comes to do this, don’t be too hard on the shell: many
 modern programming languages have borrowed a lot of
 ideas from it, and imitation is also the sincerest form of praise.</p>
-</div></div></p>
+</div>
+</div>
 <p>The Unix shell is older than most of the people who use it. It has
 survived so long because it is one of the most productive programming
-environments ever created --- maybe even <em>the</em> most productive. Its syntax
+environments ever created — maybe even <em>the</em> most productive. Its syntax
 may be cryptic, but people who have mastered it can experiment with
 different commands interactively, then use what they have learned to
 automate their work. Graphical user interfaces may be better at the
 first, but the shell is still unbeaten at the second. And as Alfred
-North Whitehead wrote in 1911, &quot;Civilization advances by extending the
+North Whitehead wrote in 1911, “Civilization advances by extending the
 number of important operations which we can perform without thinking
-about them.&quot;</p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1101602777);" id="using-grep"><i class="fa fa-square-o"></i> Using <code>grep</code><span id="heading-1101602777"></span></h3></div><div class="panel-body" id="panel-1101602777"><p>Referring to <code>haiku.txt</code>
+about them.”</p>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="using-grep"><i class="fa fa-square-o"></i> Using grep</p>
+</div>
+<div class="panel-body docutils container">
+<p>Referring to <code class="docutils literal notranslate"><span class="pre">haiku.txt</span></code>
 presented at the begin of this topic,
 which command would result in the following output:</p>
-<pre><code class="lang-output">and the presence of absence:
-</code></pre>
-<ol>
-<li><code>grep &quot;of&quot; haiku.txt</code></li>
-<li><code>grep -E &quot;of&quot; haiku.txt</code></li>
-<li><code>grep -w &quot;of&quot; haiku.txt</code></li>
-<li><code>grep -i &quot;of&quot; haiku.txt</code></li>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>and the presence of absence:
+</pre></div>
+</div>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">&quot;of&quot;</span> <span class="pre">haiku.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-E</span> <span class="pre">&quot;of&quot;</span> <span class="pre">haiku.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-w</span> <span class="pre">&quot;of&quot;</span> <span class="pre">haiku.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">&quot;of&quot;</span> <span class="pre">haiku.txt</span></code></p></li>
 </ol>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3138599428);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-3138599428">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-3138599428"><p>The correct answer is 3, because the <code>-w</code> flag looks only for whole-word matches.
-The other options will all match &quot;of&quot; when part of another word.</p>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5503204625);" id="find-pipeline-reading-comprehension"><i class="fa fa-square-o"></i> <code>find</code> Pipeline Reading Comprehension<span id="heading-5503204625"></span></h3></div><div class="panel-body" id="panel-5503204625"><p>Write a short explanatory comment for the following shell script:</p>
-<pre><code class="lang-bash">wc <span class="hljs-_">-l</span> $(find . -name <span class="hljs-string">&apos;*.dat&apos;</span>) | sort -n
-</code></pre>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2469019901);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-2469019901">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-2469019901"><ol>
-<li>Find all files with a <code>.dat</code> extension in the current directory</li>
-<li>Count the number of lines each of these files contains</li>
-<li>Sort the output from step 2. numerically</li>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>The correct answer is 3, because the <code class="docutils literal notranslate"><span class="pre">-w</span></code> flag looks only for whole-word matches.
+The other options will all match “of” when part of another word.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="find-pipeline-reading-comprehension"><i class="fa fa-square-o"></i> find Pipeline Reading Comprehension</p>
+</div>
+<div class="panel-body docutils container">
+<p>Write a short explanatory comment for the following shell script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wc -l <span class="k">$(</span>find . -name <span class="s1">&#39;*.dat&#39;</span><span class="k">)</span> <span class="p">|</span> sort -n
+</pre></div>
+</div>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<ol class="simple">
+<li><p>Find all files with a <code class="docutils literal notranslate"><span class="pre">.dat</span></code> extension in the current directory</p></li>
+<li><p>Count the number of lines each of these files contains</p></li>
+<li><p>Sort the output from step 2. numerically</p></li>
 </ol>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(976712831);" id="matching-and-subtracting"><i class="fa fa-square-o"></i> Matching and Subtracting<span id="heading-976712831"></span></h3></div><div class="panel-body" id="panel-976712831"><p>The <code>-v</code> flag to <code>grep</code> inverts pattern matching, so that only lines
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="matching-and-subtracting"><i class="fa fa-square-o"></i> Matching and Subtracting</p>
+</div>
+<div class="panel-body docutils container">
+<p>The <code class="docutils literal notranslate"><span class="pre">-v</span></code> flag to <code class="docutils literal notranslate"><span class="pre">grep</span></code> inverts pattern matching, so that only lines
 which do <em>not</em> match the pattern are printed. Given that, which of
-the following commands will find all files in <code>/data</code> whose names
-end in <code>s.txt</code> (e.g., <code>animals.txt</code> or <code>planets.txt</code>), but do
-<em>not</em> contain the word <code>net</code>?
-Once you have thought about your answer, you can test the commands in the <code>data-shell</code>
+the following commands will find all files in <code class="docutils literal notranslate"><span class="pre">/data</span></code> whose names
+end in <code class="docutils literal notranslate"><span class="pre">s.txt</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">animals.txt</span></code> or <code class="docutils literal notranslate"><span class="pre">planets.txt</span></code>), but do
+<em>not</em> contain the word <code class="docutils literal notranslate"><span class="pre">net</span></code>?
+Once you have thought about your answer, you can test the commands in the <code class="docutils literal notranslate"><span class="pre">data-shell</span></code>
 directory.</p>
-<ol>
-<li><code>find data -name &apos;*s.txt&apos; | grep -v net</code></li>
-<li><code>find data -name *s.txt | grep -v net</code></li>
-<li><code>grep -v &quot;temp&quot; $(find data -name &apos;*s.txt&apos;)</code></li>
-<li>None of the above.</li>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">data</span> <span class="pre">-name</span> <span class="pre">'*s.txt'</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">net</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">data</span> <span class="pre">-name</span> <span class="pre">*s.txt</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">net</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">&quot;temp&quot;</span> <span class="pre">$(find</span> <span class="pre">data</span> <span class="pre">-name</span> <span class="pre">'*s.txt')</span></code></p></li>
+<li><p>None of the above.</p></li>
 </ol>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7049366079);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-7049366079">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-7049366079"><p>The correct answer is 1. Putting the match expression in quotes prevents the shell
-expanding it, so it gets passed to the <code>find</code> command.</p>
-<p>Option 2 is incorrect because the shell expands <code>*s.txt</code> instead of passing the wildcard
-expression to <code>find</code>.</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>The correct answer is 1. Putting the match expression in quotes prevents the shell
+expanding it, so it gets passed to the <code class="docutils literal notranslate"><span class="pre">find</span></code> command.</p>
+<p>Option 2 is incorrect because the shell expands <code class="docutils literal notranslate"><span class="pre">*s.txt</span></code> instead of passing the wildcard
+expression to <code class="docutils literal notranslate"><span class="pre">find</span></code>.</p>
 <p>Option 3 is incorrect because it searches the contents of the files for lines which
-do not match &quot;temp&quot;, rather than searching the file names.</p>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5206649312);" id="tracking-a-species"><i class="fa fa-square-o"></i> Tracking a Species<span id="heading-5206649312"></span></h3></div><div class="panel-body" id="panel-5206649312"><p>Leah has several hundred
+do not match “temp”, rather than searching the file names.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="tracking-a-species"><i class="fa fa-square-o"></i> Tracking a Species</p>
+</div>
+<div class="panel-body docutils container">
+<p>Leah has several hundred
 data files saved in one directory, each of which is formatted like this:</p>
-<pre><code class="lang-source">2013-11-05,deer,5
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2013-11-05,deer,5
 2013-11-05,rabbit,22
 2013-11-05,raccoon,7
 2013-11-06,rabbit,19
 2013-11-06,deer,2
-</code></pre>
+</pre></div>
+</div>
 <p>She wants to write a shell script that takes a species as the first command-line argument
-and a directory as the second argument. The script should return one file called <code>species.txt</code>
+and a directory as the second argument. The script should return one file called <code class="docutils literal notranslate"><span class="pre">species.txt</span></code>
 containing a list of dates and the number of that species seen on each date.
-For example using the data shown above, <code>rabbits.txt</code> would contain:</p>
-<pre><code class="lang-source">2013-11-05,22
+For example using the data shown above, <code class="docutils literal notranslate"><span class="pre">rabbits.txt</span></code> would contain:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2013-11-05,22
 2013-11-06,19
-</code></pre>
+</pre></div>
+</div>
 <p>Put these commands and pipes in the right order to achieve this:</p>
-<pre><code class="lang-bash">cut <span class="hljs-_">-d</span> : <span class="hljs-_">-f</span> 2
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cut -d : -f <span class="m">2</span>
 
-|
-grep -w <span class="hljs-variable">$1</span> -r <span class="hljs-variable">$2</span>
-|
-<span class="hljs-variable">$1</span>.txt
-cut <span class="hljs-_">-d</span> , <span class="hljs-_">-f</span> 1,3
-</code></pre>
-<p>Hint: use <code>man grep</code> to look for how to grep text recursively in a directory
-and <code>man cut</code> to select more than one field in a line.</p>
-<p>An example of such a file is provided in <code>data-shell/data/animal-counts/animals.txt</code></p>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(149450558);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-149450558">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-149450558"><pre><code>grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3  &gt; $1.txt
-</code></pre><p>{: .source}</p>
+<span class="p">|</span>
+grep -w <span class="nv">$1</span> -r <span class="nv">$2</span>
+<span class="p">|</span>
+<span class="nv">$1</span>.txt
+cut -d , -f <span class="m">1</span>,3
+</pre></div>
+</div>
+<p>Hint: use <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">grep</span></code> to look for how to grep text recursively in a directory
+and <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">cut</span></code> to select more than one field in a line.</p>
+<p>An example of such a file is provided in <code class="docutils literal notranslate"><span class="pre">data-shell/data/animal-counts/animals.txt</span></code></p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep -w <span class="nv">$1</span> -r <span class="nv">$2</span> <span class="p">|</span> cut -d : -f <span class="m">2</span> <span class="p">|</span> cut -d , -f <span class="m">1</span>,3  &gt; <span class="nv">$1</span>.txt
+</pre></div>
+</div>
 <p>You would call the script above like this:</p>
-<pre><code>$ bash count-species.sh bear .
-</code></pre><p>{: .bash}</p>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6747997036);" id="little-women"><i class="fa fa-square-o"></i> Little Women<span id="heading-6747997036"></span></h3></div><div class="panel-body" id="panel-6747997036"><p>You and your friend, having just finished reading <em>Little Women</em> by
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ bash count-species.sh bear .
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="little-women"><i class="fa fa-square-o"></i> Little Women</p>
+</div>
+<div class="panel-body docutils container">
+<p>You and your friend, having just finished reading <em>Little Women</em> by
 Louisa May Alcott, are in an argument.  Of the four sisters in the
 book, Jo, Meg, Beth, and Amy, your friend thinks that Jo was the
 most mentioned.  You, however, are certain it was Amy.  Luckily, you
-have a file <code>LittleWomen.txt</code> containing the full text of the novel
-(<code>data-shell/writing/data/LittleWomen.txt</code>).
-Using a <code>for</code> loop, how would you tabulate the number of times each
+have a file <code class="docutils literal notranslate"><span class="pre">LittleWomen.txt</span></code> containing the full text of the novel
+(<code class="docutils literal notranslate"><span class="pre">data-shell/writing/data/LittleWomen.txt</span></code>).
+Using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, how would you tabulate the number of times each
 of the four sisters is mentioned?</p>
 <p>Hint: one solution might employ
-the commands <code>grep</code> and <code>wc</code> and a <code>|</code>, while another might utilize
-<code>grep</code> options.
+the commands <code class="docutils literal notranslate"><span class="pre">grep</span></code> and <code class="docutils literal notranslate"><span class="pre">wc</span></code> and a <code class="docutils literal notranslate"><span class="pre">|</span></code>, while another might utilize
+<code class="docutils literal notranslate"><span class="pre">grep</span></code> options.
 There is often more than one way to solve a programming task, so a
 particular solution is usually chosen based on a combination of
 yielding the correct result, elegance, readability, and speed.</p>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7297723668);" id="solutionsclick-to-expand"><i class="fa fa-line-chart"></i> Solutions<span id="heading-7297723668">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-7297723668"><pre><code>for sis in Jo Meg Beth Amy
-do
-    echo $sis:
-&gt;    grep -ow $sis LittleWomen.txt | wc -l
-done
-</code></pre><p>{: .source}</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solutions"><i class="fa fa-check-square-o"></i> Solutions</p>
+</div>
+<div class="panel-body docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> sis in Jo Meg Beth Amy
+<span class="k">do</span>
+	<span class="nb">echo</span> <span class="nv">$sis</span>:
+&gt;	grep -ow <span class="nv">$sis</span> LittleWomen.txt <span class="p">|</span> wc -l
+<span class="k">done</span>
+</pre></div>
+</div>
 <p>Alternative, slightly inferior solution:</p>
-<pre><code>for sis in Jo Meg Beth Amy
-do
-    echo $sis:
-&gt;    grep -ocw $sis LittleWomen.txt
-done
-</code></pre><p>{: .source}</p>
-<p>This solution is inferior because <code>grep -c</code> only reports the number of lines matched.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> sis in Jo Meg Beth Amy
+<span class="k">do</span>
+	<span class="nb">echo</span> <span class="nv">$sis</span>:
+&gt;	grep -ocw <span class="nv">$sis</span> LittleWomen.txt
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>This solution is inferior because <code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-c</span></code> only reports the number of lines matched.
 The total number of matches reported by this method will be lower if there is more
 than one match per line.</p>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1024556548);" id="finding-files-with-different-properties"><i class="fa fa-square-o"></i> Finding Files With Different Properties<span id="heading-1024556548"></span></h3></div><div class="panel-body" id="panel-1024556548"><p>The <code>find</code> command can be given several other criteria known as &quot;tests&quot;
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="finding-files-with-different-properties"><i class="fa fa-square-o"></i> Finding Files With Different Properties</p>
+</div>
+<div class="panel-body docutils container">
+<p>The <code class="docutils literal notranslate"><span class="pre">find</span></code> command can be given several other criteria known as “tests”
 to locate files with specific attributes, such as creation time, size,
-permissions, or ownership.  Use <code>man find</code> to explore these, and then
+permissions, or ownership.  Use <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">find</span></code> to explore these, and then
 write a single command to find all files in or below the current directory
-that were modified by the user <code>ahmed</code> in the last 24 hours.</p>
-<p>Hint 1: you will need to use three tests: <code>-type</code>, <code>-mtime</code>, and <code>-user</code>.</p>
-<p>Hint 2: The value for <code>-mtime</code> will need to be negative---why?</p>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5886712328);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-5886712328">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-5886712328"><p>Assuming that Nelle&#x2019;s home is our working directory we type:</p>
-<pre><code class="lang-bash">$ find ./ -type f -mtime -1 -user ahmed
-</code></pre>
-</div></div></div></div></p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6761088560);" id="key-points"><i class="fa fa-key"></i> Key Points<span id="heading-6761088560"></span></h3></div><div class="panel-body" id="panel-6761088560"><ul>
-<li><code>find</code> finds files with specific properties that match patterns.</li>
-<li><code>grep</code> selects lines in files that match patterns.</li>
-<li><code>--help</code> is a flag supported by many bash commands, and programs that can be run from within Bash, to display more information on how to use these commands or programs.</li>
-<li><code>man command</code> displays the manual page for a given command.</li>
-<li><code>$(command)</code> inserts a command&apos;s output in place.</li>
+that were modified by the user <code class="docutils literal notranslate"><span class="pre">ahmed</span></code> in the last 24 hours.</p>
+<p>Hint 1: you will need to use three tests: <code class="docutils literal notranslate"><span class="pre">-type</span></code>, <code class="docutils literal notranslate"><span class="pre">-mtime</span></code>, and <code class="docutils literal notranslate"><span class="pre">-user</span></code>.</p>
+<p>Hint 2: The value for <code class="docutils literal notranslate"><span class="pre">-mtime</span></code> will need to be negative—why?</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>Assuming that Nelle’s home is our working directory we type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ find ./ -type f -mtime -1 -user ahmed
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-keypoints docutils container">
+<div class="panel-header open docutils container">
+<p id="key-points"><i class="fa fa-key"></i> Key Points</p>
+</div>
+<div class="panel-body docutils container">
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">find</span></code> finds files with specific properties that match patterns.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grep</span></code> selects lines in files that match patterns.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--help</span></code> is a flag supported by many bash commands, and programs that can be run from within Bash, to display more information on how to use these commands or programs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">command</span></code> displays the manual page for a given command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$(command)</span></code> inserts a command’s output in place.</p></li>
 </ul>
-</div></div></p>
-<div class="ba-right"><p><a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">CC BY 4.0</a> - Based on <a href="https://github.com/swcarpentry/shell-novice" target="_blank">shell-novice</a> &#xA9; 2016&#x2013;2017 Software Carpentry Foundation</p></div>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+</div>
+</div>
+<p>{% right %} <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a> - Based on <a class="reference external" href="https://github.com/swcarpentry/shell-novice">shell-novice</a> © 2016–2017 Software Carpentry Foundation
+{% endright %}</p>
 </div>
 
-                        </div>
-                    </div>
-                
-            </div>
 
-            
-                
-                <a href="06-script.html" class="navigation navigation-prev " aria-label="Previous page: Shell Scripts">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="../shell-extras/" class="navigation navigation-next " aria-label="Next page: Shell extras">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../shell-extras/README.html" class="btn btn-neutral float-right" title="UNIX shell" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="06-script.html" class="btn btn-neutral float-left" title="Shell Scripts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Finding Things","level":"3.1.6","depth":2,"next":{"title":"Shell extras","level":"4.1","depth":1,"path":"shell-extras/README.md","ref":"shell-extras/README.md","articles":[{"title":"Using screen to keep things running","level":"4.1.1","depth":2,"path":"shell-extras/screen.md","ref":"shell-extras/screen.md","articles":[]},{"title":"Advanced screen topics","level":"4.1.2","depth":2,"path":"shell-extras/screen2.md","ref":"shell-extras/screen2.md","articles":[]},{"title":"Persistent screen or tmux session","level":"4.1.3","depth":2,"path":"shell-extras/persistent-screen.md","ref":"shell-extras/persistent-screen.md","articles":[]},{"title":"Advanced shell topics","level":"4.1.4","depth":2,"path":"shell-extras/shell2.md","ref":"shell-extras/shell2.md","articles":[]}]},"previous":{"title":"Shell Scripts","level":"3.1.5","depth":2,"path":"shell/06-script.md","ref":"shell/06-script.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"shell/07-find.md","mtime":"2018-11-26T12:26:23.705Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
-</div>
+  <hr/>
 
-        
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation
 
-    </body>
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+    Hello world
+
+
+</body>
 </html>
-

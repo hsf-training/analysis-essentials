@@ -1,1212 +1,958 @@
 
-<!DOCTYPE HTML>
-<html lang="" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Lists and looping · LHCb analysis essentials</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
 
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Lists and looping &mdash; Analysis essentials  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
     
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-panels/panels.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-block-align/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/panels.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
 
-    
-        
-        <link rel="stylesheet" href="../css/website.css">
-        
-    
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dictionaries" href="dictionaries.html" />
+    <link rel="prev" title="Strings" href="strings.html" /> 
+</head>
 
-        
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+<body class="wy-body-for-nav">
 
+   
+  <div class="wy-grid-for-nav">
     
-    <link rel="next" href="dictionaries.html" />
-    
-    
-    <link rel="prev" href="strings.html" />
-    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
 
-    </head>
-    <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
+          
+            <a href="../index.html" class="icon icon-home"> Analysis essentials
+          
+
+          
             
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+            <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-            
-                <nav role="navigation">
-                
+          
+        </div>
 
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="2.1" data-path="./">
-            
-                <a href="./">
-            
-                    
-                    Python
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.1.1" data-path="running.html">
-            
-                <a href="running.html">
-            
-                    
-                    Running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.2" data-path="operators.html">
-            
-                <a href="operators.html">
-            
-                    
-                    Objects and operators
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.3" data-path="numbers.html">
-            
-                <a href="numbers.html">
-            
-                    
-                    Numbers
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.4" data-path="strings.html">
-            
-                <a href="strings.html">
-            
-                    
-                    Strings
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="2.1.5" data-path="lists.html">
-            
-                <a href="lists.html">
-            
-                    
-                    Lists and looping
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.6" data-path="dictionaries.html">
-            
-                <a href="dictionaries.html">
-            
-                    
-                    Dictionaries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.7" data-path="conditions.html">
-            
-                <a href="conditions.html">
-            
-                    
-                    Conditions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.8" data-path="methods.html">
-            
-                <a href="methods.html">
-            
-                    
-                    Methods
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.9" data-path="scripting.html">
-            
-                <a href="scripting.html">
-            
-                    
-                    Scripting
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.10" data-path="modules.html">
-            
-                <a href="modules.html">
-            
-                    
-                    Modules
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.11" data-path="learning.html">
-            
-                <a href="learning.html">
-            
-                    
-                    Learning more
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.12" data-path="first_histogram.html">
-            
-                <a href="first_histogram.html">
-            
-                    
-                    Making your first histogram
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.13" data-path="further_reading.html">
-            
-                <a href="further_reading.html">
-            
-                    
-                    Further reading
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="3.1" data-path="../shell/">
-            
-                <a href="../shell/">
-            
-                    
-                    Introducing the Shell
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.1.1" data-path="../shell/02-filedir.html">
-            
-                <a href="../shell/02-filedir.html">
-            
-                    
-                    Navigating Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.2" data-path="../shell/03-create.html">
-            
-                <a href="../shell/03-create.html">
-            
-                    
-                    Working With Files and Directories
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.3" data-path="../shell/04-pipefilter.html">
-            
-                <a href="../shell/04-pipefilter.html">
-            
-                    
-                    Pipes and Filters
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.4" data-path="../shell/05-loop.html">
-            
-                <a href="../shell/05-loop.html">
-            
-                    
-                    Loops
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.5" data-path="../shell/06-script.html">
-            
-                <a href="../shell/06-script.html">
-            
-                    
-                    Shell Scripts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.6" data-path="../shell/07-find.html">
-            
-                <a href="../shell/07-find.html">
-            
-                    
-                    Finding Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="4.1" data-path="../shell-extras/">
-            
-                <a href="../shell-extras/">
-            
-                    
-                    Shell extras
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1.1" data-path="../shell-extras/screen.html">
-            
-                <a href="../shell-extras/screen.html">
-            
-                    
-                    Using screen to keep things running
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.2" data-path="../shell-extras/screen2.html">
-            
-                <a href="../shell-extras/screen2.html">
-            
-                    
-                    Advanced screen topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.3" data-path="../shell-extras/persistent-screen.html">
-            
-                <a href="../shell-extras/persistent-screen.html">
-            
-                    
-                    Persistent screen or tmux session
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.4" data-path="../shell-extras/shell2.html">
-            
-                <a href="../shell-extras/shell2.html">
-            
-                    
-                    Advanced shell topics
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="5.1" data-path="../git/">
-            
-                <a href="../git/">
-            
-                    
-                    Version control with Git
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1.1" data-path="../git/01-basics.html">
-            
-                <a href="../git/01-basics.html">
-            
-                    
-                    Basics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.2" data-path="../git/02-setup.html">
-            
-                <a href="../git/02-setup.html">
-            
-                    
-                    Setting Up Git
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.3" data-path="../git/03-create.html">
-            
-                <a href="../git/03-create.html">
-            
-                    
-                    Creating a Repository
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.4" data-path="../git/04-changes.html">
-            
-                <a href="../git/04-changes.html">
-            
-                    
-                    Tracking Changes
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.5" data-path="../git/05-history.html">
-            
-                <a href="../git/05-history.html">
-            
-                    
-                    Exploring History
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.6" data-path="../git/06-ignore.html">
-            
-                <a href="../git/06-ignore.html">
-            
-                    
-                    Ignoring Things
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.7" data-path="../git/07-gitlab.html">
-            
-                <a href="../git/07-gitlab.html">
-            
-                    
-                    Remotes in CERN GitLab
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.8" data-path="../git/08-share.html">
-            
-                <a href="../git/08-share.html">
-            
-                    
-                    Sharing a repository with others
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.9" data-path="../git/09-pullrequests.html">
-            
-                <a href="../git/09-pullrequests.html">
-            
-                    
-                    Collaborating with Pull Requests
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.10" data-path="../git/10-conflict.html">
-            
-                <a href="../git/10-conflict.html">
-            
-                    
-                    Conflicts
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.11" data-path="../git/11-ci.html">
-            
-                <a href="../git/11-ci.html">
-            
-                    
-                    GitLab CI
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.12" data-path="../git/12-open.html">
-            
-                <a href="../git/12-open.html">
-            
-                    
-                    Open Science
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.13" data-path="../git/13-licensing.html">
-            
-                <a href="../git/13-licensing.html">
-            
-                    
-                    Licensing
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.14" data-path="../git/14-citation.html">
-            
-                <a href="../git/14-citation.html">
-            
-                    
-                    Citation
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="6.1" >
-            
-                <a target="_blank" href="ref://analysis-essentials.pdf">
-            
-                    
-                    Download PDF
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">An introduction to Python</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="README.html#aim-of-these-lessons">Aim of these lessons</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="running.html">Running Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="operators.html">Objects and operators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="operators.html#objects">Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="numbers.html">Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strings.html">Strings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="strings.html#formatting">Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lists and looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#looping">Looping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list-comprehension">List comprehension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tuples">Tuples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dictionaries.html">Dictionaries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conditions.html">Conditions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conditions.html#truthiness">Truthiness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conditions.html#conditions-in-loops">Conditions in loops</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="methods.html">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="methods.html#inline-methods">Inline methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scripting.html">Scripting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scripting.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html">Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#the-standard-library">The standard library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#modules-from-pypi">Modules from PyPi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#write-your-first-python-module">Write your first Python module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="learning.html">Learning more</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="learning.html#exploring-python">Exploring Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning.html#conventional-coding">Conventional coding</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="first_histogram.html">Making your first histogram</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="first_histogram.html#pandas">Pandas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="first_histogram.html#plotting-histograms">Plotting histograms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="first_histogram.html#applying-cuts">Applying cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="further_reading.html">More advanced topics in Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="further_reading.html#nice-standard-libraries">Nice standard libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="further_reading.html#nice-libraries-for-data-analysis">Nice libraries for data analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="further_reading.html#python-and-root">Python and ROOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-python/README.html">Advanced Python Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/1Basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Importing-modules">Importing modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html">2: First look at data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#5.-The-toy-dataset">5. The toy dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#6.-Plotting-a-histogram-with-matplotlib">6. Plotting a histogram with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Adding-variables">Adding variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Using-rectangular-cuts">Using rectangular cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/3Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/3Classification.html#Using-a-classifier">Using a classifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/3Classification.html#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">TODO Add a diagram of a decision tree for the above plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/4Extension.html">4: Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Distributions-in-the-Dalitz-features-for-signal-and-background">Distributions in the Dalitz features for signal and background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Preparation-of-train/test-datasets">Preparation of train/test datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Setting-up-classifiers,-training">Setting up classifiers, training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Let’s-look-at-the-results-of-training">Let’s look at the results of training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#ROC-curves-after-training">ROC curves after training</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html">6: Neural networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Downloading-a-dataset">Downloading a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-training-a-network">Example of training a network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Creating-your-own-neural-network">Creating your own neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-a-very-specific-neural-network">Example of a very specific neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Fitting-very-specific-expressions-as-estimators">Fitting very specific expressions as estimators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Writing-custom-pretransformer">Writing custom pretransformer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Ensembling-of-neural-neworks">Ensembling of neural neworks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/7DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Original-distributions">Original distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Comparing-some-simple-expressions:">Comparing some simple expressions:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination">GB-discrimination</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/8sPlot.html">8: sPlot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Applying-sWeights">Applying sWeights</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Compare">Compare</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#More-complex-case">More complex case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Building-sPlot-over-mass">Building sPlot over mass</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Of-course-we-don’t-have-labels-which-events-are-signal-and-which-are-background-beforehand">Of course we don’t have labels which events are signal and which are background beforehand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#We-have-no-information-about-real-labels">We have no information about real labels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Under-assumption-of-linearity:">Under assumption of linearity:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Minimization-of-variation">Minimization of variation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Uncorrelatedness">Uncorrelatedness</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/README.html">Introducing the Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-command-line-interface">The Command-Line Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-shell">The Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#why-bother">Why bother?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#nelle-s-pipeline-starting-point">Nelle’s Pipeline: Starting Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell/02-filedir.html">Navigating Files and Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/02-filedir.html#nelle-s-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/03-create.html">Working With Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/04-pipefilter.html">Pipes and Filters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/04-pipefilter.html#nelle-s-pipeline-checking-files">Nelle’s Pipeline: Checking Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/05-loop.html">Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/06-script.html">Shell Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/07-find.html">Finding Things</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell-extras/README.html">UNIX shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen.html">Using screen to keep things running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen2.html">Advanced screen topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#finding-lost-screens">Finding lost screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#using-tabs-in-screen">Using tabs in screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/persistent-screen.html">Persistent screen or tmux session on lxplus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#setting-up-password-less-kerberos-token">Setting up password-less kerberos token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#making-use-of-the-keytab">Making use of the keytab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token">Using k5reauth to automatically refresh your kerberos token</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/shell2.html">More about the UNIX shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#types-of-shell">Types of shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#manual-pages">Manual pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#environment-variables">Environment variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/shell2.html#let-s-now-try-the-following-callout">Let’s now try the following: {.callout}</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#differences-among-files">Differences among files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#looping-over-files">Looping over files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#conditionals">Conditionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#linking-commands">Linking commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#pipes-and-redirection">Pipes and redirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#bash-security">Bash security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#complexity">Complexity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-viewers">Text viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-editors">Text editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#disk-space">Disk space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/README.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/01-basics.html">Automated Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/02-setup.html">Setting Up Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/03-create.html">Creating a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/04-changes.html">Tracking Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/05-history.html">Exploring History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/06-ignore.html">Ignoring Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/07-gitlab.html">Remotes in CERN GitLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/08-share.html">Sharing a repository with others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/09-pullrequests.html">Collaborating with Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#what-is-a-pull-or-merge-request">What is a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#fork-the-original-project-repository">Fork the original project repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#clone-a-remote-project-and-its-fork">Clone a remote project and its fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#sync-your-local-repository-with-remote-changes">Sync your local repository with remote changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#implement-your-new-feature">Implement your new feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#push-changes">Push changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#create-a-pull-or-merge-request">Create a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#discussing-amending-retiring-a-merge-request">Discussing, amending, retiring a Merge Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#accepting-a-pull-request">Accepting a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#the-social-side-of-coding">The social side of coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#automatic-testing">Automatic testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../git/10-conflict.html">Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/11-ci.html">GitLab CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/12-open.html">Open Science</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/13-licensing.html">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/14-citation.html">Citation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributing-notebooks">Contributing notebooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
-
-                </nav>
             
-        
-    </div>
+          
+        </div>
+      </div>
+    </nav>
 
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-<div class="book-header" role="navigation">
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis essentials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
     
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="README.html">An introduction to Python</a> &raquo;</li>
+        
+      <li>Lists and looping</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/python/lists.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Lists and looping</a>
-    </h1>
+  
+  <hr/>
 </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
 
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
 
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
 
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
 
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="lists-and-looping">Lists and looping</h1>
-<p>Now things start to get <em>really</em> interesting! Lists are collections of things 
-stored in a specific order. They can be defined literally by wrapping things in 
-square brackets <code>[]</code>, separating items with commas <code>,</code>.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a = [<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">3</span>]
-<span class="hljs-meta">&gt;&gt;&gt; </span>a
-[<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">3</span>]
-</code></pre>
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="lists-and-looping">
+<h1>Lists and looping<a class="headerlink" href="#lists-and-looping" title="Permalink to this headline">¶</a></h1>
+<p>Now things start to get <em>really</em> interesting! Lists are collections of things
+stored in a specific order. They can be defined literally by wrapping things in
+square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>, separating items with commas <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">[4, 2, 9, 3]</span>
+</pre></div>
+</div>
 <p>Python lists can contain collections of whatever you like.</p>
-<pre><code>&gt;&gt;&gt; excellent = [41, &apos;Hello&apos;, math.sin]
-</code></pre><p>Each item in the list can be accessed by its <em>index</em>, its position in the list, 
-which starts at zero for the first item. Indexing by negative numbers starts 
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; excellent = [41, &#39;Hello&#39;, math.sin]
+</pre></div>
+</div>
+<p>Each item in the list can be accessed by its <em>index</em>, its position in the list,
+which starts at zero for the first item. Indexing by negative numbers starts
 from the <em>last</em> item of the list.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">0</span>]
-<span class="hljs-number">4</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">2</span>]
-<span class="hljs-number">9</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">-1</span>]
-<span class="hljs-number">3</span>
-</code></pre>
-<p>We&#x2019;ll get an error if we try to access an index that doesn&#x2019;t exist:</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">99</span>]
-Traceback (most recent call last):
-  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
-IndexError: list index out of range
-</code></pre>
-<p>Like strings, lists have a length which can be found with the <code>len</code> method.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>len(a)
-<span class="hljs-number">4</span>
-</code></pre>
-<p>Unlike strings, lists are <em>mutable</em>, which means we can modify lists in-place, 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>We’ll get an error if we try to access an index that doesn’t exist:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">99</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">IndexError</span>: <span class="n">list index out of range</span>
+</pre></div>
+</div>
+<p>Like strings, lists have a length which can be found with the <code class="docutils literal notranslate"><span class="pre">len</span></code> method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>Unlike strings, lists are <em>mutable</em>, which means we can modify lists in-place,
 without creating a new one.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a.append(<span class="hljs-number">45</span>)
-<span class="hljs-meta">&gt;&gt;&gt; </span>a
-[<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">3</span>, <span class="hljs-number">45</span>]
-<span class="hljs-meta">&gt;&gt;&gt; </span>len(a)
-<span class="hljs-number">5</span>
-</code></pre>
-<p>We can see that lists are mutable because using the <code>append</code> method didn&#x2019;t 
-print anything, and our variable <code>a</code> now has a different value.</p>
-<p>Because lists are mutable, we can use the special <code>del</code> keyword to remove 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">[4, 2, 9, 3, 45]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+<p>We can see that lists are mutable because using the <code class="docutils literal notranslate"><span class="pre">append</span></code> method didn’t
+print anything, and our variable <code class="docutils literal notranslate"><span class="pre">a</span></code> now has a different value.</p>
+<p>Because lists are mutable, we can use the special <code class="docutils literal notranslate"><span class="pre">del</span></code> keyword to remove
 specific indices from the list.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">del</span> a[<span class="hljs-number">-2</span>]
-<span class="hljs-meta">&gt;&gt;&gt; </span>a
-[<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">45</span>]
-</code></pre>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9692184608);" id="functions-and-keywords"><i class="fa fa-info-circle"></i> Functions and keywords<span id="heading-9692184608"></span></h3></div><div class="panel-body" id="panel-9692184608"><p><code>del</code> is a language keyword representing an action, and not a function. The
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">[4, 2, 9, 45]</span>
+</pre></div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="functions-and-keywords"><i class="fa fa-info-circle"></i> Functions and keywords</p>
+</div>
+<div class="panel-body docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">del</span></code> is a language keyword representing an action, and not a function. The
 syntactic difference is that functions take their arguments between parentheses,
-such as <code>my_function(1, 2, 3)</code>, whereas <code>del</code> does not.</p>
-</div></div></p>
+such as <code class="docutils literal notranslate"><span class="pre">my_function(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code>, whereas <code class="docutils literal notranslate"><span class="pre">del</span></code> does not.</p>
+</div>
+</div>
 <p>You can retrieve sub-lists by using <em>slice</em> notation whilst indexing.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">1</span>:<span class="hljs-number">-1</span>]
-[<span class="hljs-number">2</span>, <span class="hljs-number">9</span>]
-</code></pre>
-<p>This retrieves the part of list <code>a</code> starting from index <code>1</code> until <em>just before</em> 
-index <code>-1</code>. The indexing is &#x2018;exclusive&#x2019; in that it excludes the item of the 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">[2, 9]</span>
+</pre></div>
+</div>
+<p>This retrieves the part of list <code class="docutils literal notranslate"><span class="pre">a</span></code> starting from index <code class="docutils literal notranslate"><span class="pre">1</span></code> until <em>just before</em>
+index <code class="docutils literal notranslate"><span class="pre">-1</span></code>. The indexing is ‘exclusive’ in that it excludes the item of the
 last index. This is the convention of indexing in Python.</p>
-<p>You can omit a number in the first or second indexing position, and Python will 
-assume you mean the first element (index zero) and last element (index 
-<code>len(array)</code>).</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a[:<span class="hljs-number">-2</span>]
-[<span class="hljs-number">4</span>, <span class="hljs-number">2</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">1</span>:]
-[<span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">45</span>]
-<span class="hljs-meta">&gt;&gt;&gt; </span>a[:]
-[<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">45</span>]
-</code></pre>
-<p>Slicing returns a copy of the array, so modifying the return value doesn&#x2019;t 
+<p>You can omit a number in the first or second indexing position, and Python will
+assume you mean the first element (index zero) and last element (index
+<code class="docutils literal notranslate"><span class="pre">len(array)</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">[4, 2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="go">[2, 9, 45]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[:]</span>
+<span class="go">[4, 2, 9, 45]</span>
+</pre></div>
+</div>
+<p>Slicing returns a copy of the array, so modifying the return value doesn’t
 affect the original array.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>b = a[<span class="hljs-number">1</span>:]
-<span class="hljs-meta">&gt;&gt;&gt; </span>b
-[<span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">45</span>]
-<span class="hljs-meta">&gt;&gt;&gt; </span>b[<span class="hljs-number">0</span>] = <span class="hljs-number">3</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span>b
-[<span class="hljs-number">3</span>, <span class="hljs-number">9</span>, <span class="hljs-number">45</span>]
-<span class="hljs-meta">&gt;&gt;&gt; </span>a
-[<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">45</span>]
-</code></pre>
-<p>We did something cool there by assigning a value to a specific index, <code>b[0] =
-3</code>. The same trick works with slices.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>b[:<span class="hljs-number">2</span>] = [<span class="hljs-number">99</span>, <span class="hljs-number">2</span>, <span class="hljs-number">78</span>]
-<span class="hljs-meta">&gt;&gt;&gt; </span>b
-[<span class="hljs-number">99</span>, <span class="hljs-number">2</span>, <span class="hljs-number">78</span>, <span class="hljs-number">45</span>]
-</code></pre>
-<p>This is equivalent of <em>replacing</em> a certain range (<code>:2</code>, or items at position 0
-and 1) of the list <code>b</code> with other items from another list. Note that in our
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">[2, 9, 45]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">[3, 9, 45]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">[4, 2, 9, 45]</span>
+</pre></div>
+</div>
+<p>We did something cool there by assigning a value to a specific index, <code class="docutils literal notranslate"><span class="pre">b[0]</span> <span class="pre">=</span> <span class="pre">3</span></code>. The same trick works with slices.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">99</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">78</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">[99, 2, 78, 45]</span>
+</pre></div>
+</div>
+<p>This is equivalent of <em>replacing</em> a certain range (<code class="docutils literal notranslate"><span class="pre">:2</span></code>, or items at position 0
+and 1) of the list <code class="docutils literal notranslate"><span class="pre">b</span></code> with other items from another list. Note that in our
 example we replace 2 elements with 3. The same syntax might be used for
 inserting elements at an arbitrary position in the list. If we want to insert
 the number 6 between the 2 and the 78 in the list above, we would use:</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>b[<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] = [<span class="hljs-number">6</span>]
-<span class="hljs-meta">&gt;&gt;&gt; </span>b
-[<span class="hljs-number">99</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">78</span>, <span class="hljs-number">45</span>]
-</code></pre>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">[99, 2, 6, 78, 45]</span>
+</pre></div>
+</div>
 <p>meaning <em>take out 0 elements from the list starting a position 2 and insert the
-content of the list <code>[6]</code> in that position</em>.</p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2326676460);" id="copying-a-list"><i class="fa fa-square-o"></i> Copying a list<span id="heading-2326676460"></span></h3></div><div class="panel-body" id="panel-2326676460"><p>Slicing creates a copy, so what notation could you use to copy the full list?</p>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6017176339);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-6017176339">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-6017176339"><p>You need to slice from the very beginning to the very end of the list.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a[:]
-[<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">45</span>]
-</code></pre>
+content of the list <code class="docutils literal notranslate"><span class="pre">[6]</span></code> in that position</em>.</p>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="copying-a-list"><i class="fa fa-square-o"></i> Copying a list</p>
+</div>
+<div class="panel-body docutils container">
+<p>Slicing creates a copy, so what notation could you use to copy the full list?</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>You need to slice from the very beginning to the very end of the list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[:]</span>
+<span class="go">[4, 2, 9, 45]</span>
+</pre></div>
+</div>
 <p>This is equivalent to specifying the indices explicitly.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">0</span>:len(a)]
-[<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>, <span class="hljs-number">45</span>]
-</code></pre>
-</div></div></div></div></p>
-<h2 id="looping">Looping</h2>
-<p>When you&#x2019;ve got a collection of things, it&#x2019;s pretty common to want to access 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)]</span>
+<span class="go">[4, 2, 9, 45]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="looping">
+<h2>Looping<a class="headerlink" href="#looping" title="Permalink to this headline">¶</a></h2>
+<p>When you’ve got a collection of things, it’s pretty common to want to access
 each one sequentially. This is called looping, or iterating, and is super easy.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> a:
-<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> item
-...
-<span class="hljs-number">4</span>
-<span class="hljs-number">2</span>
-<span class="hljs-number">9</span>
-<span class="hljs-number">45</span>
-</code></pre>
-<p>We have to indent the code inside the <code>for</code> loop to tell Python that these
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="n">item</span>
+<span class="gp">...</span>
+<span class="go">4</span>
+<span class="go">2</span>
+<span class="go">9</span>
+<span class="go">45</span>
+</pre></div>
+</div>
+<p>We have to indent the code inside the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to tell Python that these
 lines should be run for every iteration.</p>
-<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6609010447);" id="indentation-in-python"><i class="fa fa-info-circle"></i> Indentation in Python<span id="heading-6609010447"></span></h3></div><div class="panel-body" id="panel-6609010447"><p>The <code>for</code> loop is a block, and every Python block requires indentation, unlike
-other &quot;free-form&quot; languages such as C++ or Java. This means that Python will
-throw an error if you don&apos;t indent:</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> b:
-<span class="hljs-meta">... </span>print(i)
-  File <span class="hljs-string">&quot;&lt;ipython-input-56-11d6523211c0&gt;&quot;</span>, line <span class="hljs-number">2</span>
-    print(i)
-        ^
-IndentationError: expected an indented block
-</code></pre>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="indentation-in-python"><i class="fa fa-info-circle"></i> Indentation in Python</p>
+</div>
+<div class="panel-body docutils container">
+<p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is a block, and every Python block requires indentation, unlike
+other “free-form” languages such as C++ or Java. This means that Python will
+throw an error if you don’t indent:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+<span class="gp">... </span><span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+  File <span class="nb">&quot;&lt;ipython-input-56-11d6523211c0&gt;&quot;</span>, line <span class="m">2</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="o">^</span>
+<span class="gr">IndentationError</span>: <span class="n">expected an indented block</span>
+</pre></div>
+</div>
 <p>Indentation must be consistent within the same block, so if you indent two lines
-in the same <code>for</code> loop using a different number of spaces, Python will complain
+in the same <code class="docutils literal notranslate"><span class="pre">for</span></code> loop using a different number of spaces, Python will complain
 once again:</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> b:
-<span class="hljs-meta">... </span>  print(<span class="hljs-string">&quot;I am in a loop&quot;</span>)
-<span class="hljs-meta">... </span>    print(i)
-  File <span class="hljs-string">&quot;&lt;ipython-input-57-5c3d29e65ad9&gt;&quot;</span>, line <span class="hljs-number">3</span>
-    print(i)
-    ^
-IndentationError: unexpected indent
-</code></pre>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="k">print</span><span class="p">(</span><span class="s2">&quot;I am in a loop&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+  File <span class="nb">&quot;&lt;ipython-input-57-5c3d29e65ad9&gt;&quot;</span>, line <span class="m">3</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="o">^</span>
+<span class="gr">IndentationError</span>: <span class="n">unexpected indent</span>
+</pre></div>
+</div>
 <p>Indentation is necessary as Python does not use any keyword or symbol to
-determine the end of a block (<em>e.g.</em> there is no <code>endfor</code>). As a side effect,
+determine the end of a block (<em>e.g.</em> there is no <code class="docutils literal notranslate"><span class="pre">endfor</span></code>). As a side effect,
 indentation forces you to make your code more readable!</p>
 <p>Note that it does not matter how many spaces you use for indentation. <strong>As a
 convention, we are using four spaces.</strong></p>
-</div></div></p>
-<p>The variable name <code>item</code> can be whatever we want, but its value is changed by 
-Python to be the element of the item we&#x2019;re currently on, starting from the 
+</div>
+</div>
+<p>The variable name <code class="docutils literal notranslate"><span class="pre">item</span></code> can be whatever we want, but its value is changed by
+Python to be the element of the item we’re currently on, starting from the
 first.</p>
-<p>Because lists are mutable, we can try to modify the length of the list whilst 
-we&#x2019;re iterating.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a_copy = a[:]
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> a_copy:
-<span class="hljs-meta">... </span>    <span class="hljs-keyword">del</span> a_copy[<span class="hljs-number">0</span>]
-...
-<span class="hljs-meta">&gt;&gt;&gt; </span>a_copy
-[<span class="hljs-number">9</span>, <span class="hljs-number">45</span>]
-</code></pre>
-<p>Intuitively, you might expect <code>a_copy</code> to be empty, but it&#x2019;s not! The technical
-reasons aren&#x2019;t important, but this highlights an important rule: <strong>never
-modify the length of a list whilst iterating over it!</strong> You won&#x2019;t end up with
+<p>Because lists are mutable, we can try to modify the length of the list whilst
+we’re iterating.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_copy</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a_copy</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">del</span> <span class="n">a_copy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a_copy</span>
+<span class="go">[9, 45]</span>
+</pre></div>
+</div>
+<p>Intuitively, you might expect <code class="docutils literal notranslate"><span class="pre">a_copy</span></code> to be empty, but it’s not! The technical
+reasons aren’t important, but this highlights an important rule: <strong>never
+modify the length of a list whilst iterating over it!</strong> You won’t end up with
 what you expect.</p>
-<p>You can, however, freely modify the <em>values</em> of each item in the list whilst 
+<p>You can, however, freely modify the <em>values</em> of each item in the list whilst
 looping. This is a very common use case.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a_copy = a[:]
-<span class="hljs-meta">&gt;&gt;&gt; </span>i = <span class="hljs-number">0</span>
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> a_copy:
-<span class="hljs-meta">... </span>    a_copy[i] = <span class="hljs-number">2</span>*item
-<span class="hljs-meta">... </span>    i += <span class="hljs-number">1</span>
-...
-<span class="hljs-meta">&gt;&gt;&gt; </span>a_copy
-[<span class="hljs-number">8</span>, <span class="hljs-number">4</span>, <span class="hljs-number">18</span>, <span class="hljs-number">90</span>]
-</code></pre>
-<p>Keeping track of the current index ourselves, with <code>i</code> is annoying, but luckily 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_copy</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a_copy</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">a_copy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">item</span>
+<span class="gp">... </span>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a_copy</span>
+<span class="go">[8, 4, 18, 90]</span>
+</pre></div>
+</div>
+<p>Keeping track of the current index ourselves, with <code class="docutils literal notranslate"><span class="pre">i</span></code> is annoying, but luckily
 Python gives us a nicer way of doing that.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a_doubled = a[:]
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> index, item <span class="hljs-keyword">in</span> enumerate(a_doubled):
-<span class="hljs-meta">... </span>    a_doubled[index] = <span class="hljs-number">2</span>*item
-...
-<span class="hljs-meta">&gt;&gt;&gt; </span>a_doubled
-[<span class="hljs-number">8</span>, <span class="hljs-number">4</span>, <span class="hljs-number">18</span>, <span class="hljs-number">90</span>]
-</code></pre>
-<p>There&#x2019;s a lot going on here. Firstly, note that Python lets you assign values 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_doubled</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a_doubled</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">a_doubled</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">item</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a_doubled</span>
+<span class="go">[8, 4, 18, 90]</span>
+</pre></div>
+</div>
+<p>There’s a lot going on here. Firstly, note that Python lets you assign values
 to multiple variables at the same time.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>one, two = [<span class="hljs-number">34</span>, <span class="hljs-number">43</span>]
-<span class="hljs-meta">&gt;&gt;&gt; </span>print(two, one)
-<span class="hljs-number">43</span> <span class="hljs-number">34</span>
-</code></pre>
-<p>That&#x2019;s already pretty cool! But then think about what happens if you had a list 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">one</span><span class="p">,</span> <span class="n">two</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">43</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">two</span><span class="p">,</span> <span class="n">one</span><span class="p">)</span>
+<span class="go">43 34</span>
+</pre></div>
+</div>
+<p>That’s already pretty cool! But then think about what happens if you had a list
 where each item was another list, each containing two numbers.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>nested = [[<span class="hljs-number">20</span>, <span class="hljs-number">29</span>], [<span class="hljs-number">30</span>, <span class="hljs-number">34</span>]]
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> nested:
-<span class="hljs-meta">... </span>    print(item)
-...
-[<span class="hljs-number">20</span>, <span class="hljs-number">29</span>]
-[<span class="hljs-number">30</span>, <span class="hljs-number">34</span>]
-</code></pre>
-<p>So, we can just assign each item in the sublist to separate variables in the 
-<code>for</code> statement.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> one, two <span class="hljs-keyword">in</span> nested:
-<span class="hljs-meta">... </span>    print(two, one)
-...
-<span class="hljs-number">29</span> <span class="hljs-number">20</span>
-<span class="hljs-number">34</span> <span class="hljs-number">30</span>
-</code></pre>
-<p>Now we can understand a little better what <code>enumerate</code> does: for each item in 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nested</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">29</span><span class="p">],</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">34</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">nested</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">[20, 29]</span>
+<span class="go">[30, 34]</span>
+</pre></div>
+</div>
+<p>So, we can just assign each item in the sublist to separate variables in the
+<code class="docutils literal notranslate"><span class="pre">for</span></code> statement.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">one</span><span class="p">,</span> <span class="n">two</span> <span class="ow">in</span> <span class="n">nested</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">two</span><span class="p">,</span> <span class="n">one</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">29 20</span>
+<span class="go">34 30</span>
+</pre></div>
+</div>
+<p>Now we can understand a little better what <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> does: for each item in
 the list, it returns a new list containing the current index and the item.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>enumerate(a)
-&lt;enumerate object at <span class="hljs-number">0x7f5abe5b1190</span>&gt;
-<span class="hljs-meta">&gt;&gt;&gt; </span>list(enumerate(a))
-[(<span class="hljs-number">0</span>, <span class="hljs-number">4</span>), (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>), (<span class="hljs-number">2</span>, <span class="hljs-number">9</span>), (<span class="hljs-number">3</span>, <span class="hljs-number">45</span>)]
-</code></pre>
-<p>For performance reasons <code>enumerate</code> doesn&#x2019;t return a list directly, but instead
-something that the <code>for</code> statement knows how to iterate over (this is called a
-<a href="https://wiki.python.org/moin/Generators" target="_blank">generator</a> and for the moment you
-don&apos;t need to know how it works). We can convert it to a list with the <code>list</code>
-method when we want to see what&#x2019;s it doing.</p>
-<p>This technique of looping over lists of lists lets us loop over two lists 
-simultaneously, using the <code>zip</code> method.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> item, item2 <span class="hljs-keyword">in</span> zip(a, a_doubled):
-<span class="hljs-meta">... </span>    print(item2, item)
-...
-<span class="hljs-number">8</span> <span class="hljs-number">4</span>
-<span class="hljs-number">4</span> <span class="hljs-number">2</span>
-<span class="hljs-number">18</span> <span class="hljs-number">9</span>
-<span class="hljs-number">90</span> <span class="hljs-number">45</span>
-</code></pre>
-<p>Neat! As before, we can see what <code>zip</code> is doing explicitly by using <code>list</code>.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>list(zip(a, a_doubled))
-[(<span class="hljs-number">4</span>, <span class="hljs-number">8</span>), (<span class="hljs-number">2</span>, <span class="hljs-number">4</span>), (<span class="hljs-number">9</span>, <span class="hljs-number">18</span>), (<span class="hljs-number">45</span>, <span class="hljs-number">90</span>)]
-</code></pre>
-<p>You can see that the structure of the list that&#x2019;s iterated over, the output of 
-<code>zip</code>, is identical to that for <code>enumerate</code>.</p>
-<p>Finally, we&#x2019;ll take a quick look at the <code>range</code> method.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>):
-        print(i)
-<span class="hljs-number">0</span>
-<span class="hljs-number">1</span>
-<span class="hljs-number">2</span>
-<span class="hljs-number">3</span>
-<span class="hljs-number">4</span>
-<span class="hljs-number">5</span>
-<span class="hljs-number">6</span>
-<span class="hljs-number">7</span>
-<span class="hljs-number">8</span>
-<span class="hljs-number">9</span>
-</code></pre>
-<p>The arguments to <code>range</code> work just like slicing, the second argument is treated 
-exclusively, as its value is excluded from the output. Again like slicing, we 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">&lt;enumerate object at 0x7f5abe5b1190&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="go">[(0, 4), (1, 2), (2, 9), (3, 45)]</span>
+</pre></div>
+</div>
+<p>For performance reasons <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> doesn’t return a list directly, but instead
+something that the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement knows how to iterate over (this is called a
+<a class="reference external" href="https://wiki.python.org/moin/Generators">generator</a> and for the moment you
+don’t need to know how it works). We can convert it to a list with the <code class="docutils literal notranslate"><span class="pre">list</span></code>
+method when we want to see what’s it doing.</p>
+<p>This technique of looping over lists of lists lets us loop over two lists
+simultaneously, using the <code class="docutils literal notranslate"><span class="pre">zip</span></code> method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span><span class="p">,</span> <span class="n">item2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a_doubled</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">item2</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">8 4</span>
+<span class="go">4 2</span>
+<span class="go">18 9</span>
+<span class="go">90 45</span>
+</pre></div>
+</div>
+<p>Neat! As before, we can see what <code class="docutils literal notranslate"><span class="pre">zip</span></code> is doing explicitly by using <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a_doubled</span><span class="p">))</span>
+<span class="go">[(4, 8), (2, 4), (9, 18), (45, 90)]</span>
+</pre></div>
+</div>
+<p>You can see that the structure of the list that’s iterated over, the output of
+<code class="docutils literal notranslate"><span class="pre">zip</span></code>, is identical to that for <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</p>
+<p>Finally, we’ll take a quick look at the <code class="docutils literal notranslate"><span class="pre">range</span></code> method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+<span class="go">        print(i)</span>
+<span class="go">0</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">4</span>
+<span class="go">5</span>
+<span class="go">6</span>
+<span class="go">7</span>
+<span class="go">8</span>
+<span class="go">9</span>
+</pre></div>
+</div>
+<p>The arguments to <code class="docutils literal notranslate"><span class="pre">range</span></code> work just like slicing, the second argument is treated
+exclusively, as its value is excluded from the output. Again like slicing, we
 can specify a third argument as the step size for the iteration.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">2</span>):
-        print(i)
-<span class="hljs-number">0</span>
-<span class="hljs-number">2</span>
-<span class="hljs-number">4</span>
-<span class="hljs-number">6</span>
-<span class="hljs-number">8</span>
-</code></pre>
-<p>If you only give a single argument to <code>range</code>, it assumes you&#x2019;ve given the end 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+<span class="go">        print(i)</span>
+<span class="go">0</span>
+<span class="go">2</span>
+<span class="go">4</span>
+<span class="go">6</span>
+<span class="go">8</span>
+</pre></div>
+</div>
+<p>If you only give a single argument to <code class="docutils literal notranslate"><span class="pre">range</span></code>, it assumes you’ve given the end
 value, and want a starting value of zero.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">5</span>)
-        print(i)
-<span class="hljs-number">0</span>
-<span class="hljs-number">1</span>
-<span class="hljs-number">2</span>
-<span class="hljs-number">3</span>
-<span class="hljs-number">4</span>
-</code></pre>
-<p>This reads &#x201C;give me a list of length 5, in steps of 1, starting from zero&#x201D;.</p>
-<p>Now that we know how to easily generate sequences of numbers, we can write 
-<code>enumerate</code> by hand!</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> index, item <span class="hljs-keyword">in</span> zip(range(len(a)), a):
-<span class="hljs-meta">... </span>    print(index, item)
-...
-<span class="hljs-number">0</span> <span class="hljs-number">4</span>
-<span class="hljs-number">1</span> <span class="hljs-number">2</span>
-<span class="hljs-number">2</span> <span class="hljs-number">9</span>
-<span class="hljs-number">3</span> <span class="hljs-number">45</span>
-</code></pre>
-<p>Just like before! When you see something cool like <code>enumerate</code>, it can be fun 
-trying to see how you&#x2019;d accomplish something similar with different building 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">        print(i)</span>
+<span class="go">0</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>This reads “give me a list of length 5, in steps of 1, starting from zero”.</p>
+<p>Now that we know how to easily generate sequences of numbers, we can write
+<code class="docutils literal notranslate"><span class="pre">enumerate</span></code> by hand!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)),</span> <span class="n">a</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">0 4</span>
+<span class="go">1 2</span>
+<span class="go">2 9</span>
+<span class="go">3 45</span>
+</pre></div>
+</div>
+<p>Just like before! When you see something cool like <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>, it can be fun
+trying to see how you’d accomplish something similar with different building
 blocks.</p>
-<h2 id="list-comprehension">List comprehension</h2>
-<p>We&#x2019;ve already made a new list from an existing one when we created <code>a_doubled</code>.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a_doubled = a[:]
-<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> index, item <span class="hljs-keyword">in</span> enumerate(a_doubled):
-<span class="hljs-meta">... </span>    a_doubled[index] = <span class="hljs-number">2</span>*item
-</code></pre>
-<p>Creating a new list from an existing one is a common operation, so Python has a 
+</div>
+<div class="section" id="list-comprehension">
+<h2>List comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this headline">¶</a></h2>
+<p>We’ve already made a new list from an existing one when we created <code class="docutils literal notranslate"><span class="pre">a_doubled</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_doubled</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a_doubled</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">a_doubled</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">item</span>
+</pre></div>
+</div>
+<p>Creating a new list from an existing one is a common operation, so Python has a
 shorthand syntax called <em>list comprehension</em>.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>a_doubled = [<span class="hljs-number">2</span>*item <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> a]
-<span class="hljs-meta">&gt;&gt;&gt; </span>a_doubled
-[<span class="hljs-number">8</span>, <span class="hljs-number">4</span>, <span class="hljs-number">18</span>, <span class="hljs-number">90</span>]
-</code></pre>
-<p>Isn&#x2019;t that beautiful?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_doubled</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a_doubled</span>
+<span class="go">[8, 4, 18, 90]</span>
+</pre></div>
+</div>
+<p>Isn’t that beautiful?</p>
 <p>We can use the same multi-variable stuff we learnt whilst looping.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>[index*item <span class="hljs-keyword">for</span> index, item <span class="hljs-keyword">in</span> enumerate(a)]
-[<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">18</span>, <span class="hljs-number">135</span>]
-</code></pre>
-<p>We&#x2019;re not restricted to creating new lists with the same structure as the 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">index</span><span class="o">*</span><span class="n">item</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">)]</span>
+<span class="go">[0, 2, 18, 135]</span>
+</pre></div>
+</div>
+<p>We’re not restricted to creating new lists with the same structure as the
 original.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>[[item, item*item] <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> a]
-[[<span class="hljs-number">4</span>, <span class="hljs-number">16</span>], [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">9</span>, <span class="hljs-number">81</span>], [<span class="hljs-number">45</span>, <span class="hljs-number">2025</span>]]
-</code></pre>
-<p>We can even filter out items from the original list using <code>if</code>.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>[[item, item*item] <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> a <span class="hljs-keyword">if</span> item % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>]
-[[<span class="hljs-number">4</span>, <span class="hljs-number">16</span>], [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>]]
-</code></pre>
-<p>List comprehensions are a powerful way of succinctly creating new lists. But be 
-responsible; if you find you&#x2019;re doing something complicated, it&#x2019;s probably 
-better to write a full <code>for</code> loop.</p>
-<h2 id="tuples">Tuples</h2>
-<p>A close relative of lists are tuples, which differ in that they cannot be 
-mutated after creation.  You can create tuples literally using parentheses, or 
-convert things to tuples using the <code>tuple</code> method.</p>
-<pre><code class="lang-python">&gt;&gt;&gt; a = (3, 4)
-&gt;&gt;&gt; del a[0]
-Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-TypeError: &apos;tuple&apos; object doesn&apos;t support item deletion
-&gt;&gt;&gt; a.append(5)
-Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-AttributeError: &apos;tuple&apos; object has no attribute &apos;append&apos;
-&gt;&gt;&gt; a[0] = 1
-Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-TypeError: &apos;tuple&apos; object does not support item assignment
-&gt;&gt;&gt; b = tuple([65, &apos;yes&apos;])
-&gt;&gt;&gt; b
-(65, &apos;yes&apos;)
-</code></pre>
-<p>Tuples are usually used to describe data whose length is meaningful in and of 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[[</span><span class="n">item</span><span class="p">,</span> <span class="n">item</span><span class="o">*</span><span class="n">item</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+<span class="go">[[4, 16], [2, 4], [9, 81], [45, 2025]]</span>
+</pre></div>
+</div>
+<p>We can even filter out items from the original list using <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[[</span><span class="n">item</span><span class="p">,</span> <span class="n">item</span><span class="o">*</span><span class="n">item</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">if</span> <span class="n">item</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="go">[[4, 16], [2, 4]]</span>
+</pre></div>
+</div>
+<p>List comprehensions are a powerful way of succinctly creating new lists. But be
+responsible; if you find you’re doing something complicated, it’s probably
+better to write a full <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+</div>
+<div class="section" id="tuples">
+<h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h2>
+<p>A close relative of lists are tuples, which differ in that they cannot be
+mutated after creation.  You can create tuples literally using parentheses, or
+convert things to tuples using the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">&#39;tuple&#39; object doesn&#39;t support item deletion</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">AttributeError</span>: <span class="n">&#39;tuple&#39; object has no attribute &#39;append&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">&#39;tuple&#39; object does not support item assignment</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="mi">65</span><span class="p">,</span> <span class="s1">&#39;yes&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">(65, &#39;yes&#39;)</span>
+</pre></div>
+</div>
+<p>Tuples are usually used to describe data whose length is meaningful in and of
 itself. For example, you could express coordinates as a tuple.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>coords = (<span class="hljs-number">3.2</span>, <span class="hljs-number">0.1</span>)
-<span class="hljs-meta">&gt;&gt;&gt; </span>x, y = coords
-</code></pre>
-<p>This is nice because it doesn&#x2019;t make sense to append to an <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x, y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> 
-coordinate, nor to &#x2018;delete&#x2019; a dimension. Generally, it can be useful if the 
-data structure you&#x2019;re using respects the <em>meaning</em> of the data you&#x2019;re storing.</p>
-<p>If you can&#x2019;t think of a use for tuples yourself, its worth keeping in mind that 
-Python creates tuples for groups of things by default. We saw that 
-earlier when we used <code>enumerate</code>.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>list(enumerate([<span class="hljs-number">4</span>, <span class="hljs-number">9</span>]))
-[(<span class="hljs-number">0</span>, <span class="hljs-number">4</span>), (<span class="hljs-number">1</span>, <span class="hljs-number">9</span>)]
-</code></pre>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coords</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">coords</span>
+</pre></div>
+</div>
+<p>This is nice because it doesn’t make sense to append to an <span class="math notranslate nohighlight">\( (x, y) \)</span>
+coordinate, nor to ‘delete’ a dimension. Generally, it can be useful if the
+data structure you’re using respects the <em>meaning</em> of the data you’re storing.</p>
+<p>If you can’t think of a use for tuples yourself, its worth keeping in mind that
+Python creates tuples for groups of things by default. We saw that
+earlier when we used <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">]))</span>
+<span class="go">[(0, 4), (1, 9)]</span>
+</pre></div>
+</div>
 <p>Each element of the list is a tuple.</p>
-<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1328929600);" id="write-a-list-comprehension-yourself"><i class="fa fa-square-o"></i> Write a list comprehension yourself<span id="heading-1328929600"></span></h3></div><div class="panel-body" id="panel-1328929600"><p>Compute the square of the magnitude of the sum of the following two 
-three-vectors, using a single list comprehension and the global <code>sum</code> method.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>kaon = [<span class="hljs-number">3.4</span>, <span class="hljs-number">4.3</span>, <span class="hljs-number">20.0</span>]
-<span class="hljs-meta">&gt;&gt;&gt; </span>pion = [<span class="hljs-number">1.4</span>, <span class="hljs-number">0.9</span>, <span class="hljs-number">19.8</span>]
-</code></pre>
-<p>It might help to first think about how you&#x2019;d compute the quantity for a single 
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="write-a-list-comprehension-yourself"><i class="fa fa-square-o"></i> Write a list comprehension yourself</p>
+</div>
+<div class="panel-body docutils container">
+<p>Compute the square of the magnitude of the sum of the following two
+three-vectors, using a single list comprehension and the global <code class="docutils literal notranslate"><span class="pre">sum</span></code> method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kaon</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.4</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pion</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">19.8</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>It might help to first think about how you’d compute the quantity for a single
 vector.</p>
-<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2290801120);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-2290801120">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-2290801120"><p>Not sure what the <code>sum</code> method does? Ask for <code>help</code>!</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>help(sum)
-</code></pre>
-<p>The square magnitude is the sum of the squares of the components, where the 
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>Not sure what the <code class="docutils literal notranslate"><span class="pre">sum</span></code> method does? Ask for <code class="docutils literal notranslate"><span class="pre">help</span></code>!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The square magnitude is the sum of the squares of the components, where the
 components are the sum of the two input vectors.</p>
-<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>magsq = sum([(k + pi)**<span class="hljs-number">2</span> <span class="hljs-keyword">for</span> k, pi <span class="hljs-keyword">in</span> zip(kaon, pion)])
-</code></pre>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">magsq</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([(</span><span class="n">k</span> <span class="o">+</span> <span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">pi</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">kaon</span><span class="p">,</span> <span class="n">pion</span><span class="p">)])</span>
+</pre></div>
+</div>
 <p>The square root of this is around 40.42.</p>
-</div></div></div></div></p>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
-                        </div>
-                    </div>
-                
-            </div>
 
-            
-                
-                <a href="strings.html" class="navigation navigation-prev " aria-label="Previous page: Strings">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="dictionaries.html" class="navigation navigation-next " aria-label="Next page: Dictionaries">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dictionaries.html" class="btn btn-neutral float-right" title="Dictionaries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="strings.html" class="btn btn-neutral float-left" title="Strings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lists and looping","level":"2.1.5","depth":2,"next":{"title":"Dictionaries","level":"2.1.6","depth":2,"path":"python/dictionaries.md","ref":"python/dictionaries.md","articles":[]},"previous":{"title":"Strings","level":"2.1.4","depth":2,"path":"python/strings.md","ref":"python/strings.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#master","collapsible-menu","block-align","otherlink"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"otherlink":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LHCb analysis essentials","gitbook":"*","description":"Material for the first half of the LHCb Starterkit. Covers the basics of Git, Python, and the UNIX shell."},"file":{"path":"python/lists.md","mtime":"2018-11-26T12:26:23.701Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T12:29:31.553Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
-</div>
+  <hr/>
 
-        
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-panels/panels.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-otherlink/js/otherlink.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation
 
-    </body>
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+    Hello world
+
+
+</body>
 </html>
-
