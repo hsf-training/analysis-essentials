@@ -8,8 +8,8 @@ author = 'HSF'
 html_logo = 'hsf_logo_angled.png'
 
 exclude_patterns += [
-    r'shell/data-shell/**',
-    r'README\.md',
+    'shell/data-shell/**',
+    'README.md',
 ]
 
 html_context = {
