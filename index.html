@@ -402,6 +402,7 @@
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
     
       <li><a href="#">Docs</a> &raquo;</li>
@@ -462,8 +463,54 @@ during the <a class="reference external" href="https://lhcb.github.io/starterkit
 able to follow the experiment-specific lessons that are taught afterwards.</p>
 <p>Contributions to the lessons are highly encouraged. Please see the
 <a class="reference internal" href="CONTRIBUTING.html"><span class="doc">contributing guide</span></a> for details on how to participate.</p>
-<p>If you have any problems or questions, you can <a class="reference external" href="https://github.com/hsf-training/analysis-essentials/issues">open an issue</a> on this
-repository.</p>
+<div class="section" id="prerequisits">
+<h2>Prerequisits<a class="headerlink" href="#prerequisits" title="Permalink to this headline">¶</a></h2>
+<p>This tutorial uses <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.7</span></code> and requires some packages. It is
+reccommended to use <a class="reference external" href="https://docs.conda.io/en/latest/">Conda</a> to install the
+correct packages.</p>
+<p>To install <code class="docutils literal notranslate"><span class="pre">Conda</span></code> you will need to do the following:</p>
+<ul class="simple">
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">Conda</span></code> according to the instructions <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html#installing-in-silent-mode">here</a></p></li>
+<li><p>You can add <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/my/path/for/miniconda/etc/profile.d/conda.sh</span></code> to your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code></p></li>
+<li><p>Add the channel:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --add channels conda-forge
+</pre></div>
+</div>
+<p>Now to use your first <code class="docutils literal notranslate"><span class="pre">Conda</span></code> environment:</p>
+<ul class="simple">
+<li><p>Create an environment with some packages already installed:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n my-analysis-env <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7 jupyterlab ipython matplotlib uproot numpy pandas scikit-learn scipy tensorflow xgboost hep_ml
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Activate your environment by doing: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">my-analysis-env</span></code></p></li>
+<li><p>You can install additional packages by doing: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">package_name</span></code></p></li>
+</ul>
+<p>You will also need <a class="reference external" href="https://jupyterlab.readthedocs.io/">Jupyter</a> to run the examples in this tutorial.
+Jupyter was already installed in the previous command and can be ran by following the instructions <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/getting_started/starting.html">here</a>.
+Note: You <strong>will</strong> need Python.</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>You should now be able to use the tutorial.</p>
+<ul class="simple">
+<li><p>First clone with git:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/hsf-training/analysis-essentials.git
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>For more information on getting started with git please see the <a class="reference external" href="https://lhcb.github.io/analysis-essentials/index.html">Analysis Essentials course</a></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> advancedpython
+jupyter notebook
+</pre></div>
+</div>
+<p>This should open a Jupyter webpage with the current directory displayed.
+Navigate to one of the lessons to start the tutorial.</p>
+<p>If you have any problems or questions, you can <a class="reference external" href="https://github.com/hsf-training/analysis-essentials/issues">open an issue</a> on this repository.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -644,6 +691,7 @@ repository.</p>
 </ul>
 </li>
 </ul>
+</div>
 </div>
 </div>
 
