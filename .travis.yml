@@ -13,7 +13,7 @@ install:
   - conda activate my-analysis-env
   # FIXME: Inline math is broken in upstream recommonmark
   - pip install git+https://github.com/chrisburr/recommonmark.git@patch-1
-  - pip install starterkit-ci
+  - pip install starterkit-ci>=0.0.12
 
 script:
   - starterkit_ci build
