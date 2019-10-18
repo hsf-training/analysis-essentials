@@ -30,37 +30,21 @@ conda config --add channels conda-forge
 Now to use your first ```Conda``` environment:
  - Create an environment with some packages already installed:
 ```bash
-conda create -n my-analysis-env python=3.7 root root_pandas ipython
+conda create -n my-analysis-env python=3.7 jupyterlab ipython matplotlib uproot numpy pandas scikit-learn scipy tensorflow xgboost hep_ml
 ```
  - Activate your environment by doing: ```conda activate my-analysis-env```
- - You can install additional packages by doing: ```conda install hep_ml```
- - For this tutorial we will need the following packages:
-   - matplotlib
-   - uproot
-   - numpy
-   - pandas
-   - scikit-learn (sklearn)
-   - scipy
-   - tensorflow
-   - xgboost
+ - You can install additional packages by doing: ```conda install package_name```
 
-You will also need [Jupyter Notebook](https://jupyter.readthedocs.io/en/latest/index.html) to run the examples in this tutorial.
-To install Jupyter please follow the instructions [here](https://jupyter.readthedocs.io/en/latest/install.html).
-**Note:** you will need Python.
-
-You will need to have followed the Starterkit [prerequisits](https://lhcb.github.io/starterkit-lessons/first-analysis-steps/prerequisites.html).
-It is also recommended that you follow the [Analysis Essentials course](https://hsf-training.github.io/analysis-essentials/).
-You will need valid CERN credentials, you can check this by doing:
-```bash
-kinit username@CERN.CH
-```
+You will also need [Jupyter](https://jupyterlab.readthedocs.io/) to run the examples in this tutorial.
+Jupyter was already installed in the previous command and can be ran by following the instructions [here](https://jupyterlab.readthedocs.io/en/stable/getting_started/starting.html).
+Note: You **will** need Python.
 
 ## Usage
 
 You should now be able to use the tutorial.
  - First clone with git:
 ```bash
-git clone git@github.com:hsf-training/analysis-essentials.git
+git clone https://github.com/hsf-training/analysis-essentials.git
 ```
  - For more information on getting started with git please see the [Analysis Essentials course](https://lhcb.github.io/analysis-essentials/index.html)
 ```bash
@@ -70,8 +54,7 @@ jupyter notebook
 This should open a Jupyter webpage with the current directory displayed.
 Navigate to one of the lessons to start the tutorial.
 
-If you have any problems or questions, you can [open an issue][issues] on this 
-repository.
+If you have any problems or questions, you can [open an issue][issues] on this repository.
 
 [website]: https://hsf-training.github.io/analysis-essentials/
 [starterkit]: https://lhcb.github.io/starterkit/
