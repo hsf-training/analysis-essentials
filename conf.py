@@ -8,6 +8,7 @@ author = 'HSF'
 html_logo = 'hsf_logo_angled.png'
 
 exclude_patterns += [
+    'miniconda/**',
     'shell/data-shell/**',
     'README.md',
 ]
