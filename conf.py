@@ -29,6 +29,9 @@ linkcheck_ignore += [
     r'http://lhcb-release-area\.web\.cern\.ch/LHCb-release-area/DOC/online/releases/v4r65/doxygen/df/dd9/src_2_lineshape_maker_8cpp__incl\.png',
 ]
 
+for folder in ['advanced-python', 'git', 'python', 'shell-extras', 'shell']:
+    starterkit_ci_redirects[f'{folder}/index.html'] = f'https://lhcb.github.io/starterkit-lessons/{folder}/README.html'
+
 
 def hsf_ci_setup(app):
     app.add_stylesheet('hsf.css')

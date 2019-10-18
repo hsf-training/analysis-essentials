@@ -5,6 +5,12 @@ cache: false
 dist: xenial
 
 install:
+  - wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+  - bash miniconda.sh -b -p $PWD/miniconda
+  - source $HOME/miniconda/etc/profile.d/conda.sh
+  - conda config --add channels conda-forge
+  - conda create -n my-analysis-env python=3.7 jupyterlab ipython matplotlib uproot numpy pandas scikit-learn scipy tensorflow xgboost hep_ml
+  - conda activate my-analysis-env
   # FIXME: Inline math is broken in upstream recommonmark
   - pip install git+https://github.com/chrisburr/recommonmark.git@patch-1
   - pip install starterkit-ci
