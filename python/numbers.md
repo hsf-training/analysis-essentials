@@ -4,7 +4,7 @@ There’s nothing magical about numbers in Python, and we’ve already discovere
 how we perform operations on them.
 
 ```python
->>> (2*(1 + 3) - 5)/0.5
+>>> (2 * (1 + 3) - 5) / 0.5
 2
 >>> 11 % 4
 3
@@ -49,14 +49,17 @@ using the `from __future__ import division` line everywhere. We’ll come to wha
 line is doing shortly.
 
 If you _do_ want a rounding division, you then can ask for it explicitly with 
-the `//` operation:
+round, or, if you want a flooring division (rounding downwards):
 
 ```python
->>> 10/3
-3.3333333333333335
+>>> 5 / 3
+1.66666666667
 
->>> 10//3
-3
+>>> round(5 / 3)
+2
+
+>>> 5 // 3
+1
 ```
 
 {% endcallout %}
@@ -87,7 +90,7 @@ complex term.
 
 ```python
 >>> a = 1 + 4j
->>> b= 4 - 1j
+>>> b = 4 - 1j
 >>> a - b
 (-3+5j)
 ```
