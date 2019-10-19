@@ -38,9 +38,9 @@ ask to have this behaviour in Python 2.
 
 ```python
 >>> from __future__ import division
->>> 3/4
+>>> 3 / 4
 0.75
->>> 3.0/4.0
+>>> 3.0 / 4.0
 0.75
 ```
 
@@ -49,7 +49,7 @@ using the `from __future__ import division` line everywhere. We’ll come to wha
 line is doing shortly.
 
 If you _do_ want a rounding division, you then can ask for it explicitly with 
-round, or, if you want a flooring division (rounding downwards):
+round, or, if you want an integer division (truncating, rounding towards 0):
 
 ```python
 >>> 5 / 3
@@ -113,8 +113,8 @@ with the `abs` method, which is available globally.
 ```python
 >>> abs(a)
 4.123105625617661
->>> import math
->>> math.sqrt(a.real**2 + a.imag**2)
+>>> import numpy as np
+>>> np.sqrt(a.real**2 + a.imag**2)
 4.123105625617661
 ```
 
