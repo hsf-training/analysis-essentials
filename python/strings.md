@@ -51,7 +51,7 @@ Conventionally, double quotations are usually used for these.
 ...
 ... Quite long indeed.
 ... """
->>> print long_fact
+>>> print(long_fact)
 This is a long string.
 
 Quite long indeed.

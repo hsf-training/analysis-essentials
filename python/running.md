@@ -13,7 +13,7 @@ $ source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_94python3 x86_64-slc6-gc
 
 If you have a computer running MacOS or some Linux distribution, it will have
 come will Python pre-installed. Either way, a simple way to get Python on your 
-computer is to install [Anaconda][anaconda].
+computer is to install [Anaconda][anaconda]. In any case, it is highly recommended to use a virtual environment, be it with conda or other similar packages, and not your system installation.
 
 {% callout "Python 2 or 3?" %}
 
