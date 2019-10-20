@@ -12,7 +12,7 @@ able to follow the experiment-specific lessons that are taught afterwards.
 Contributions to the lessons are highly encouraged. Please see the 
 [contributing guide][contributing] for details on how to participate.
 
-## Prerequisits
+## Prerequisites
 
 This tutorial uses ```Python 3.7``` and requires some packages. It is 
 reccommended to use [Conda](https://docs.conda.io/en/latest/) to install the 
@@ -30,7 +30,7 @@ conda config --add channels conda-forge
 Now to use your first ```Conda``` environment:
  - Create an environment with some packages already installed:
 ```bash
-conda create -n my-analysis-env python=3.7 jupyterlab ipython matplotlib uproot numpy pandas scikit-learn scipy tensorflow xgboost hep_ml
+conda create -n my-analysis-env python=3.7 jupyterlab ipython matplotlib uproot numpy pandas scikit-learn scipy tensorflow xgboost hep_ml wget
 ```
  - Activate your environment by doing: ```conda activate my-analysis-env```
  - You can install additional packages by doing: ```conda install package_name```
