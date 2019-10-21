@@ -707,7 +707,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&lt;matplotlib.legend.Legend at 0x7fb7c4c96278&gt;
+<span></span>&lt;matplotlib.legend.Legend at 0x7f2ae22c5208&gt;
 </pre></div>
 </div>
 </div>
@@ -960,7 +960,7 @@ Stored &#39;training_data&#39; (DataFrame)
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&lt;matplotlib.legend.Legend at 0x7fb7d3fb9d68&gt;
+<span></span>&lt;matplotlib.legend.Legend at 0x7f2af3fbbf60&gt;
 </pre></div>
 </div>
 </div>
@@ -972,15 +972,26 @@ Stored &#39;training_data&#39; (DataFrame)
 </div>
 </div>
 <p><strong>CHALLENGE:</strong> Try to find the best possibly cut on your BDT and compare you score to earlier</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1">#TODO</span>
-<span class="c1">#check_truth(data_df.query(&#39;BDT &gt; 0.95&#39;))</span>
+<span></span><span class="kn">from</span> <span class="nn">python_lesson</span> <span class="k">import</span> <span class="n">check_truth</span>
+<span class="n">check_truth</span><span class="p">(</span><span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;BDT &gt; 0.95&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Loading reference dataset, this will take a moment...
+Data contains 102 signal events
+Data contains 126 background events
+Significance metric is 8.59
+</pre></div></div>
 </div>
 <div class="section" id="Evaluating-classifier-performance">
 <h4>Evaluating classifier performance<a class="headerlink" href="#Evaluating-classifier-performance" title="Permalink to this headline">¶</a></h4>
@@ -1105,7 +1116,7 @@ the peak.</p>
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/home/travis/build/hsf-training/analysis-essentials/miniconda/envs/my-analysis-env/lib/python3.7/site-packages/ipykernel_launcher.py:3: RuntimeWarning: invalid value encountered in true_divide
+/home/travis/build/hsf-training/analysis-essentials/miniconda/envs/my-analysis-env/lib/python3.6/site-packages/ipykernel_launcher.py:3: RuntimeWarning: invalid value encountered in true_divide
   This is separate from the ipykernel package so we can avoid doing imports until
 </pre></div></div>
 </div>
@@ -1178,7 +1189,7 @@ The optimal cut value is 2.00 with and S/sqrt(S+B) of nan
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/home/travis/build/hsf-training/analysis-essentials/miniconda/envs/my-analysis-env/lib/python3.7/site-packages/numpy/lib/histograms.py:898: RuntimeWarning: invalid value encountered in true_divide
+/home/travis/build/hsf-training/analysis-essentials/miniconda/envs/my-analysis-env/lib/python3.6/site-packages/numpy/lib/histograms.py:898: RuntimeWarning: invalid value encountered in true_divide
   return n/db/n.sum(), bin_edges
 </pre></div></div>
 </div>
@@ -1187,7 +1198,7 @@ The optimal cut value is 2.00 with and S/sqrt(S+B) of nan
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&lt;matplotlib.legend.Legend at 0x7fb7d3f48d30&gt;
+<span></span>&lt;matplotlib.legend.Legend at 0x7f2af3ff4438&gt;
 </pre></div>
 </div>
 </div>
@@ -1320,7 +1331,7 @@ The optimal cut value is 2.00 with and S/sqrt(S+B) of nan
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/home/travis/build/hsf-training/analysis-essentials/miniconda/envs/my-analysis-env/lib/python3.7/site-packages/ipykernel_launcher.py:9: RuntimeWarning: invalid value encountered in true_divide
+/home/travis/build/hsf-training/analysis-essentials/miniconda/envs/my-analysis-env/lib/python3.6/site-packages/ipykernel_launcher.py:9: RuntimeWarning: invalid value encountered in true_divide
   if __name__ == &#39;__main__&#39;:
 </pre></div></div>
 </div>
