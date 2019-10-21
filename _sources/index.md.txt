@@ -14,14 +14,18 @@ Contributions to the lessons are highly encouraged. Please see the
 
 ## Prerequisites
 
-This tutorial uses ```Python 3.7``` and requires some packages. It is 
+There are two options for running these lessons. Running locally should be prefered on Linux and macOS as it is faster and makes it easier to save you work. On Windows it is likely easier to use Binder however care is needed to prevent notebooks being lost when the server is shut down.
+
+### Local
+
+This tutorial uses `Python 3.7` and requires some packages. It is 
 reccommended to use [Conda](https://docs.conda.io/en/latest/) to install the 
 correct packages.
 
-To install ```Conda``` you will need to do the following:
+To install `Conda` you will need to do the following:
 
- - Install ```Conda``` according to the instructions [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html#installing-in-silent-mode)
- - You can add ```source /my/path/for/miniconda/etc/profile.d/conda.sh``` to your ```.bashrc``` 
+ - Install `Conda` according to the instructions [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html#installing-in-silent-mode)
+ - You can add `source /my/path/for/miniconda/etc/profile.d/conda.sh` to your `.bashrc`
  - Add the channel: 
 ```bash
 conda config --add channels conda-forge
@@ -32,12 +36,16 @@ Now to use your first ```Conda``` environment:
 ```bash
 conda create -n my-analysis-env python=3.7 jupyterlab ipython matplotlib uproot numpy pandas scikit-learn scipy tensorflow xgboost hep_ml wget
 ```
- - Activate your environment by doing: ```conda activate my-analysis-env```
- - You can install additional packages by doing: ```conda install package_name```
+ - Activate your environment by doing: `conda activate my-analysis-env`
+ - You can install additional packages by doing: `conda install package_name`
 
 You will also need [Jupyter](https://jupyterlab.readthedocs.io/) to run the examples in this tutorial.
 Jupyter was already installed in the previous command and can be ran by following the instructions [here](https://jupyterlab.readthedocs.io/en/stable/getting_started/starting.html).
 Note: You **will** need Python.
+
+### Binder
+
+Click this button: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/hsf-training/analysis-essentials/master)
 
 ## Usage
 
