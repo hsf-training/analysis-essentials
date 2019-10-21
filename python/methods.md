@@ -1,7 +1,7 @@
 # Functions
 
 Functions, or methods if they are associated with a class, take some input and return some output. We have
-already used lots of methods, like `dir`, `help`, and `len`, and in this lesson
+already used lots of functions, like `len`, `abs` and `print` as well as methods like `append` from `list`, `get` from `dict` or `replace` from `str`. In this lesson
 we will start creating our own.
 
 As we have seen, methods can do a lot of stuff with very little typing. Methods
@@ -11,9 +11,15 @@ Let’s rewrite `len` as an example.
 
 ```python
 >>> def length(obj):
-...     """Return the number of elements in obj.
+...     """Return the number of elements in `obj`.
 ...
-...     obj must be iterable.
+...     Args
+...     ----
+...         obj (iterable): Object the length will be calculated from.
+...
+...     Return
+...     ------
+...         int: number of elements in `obj`.
 ...     """
 ...     i = 0
 ...     for _ in obj:
@@ -25,9 +31,16 @@ Let’s rewrite `len` as an example.
 Help on function length in module __main__:
 
 length(obj)
-    Return the number of elements in obj.
+    Return the number of elements in `obj`.
+    
+    Args
+        obj (iterable): Object the length will be calculated from.
+    
+    Return
+        int: number of elements in `obj`.
 
-    obj must be iterable.
+or viewing the docs view in your preferred editor.
+
 >>> length('A b c!')
 6
 >>> length(range(5))
@@ -46,7 +59,9 @@ There’s a lot going on here, so we will break it down line-by-line.
 2. `"""Return the number of elements in obj."""`: This is the _docstring_. It’s
    just a documentation string, defined literally with three double quotes so that we can
    include linebreaks. By placing a string here, Python makes the string
-   available to use when we pass our function to `help`. Documenting your
+   available to use when we pass our function to `help` and in a lot of other places
+   like docs viewer of a decent editor or even allows to automatically generate 
+   documents including HTML with the docs. Documenting your
    functions is a very good idea! It makes it clear to others, and to
    future-you, what the method is supposed to do.
 3. The method block. This is the code that will run whenever you _call_ your
@@ -95,7 +110,22 @@ NameError: global name 'y' is not defined
 
 [^1]: Names are conventionally in lowercase, with underscores separating words.
 
-Methods can be called in several ways.
+Remark: there are comments (with `#`) and docstrings. Both serve a very different purpose
+
+ - comments `#` are for people who _read_ the code. Other developers that don't want to just
+   use your function but _change_ it. They can be short and serve the purpose to make the
+   code more readable. Typical example: adding a comment on a `- 1` or `+ 1` added somewhere,
+   such as ` len(x) - 1  # we don't need the border`. If a block of code implements a hard
+   to read algorithm, it is also appropriate to use several `#` lines to explain beforehand
+   what is going to happen.
+   _Never_ use tripple quotes `"""` to make a large comment! Use always `#`, any decent
+   editor is able to (un)comment several lines at once.
+ - Docstrings are for users. If someone imports your function, the docstrings tells
+   _how to use it_ and what it does exactly. It does, however, not contain any (unnecessary)
+   information about the implementation.
+   
+
+Functions can be called in several ways.
 
 ```python
 >>> def add(x, y):
@@ -437,3 +467,10 @@ How would you rewrite the `filter` example above using a list comprehension?
 Generally, you should only use `lambda` methods to define little throw-away
 methods. The main downside with using them is that you can’t attach a docstring
 to them, and they become unwieldy when there’s complex logic.
+
+Golden rules:
+ - make a function idempotent if possible (stateless, the same input values will return the same output). This is of course different for classes.
+ - Don't use globals (if anyhow avoidable).
+ - Do not alter the input argument if they are mutable.
+ - Put a docstring there. Probably even before you implement your function. This makes it
+   not only to everyone else but also to you clear what comes in and what comes out.
