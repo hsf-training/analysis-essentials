@@ -18,9 +18,8 @@ There are two options for running these lessons. Running locally should be prefe
 
 ### Local
 
-This tutorial uses `Python 3.7` and requires some packages. It is 
-reccommended to use [Conda](https://docs.conda.io/en/latest/) to install the 
-correct packages.
+This tutorial uses `Python 3.7` and requires some packages.
+It is recommended to use [Conda](https://docs.conda.io/en/latest/) to install the correct packages.
 
 To install `Conda` you will need to do the following:
 
