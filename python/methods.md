@@ -422,6 +422,7 @@ Another use case for `lambda` is the built-in `filter` method (see:
 {% challenge "List comprehension" %}
 
 How would you rewrite the `filter` example above using a list comprehension?
+
 {% solution "Solution" %}
 
 ```python
