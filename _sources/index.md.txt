@@ -38,6 +38,10 @@ conda create -n my-analysis-env python=3.7 jupyterlab ipython matplotlib uproot 
 ```
  - Activate your environment by doing: `conda activate my-analysis-env`
  - You can install additional packages by doing: `conda install package_name`
+ - For the lessons to work fully you will also need to install a special helper package with pip:
+```bash
+pip install git+https://github.com/hsf-training/python-lesson.git
+```
 
 You will also need [Jupyter](https://jupyterlab.readthedocs.io/) to run the examples in this tutorial.
 Jupyter was already installed in the previous command and can be ran by following the instructions [here](https://jupyterlab.readthedocs.io/en/stable/getting_started/starting.html).
