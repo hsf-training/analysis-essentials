@@ -60,7 +60,7 @@ git clone https://github.com/hsf-training/analysis-essentials.git
  - For more information on getting started with git please see the [Analysis Essentials course](https://lhcb.github.io/analysis-essentials/index.html)
 ```bash
 cd analysis-essentials
-jupyter notebook
+jupyter lab
 ```
 This should open a Jupyter webpage with the current directory displayed.
 Navigate to one of the lessons to start the tutorial.
