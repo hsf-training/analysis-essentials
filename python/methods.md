@@ -1,6 +1,6 @@
-# Methods
+# Functions
 
-Methods, also called functions, take some input and return some output. We have
+Functions, or methods if they are associated with a class, take some input and return some output. We have
 already used lots of methods, like `dir`, `help`, and `len`, and in this lesson
 we will start creating our own.
 
