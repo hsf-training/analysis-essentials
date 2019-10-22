@@ -31,7 +31,7 @@ linkcheck_ignore += [
 ]
 
 for folder in ['advanced-python', 'git', 'python', 'shell-extras', 'shell']:
-    starterkit_ci_redirects[f'{folder}/index.html'] = f'https://lhcb.github.io/starterkit-lessons/{folder}/README.html'
+    starterkit_ci_redirects[f'{folder}/index.html'] = f'https://hsf-training.github.io/analysis-essentials/{folder}/README.html'
 
 
 def hsf_ci_setup(app):
