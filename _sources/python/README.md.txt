@@ -15,7 +15,7 @@ is because there’s a large support group of other people who can help you with
 problems you might have down the line, and because we believe it’s the best 
 tool, all in all, for data analysis.
 
-## Aim of these lessons
+Aim of these lessons
 
 There are already plenty of [superb guides][learn] on the Internet for learning 
 Python, all of which will be more comprehensive than this one. This particular 
