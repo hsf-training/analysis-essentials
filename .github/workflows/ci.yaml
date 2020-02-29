@@ -23,6 +23,7 @@ jobs:
           pip install starterkit-ci>=0.0.12
       - name: Starterkit CI
         run: |
+          source ${CONDA}/bin/activate my-analysis-env
           starterkit_ci build
           starterkit_ci check
       # - name: Test
