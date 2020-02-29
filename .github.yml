@@ -1,0 +1,36 @@
+name: SK Build
+on: [push]
+env:
+  global:
+    secure: "S+3Gu4EZXl6pOkoy93wo5RB3qawI+TEThIOCutyQCk3gwNw3s2QBgVzqTol6plzdi2JfhNpELE9KJovEqBr9RWK7eD7k0TJcw+PJzFaVEi/iV0ZpjYyTg2ttmAGTTPz382LuXeO+4L0GB3GYIVXN5P6waHppV6D8vPbqUARl/INaj6o/ik5Gsf1FUWSimshwECOpjuWdPQq7Ju5zoTLmnBFfubJmuXf79T4trTs5/XFCbgIC4zVLvMF6tW9XSdVSeBGQqF1QWjvMNRPorpGHj8kkaON86oEFxAN3Wnw/nfN+PKplV90XqpM1Z7kUM+vBz1jL32kbxeCYltv61CdLBzlaNaPi6F/V/jvM6ABU5g7i1BXCoBOGAdg3tzihqV8VH4vLRomCRZrp2GFpAE80ljkXcIwtAv1uNynQA5KbAVL78ocxwxlj3K100X+ZqWUtuWHJ6ZC5v3RIdyZb8m4zrvx6GAhk+5nDZauLHbCopcIPvFT2mwWkXd1dbExWP4o2190pk1CyUV5udF9B5NB1ReitVoCCgn1MTT5nWueWfsU9asSUcUZR9BqMPLQW9zXKJw9SRDeuuK6gWqWP0nze+ExOtZIabHcoJr5d+pMsbi7p+cS/JUbbFzbt9CVFjr5tYEezdlMRn91sqBE01I7VEavOxnr8/iAr7iBtBZpg6Dk="
+jobs:  
+  build:
+     name: Set up Python 3.7
+     uses: actions/setup-python@v1
+     with:
+        python-version: 3.7.3 
+     runs-on: ubuntu-latest
+     #strategy:
+     #  fail-fast: true
+     #  max-parallel: -1
+     #  matrix:
+     #    go: ["1.12.x", "1.13.x"]
+  steps:
+    - name: Install dependencies
+      run: 
+        wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+        bash miniconda.sh -b -p $PWD/miniconda
+        source $PWD/miniconda/etc/profile.d/conda.sh
+        conda config --add channels conda-forge
+        conda env create -f environment.yml -n my-analysis-env
+        conda activate my-analysis-env
+        conda install --yes jupyterlab
+        pip install git+https://github.com/chrisburr/recommonmark.git@patch-1
+        pip install starterkit-ci>=0.0.12
+    - name: Starterkit CI
+      run: |
+        starterkit_ci build
+        starterkit_ci check
+    #- name: Test
+    #  run: |
+    #      test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && starterkit_ci deploy
