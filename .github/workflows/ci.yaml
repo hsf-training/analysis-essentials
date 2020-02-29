@@ -15,22 +15,29 @@ jobs:
      #  max-parallel: -1
      #  matrix:
      #    go: ["1.12.x", "1.13.x"]
+  wget:
+    runs-on: ubuntu-latest
+    steps:
+    - name: wget
+      uses: wei/wget@v1
+      with:
+        args: -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
   steps:
-    - name: Install dependencies
-      run: 
-        wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
-        bash miniconda.sh -b -p $PWD/miniconda
-        source $PWD/miniconda/etc/profile.d/conda.sh
-        conda config --add channels conda-forge
-        conda env create -f environment.yml -n my-analysis-env
-        conda activate my-analysis-env
-        conda install --yes jupyterlab
-        pip install git+https://github.com/chrisburr/recommonmark.git@patch-1
-        pip install starterkit-ci>=0.0.12
-    - name: Starterkit CI
-      run: |
-        starterkit_ci build
-        starterkit_ci check
+  - name: Install dependencies
+    run: | 
+    #wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+    bash miniconda.sh -b -p $PWD/miniconda
+    source $PWD/miniconda/etc/profile.d/conda.sh
+    conda config --add channels conda-forge
+    conda env create -f environment.yml -n my-analysis-env
+    conda activate my-analysis-env
+    conda install --yes jupyterlab
+    pip install git+https://github.com/chrisburr/recommonmark.git@patch-1
+    pip install starterkit-ci>=0.0.12
+  - name: Starterkit CI
+    run: |
+      starterkit_ci build
+      starterkit_ci check
     - name: Test
       run: |
           test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && starterkit_ci deploy
