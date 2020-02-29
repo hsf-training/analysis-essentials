@@ -13,13 +13,6 @@ jobs:
      #  max-parallel: -1
      #  matrix:
      #    go: ["1.12.x", "1.13.x"]
-  wget:
-    runs-on: ubuntu-latest
-    steps:
-    - name: wget
-      uses: wei/wget@v1
-      with:
-        args: -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
   steps:
   - name: Install dependencies
     run: | 
