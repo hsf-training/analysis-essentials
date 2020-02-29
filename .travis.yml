@@ -17,7 +17,7 @@ install:
   - pip install starterkit-ci>=0.0.12
 
 script:
-  - starterkit_ci build
+  - travis_wait 60 starterkit_ci build
   - starterkit_ci check
 
 # With instructions from http://www.steveklabnik.com/automatically_update_github_pages_with_travis_example/
