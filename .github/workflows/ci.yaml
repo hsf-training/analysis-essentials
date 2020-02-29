@@ -14,10 +14,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: Install dependencies
         run: | 
-          wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
-          bash miniconda.sh -b -p $PWD/miniconda
-          sh $PWD/miniconda/etc/profile.d/conda.sh
-          conda init bash
+          source ${CONDA}/etc/profile.d/conda.sh
           conda config --add channels conda-forge
           conda env create -f environment.yml -n my-analysis-env
           conda activate my-analysis-env
@@ -28,6 +25,6 @@ jobs:
         run: |
           starterkit_ci build
           starterkit_ci check
-      - name: Test
-        run: |
-          test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && starterkit_ci deploy
+      # - name: Test
+      #   run: |
+      #     test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && starterkit_ci deploy
