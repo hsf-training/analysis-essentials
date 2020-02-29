@@ -23,15 +23,15 @@ jobs:
   steps:
   - name: Install dependencies
     run: | 
-    #wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
-    bash miniconda.sh -b -p $PWD/miniconda
-    sh $PWD/miniconda/etc/profile.d/conda.sh
-    conda config --add channels conda-forge
-    conda env create -f environment.yml -n my-analysis-env
-    conda activate my-analysis-env
-    conda install --yes jupyterlab
-    pip install git+https://github.com/chrisburr/recommonmark.git@patch-1
-    pip install starterkit-ci>=0.0.12
+      wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+      bash miniconda.sh -b -p $PWD/miniconda
+      sh $PWD/miniconda/etc/profile.d/conda.sh
+      conda config --add channels conda-forge
+      conda env create -f environment.yml -n my-analysis-env
+      conda activate my-analysis-env
+      conda install --yes jupyterlab
+      pip install git+https://github.com/chrisburr/recommonmark.git@patch-1
+      pip install starterkit-ci>=0.0.12
   - name: Starterkit CI
     run: |
       starterkit_ci build
