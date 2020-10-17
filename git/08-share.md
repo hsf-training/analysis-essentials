@@ -139,6 +139,7 @@ Switch roles and repeat the whole process.
 The Owner push commits to the repository without giving any information
 to the Collaborator. How can the Collaborator find out what has changed with
 command line? And on GitLab?
+
 {% solution "Solution" %}
 
 On the command line, the Collaborator can use ```git fetch origin master```
@@ -170,6 +171,8 @@ code to comment, a blue comment icon appears to open a comment window.
 The Collaborator posts its comments and suggestions using GitLab interface.
 
 {% endchallenge %}
+
+
 {% challenge "Version History, Backup, and Version Control" %}
 
 Some backup software can keep a history of the versions of your files. They also
@@ -177,6 +180,7 @@ allows you to recover specific versions. How is this functionality different fro
 What are some of the benifits of using version control, Git and GitLab?
 
 {% endchallenge %}
+
 
 {% keypoints "Key Points" %}
 
