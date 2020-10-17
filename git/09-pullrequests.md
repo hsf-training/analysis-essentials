@@ -326,9 +326,7 @@ Web browser to your repository:
 
 > https://gitlab.cern.ch/YOUR_CERN_USERNAME/starter-kit-example
 
-Then click on the **+ (plus)** button and select **New merge request**:
-
-![New merge request](fig/gitlab-pr-newmergerequest.png)
+Then click on the **Merge Requests** button on the left hand side of the screen and select **New merge request**:
 
 On the next screen, select `master` as **Source branch**:
 
