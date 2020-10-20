@@ -1,13 +1,9 @@
 # Running Python
 
 To start using Python, we need access to the `python` program in a terminal.
-The version installed on lxplus is 2.6.6, which is very old. However, we can get
-a newer version along with various useful packages
-(see details on the [LCG stacks][lcg_stack]) by setting up an LCG environment:
-
-```bash
-$ source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_94python3 x86_64-slc6-gcc62-opt
-```
+The version installed on lxplus is 3.8.6 which can be used in these lessons.
+If you need a different python version along with various useful packages
+(see details on the [LCG stacks][lcg_stack]) from where you can set up the LCG environment:
 
 If you have a computer running MacOS or some Linux distribution, it will have
 come will Python pre-installed. Either way, a simple way to get Python on your 
