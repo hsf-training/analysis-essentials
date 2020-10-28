@@ -1,7 +1,7 @@
 # Running Python
 
 To start using Python, we need access to the `python` program in a terminal.
-The version installed on lxplus is 3.8.6 which can be used in these lessons.
+The version that's automatically made available on lxplus is 3.8.6 which can be used in these lessons.
 If you need a different python version along with various useful packages
 (see details on the [LCG stacks][lcg_stack]) from where you can set up the LCG environment:
 
