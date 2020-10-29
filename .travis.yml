@@ -7,8 +7,8 @@ dist: xenial
 install:
   - wget -nv https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh -O miniforge.sh
   - bash miniforge.sh -b -p $PWD/miniforge
-  - eval "$('$PWD/miniforge/bin/python' -m conda shell.bash hook)"
-  - conda install mamba --yes
+  - eval "$("$PWD/miniforge/bin/python" -m conda shell.bash hook)"
+  - conda install --yes mamba
   - mamba env create -f environment.yml -n my-analysis-env
   - conda activate my-analysis-env
   - mamba install --yes jupyterlab
