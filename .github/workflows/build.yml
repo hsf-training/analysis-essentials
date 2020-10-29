@@ -14,6 +14,7 @@ jobs:
           channels: conda-forge,defaults
           python-version: 3.8
           environment-file: environment.yml
+          activate-environment: example-environment
       - name: Install starterkit-ci
         shell: bash -l {0}
         run: |
