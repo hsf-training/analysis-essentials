@@ -1,0 +1,29 @@
+name: Build webpage
+
+on: [push, pull_request]
+
+jobs:
+  build-pages:
+    name: Python ${{ matrix.python-version }} - pytest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - uses: conda-incubator/setup-miniconda@v1
+        with:
+          mamba-version: "*"
+          channels: conda-forge,defaults
+          python-version: 3.8
+          environment-file: environment.yaml
+      - name: Install starterkit-ci
+        shell: bash -l {0}
+        run: |
+          pip install starterkit-ci>=0.0.12
+      - name: Build webpage
+        shell: bash -l {0}
+        run: |
+          starterkit_ci build
+      - name: Check webpage
+        shell: bash -l {0}
+        run: |
+          starterkit_ci check
