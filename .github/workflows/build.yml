@@ -4,7 +4,6 @@ on: [push, pull_request]
 
 jobs:
   build-pages:
-    name: Python ${{ matrix.python-version }} - pytest
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -14,7 +13,7 @@ jobs:
           mamba-version: "*"
           channels: conda-forge,defaults
           python-version: 3.8
-          environment-file: environment.yaml
+          environment-file: environment.yml
       - name: Install starterkit-ci
         shell: bash -l {0}
         run: |
