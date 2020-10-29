@@ -172,7 +172,6 @@ The Collaborator posts its comments and suggestions using GitLab interface.
 
 {% endchallenge %}
 
-
 {% challenge "Version History, Backup, and Version Control" %}
 
 Some backup software can keep a history of the versions of your files. They also
@@ -180,7 +179,6 @@ allows you to recover specific versions. How is this functionality different fro
 What are some of the benifits of using version control, Git and GitLab?
 
 {% endchallenge %}
-
 
 {% keypoints "Key Points" %}
 
