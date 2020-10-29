@@ -23,7 +23,14 @@ jobs:
         shell: bash -l {0}
         run: |
           starterkit_ci build
-      - name: Check webpage
+      # - name: Check webpage
+      #   shell: bash -l {0}
+      #   run: |
+      #     starterkit_ci check
+      - name: Deploy webpage
         shell: bash -l {0}
         run: |
-          starterkit_ci check
+          export TRAVIS_BRANCH=${GITHUB_REF#refs/heads/}
+          export TRAVIS_REPO_SLUG=hsf-training/analysis-essentials
+          export GH_TOKEN=${{ secrets.GH_TOKEN}}
+          starterkit_ci deploy
