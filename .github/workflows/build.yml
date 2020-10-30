@@ -23,7 +23,10 @@ jobs:
       - name: Build webpage
         shell: bash -l {0}
         run: |
-          starterkit_ci build
+          # starterkit_ci build
+          # Make the CI much faster for debugging
+          rm -rf advanced-python/
+          starterkit_ci build --allow-warnings
       # - name: Check webpage
       #   shell: bash -l {0}
       #   run: |
