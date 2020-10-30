@@ -1,6 +1,6 @@
 name: Build webpage
 
-on: [push, pull_request]
+on: [push] # , pull_request]
 
 jobs:
   build-pages:
@@ -23,10 +23,10 @@ jobs:
       - name: Build webpage
         shell: bash -l {0}
         run: |
-          # starterkit_ci build
+          starterkit_ci build
           # Make the CI much faster for debugging
-          rm -rf advanced-python/
-          starterkit_ci build --allow-warnings
+          # rm -rf advanced-python/
+          # starterkit_ci build --allow-warnings
       # - name: Check webpage
       #   shell: bash -l {0}
       #   run: |
@@ -37,6 +37,5 @@ jobs:
           export TRAVIS_BRANCH=${GITHUB_REF#refs/heads/}
           export TRAVIS_BRANCH=master
           export TRAVIS_REPO_SLUG=hsf-training/analysis-essentials
-          # export GH_TOKEN=${{ secrets.GITHUB_TOKEN }}
           export INPUT_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           starterkit_ci deploy
