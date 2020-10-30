@@ -18,7 +18,8 @@ jobs:
       - name: Install starterkit-ci
         shell: bash -l {0}
         run: |
-          pip install "starterkit-ci>=0.0.12"
+          # pip install "starterkit-ci>=0.0.12"
+          pip install git+https://github.com/lhcb/starterkit-ci.git@cburr-gh-actions
       - name: Build webpage
         shell: bash -l {0}
         run: |
@@ -33,5 +34,5 @@ jobs:
           export TRAVIS_BRANCH=${GITHUB_REF#refs/heads/}
           export TRAVIS_BRANCH=master
           export TRAVIS_REPO_SLUG=hsf-training/analysis-essentials
-          export GH_TOKEN=${{ secrets.GH_TOKEN}}
+          # export GH_TOKEN=${{ secrets.GH_TOKEN }}
           starterkit_ci deploy
