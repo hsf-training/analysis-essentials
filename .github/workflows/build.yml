@@ -35,4 +35,5 @@ jobs:
           export TRAVIS_BRANCH=master
           export TRAVIS_REPO_SLUG=hsf-training/analysis-essentials
           # export GH_TOKEN=${{ secrets.GH_TOKEN }}
+          export INPUT_GITHUB_TOKEN=${{ secrets.GH_TOKEN }}
           starterkit_ci deploy
