@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build-pages:
-    if: github.event_name != 'push' || github.repository == 'hsf-training/analysis-essentials'
+    if: github.event_name == 'pull_request' || (github.repository == 'hsf-training/analysis-essentials' && github.ref == 'refs/heads/master')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
