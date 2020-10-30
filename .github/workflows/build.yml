@@ -1,0 +1,49 @@
+name: Build webpage
+
+on: [push, pull_request]
+
+jobs:
+  build-pages:
+    if: github.event_name == 'pull_request' || github.repository == 'hsf-training/analysis-essentials'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: conda-incubator/setup-miniconda@v1
+        with:
+          mamba-version: "*"
+          channels: conda-forge,defaults
+          python-version: 3.8
+          environment-file: environment.yml
+          activate-environment: example-environment
+
+      - name: Install starterkit-ci
+        shell: bash -l {0}
+        run: |
+          # pip install "starterkit-ci>=0.0.12"
+          pip install git+https://github.com/lhcb/starterkit-ci.git@cburr-gh-actions
+
+      - name: Build webpage
+        shell: bash -l {0}
+        run: |
+          starterkit_ci build
+
+          # If debugging, the following can be used to make things much faster:
+          # rm -rf advanced-python/
+          # starterkit_ci build --allow-warnings
+
+      # - name: Check webpage
+      #   shell: bash -l {0}
+      #   run: |
+      #     starterkit_ci check
+
+      - name: Deploy webpage
+        if: github.event_name == 'push' && github.repository == 'hsf-training/analysis-essentials' && github.ref == 'refs/heads/master'
+        shell: bash -l {0}
+        run: |
+          export TRAVIS_BRANCH=${GITHUB_REF#refs/heads/}
+          export TRAVIS_REPO_SLUG=${{ github.repository }}
+          export INPUT_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+
+          starterkit_ci deploy
