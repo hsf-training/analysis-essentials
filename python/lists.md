@@ -368,7 +368,7 @@ If you only give a single argument to `range`, it assumes you’ve given the end
 value, and want a starting value of zero.
 
 ```python
->>> for i in range(5)
+>>> for i in range(5):
         print(i)
 0
 1

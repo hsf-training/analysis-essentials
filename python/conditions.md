@@ -48,12 +48,12 @@ Python evaluates a condition and sees whether it is truth-like or not. If it is
 truth-like, the code in the block is run.
 
 ```python
->>> if pizza[0] == 'Cheese':
+>>> if pizzas[0] == 'Cheese':
 ...     print('It is cheese, my dudes.')
 ...
->>> pizza[0] == 'Cheese'
+>>> pizzas[0] == 'Cheese'
 False
->>> pizza[1] == 'Cheese'
+>>> pizzas[1] == 'Cheese'
 True
 ```
 
