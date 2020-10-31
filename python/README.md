@@ -44,6 +44,8 @@ Sounds good? Then let’s get going!
     :caption: Contents:
 
     running.md
+    00scripts.ipynb
+    01basics.ipynb
     operators.md
     numbers.md
     strings.md
@@ -53,6 +55,7 @@ Sounds good? Then let’s get going!
     methods.md
     scripting.md
     modules.md
+    classes.ipynb
     learning.md
     first_histogram.md
     further_reading.md
