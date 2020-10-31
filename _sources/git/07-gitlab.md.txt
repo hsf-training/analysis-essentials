@@ -153,8 +153,8 @@ GitLab, though, this command would download them to our local repository.
 
 
 Browse to your `planets` repository on GitLab.
-Under the "Project" tab, find and click on the text that says "XX commits"
-(where "XX" is some number).
+Under the "Repository" tab, find and click on the text that says "Commits".
+
 Hover over, and click on, the three buttons to the right of each commit.
 What information can you gather/explore from these buttons?
 How would you get that same information in the shell?
