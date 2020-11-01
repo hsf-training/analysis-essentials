@@ -13,10 +13,10 @@ def make_pizza(*toppings):
     """Make a delicious pizza from the toppings."""
     print('Making pizza...')
     for topping in toppings:
-        print('Adding {0}'.format(topping))
+        print(f'Adding {topping}' )
         time.sleep(1)
     print('Done!')
-    return 'Pizza with toppings: {0}'.format(toppings)
+    return f'Pizza with toppings: {toppings}'
 
 pizza = make_pizza('cheese', 'olives')
 ```
@@ -98,10 +98,10 @@ def make_pizza(*toppings):
     """Make a delicious pizza from the toppings."""
     print('Making pizza...')
     for topping in toppings:
-        print('Adding {0}'.format(topping))
+        print(f'Adding {topping}' )
         time.sleep(1)
     print('Done!')
-    return 'Pizza with toppings: {0}'.format(toppings)
+    return f'Pizza with toppings: {toppings}'
 
 print('sys.argv:', sys.argv)
 # pizza = make_pizza('cheese', 'olives')
@@ -199,9 +199,8 @@ and allows us to define what arguments our scripts accept much more easily
 than what we’ve shown. Under the hood, it just inspects `sys.argv` in exactly
 the same way as we’ve done, but it takes care of things like validation for us.
 
-```
+```python
 import argparse
-import sys
 import time
 
 
@@ -209,10 +208,10 @@ def make_pizza(*toppings):
     """Make a delicious pizza from the toppings."""
     print('Making pizza...')
     for topping in toppings:
-        print('Adding {0}'.format(topping))
+        print(f'Adding {topping}' )
         time.sleep(1)
     print('Done!')
-    return 'Pizza with toppings: {0}'.format(toppings)
+    return f'Pizza with toppings: {toppings}'
 
 
 parser = argparse.ArgumentParser(description='Make a pizza')

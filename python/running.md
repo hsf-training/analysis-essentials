@@ -13,7 +13,8 @@ $ source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_94python3 x86_64-slc6-gc
 
 If you have a computer running MacOS or some Linux distribution, it will have
 come will Python pre-installed. Either way, a simple way to get Python on your 
-computer is to install [Anaconda][anaconda]. In any case, it is highly recommended to use a virtual environment, be it with conda or other similar packages, and not your system installation.
+computer is to install [miniforge][miniforge] ([miniconda][miniconda] with the [conda-forge][conda-forge] channel
+ as default). In any case, it is **highly recommended to use a virtual environment**, be it with conda or other similar packages, and not your system installation.
 
 {% callout "Python 2 or 3?" %}
 
@@ -24,7 +25,7 @@ when run with version 2 of Python may not necessarily work when run with
 version 3. Python 2 was around for a long time and the process of migrating to Python 3 has been slow. However the support for Python 2 will soon end (2 month, in 2020!) and with it, most packages completely drop the support or already have.
 
 Note that, for instance, Alice and LHCb software is not (yet) fully compatible with Python 3. We strongly encourage you to always use Python 3 and only switch to Python 2 when you have to (e.g. when you need to use some software which is not compatible with Python 3). You can install both Python 2 and Python 3 using 
-[conda](https://github.com/conda-forge/miniforge#download).
+[conda][miniforge.
 
 {% endcallout %}
 
@@ -141,6 +142,9 @@ A usefule tool in between these two worlds are Jupyter Notebooks that have cells
 
 In the next few chapters, we will start with the basics of Python to get a feeling for what can be done.
 
-[anaconda]: https://www.anaconda.com/distribution/
+
+[miniforge]: https://github.com/conda-forge/miniforge#download
+[miniconda]: https://docs.conda.io/en/latest/miniconda.html
+[conda-forge]: https://conda-forge.org/
 [ipython]: https://ipython.org/
 [lcg_stack]: http://lcginfo.cern.ch/
