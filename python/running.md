@@ -47,7 +47,7 @@ Woah! What just happened?
 1. We started an _interactive Python session_, also known as a Python _shell_, 
    by executing the `python` command;
 2. We typed a line of code, `a = 3.14`, and hit enter. this let the Python interpreter _compile and execute_ this line of code. Here, the value 3.14 was assigned to the variable a;
-3. We typed another line of code, `print (a + 1.1)`, and hit enter;
+3. We typed another line of code, `print(a + 1.1)`, and hit enter;
 4. The value `4.14` was printed to the terminal.
 
 In this interactive shell, if a value is not assigned to a variable, it will automatically be printed. This is a special feature of the interactive shell and _not_ general Python behavior.
