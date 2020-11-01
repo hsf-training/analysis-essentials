@@ -469,7 +469,7 @@ methods. The main downside with using them is that you can’t attach a docstrin
 to them, and they become unwieldy when there’s complex logic.
 
 Golden rules:
- - make a function idempotent if possible (stateless, the same input values will return the same output). This is of course different for classes.
+ - Make functions idempotent where possible (stateless, the same input values will return the same output). This is of course different for classes.
  - Don't use globals (if anyhow avoidable).
  - Do not alter the input argument if they are mutable.
  - Put a docstring there. Probably even before you implement your function. This makes it
