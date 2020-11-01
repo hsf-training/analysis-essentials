@@ -24,7 +24,7 @@ when run with version 2 of Python may not necessarily work when run with
 version 3. Python 2 was around for a long time and the process of migrating to Python 3 has been slow. However the support for Python 2 will soon end (2 month, in 2020!) and with it, most packages completely drop the support or already have.
 
 Note that, for instance, Alice and LHCb software is not (yet) fully compatible with Python 3. We strongly encourage you to always use Python 3 and only switch to Python 2 when you have to (e.g. when you need to use some software which is not compatible with Python 3). You can install both Python 2 and Python 3 using 
-[Anaconda](https://www.anaconda.com/distribution/).
+[conda](https://github.com/conda-forge/miniforge#download).
 
 {% endcallout %}
 
