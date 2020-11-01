@@ -226,7 +226,7 @@ if arguments.verbose:
     print('About to call make_pizza')
 make_pizza(*arguments.toppings)
 if arguments.verbose:
-    print ('Finished')
+    print('Finished')
 ```
 
 We say that we want an argument, that we will refer to as `toppings` in the
