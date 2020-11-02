@@ -1,0 +1,1188 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Classes &mdash; Analysis essentials  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/panels.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Learning more" href="learning.html" />
+    <link rel="prev" title="Modules" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Analysis essentials
+          
+
+          
+            
+            <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">An introduction to Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="running.html">Running Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00scripts.html">Scripting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="00scripts.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="01basics.html">1: Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#strong-typing">strong typing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Container-types">Container types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Mutability">Mutability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#dynamic-typing">dynamic typing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Python-variable-assignement">Python variable assignement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="operators.html#objects">Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">Strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="strings.html#formatting">Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lists.html">Lists and looping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#looping">Looping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#list-comprehension">List comprehension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#tuples">Tuples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dictionaries.html">Dictionaries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="conditions.html">Conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conditions.html#truthiness">Truthiness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditions.html#conditions-in-loops">Conditions in loops</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="methods.html">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="methods.html#inline-methods">Inline methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scripting.html">Scripting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scripting.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html">Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#the-standard-library">The standard library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#modules-from-pypi">Modules from PyPi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#write-your-first-python-module">Write your first Python module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Welcome-to-classes">Welcome to classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Inheritance:-a-glance">Inheritance: a glance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#How-to-fix">How to fix</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html">Learning more</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="learning.html#exploring-python">Exploring Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="learning.html#conventional-coding">Conventional coding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="first_histogram.html">Making your first histogram</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="first_histogram.html#pandas">Pandas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="first_histogram.html#plotting-histograms">Plotting histograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="first_histogram.html#applying-cuts">Applying cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="further_reading.html">More advanced topics in Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="further_reading.html#nice-standard-libraries">Nice standard libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="further_reading.html#nice-libraries-for-data-analysis">Nice libraries for data analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="further_reading.html#python-and-root">Python and ROOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-python/README.html">Advanced Python Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/1Basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Importing-modules">Importing modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html">2: First look at data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#5.-The-toy-dataset">5. The toy dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#6.-Plotting-a-histogram-with-matplotlib">6. Plotting a histogram with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Adding-variables">Adding variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Using-rectangular-cuts">Using rectangular cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/3Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/3Classification.html#Using-a-classifier">Using a classifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/3Classification.html#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">TODO Add a diagram of a decision tree for the above plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/4Extension.html">4: Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Distributions-in-the-Dalitz-features-for-signal-and-background">Distributions in the Dalitz features for signal and background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Preparation-of-train/test-datasets">Preparation of train/test datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Setting-up-classifiers,-training">Setting up classifiers, training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Let’s-look-at-the-results-of-training">Let’s look at the results of training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#ROC-curves-after-training">ROC curves after training</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html">6: Neural networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Downloading-a-dataset">Downloading a dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-training-a-network">Example of training a network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Creating-your-own-neural-network">Creating your own neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-a-very-specific-neural-network">Example of a very specific neural network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Fitting-very-specific-expressions-as-estimators">Fitting very specific expressions as estimators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Writing-custom-pretransformer">Writing custom pretransformer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Ensembling-of-neural-neworks">Ensembling of neural neworks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/7DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Original-distributions">Original distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Comparing-some-simple-expressions:">Comparing some simple expressions:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination">GB-discrimination</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/8sPlot.html">8: sPlot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Applying-sWeights">Applying sWeights</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Compare">Compare</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#More-complex-case">More complex case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Building-sPlot-over-mass">Building sPlot over mass</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Of-course-we-don’t-have-labels-which-events-are-signal-and-which-are-background-beforehand">Of course we don’t have labels which events are signal and which are background beforehand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#We-have-no-information-about-real-labels">We have no information about real labels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Under-assumption-of-linearity:">Under assumption of linearity:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Minimization-of-variation">Minimization of variation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Uncorrelatedness">Uncorrelatedness</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/README.html">Introducing the Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-command-line-interface">The Command-Line Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-shell">The Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#why-bother">Why bother?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#nelle-s-pipeline-starting-point">Nelle’s Pipeline: Starting Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell/02-filedir.html">Navigating Files and Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/02-filedir.html#nelle-s-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/03-create.html">Working With Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/04-pipefilter.html">Pipes and Filters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/04-pipefilter.html#nelle-s-pipeline-checking-files">Nelle’s Pipeline: Checking Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/05-loop.html">Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/06-script.html">Shell Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/07-find.html">Finding Things</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell-extras/README.html">UNIX shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen.html">Using screen to keep things running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen2.html">Advanced screen topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#finding-lost-screens">Finding lost screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#using-tabs-in-screen">Using tabs in screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/persistent-screen.html">Persistent screen or tmux session on lxplus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#setting-up-password-less-kerberos-token">Setting up password-less kerberos token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#making-use-of-the-keytab">Making use of the keytab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token">Using k5reauth to automatically refresh your kerberos token</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/shell2.html">More about the UNIX shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#types-of-shell">Types of shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#manual-pages">Manual pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#environment-variables">Environment variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/shell2.html#let-s-now-try-the-following-callout">Let’s now try the following: {.callout}</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#differences-among-files">Differences among files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#looping-over-files">Looping over files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#conditionals">Conditionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#linking-commands">Linking commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#pipes-and-redirection">Pipes and redirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#bash-security">Bash security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#complexity">Complexity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-viewers">Text viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-editors">Text editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#disk-space">Disk space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/README.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/01-basics.html">Automated Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/02-setup.html">Setting Up Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/03-create.html">Creating a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/04-changes.html">Tracking Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/05-history.html">Exploring History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/06-ignore.html">Ignoring Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/07-gitlab.html">Remotes in CERN GitLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/08-share.html">Sharing a repository with others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/09-pullrequests.html">Collaborating with Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#what-is-a-pull-or-merge-request">What is a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#fork-the-original-project-repository">Fork the original project repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#clone-a-remote-project-and-its-fork">Clone a remote project and its fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#sync-your-local-repository-with-remote-changes">Sync your local repository with remote changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#implement-your-new-feature">Implement your new feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#push-changes">Push changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#create-a-pull-or-merge-request">Create a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#discussing-amending-retiring-a-merge-request">Discussing, amending, retiring a Merge Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#accepting-a-pull-request">Accepting a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#the-social-side-of-coding">The social side of coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#automatic-testing">Automatic testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../git/10-conflict.html">Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/11-ci.html">GitLab CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/12-open.html">Open Science</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/13-licensing.html">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/14-citation.html">Citation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributing-notebooks">Contributing notebooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis essentials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="README.html">An introduction to Python</a> &raquo;</li>
+        
+      <li>Classes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/python/classes.ipynb" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Classes">
+<h1>Classes<a class="headerlink" href="#Classes" title="Permalink to this headline">¶</a></h1>
+<p>In programming, classes, or more general OOP (Object Oriented Programing) is a fundamental paradigm (next to others, e.g. functional programming). It is powerful and e.g. Java is fully based on it. Python is a multi-paradigm (and multi-everything anyway) language, meaning there are classes, functions etc.</p>
+<p>Let’s start with an example problem</p>
+<p>We want to do some calculations with particles and their momenta, e.g. to calculate their invariant mass. (we focus on just one paricle here, sure we could use lists but this means to keep track of which entry is which etc.)</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># particle &#39;pi1&#39;</span>
+<span class="n">pi1_px</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">pi1_py</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">pi1_pz</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">pi1_E</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">def</span> <span class="nf">calc_mass_simple</span><span class="p">(</span><span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="n">px</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">py</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">pz</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">calc_mass_simple</span><span class="p">(</span><span class="n">pi1_px</span><span class="p">,</span> <span class="n">pi1_py</span><span class="p">,</span> <span class="n">pi1_pz</span><span class="p">,</span> <span class="n">pi1_E</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+92.73618495495704
+</pre></div></div>
+</div>
+<p>Alright, but clearly cumbersom. Better: if we could stick it together. Let’s use a dict!</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">pi1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;px&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+       <span class="s1">&#39;py&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+       <span class="s1">&#39;pz&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+       <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">calc_mass</span><span class="p">(</span><span class="n">particle</span><span class="p">):</span>
+    <span class="n">momentum</span> <span class="o">=</span> <span class="n">particle</span><span class="p">[</span><span class="s1">&#39;px&#39;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">particle</span><span class="p">[</span><span class="s1">&#39;py&#39;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">particle</span><span class="p">[</span><span class="s1">&#39;pz&#39;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">particle</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">momentum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">calc_mass</span><span class="p">(</span><span class="n">particle</span><span class="o">=</span><span class="n">pi1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+92.73618495495704
+</pre></div></div>
+</div>
+<p>That looks better! But now, <code class="docutils literal notranslate"><span class="pre">calc_mass</span></code> critically depends on the structure of <code class="docutils literal notranslate"><span class="pre">pi1</span></code> if we e.g. want to create new particles. How can we “communicate” that well? (sure, docstrings, but is there a more “formal way”?)</p>
+<p>Furthermore: calc_mass somehow “belongs” to pi1, we want to calculate the mass of it. We always use <code class="docutils literal notranslate"><span class="pre">calc_mass</span></code> together with a particle dict.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># trial to connect together</span>
+<span class="n">pi1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;px&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+       <span class="s1">&#39;py&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+       <span class="s1">&#39;pz&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+       <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+       <span class="s1">&#39;mass&#39;</span><span class="p">:</span> <span class="n">calc_mass</span><span class="p">}</span>  <span class="c1"># why not call it mass? it&#39;s the mass of the particle</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">pi1</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">](</span><span class="n">pi1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+92.73618495495704
+</pre></div></div>
+</div>
+<p>Cumbersome, but better, we get there! For the communication, what we want is a “template”/blueprint dict. So that if we want to create a new particle, we have to make sure to specify px, py, pz and E in the dict (so that it is valid). And then to also add the <code class="docutils literal notranslate"><span class="pre">calc_mass</span></code> function.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">make_particle</span><span class="p">(</span><span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;px&#39;</span><span class="p">:</span> <span class="n">px</span><span class="p">,</span>
+            <span class="s1">&#39;py&#39;</span><span class="p">:</span> <span class="n">py</span><span class="p">,</span>
+            <span class="s1">&#39;pz&#39;</span><span class="p">:</span> <span class="n">pz</span><span class="p">,</span>
+            <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="n">E</span><span class="p">,</span>
+            <span class="s1">&#39;mass&#39;</span><span class="p">:</span> <span class="n">calc_mass</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">e1</span> <span class="o">=</span> <span class="n">make_particle</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="mf">41.234227</span><span class="p">)</span>
+<span class="n">e1</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">](</span><span class="n">e1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.5113475212892835
+</pre></div></div>
+</div>
+<p>Ok, no we get picky: let’s split the above even more (just one last time)</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">make_particle</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;px&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">&#39;py&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">&#39;pz&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">&#39;mass&#39;</span><span class="p">:</span> <span class="n">calc_mass</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">initialize_particle</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">):</span>
+    <span class="n">particle</span><span class="p">[</span><span class="s1">&#39;px&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">px</span>
+    <span class="n">particle</span><span class="p">[</span><span class="s1">&#39;py&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">py</span>
+    <span class="n">particle</span><span class="p">[</span><span class="s1">&#39;pz&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pz</span>
+    <span class="n">particle</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">E</span>
+    <span class="k">return</span> <span class="n">particle</span>
+
+<span class="n">particle1</span> <span class="o">=</span> <span class="n">initialize_particle</span><span class="p">(</span><span class="n">make_particle</span><span class="p">(),</span> <span class="n">px</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">py</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">pz</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># &quot;magic line&quot;</span>
+<span class="n">particle1</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">](</span><span class="n">particle1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+28.284271247461902
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[95]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<p>The call to calculate the mass is still not perfect: We want something that - “feeds itself to the function called”. - is created through a function (“constructor”) - has attributes (better then this [‘…’] accesing would be with the dot)</p>
+<p>…more like this: <code class="docutils literal notranslate"><span class="pre">particle1.calc_mass()</span></code></p>
+<div class="section" id="Welcome-to-classes">
+<h2>Welcome to classes<a class="headerlink" href="#Welcome-to-classes" title="Permalink to this headline">¶</a></h2>
+<p><strong>A class is a blueprint of an object</strong></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">SimpleParticle</span><span class="p">:</span>
+    <span class="c1"># what we don&#39;t see: before the __init__, there is a (automatic) make_particle. Normally we don&#39;t need it</span>
+    <span class="c1"># the initialiser, basically initialize_particle</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">):</span>  <span class="c1"># self is the instance, the future object.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">px</span> <span class="o">=</span> <span class="n">px</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">py</span> <span class="o">=</span> <span class="n">py</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pz</span> <span class="o">=</span> <span class="n">pz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">E</span> <span class="o">=</span> <span class="n">E</span>
+
+    <span class="k">def</span> <span class="nf">calc_mass</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># why not reuse the one from above?</span>
+        <span class="k">return</span> <span class="n">calc_mass_simple</span><span class="p">(</span><span class="n">px</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Let’s use it!</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># where is __init__ called? (magic method again)</span>
+<span class="c1"># answer: when calling the class</span>
+<span class="n">particle1</span> <span class="o">=</span> <span class="n">SimpleParticle</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">pz</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>  <span class="c1"># NOT equivalent to Particle.__init__(), because</span>
+                                      <span class="c1"># it calls a constructor before (make_particle)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">particle1</span><span class="o">.</span><span class="n">calc_mass</span><span class="p">()</span>  <span class="c1"># where did self go?</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+59.16079783099616
+</pre></div></div>
+</div>
+<p>In a class, <code class="docutils literal notranslate"><span class="pre">self</span></code> is given <em>automatically</em> as the first argument! Hereby, we solved our odd problem from above.</p>
+<p>Furthermore, we can now access attributes instead of using the <code class="docutils literal notranslate"><span class="pre">[...]</span></code></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">particle1</span><span class="o">.</span><span class="n">pz</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+40
+</pre></div></div>
+</div>
+<p>That’s what we want!</p>
+<p>Exercise: override the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method to make two particle addable. Name it <code class="docutils literal notranslate"><span class="pre">Particle</span></code> Hint: you need to construct a new Particle</p>
+<p>STOP SCROLING, SOLUTION AHEAD!</p>
+<p>STOP SCROLING, SOLUTION AHEAD!</p>
+<p>STOP SCROLING, SOLUTION AHEAD!</p>
+<p>STOP SCROLING, SOLUTION AHEAD!</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+
+<span></span><span class="k">class</span> <span class="nc">Particle</span><span class="p">:</span>
+    <span class="c1"># what we don&#39;t see: before the __init__, there is a (automatic) make_particle. Normally we don&#39;t need it.</span>
+
+    <span class="c1"># This is the initialiser, basically initialize_particle</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">):</span>  <span class="c1"># self is the instance, the future object.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">px</span> <span class="o">=</span> <span class="n">px</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">py</span> <span class="o">=</span> <span class="n">py</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pz</span> <span class="o">=</span> <span class="n">pz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">E</span> <span class="o">=</span> <span class="n">E</span>
+
+    <span class="k">def</span> <span class="nf">calc_mass</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># why not reuse the one from above?</span>
+        <span class="k">return</span> <span class="n">calc_mass_simple</span><span class="p">(</span><span class="n">px</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">new_px</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">px</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">px</span>
+        <span class="n">new_py</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">py</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">py</span>
+        <span class="n">new_pz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pz</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">pz</span>
+        <span class="n">new_E</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">E</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">E</span>
+        <span class="k">return</span> <span class="n">Particle</span><span class="p">(</span><span class="n">new_px</span><span class="p">,</span> <span class="n">new_py</span><span class="p">,</span> <span class="n">new_pz</span><span class="p">,</span> <span class="n">new_E</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">particle1</span> <span class="o">=</span> <span class="n">Particle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">particle2</span> <span class="o">=</span> <span class="n">Particle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="c1"># test it here</span>
+<span class="n">new_particle</span> <span class="o">=</span> <span class="n">particle1</span> <span class="o">+</span> <span class="n">particle2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Inheritance:-a-glance">
+<h2>Inheritance: a glance<a class="headerlink" href="#Inheritance:-a-glance" title="Permalink to this headline">¶</a></h2>
+<p>Instead of completely rewriting <code class="docutils literal notranslate"><span class="pre">Particle</span></code>, we can also inherit the class from it. This means we “overtake” the parent class and add/replace certain fields.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">VerboseParticle</span><span class="p">(</span><span class="n">Particle</span><span class="p">):</span>  <span class="c1"># This is inheritance</span>
+
+    <span class="k">def</span> <span class="nf">momentum_text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;px: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">px</span><span class="si">}</span><span class="s2">, py: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">py</span><span class="si">}</span><span class="s2">, pz </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">pz</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># test it here again</span>
+<span class="n">particle1</span> <span class="o">=</span> <span class="n">VerboseParticle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">particle2</span> <span class="o">=</span> <span class="n">VerboseParticle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">new_particle</span> <span class="o">=</span> <span class="n">particle1</span> <span class="o">+</span> <span class="n">particle2</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">type</span><span class="p">(</span><span class="n">new_particle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+__main__.Particle
+</pre></div></div>
+</div>
+<p>We have one problem now: the particle is again a <code class="docutils literal notranslate"><span class="pre">Particle</span></code>, not a <code class="docutils literal notranslate"><span class="pre">VerboseParticle</span></code>. This is because we “hardcoded” the name into the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method.</p>
+<div class="section" id="How-to-fix">
+<h3>How to fix<a class="headerlink" href="#How-to-fix" title="Permalink to this headline">¶</a></h3>
+<p>Let’s first step back. We have seen quite a few things in this lecture. This was an introduction into classes in a minimal time. Classes are a powerful yet non-trivial concept that require to know a lot more than the simple behavior that we just looked at. There are many concepts - interfaces, multiple inheritance and MRO, inheritance vs composition, private vs public, getter and setter, stateful/stateless, classmethods and staticmethods, … - that we just did not cover here, as it takes a full
+fledged course on OOP to master these things.</p>
+<p>The problem above should make one thing clear: it is a powerful, yet difficult tool to use and without the proper knowledge, things can go wrong in completely unexpected corners; that’s why good software practices are not just a nice-to-have but a mandatory asset to guarantee the best-possible (most bugfree) codebase.</p>
+<p>How to actually fix it: instead of <code class="docutils literal notranslate"><span class="pre">Particle</span></code>, we can use the class dynamically itself. <code class="docutils literal notranslate"><span class="pre">type</span></code> comes in handy: this may has been encountered as a tool to return the type of an object. But this type <em>is exactly the class we need!</em>.</p>
+<p>(Sidenote: be aware of <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> vs <code class="docutils literal notranslate"><span class="pre">type</span></code>, use the former if not explicitly type has to be used.)</p>
+<p>So we can replace the call in <code class="docutils literal notranslate"><span class="pre">__add__</span></code> as follows. Insead of <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">Particle(new_px,</span> <span class="pre">new_py,</span> <span class="pre">new_pz,</span> <span class="pre">new_E)</span></code> we have <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">type(self)(new_px,</span> <span class="pre">new_py,</span> <span class="pre">new_pz,</span> <span class="pre">new_E)</span></code></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">BetterParticle</span><span class="p">(</span><span class="n">Particle</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">superpower</span><span class="o">=</span><span class="mi">42</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">superpower</span> <span class="o">=</span> <span class="n">superpower</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="learning.html" class="btn btn-neutral float-right" title="Learning more" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules.html" class="btn btn-neutral float-left" title="Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+    Hello world
+
+
+</body>
+</html>

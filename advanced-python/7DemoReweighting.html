@@ -95,6 +95,25 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../python/README.html">An introduction to Python</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../python/running.html">Running Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/00scripts.html">Scripting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Mutability">Mutability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#dynamic-typing">dynamic typing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
 </ul>
@@ -119,7 +138,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#conditions-in-loops">Conditions in loops</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#inline-methods">Inline methods</a></li>
 </ul>
 </li>
@@ -135,6 +154,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-your-first-python-module">Write your first Python module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-a-structured-module">Write a structured module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/modules.html#run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/classes.html">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/classes.html#Welcome-to-classes">Welcome to classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/classes.html#Inheritance:-a-glance">Inheritance: a glance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/classes.html#How-to-fix">How to fix</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/learning.html">Learning more</a><ul>
@@ -879,11 +906,11 @@ KS over  mu_pt_sum  =  0.21639364439970188
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.5188560497512333
-KS over  pt_b  =  0.21969821890410618
-KS over  pt_phi  =  0.4049058805971353
-KS over  vchi2_b  =  0.40423501491936664
-KS over  mu_pt_sum  =  0.21969821890410618
+KS over  hSPD  =  0.5208306666666569
+KS over  pt_b  =  0.21381336318275396
+KS over  pt_phi  =  0.4003193134329611
+KS over  vchi2_b  =  0.40463384078982156
+KS over  mu_pt_sum  =  0.21381336318275396
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -910,11 +937,11 @@ KS over  mu_pt_sum  =  0.21969821890410618
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.525398649132636
-KS over  pt_b  =  0.2085477489271138
-KS over  pt_phi  =  0.39447598022744645
-KS over  vchi2_b  =  0.40769232792468524
-KS over  mu_pt_sum  =  0.2085477489271138
+KS over  hSPD  =  0.5209010229434917
+KS over  pt_b  =  0.2257520936389299
+KS over  pt_phi  =  0.4080371598581225
+KS over  vchi2_b  =  0.40656550904763367
+KS over  mu_pt_sum  =  0.2257520936389299
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -956,11 +983,11 @@ KS over  mu_pt_sum  =  0.2085477489271138
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.41794163028551007
-KS over  pt_b  =  0.1123278419609946
-KS over  pt_phi  =  0.2771270869136793
-KS over  vchi2_b  =  0.35099157104101386
-KS over  mu_pt_sum  =  0.1123278419609946
+KS over  hSPD  =  0.41070487849116033
+KS over  pt_b  =  0.12513095402915547
+KS over  pt_phi  =  0.28226903781244306
+KS over  vchi2_b  =  0.34785101153313525
+KS over  mu_pt_sum  =  0.12513095402915547
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -996,11 +1023,11 @@ KS over  mu_pt_sum  =  0.1123278419609946
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.04913990376324284
-KS over  pt_b  =  0.02664336686846111
-KS over  pt_phi  =  0.02055694199850125
-KS over  vchi2_b  =  0.01888228757512933
-KS over  mu_pt_sum  =  0.02664336686846111
+KS over  hSPD  =  0.04169521169347434
+KS over  pt_b  =  0.03275283979979948
+KS over  pt_phi  =  0.026183446735547733
+KS over  vchi2_b  =  0.044646560929337276
+KS over  mu_pt_sum  =  0.03275283979979948
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1045,9 +1072,9 @@ KS over  mu_pt_sum  =  0.02664336686846111
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.525398649132636
-Bins reweight KS: 0.41794163028551007
-GB Reweight   KS: 0.04913990376324284
+No reweight   KS: 0.5209010229434917
+Bins reweight KS: 0.41070487849116033
+GB Reweight   KS: 0.04169521169347434
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1064,9 +1091,9 @@ GB Reweight   KS: 0.04913990376324284
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.09522255586661099
-Bins reweight KS: 0.12102405945387501
-GB Reweight   KS: 0.03411751911943728
+No reweight   KS: 0.08418048610353276
+Bins reweight KS: 0.10817327756337028
+GB Reweight   KS: 0.026583060412287973
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1083,9 +1110,9 @@ GB Reweight   KS: 0.03411751911943728
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.3716505692974649
-Bins reweight KS: 0.3375583213636883
-GB Reweight   KS: 0.035512068791060725
+No reweight   KS: 0.3669364674507679
+Bins reweight KS: 0.3321431049533163
+GB Reweight   KS: 0.03847561500687002
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1102,9 +1129,9 @@ GB Reweight   KS: 0.035512068791060725
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.4774713124415835
-Bins reweight KS: 0.38232173285043514
-GB Reweight   KS: 0.04278997503557111
+No reweight   KS: 0.4844275422494563
+Bins reweight KS: 0.3821268779243522
+GB Reweight   KS: 0.03475674418959068
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1121,9 +1148,9 @@ GB Reweight   KS: 0.04278997503557111
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.4931252702861293
-Bins reweight KS: 0.3999262851852667
-GB Reweight   KS: 0.027556982318213907
+No reweight   KS: 0.4922635452348625
+Bins reweight KS: 0.39903056421015753
+GB Reweight   KS: 0.036205827362770227
 </pre></div></div>
 </div>
 </div>
@@ -1165,9 +1192,9 @@ GB Reweight   KS: 0.027556982318213907
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-original 0.9352625757318761
-bins 0.911993159091266
-gb_weights 0.5504114915372564
+original 0.9387729264196644
+bins 0.9112539830416918
+gb_weights 0.5512049756032189
 </pre></div></div>
 </div>
 </div>
@@ -1202,11 +1229,11 @@ gb_weights 0.5504114915372564
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 KFold prediction using folds column
-KS over  hSPD  =  0.04755407750973961
-KS over  pt_b  =  0.03127472388426378
-KS over  pt_phi  =  0.02625479919914253
-KS over  vchi2_b  =  0.014789540457010086
-KS over  mu_pt_sum  =  0.03127472388426378
+KS over  hSPD  =  0.04635367172510063
+KS over  pt_b  =  0.034605615617167906
+KS over  pt_phi  =  0.023159673437624845
+KS over  vchi2_b  =  0.01936870821133785
+KS over  mu_pt_sum  =  0.034605615617167906
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1246,8 +1273,8 @@ KS over  mu_pt_sum  =  0.03127472388426378
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-original 0.9370270128057299
-2-folding 0.575111946411986
+original 0.9371224469505219
+2-folding 0.5801825628605413
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

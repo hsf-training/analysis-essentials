@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Numbers &mdash; Analysis essentials  documentation</title>
+  <title>Scripting &mdash; Analysis essentials  documentation</title>
   
 
   
@@ -42,8 +42,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Strings" href="strings.html" />
-    <link rel="prev" title="Objects and operators" href="operators.html" /> 
+    <link rel="next" title="1: Basics" href="01basics.html" />
+    <link rel="prev" title="Running Python" href="running.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,8 +95,8 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="README.html">An introduction to Python</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="running.html">Running Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="00scripts.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="00scripts.html#argparse">argparse</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Scripting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#argparse">argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="01basics.html">1: Basics</a></li>
@@ -118,7 +118,7 @@
 <li class="toctree-l3"><a class="reference internal" href="operators.html#objects">Objects</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings.html">Strings</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="strings.html#formatting">Formatting</a></li>
 </ul>
@@ -437,14 +437,14 @@
         
           <li><a href="README.html">An introduction to Python</a> &raquo;</li>
         
-      <li>Numbers</li>
+      <li>Scripting</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/python/numbers.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/python/00scripts.md" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -482,122 +482,243 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="numbers">
-<h1>Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h1>
-<p>There’s nothing magical about numbers in Python, and we’ve already discovered
-how we perform operations on them.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="mf">0.5</span>
-<span class="go">2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="mi">11</span> <span class="o">%</span> <span class="mi">4</span>
-<span class="go">3</span>
-</pre></div>
-</div>
-<div class="panel panel-callout docutils container">
-<div class="panel-header open docutils container">
-<p id="integer-division-in-python-2"><i class="fa fa-info-circle"></i> Integer division in Python 2</p>
-</div>
-<div class="panel-body docutils container">
-<p>If for any reason (e.g. you want to use LHCb or Alice software) you have to use Python 2,
-beware of that Python 2 has a few different <em>types</em> of numbers, and they can
-behave differently.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span><span class="o">/</span><span class="mi">3</span>
-<span class="go">3</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="mf">10.0</span><span class="o">/</span><span class="mf">3.0</span>
-<span class="go">3.3333333333333335</span>
-</pre></div>
-</div>
-<p>Interesting. Something different happens when we use numbers with and without
-decimal places! This occurs because numbers given with decimal places, like
-<code class="docutils literal notranslate"><span class="pre">3.14</span></code>  are <em>floats</em>, while those without, like <code class="docutils literal notranslate"><span class="pre">3</span></code>, are <em>integers</em>.</p>
-<p>For historical reasons, dividing two integers in Python 2 returns an integer,
-where the intermediate result is always rounded down. Division using <em>at least
-one</em> float gives us the more intuitive answer.</p>
-<p>In Python 3, division with integers works the same way as with floats. You can
-ask to have this behaviour in Python 2.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span>
-<span class="go">0.75</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="mf">3.0</span> <span class="o">/</span> <span class="mf">4.0</span>
-<span class="go">0.75</span>
-</pre></div>
-</div>
-<p>Because the default behaviour in Python 2 is quite unintuitive, we recommend
-using the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">__future__</span> <span class="pre">import</span> <span class="pre">division</span></code> line everywhere. We’ll come to what exactly this
-line is doing shortly.</p>
-<p>If you <em>do</em> want a rounding division, you then can ask for it explicitly with
-round, or, if you want an integer division (truncating, rounding towards 0):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">5</span> <span class="o">/</span> <span class="mi">3</span>
-<span class="go">1.66666666667</span>
+<div class="section" id="scripting">
+<h1>Scripting<a class="headerlink" href="#scripting" title="Permalink to this headline">¶</a></h1>
+<p>OK, so we’ve spent quite a long time in Python shells. But we can quit.
+With IPython’s history we can only get back our work line-by-line. When we want to
+persist what we’ve done, we write code to a file and then run the file.</p>
+<p>Let’s create a file called <code class="docutils literal notranslate"><span class="pre">pizzaiolo.py</span></code>, and write a little python in it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
-<span class="go">2</span>
+<span class="k">def</span> <span class="nf">make_pizza</span><span class="p">(</span><span class="o">*</span><span class="n">toppings</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Make a delicious pizza from the toppings.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Making pizza...&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">topping</span> <span class="ow">in</span> <span class="n">toppings</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Adding </span><span class="si">{</span><span class="n">topping</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done!&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Pizza with toppings: </span><span class="si">{</span><span class="n">toppings</span><span class="si">}</span><span class="s1">&#39;</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="mi">5</span> <span class="o">//</span> <span class="mi">3</span>
-<span class="go">1</span>
+<span class="n">pizza</span> <span class="o">=</span> <span class="n">make_pizza</span><span class="p">(</span><span class="s1">&#39;cheese&#39;</span><span class="p">,</span> <span class="s1">&#39;olives&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="panel panel-callout docutils container">
-<div class="panel-header open docutils container">
-<p id="operators"><i class="fa fa-info-circle"></i> Operators</p>
-</div>
-<div class="panel-body docutils container">
-<p>This behaviour can be explained in terms of operators and the double-underscore
-methods. You can see that numbers have two methods for division:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="go">[...,</span>
-<span class="go"> &#39;__floordiv__&#39;,</span>
-<span class="go"> ...</span>
-<span class="go"> &#39;__truediv__&#39;,</span>
-<span class="go"> ...]</span>
+<p>To run it, we can run the <code class="docutils literal notranslate"><span class="pre">python</span></code> or <code class="docutils literal notranslate"><span class="pre">ipython</span></code> programs in our shell, passing
+the filename as an argument.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python pizzaiolo.py
+Making pizza...
+Adding cheese
+Done!
+Adding olives
+Done!
+$ ipython pizzaiolo.py
+Making pizza...
+Adding cheese
+Done!
+Adding olives
+Done!
 </pre></div>
 </div>
-<p>In Python 2, the <code class="docutils literal notranslate"><span class="pre">/</span></code> operator corresponded to the <code class="docutils literal notranslate"><span class="pre">__floordiv__</span></code> method when
-used with integers, but the <code class="docutils literal notranslate"><span class="pre">__truediv__</span></code> operator when used with floats. In
-Python 3, and when using the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">__future__</span> <span class="pre">import</span> <span class="pre">division</span></code> line, the <code class="docutils literal notranslate"><span class="pre">/</span></code>
-operator always uses the <code class="docutils literal notranslate"><span class="pre">__truediv__</span></code> method.</p>
-</div>
-</div>
-<p>Python also lets you manipulate complex numbers, using <code class="docutils literal notranslate"><span class="pre">j</span></code> to represent the
-complex term.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">4</span><span class="n">j</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
-<span class="go">(-3+5j)</span>
+<p>We can enter an interactive shell after the script has run by including the
+<code class="docutils literal notranslate"><span class="pre">-i</span></code> flag, in which we’ll have access to anything that was defined by the
+script.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python -i pizzaiolo.py
+Making pizza...
+Adding cheese
+Done!
+Adding olives
+Done!
+&gt;&gt;&gt; <span class="nb">time</span>
+&lt;module <span class="s1">&#39;time&#39;</span> from <span class="s1">&#39;/usr/lib/python2.7/lib-dynload/time.so&#39;</span>&gt;
+&gt;&gt;&gt; pizza
+<span class="s2">&quot;Pizza with toppings: (&#39;cheese&#39;, &#39;olives&#39;)&quot;</span>
+&gt;&gt;&gt; exit<span class="o">()</span>
+
+$ ipython -i pizzaiolo.py
+Making pizza...
+Adding cheese
+Done!
+Adding olives
+Done!
+
+In <span class="o">[</span><span class="m">1</span><span class="o">]</span>: pizza
+<span class="s2">&quot;Pizza with toppings: (&#39;cheese&#39;, &#39;olives&#39;)&quot;</span>
+
+In <span class="o">[</span><span class="m">2</span><span class="o">]</span>: exit<span class="o">()</span>
+
+$
 </pre></div>
 </div>
-<p>Complex numbers are objects, of course, and have some useful functions and
-properties attached to them.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span>
-<span class="go">(1-4j)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">imag</span>
-<span class="go">4.0</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">real</span>
-<span class="go">1.0</span>
+<p>One of the most interesting things you can do in your own scripts is accept
+arguments. Wouldn’t it be great if we could decide what toppings our pizza has
+<em>from the command line</em>?</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python pizzaiolo.py cheese broccoli
+Making pizza...
+Adding cheese
+Done!
+Adding olives
+Done!
 </pre></div>
 </div>
-<p>Somewhat confusingly, computing the magnitude of a complex number can be done
-with the <code class="docutils literal notranslate"><span class="pre">abs</span></code> method, which is available globally.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="go">4.123105625617661</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">real</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="n">imag</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="go">4.123105625617661</span>
+<p>Of course, nothing’s changed because our script doesn’t know how to handle such
+arguments. To add this, we use for example the <code class="docutils literal notranslate"><span class="pre">sys</span></code> module, which makes the command line
+arguments available as the <code class="docutils literal notranslate"><span class="pre">argv</span></code> property. We can modify our script to print
+this out, to get a feeling for what’s going on. We’ll comment out our method
+call whilst we’re just playing around.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">make_pizza</span><span class="p">(</span><span class="o">*</span><span class="n">toppings</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Make a delicious pizza from the toppings.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Making pizza...&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">topping</span> <span class="ow">in</span> <span class="n">toppings</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Adding </span><span class="si">{</span><span class="n">topping</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done!&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Pizza with toppings: </span><span class="si">{</span><span class="n">toppings</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sys.argv:&#39;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+<span class="c1"># pizza = make_pizza(&#39;cheese&#39;, &#39;olives&#39;)</span>
 </pre></div>
 </div>
-<p>This also demonstrates the <code class="docutils literal notranslate"><span class="pre">**</span></code> operator, which for real numbers corresponds to
-exponentiation.</p>
-<p>Each type of number can be created <em>literally</em>, like we’ve been doing, by just
-typing the number into your shell or source code, and by using the correspond
-methods.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">()</span>
-<span class="go">0</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">float</span><span class="p">()</span>
-<span class="go">0.0</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">complex</span><span class="p">()</span>
-<span class="go">0j</span>
+<p>Then run it:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python pizzaiolo.py
+sys.argv: <span class="o">[</span><span class="s1">&#39;pizzaiolo.py&#39;</span><span class="o">]</span>
+$ python pizzaiolo.py cheese broccoli
+sys.argv: <span class="o">[</span><span class="s1">&#39;pizzaiolo.py&#39;</span>, <span class="s1">&#39;cheese&#39;</span>, <span class="s1">&#39;broccoli&#39;</span><span class="o">]</span>
+$ python pizzaiolo.py cheese broccoli --help --verbose
+sys.argv: <span class="o">[</span><span class="s1">&#39;pizzaiolo.py&#39;</span>, <span class="s1">&#39;cheese&#39;</span>, <span class="s1">&#39;broccoli&#39;</span>, <span class="s1">&#39;--help&#39;</span>, <span class="s1">&#39;--verbose&#39;</span><span class="o">]</span>
 </pre></div>
+</div>
+<p>Awesome! <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> is just a list with one value per argument (arguments on
+the command line are separate by spaces). The first value is always the name of
+the script that we run.</p>
+<p>So, let’s use the command line arguments in our script.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># print(&#39;sys.argv:&#39;, sys.argv)</span>
+<span class="n">toppings</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">pizza</span> <span class="o">=</span> <span class="n">make_pizza</span><span class="p">(</span><span class="o">*</span><span class="n">toppings</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And then run it:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python pizzaiolo.py cheese broccoli
+Making pizza...
+Adding cheese
+Done!
+Adding broccoli
+Done!
+</pre></div>
+</div>
+<p>Super cool. Now we could decide to add some flags that modify the behaviour of
+our program. We might like the <code class="docutils literal notranslate"><span class="pre">--help</span></code> flag to print a help message and exit,
+without actually making pizza, and a <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> flag to enable printing more
+information.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+<span class="k">if</span> <span class="s1">&#39;--help&#39;</span> <span class="ow">in</span> <span class="n">arguments</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Make a pizza.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Usage: pizzaiolo.py topping1 topping2 ...&#39;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="s1">&#39;--verbose&#39;</span> <span class="ow">in</span> <span class="n">arguments</span><span class="p">:</span>
+    <span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="c1"># We don&#39;t want the flag passed as a topping!</span>
+    <span class="n">arguments</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;--verbose&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">verbose</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;About to call make_pizza&#39;</span><span class="p">)</span>
+<span class="n">pizza</span> <span class="o">=</span> <span class="n">make_pizza</span><span class="p">(</span><span class="o">*</span><span class="n">arguments</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finished&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let’s try running it.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python pizzaiolo.py cheese broccoli
+Making pizza...
+Adding cheese
+Done!
+Adding broccoli
+Done!
+$ python pizzaiolo.py cheese broccoli --help
+Make a pizza.
+Usage: pizzaiolo.py topping1 topping2 ...
+$ python pizzaiolo.py cheese broccoli --verbose
+About to call make_pizza
+Making pizza...
+Adding cheese
+Done!
+Adding broccoli
+Done!
+Finished
+</pre></div>
+</div>
+<p>Great, everything seems to work.</p>
+<div class="section" id="argparse">
+<h2>argparse<a class="headerlink" href="#argparse" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://docs.python.org/2/library/argparse.html"><code class="docutils literal notranslate"><span class="pre">argparse</span></code> module</a> comes as part of the Python standard library,
+and allows us to define what arguments our scripts accept much more easily
+than what we’ve shown. Under the hood, it just inspects <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> in exactly
+the same way as we’ve done, but it takes care of things like validation for us.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">def</span> <span class="nf">make_pizza</span><span class="p">(</span><span class="o">*</span><span class="n">toppings</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Make a delicious pizza from the toppings.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Making pizza...&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">topping</span> <span class="ow">in</span> <span class="n">toppings</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Adding </span><span class="si">{</span><span class="n">topping</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done!&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Pizza with toppings: </span><span class="si">{</span><span class="n">toppings</span><span class="si">}</span><span class="s1">&#39;</span>
+
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Make a pizza&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;toppings&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Toppings to put on the pizza.&#39;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--verbose&#39;</span><span class="p">,</span> <span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Print more information whilst making.&#39;</span><span class="p">)</span>
+<span class="n">arguments</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">arguments</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;About to call make_pizza&#39;</span><span class="p">)</span>
+<span class="n">make_pizza</span><span class="p">(</span><span class="o">*</span><span class="n">arguments</span><span class="o">.</span><span class="n">toppings</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">arguments</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finished&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We say that we want an argument, that we will refer to as <code class="docutils literal notranslate"><span class="pre">toppings</span></code> in the
+code, that can be specified multiple times <code class="docutils literal notranslate"><span class="pre">nargs='+'</span></code>, and a flag called
+<code class="docutils literal notranslate"><span class="pre">--verbose</span></code>. We ask that that flag can also be specified using the <code class="docutils literal notranslate"><span class="pre">-v</span></code>
+shorthand.</p>
+<p>Let’s start by asking for help again.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python pizzaiolo.py --help
+usage: simple.py <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>--verbose<span class="o">]</span> toppings <span class="o">[</span>toppings ...<span class="o">]</span>
+
+Make a pizza
+
+positional arguments:
+  toppings       Toppings to put on the pizza.
+
+optional arguments:
+  -h, --help     show this <span class="nb">help</span> message and <span class="nb">exit</span>
+  --verbose, -v  Print more information whilst making.
+</pre></div>
+</div>
+<p>Woah, nice! We didn’t even tell <code class="docutils literal notranslate"><span class="pre">argparse</span></code> to have a <code class="docutils literal notranslate"><span class="pre">--help</span></code> flag, but we have
+one automatically. (<code class="docutils literal notranslate"><span class="pre">argparse</span></code> will also add <code class="docutils literal notranslate"><span class="pre">-h</span></code> as an alias for <code class="docutils literal notranslate"><span class="pre">--help</span></code>.)</p>
+<p>Let’s now prepare the traditional Pizza Margherita.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ python pizzaiolo.py <span class="s1">&#39;tomato sauce&#39;</span> <span class="s1">&#39;buffalo mozzarella&#39;</span> --verbose
+About to call make_pizza
+Making pizza...
+Adding tomato sauce
+Done!
+Adding buffalo mozzarella
+Done!
+Finished
+</pre></div>
+</div>
+<p>The same result is obtained, but more cleanly expressed and with fewer lines of code!</p>
 </div>
 </div>
 
@@ -609,10 +730,10 @@ methods.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="strings.html" class="btn btn-neutral float-right" title="Strings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="01basics.html" class="btn btn-neutral float-right" title="1: Basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="operators.html" class="btn btn-neutral float-left" title="Objects and operators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="running.html" class="btn btn-neutral float-left" title="Running Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

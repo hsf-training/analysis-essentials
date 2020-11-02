@@ -95,6 +95,25 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="README.html">An introduction to Python</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="running.html">Running Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00scripts.html">Scripting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="00scripts.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="01basics.html">1: Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#strong-typing">strong typing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Container-types">Container types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Mutability">Mutability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#dynamic-typing">dynamic typing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Python-variable-assignement">Python variable assignement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="operators.html">Objects and operators</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="operators.html#objects">Objects</a></li>
 </ul>
@@ -119,7 +138,7 @@
 <li class="toctree-l3"><a class="reference internal" href="conditions.html#conditions-in-loops">Conditions in loops</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="methods.html">Methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="methods.html">Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="methods.html#inline-methods">Inline methods</a></li>
 </ul>
 </li>
@@ -135,6 +154,14 @@
 <li class="toctree-l3"><a class="reference internal" href="modules.html#write-your-first-python-module">Write your first Python module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modules.html#write-a-structured-module">Write a structured module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modules.html#run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classes.html#Welcome-to-classes">Welcome to classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classes.html#Inheritance:-a-glance">Inheritance: a glance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classes.html#How-to-fix">How to fix</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="learning.html">Learning more</a><ul>
@@ -496,7 +523,7 @@ Conventionally, double quotations are usually used for these.</p>
 <span class="gp">...</span><span class="s2"></span>
 <span class="gp">... </span><span class="s2">Quite long indeed.</span>
 <span class="gp">... </span><span class="s2">&quot;&quot;&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">long_fact</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">long_fact</span><span class="p">)</span>
 <span class="go">This is a long string.</span>
 
 <span class="go">Quite long indeed.</span>
@@ -557,7 +584,7 @@ special <code class="docutils literal notranslate"><span class="pre">{}</span></
 <p>Much better! We define the whole string at once, and then place the missing
 values in later.</p>
 <p>The numbers inside the placeholders, <code class="docutils literal notranslate"><span class="pre">{0}</span></code> and <code class="docutils literal notranslate"><span class="pre">{1}</span></code>, correspond to the indices
-of the arguments passed to the <code class="docutils literal notranslate"><span class="pre">format</span></code> method, where <code class="docutils literal notranslate"><span class="pre">0</span></code> is the first
+of the arguments passed to the <code class="docutils literal notranslate"><span class="pre">format</span></code> method (but are not mandatory in newer Python), where <code class="docutils literal notranslate"><span class="pre">0</span></code> is the first
 argument, <code class="docutils literal notranslate"><span class="pre">1</span></code> is the second, and so on. By referencing positions like this, we
 can easily repeat placeholders in the string, but only pass the values once to
 <code class="docutils literal notranslate"><span class="pre">format</span></code>.</p>
@@ -573,9 +600,20 @@ using the same name.</p>
 <span class="go">My results are: 123.0, 122.3. But the best is 123.0, obviously.</span>
 </pre></div>
 </div>
+<p>We can do even better! With Python 3.6+, there are so called f-strings that allow to directly enter a Python expression into the brackets. The syntax is to add an <code class="docutils literal notranslate"><span class="pre">f</span></code> in front of the string.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">template3</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;My results are: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s1">. But the best is </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s1">, obviously.&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">template3</span><span class="p">)</span>
+<span class="go">My results are: 123.0, 122.3. But the best is 123.0, obviously.</span>
+</pre></div>
+</div>
 <p>This is nice because it gives more meaning to what the placeholders are for.</p>
 <p>There’s <a class="reference external" href="https://pyformat.info/">a lot you can do inside the placeholders</a>, such as specifying that you want to format a number with a certain number of decimal places.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This number is great: </span><span class="si">{0:.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result1</span><span class="p">))</span>
+<span class="go">This number is great: 123.000</span>
+</pre></div>
+</div>
+<p>The same works again with f-strings.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;This number is great: </span><span class="si">{</span><span class="n">result1</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="go">This number is great: 123.000</span>
 </pre></div>
 </div>

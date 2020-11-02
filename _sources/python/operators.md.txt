@@ -11,8 +11,7 @@ answer is the dot _operator_ `.`.
 Operators are special pieces of the _syntax_ of a programming language.
 Syntax is the way you express what you want to do.
 
-In Python, an operator acts on the thing that’s on the right of it using the 
-thing on the left. In the example we just saw, the dot operator `.` _acts_ on 
+In Python, an operator acts on the thing that’s on the left of it (and sometimes also the object on the right). In the example we just saw, the dot operator `.` _acts_ on 
 `math` in a way that, somehow, _retrieves_ a method called `math.sin`. We can 
 then use that method straight away:
 
@@ -29,7 +28,7 @@ have the appropriate value.
 We could also store the result of `math.sin` in a variable, and use it later.
 
 ```python
->>> twopi = 2*math.pi
+>>> twopi = 2 * math.pi
 >>> my_sin = math.sin
 >>> my_sin(twopi)
 -2.4492935982947064e-16
