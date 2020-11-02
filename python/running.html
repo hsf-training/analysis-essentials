@@ -42,7 +42,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Scripting" href="00scripts.html" />
+    <link rel="next" title="Objects and operators" href="operators.html" />
     <link rel="prev" title="An introduction to Python" href="README.html" /> 
 </head>
 
@@ -95,25 +95,6 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="README.html">An introduction to Python</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Running Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="00scripts.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="00scripts.html#argparse">argparse</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html#Jupyter">Jupyter</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#strong-typing">strong typing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Container-types">Container types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Mutability">Mutability</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#dynamic-typing">dynamic typing</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Python-variable-assignement">Python variable assignement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="operators.html">Objects and operators</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="operators.html#objects">Objects</a></li>
 </ul>
@@ -138,7 +119,7 @@
 <li class="toctree-l3"><a class="reference internal" href="conditions.html#conditions-in-loops">Conditions in loops</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="methods.html">Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="methods.html">Methods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="methods.html#inline-methods">Inline methods</a></li>
 </ul>
 </li>
@@ -154,14 +135,6 @@
 <li class="toctree-l3"><a class="reference internal" href="modules.html#write-your-first-python-module">Write your first Python module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modules.html#write-a-structured-module">Write a structured module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modules.html#run-a-module">Run a module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="classes.html#Welcome-to-classes">Welcome to classes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="classes.html#Inheritance:-a-glance">Inheritance: a glance</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="classes.html#How-to-fix">How to fix</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="learning.html">Learning more</a><ul>
@@ -484,9 +457,8 @@
 </style>
 <div class="section" id="running-python">
 <h1>Running Python<a class="headerlink" href="#running-python" title="Permalink to this headline">¶</a></h1>
-<p>To start using Python, we need access to the <code class="docutils literal notranslate"><span class="pre">python</span></code> program in a terminal. It is recommended to use Anaconda and its environments whenever possible.</p>
-<p>Alternatively, you can directly use a version on lxplus.
-The version installed on lxplus is 2.7.15, which is old. However, we can get
+<p>To start using Python, we need access to the <code class="docutils literal notranslate"><span class="pre">python</span></code> program in a terminal.
+The version installed on lxplus is 2.6.6, which is very old. However, we can get
 a newer version along with various useful packages
 (see details on the <a class="reference external" href="http://lcginfo.cern.ch/">LCG stacks</a>) by setting up an LCG environment:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_94python3 x86_64-slc6-gcc62-opt
@@ -494,8 +466,7 @@ a newer version along with various useful packages
 </div>
 <p>If you have a computer running MacOS or some Linux distribution, it will have
 come will Python pre-installed. Either way, a simple way to get Python on your
-computer is to install <a class="reference external" href="https://github.com/conda-forge/miniforge#download">miniforge</a> (<a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a> with the <a class="reference external" href="https://conda-forge.org/">conda-forge</a> channel
-as default). In any case, it is <strong>highly recommended to use a virtual environment</strong>, be it with conda or other similar packages, and not your system installation.</p>
+computer is to install <a class="reference external" href="https://www.anaconda.com/distribution/">Anaconda</a>.</p>
 <div class="panel panel-callout docutils container">
 <div class="panel-header open docutils container">
 <p id="python-2-or-3?"><i class="fa fa-info-circle"></i> Python 2 or 3?</p>
@@ -503,11 +474,12 @@ as default). In any case, it is <strong>highly recommended to use a virtual envi
 <div class="panel-body docutils container">
 <p>You might see material that talks about Python 3 or Python 2. Like a lot of other software,
 Python is regularly updated and groups batches of updates, including bug fixes
-and new features, into versions. Python 3 is a new major release and is not <em>backwards compatible</em> with Python 2, which is an exceptional break and not intended to happen again with Python 4. This means that code that works
+and new features, into versions. The interesting thing about Python 3 is that
+it isn’t <em>backwards compatible</em> with Python 2. This means that code that works
 when run with version 2 of Python may not necessarily work when run with
-version 3. Python 2 was around for a long time and the process of migrating to Python 3 has been slow. However the support for Python 2 will soon end (2 month, in 2020!) and with it, most packages completely drop the support or already have.</p>
-<p>Note that, for instance, Alice and LHCb software is not (yet) fully compatible with Python 3. We strongly encourage you to always use Python 3 and only switch to Python 2 when you have to (e.g. when you need to use some software which is not compatible with Python 3). You can install both Python 2 and Python 3 using
-[conda][miniforge.</p>
+version 3. Python 2 was around for a long time, and so the process of migrating to Python 3 has been slow, which is why so many people talk about it. However the support for Python 2 will soon end, so now everyone is encouraged to use Python 3. That is why in this lesson, we will use Python 3.</p>
+<p>Note that, for instance, Alice and LHCb software is not (yet) compatible with Python 3. We strongly encourage you to always use Python 3 and only switch to Python 2 when you have to (e.g. when you need to use some software which is not compatible with Python 3). You can install both Python 2 and Python 3 using
+<a class="reference external" href="https://www.anaconda.com/distribution/">Anaconda</a>.</p>
 </div>
 </div>
 <p>Python is a very user-friendly language. If you’re used to having to compile
@@ -517,32 +489,27 @@ Python <span class="m">3</span>.6.3 <span class="o">(</span>default, Dec <span c
 <span class="o">[</span>GCC <span class="m">6</span>.2.0<span class="o">]</span> on linux
 Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
 &gt;&gt;&gt; <span class="nv">a</span> <span class="o">=</span> <span class="m">3</span>.14
-&gt;&gt;&gt; print<span class="o">(</span>a + <span class="m">1</span>.1<span class="o">)</span>
+&gt;&gt;&gt; print<span class="o">(</span>a+1.1<span class="o">)</span>
 <span class="m">4</span>.24
+&gt;&gt;&gt; a
+<span class="m">3</span>.14
 </pre></div>
 </div>
 <p>Woah! What just happened?</p>
 <ol class="simple">
 <li><p>We started an <em>interactive Python session</em>, also known as a Python <em>shell</em>,
 by executing the <code class="docutils literal notranslate"><span class="pre">python</span></code> command;</p></li>
-<li><p>We typed a line of code, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">3.14</span></code>, and hit enter. this let the Python interpreter <em>compile and execute</em> this line of code. Here, the value 3.14 was assigned to the variable a;</p></li>
-<li><p>We typed another line of code, <code class="docutils literal notranslate"><span class="pre">print(a</span> <span class="pre">+</span> <span class="pre">1.1)</span></code>, and hit enter;</p></li>
+<li><p>We typed a line of code, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">3.14</span></code>, and hit enter;</p></li>
+<li><p>We typed another line of code, <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">(a+1.1)</span></code>, and hit enter;</p></li>
 <li><p>The value <code class="docutils literal notranslate"><span class="pre">4.14</span></code> was printed to the terminal.</p></li>
+<li><p>We type the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p></li>
+<li><p>The value of the variable a was printed.</p></li>
 </ol>
-<p>In this interactive shell, if a value is not assigned to a variable, it will automatically be printed. This is a special feature of the interactive shell and <em>not</em> general Python behavior.</p>
-<p>So</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a
-<span class="m">3</span>.14
-&gt;&gt;&gt; a + <span class="m">1</span>
-<span class="m">4</span>.14
-</pre></div>
-</div>
-<p>directly prints the result.</p>
 <p>This interactive session is sometimes called a REPL: a <strong>R</strong>ead <strong>E</strong>valuate
-<strong>P</strong>rint <strong>L</strong>oop. This is similar to <code class="docutils literal notranslate"><span class="pre">bash</span></code>, where you type your command, run
+<strong>P</strong>rint <strong>L</strong>oop. This is just like <code class="docutils literal notranslate"><span class="pre">bash</span></code>, where you type your command, run
 it, see the results, and can then type the next line. Sometimes there are no
-results, so you don’t see anything in bash being printed (just like running the <code class="docutils literal notranslate"><span class="pre">true</span></code>
-command in <code class="docutils literal notranslate"><span class="pre">bash</span></code>); this, as seen above, is not always true for an interactive Python shell and a convenience feature.</p>
+results, so you don’t see anything being printed (just like running the <code class="docutils literal notranslate"><span class="pre">true</span></code>
+command in <code class="docutils literal notranslate"><span class="pre">bash</span></code>).</p>
 <p>You can leave the session by running <code class="docutils literal notranslate"><span class="pre">exit()</span></code>, or by using the <code class="docutils literal notranslate"><span class="pre">Ctrl-d</span></code> key
 combination.</p>
 <p>Everything that can be done in Python can be done in an interactive session;
@@ -585,7 +552,7 @@ middle of typing.</p></li>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Easily <strong>run shell commands</strong> by starting your line with an exclamation mark (again, this is now an IPython feature and has <em>nothing</em> to do with Python!).</p></li>
+<li><p>Easily <strong>run shell commands</strong> by starting your line with an exclamation mark.</p></li>
 </ul>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>In [6]: !cal
     October 2017
@@ -597,6 +564,16 @@ Su Mo Tu We Th Fr Sa
 29 30 31
 </pre></div>
 </div>
+<ul class="simple">
+<li><p>Access the <strong>value of the last line</strong> with the special <code class="docutils literal notranslate"><span class="pre">_</span></code> variable</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="mf">3.14</span> <span class="o">+</span> <span class="mf">4.13</span>
+<span class="mf">7.27</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">_</span>
+<span class="mf">7.27</span>
+</pre></div>
+</div>
 <p>Your best friend in a (I)Python shell is the <code class="docutils literal notranslate"><span class="pre">help</span></code> method. If you want more
 information on something, just ask for <code class="docutils literal notranslate"><span class="pre">help</span></code>!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">help</span><span class="p">()</span>
@@ -604,9 +581,6 @@ information on something, just ask for <code class="docutils literal notranslate
 <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>In general, this command line utilities can be used to play around or do simply a calculation. For coding, other tools are used that write scripts, which are essentially a text file (with the .py extension), that is line-by-line interpreted by Python.</p>
-<p>A usefule tool in between these two worlds are Jupyter Notebooks that have cells (code blocks) that are executed.</p>
-<p>In the next few chapters, we will start with the basics of Python to get a feeling for what can be done.</p>
 </div>
 
 
@@ -617,7 +591,7 @@ information on something, just ask for <code class="docutils literal notranslate
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="00scripts.html" class="btn btn-neutral float-right" title="Scripting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="operators.html" class="btn btn-neutral float-right" title="Objects and operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="README.html" class="btn btn-neutral float-left" title="An introduction to Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -51,7 +51,7 @@ Conventionally, double quotations are usually used for these.
 ...
 ... Quite long indeed.
 ... """
->>> print(long_fact)
+>>> print long_fact
 This is a long string.
 
 Quite long indeed.
@@ -124,7 +124,7 @@ Much better! We define the whole string at once, and then place the missing
 values in later.
 
 The numbers inside the placeholders, `{0}` and `{1}`, correspond to the indices 
-of the arguments passed to the `format` method (but are not mandatory in newer Python), where `0` is the first 
+of the arguments passed to the `format` method, where `0` is the first 
 argument, `1` is the second, and so on. By referencing positions like this, we 
 can easily repeat placeholders in the string, but only pass the values once to 
 `format`.
@@ -144,29 +144,12 @@ using the same name.
 My results are: 123.0, 122.3. But the best is 123.0, obviously.
 ```
 
-We can do even better! With Python 3.6+, there are so called f-strings that allow to directly enter a Python expression into the brackets. The syntax is to add an `f` in front of the string.
-
-
-```python
->>> template3 = f'My results are: {result1}, {result2}. But the best is {result1}, obviously.'
->>> print(template3)
-My results are: 123.0, 122.3. But the best is 123.0, obviously.
-```
-
-
 This is nice because it gives more meaning to what the placeholders are for.
 
 There’s [a lot you can do inside the placeholders][strformat], such as specifying that you want to format a number with a certain number of decimal places.
 
 ```python
 >>> print('This number is great: {0:.3f}'.format(result1))
-This number is great: 123.000
-```
-
-The same works again with f-strings.
-
-```python
->>> print(f'This number is great: {result1:.3f}')
 This number is great: 123.000
 ```
 

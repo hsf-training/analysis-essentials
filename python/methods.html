@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Functions &mdash; Analysis essentials  documentation</title>
+  <title>Methods &mdash; Analysis essentials  documentation</title>
   
 
   
@@ -95,25 +95,6 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="README.html">An introduction to Python</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="running.html">Running Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="00scripts.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="00scripts.html#argparse">argparse</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html#Jupyter">Jupyter</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#strong-typing">strong typing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Container-types">Container types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Mutability">Mutability</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#dynamic-typing">dynamic typing</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Python-variable-assignement">Python variable assignement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="operators.html">Objects and operators</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="operators.html#objects">Objects</a></li>
 </ul>
@@ -138,7 +119,7 @@
 <li class="toctree-l3"><a class="reference internal" href="conditions.html#conditions-in-loops">Conditions in loops</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Functions</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Methods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#inline-methods">Inline methods</a></li>
 </ul>
 </li>
@@ -154,14 +135,6 @@
 <li class="toctree-l3"><a class="reference internal" href="modules.html#write-your-first-python-module">Write your first Python module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modules.html#write-a-structured-module">Write a structured module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modules.html#run-a-module">Run a module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="classes.html#Welcome-to-classes">Welcome to classes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="classes.html#Inheritance:-a-glance">Inheritance: a glance</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="classes.html#How-to-fix">How to fix</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="learning.html">Learning more</a><ul>
@@ -437,7 +410,7 @@
         
           <li><a href="README.html">An introduction to Python</a> &raquo;</li>
         
-      <li>Functions</li>
+      <li>Methods</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -482,24 +455,18 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="functions">
-<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
-<p>Functions, or methods if they are associated with a class, take some input and return some output. We have
-already used lots of functions, like <code class="docutils literal notranslate"><span class="pre">len</span></code>, <code class="docutils literal notranslate"><span class="pre">abs</span></code> and <code class="docutils literal notranslate"><span class="pre">print</span></code> as well as methods like <code class="docutils literal notranslate"><span class="pre">append</span></code> from <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">get</span></code> from <code class="docutils literal notranslate"><span class="pre">dict</span></code> or <code class="docutils literal notranslate"><span class="pre">replace</span></code> from <code class="docutils literal notranslate"><span class="pre">str</span></code>. In this lesson
+<div class="section" id="methods">
+<h1>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h1>
+<p>Methods, also called functions, take some input and return some output. We have
+already used lots of methods, like <code class="docutils literal notranslate"><span class="pre">dir</span></code>, <code class="docutils literal notranslate"><span class="pre">help</span></code>, and <code class="docutils literal notranslate"><span class="pre">len</span></code>, and in this lesson
 we will start creating our own.</p>
 <p>As we have seen, methods can do a lot of stuff with very little typing. Methods
 are normally used to encapsulate small pieces of code that we want to reuse.</p>
 <p>Let’s rewrite <code class="docutils literal notranslate"><span class="pre">len</span></code> as an example.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="sd">&quot;&quot;&quot;Return the number of elements in `obj`.</span>
+<span class="gp">... </span>    <span class="sd">&quot;&quot;&quot;Return the number of elements in obj.</span>
 <span class="gp">...</span><span class="sd"></span>
-<span class="gp">... </span><span class="sd">    Args</span>
-<span class="gp">... </span><span class="sd">    ----</span>
-<span class="gp">... </span><span class="sd">        obj (iterable): Object the length will be calculated from.</span>
-<span class="gp">...</span><span class="sd"></span>
-<span class="gp">... </span><span class="sd">    Return</span>
-<span class="gp">... </span><span class="sd">    ------</span>
-<span class="gp">... </span><span class="sd">        int: number of elements in `obj`.</span>
+<span class="gp">... </span><span class="sd">    obj must be iterable.</span>
 <span class="gp">... </span><span class="sd">    &quot;&quot;&quot;</span>
 <span class="gp">... </span>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="gp">... </span>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">:</span>
@@ -511,16 +478,9 @@ are normally used to encapsulate small pieces of code that we want to reuse.</p>
 <span class="go">Help on function length in module __main__:</span>
 
 <span class="go">length(obj)</span>
-<span class="go">    Return the number of elements in `obj`.</span>
-<span class="go">    </span>
-<span class="go">    Args</span>
-<span class="go">        obj (iterable): Object the length will be calculated from.</span>
-<span class="go">    </span>
-<span class="go">    Return</span>
-<span class="go">        int: number of elements in `obj`.</span>
+<span class="go">    Return the number of elements in obj.</span>
 
-<span class="go">or viewing the docs view in your preferred editor.</span>
-
+<span class="go">    obj must be iterable.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">length</span><span class="p">(</span><span class="s1">&#39;A b c!&#39;</span><span class="p">)</span>
 <span class="go">6</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">length</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
@@ -539,9 +499,7 @@ indented).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;Return</span> <span class="pre">the</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">elements</span> <span class="pre">in</span> <span class="pre">obj.&quot;&quot;&quot;</span></code>: This is the <em>docstring</em>. It’s
 just a documentation string, defined literally with three double quotes so that we can
 include linebreaks. By placing a string here, Python makes the string
-available to use when we pass our function to <code class="docutils literal notranslate"><span class="pre">help</span></code> and in a lot of other places
-like docs viewer of a decent editor or even allows to automatically generate
-documents including HTML with the docs. Documenting your
+available to use when we pass our function to <code class="docutils literal notranslate"><span class="pre">help</span></code>. Documenting your
 functions is a very good idea! It makes it clear to others, and to
 future-you, what the method is supposed to do.</p></li>
 <li><p>The method block. This is the code that will run whenever you <em>call</em> your
@@ -589,21 +547,7 @@ return multiple things at once.</p>
 tuple, so we can choose to assign one variable per value while calling the
 method.</p>
 <p>[^1]: Names are conventionally in lowercase, with underscores separating words.</p>
-<p>Remark: there are comments (with <code class="docutils literal notranslate"><span class="pre">#</span></code>) and docstrings. Both serve a very different purpose</p>
-<ul class="simple">
-<li><p>comments <code class="docutils literal notranslate"><span class="pre">#</span></code> are for people who <em>read</em> the code. Other developers that don’t want to just
-use your function but <em>change</em> it. They can be short and serve the purpose to make the
-code more readable. Typical example: adding a comment on a <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">1</span></code> added somewhere,
-such as <code class="docutils literal notranslate"> <span class="pre">len(x)</span> <span class="pre">-</span> <span class="pre">1</span>&#160; <span class="pre">#</span> <span class="pre">we</span> <span class="pre">don't</span> <span class="pre">need</span> <span class="pre">the</span> <span class="pre">border</span></code>. If a block of code implements a hard
-to read algorithm, it is also appropriate to use several <code class="docutils literal notranslate"><span class="pre">#</span></code> lines to explain beforehand
-what is going to happen.
-<em>Never</em> use tripple quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> to make a large comment! Use always <code class="docutils literal notranslate"><span class="pre">#</span></code>, any decent
-editor is able to (un)comment several lines at once.</p></li>
-<li><p>Docstrings are for users. If someone imports your function, the docstrings tells
-<em>how to use it</em> and what it does exactly. It does, however, not contain any (unnecessary)
-information about the implementation.</p></li>
-</ul>
-<p>Functions can be called in several ways.</p>
+<p>Methods can be called in several ways.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <span class="gp">... </span>   <span class="sd">&quot;&quot;&quot;Return the sum of x and y.&quot;&quot;&quot;</span>
 <span class="gp">... </span>   <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
@@ -903,31 +847,18 @@ arguments. Then we can call <code class="docutils literal notranslate"><span cla
 <p id="list-comprehension"><i class="fa fa-square-o"></i> List comprehension</p>
 </div>
 <div class="panel-body docutils container">
-<p>How would you rewrite the <code class="docutils literal notranslate"><span class="pre">filter</span></code> example above using a list comprehension?</p>
-<div class="panel panel-solution docutils container">
-<div class="panel-header docutils container">
-<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
-</div>
-<div class="panel-body docutils container">
+<p>How would you rewrite the <code class="docutils literal notranslate"><span class="pre">filter</span></code> example above using a list comprehension?
+{% solution “Solution” %}</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">]</span>
 <span class="go">[0, 2, 4, 6, 8]</span>
 </pre></div>
 </div>
-</div>
-</div>
+<p>{% endsolution %}</p>
 </div>
 </div>
 <p>Generally, you should only use <code class="docutils literal notranslate"><span class="pre">lambda</span></code> methods to define little throw-away
 methods. The main downside with using them is that you can’t attach a docstring
 to them, and they become unwieldy when there’s complex logic.</p>
-<p>Golden rules:</p>
-<ul class="simple">
-<li><p>Make functions idempotent where possible (stateless, the same input values will return the same output). This is of course different for classes.</p></li>
-<li><p>Don’t use globals (if anyhow avoidable).</p></li>
-<li><p>Do not alter the input argument if they are mutable.</p></li>
-<li><p>Put a docstring there. Probably even before you implement your function. This makes it
-not only to everyone else but also to you clear what comes in and what comes out.</p></li>
-</ul>
 </div>
 </div>
 

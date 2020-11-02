@@ -95,25 +95,6 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="README.html">An introduction to Python</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="running.html">Running Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="00scripts.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="00scripts.html#argparse">argparse</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html#Jupyter">Jupyter</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#strong-typing">strong typing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Container-types">Container types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Mutability">Mutability</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#dynamic-typing">dynamic typing</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Python-variable-assignement">Python variable assignement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="operators.html">Objects and operators</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="operators.html#objects">Objects</a></li>
 </ul>
@@ -138,7 +119,7 @@
 <li class="toctree-l3"><a class="reference internal" href="conditions.html#conditions-in-loops">Conditions in loops</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="methods.html">Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="methods.html">Methods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="methods.html#inline-methods">Inline methods</a></li>
 </ul>
 </li>
@@ -154,14 +135,6 @@
 <li class="toctree-l3"><a class="reference internal" href="modules.html#write-your-first-python-module">Write your first Python module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modules.html#write-a-structured-module">Write a structured module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modules.html#run-a-module">Run a module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="classes.html#Welcome-to-classes">Welcome to classes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="classes.html#Inheritance:-a-glance">Inheritance: a glance</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="classes.html#How-to-fix">How to fix</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="learning.html">Learning more</a><ul>
@@ -486,7 +459,7 @@
 <h1>Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h1>
 <p>There’s nothing magical about numbers in Python, and we’ve already discovered
 how we perform operations on them.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="mf">0.5</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mf">0.5</span>
 <span class="go">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mi">11</span> <span class="o">%</span> <span class="mi">4</span>
 <span class="go">3</span>
@@ -515,9 +488,9 @@ one</em> float gives us the more intuitive answer.</p>
 <p>In Python 3, division with integers works the same way as with floats. You can
 ask to have this behaviour in Python 2.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span>
 <span class="go">0.75</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="mf">3.0</span> <span class="o">/</span> <span class="mf">4.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mf">3.0</span><span class="o">/</span><span class="mf">4.0</span>
 <span class="go">0.75</span>
 </pre></div>
 </div>
@@ -525,15 +498,12 @@ ask to have this behaviour in Python 2.</p>
 using the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">__future__</span> <span class="pre">import</span> <span class="pre">division</span></code> line everywhere. We’ll come to what exactly this
 line is doing shortly.</p>
 <p>If you <em>do</em> want a rounding division, you then can ask for it explicitly with
-round, or, if you want an integer division (truncating, rounding towards 0):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">5</span> <span class="o">/</span> <span class="mi">3</span>
-<span class="go">1.66666666667</span>
+the <code class="docutils literal notranslate"><span class="pre">//</span></code> operation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span><span class="o">/</span><span class="mi">3</span>
+<span class="go">3.3333333333333335</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
-<span class="go">2</span>
-
-<span class="gp">&gt;&gt;&gt; </span><span class="mi">5</span> <span class="o">//</span> <span class="mi">3</span>
-<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span><span class="o">//</span><span class="mi">3</span>
+<span class="go">3</span>
 </pre></div>
 </div>
 </div>
@@ -562,7 +532,7 @@ operator always uses the <code class="docutils literal notranslate"><span class=
 <p>Python also lets you manipulate complex numbers, using <code class="docutils literal notranslate"><span class="pre">j</span></code> to represent the
 complex term.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">4</span><span class="n">j</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">=</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
 <span class="go">(-3+5j)</span>
 </pre></div>
@@ -581,8 +551,8 @@ properties attached to them.</p>
 with the <code class="docutils literal notranslate"><span class="pre">abs</span></code> method, which is available globally.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="go">4.123105625617661</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">real</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="n">imag</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">real</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="n">imag</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="go">4.123105625617661</span>
 </pre></div>
 </div>
