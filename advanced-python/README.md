@@ -10,6 +10,7 @@ TODO...
 
     1Basics.ipynb
     AdvancedPython.ipynb
+    AdvancedClasses.ipynb
     2DataAndPlotting.ipynb
     3Classification.ipynb
     4Extension.ipynb
