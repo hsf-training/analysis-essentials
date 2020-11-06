@@ -61,6 +61,12 @@ More tutorials on [zfit](https://github.com/zfit/zfit-tutorials) as well as
 The sPlot - or sWeights - technique is introduced; a technique to statistically subtract the background
 events in a variable. The technique as well as the library to do it is demonstrated.
 
+## Scikit-HEP
+
+Many libraries that are seen in this tutorial are part of Scikit-HEP, the HEP Python ecosystem.
+Not all packages have been used though and in tutorial 70, a few smaller ones are presented to give
+an idea of what is available.
+
 ```eval_rst
 .. toctree::
     :maxdepth: 3
