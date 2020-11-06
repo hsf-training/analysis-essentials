@@ -1,6 +1,6 @@
 # An introduction to Python
 
-[Pithon][python] is a programming language. It’s widely used in the
+[Python][python] is a programming language. It’s widely used in the
 scientific community due to the broad selection of feature-rich, actively 
 maintained libraries. This means that a lot of software has already been 
 written to solve problems common to our field, so you can concentrate on the 
