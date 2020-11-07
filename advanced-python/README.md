@@ -59,7 +59,7 @@ More tutorials on [zfit](https://github.com/zfit/zfit-tutorials) as well as
 ## sPlot technique
 
 The sPlot - or sWeights - technique is introduced; a technique to statistically subtract the background
-events in a variable. The technique as well as the library to do it is demonstrated.
+events in a variable. The technique as well as the library to obtain the weights is demonstrated.
 
 ## Scikit-HEP
 
