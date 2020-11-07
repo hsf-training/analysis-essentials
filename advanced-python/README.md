@@ -84,4 +84,5 @@ an idea of what is available.
     40DemoReweighting.ipynb
     50LikelihoodInference.ipynb
     60sPlot.ipynb
+    70ScikitHEPUniverse
 ```
