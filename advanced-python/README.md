@@ -65,7 +65,7 @@ events in a variable. The technique as well as the library to obtain the weights
 
 Many libraries that are seen in this tutorial are part of 
 [Scikit-HEP, the HEP Python ecosystem](https://scikit-hep.org/).
-Not all packages have been used though and in tutorial 70, a few smaller ones are presented to give
+Not all packages have been used though and in tutorial 70, a few smaller, yet useful packages are presented to give
 an idea of what is available.
 
 ```eval_rst
