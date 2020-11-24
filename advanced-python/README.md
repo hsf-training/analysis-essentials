@@ -1,5 +1,4 @@
 # Advanced Python Tutorial
-
 TODO...
 
 ```eval_rst
@@ -12,6 +11,7 @@ TODO...
     2DataAndPlotting.ipynb
     3Classification.ipynb
     4Extension.ipynb
+    4bModelTuning.ipynb
     5BoostingToUniformity.ipynb
     6DemoNeuralNetworks.ipynb
     7DemoReweighting.ipynb
