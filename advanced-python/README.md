@@ -1,5 +1,4 @@
 # Advanced Python Tutorial
-
 TODO...
 
 ```eval_rst
