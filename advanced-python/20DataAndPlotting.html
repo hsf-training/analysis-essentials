@@ -1,0 +1,1810 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2: First look at data &mdash; Analysis essentials  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/panels.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3: Multivariate Analysis" href="30Classification.html" />
+    <link rel="prev" title="Advanced Classes" href="12AdvancedClasses.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Analysis essentials
+          
+
+          
+            
+            <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/README.html">An introduction to Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/running.html">Running Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/00scripts.html">Scripting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Mutability">Mutability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#dynamic-typing">dynamic typing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/strings.html">Strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/strings.html#formatting">Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/lists.html">Lists and looping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#looping">Looping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#list-comprehension">List comprehension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#tuples">Tuples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/dictionaries.html">Dictionaries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#truthiness">Truthiness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#conditions-in-loops">Conditions in loops</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#inline-methods">Inline methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#the-standard-library">The standard library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#modules-from-pypi">Modules from PyPi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-your-first-python-module">Write your first Python module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/classes.html">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/classes.html#Welcome-to-classes">Welcome to classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/classes.html#Inheritance:-a-glance">Inheritance: a glance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/classes.html#How-to-fix">How to fix</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/learning.html">Learning more</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/learning.html#exploring-python">Exploring Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/learning.html#conventional-coding">Conventional coding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/first_histogram.html">Making your first histogram</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html#pandas">Pandas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html#plotting-histograms">Plotting histograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html#applying-cuts">Applying cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/further_reading.html">More advanced topics in Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html#nice-standard-libraries">Nice standard libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html#nice-libraries-for-data-analysis">Nice libraries for data analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html#python-and-root">Python and ROOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">Advanced Python Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="README.html#pure-python-advanced">Pure Python, advanced</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#data-loading-and-plotting">Data loading and plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#multivariate-analysis-and-machine-learning">Multivariate Analysis and Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#reweighting">Reweighting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#statistical-inference">Statistical Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#splot-technique">sPlot technique</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="README.html#scikit-hep">Scikit-HEP</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="10Basics.html">1: Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="10Basics.html#Basics">Basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10Basics.html#Importing-modules">Importing modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="11AdvancedPython.html">Advanced Python Concepts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Packing-and-unpacking-of-values">Packing and unpacking of values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Context-manager">Context manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Using-a-class">Using a class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Decorators-and-factories">Decorators and factories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Exceptions">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Catching-exceptions">Catching exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Exceptions-as-control-flow">Exceptions as control-flow</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#Dunder">Dunder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#len">len</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#str">str</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#Callable">Callable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#Indexing-(iterating)">Indexing (iterating)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#self">self</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2: First look at data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Recap:-Importing-modules">Recap: Importing modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Loading-data">Loading data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Adding-variables">Adding variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Comparing-distributions">Comparing distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="30Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="30Classification.html#Using-a-classifier">Using a classifier</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html">4: Extension on Classification</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="31ClassificationExtension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="31ClassificationExtension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="31ClassificationExtension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="31ClassificationExtension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="32BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="32BoostingToUniformity.html#Loading-data">Loading data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="33OLDDemoNeuralNetworks.html">6: Neural networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Downloading-a-dataset">Downloading a dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Example-of-training-a-network">Example of training a network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Creating-your-own-neural-network">Creating your own neural network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Example-of-a-very-specific-neural-network">Example of a very specific neural network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Fitting-very-specific-expressions-as-estimators">Fitting very specific expressions as estimators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Ensembling-of-neural-neworks">Ensembling of neural neworks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="40DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#GB-discrimination">GB-discrimination</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#How-to-tune">How to tune</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html">Likelihood inference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Scope-of-this-tutorial">Scope of this tutorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Getting-started">Getting started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Difference-of-the-two-spaces">Difference of the two spaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Plotting">Plotting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Loss">Loss</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="60sPlot.html">8: sPlot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Applying-sWeights">Applying sWeights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#More-complex-case">More complex case</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Splot">Splot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Alternative:-Known-probabilities">Alternative: Known probabilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="70ScikitHEPUniverse.html">Scikit-HEP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="70ScikitHEPUniverse.html#formulate---converting-expressions">formulate - converting expressions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="70ScikitHEPUniverse.html#Particle">Particle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="70ScikitHEPUniverse.html#hepunits">hepunits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/README.html">Introducing the Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-command-line-interface">The Command-Line Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-shell">The Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#why-bother">Why bother?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#nelle-s-pipeline-starting-point">Nelle’s Pipeline: Starting Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell/02-filedir.html">Navigating Files and Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/02-filedir.html#nelle-s-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/03-create.html">Working With Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/04-pipefilter.html">Pipes and Filters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/04-pipefilter.html#nelle-s-pipeline-checking-files">Nelle’s Pipeline: Checking Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/05-loop.html">Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/06-script.html">Shell Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/07-find.html">Finding Things</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell-extras/README.html">UNIX shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen.html">Using screen to keep things running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen2.html">Advanced screen topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#finding-lost-screens">Finding lost screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#using-tabs-in-screen">Using tabs in screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/persistent-screen.html">Persistent screen or tmux session on lxplus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#setting-up-password-less-kerberos-token">Setting up password-less kerberos token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#making-use-of-the-keytab">Making use of the keytab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token">Using k5reauth to automatically refresh your kerberos token</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/shell2.html">More about the UNIX shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#types-of-shell">Types of shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#manual-pages">Manual pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#environment-variables">Environment variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#differences-among-files">Differences among files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#looping-over-files">Looping over files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#conditionals">Conditionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#linking-commands">Linking commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#pipes-and-redirection">Pipes and redirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#bash-security">Bash security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#complexity">Complexity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-viewers">Text viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-editors">Text editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#disk-space">Disk space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/README.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/01-basics.html">Automated Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/02-setup.html">Setting Up Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/03-create.html">Creating a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/04-changes.html">Tracking Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/05-history.html">Exploring History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/06-ignore.html">Ignoring Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/07-gitlab.html">Remotes in CERN GitLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/08-share.html">Sharing a repository with others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/09-pullrequests.html">Collaborating with Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#what-is-a-pull-or-merge-request">What is a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#fork-the-original-project-repository">Fork the original project repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#clone-a-remote-project-and-its-fork">Clone a remote project and its fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#sync-your-local-repository-with-remote-changes">Sync your local repository with remote changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#implement-your-new-feature">Implement your new feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#push-changes">Push changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#create-a-pull-or-merge-request">Create a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#discussing-amending-retiring-a-merge-request">Discussing, amending, retiring a Merge Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#accepting-a-pull-request">Accepting a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#the-social-side-of-coding">The social side of coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#automatic-testing">Automatic testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../git/10-conflict.html">Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/11-ci.html">GitLab CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/12-open.html">Open Science</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/13-licensing.html">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/14-citation.html">Citation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributing-notebooks">Contributing notebooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis essentials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="README.html">Advanced Python Tutorial</a> &raquo;</li>
+        
+      <li>2: First look at data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/advanced-python/20DataAndPlotting.ipynb" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="2:-First-look-at-data">
+<h1>2: First look at data<a class="headerlink" href="#2:-First-look-at-data" title="Permalink to this headline">¶</a></h1>
+<p>In this lesson we will look at a toy dataset simulating <span class="math notranslate nohighlight">\(J/\psi \rightarrow \mu^+ \mu^-\)</span> events. We will discuss ways of loading the data in python, data formats and plotting with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
+<div class="section" id="Recap:-Importing-modules">
+<h2>Recap: Importing modules<a class="headerlink" href="#Recap:-Importing-modules" title="Permalink to this headline">¶</a></h2>
+<p>It’s generally seen as good practice to put imports at the top of your file:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">uproot</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">xgboost</span> <span class="kn">import</span> <span class="n">XGBClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">AdaBoostClassifier</span><span class="p">,</span> <span class="n">GradientBoostingClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">KFold</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="5.-The-toy-dataset">
+<h3>5. The toy dataset<a class="headerlink" href="#5.-The-toy-dataset" title="Permalink to this headline">¶</a></h3>
+<p>We’re going to look at some fake <span class="math notranslate nohighlight">\(J/\psi \rightarrow \mu^+ \mu^-\)</span> data, the variables available are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Jpsi_M</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_P</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_PT</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_PE</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_PX</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_PY</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_PZ</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mum_M</span></code> <code class="docutils literal notranslate"><span class="pre">mum_PT</span></code> <code class="docutils literal notranslate"><span class="pre">mum_eta</span></code> <code class="docutils literal notranslate"><span class="pre">mum_PE</span></code> <code class="docutils literal notranslate"><span class="pre">mum_PX</span></code> <code class="docutils literal notranslate"><span class="pre">mum_PY</span></code> <code class="docutils literal notranslate"><span class="pre">mum_PZ</span></code> <code class="docutils literal notranslate"><span class="pre">mum_IP</span></code> <code class="docutils literal notranslate"><span class="pre">mum_ProbNNmu</span></code> <code class="docutils literal notranslate"><span class="pre">mum_ProbNNpi</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mup_M</span></code> <code class="docutils literal notranslate"><span class="pre">mup_PT</span></code> <code class="docutils literal notranslate"><span class="pre">mup_eta</span></code> <code class="docutils literal notranslate"><span class="pre">mup_PE</span></code> <code class="docutils literal notranslate"><span class="pre">mup_PX</span></code> <code class="docutils literal notranslate"><span class="pre">mup_PY</span></code> <code class="docutils literal notranslate"><span class="pre">mup_PZ</span></code> <code class="docutils literal notranslate"><span class="pre">mup_IP</span></code> <code class="docutils literal notranslate"><span class="pre">mup_ProbNNmu</span></code> <code class="docutils literal notranslate"><span class="pre">mup_ProbNNpi</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nTracks</span></code></p></li>
+</ul>
+<p>The meanings of the suffixes are as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">_M</span></code>: Invarient mass of the particle (fixed to the PDG value for muons)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_P</span></code>: Absolute value of the particle’s three momentum</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_PT</span></code>: Absolute value of the particle’s momentum in the <code class="docutils literal notranslate"><span class="pre">x</span></code>-<code class="docutils literal notranslate"><span class="pre">y</span></code> plane</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_PE</span></code>, <code class="docutils literal notranslate"><span class="pre">_PX</span></code>, <code class="docutils literal notranslate"><span class="pre">_PY</span></code>, <code class="docutils literal notranslate"><span class="pre">_PZ</span></code>: Four momentum of the particle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_IP</span></code>: Impact parameter, i.e. the distance of closest approach between the reconstructed particle and the primary vertex</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ProbNNmu</span></code>, <code class="docutils literal notranslate"><span class="pre">ProbNNpi</span></code>: Particle identificaton variables which corrospond to how likely is it that the particle is really a muon or a pion</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nTracks</span></code>: The total number of tracks in the event</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="Loading-data">
+<h2>Loading data<a class="headerlink" href="#Loading-data" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">uproot</span></code> is a way of reading ROOT files without having ROOT installed, see the github reposity <a class="reference external" href="https://github.com/scikit-hep/uproot">here</a></p></li>
+<li><p>We can look at the objects that are available in the file and access objects using dictionary style syntax</p></li>
+<li><p>The tree class contains converters to a varity of common Python libraries, such as numpy</p></li>
+<li><p>We will also use <code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">DataFrames</span></code> to load data in a table like format (- <code class="docutils literal notranslate"><span class="pre">root_numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">root_pandas</span></code> are an alternative way of reading+writing ROOT files)</p></li>
+</ul>
+<p>First let’s load the data using <code class="docutils literal notranslate"><span class="pre">uproot</span></code>.</p>
+<p>Often it is convenient to access data stored on the <em>grid</em> at CERN so you don’t have to keep it locally. This can be done using the <em>XRootD</em> protocol:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_file</span> <span class="o">=</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;root://eosuser.cern.ch//eos/user/l/lhcbsk/advanced-python/data/real_data.root&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Accessing data this way requires you to have valid CERN credentials to access it. If authenication fails you will see an error message like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>OSError: [ERROR] Server responded with an error: [3010] Unable to give access - user access restricted - unauthorized identity used ; Permission denied
+</pre></div>
+</div>
+<p>Credentials can be obtained by typing <code class="docutils literal notranslate"><span class="pre">kinit</span> <span class="pre">username&#64;CERN.CH</span></code> in your terminal and entering your CERN password.</p>
+<p>For this tutorial we will use a publically accessible file instead, using HTTPS to access it remotely. This is significantly slower then using XRootD.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">my_file</span> <span class="o">=</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://cern.ch/starterkit/data/advanced-python-2018/real_data.root&#39;</span><span class="p">,</span>
+                      <span class="n">httpsource</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;chunkbytes&#39;</span><span class="p">:</span> <span class="mi">1024</span><span class="o">*</span><span class="mi">1024</span><span class="p">,</span> <span class="s1">&#39;limitbytes&#39;</span><span class="p">:</span> <span class="mi">33554432</span><span class="p">,</span> <span class="s1">&#39;parallel&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">})</span>
+
+<span class="n">my_file</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;DecayTree;2&#39;, &#39;DecayTree;1&#39;]
+</pre></div></div>
+</div>
+<p>In order to get a single variable, we can use the indexing. The <code class="docutils literal notranslate"><span class="pre">array</span></code> convert</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">tree</span> <span class="o">=</span> <span class="n">my_file</span><span class="p">[</span><span class="s1">&#39;DecayTree&#39;</span><span class="p">]</span>
+<span class="c1"># Get a numpy array containing the J/Ψ mass</span>
+<span class="n">tree</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">&#39;np&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([3.101106  , 3.1071159 , 3.08600438, ..., 3.00478927, 2.77311478,
+       2.7698744 ])
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Load data as a pandas DataFrame</span>
+<span class="n">data_df</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">&#39;pd&#39;</span><span class="p">)</span>
+<span class="c1"># Show the first 5 lines of the DataFrame</span>
+<span class="n">data_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Jpsi_PE</th>
+      <th>Jpsi_PX</th>
+      <th>Jpsi_PY</th>
+      <th>Jpsi_PZ</th>
+      <th>Jpsi_PT</th>
+      <th>Jpsi_P</th>
+      <th>Jpsi_M</th>
+      <th>mum_PT</th>
+      <th>mum_PX</th>
+      <th>mum_PY</th>
+      <th>...</th>
+      <th>mup_PZ</th>
+      <th>mup_IP</th>
+      <th>mup_eta</th>
+      <th>mup_M</th>
+      <th>mup_PE</th>
+      <th>nTracks</th>
+      <th>mum_ProbNNmu</th>
+      <th>mum_ProbNNpi</th>
+      <th>mup_ProbNNmu</th>
+      <th>mup_ProbNNpi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>188.630181</td>
+      <td>-1.700534</td>
+      <td>-9.131937</td>
+      <td>188.375806</td>
+      <td>9.288923</td>
+      <td>188.604688</td>
+      <td>3.101106</td>
+      <td>4.376341</td>
+      <td>-2.246101</td>
+      <td>-3.755981</td>
+      <td>...</td>
+      <td>99.674146</td>
+      <td>119.018213</td>
+      <td>3.608728</td>
+      <td>0.105658</td>
+      <td>99.820565</td>
+      <td>149.0</td>
+      <td>0.999983</td>
+      <td>0.836058</td>
+      <td>0.999994</td>
+      <td>0.244674</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>52.385685</td>
+      <td>1.816164</td>
+      <td>5.595537</td>
+      <td>51.961499</td>
+      <td>5.882897</td>
+      <td>52.293459</td>
+      <td>3.107116</td>
+      <td>1.735741</td>
+      <td>1.552217</td>
+      <td>0.776801</td>
+      <td>...</td>
+      <td>41.621295</td>
+      <td>210.293355</td>
+      <td>2.851094</td>
+      <td>0.105658</td>
+      <td>41.900278</td>
+      <td>125.0</td>
+      <td>0.998874</td>
+      <td>0.264369</td>
+      <td>0.999999</td>
+      <td>0.391294</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>52.068478</td>
+      <td>2.552368</td>
+      <td>2.817129</td>
+      <td>51.837748</td>
+      <td>3.801420</td>
+      <td>51.976946</td>
+      <td>3.086004</td>
+      <td>1.110952</td>
+      <td>0.179505</td>
+      <td>1.096355</td>
+      <td>...</td>
+      <td>20.279673</td>
+      <td>38.272015</td>
+      <td>2.632559</td>
+      <td>0.105658</td>
+      <td>20.490677</td>
+      <td>371.0</td>
+      <td>0.538509</td>
+      <td>0.313881</td>
+      <td>0.882305</td>
+      <td>0.961390</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>78.399724</td>
+      <td>-2.833082</td>
+      <td>-0.818953</td>
+      <td>78.283360</td>
+      <td>2.949075</td>
+      <td>78.338889</td>
+      <td>3.087923</td>
+      <td>2.571993</td>
+      <td>-2.028028</td>
+      <td>-1.581850</td>
+      <td>...</td>
+      <td>9.020064</td>
+      <td>134.767864</td>
+      <td>2.792800</td>
+      <td>0.105658</td>
+      <td>9.088611</td>
+      <td>136.0</td>
+      <td>0.896250</td>
+      <td>0.792830</td>
+      <td>0.999992</td>
+      <td>0.724581</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>83.900727</td>
+      <td>-5.065507</td>
+      <td>-3.457333</td>
+      <td>83.618226</td>
+      <td>6.132904</td>
+      <td>83.842831</td>
+      <td>3.116368</td>
+      <td>3.698279</td>
+      <td>-3.220143</td>
+      <td>-1.818777</td>
+      <td>...</td>
+      <td>16.851730</td>
+      <td>2926.081975</td>
+      <td>2.619576</td>
+      <td>0.105658</td>
+      <td>17.031800</td>
+      <td>71.0</td>
+      <td>0.998548</td>
+      <td>0.270670</td>
+      <td>0.999987</td>
+      <td>0.921856</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 28 columns</p>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">data_df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Index([&#39;Jpsi_PE&#39;, &#39;Jpsi_PX&#39;, &#39;Jpsi_PY&#39;, &#39;Jpsi_PZ&#39;, &#39;Jpsi_PT&#39;, &#39;Jpsi_P&#39;,
+       &#39;Jpsi_M&#39;, &#39;mum_PT&#39;, &#39;mum_PX&#39;, &#39;mum_PY&#39;, &#39;mum_PZ&#39;, &#39;mum_IP&#39;, &#39;mum_eta&#39;,
+       &#39;mum_M&#39;, &#39;mum_PE&#39;, &#39;mup_PT&#39;, &#39;mup_PX&#39;, &#39;mup_PY&#39;, &#39;mup_PZ&#39;, &#39;mup_IP&#39;,
+       &#39;mup_eta&#39;, &#39;mup_M&#39;, &#39;mup_PE&#39;, &#39;nTracks&#39;, &#39;mum_ProbNNmu&#39;, &#39;mum_ProbNNpi&#39;,
+       &#39;mup_ProbNNmu&#39;, &#39;mup_ProbNNpi&#39;],
+      dtype=&#39;object&#39;)
+</pre></div></div>
+</div>
+<div class="section" id="6.-Plotting-a-histogram-with-matplotlib">
+<h3>6. Plotting a histogram with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#6.-Plotting-a-histogram-with-matplotlib" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Start with a basic histogram</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jpsi mass&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Text(0.5, 0, &#39;Jpsi mass&#39;)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_14_1.png" src="../_images/advanced-python_20DataAndPlotting_14_1.png" />
+</div>
+</div>
+<p>That’s okay but we could use some more bins, lets make it tidier and turn it into a function we can use later.</p>
+<p>Take a look at the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> documentation: - <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.hist.html">https://matplotlib.org/api/_as_gen/matplotlib.pyplot.hist.html</a> - It returns an array of counts, an array of bins and an array of patches. We don’t care about the patches so we put them into a junk variable <code class="docutils literal notranslate"><span class="pre">_</span></code>. - Lets also set <code class="docutils literal notranslate"><span class="pre">histtype=&quot;step&quot;</span></code> so we can plot multiple datasets on the same axis easily</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">plot_mass</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">counts</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">],</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">)</span>
+<span class="c1">#     print(_)</span>
+    <span class="c1"># You can also use LaTeX in the axis label</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$J/</span><span class="se">\\</span><span class="s1">psi$ mass [GeV]&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_16_0.png" src="../_images/advanced-python_20DataAndPlotting_16_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Adding-variables">
+<h2>Adding variables<a class="headerlink" href="#Adding-variables" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># When making the ROOT file we forgot to add some variables, no bother lets add them now!</span>
+<span class="n">data_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data_df</span><span class="o">.</span><span class="n">head</span><span class="p">()[</span><span class="s1">&#39;Jpsi_eta&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0    3.703371
+1    2.874790
+2    3.307233
+3    3.972345
+4    3.307082
+Name: Jpsi_eta, dtype: float64
+</pre></div></div>
+</div>
+<p><strong>Exercise:</strong> Add <code class="docutils literal notranslate"><span class="pre">mu_P</span></code> and <code class="docutils literal notranslate"><span class="pre">mum_P</span></code> columns to the DataFrame.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">data_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;mup_P = sqrt(mup_PX**2 + mup_PY**2 + mup_PZ**2)&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># We can also get multiple columns at the same time</span>
+<span class="n">data_df</span><span class="o">.</span><span class="n">head</span><span class="p">()[[</span><span class="s1">&#39;mum_P&#39;</span><span class="p">,</span> <span class="s1">&#39;mup_P&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mum_P</th>
+      <th>mup_P</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>88.809553</td>
+      <td>99.820509</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.484875</td>
+      <td>41.900145</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>31.577624</td>
+      <td>20.490405</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>69.311033</td>
+      <td>9.087997</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>66.868844</td>
+      <td>17.031472</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="section" id="Using-rectangular-cuts">
+<h3>Using rectangular cuts<a class="headerlink" href="#Using-rectangular-cuts" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>We want to increase the ‘signal significance’ of our sample - this means more signal events with respect to background</p></li>
+<li><p>To do this we can cut on certain discriminating variables</p></li>
+<li><p>Here we will make cuts on the <code class="docutils literal notranslate"><span class="pre">Jpsi_PT</span></code> and <strong>PID</strong> (Particle Identification) variables</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">)</span>
+<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Jpsi_PT &gt; 4&#39;</span><span class="p">)</span>
+<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_23_0.png" src="../_images/advanced-python_20DataAndPlotting_23_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">)</span>
+<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Jpsi_PT &gt; 4&#39;</span><span class="p">)</span>
+<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">)</span>
+<span class="c1"># Lets add some PID cuts as well</span>
+<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;(Jpsi_PT &gt; 4) &amp; ((mum_ProbNNmu &gt; 0.9) &amp; (mup_ProbNNmu &gt; 0.9))&#39;</span><span class="p">)</span>
+<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_24_0.png" src="../_images/advanced-python_20DataAndPlotting_24_0.png" />
+</div>
+</div>
+<p>Let’s go back and add a label argument to our plot function. This makes it easier to identify each line. We can also use the <code class="docutils literal notranslate"><span class="pre">density</span></code> argument in <code class="docutils literal notranslate"><span class="pre">matplotlib.hist</span></code> to plot all the histograms as the same scale.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">plot_mass</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">counts</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">],</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$J/</span><span class="se">\\</span><span class="s1">psi$ mass [GeV]&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;No cuts&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Jpsi_PT &gt; 4&#39;</span><span class="p">)</span>
+<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$J/</span><span class="se">\\</span><span class="s1">psi$ p$_T$ only&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;(Jpsi_PT &gt; 4) &amp; ((mum_ProbNNmu &gt; 0.9) &amp; (mup_ProbNNmu &gt; 0.9))&#39;</span><span class="p">)</span>
+<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$J/</span><span class="se">\\</span><span class="s1">psi$ p$_T$ and muon PID&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x7fd44e57d760&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_26_1.png" src="../_images/advanced-python_20DataAndPlotting_26_1.png" />
+</div>
+</div>
+<p>For this tutorial we have a special function for testing the significance of the signal in our dataset. There are many different ways to do this with real data, though we will not cover them here.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># TODO: Work out what check_truth function is.</span>
+<span class="n">data_df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Index([&#39;Jpsi_PE&#39;, &#39;Jpsi_PX&#39;, &#39;Jpsi_PY&#39;, &#39;Jpsi_PZ&#39;, &#39;Jpsi_PT&#39;, &#39;Jpsi_P&#39;,
+       &#39;Jpsi_M&#39;, &#39;mum_PT&#39;, &#39;mum_PX&#39;, &#39;mum_PY&#39;, &#39;mum_PZ&#39;, &#39;mum_IP&#39;, &#39;mum_eta&#39;,
+       &#39;mum_M&#39;, &#39;mum_PE&#39;, &#39;mup_PT&#39;, &#39;mup_PX&#39;, &#39;mup_PY&#39;, &#39;mup_PZ&#39;, &#39;mup_IP&#39;,
+       &#39;mup_eta&#39;, &#39;mup_M&#39;, &#39;mup_PE&#39;, &#39;nTracks&#39;, &#39;mum_ProbNNmu&#39;, &#39;mum_ProbNNpi&#39;,
+       &#39;mup_ProbNNmu&#39;, &#39;mup_ProbNNpi&#39;, &#39;Jpsi_eta&#39;, &#39;mup_P&#39;, &#39;mum_P&#39;],
+      dtype=&#39;object&#39;)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Originally the significance is&#39;</span><span class="p">)</span>
+<span class="c1">#check_truth(data_df)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Cutting on pT gives us&#39;</span><span class="p">)</span>
+<span class="c1">#check_truth(data_df.query(&#39;Jpsi_PT &gt; 4&#39;))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Cutting on pT and ProbNNmu gives us&#39;</span><span class="p">)</span>
+<span class="c1">#check_truth(data_df.query(&#39;(Jpsi_PT &gt; 4) &amp; ((mum_ProbNNmu &gt; 0.9) &amp; (mup_ProbNNmu &gt; 0.9))&#39;))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Originally the significance is
+
+Cutting on pT gives us
+
+Cutting on pT and ProbNNmu gives us
+</pre></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Comparing-distributions">
+<h2>Comparing distributions<a class="headerlink" href="#Comparing-distributions" title="Permalink to this headline">¶</a></h2>
+<p>Before we just used the cuts that were told to you but how do we pick them?</p>
+<p>One way is to get a sample of simulated data, we have a file in <code class="docutils literal notranslate"><span class="pre">data/simulated_data.root</span></code>.</p>
+<p><strong>Exercise:</strong> Load it into a pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> called <code class="docutils literal notranslate"><span class="pre">mc_df</span></code>. Don’t forget to add the <code class="docutils literal notranslate"><span class="pre">Jpsi_eta</span></code>, <code class="docutils literal notranslate"><span class="pre">mup_P</span></code> and <code class="docutils literal notranslate"><span class="pre">mum_P</span></code> columns!</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">mc_file</span> <span class="o">=</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://starterkit.web.cern.ch/starterkit/data/advanced-python-2018/simulated_data.root&#39;</span><span class="p">,</span>
+                      <span class="n">httpsource</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;chunkbytes&#39;</span><span class="p">:</span> <span class="mi">1024</span><span class="o">*</span><span class="mi">1024</span><span class="p">,</span> <span class="s1">&#39;limitbytes&#39;</span><span class="p">:</span> <span class="mi">33554432</span><span class="p">,</span> <span class="s1">&#39;parallel&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">})</span>
+<span class="n">mc_df</span> <span class="o">=</span> <span class="n">mc_file</span><span class="p">[</span><span class="s1">&#39;DecayTree&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">&#39;pd&#39;</span><span class="p">)</span>
+
+<span class="n">mc_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mc_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;mup_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mc_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>QUESTION:</strong> What can we to get a background sample?</p>
+<p>Sidebands, we know the peak is only present in <span class="math notranslate nohighlight">\(3.0~\text{GeV} &lt; M(J/\psi) &lt; 3.2~\text{GeV}\)</span>. If we select events outside the region we know it’s a pure background sample.</p>
+<p><strong>Exercise:</strong> Make a new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> called <code class="docutils literal notranslate"><span class="pre">bkg_df</span></code> containing only events outside <span class="math notranslate nohighlight">\(3.0~\text{GeV} &lt; M(J/\psi) &lt; 3.2~\text{GeV}\)</span>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">bkg_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;~(3.0 &lt; Jpsi_M &lt; 3.2)&#39;</span><span class="p">)</span>
+<span class="n">plot_mass</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_33_0.png" src="../_images/advanced-python_20DataAndPlotting_33_0.png" />
+</div>
+</div>
+<p><strong>QUESTION:</strong> Why is there a step at 3 GeV on this plot?</p>
+<p>It’s a binning effect, we’ve appled a cut at 3.0 GeV but the nearest bin is <span class="math notranslate nohighlight">\([2.9975, 3.005]\)</span> so it is only partially filled.</p>
+<p>Now let’s plot the variables in MC and background to see what they look like?</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">var</span> <span class="o">=</span> <span class="s1">&#39;Jpsi_PT&#39;</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MC&#39;</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Background&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x7fd44eab23d0&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_36_1.png" src="../_images/advanced-python_20DataAndPlotting_36_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Those are hard to compare!!!</span>
+<span class="c1"># We should add the density keyword argument to normalise the distributions</span>
+<span class="n">var</span> <span class="o">=</span> <span class="s1">&#39;Jpsi_PT&#39;</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MC&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Background&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x7fd46c06f5b0&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_37_1.png" src="../_images/advanced-python_20DataAndPlotting_37_1.png" />
+</div>
+</div>
+<p><strong>Exercise:</strong> Make a function which plots both variables with the signature <code class="docutils literal notranslate"><span class="pre">plot_comparision(var,</span> <span class="pre">mc_df,</span> <span class="pre">bkg_df)</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">plot_comparision</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">):</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MC&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Background&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<p>We can now use this function to plot all of the variables available in the data using <code class="docutils literal notranslate"><span class="pre">data_df.columns</span></code>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">data_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plot_comparision</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+&lt;ipython-input-1-8d74ee397252&gt;:2: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure()
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_1.png" src="../_images/advanced-python_20DataAndPlotting_42_1.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_2.png" src="../_images/advanced-python_20DataAndPlotting_42_2.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_3.png" src="../_images/advanced-python_20DataAndPlotting_42_3.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_4.png" src="../_images/advanced-python_20DataAndPlotting_42_4.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_5.png" src="../_images/advanced-python_20DataAndPlotting_42_5.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_6.png" src="../_images/advanced-python_20DataAndPlotting_42_6.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_7.png" src="../_images/advanced-python_20DataAndPlotting_42_7.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_8.png" src="../_images/advanced-python_20DataAndPlotting_42_8.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_9.png" src="../_images/advanced-python_20DataAndPlotting_42_9.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_10.png" src="../_images/advanced-python_20DataAndPlotting_42_10.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_11.png" src="../_images/advanced-python_20DataAndPlotting_42_11.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_12.png" src="../_images/advanced-python_20DataAndPlotting_42_12.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_13.png" src="../_images/advanced-python_20DataAndPlotting_42_13.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_14.png" src="../_images/advanced-python_20DataAndPlotting_42_14.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_15.png" src="../_images/advanced-python_20DataAndPlotting_42_15.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_16.png" src="../_images/advanced-python_20DataAndPlotting_42_16.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_17.png" src="../_images/advanced-python_20DataAndPlotting_42_17.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_18.png" src="../_images/advanced-python_20DataAndPlotting_42_18.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_19.png" src="../_images/advanced-python_20DataAndPlotting_42_19.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_20.png" src="../_images/advanced-python_20DataAndPlotting_42_20.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_21.png" src="../_images/advanced-python_20DataAndPlotting_42_21.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_22.png" src="../_images/advanced-python_20DataAndPlotting_42_22.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_23.png" src="../_images/advanced-python_20DataAndPlotting_42_23.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_24.png" src="../_images/advanced-python_20DataAndPlotting_42_24.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_25.png" src="../_images/advanced-python_20DataAndPlotting_42_25.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_26.png" src="../_images/advanced-python_20DataAndPlotting_42_26.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_27.png" src="../_images/advanced-python_20DataAndPlotting_42_27.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_28.png" src="../_images/advanced-python_20DataAndPlotting_42_28.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_29.png" src="../_images/advanced-python_20DataAndPlotting_42_29.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_30.png" src="../_images/advanced-python_20DataAndPlotting_42_30.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_20DataAndPlotting_42_31.png" src="../_images/advanced-python_20DataAndPlotting_42_31.png" />
+</div>
+</div>
+<p>Things to note:</p>
+<ul class="simple">
+<li><p>This doesn’t work for the <span class="math notranslate nohighlight">\(J/\psi\)</span> mass variable: We can only rely on this method if the variable is independent of mass. Fortunately we often want to do this as if a variable is heavily dependent on mass it can shape our distributions and can make it hard to know what is signal and what is background.</p></li>
+<li><p>Muon mass is a fixed value for all muons: In this sample we have assumed the PDG value of the muon mass to allow us to calculate the energy component using only the information from the tracking detectors. This is often more precise than using calorimeters to measure <span class="math notranslate nohighlight">\(P_E\)</span>.</p></li>
+<li><p>We got a warning about <code class="docutils literal notranslate"><span class="pre">More</span> <span class="pre">than</span> <span class="pre">20</span> <span class="pre">figures</span> <span class="pre">have</span> <span class="pre">been</span> <span class="pre">opened.</span></code>: Opening plots uses memory so if you open too many at the same time your scripts can be become slow or even crash. In this case we can ignore it as we only produce 30 plots but be careful if you ever make thousands of plots.</p></li>
+<li><p>Pseudorapidity (eta) only goes between about 1 and 6: This dataset is supposed to look like vaugely like LHCb data where the detector only covers that region.</p></li>
+</ul>
+<p><strong>Exercise:</strong> Look at the variables above and try to get a clean <span class="math notranslate nohighlight">\(J/\psi\)</span> mass peak and use the significance function to see how well you do.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<p><strong>Aside:</strong> We will want to use some of the variables and dataframes in the next lesson. In order to do this we will <em>store</em> them in this session and reload them in the next lesson.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">store</span> bkg_df
+<span class="o">%</span><span class="k">store</span> mc_df
+<span class="o">%</span><span class="k">store</span> data_df
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Stored &#39;bkg_df&#39; (DataFrame)
+Stored &#39;mc_df&#39; (DataFrame)
+Stored &#39;data_df&#39; (DataFrame)
+</pre></div></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="30Classification.html" class="btn btn-neutral float-right" title="3: Multivariate Analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="12AdvancedClasses.html" class="btn btn-neutral float-left" title="Advanced Classes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+    Hello world
+
+
+</body>
+</html>

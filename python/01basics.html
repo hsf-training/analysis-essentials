@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>1: Basics &mdash; Analysis essentials  documentation</title>
   
@@ -13,12 +13,17 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
   <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -28,14 +33,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -57,7 +62,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Analysis essentials
+            <a href="../index.html" class="icon icon-home"> Analysis essentials
           
 
           
@@ -184,108 +189,113 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced-python/README.html">Advanced Python Tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/1Basics.html">1: Basics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Basics">Basics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Markdown">Markdown</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Jupyter">Jupyter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/1Basics.html#Importing-modules">Importing modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/README.html#pure-python-advanced">Pure Python, advanced</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/README.html#data-loading-and-plotting">Data loading and plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/README.html#multivariate-analysis-and-machine-learning">Multivariate Analysis and Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/README.html#reweighting">Reweighting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/README.html#statistical-inference">Statistical Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/README.html#splot-technique">sPlot technique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/README.html#scikit-hep">Scikit-HEP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/10Basics.html">1: Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/10Basics.html#Basics">Basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/10Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/10Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/10Basics.html#Importing-modules">Importing modules</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html">2: First look at data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#5.-The-toy-dataset">5. The toy dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html">Advanced Python Concepts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Packing-and-unpacking-of-values">Packing and unpacking of values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Context-manager">Context manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Using-a-class">Using a class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Decorators-and-factories">Decorators and factories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Exceptions">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Catching-exceptions">Catching exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Exceptions-as-control-flow">Exceptions as control-flow</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Loading-data">Loading data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#6.-Plotting-a-histogram-with-matplotlib">6. Plotting a histogram with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Dunder">Dunder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#len">len</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#str">str</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Callable">Callable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Indexing-(iterating)">Indexing (iterating)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#self">self</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Adding-variables">Adding variables</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Using-rectangular-cuts">Using rectangular cuts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html">2: First look at data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Loading-data">Loading data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Adding-variables">Adding variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/2DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/30Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/30Classification.html#Using-a-classifier">Using a classifier</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/3Classification.html">3: Multivariate Analysis</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/3Classification.html#Using-a-classifier">Using a classifier</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/3Classification.html#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">TODO Add a diagram of a decision tree for the above plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html">4: Extension on Classification</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html#Loading-data">Loading data</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/4Extension.html">4: Extension</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Alternative-implimentations">Alternative implimentations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Feature-engineering">Feature engineering</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/4Extension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/33OLDDemoNeuralNetworks.html">6: Neural networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/33OLDDemoNeuralNetworks.html#Downloading-a-dataset">Downloading a dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/33OLDDemoNeuralNetworks.html#Example-of-training-a-network">Example of training a network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/33OLDDemoNeuralNetworks.html#Creating-your-own-neural-network">Creating your own neural network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/33OLDDemoNeuralNetworks.html#Example-of-a-very-specific-neural-network">Example of a very specific neural network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/33OLDDemoNeuralNetworks.html#Fitting-very-specific-expressions-as-estimators">Fitting very specific expressions as estimators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/33OLDDemoNeuralNetworks.html#Ensembling-of-neural-neworks">Ensembling of neural neworks</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Loading-data">Loading data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Distributions-in-the-Dalitz-features-for-signal-and-background">Distributions in the Dalitz features for signal and background</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Preparation-of-train/test-datasets">Preparation of train/test datasets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Setting-up-classifiers,-training">Setting up classifiers, training</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#Let’s-look-at-the-results-of-training">Let’s look at the results of training</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/5BoostingToUniformity.html#ROC-curves-after-training">ROC curves after training</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#GB-discrimination">GB-discrimination</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#How-to-tune">How to tune</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html">Likelihood inference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Scope-of-this-tutorial">Scope of this tutorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Getting-started">Getting started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Difference-of-the-two-spaces">Difference of the two spaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Plotting">Plotting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Loss">Loss</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html">6: Neural networks</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Downloading-a-dataset">Downloading a dataset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-training-a-network">Example of training a network</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Creating-your-own-neural-network">Creating your own neural network</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Example-of-a-very-specific-neural-network">Example of a very specific neural network</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Fitting-very-specific-expressions-as-estimators">Fitting very specific expressions as estimators</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Writing-custom-pretransformer">Writing custom pretransformer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html">8: sPlot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Applying-sWeights">Applying sWeights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#More-complex-case">More complex case</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Splot">Splot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Alternative:-Known-probabilities">Alternative: Known probabilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Conclusion">Conclusion</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/6DemoNeuralNetworks.html#Ensembling-of-neural-neworks">Ensembling of neural neworks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html">Scikit-HEP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#formulate---converting-expressions">formulate - converting expressions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#Particle">Particle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#hepunits">hepunits</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/7DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Downloading-data">Downloading data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Original-distributions">Original distributions</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Comparing-some-simple-expressions:">Comparing some simple expressions:</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination">GB-discrimination</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/7DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/8sPlot.html">8: sPlot</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Observed-distributions">Observed distributions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Applying-sWeights">Applying sWeights</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Compare">Compare</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#More-complex-case">More complex case</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Building-sPlot-over-mass">Building sPlot over mass</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Of-course-we-don’t-have-labels-which-events-are-signal-and-which-are-background-beforehand">Of course we don’t have labels which events are signal and which are background beforehand</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#We-have-no-information-about-real-labels">We have no information about real labels</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Appying-sPlot">Appying sPlot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Under-assumption-of-linearity:">Under assumption of linearity:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Minimization-of-variation">Minimization of variation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../advanced-python/8sPlot.html#Uncorrelatedness">Uncorrelatedness</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/8sPlot.html#Conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -426,6 +436,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -439,7 +451,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             
               <a href="https://github.com/hsf-training/analysis-essentials/blob/master/python/01basics.ipynb" class="fa fa-github"> Edit on GitHub</a>
             
@@ -860,16 +872,15 @@ int
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-7-b02e5369cdd0&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-1-8180c0e22205&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>mix_str_int <span class="ansi-blue-fg">=</span> a <span class="ansi-blue-fg">+</span> <span class="ansi-blue-fg">&#34;foo&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span>
 
 <span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
 </pre></div></div>
 </div>
 <p>Maybe the following works?</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -877,9 +888,22 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-1-7f3f97b2a179&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>mix_str_int2 <span class="ansi-blue-fg">=</span> a <span class="ansi-blue-fg">+</span> <span class="ansi-blue-fg">&#34;5&#34;</span>
+
+<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div></div>
+</div>
 <p>Python is strict on the types, but we can sometimes convert from one type to another, explicitly:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -887,10 +911,19 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+6
+</pre></div></div>
+</div>
 <p>…which works because <code class="docutils literal notranslate"><span class="pre">int(&quot;5&quot;)</span> <span class="pre">-&gt;</span> <span class="pre">5</span></code>.</p>
 <p>There are though some implicit conversions in Python, let’s look at the following:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -899,8 +932,16 @@ int
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;class &#39;float&#39;&gt;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -909,9 +950,17 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;class &#39;float&#39;&gt;
+</pre></div></div>
+</div>
 <p>This is one of the few examples, where Python automatically converts the integer type to a float. The above addition <em>actually</em> reads as</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -920,14 +969,23 @@ int
 </div>
 </div>
 <p>Similar with booleans as they are in principle 1 (<code class="docutils literal notranslate"><span class="pre">True</span></code>) and 0 (<code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kc">True</span> <span class="o">+</span> <span class="mi">5</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+6
+</pre></div></div>
 </div>
 <p>For readability, it is usually better to write an explicit conversion.</p>
 </div>
@@ -937,8 +995,8 @@ int
 <p>They can contain other objects which can then be assigned and accessed via the <code class="docutils literal notranslate"><span class="pre">[]</span></code> operator <em>(we will have a closer look at operators later on)</em></p>
 <p>A list stores elements by indices, which are integers, while a dict stores elements by a <code class="docutils literal notranslate"><span class="pre">key</span></code>, which can be “any basic type” (to be precise: by their “hash”, it can be any immutable type).</p>
 <p>Let’s look at examples!</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -948,9 +1006,17 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[1, 2, 3]
+</pre></div></div>
+</div>
 <p>We can access these element by indices, starting from 0</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -958,9 +1024,18 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1
+</pre></div></div>
+</div>
 <p>We can also assign a value to an place in the list</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -969,9 +1044,17 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[1, 42, 3]
+</pre></div></div>
+</div>
 <p>and it can be extended with elements</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -980,10 +1063,18 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[1, 42, 3, -5]
+</pre></div></div>
+</div>
 <p>Choosing a value that is not contained in the list raises an error. It is verbose, read and understand it.</p>
 <p>Being able to understand and interpret errors correctly is a key to becoming better in coding.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -991,9 +1082,22 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">IndexError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-1-516682614210&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>list1<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">14</span><span class="ansi-blue-fg">]</span>
+
+<span class="ansi-red-fg">IndexError</span>: list index out of range
+</pre></div></div>
+</div>
 <p>We can play a similar game with dicts</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1002,8 +1106,16 @@ int
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;name&#39;: &#39;Jonas Eschle&#39;, &#39;age&#39;: 42, 5: True, 11: &#39;hi&#39;}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1013,9 +1125,19 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Jonas Eschle
+True
+hi
+</pre></div></div>
+</div>
 <p>We can also assign a new value to a key.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1024,8 +1146,8 @@ int
 </div>
 </div>
 <p>… or even extend it by assigning to a key that did not yet exists in the dict</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1034,10 +1156,18 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;name&#39;: &#39;Jonas Eschle&#39;, &#39;age&#39;: &#39;42.00001&#39;, 5: True, 11: &#39;hi&#39;, &#39;alias&#39;: &#39;Mayou36&#39;}
+</pre></div></div>
+</div>
 <p>As we see this works. Notice, that the dict has changed, same as the list before.</p>
 <p>Again, selecting a key that is not contained in the dict raises an error.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1045,9 +1175,22 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-1-8ccd2afb59b7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>person<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;nationality&#39;</span><span class="ansi-blue-fg">]</span>
+
+<span class="ansi-red-fg">KeyError</span>: &#39;nationality&#39;
+</pre></div></div>
+</div>
 <p>As any object in Python, there are many useful methods on <code class="docutils literal notranslate"><span class="pre">list</span></code> and <code class="docutils literal notranslate"><span class="pre">dict</span></code> that help you accomplish things. For example, what if we want to retrieve a value from a dict <em>only</em> if the key is there and otherwise return a default value? We can use <code class="docutils literal notranslate"><span class="pre">get</span></code>:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1055,6 +1198,14 @@ int
 <span class="nb">print</span><span class="p">(</span><span class="n">hair_color</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+unknown color
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Mutability">
@@ -1064,7 +1215,7 @@ int
 <p>As an example, <code class="docutils literal notranslate"><span class="pre">5</span></code> can not change; in general the basic types we looked at cannot change. We can change the value that is assigned to a variable, but the object <code class="docutils literal notranslate"><span class="pre">5</span></code> remains the same. The list and dicts we have seen above on the other hand are mutable, they have changed over the course of execution.</p>
 <p>Every mutable object has an immutable counterpart (but not vice-versa): - list -&gt; tuple - dict -&gt; frozendict - set -&gt; frozenset - etc.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1076,7 +1227,7 @@ int
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1096,8 +1247,8 @@ int
 </div>
 </div>
 <p>While we can access the elements as we can for a list, we can neither <em>assign</em> nor <em>append</em> (or in generate <em>mutate</em> the object:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1105,8 +1256,16 @@ int
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+3
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1114,13 +1273,26 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-1-680883f3794d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>tuple1<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">5</span>
+
+<span class="ansi-red-fg">TypeError</span>: &#39;tuple&#39; object does not support item assignment
+</pre></div></div>
+</div>
 <p>We will soon see the effects and needs for this…</p>
 </div>
 <div class="section" id="dynamic-typing">
 <h2>dynamic typing<a class="headerlink" href="#dynamic-typing" title="Permalink to this headline">¶</a></h2>
 <p>Python is dynamically typed (as opposed to statically typed). This means that a variable, which once was an int, such as <code class="docutils literal notranslate"><span class="pre">a</span></code>, can be assigned a value of another type.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1129,7 +1301,7 @@ int
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1138,7 +1310,7 @@ int
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1152,8 +1324,8 @@ int
 <div class="section" id="Assignement-and-variables">
 <h1>Assignement and variables<a class="headerlink" href="#Assignement-and-variables" title="Permalink to this headline">¶</a></h1>
 <p>We’ve seen a few things up to now but have not really looked at the assignement and variables itself. Understanding Pythons variable is crucial to understand e.g. the following:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1163,8 +1335,16 @@ int
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+5 5
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1173,9 +1353,17 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+3 5
+</pre></div></div>
+</div>
 <p>So far so good, no surprize here.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1185,8 +1373,16 @@ int
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[1, 3] [1, 3]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1195,12 +1391,20 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[99, 3] [99, 3]
+</pre></div></div>
+</div>
 <p>…but that was probably unexpected! Let’s have a look at Pythons variable assignement.</p>
 <div class="section" id="Python-variable-assignement">
 <h2>Python variable assignement<a class="headerlink" href="#Python-variable-assignement" title="Permalink to this headline">¶</a></h2>
 <p>Assigning something to a variable in Python makes a name point to an actual object, so the name is only a reference. For example creating the variable <code class="docutils literal notranslate"><span class="pre">a</span></code> and assigning it the object <code class="docutils literal notranslate"><span class="pre">5</span></code> looks like this: <img alt="assignements1" src="../_images/python_references1.jpg" /></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1209,9 +1413,9 @@ int
 </pre></div>
 </div>
 </div>
-<p><img alt="reference2" src="../_images/python_references2.jpg" /></p>
+<img alt="reference2" src="../_images/python_references2.jpg" />
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1221,8 +1425,8 @@ int
 </div>
 </div>
 <p>Both objects, <code class="docutils literal notranslate"><span class="pre">b</span></code> and <code class="docutils literal notranslate"><span class="pre">list_b</span></code> point now to the same objects in memory as <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">list_a</span></code> respectively. Re-assigning a variable let’s it point to a different object <img alt="reference3" src="../_images/python_references3.jpg" /></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1233,9 +1437,18 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+spam 3
+[1, 5, 2, &#39;world&#39;, 1] [1, 2]
+</pre></div></div>
+</div>
 <p>Let’s make them point to the same object again:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1246,8 +1459,17 @@ int
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+spam spam
+[1, 5, 2, &#39;world&#39;, 1] [1, 5, 2, &#39;world&#39;, 1]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1256,10 +1478,18 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[1, &#39;hello&#39;, 2, &#39;world&#39;, 1] [1, &#39;hello&#39;, 2, &#39;world&#39;, 1]
+</pre></div></div>
+</div>
 <p>Now we understand what happend: the object that both variables are pointing to simply changed. This is impossible with immutable objects (such as <code class="docutils literal notranslate"><span class="pre">3</span></code>), since they are immutable.</p>
 <p>Mutable objects usually offer the ability to create a copy.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1267,8 +1497,8 @@ int
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1279,10 +1509,20 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[1, &#39;hello&#39;, &#39;my&#39;, &#39;world&#39;, 1]
+[1, &#39;hello&#39;, &#39;my&#39;, &#39;world&#39;, 1]
+[1, &#39;hello&#39;, 2, &#39;world&#39;, 1]
+</pre></div></div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">list_a</span></code> and <code class="docutils literal notranslate"><span class="pre">list_b</span></code>, pointing to the same object that was mutated, have changed, while <code class="docutils literal notranslate"><span class="pre">list_c</span></code>, pointing to a different object, remained the same.</p>
 <p>Let’s have a look at two operators: the “trivial” <code class="docutils literal notranslate"><span class="pre">==</span></code> and the <code class="docutils literal notranslate"><span class="pre">is</span></code>: we know <code class="docutils literal notranslate"><span class="pre">==</span></code> pretty well, it tells whether the left and the right side are the same. More specific, it tells whether both sides have/represent the same <em>value</em>, not whether they are in fact the same object! The operator <code class="docutils literal notranslate"><span class="pre">is</span></code> tells us, whether two objects <em>are</em> the same object (compare our assignement model above!).</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1291,8 +1531,17 @@ int
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+True
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1301,9 +1550,17 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
 <p>But, as we learned before, they are <em>not the same objects</em>!</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1312,14 +1569,23 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+True
+</pre></div></div>
+</div>
 <p>Normally, we are only interested to compare the values, using <code class="docutils literal notranslate"><span class="pre">==</span></code>.</p>
 </div>
 <div class="section" id="Sugar:-comprehensions">
 <h2>Sugar: comprehensions<a class="headerlink" href="#Sugar:-comprehensions" title="Permalink to this headline">¶</a></h2>
 <p>(taken from advanced Python lecture)</p>
 <p><strong>List comprehensions</strong></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1332,9 +1598,54 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Sum of squares for 10 is 285
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># [obj_to_return if ... else ... for i in ... for j in ... if ...]</span>
+<span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[1, 3, 5, 7, 9]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;spam&#39;
+</pre></div></div>
+</div>
 <p><strong>Dictionary comprehensions</strong></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1343,8 +1654,16 @@ int
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1352,6 +1671,14 @@ int
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The square of&#39;</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="n">squares</span><span class="p">[</span><span class="n">N</span><span class="p">])</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The square of 5 is 25
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Sugar:-using-Markdown">
@@ -1385,8 +1712,8 @@ int
 </pre></div>
 </div>
 <p><strong>f-strings</strong></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1399,6 +1726,14 @@ int
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(PT &gt; 1789.23) &amp; (2 &lt; ETA &lt; 5)
+</pre></div></div>
+</div>
 </div>
 </div>
 
@@ -1407,37 +1742,29 @@ int
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="operators.html" class="btn btn-neutral float-right" title="Objects and operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="00scripts.html" class="btn btn-neutral float-left" title="Scripting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="operators.html" class="btn btn-neutral float-right" title="Objects and operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="00scripts.html" class="btn btn-neutral float-left" title="Scripting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation
+        &#169; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

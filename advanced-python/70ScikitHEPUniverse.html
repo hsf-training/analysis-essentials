@@ -1,0 +1,1047 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Scikit-HEP &mdash; Analysis essentials  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/panels.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introducing the Shell" href="../shell/README.html" />
+    <link rel="prev" title="8: sPlot" href="60sPlot.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Analysis essentials
+          
+
+          
+            
+            <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/README.html">An introduction to Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/running.html">Running Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/00scripts.html">Scripting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Mutability">Mutability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#dynamic-typing">dynamic typing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/strings.html">Strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/strings.html#formatting">Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/lists.html">Lists and looping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#looping">Looping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#list-comprehension">List comprehension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#tuples">Tuples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/dictionaries.html">Dictionaries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#truthiness">Truthiness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#conditions-in-loops">Conditions in loops</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#inline-methods">Inline methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#the-standard-library">The standard library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#modules-from-pypi">Modules from PyPi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-your-first-python-module">Write your first Python module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/classes.html">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/classes.html#Welcome-to-classes">Welcome to classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/classes.html#Inheritance:-a-glance">Inheritance: a glance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/classes.html#How-to-fix">How to fix</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/learning.html">Learning more</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/learning.html#exploring-python">Exploring Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/learning.html#conventional-coding">Conventional coding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/first_histogram.html">Making your first histogram</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html#pandas">Pandas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html#plotting-histograms">Plotting histograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html#applying-cuts">Applying cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/further_reading.html">More advanced topics in Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html#nice-standard-libraries">Nice standard libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html#nice-libraries-for-data-analysis">Nice libraries for data analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html#python-and-root">Python and ROOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">Advanced Python Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="README.html#pure-python-advanced">Pure Python, advanced</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#data-loading-and-plotting">Data loading and plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#multivariate-analysis-and-machine-learning">Multivariate Analysis and Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#reweighting">Reweighting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#statistical-inference">Statistical Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#splot-technique">sPlot technique</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="README.html#scikit-hep">Scikit-HEP</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="10Basics.html">1: Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="10Basics.html#Basics">Basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10Basics.html#Importing-modules">Importing modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="11AdvancedPython.html">Advanced Python Concepts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Packing-and-unpacking-of-values">Packing and unpacking of values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Context-manager">Context manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Using-a-class">Using a class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Decorators-and-factories">Decorators and factories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Exceptions">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Catching-exceptions">Catching exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Exceptions-as-control-flow">Exceptions as control-flow</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#Dunder">Dunder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#len">len</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#str">str</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#Callable">Callable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#Indexing-(iterating)">Indexing (iterating)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#self">self</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20DataAndPlotting.html">2: First look at data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="20DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="20DataAndPlotting.html#Loading-data">Loading data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="20DataAndPlotting.html#Adding-variables">Adding variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="20DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="30Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="30Classification.html#Using-a-classifier">Using a classifier</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html">4: Extension on Classification</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="31ClassificationExtension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="31ClassificationExtension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="31ClassificationExtension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="31ClassificationExtension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="32BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="32BoostingToUniformity.html#Loading-data">Loading data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="33OLDDemoNeuralNetworks.html">6: Neural networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Downloading-a-dataset">Downloading a dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Example-of-training-a-network">Example of training a network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Creating-your-own-neural-network">Creating your own neural network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Example-of-a-very-specific-neural-network">Example of a very specific neural network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Fitting-very-specific-expressions-as-estimators">Fitting very specific expressions as estimators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Ensembling-of-neural-neworks">Ensembling of neural neworks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="40DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#GB-discrimination">GB-discrimination</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#How-to-tune">How to tune</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html">Likelihood inference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Scope-of-this-tutorial">Scope of this tutorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Getting-started">Getting started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Difference-of-the-two-spaces">Difference of the two spaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Plotting">Plotting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Loss">Loss</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="60sPlot.html">8: sPlot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Applying-sWeights">Applying sWeights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#More-complex-case">More complex case</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Splot">Splot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Alternative:-Known-probabilities">Alternative: Known probabilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Scikit-HEP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#formulate---converting-expressions">formulate - converting expressions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Particle">Particle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hepunits">hepunits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/README.html">Introducing the Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-command-line-interface">The Command-Line Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-shell">The Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#why-bother">Why bother?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#nelle-s-pipeline-starting-point">Nelle’s Pipeline: Starting Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell/02-filedir.html">Navigating Files and Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/02-filedir.html#nelle-s-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/03-create.html">Working With Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/04-pipefilter.html">Pipes and Filters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/04-pipefilter.html#nelle-s-pipeline-checking-files">Nelle’s Pipeline: Checking Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/05-loop.html">Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/06-script.html">Shell Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/07-find.html">Finding Things</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell-extras/README.html">UNIX shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen.html">Using screen to keep things running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen2.html">Advanced screen topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#finding-lost-screens">Finding lost screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#using-tabs-in-screen">Using tabs in screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/persistent-screen.html">Persistent screen or tmux session on lxplus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#setting-up-password-less-kerberos-token">Setting up password-less kerberos token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#making-use-of-the-keytab">Making use of the keytab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token">Using k5reauth to automatically refresh your kerberos token</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/shell2.html">More about the UNIX shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#types-of-shell">Types of shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#manual-pages">Manual pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#environment-variables">Environment variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#differences-among-files">Differences among files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#looping-over-files">Looping over files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#conditionals">Conditionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#linking-commands">Linking commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#pipes-and-redirection">Pipes and redirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#bash-security">Bash security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#complexity">Complexity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-viewers">Text viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-editors">Text editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#disk-space">Disk space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/README.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/01-basics.html">Automated Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/02-setup.html">Setting Up Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/03-create.html">Creating a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/04-changes.html">Tracking Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/05-history.html">Exploring History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/06-ignore.html">Ignoring Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/07-gitlab.html">Remotes in CERN GitLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/08-share.html">Sharing a repository with others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/09-pullrequests.html">Collaborating with Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#what-is-a-pull-or-merge-request">What is a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#fork-the-original-project-repository">Fork the original project repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#clone-a-remote-project-and-its-fork">Clone a remote project and its fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#sync-your-local-repository-with-remote-changes">Sync your local repository with remote changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#implement-your-new-feature">Implement your new feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#push-changes">Push changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#create-a-pull-or-merge-request">Create a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#discussing-amending-retiring-a-merge-request">Discussing, amending, retiring a Merge Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#accepting-a-pull-request">Accepting a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#the-social-side-of-coding">The social side of coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#automatic-testing">Automatic testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../git/10-conflict.html">Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/11-ci.html">GitLab CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/12-open.html">Open Science</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/13-licensing.html">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/14-citation.html">Citation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributing-notebooks">Contributing notebooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis essentials</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="README.html">Advanced Python Tutorial</a> &raquo;</li>
+        
+      <li>Scikit-HEP</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/advanced-python/70ScikitHEPUniverse.ipynb" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Scikit-HEP">
+<h1>Scikit-HEP<a class="headerlink" href="#Scikit-HEP" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://scikit-hep.org/">Scikit-HEP project</a> is a well maintained collection of HEP packages in Python that are useful for analysis. It contains tools ranging from plotting helpers, PDG lookup, DecayLanguage converters over high-performance histogramming libraries and ROOT I/O up to likelihood fitting and statistics libraries.</p>
+<p>This is a minimal overview over the packages that are available and have not yet been used in the other tutorials.</p>
+<div class="section" id="formulate---converting-expressions">
+<h2>formulate - converting expressions<a class="headerlink" href="#formulate---converting-expressions" title="Permalink to this headline">¶</a></h2>
+<p>The package <a class="reference external" href="https://github.com/scikit-hep/formulate">formulate</a> converts between different style of expressions, notably between <a class="reference external" href="https://root.cern.ch/doc/master/classTFormula.html">ROOT</a> and <a class="reference external" href="https://numexpr.readthedocs.io/en/latest/user_guide.html">numexpr</a>. The former was used in the previous notebooks to apply cuts and create new variables with Pandas DataFrames <code class="docutils literal notranslate"><span class="pre">query</span></code> and <code class="docutils literal notranslate"><span class="pre">eval</span></code> methods.</p>
+<p>The standard usage is with a <code class="docutils literal notranslate"><span class="pre">from_style</span></code> and <code class="docutils literal notranslate"><span class="pre">to_style</span></code>, but it allows for more as it parses the string such as the variables used can be extracted.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">formulate</span>
+
+<span class="n">momentum</span> <span class="o">=</span> <span class="n">formulate</span><span class="o">.</span><span class="n">from_root</span><span class="p">(</span><span class="s1">&#39;TMath::Sqrt(X_PX**2 + X_PY**2 + X_PZ**2)&#39;</span><span class="p">)</span>
+<span class="n">momentum</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX), UnnamedConstant(2)), Expression&lt;POW&gt;(Variable(X_PY), UnnamedConstant(2)), Expression&lt;POW&gt;(Variable(X_PZ), UnnamedConstant(2))))
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">momentum</span><span class="o">.</span><span class="n">to_numexpr</span><span class="p">()</span>  <span class="c1"># as used in Pandas eval/query</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;sqrt(((X_PX ** 2) + (X_PY ** 2) + (X_PZ ** 2)))&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">momentum</span><span class="o">.</span><span class="n">to_root</span><span class="p">()</span>  <span class="c1"># as used in ROOT</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;TMath::Sqrt(((X_PX ** 2) + (X_PY ** 2) + (X_PZ ** 2)))&#39;
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Particle">
+<h2>Particle<a class="headerlink" href="#Particle" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/scikit-hep/particle">particle</a> provides an easy access to particle properties such as mass and decay width from PDG. One example is to get the actual particle in a <code class="docutils literal notranslate"><span class="pre">Particle</span></code> object which holds all the relevant information.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Particle</span>
+
+<span class="kn">from</span> <span class="nn">particle</span> <span class="kn">import</span> <span class="n">Particle</span>
+
+<span class="n">piplus</span> <span class="o">=</span> <span class="n">Particle</span><span class="o">.</span><span class="n">from_pdgid</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Here we can access all the properties we wish to such as mass and decay width.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">piplus</span><span class="o">.</span><span class="n">mass</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+139.57039
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">piplus</span><span class="o">.</span><span class="n">charge</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1.0
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">piplus</span><span class="o">.</span><span class="n">width</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+2.5284e-14
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">piplus</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;pi+&#39;
+</pre></div></div>
+</div>
+<p>It also serves as a data-base like structure and we can do searches. Let’s find all neutral beauty hadrons.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">Particle</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">pdgid</span><span class="o">.</span><span class="n">has_bottom</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">charge</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&lt;Particle: name=&#34;B0&#34;, pdgid=511, mass=5279.65 ± 0.12 MeV&gt;,
+ &lt;Particle: name=&#34;B~0&#34;, pdgid=-511, mass=5279.65 ± 0.12 MeV&gt;,
+ &lt;Particle: name=&#34;B*0&#34;, pdgid=513, mass=5324.70 ± 0.21 MeV&gt;,
+ &lt;Particle: name=&#34;B*~0&#34;, pdgid=-513, mass=5324.70 ± 0.21 MeV&gt;,
+ &lt;Particle: name=&#34;B(2)*(5747)0&#34;, pdgid=515, mass=5739.5 ± 0.7 MeV&gt;,
+ &lt;Particle: name=&#34;B(2)*(5747)~0&#34;, pdgid=-515, mass=5739.5 ± 0.7 MeV&gt;,
+ &lt;Particle: name=&#34;B(s)0&#34;, pdgid=531, mass=5366.88 ± 0.14 MeV&gt;,
+ &lt;Particle: name=&#34;B(s)~0&#34;, pdgid=-531, mass=5366.88 ± 0.14 MeV&gt;,
+ &lt;Particle: name=&#34;B(s)*0&#34;, pdgid=533, mass=5415.4 + 1.8 - 1.5 MeV&gt;,
+ &lt;Particle: name=&#34;B(s)*~0&#34;, pdgid=-533, mass=5415.4 + 1.8 - 1.5 MeV&gt;,
+ &lt;Particle: name=&#34;B(s2)*(5840)0&#34;, pdgid=535, mass=5839.86 ± 0.12 MeV&gt;,
+ &lt;Particle: name=&#34;B(s2)*(5840)~0&#34;, pdgid=-535, mass=5839.86 ± 0.12 MeV&gt;,
+ &lt;Particle: name=&#34;Upsilon(1S)&#34;, pdgid=553, mass=9460.3 ± 0.3 MeV&gt;,
+ &lt;Particle: name=&#34;chi(b2)(1P)&#34;, pdgid=555, mass=9912.2 ± 0.4 MeV&gt;,
+ &lt;Particle: name=&#34;Lambda(b)0&#34;, pdgid=5122, mass=5619.60 ± 0.17 MeV&gt;,
+ &lt;Particle: name=&#34;Lambda(b)~0&#34;, pdgid=-5122, mass=5619.60 ± 0.17 MeV&gt;,
+ &lt;Particle: name=&#34;Xi(b)0&#34;, pdgid=5232, mass=5791.9 ± 0.5 MeV&gt;,
+ &lt;Particle: name=&#34;Xi(b)~0&#34;, pdgid=-5232, mass=5791.9 ± 0.5 MeV&gt;,
+ &lt;Particle: name=&#34;chi(b0)(1P)&#34;, pdgid=10551, mass=9859.4 ± 0.5 MeV&gt;,
+ &lt;Particle: name=&#34;h(b)(1P)&#34;, pdgid=10553, mass=9899.3 ± 0.8 MeV&gt;,
+ &lt;Particle: name=&#34;chi(b1)(1P)&#34;, pdgid=20553, mass=9892.8 ± 0.4 MeV&gt;,
+ &lt;Particle: name=&#34;Upsilon(2)(1D)&#34;, pdgid=20555, mass=10163.7 ± 1.4 MeV&gt;,
+ &lt;Particle: name=&#34;Upsilon(2S)&#34;, pdgid=100553, mass=10023.3 ± 0.3 MeV&gt;,
+ &lt;Particle: name=&#34;chi(b2)(2P)&#34;, pdgid=100555, mass=10268.6 ± 0.5 MeV&gt;,
+ &lt;Particle: name=&#34;chi(b0)(2P)&#34;, pdgid=110551, mass=10232.5 ± 0.6 MeV&gt;,
+ &lt;Particle: name=&#34;chi(b1)(2P)&#34;, pdgid=120553, mass=10255.5 ± 0.5 MeV&gt;,
+ &lt;Particle: name=&#34;Upsilon(3S)&#34;, pdgid=200553, mass=10355.2 ± 0.5 MeV&gt;,
+ &lt;Particle: name=&#34;Upsilon(4S)&#34;, pdgid=300553, mass=10579.4 ± 1.2 MeV&gt;,
+ &lt;Particle: name=&#34;Upsilon(10860)&#34;, pdgid=9000553, mass=10885.2 + 2.6 - 1.6 MeV&gt;,
+ &lt;Particle: name=&#34;Upsilon(11020)&#34;, pdgid=9010553, mass=11000 ± 4 MeV&gt;]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="hepunits">
+<h2>hepunits<a class="headerlink" href="#hepunits" title="Permalink to this headline">¶</a></h2>
+<p>Ever hardcoded a physics constant? Or needed to manually convert units? That’s what the neat <a class="reference external" href="https://github.com/scikit-hep/hepunits">hepunits</a> package is for.</p>
+<p>It contains constants as well as units that all get converted into the standard units (e.g. MeV) which allows for calculations without the need to explicitly convert by just adding the unit; furthermore it greatly increases readability</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">hepunits.constants</span> <span class="kn">import</span> <span class="n">c_light</span>
+<span class="n">c_light</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+299.792458
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">hepunits</span> <span class="k">as</span> <span class="nn">u</span>  <span class="c1"># u for units</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="mi">150</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">MeV</span> <span class="o">+</span> <span class="mf">1.1</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">GeV</span>  <span class="c1"># result in MeV</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1250.0
+</pre></div></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../shell/README.html" class="btn btn-neutral float-right" title="Introducing the Shell" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="60sPlot.html" class="btn btn-neutral float-left" title="8: sPlot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+    Hello world
+
+
+</body>
+</html>
