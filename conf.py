@@ -35,7 +35,7 @@ for folder in ['advanced-python', 'git', 'python', 'shell-extras', 'shell']:
 
 
 def hsf_ci_setup(app):
-    app.add_stylesheet('hsf.css')
+    app.add_css_file('hsf.css')
 
 
 setup.extra_setup_funcs += [hsf_ci_setup]
