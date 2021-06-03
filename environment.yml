@@ -3,19 +3,26 @@ channels:
   - conda-forge
 dependencies:
   - hep_ml
+  - hepunits
   - ipython
   - matplotlib
+  - mplhep
   - nb_conda
   - nb_conda_kernels
   - numpy
   - pandas
+  - particle
   - pandoc
   - pip
   - scikit-learn
   - scipy
-  - tensorflow
-  - uproot
+  - uproot >4.0.5,<5
+  - uproot3
   - wget
   - xgboost
   - pip:
-    - git+https://github.com/hsf-training/python-lesson.git@0.0.2
+    - git+https://github.com/hsf-training/python-lesson.git
+    - tensorflow  # lacking behind pip versions
+    - zfit >=0.6.4,<0.8
+    - hepstats
+    - formulate
