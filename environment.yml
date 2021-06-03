@@ -16,13 +16,13 @@ dependencies:
   - pip
   - scikit-learn
   - scipy
-  - tensorflow
   - uproot3
   - wget
   - xgboost
   - pip:
     - uproot >4.0.5,<5
     - git+https://github.com/hsf-training/python-lesson.git
-    - zfit >=0.6.4
+    - tensorflow  # lacking behind pip versions
+    - zfit >=0.6.4,<0.8
     - hepstats
     - formulate
