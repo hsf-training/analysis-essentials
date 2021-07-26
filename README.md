@@ -57,7 +57,7 @@ You should now be able to use the tutorial.
 ```bash
 git clone https://github.com/hsf-training/analysis-essentials.git
 ```
- - For more information on getting started with git please see the [Analysis Essentials course](https://lhcb.github.io/analysis-essentials/index.html)
+ - For more information on getting started with git please see the [Analysis Essentials course](https://hsf-training.github.io/analysis-essentials/index.html)
 ```bash
 cd analysis-essentials
 jupyter lab

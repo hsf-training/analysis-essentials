@@ -1,7 +1,7 @@
 # Dictionaries
 
 You can think of lists as a _mapping_ from indices to values. The indices are
-always integers and go from `0` to `len(the_list)`, and the values are the
+always integers and go from `0` to `len(the_list) - 1`, and the values are the
 items.
 
 Dictionaries are collections, just like lists, but they have important
