@@ -21,16 +21,10 @@ environement (including installing/deleting/updating modules) without affecting 
 environement. If at some point you realize you have broken everything, you can always exit
 the virtual environement and go back to the default lxplus one.
 
-To build a virtual environement based on LCG views, you can use [LCG_virtualenv][lcg_virtualenv]:
+To enter a suitable environment you can use:
 
 ```bash
-git clone https://gitlab.cern.ch/cburr/lcg_virtualenv.git
-./lcg_virtualenv/create_lcg_virtualenv myVenv
-```
-To activate the virtual environement do:
-
-```bash
-source myVenv/bin/activate
+lb-conda default bash
 ```
 
 You can then install stuff with `pip`. In this lesson we will be using

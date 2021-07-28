@@ -96,7 +96,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../python/README.html">An introduction to Python</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../python/running.html">Running Python</a></li>
@@ -758,7 +758,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/zfit/__init__.py:48: UserWarning: TensorFlow warnings are by default suppressed by zfit. In order to show them, set the environment variable ZFIT_DISABLE_TF_WARNINGS=0. In order to suppress the TensorFlow warnings AND this warning, set ZFIT_DISABLE_TF_WARNINGS=1.
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/zfit/__init__.py:37: UserWarning: TensorFlow warnings are by default suppressed by zfit. In order to show them, set the environment variable ZFIT_DISABLE_TF_WARNINGS=0. In order to suppress the TensorFlow warnings AND this warning, set ZFIT_DISABLE_TF_WARNINGS=1.
   warnings.warn(&#34;TensorFlow warnings are by default suppressed by zfit.&#34;
 </pre></div></div>
 </div>
@@ -798,7 +798,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f3a0034a880&gt;
+&lt;matplotlib.legend.Legend at 0x7ff16796aee0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -896,20 +896,11 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f39fafc27c0&gt;
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_60sPlot_10_1.png" src="../_images/advanced-python_60sPlot_10_1.png" />
+<img alt="../_images/advanced-python_60sPlot_10_0.png" src="../_images/advanced-python_60sPlot_10_0.png" />
 </div>
 </div>
 <div class="section" id="Compare">
@@ -926,20 +917,11 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f39faee8340&gt;
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_60sPlot_12_1.png" src="../_images/advanced-python_60sPlot_12_1.png" />
+<img alt="../_images/advanced-python_60sPlot_12_0.png" src="../_images/advanced-python_60sPlot_12_0.png" />
 </div>
 </div>
 </div>
@@ -1053,20 +1035,11 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f3a000e5ca0&gt;
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_60sPlot_19_1.png" src="../_images/advanced-python_60sPlot_19_1.png" />
+<img alt="../_images/advanced-python_60sPlot_19_0.png" src="../_images/advanced-python_60sPlot_19_0.png" />
 </div>
 </div>
 <p>In this particular example we want to unfold the signal lifetime distribution. To do so <strong>sPlot</strong> needs a discriminant variable to determine the yields of the various sources using an extended maximum likelihood fit.</p>
@@ -1096,9 +1069,9 @@ div.rendered_html tbody tr:hover {
 <div class="highlight"><pre>
 name           value    at limit
 ---------  ---------  ----------
-bkg_yield     118200       False
-sig_yield      20050       False
-lambda     -0.002024       False
+bkg_yield     117900       False
+sig_yield      20030       False
+lambda     -0.001985       False
 mu              5279       False
 </pre></div></div>
 </div>
@@ -1153,7 +1126,7 @@ mu              5279       False
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-&lt;ipython-input-1-2f5ba857e78c&gt;:6: UserWarning: The function &lt;function Space.limit1d at 0x7f3a06d36670&gt; may does not return the actual area/limits but rather the rectangular limits. &lt;zfit Space obs=(&#39;mass&#39;,), axes=(0,), limits=(array([[5000.]]), array([[6000.]]))&gt; can also have functional limits that are arbitrarily defined and lay inside the rect_limits. To test if a value is inside, use `inside` or `filter`.
+/tmp/ipykernel_7777/4284826777.py:6: UserWarning: The function &lt;function Space.limit1d at 0x7ff16b8810d0&gt; may does not return the actual area/limits but rather the rectangular limits. &lt;zfit Space obs=(&#39;mass&#39;,), axes=(0,), limits=(array([[5000.]]), array([[6000.]]))&gt; can also have functional limits that are arbitrarily defined and lay inside the rect_limits. To test if a value is inside, use `inside` or `filter`.
   lower, upper = data.data_range.limit1d
 </pre></div></div>
 </div>
@@ -1201,9 +1174,9 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&lt;zfit.Parameter &#39;bkg_yield&#39; floating=True value=1.182e+05&gt;: array([-0.1986611 , -0.16073563, -0.16374672, ...,  1.12229883,
-        1.12229883,  1.12229167]), &lt;zfit.Parameter &#39;sig_yield&#39; floating=True value=2.005e+04&gt;: array([ 1.19865988,  1.16073467,  1.16374574, ..., -0.12229113,
-       -0.12229113, -0.12228398])}
+{&lt;zfit.Parameter &#39;bkg_yield&#39; floating=True value=1.179e+05&gt;: array([ 0.5766082 , -0.20297026, -0.11181055, ...,  1.1224646 ,
+        1.1224646 ,  1.1224646 ]), &lt;zfit.Parameter &#39;sig_yield&#39; floating=True value=2.003e+04&gt;: array([ 0.42339544,  1.20296647,  1.11180763, ..., -0.12245575,
+       -0.12245575, -0.12245575])}
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1221,8 +1194,8 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Sum of signal sWeights:  20054.058071317155
-Sum of background sWeights:  118160.75587438393
+Sum of signal sWeights:  20034.058191642416
+Sum of background sWeights:  117914.81049619748
 </pre></div></div>
 </div>
 <p>Now we can apply the signal <strong>sWeights</strong> on the lifetime distribution and retrieve its signal components.</p>
@@ -1251,20 +1224,11 @@ Sum of background sWeights:  118160.75587438393
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f39f87b62b0&gt;
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_60sPlot_28_1.png" src="../_images/advanced-python_60sPlot_28_1.png" />
+<img alt="../_images/advanced-python_60sPlot_28_0.png" src="../_images/advanced-python_60sPlot_28_0.png" />
 </div>
 </div>
 <p>Be careful the <strong>sPlot</strong> technique works only on variables that are uncorrelated with the discriminant variable.</p>
@@ -1282,7 +1246,7 @@ Sum of background sWeights:  118160.75587438393
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Correlation between m and t: 0.029906970959724794
+Correlation between m and t: 0.030380428902976726
 </pre></div></div>
 </div>
 <p>Let’s apply to signal <strong>sWeights</strong> on the mass distribution to see how bad the results of <strong>sPlot</strong> is when applied on a variable that is correlated with the discrimant variable.</p>
@@ -1295,57 +1259,11 @@ Correlation between m and t: 0.029906970959724794
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-(array([-328.59627129, -336.17832147, -305.85012077, -309.15198133,
-        -304.74950058, -296.31141248, -298.63494399, -291.41976721,
-        -283.10397024, -271.36402159, -278.21232497, -272.09776838,
-        -257.17825029, -260.48011079, -260.35781788, -246.53888076,
-        -239.68984184, -242.85820543, -227.94037991, -218.13259378,
-        -218.49379133, -174.01452648,  -29.95029817,  420.45561296,
-        1388.50983287, 3036.96493669, 5035.1849812 , 6559.11495674,
-        6450.24564892, 4772.08649951, 2900.14155751, 1243.8032015 ,
-         346.27956914,  -15.94701618, -135.50546561, -157.47456462,
-        -159.04133751, -164.37892536, -162.27176182, -151.15128976,
-        -142.83601368, -141.00167387, -149.68434535, -138.92272579,
-        -137.94439673, -137.21064994, -139.65647258, -132.0744224 ,
-        -126.32673921, -126.32673921, -118.13323337, -114.46449942,
-        -121.80196733, -109.57285414, -116.42115753, -109.20598075,
-        -109.32827188, -103.09142415,  -99.4226902 ,  -99.17810793,
-         -96.60999417,  -92.08522229,  -97.95519662,  -92.94126021,
-         -96.85457643,  -83.15796966,  -84.87004551,  -84.50317211,
-         -79.48923571,  -80.71214702,  -90.86231097,  -82.17964061,
-         -75.33133722,  -73.49697024,  -73.61926138,  -71.66260327,
-         -71.418021  ,  -68.60532497,  -66.52637573,  -69.82823629,
-         -64.32513536,  -63.83597083,  -65.54804667,  -60.41181914,
-         -61.51243932,  -61.0232748 ,  -58.82203442,  -54.29726254,
-         -55.39788273,  -55.88704726,  -55.52017386,  -55.03100933,
-         -52.34060443,  -46.10375671,  -52.82976896,  -49.40561727,
-         -45.73688331,  -47.2043769 ,  -44.513972  ,  -46.59292124]),
- array([5000., 5010., 5020., 5030., 5040., 5050., 5060., 5070., 5080.,
-        5090., 5100., 5110., 5120., 5130., 5140., 5150., 5160., 5170.,
-        5180., 5190., 5200., 5210., 5220., 5230., 5240., 5250., 5260.,
-        5270., 5280., 5290., 5300., 5310., 5320., 5330., 5340., 5350.,
-        5360., 5370., 5380., 5390., 5400., 5410., 5420., 5430., 5440.,
-        5450., 5460., 5470., 5480., 5490., 5500., 5510., 5520., 5530.,
-        5540., 5550., 5560., 5570., 5580., 5590., 5600., 5610., 5620.,
-        5630., 5640., 5650., 5660., 5670., 5680., 5690., 5700., 5710.,
-        5720., 5730., 5740., 5750., 5760., 5770., 5780., 5790., 5800.,
-        5810., 5820., 5830., 5840., 5850., 5860., 5870., 5880., 5890.,
-        5900., 5910., 5920., 5930., 5940., 5950., 5960., 5970., 5980.,
-        5990., 6000.]),
- &lt;BarContainer object of 100 artists&gt;)
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_60sPlot_32_1.png" src="../_images/advanced-python_60sPlot_32_1.png" />
+<img alt="../_images/advanced-python_60sPlot_32_0.png" src="../_images/advanced-python_60sPlot_32_0.png" />
 </div>
 </div>
 </div>
@@ -1394,20 +1312,11 @@ Correlation between m and t: 0.029906970959724794
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Text(0.5, 0, &#39;p&#39;)
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_60sPlot_35_1.png" src="../_images/advanced-python_60sPlot_35_1.png" />
+<img alt="../_images/advanced-python_60sPlot_35_0.png" src="../_images/advanced-python_60sPlot_35_0.png" />
 </div>
 </div>
 </div>
@@ -1478,7 +1387,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f39f8411eb0&gt;
+&lt;matplotlib.legend.Legend at 0x7ff154b99df0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1523,7 +1432,7 @@ Text(0.5, 0, &#39;p&#39;)
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 ((0.0, 10.0),
- &lt;matplotlib.legend.Legend at 0x7f39f853ef10&gt;,
+ &lt;matplotlib.legend.Legend at 0x7ff154dec460&gt;,
  Text(0.5, 0, &#39;mass&#39;))
 </pre></div></div>
 </div>
@@ -1560,22 +1469,11 @@ Text(0.5, 0, &#39;p&#39;)
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-((0.0, 10.0),
- &lt;matplotlib.legend.Legend at 0x7f39f8b9cdc0&gt;,
- Text(0.5, 0, &#39;mass&#39;))
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_60sPlot_46_1.png" src="../_images/advanced-python_60sPlot_46_1.png" />
+<img alt="../_images/advanced-python_60sPlot_46_0.png" src="../_images/advanced-python_60sPlot_46_0.png" />
 </div>
 </div>
 </div>
@@ -1629,7 +1527,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--0.35182564364714974
+-0.35039141432431786
 </pre></div></div>
 </div>
 <p>But within each class there is no correlation, so the requirement is satisfied:</p>
@@ -1648,8 +1546,8 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--0.004561260971822046
--0.018796575607311912
+-0.0025799961840014814
+-0.002996637542266944
 </pre></div></div>
 </div>
 <p>as a demonstration why this is important let’s use sweights to reconstruct mass (obviously mass is correlated with mass):</p>

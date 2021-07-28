@@ -96,7 +96,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="README.html">An introduction to Python</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="running.html">Running Python</a></li>
@@ -513,13 +513,8 @@ The latter is like a copy of your current environement. Thus you can modify your
 environement (including installing/deleting/updating modules) without affecting your default
 environement. If at some point you realize you have broken everything, you can always exit
 the virtual environement and go back to the default lxplus one.</p>
-<p>To build a virtual environement based on LCG views, you can use [LCG_virtualenv][lcg_virtualenv]:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://gitlab.cern.ch/cburr/lcg_virtualenv.git
-./lcg_virtualenv/create_lcg_virtualenv myVenv
-</pre></div>
-</div>
-<p>To activate the virtual environement do:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> myVenv/bin/activate
+<p>To enter a suitable environment you can use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lb-conda default bash
 </pre></div>
 </div>
 <p>You can then install stuff with <code class="docutils literal notranslate"><span class="pre">pip</span></code>. In this lesson we will be using
