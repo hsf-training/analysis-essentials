@@ -1,6 +1,7 @@
 # Running Python
 
-To start using Python, we need access to the `python` program in a terminal. It is recommended to use Anaconda and its environments whenever possible.
+To start using Python, we need access to the `python` program in a terminal. 
+It is recommended to use Anaconda and its environments whenever possible.
 
 Alternatively, you can directly use a version on lxplus.
 The version installed on lxplus is 2.7.15, which is old. However, we can get
