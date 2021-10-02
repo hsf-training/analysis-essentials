@@ -11,6 +11,9 @@ wkt USERNAME.keytab
 ```
 and close the `ktutil` prompt with `Ctrl+D`.
 This will create a file called USERNAME.keytab in the current directory. It is strongly recommended to store this file in a directory to which only you have access as anyone who obtains a copy of this file can use it to obtain tokens in your name.
+
+**NOTE** that the domain name `CERN.CH` has to be all uppercase, while the `USERNAME` should match your case-sensitive CERN username. 
+
 ### Making use of the keytab
 This keytab file can now be used to obtain kerberos tokens without having to type a password:
 ```bash
