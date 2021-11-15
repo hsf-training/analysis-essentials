@@ -1,0 +1,18 @@
+# Dummy rule containing only final product to make snakemake without rule label work.
+rule run:
+    input: ["output/Luca/data.txt", "output/Fred/data.txt", "output/Guillaume/data.txt"]
+
+rule merge_data:
+    input: ['output/{name}/myaddress.txt', 'output/{name}/myphone.txt']
+    output: ['output/{name}/data.txt']
+    shell: "cat {input[0]} > {output} && cat {input[1]} >> {output}"
+
+rule get_phone:
+    input: ['inputs/phones.txt']
+    output: ['output/{name}/myphone.txt']
+    shell: "grep {wildcards.name} {input} > {output}"
+
+rule get_address:
+    input: ['inputs/addresses.txt']
+    output: ['output/{name}/myaddress.txt']
+    shell: "grep {wildcards.name} {input} > {output}"
