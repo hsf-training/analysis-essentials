@@ -1,9 +1,9 @@
-# Analysis automation with snakemake
+# Analysis automation with Snakemake
 
 {% objectives "Learning Objectives" %}
 
-* Learn what analysis automation is and how it helps with analysis preservation
-* Learn how to create a pipeline with Snakemake
+- Learn what analysis automation is and how it helps with analysis preservation
+- Learn how to create a pipeline with Snakemake
 
 {% endobjectives %}
 
@@ -25,21 +25,35 @@
 
 You can find full documentation for Snakemake [at this link](https://snakemake.readthedocs.io/en/stable/index.html), you can also ask any questions you have on the [~reproducible](https://mattermost.web.cern.ch/lhcb/channels/reproducible) channel on mattermost.
 
-Snakemake is best-run at LHCb using the `lb-conda` environment. This environment comes with very recent versions of ROOT, python, cmake, g++, snakemake, etc ready to use. To have access to `lb-conda` you must first have sourced `lb-env`. This is done by default on lxplus, otherwise it is done with `source /cvmfs/lhcb.cern.ch/lib/LbEnv`. In general it is recommended that if you are running non-lhcb software (e.g. code you've written yourself for your analysis) it should be done with `lb-conda`.
+Snakemake is best-run at LHCb using the `lb-conda` environment.
+This environment comes with very recent versions of ROOT, python, cmake, g++, snakemake, *etc.* ready to use.
+In general it is recommended that if you are running non-lhcb software (*e.g.*, code you've written yourself for your analysis) it should be done with `lb-conda`.
 
 {% callout "accessing the `lb-conda` environment" %}
 
-The basic `lb-conda` environment can be entered with the command `lb-conda default`, this will enter you into an interactive bash shell. There are a few other way in which `lb-conda` can be used.
+To have access to `lb-conda` you must first have sourced `LbEnv`.
+This is done by default on lxplus, otherwise it is done with `source /cvmfs/lhcb.cern.ch/lib/LbEnv` (assuming [cvmfs](https://cvmfs.readthedocs.io/en/stable/) is installed).
 
-`lb-conda default foo` will run a specific `foo` command (e.g. a python program) within the `lb-conda` environment and then exit. This is similar in effect to the old `lb-run`-style command.
+The default environment can be entered with the command `lb-conda default`,
+where `default` is the name of the environment.
+This will enter you into an interactive bash shell.
 
-`lb-conda default bash -c 'bash --rcfile ~/.bashrc'` will enter the `lb-conda` environment as before but will also source your `.bashrc` file (be careful to avoid conflicts if doing this).
+> The full list of available environments can be found by running `lb-conda --list`.
+
+You can optionally pass a command after the environment name,
+*e.g.*, `lb-conda default foo`,
+which will run the `foo` command in the environment and then exit.
+(This is similar to the behaviour of [`lb-run`](https://twiki.cern.ch/twiki/bin/view/LHCb/SoftwareEnvTools).)
+
+If you want your `.bashrc` file commands to be available in the created environment,
+you can run `lb-conda default bash -c 'bash --rcfile ~/.bashrc'`.
+Be careful if you do this--it can lead to conflicts in the environment.
 
 {% endcallout %}
 
 More infomation on using `lb-conda` can be found [here](https://gitlab.cern.ch/lhcb-core/lbcondawrappers/-/blob/master/README.md).
 
-You can now check if Snakemake is working by using `snakemake --help`.
+You can now check if Snakemake is working by calling `snakemake --help` in the `lb-conda default` environment.
 
 ## Tutorial
 
