@@ -9,16 +9,27 @@
 
 ## Documentation and environments
 
-You can find full documentation for Snakemake [at this link](https://snakemake.readthedocs.io/en/stable/index.html), you can also ask any questions you have on the [~reproducible](https://mattermost.web.cern.ch/lhcb/channels/reproducible) channel on mattermost.
+You can find full documentation for Snakemake
+[here](https://snakemake.readthedocs.io/en/stable/index.html);
+you can also ask any questions you have on the
+[~reproducible](https://mattermost.web.cern.ch/lhcb/channels/reproducible)
+channel on mattermost.
+Web searches and [Stack Overflow](https://stackoverflow.com/questions/tagged/snakemake)
+are also your friends.
 
 Snakemake is best-run at LHCb using the `lb-conda` environment.
-This environment comes with very recent versions of ROOT, python, cmake, g++, snakemake, *etc.* ready to use.
-In general it is recommended that if you are running non-lhcb software (*e.g.*, code you've written yourself for your analysis) it should be done with `lb-conda`.
+This environment comes with very recent versions of
+ROOT, python, cmake, g++, snakemake, *etc.*, ready to use.
+In general, it is recommended that if you are running non-lhcb software
+(*e.g.*, code you've written yourself for your analysis)
+it should be done with `lb-conda`.
 
 {% callout "accessing the `lb-conda` environment" %}
 
 To have access to `lb-conda` you must first have sourced `LbEnv`.
-This is done by default on lxplus, otherwise it is done with `source /cvmfs/lhcb.cern.ch/lib/LbEnv` (assuming [cvmfs](https://cvmfs.readthedocs.io/en/stable/) is installed).
+This is done by default on lxplus,
+otherwise it is done with `source /cvmfs/lhcb.cern.ch/lib/LbEnv`
+(assuming [cvmfs](https://cvmfs.readthedocs.io/en/stable/) is installed).
 
 The default environment can be entered with the command `lb-conda default`,
 where `default` is the name of the environment.
@@ -31,15 +42,21 @@ You can optionally pass a command after the environment name,
 which will run the `foo` command in the environment and then exit.
 (This is similar to the behaviour of [`lb-run`](https://twiki.cern.ch/twiki/bin/view/LHCb/SoftwareEnvTools).)
 
-If you want your `.bashrc` file commands to be available in the created environment,
-you can run `lb-conda default bash -c 'bash --rcfile ~/.bashrc'`.
+If you want, you can include your `.bashrc` file in the created environment
+by running `lb-conda default bash -c 'bash --rcfile ~/.bashrc'`.
 Be careful if you do this--it can lead to conflicts in the environment.
 
 {% endcallout %}
 
-More infomation on using `lb-conda` can be found [here](https://gitlab.cern.ch/lhcb-core/lbcondawrappers/-/blob/master/README.md).
+More information on using `lb-conda` can be found [here](https://gitlab.cern.ch/lhcb-core/lbcondawrappers/-/blob/master/README.md).
 
 You can now check if Snakemake is working by calling `snakemake --help` in the `lb-conda default` environment.
+
+## Workflow preservation
+
+There is an ongoing effort at LHCb to ensure analysis workflows are preserved.
+You can learn more about this effort and how Snakemake figures into it
+[here](https://lhcb-dpa.web.cern.ch/lhcb-dpa/wp6/workflow-preservation.html).
 
 ## Basic Tutorial
 
@@ -122,9 +139,10 @@ If you have ever performed an HEP analysis
 or looked at the code for someone else's analysis,
 you probably understand why the above features are so useful.
 
-Snakemake allows you to create a set of rules, each one defining a "step" of your analysis.
+Snakemake allows you to create a set of rules,
+each one defining a step of your analysis.
 The rules need to be written in a file called `Snakefile`.
-For each step you need to provide:
+For each rule you need to provide:
 
 - The *input*: Data files, scripts, executables or any other files.
 - The expected *output*. It's not required to list all possible outputs.
@@ -455,248 +473,413 @@ and Snakemake will execute regardless.
 
 ## Advanced Tutorial
 
-An example. If you want to copy some text from a file called `input.txt` to `output.txt` you can do:
-
-```python
-rule copy:
-    input: 'input.txt'
-    output: 'output.txt'
-    shell: 'cp input.txt output.txt'
-```
-
-You can even avoid typos by substituting variables instead of typing the filenames twice:
-
-```python
-rule merge_files:
-    input: 'input_1.txt', 'input_2.txt'
-    output: 'output.txt'
-    shell: 'cat {input[0]} > {output} && cat {input[1]} >> {output}'
-```
-
-Input and output can also be parametrised using wildcards:
-
-```python
-rule copy_and_echo:
-    input: 'input/{filename}.txt'
-    output: 'output/{filename}.txt'
-    shell: 'echo {wildcards.filename} && cp {input} {output}'
-```
-
-If you then make another rule with `output/a_file.txt` and `output/another_file.txt` as inputs they will be automatically created by the `copy_and_echo` rule.
-
-```python
-rule all:
-     input: 'output/a_file.txt', 'output/another_file.txt'
-```
-
-This allows for rules to be reusable, for example to make a rule that can be used to process data with from different years or polarities.
-
-Notice that:
-
-* Inputs and outputs can be of any type
-* You can provide python code after the tags. e.g. `input: glob("*.root")`
-* Python functions can also be used as an input
-* If a single file is used as an input/output, one can ommit the index when refering to the input/output.
-* Wildcards must always be present in the output of a rule (else it wouldn't be possible to know what they should be)
-
-Snakemake can also take an output of the previous rule as an input:
-
-```python
-rule create_file:
-    output: 'test_file.txt'
-    shell:
-       'echo test > {output}'
-
-rule copy_file:
-    input: rules.create_file.output
-    output: 'copied_test.txt'
-    shell:
-       'cp {input} {output}'
-```
-
-{% challenge "Write a snakefile with a single rule" %}
-
-
-To try out download:
-
+In this tutorial,
+we will examine more advanced Snakemake topics using pre-defined inputs.
+To begin, run
 ```bash
-$ wget https://github.com/hsf-training/analysis-essentials/raw/master/snakemake/code/tutorial.tar
-$ tar -xvf tutorial.tar
+mkdir advanced_tutorial
+cd advanced_tutorial
+wget https://github.com/hsf-training/analysis-essentials/raw/master/snakemake/code/advanced_tutorial/input.tar
+tar -xvf input.tar
+ls input/
 ```
+You should see `address.txt` and `phone.txt`.
+The first contains names followed by addresses;
+the second contains names followed by phone numbers.
 
-You will find one containing names and phone numbers. You can make one rule that, given a name extracts the line with the phone of that person.
+You can find the ultimate solution,
+how your workflow might look after solving all of the challenges,
+[here](https://github.com/hsf-training/analysis-essentials/raw/master/snakemake/code/advanced_tutorial.tar)
 
-To do this in a shell you can use `grep`, which is a command that lists all lines in a file containing a certain text.
+{% challenge "Get Luca's address and phone number" %}
 
-```bash
-$ grep ciao test.txt
-ciao a tutti
-```
-
-{% endchallenge %}
-
-### Usage and basic behaviour
-
-And now that your `Snakefile` is done it's time to run! Just type
-
-```bash
-snakemake rulename_or_filename --cores 1
-```
-
-
-This will:
-1. Check that the inputs exist
-   * If inputs exists &rarr; 2)
-   * If inputs do not exist or have changed snakemake will check if there is an other rule that produces them &rarr; Go back to 1)
-2. Run the command you defined in `rulename_or_filename` (or the rule that generates the filename that is given) usin 1 core
-3. Check that the output was actually produced.
-
-Note, that one must specify the number of cores being used in snakemake.
-
-Comments, which rules are run:
-* If want to run a chain of rules only up to a certain point just put the name of the rule up to which you want to run on the snakemake command.
-* If you want a rule to be "standalone" just do not give its input/outputs as outputs/inputs of any other rule
-* It is normal practice to put as a first rule a dummy rule that only takes as inputs all the "final" outputs you want to be created by any other rule. In this way when you run just `snakemake` with no label it will run all rules (in the correct order).
-
-{% challenge "Make a snakefile with at least 3 rules connected to each other and run them in one go" %}
-
-
-In the tutorial folder you find two files containing addresses, and phone numbers.
-You can make rules that, given a name, `grep` the address and phone and then one other rule to merge them into your final output file.
-
-If we do this for “Luca”, it can be represented by the following graph:
-
-[![DAG](img/DAG_single-wide.png)](img/DAG_single.png)
-
-Which could be achieved using this shell script:
-
-```bash
-grep Luca inputs/addresses.txt > output/Luca/myaddress.txt
-grep Luca inputs/phones.txt > output/Luca/myphone.txt
-cat output/Luca/myaddress.txt > output/Luca/data.txt && cat output/Luca/myphone.txt >> output/Luca/data.txt
-```
-
-_But it does not have to be this, any other task is fine, be creative!_
-
-
-{% endchallenge %}
-
-{% challenge "Use wildcards" %}
-
-
-Following on from the previous challenge use wildcards to make it so that any name can be used, such as “Fred”
-
-```bash
-snakemake output/Fred/data.txt --cores 1
-```
+Write a `Snakefile` with a single rule that creates an output file
+with Luca's address and phone number.
+Hint: the command `grep` lists all lines in a file containing a given text.
 
 {% solution "Solution" %}
 
+Your `Snakefile` could look something like this:
+```python
+rule Luca_info:
+    input: "input/address.txt", "input/phone.txt"
+    output: "output/Luca/info.txt"
+    shell: "grep Luca {input[0]} > {output} && grep Luca {input[1]} >> {output}"
+```
+Notice that we specified multiple input files and referred to them by index.
+We could also have named them:
+```python
+rule Luca_info:
+    input:
+        address="input/address.txt",
+        phone="input/phone.txt",
+    output: "output/Luca/info.txt"
+    shell: "grep Luca {input.address} > {output} && grep Luca {input.phone} >> {output}"
+```
+{% endsolution %}
 
-See `Snakefile` in the `simple_solution` folder [here](code/tutorial.tar).
+{% endchallenge %}
+
+{% challenge "Get Luca's address and phone number in three steps" %}
+
+Remember that one of the nice things about using Snakemake
+is that we can run things in parallel instead of sequentially.
+Modify your Snakefile to get Luca's address and phone number in separate rules,
+then merge them into a single output file.
+
+{% solution "Solution" %}
+
+Your `Snakefile` could look something like this:
+```python
+rule merge_data:
+    input:
+        address="output/Luca/address.txt",
+        phone="output/Luca/phone.txt",
+    output: "output/Luca/info.txt"
+    shell: "cat {input.address} > {output} && cat {input.phone} >> {output}"
+
+
+rule get_address:
+    input: "input/address.txt"
+    output: "output/Luca/address.txt"
+    shell: "grep Luca {input} > {output}"
+
+
+rule get_phone:
+    input: "input/phone.txt"
+    output: "output/Luca/phone.txt"
+    shell: "grep Luca {input} > {output}"
+```
+This is not much better than our original solution,
+since we still end up running two sequential bash commands in the final step,
+but one can easily imagine this being helpful if the rules
+`get_address` and `get_phone` took a long time.
 
 {% endsolution %}
 
 {% endchallenge %}
 
-Comments, partial running:
-
-* If part of the input is already present and not modified the corresponding rule will not run
-Note that if you put your code into the inputs snakemake will detect when your code changes and automatically rerun the corresponding rule!
-* If you want to force running all rules even if part of the output is present use `snakemake --forceall`
-* If you want to check the snakemake rules chain without actually running them use `snakemake -n`
-
-{% challenge "Explore the snakemake behaviour" %}
-
-In the previous example try deleting one of the intermediate files, rerun snakemake and see what happens
-
-{% endchallenge %}
-
-
-
-{% callout "snakemake utility functions" %}
-
-
-Snakemake provides a lot of utils functions, some of the most common ones are described here.
-* `expand` : returns a python list that is filled according to the possible wildcards values.
-For example, an python expression `['output/{}/file.txt'.format(name) for name in names]` can be replaced with `expand('output/{name}/file.txt', name = names)` in the inputs.
-* `temp`: specifies that the output file is temporary. For example, `temp('file.root')` will be deleted as the last rule that uses it as an input has finished.
-* `directory`: specifies that the output is a directory rather than a file. For example, `directory('output/plots')`. Snakemake 6+ will not create this directory automatically, as it happens with the output files. One way around it is to have a `mkdir` in the `shell` before excuting the main command or having a special rule that creates all necessary directories. Note, that when the snakemake rule falls all outputs are being deleted including the directories.
-
-{% endcallout %}
-
-### Sub-labels
-
-Inside the pre-defined tags you can add custom subtags as in this example.
-
+In the solution above,
+we don't really need the output of `get_address` and `get_phone`;
+they are just waypoints on our way to the output of `merge_data`
+and we could delete them when we finished.
+Snakemake provides a way to do this for us, using the `temp` utility function:
 ```python
-rule run_some_py_script:
+rule merge_data:
     input:
-        exe = 'myscript.py',
-        data = 'mydata.root',
-        extra = 'some_extra_info.txt',
-    output: 'output.txt'
-    shell: 'python {input.exe} {input.data} --extra {input.extra} > {output}'
+        address="output/Luca/address.txt",
+        phone="output/Luca/phone.txt",
+    output: "output/Luca/info.txt"
+    shell: "cat {input.address} > {output} && cat {input.phone} >> {output}"
+
+
+rule get_address:
+    input: "input/address.txt"
+    output: temp("output/Luca/address.txt")
+    shell: "grep Luca {input} > {output}"
+
+
+rule get_phone:
+    input: "input/phone.txt"
+    output: temp("output/Luca/phone.txt")
+    shell: "grep Luca {input} > {output}"
 ```
+This tells Snakemake to remove the specified output once all the rules
+that use it as an input are finished.
+Note that you can only mark `output` as temporary in this way, not `input`.
 
-So this will effectively launch the command:
+{% challenge "Use wildcards" %}
 
-```bash
-python myscript.py mydata.roo --extra some_extra_info.txt > output.txt
-```
-
-The `--extra` is not necessary. It's just to illustrate how python scripts options can be used.
-
-{% challenge "Code as input" %}
-
-Add your python script to the inputs than make some modifications to it, rerun snakemake and see what happens.
-
-{% endchallenge %}
-
-
-
-### Run and shell
-
-You have two ways to specify commands. One is `shell` that assumes shell commands as shown before.
-The other is `run` that instead directly takes python code (Careful it's python3!).
-
-For example the copy of the file as in the previous example can be done in the following way.
-
-```python
-rule dosomething_py:
-    input: 'myfile.txt'
-    output: 'myoutput.txt'
-    run:
-        with open(str(input), 'rt') as fi:
-            with open(str(output), 'wt') as fo:
-                fo.write(fi.read())
-```
-
-And finally you can mix! Namely you can send shell commands from python code.
-This is useful, in particular if you have to launch the same shell command on more inputs.
-
-```python
-rule dosomething_pysh:
-    input:
-        code = 'mycode.exe',
-        data = ['data1.root', 'data2.root']
-    output: 'plot1.pdf', 'plot2.pdf'
-    run:
-        for f in input.data:
-            shell('./{input.code} %s' % f)
-```
-Note the list brackets in the `output.data` to highlight the fact that the data output is a list.
-If the brackets were absent, snakemake would not allow this rule to run, assuming that the `"data2.root"` is the next positional output.
-In snakemake positional inputs/outputs have to be positioned before the keyword (labeled) inputs/outputs.
-
-{% challenge "Use run instead of shell" %}
-
-Rewrite your previous file using a python script to run the search and use `run` to run on both phones and addresses in the same rule
+Modify your Snakefile to get anyone's address and phone number.
+Tell it to get Luca's, Fred's, and Guillaume's by default.
 
 {% solution "Solution" %}
 
-An example solution can be found [here](code/Snakefile).
-Although it's fine if you have done it a different way.
+Your `Snakefile` could look something like this:
+```python
+rule run:
+    input: ["output/Luca/info.txt", "output/Fred/info.txt", "output/Guillaume/info.txt"]
+
+
+rule merge_data:
+    input:
+        address="output/{name}/address.txt",
+        phone="output/{name}/phone.txt",
+    output: "output/{name}/info.txt"
+    shell: "cat {input.address} > {output} && cat {input.phone} >> {output}"
+
+
+rule get_address:
+    input: "input/address.txt"
+    output: temp("output/{name}/address.txt")
+    shell: "grep {wildcards.name} {input} > {output}"
+
+
+rule get_phone:
+    input: "input/phone.txt"
+    output: temp("output/{name}/phone.txt")
+    shell: "grep {wildcards.name} {input} > {output}"
+```
+
+{% endsolution %}
+
+{% endchallenge %}
+
+The Snakemake workflow can be represented by a directed acyclic graph (DAG).
+In the above solution for just Luca, it looks something like this:
+
+[![DAG](img/DAG_single-wide.png)](img/DAG_single.png)
+
+In the most recent solution for Luca, Fred, and Guillaume,
+it looks more like this:
+
+[![DAG](img/DAG_multiple.png)](img/DAG_multiple.png)
+
+{% challenge "Use more wildcards" %}
+
+Reduce your `Snakefile` to contain just three rules.
+
+{% solution "Solution" %}
+
+Your `Snakefile` could look something like this:
+```python
+rule run:
+    input: ["output/Luca/info.txt", "output/Fred/info.txt", "output/Guillaume/info.txt"]
+
+
+rule merge_data:
+    input:
+        address="output/{name}/address.txt",
+        phone="output/{name}/phone.txt",
+    output: "output/{name}/info.txt"
+    shell: "cat {input.address} > {output} && cat {input.phone} >> {output}"
+
+
+rule get_info:
+    input: "input/{info}.txt"
+    output: temp("output/{name}/{info}.txt")
+    shell: "grep {wildcards.name} {input} > {output}"
+```
+
+Since the rules `get_address` and `get_phone` were so nearly identical,
+we simply combined them into a single rule called `get_info` using wildcards.
+
+{% endsolution %}
+
+{% endchallenge %}
+
+### Running scripts
+
+Snakemake can execute anything in the command-line,
+including calling python scripts.
+
+{% challenge "Call python scripts" %}
+
+Modify your `Snakefile` to look up anyone's address and phone number
+and write them in a single output file
+*without including their name*.
+
+{% solution "Solution" %}
+
+Instead of using shell commands,
+we can write a python file, `get_info.py`:
+```python
+"""Extract information about a person."""
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("name", help="person of interest")
+parser.add_argument("infile", help="text file with information")
+parser.add_argument("outfile", help="where to write extracted information")
+args = parser.parse_args()
+
+# -- find information
+found = None
+with open(args.infile) as f:
+    for ln in f:
+        if ln.startswith(args.name):
+            found = ln
+            break  # assume only one line with info
+info = found[len(args.name):]
+# -- write information
+with open(args.outfile, "w") as f:
+    f.write(info)
+```
+
+Your `Snakefile` could then look something like this:
+```python
+rule run:
+    input: ["output/Luca/info.txt", "output/Fred/info.txt", "output/Guillaume/info.txt"]
+
+
+rule merge_data:
+    input:
+        address="output/{name}/address.txt",
+        phone="output/{name}/phone.txt",
+    output: "output/{name}/info.txt"
+    shell: "cat {input.address} > {output} && cat {input.phone} >> {output}"
+
+
+rule get_info:
+    input:
+        exe="get_info.py",
+        infile="input/{info}.txt",
+    output: temp("output/{name}/{info}.txt")
+    shell: "python {input.exe} {wildcards.name} {input.infile} {output}"
+```
+
+Notice that we included `get_info.py` as an input.
+If you modify it (add an additional comment, for example),
+Snakemake will run the rule `get_info` again.
+You do not have to list it as an input if you do not want this behaviour;
+in such a case, you would drop it from the `input` declarations
+and modify the shell command to read
+`python get_info.py {wildcards.name} {input.infile} {output}`
+
+{% endsolution %}
+
+{% endchallenge %}
+
+You have two ways to specify commands.
+One is `shell`, which we've been using.
+The other is `run` that instead directly takes python code.
+For example,
+the previous solution could be written
+```python
+rule run:
+    input: ["output/Luca/info.txt", "output/Fred/info.txt", "output/Guillaume/info.txt"]
+
+
+rule merge_data:
+    input:
+        address="output/{name}/address.txt",
+        phone="output/{name}/phone.txt",
+    output: "output/{name}/info.txt"
+    shell: "cat {input.address} > {output} && cat {input.phone} >> {output}"
+
+
+rule get_info:
+    input:
+        infile="input/{info}.txt",
+    output: temp("output/{name}/{info}.txt")
+    run:
+        found = None
+        with open(input.infile) as f:
+            for ln in f:
+                if ln.startswith(wildcards.name):
+                    found = ln
+                    break  # assume only one line with info
+        info = found[len(wildcards.name):]  # assume space follows name
+        with open(str(output), "w") as f:
+            f.write(info)
+            f.write("\n")
+```
+You can also mix and match by calling
+[`shell`](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html)
+from within the python code.
+Instead of `shell` or `run`,
+you can also declare
+[`script`](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html),
+which is similar to `run` but it allows you to refer to an external file.
+
+### Log files
+
+Within Snakemake,
+a log file is a special type of output file that is not deleted if a rule fails.
+
+> If an error is raised during the execution of a rule,
+> Snakemake deletes the files listed as `output`,
+> since they could be corrupted.
+> To see this happen,
+> simply add the line `assert False` anywhere in your python code.
+> A log file, by contrast, is not deleted.
+
+In practice, log files allow you to monitor the behaviour of your rules
+and debug when things go wrong.
+To declare a log file, simply add it to your rule declaration:
+```python
+rule myname:
+    input: "myinput1", "myinput2"
+    log: "mylog"
+    output: "myoutput"
+    shell: "Some command to go from in to out and create log"
+```
+
+Just as with `output`,
+you must supply a command that produces a `log` file.
+The shell redirect command `&>` is particularly useful here;
+it captures both `stdout` and `stderr` and saves them in a (recreated) file.
+You can read more about redirection in the bash manual
+[here](https://www.gnu.org/software/bash/manual/html_node/Redirections.html).
+
+> Note that this redirection is only available if you are declaring `shell`
+> actions in your rule declarations;
+> if you are using `run` or `script`, you might consider using
+> the [`logging` package](https://docs.python.org/3/howto/logging.html).
+
+{% challenge "Add log files" %}
+
+Modify your workflow to print progress updates and save them in log files.
+
+{% solution "Solution" %}
+
+First, we modify `get_info.py` to print status updates:
+```python
+"""Extract information about a person."""
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("name", help="person of interest")
+parser.add_argument("infile", help="text file with information")
+parser.add_argument("outfile", help="where to write extracted information")
+args = parser.parse_args()
+
+# -- find information
+print("extracting information...")
+found = None
+with open(args.infile) as f:
+    for ln in f:
+        if ln.startswith(args.name):
+            found = ln
+            break  # assume only one line with info
+if not found:
+    raise ValueError(f"{args.infile} contains no info on '{args.name}'")
+info = found[len(args.name):]
+print("found information")
+# -- write information
+print("writing information...")
+with open(args.outfile, "w") as f:
+    f.write(info)
+print("done")
+```
+
+Your `Snakefile` could then look something like this:
+```python
+rule run:
+    input: ["output/Luca/info.txt", "output/Fred/info.txt", "output/Guillaume/info.txt"]
+
+
+rule merge_data:
+    input:
+        address="output/{name}/address.txt",
+        phone="output/{name}/phone.txt",
+    output: "output/{name}/info.txt"
+    shell: "cat {input.address} > {output} && cat {input.phone} >> {output}"
+
+
+rule get_info:
+    input:
+        exe="get_info.py",
+        infile="input/{info}.txt",
+    log: "log/{name}/{info}.txt"
+    output: temp("output/{name}/{info}.txt")
+    shell: "python {input.exe} {wildcards.name} {input.infile} {output} &> {log}"
+```
+
+Notice that `log` includes all the wildcards used in `output`;
+this ensures that every instance of the rule has a unique log file.
+If you run Snakemake with `--forceall`,
+you should see your log files created in the `log/` directory.
 
 {% endsolution %}
 
@@ -704,98 +887,186 @@ Although it's fine if you have done it a different way.
 
 ### Config files
 
-Often you want to run the same rule on different sample or with different options for your scripts.
+Often you want to run the same rule on different samples
+or with different options for your scripts.
 This can be done in snakemake using config files written in [yaml](https://learn.getgrav.org/advanced/yaml).
 
-For example let's put the datafiles in a cfg.yaml file
-
+For example let's declare some data files in a cfg.yaml file:
 ```python
 data:
     - 'data1.root'
     - 'data2.root'
 ```
-
-Now in your Snakefile you can load this config file and then its content will be available into the rules as a dictionary called "config". Yes, it seems black magic, but it works! Your Snakefile will look like this
-
+Now in your Snakefile you can load this config file
+and then its content will be available
+to the rules as a dictionary called "config".
+Yes, it seems black magic, but it works!
+Your Snakefile will look something like this:
 ```python
 configfile: '/path/to/cfg.yaml'
 
-rule dosomething_pysh:
+rule dosomething:
     input:
-        code = 'mycode.exe',
-        data = config['data'],
+        exe='mycode.py',
+        data=config['data'],
     output: ['plot1.pdf', 'plot2.pdf']
-    run:
-        for f in input:
-            shell('./{input.code} %s' % f)
+    shell: "python {input.exe} {input.data} {output}"
 ```
 
-The config dictionary can be used anywhere, also inside the shell command or even outside a rule.
+The config dictionary can be used anywhere,
+also inside the shell command or even outside a rule.
 
 {% challenge "Make a config file" %}
 
-Put the inputs of your script into a config file
-
-{% endchallenge %}
-
-### Includes
-
-The Snakefile can quickly grow to a monster with tens of rules. For this reason it's possible to split them into more files and then include them into the Snakefile. For example you might have a `fit_rules.snake` and `efficiency_rules.snake` and then your Snakefile will look like this:
-
-```python
-include: /path/to/fit_rules.snake
-include: /path/to/efficiency_rules.snake
+Download some alternate input files:
+```bash
+wget https://github.com/hsf-training/analysis-essentials/raw/master/snakemake/code/advanced_tutorial/input_alt.tar
+tar -xvf input_alt.tar
+ls input_alt/
 ```
+You should see a new set of addresses and phone numbers.
 
-The order of the includes is irrelevant.
-
-{% challenge "Use includes" %}
-
-Move your rules to other files and include them
+Create a config file that can specify which set of addresses and phone numbers
+should be used.
 
 {% solution "Solution" %}
 
+First, we create `cfg.yaml`:
+```python
+data: input_alt
+```
 
-You can find a solution in the `more_complete_solution` folder, which you can find [here](code/tutorial.tar).
+Then, modify your `Snakefile` to look something like this:
+```python
+configfile: "cfg.yaml"
+
+rule run:
+    input: ["output/Luca/info.txt", "output/Fred/info.txt", "output/Guillaume/info.txt"]
+
+
+rule merge_data:
+    input:
+        address="output/{name}/address.txt",
+        phone="output/{name}/phone.txt",
+    output: "output/{name}/info.txt"
+    shell: "cat {input.address} > {output} && cat {input.phone} >> {output}"
+
+
+rule get_info:
+    input:
+        exe="get_info.py",
+        infile=f"{config['data']}/{{info}}.txt",
+    log: "log/{name}/{info}.txt"
+    output: temp("output/{name}/{info}.txt")
+    shell: "python {input.exe} {wildcards.name} {input.infile} {output} &> {log}"
+```
+
+> Notice that we have escaped the braces around `info`
+> in the declaration of `input.infile`;
+> this is because we have used an f-string,
+> which uses braces to determine which items to replace.
+> Putting double braces around `info` tells the interpreter that
+> we want the braces to remain after the f-string substitution is complete,
+> allowing Snakemake to identify `info` as a wildcard.
+
+Be careful--unless you explicitly declare your config file as an `input`,
+Snakemake will not automatically rerun a rule when it changes.
+You will have to remember to force it to run.
 
 {% endsolution %}
 
 {% endchallenge %}
 
-### Reports
+### Includes
 
-As well as executing rules snakemake is also able to produce _reports_. These are html files and can contain information such as a diagramisation of your DAG as well as statistics about the run time of your rules and summaries of your outputs. To include a file in the report simply add the `report` flag to it e.g.
-
+The Snakefile can quickly grow to a monster with tens of rules.
+For this reason it's possible to split them into more files
+and then include them into the Snakefile.
+For example you might have a `fit_rules.snake` and `efficiency_rules.snake`
+and then your Snakefile will look like this:
 ```python
-rule myRule:
-	input:
- 		SomeFile.root
-	output:
- 		report(Output.pdf) # this will now be included in the report
-	shell:
-  		python RuleForExecution.py {input}
+include: "/path/to/fit_rules.snake"
+include: "/path/to/efficiency_rules.snake"
 ```
 
-N.B. the reporting feature does not work with files already marked as `temp`
+{% challenge "Use includes" %}
 
-To produce the report you first run the `snakemake` command as you normally would.
-Then run the exact same command again adding the `--report` flag as the first argument to your snakemake command.
+Move your rules to other files and include them.
 
-A command such as `snakemake --report report.html` will produce a report containing everything.
-By constrast `snakemake fig1.pdf --report report-short.html` will produce a short report of just that one target.
+{% solution "Solution" %}
 
-Some screenshots of what a report may look like are shown below. Information in the report includes: a graph showing the DAG of the completed jobs, each node of this graph can be clicked to show the rule in more detail; the time taken to run each job; and a summary of all the produced files.
+You could create `merge.snake`,
+```python
+rule merge_data:
+    input:
+        address="output/{name}/address.txt",
+        phone="output/{name}/phone.txt",
+    output: "output/{name}/info.txt"
+    shell: "cat {input.address} > {output} && cat {input.phone} >> {output}"
+```
+and `get.snake`,
+```python
+rule get_info:
+    input:
+        exe="get_info.py",
+        infile=f"{config['data']}/{{info}}.txt",
+    log: "log/{name}/{info}.txt"
+    output: temp("output/{name}/{info}.txt")
+    shell: "python {input.exe} {wildcards.name} {input.infile} {output} &> {log}"
+```
+Your modified Snakefile would then look like this:
+```python
+configfile: "cfg.yaml"
+include: "merge.snake"
+include: "get.snake"
 
-Ideally every plot which is included in an ana note would have a report explaining how it was made.
+rule run:
+    input: ["output/Luca/info.txt", "output/Fred/info.txt", "output/Guillaume/info.txt"]
+```
+
+{% endsolution %}
+
+{% endchallenge %}
+
+<!--
+### Reports
+
+TODO: make this section into a workable tutorial
+
+As well as executing rules Snakemake is also able to produce *reports*.
+These are html files and can contain information
+such as a diagram of your DAG as well as statistics
+about the run time of your rules and summaries of your outputs.
+To include a file in the report simply add the `report` flag to it, *e.g.*,
+```python
+rule myRule:
+	input: SomeFile.root
+	output: report(Output.pdf) # this will now be included in the report
+	shell: "python RuleForExecution.py {input}"
+```
+
+N.B. the reporting feature does not work with files already marked as `temp`.
+
+To produce the report, first run Snakemake as normal,
+and then produce the report on what just happened by adding the `--report` flag
+to the same command.
+You can report on just specific targets by specifying them on the command-line.
+
+Some screenshots of what a report may look like are shown below.
+Information in the report includes:
+a graph showing the DAG of the completed jobs
+(each node of this graph can be clicked to show the rule in more detail),
+the time taken to run each job,
+and a summary of all the produced files.
+
+Ideally, every plot which is included in an ANA note
+would have a report explaining how it was made.
 
 [![Reporting DAG](img/Reporting_DAG.png)](img/Reporting_DAG.png)
 [![Reporting stats](img/Reporting_stats.png)](img/Reporting_stats.png)
 [![Reporting rule](img/Reporting_rule.png)](img/Reporting_rule.png)
 
-For more information on using reports as well as more examples, see the snakemake documentation [here](https://snakemake.readthedocs.io/en/stable/snakefiles/reporting.html).
-
-<!-- TODO add this section once the linked page is finished
-### Workflow preservation
-
-https://lhcb-dpa.web.cern.ch/lhcb-dpa/wp6/workflow-preservation.html
+For more information on using reports as well as more examples,
+see the Snakemake documentation
+[here](https://snakemake.readthedocs.io/en/stable/snakefiles/reporting.html).
 -->
