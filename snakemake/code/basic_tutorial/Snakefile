@@ -9,5 +9,5 @@ rule create_input:
 
 rule name_files:
     input: rules.create_input.output
-    output: "output/{name}.out"
+    output: "output/{name}.{ext}"
     shell: "cat {input} > {output} && echo 'My name is {wildcards.name}.' >> {output}"

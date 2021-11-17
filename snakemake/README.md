@@ -27,9 +27,9 @@ it should be done with `lb-conda`.
 {% callout "accessing the `lb-conda` environment" %}
 
 To have access to `lb-conda` you must first have sourced `LbEnv`.
-This is done by default on lxplus,
-otherwise it is done with `source /cvmfs/lhcb.cern.ch/lib/LbEnv`
-(assuming [cvmfs](https://cvmfs.readthedocs.io/en/stable/) is installed).
+This is done by default on lxplus;
+otherwise, it is done with `source /cvmfs/lhcb.cern.ch/lib/LbEnv`
+(assuming [`cvmfs`](https://cvmfs.readthedocs.io/en/stable/) is installed).
 
 The default environment can be entered with the command `lb-conda default`,
 where `default` is the name of the environment.
@@ -75,7 +75,7 @@ mkdir basic_tutorial
 cd basic_tutorial
 mkdir input
 touch input/{a..z}.in
-ls inputs/
+ls input/
 ```
 You should see a list of empty files named `a.in`, `b.in`, ..., and `z.in`.
 
@@ -181,8 +181,8 @@ snakemake output/a.out --cores 1
 ```
 This tells Snakemake that you want to generate `output/a.out` if needed
 and to use only one computing core to do so.
-After running it,
-you should see output like:
+When you run it,
+you should see something like:
 ```text
 Building DAG of jobs...
 Using shell: /cvmfs/lhcbdev.cern.ch/conda/envs/default/2021-09-07_04-06/linux-64/bin/bash
@@ -316,17 +316,16 @@ Snakemake will not create it again.
 If you call `snakemake --cores 4` now,
 you should see that it exits without running anything,
 since all the files in `output/` already exist.
-Now call
-```bash
-touch -m input/a.in
+Now, open input/a.in and add some text:
+```text
+I have been modified.
 ```
-to update the modification time of `input/a.in` and run Snakemake again.
+Run Snakemake again.
 Now, you should see that Snakemake runs `name_files` just once to create `output/a.out`.
 It does not try to create any of the other files,
 and it creates `output/a.out` even though it already exists.
 This is because we listed `input/a.in` as an input;
 since it had been modified since the creation of `output/a.out`,
-and we told `output/a.out` depended on `input/a.in`,
 Snakemake decided `output/a.out` needed to be updated
 and ran `name_files` again.
 
@@ -344,7 +343,7 @@ If we want to re-run the whole workflow, we can use `--forceall`.
 Since Snakemake relies on modification times to decide which rules to run,
 using version control software (such as git) can become complicated,
 as files are routinely modified and then returned to their original form.
-You can find a solution [here](https://snakemake.readthedocs.io/en/stable/project_info/faq.html?highlight=git#git-is-messing-up-the-modification-times-of-my-input-files-what-can-i-do).
+You can find a helpful solution for this problem [here](https://snakemake.readthedocs.io/en/stable/project_info/faq.html?highlight=git#git-is-messing-up-the-modification-times-of-my-input-files-what-can-i-do).
 
 Regardless of whether you use version control,
 **always do a dry run before executing your workflow!**
@@ -420,8 +419,6 @@ without reqesting `output/a.out`;
 as far as Snakemake is concerned,
 `input/a.in` is just another file it knows how to produce.
 
-You can see the whole working `Snakefile` [here](code/basic_tutorial/Snakefile).
-
 ### The limits of wildcards
 
 Our [`Snakefile`](code/basic_tutorial/Snakefile)
@@ -471,6 +468,8 @@ Snakemake allows `input` and `output` files to be of any type;
 you could be creating `.root` files, `.gif` files, or `.docx` files
 and Snakemake will execute regardless.
 
+You can see the whole working `Snakefile` [here](code/basic_tutorial/Snakefile).
+
 ## Advanced Tutorial
 
 In this tutorial,
@@ -488,8 +487,9 @@ The first contains names followed by addresses;
 the second contains names followed by phone numbers.
 
 You can find the ultimate solution,
-how your workflow might look after solving all of the challenges,
-[here](https://github.com/hsf-training/analysis-essentials/raw/master/snakemake/code/advanced_tutorial.tar)
+how your workflow might look after solving
+all of the challenges in this tutorial,
+[here](https://github.com/hsf-training/analysis-essentials/raw/master/snakemake/code/advanced_tutorial.tar).
 
 {% challenge "Get Luca's address and phone number" %}
 
@@ -675,7 +675,7 @@ including calling python scripts.
 
 {% challenge "Call python scripts" %}
 
-Modify your `Snakefile` to look up anyone's address and phone number
+Modify your workflow to look up anyone's address and phone number
 and write them in a single output file
 *without including their name*.
 
