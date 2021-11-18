@@ -902,7 +902,7 @@ and then its content will be available
 to the rules as a dictionary called "config".
 Yes, it seems black magic, but it works!
 Your Snakefile will look something like this:
-```python
+```yaml
 configfile: '/path/to/cfg.yaml'
 
 rule dosomething:
@@ -932,7 +932,7 @@ should be used.
 {% solution "Solution" %}
 
 First, we create `cfg.yaml`:
-```python
+```yaml
 data: input_alt
 ```
 
