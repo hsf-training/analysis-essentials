@@ -18,10 +18,10 @@
    "metadata": {},
    "outputs": [],
    "source": [
+    "import mplhep\n",
     "import numpy as np\n",
-    "from matplotlib import pyplot as plt\n",
     "import zfit\n",
-    "import mplhep"
+    "from matplotlib import pyplot as plt"
    ]
   },
   {
@@ -539,7 +539,7 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "from scipy.stats import norm, expon"
+    "from scipy.stats import expon, norm"
    ]
   },
   {
@@ -647,6 +647,7 @@
    "outputs": [],
    "source": [
     "import pandas\n",
+    "\n",
     "probs = pandas.DataFrame(dict(sig=sig_mass_distr.pdf(mass), bck=bck_mass_distr.pdf(mass)))\n",
     "probs = probs.div(probs.sum(axis=1), axis=0)"
    ]
@@ -678,6 +679,7 @@
    "outputs": [],
    "source": [
     "from hep_ml import splot\n",
+    "\n",
     "sWeights = splot.compute_sweights(probs)"
    ]
   },

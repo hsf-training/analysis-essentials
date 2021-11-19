@@ -846,6 +846,7 @@ var = return_from_context_entering_code
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">contextlib</span>
 
+
 <span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
 <span class="k">def</span> <span class="nf">printer</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;we just entered the context manager and will yield </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -897,11 +898,13 @@ left manager
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">contextlib</span>
 
+
 <span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
 <span class="k">def</span> <span class="nf">myopen</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
     <span class="n">opened</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
     <span class="k">yield</span> <span class="n">opened</span>
     <span class="n">opened</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
 </pre></div>
 </div>
 </div>
@@ -1176,7 +1179,7 @@ pow3(...)
 <div class="highlight"><pre>
 ()
 {&#39;y&#39;: 4, &#39;x&#39;: 5}
-time needed: 1.430511474609375e-06
+time needed: 1.6689300537109375e-06
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1227,7 +1230,7 @@ e.g. in a <code class="docutils literal notranslate"><span class="pre">dict</sp
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_4875/1597038215.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">/tmp/ipykernel_4971/1597038215.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">raise</span> TypeError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Has to be int, not str&#34;</span><span class="ansi-blue-fg">)</span>
 
 <span class="ansi-red-fg">TypeError</span>: Has to be int, not str
@@ -1250,7 +1253,7 @@ e.g. in a <code class="docutils literal notranslate"><span class="pre">dict</sp
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_4875/2270127484.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">/tmp/ipykernel_4971/2270127484.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">raise</span> TypeError
 
 <span class="ansi-red-fg">TypeError</span>:
@@ -1286,7 +1289,7 @@ e.g. in a <code class="docutils literal notranslate"><span class="pre">dict</sp
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">MyError</span>                                   Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_4875/2720251497.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">/tmp/ipykernel_4971/2720251497.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">raise</span> MyError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Hello world&#34;</span><span class="ansi-blue-fg">)</span>
 
 <span class="ansi-red-fg">MyError</span>: Hello world
@@ -1373,7 +1376,7 @@ caught TypeError: Type was wrong, unfortunately
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_4875/404234681.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">/tmp/ipykernel_4971/404234681.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> TypeError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Type was wrong, unfortunately&#34;</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">except</span> TypeError <span class="ansi-green-fg">as</span> error<span class="ansi-blue-fg">:</span>  <span class="ansi-red-fg"># any exception</span>
@@ -1451,7 +1454,7 @@ Finally run
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">RuntimeError</span>                              Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_4875/282767810.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">/tmp/ipykernel_4971/282767810.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-red-fg">#     pass</span>
 <span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-red-fg">#     raise TypeError(&#34;Type was wrong, unfortunately&#34;)</span>
 <span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> RuntimeError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Type was wrong, unfortunately&#34;</span><span class="ansi-blue-fg">)</span>
@@ -1489,7 +1492,7 @@ raised
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_4875/889863002.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">/tmp/ipykernel_4971/889863002.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> ValueError
 <span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">finally</span><span class="ansi-blue-fg">:</span>
@@ -1519,6 +1522,7 @@ raised
     <span class="k">finally</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cleaned up&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="mi">11</span>
+
 </pre></div>
 </div>
 </div>
@@ -1585,10 +1589,10 @@ third argument by calling <code class="docutils literal notranslate"><span class
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">MyError</span>                                   Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_4875/2901316762.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">/tmp/ipykernel_4971/2901316762.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>add<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">/tmp/ipykernel_4875/3957629404.py</span> in <span class="ansi-cyan-fg">add</span><span class="ansi-blue-fg">(a, b, c)</span>
+<span class="ansi-green-fg">/tmp/ipykernel_4971/3957629404.py</span> in <span class="ansi-cyan-fg">add</span><span class="ansi-blue-fg">(a, b, c)</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> add<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">,</span> b<span class="ansi-blue-fg">,</span> c<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-green-fg">if</span> c <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">raise</span> MyError

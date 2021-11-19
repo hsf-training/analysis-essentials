@@ -679,16 +679,17 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">uproot</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
+<span class="kn">from</span> <span class="nn">hep_ml</span> <span class="kn">import</span> <span class="n">gradientboosting</span> <span class="k">as</span> <span class="n">ugb</span>
+<span class="kn">from</span> <span class="nn">hep_ml</span> <span class="kn">import</span> <span class="n">losses</span><span class="p">,</span> <span class="n">uboost</span>
+<span class="kn">from</span> <span class="nn">hep_ml.commonutils</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="c1"># this wrapper makes it possible to train on subset of features</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">from</span> <span class="nn">hep_ml.commonutils</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">hep_ml</span> <span class="kn">import</span> <span class="n">uboost</span><span class="p">,</span> <span class="n">gradientboosting</span> <span class="k">as</span> <span class="n">ugb</span><span class="p">,</span> <span class="n">losses</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
 </pre></div>
 </div>
 </div>
@@ -787,7 +788,6 @@ div.rendered_html tbody tr:hover {
         <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainX</span><span class="p">[</span><span class="n">train_features</span><span class="p">],</span> <span class="n">trainY</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainX</span><span class="p">[</span><span class="n">train_features</span> <span class="o">+</span> <span class="n">uniform_features</span><span class="p">],</span> <span class="n">trainY</span><span class="p">)</span>
-
 </pre></div>
 </div>
 </div>
@@ -820,6 +820,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span>
+
 
 <span class="k">def</span> <span class="nf">plot_roc</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">testY</span><span class="p">,</span> <span class="n">testX</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">y_score</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">testX</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
