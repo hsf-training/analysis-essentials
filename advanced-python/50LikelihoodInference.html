@@ -863,7 +863,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_7456/792816345.py:7: UserWarning: The function &lt;function Space.limit1d at 0x7ff34a4a4b80&gt; may does not return the actual area/limits but rather the rectangular limits. &lt;zfit Space obs=(&#39;Jpsi_M&#39;,), axes=(0,), limits=(array([[2.8]]), array([[3.5]]))&gt; can also have functional limits that are arbitrarily defined and lay inside the rect_limits. To test if a value is inside, use `inside` or `filter`.
+/tmp/ipykernel_7535/792816345.py:7: UserWarning: The function &lt;function Space.limit1d at 0x7fd29a4adb80&gt; may does not return the actual area/limits but rather the rectangular limits. &lt;zfit Space obs=(&#39;Jpsi_M&#39;,), axes=(0,), limits=(array([[2.8]]), array([[3.5]]))&gt; can also have functional limits that are arbitrarily defined and lay inside the rect_limits. To test if a value is inside, use `inside` or `filter`.
   lower, upper = data.data_range.limit1d
 </pre></div></div>
 </div>
@@ -932,7 +932,7 @@ Extended PDFs are given to a normal UnbinnedNLL. This won&#39;t take the yield i
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7ff3475d7190&gt;] constraints=[]&gt;
+&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7fd314260970&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
@@ -995,23 +995,23 @@ sigma   0.01503       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7ff3475dfd30&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7fd2975e2a30&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
 ╒═════════╤═════════════╤══════════════════╤═════════╤═════════════╕
 │ valid   │ converged   │ param at limit   │ edm     │ min value   │
 ╞═════════╪═════════════╪══════════════════╪═════════╪═════════════╡
-│ True    │ True        │ False            │ 2.5e-05 │ 809.9       │
+│ True    │ True        │ False            │ 1.2e-06 │ 818.7       │
 ╘═════════╧═════════════╧══════════════════╧═════════╧═════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name         value    at limit
 ---------  -------  ----------
-bkg_yield     5997       False
-sig_yield    107.9       False
-lambda      -1.067       False
-mu           3.104       False
+bkg_yield     5952       False
+sig_yield    193.7       False
+lambda      -1.049       False
+mu           3.099       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1077,8 +1077,8 @@ Z = \Phi^{-1}(1 - p_0).
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-p_value for the Null hypothesis = 2.0905400096582483e-06
-Significance (in units of sigma) = 4.60217184527388
+p_value for the Null hypothesis = 5.551115123125783e-16
+Significance (in units of sigma) = 8.014015948775546
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1087,7 +1087,7 @@ Significance (in units of sigma) = 4.60217184527388
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(2.0905400096582483e-06, 4.60217184527388)
+(5.551115123125783e-16, 8.014015948775546)
 </pre></div></div>
 </div>
 <p><strong>Exercise</strong> play around! First things first: repeat the fit. The difference we will see is statistical fluctuation from the resampling of the data; we take only a fraction at random.</p>
