@@ -26,17 +26,21 @@ You also agree to abide by our [contributor code of conduct][conduct].
 
 ## Dependencies
 
-To build the lessons locally, install the following:
+To build the lessons locally,
+create the `analysis-essentials` conda environment using [environment.yml](environment.yml)
 
-1. [starterkit-ci](https://pypi.org/project/starterkit-ci/)
-2. [Matplotlib](https://matplotlib.org/)
-3. [uproot](https://pypi.org/project/uproot/)
-4. [NumPy](https://numpy.org/)
-5. [pandas](https://pandas.pydata.org/)
-6. [root_pandas](https://github.com/scikit-hep/root_pandas)
-7. [SciPy](https://www.scipy.org/)
-8. [TensorFlow](https://www.tensorflow.org/)
-9. [XGBoost](https://xgboost.readthedocs.io/en/latest/)
+```shell
+$ conda env create --file environment.yml
+```
+
+which you can use by activating it
+
+```shell
+conda activate analysis-essentials
+```
+
+(or create an environment with the dependencies listed in the environment file
+using your favorite environment manager).
 
 Then build the pages:
 

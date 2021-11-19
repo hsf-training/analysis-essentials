@@ -438,18 +438,17 @@ Comments on issues and reviews of pull requests are equally welcome.</p></li>
 </section>
 <section id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline"></a></h2>
-<p>To build the lessons locally, install the following:</p>
-<ol class="simple">
-<li><p><a class="reference external" href="https://pypi.org/project/starterkit-ci/">starterkit-ci</a></p></li>
-<li><p><a class="reference external" href="https://matplotlib.org/">Matplotlib</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/uproot/">uproot</a></p></li>
-<li><p><a class="reference external" href="https://numpy.org/">NumPy</a></p></li>
-<li><p><a class="reference external" href="https://pandas.pydata.org/">pandas</a></p></li>
-<li><p><a class="reference external" href="https://github.com/scikit-hep/root_pandas">root_pandas</a></p></li>
-<li><p><a class="reference external" href="https://www.scipy.org/">SciPy</a></p></li>
-<li><p><a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a></p></li>
-<li><p><a class="reference external" href="https://xgboost.readthedocs.io/en/latest/">XGBoost</a></p></li>
-</ol>
+<p>To build the lessons locally,
+create the <code class="docutils literal notranslate"><span class="pre">analysis-essentials</span></code> conda environment using <a class="reference download internal" download="" href="_downloads/b7cb75ca59993a879e29bed8cd8469b8/environment.yml"><code class="xref download docutils literal notranslate"><span class="pre">environment.yml</span></code></a></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ conda env create --file environment.yml
+</pre></div>
+</div>
+<p>which you can use by activating it</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda activate analysis-essentials
+</pre></div>
+</div>
+<p>(or create an environment with the dependencies listed in the environment file
+using your favorite environment manager).</p>
 <p>Then build the pages:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ starterkit_ci build --allow-warnings
 $ starterkit_ci check --allow-warnings
