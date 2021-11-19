@@ -435,6 +435,11 @@ you can also ask any questions you have on the
 channel on mattermost.
 Web searches and <a class="reference external" href="https://stackoverflow.com/questions/tagged/snakemake">Stack Overflow</a>
 are also your friends.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="lhcb-specific:-using-lb-conda-environment"><i class="fa fa-info-circle"></i> LHCb specific: using lb-conda environment</p>
+</div>
+<div class="panel-body docutils container">
 <p>Snakemake is best-run at LHCb using the <code class="docutils literal notranslate"><span class="pre">lb-conda</span></code> environment.
 This environment comes with very recent versions of
 ROOT, python, cmake, g++, snakemake, <em>etc.</em>, ready to use.
@@ -442,11 +447,6 @@ In general, it is recommended that if you are running non-lhcb software
 (<em>e.g.</em>, code you’ve written yourself for your analysis)
 it should be done with <code class="docutils literal notranslate"><span class="pre">lb-conda</span></code>.
 More information on using <code class="docutils literal notranslate"><span class="pre">lb-conda</span></code> can be found <a class="reference external" href="https://gitlab.cern.ch/lhcb-core/lbcondawrappers/-/blob/master/README.md">here</a>.</p>
-<div class="panel panel-callout docutils container">
-<div class="panel-header open docutils container">
-<p id="accessing-the-lb-conda-environment"><i class="fa fa-info-circle"></i> Accessing the lb-conda environment</p>
-</div>
-<div class="panel-body docutils container">
 <p>To have access to <code class="docutils literal notranslate"><span class="pre">lb-conda</span></code> you must first have sourced <code class="docutils literal notranslate"><span class="pre">LbEnv</span></code>.
 This is done by default on lxplus;
 otherwise, it is done with <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/cvmfs/lhcb.cern.ch/lib/LbEnv</span></code>
