@@ -28,7 +28,18 @@ You also agree to abide by our [contributor code of conduct][conduct].
 
 To build the lessons locally,
 create the `analysis-essentials` conda environment using [environment.yml](environment.yml)
-(or create an environment with the dependencies
+
+```shell
+$ conda env create --file environment.yml
+```
+
+which you can use by activating it
+
+```shell
+conda activate analysis-essentials
+```
+
+(or create an environment with the dependencies listed in the environment file
 using your favorite environment manager).
 
 Then build the pages:
