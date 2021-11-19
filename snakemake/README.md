@@ -17,14 +17,14 @@ channel on mattermost.
 Web searches and [Stack Overflow](https://stackoverflow.com/questions/tagged/snakemake)
 are also your friends.
 
+{% callout "LHCb specific: using `lb-conda` environment" %}
+
 Snakemake is best-run at LHCb using the `lb-conda` environment.
 This environment comes with very recent versions of
 ROOT, python, cmake, g++, snakemake, *etc.*, ready to use.
 In general, it is recommended that if you are running non-lhcb software
 (*e.g.*, code you've written yourself for your analysis)
 it should be done with `lb-conda`.
-
-{% callout "accessing the `lb-conda` environment" %}
 
 To have access to `lb-conda` you must first have sourced `LbEnv`.
 This is done by default on lxplus;
