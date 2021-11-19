@@ -1,82 +1,41 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>3: Multivariate Analysis &mdash; Analysis essentials  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="4: Extension on Classification" href="31ClassificationExtension.html" />
     <link rel="prev" title="2: First look at data" href="20DataAndPlotting.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Analysis essentials
-          
-
-          
-            
             <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -84,18 +43,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../python/README.html">An introduction to Python</a><ul>
@@ -355,6 +303,26 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../snakemake/README.html">Analysis automation with Snakemake</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#documentation-and-environments">Documentation and environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#workflow-preservation">Workflow preservation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#basic-tutorial">Basic Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#what-is-a-workflow">What is a workflow?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#why-use-a-workflow-management-system">Why use a workflow management system?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#re-running-rules">Re-running rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#chaining-rules">Chaining rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#the-limits-of-wildcards">The limits of wildcards</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#advanced-tutorial">Advanced Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#running-scripts">Running scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#log-files">Log files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#config-files">Config files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../git/README.html">Git</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../git/01-basics.html">Automated Version Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/02-setup.html">Setting Up Git</a></li>
@@ -398,75 +366,31 @@
 </li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Analysis essentials</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="README.html">Advanced Python Tutorial</a> &raquo;</li>
-        
       <li>3: Multivariate Analysis</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/hsf-training/analysis-essentials/blob/master/advanced-python/30Classification.ipynb" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS for nbsphinx extension */
@@ -737,8 +661,8 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="3:-Multivariate-Analysis">
-<h1>3: Multivariate Analysis<a class="headerlink" href="#3:-Multivariate-Analysis" title="Permalink to this headline">¶</a></h1>
+<section id="3:-Multivariate-Analysis">
+<h1>3: Multivariate Analysis<a class="headerlink" href="#3:-Multivariate-Analysis" title="Permalink to this headline"></a></h1>
 <p>In this lesson we will use ‘Multivariate Analysis’ to improve the signal significance of our data sample. This involves training a Boosted Decision Tree (<strong>BDT</strong>) which can distinguish between signal-like and background-like events. The BDT takes a number of input variables and makes a prediction on whether the event is signal or background.</p>
 <ul class="simple">
 <li><p>First we need to load the data which we stored in the previous lesson and import the modules we need:</p></li>
@@ -770,8 +694,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="section" id="Using-a-classifier">
-<h2>Using a classifier<a class="headerlink" href="#Using-a-classifier" title="Permalink to this headline">¶</a></h2>
+<section id="Using-a-classifier">
+<h2>Using a classifier<a class="headerlink" href="#Using-a-classifier" title="Permalink to this headline"></a></h2>
 <p>Rectangular cuts are give good simple selections however you can often get better performance by using a more advanced technique. This generally works by taking adavantage of the corellation between variables. For example if we look in two dimensions, <code class="docutils literal notranslate"><span class="pre">Jpsi_eta</span></code> and <code class="docutils literal notranslate"><span class="pre">mum_P</span></code>:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -792,7 +716,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f4c34031700&gt;
+&lt;matplotlib.legend.Legend at 0x7f8004ca4dc0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -803,8 +727,8 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <p>We can see that there if we cut out 2 (or more) dimensional regions we can remove background more effectively. This is the idea behind decision trees.</p>
-<div class="section" id="TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">
-<h3>TODO Add a diagram of a decision tree for the above plot<a class="headerlink" href="#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot" title="Permalink to this headline">¶</a></h3>
+<section id="TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">
+<h3>TODO Add a diagram of a decision tree for the above plot<a class="headerlink" href="#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot" title="Permalink to this headline"></a></h3>
 <p>In machine learning there is a concept known as “boosting” which comes from the question:</p>
 <blockquote>
 <div><p>Can a set of weak learners create a single strong learner?</p>
@@ -1036,7 +960,7 @@ array([0.88731523, 0.71369706, 0.41318691, ..., 0.36839431, 0.26573531,
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f4c5ff5fd00&gt;
+&lt;matplotlib.legend.Legend at 0x7f801bfb7bb0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1069,8 +993,8 @@ Data contains 126 background events
 Significance metric is 8.59
 </pre></div></div>
 </div>
-<div class="section" id="Evaluating-classifier-performance">
-<h4>Evaluating classifier performance<a class="headerlink" href="#Evaluating-classifier-performance" title="Permalink to this headline">¶</a></h4>
+<section id="Evaluating-classifier-performance">
+<h4>Evaluating classifier performance<a class="headerlink" href="#Evaluating-classifier-performance" title="Permalink to this headline"></a></h4>
 <p>So far we have used a magical function to evalueate the classifier performance. Unfortuanately, we can’t use such a tool when using analysis on real data as that would be too easy! Instead, we have a few other tools we can use to see how good a classifier is.</p>
 <p>We have already used one tool: the distributions of the classifier output on signal and background training data.</p>
 <div class="nbinput docutils container">
@@ -1192,7 +1116,7 @@ the peak.</p>
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_5967/4020814425.py:3: RuntimeWarning: invalid value encountered in true_divide
+/tmp/ipykernel_5837/4020814425.py:3: RuntimeWarning: invalid value encountered in true_divide
   metric = S/np.sqrt(S+B)
 </pre></div></div>
 </div>
@@ -1265,7 +1189,7 @@ The optimal cut value is 2.00 with and S/sqrt(S+B) of nan
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/numpy/lib/histograms.py:905: RuntimeWarning: invalid value encountered in true_divide
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/numpy/lib/histograms.py:906: RuntimeWarning: invalid value encountered in true_divide
   return n/db/n.sum(), bin_edges
 </pre></div></div>
 </div>
@@ -1275,7 +1199,7 @@ The optimal cut value is 2.00 with and S/sqrt(S+B) of nan
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f4c5ff75e50&gt;
+&lt;matplotlib.legend.Legend at 0x7f801bf5be50&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1301,9 +1225,9 @@ The optimal cut value is 2.00 with and S/sqrt(S+B) of nan
 <img alt="../_images/advanced-python_30Classification_47_0.png" src="../_images/advanced-python_30Classification_47_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="Collecting-it-all-together">
-<h4>Collecting it all together<a class="headerlink" href="#Collecting-it-all-together" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="Collecting-it-all-together">
+<h4>Collecting it all together<a class="headerlink" href="#Collecting-it-all-together" title="Permalink to this headline"></a></h4>
 <p>Let’s define some helpful functions that we use later based on what we did above:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
@@ -1416,7 +1340,7 @@ Data succesfully loaded
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_5967/4278176416.py:9: RuntimeWarning: invalid value encountered in true_divide
+/tmp/ipykernel_5837/4278176416.py:9: RuntimeWarning: invalid value encountered in true_divide
   metric = S/np.sqrt(S+B)
 </pre></div></div>
 </div>
@@ -1471,57 +1395,40 @@ Stored &#39;data_df&#39; (DataFrame)
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="31ClassificationExtension.html" class="btn btn-neutral float-right" title="4: Extension on Classification" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="20DataAndPlotting.html" class="btn btn-neutral float-left" title="2: First look at data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="31ClassificationExtension.html" class="btn btn-neutral float-right" title="4: Extension on Classification" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.
-
-    </p>
+    <p>&#169; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
-  
     Hello world
 
 

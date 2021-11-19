@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analysis automation with Snakemake &mdash; Analysis essentials  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/panels.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Git" href="../git/README.html" />
+    <link rel="prev" title="More about the UNIX shell" href="../shell-extras/shell2.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Analysis essentials
+            <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/README.html">An introduction to Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/running.html">Running Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/00scripts.html">Scripting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Mutability">Mutability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#dynamic-typing">dynamic typing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/strings.html">Strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/strings.html#formatting">Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/lists.html">Lists and looping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#looping">Looping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#list-comprehension">List comprehension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#tuples">Tuples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/dictionaries.html">Dictionaries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#truthiness">Truthiness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#conditions-in-loops">Conditions in loops</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#inline-methods">Inline methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#the-standard-library">The standard library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#modules-from-pypi">Modules from PyPi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-your-first-python-module">Write your first Python module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/classes.html">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/classes.html#Welcome-to-classes">Welcome to classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/classes.html#Inheritance:-a-glance">Inheritance: a glance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/classes.html#How-to-fix">How to fix</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/learning.html">Learning more</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/learning.html#exploring-python">Exploring Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/learning.html#conventional-coding">Conventional coding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/first_histogram.html">Making your first histogram</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html#pandas">Pandas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html#plotting-histograms">Plotting histograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html#applying-cuts">Applying cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/further_reading.html">More advanced topics in Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html#nice-standard-libraries">Nice standard libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html#nice-libraries-for-data-analysis">Nice libraries for data analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html#python-and-root">Python and ROOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-python/README.html">Advanced Python Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/README.html#pure-python-advanced">Pure Python, advanced</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/README.html#data-loading-and-plotting">Data loading and plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/README.html#multivariate-analysis-and-machine-learning">Multivariate Analysis and Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/README.html#reweighting">Reweighting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/README.html#statistical-inference">Statistical Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/README.html#splot-technique">sPlot technique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/README.html#scikit-hep">Scikit-HEP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/10Basics.html">1: Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/10Basics.html#Basics">Basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/10Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/10Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/10Basics.html#Importing-modules">Importing modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html">Advanced Python Concepts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Packing-and-unpacking-of-values">Packing and unpacking of values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Context-manager">Context manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Using-a-class">Using a class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Decorators-and-factories">Decorators and factories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Exceptions">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Catching-exceptions">Catching exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Exceptions-as-control-flow">Exceptions as control-flow</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Dunder">Dunder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#len">len</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#str">str</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Callable">Callable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Indexing-(iterating)">Indexing (iterating)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#self">self</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html">2: First look at data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Loading-data">Loading data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Adding-variables">Adding variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/30Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/30Classification.html#Using-a-classifier">Using a classifier</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html">4: Extension on Classification</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html#Loading-data">Loading data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/33OLDDemoNeuralNetworks.html">6: Neural networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/33OLDDemoNeuralNetworks.html#Downloading-a-dataset">Downloading a dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/33OLDDemoNeuralNetworks.html#Example-of-training-a-network">Example of training a network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/33OLDDemoNeuralNetworks.html#Creating-your-own-neural-network">Creating your own neural network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/33OLDDemoNeuralNetworks.html#Example-of-a-very-specific-neural-network">Example of a very specific neural network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/33OLDDemoNeuralNetworks.html#Fitting-very-specific-expressions-as-estimators">Fitting very specific expressions as estimators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/33OLDDemoNeuralNetworks.html#Ensembling-of-neural-neworks">Ensembling of neural neworks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#GB-discrimination">GB-discrimination</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#How-to-tune">How to tune</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html">Likelihood inference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Scope-of-this-tutorial">Scope of this tutorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Getting-started">Getting started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Difference-of-the-two-spaces">Difference of the two spaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Plotting">Plotting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Loss">Loss</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html">8: sPlot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Applying-sWeights">Applying sWeights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#More-complex-case">More complex case</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Splot">Splot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Alternative:-Known-probabilities">Alternative: Known probabilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html">Scikit-HEP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#formulate---converting-expressions">formulate - converting expressions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#Particle">Particle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#hepunits">hepunits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/README.html">Introducing the Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-command-line-interface">The Command-Line Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-shell">The Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#why-bother">Why bother?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#nelle-s-pipeline-starting-point">Nelle’s Pipeline: Starting Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell/02-filedir.html">Navigating Files and Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/02-filedir.html#nelle-s-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/03-create.html">Working With Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/04-pipefilter.html">Pipes and Filters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/04-pipefilter.html#nelle-s-pipeline-checking-files">Nelle’s Pipeline: Checking Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/05-loop.html">Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/06-script.html">Shell Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/07-find.html">Finding Things</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell-extras/README.html">UNIX shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen.html">Using screen to keep things running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen2.html">Advanced screen topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#finding-lost-screens">Finding lost screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#using-tabs-in-screen">Using tabs in screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/persistent-screen.html">Persistent screen or tmux session on lxplus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#setting-up-password-less-kerberos-token">Setting up password-less kerberos token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#making-use-of-the-keytab">Making use of the keytab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token">Using k5reauth to automatically refresh your kerberos token</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/shell2.html">More about the UNIX shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#types-of-shell">Types of shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#manual-pages">Manual pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#environment-variables">Environment variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#differences-among-files">Differences among files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#looping-over-files">Looping over files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#conditionals">Conditionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#linking-commands">Linking commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#pipes-and-redirection">Pipes and redirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#bash-security">Bash security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#complexity">Complexity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-viewers">Text viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-editors">Text editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#disk-space">Disk space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Analysis automation with Snakemake</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#documentation-and-environments">Documentation and environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-preservation">Workflow preservation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-tutorial">Basic Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-a-workflow">What is a workflow?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-use-a-workflow-management-system">Why use a workflow management system?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#re-running-rules">Re-running rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chaining-rules">Chaining rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-limits-of-wildcards">The limits of wildcards</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-tutorial">Advanced Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-scripts">Running scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#log-files">Log files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#config-files">Config files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/README.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/01-basics.html">Automated Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/02-setup.html">Setting Up Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/03-create.html">Creating a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/04-changes.html">Tracking Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/05-history.html">Exploring History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/06-ignore.html">Ignoring Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/07-gitlab.html">Remotes in CERN GitLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/08-share.html">Sharing a repository with others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/09-pullrequests.html">Collaborating with Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#what-is-a-pull-or-merge-request">What is a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#fork-the-original-project-repository">Fork the original project repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#clone-a-remote-project-and-its-fork">Clone a remote project and its fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#sync-your-local-repository-with-remote-changes">Sync your local repository with remote changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#implement-your-new-feature">Implement your new feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#push-changes">Push changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#create-a-pull-or-merge-request">Create a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#discussing-amending-retiring-a-merge-request">Discussing, amending, retiring a Merge Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#accepting-a-pull-request">Accepting a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#the-social-side-of-coding">The social side of coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../git/09-pullrequests.html#automatic-testing">Automatic testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../git/10-conflict.html">Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/11-ci.html">GitLab CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/12-open.html">Open Science</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/13-licensing.html">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/14-citation.html">Citation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributing-notebooks">Contributing notebooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis essentials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Analysis automation with Snakemake</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/snakemake/README.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="analysis-automation-with-snakemake">
+<h1>Analysis automation with Snakemake<a class="headerlink" href="#analysis-automation-with-snakemake" title="Permalink to this headline"></a></h1>
+<div class="panel panel-objectives docutils container">
+<div class="panel-header open docutils container">
+<p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
+</div>
+<div class="panel-body docutils container">
+<ul class="simple">
+<li><p>Learn what analysis automation is and how it helps with analysis preservation</p></li>
+<li><p>Learn how to create a pipeline with Snakemake</p></li>
+</ul>
+</div>
+</div>
+<section id="documentation-and-environments">
+<h2>Documentation and environments<a class="headerlink" href="#documentation-and-environments" title="Permalink to this headline"></a></h2>
+<p>You can find full documentation for Snakemake
+<a class="reference external" href="https://snakemake.readthedocs.io/en/stable/index.html">here</a>;
+you can also ask any questions you have on the
+<a class="reference external" href="https://mattermost.web.cern.ch/lhcb/channels/reproducible">~reproducible</a>
+channel on mattermost.
+Web searches and <a class="reference external" href="https://stackoverflow.com/questions/tagged/snakemake">Stack Overflow</a>
+are also your friends.</p>
+<p>Snakemake is best-run at LHCb using the <code class="docutils literal notranslate"><span class="pre">lb-conda</span></code> environment.
+This environment comes with very recent versions of
+ROOT, python, cmake, g++, snakemake, <em>etc.</em>, ready to use.
+In general, it is recommended that if you are running non-lhcb software
+(<em>e.g.</em>, code you’ve written yourself for your analysis)
+it should be done with <code class="docutils literal notranslate"><span class="pre">lb-conda</span></code>.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="accessing-the-lb-conda-environment"><i class="fa fa-info-circle"></i> accessing the lb-conda environment</p>
+</div>
+<div class="panel-body docutils container">
+<p>To have access to <code class="docutils literal notranslate"><span class="pre">lb-conda</span></code> you must first have sourced <code class="docutils literal notranslate"><span class="pre">LbEnv</span></code>.
+This is done by default on lxplus;
+otherwise, it is done with <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/cvmfs/lhcb.cern.ch/lib/LbEnv</span></code>
+(assuming <a class="reference external" href="https://cvmfs.readthedocs.io/en/stable/"><code class="docutils literal notranslate"><span class="pre">cvmfs</span></code></a> is installed).</p>
+<p>The default environment can be entered with the command <code class="docutils literal notranslate"><span class="pre">lb-conda</span> <span class="pre">default</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">default</span></code> is the name of the environment.
+This will enter you into an interactive bash shell.</p>
+<blockquote>
+<div><p>The full list of available environments can be found by running <code class="docutils literal notranslate"><span class="pre">lb-conda</span> <span class="pre">--list</span></code>.</p>
+</div></blockquote>
+<p>You can optionally pass a command after the environment name,
+<em>e.g.</em>, <code class="docutils literal notranslate"><span class="pre">lb-conda</span> <span class="pre">default</span> <span class="pre">foo</span></code>,
+which will run the <code class="docutils literal notranslate"><span class="pre">foo</span></code> command in the environment and then exit.
+(This is similar to the behaviour of <a class="reference external" href="https://twiki.cern.ch/twiki/bin/view/LHCb/SoftwareEnvTools"><code class="docutils literal notranslate"><span class="pre">lb-run</span></code></a>.)</p>
+<p>If you want, you can include your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file in the created environment
+by running <code class="docutils literal notranslate"><span class="pre">lb-conda</span> <span class="pre">default</span> <span class="pre">bash</span> <span class="pre">-c</span> <span class="pre">'bash</span> <span class="pre">--rcfile</span> <span class="pre">~/.bashrc'</span></code>.
+Be careful if you do this–it can lead to conflicts in the environment.</p>
+</div>
+</div>
+<p>More information on using <code class="docutils literal notranslate"><span class="pre">lb-conda</span></code> can be found <a class="reference external" href="https://gitlab.cern.ch/lhcb-core/lbcondawrappers/-/blob/master/README.md">here</a>.</p>
+<p>You can now check if Snakemake is working by calling <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">--help</span></code> in the <code class="docutils literal notranslate"><span class="pre">lb-conda</span> <span class="pre">default</span></code> environment.</p>
+</section>
+<section id="workflow-preservation">
+<h2>Workflow preservation<a class="headerlink" href="#workflow-preservation" title="Permalink to this headline"></a></h2>
+<p>There is an ongoing effort at LHCb to ensure analysis workflows are preserved.
+You can learn more about this effort and how Snakemake figures into it
+<a class="reference external" href="https://lhcb-dpa.web.cern.ch/lhcb-dpa/wp6/workflow-preservation.html">here</a>.</p>
+</section>
+<section id="basic-tutorial">
+<h2>Basic Tutorial<a class="headerlink" href="#basic-tutorial" title="Permalink to this headline"></a></h2>
+<section id="what-is-a-workflow">
+<h3>What is a workflow?<a class="headerlink" href="#what-is-a-workflow" title="Permalink to this headline"></a></h3>
+<p>When performing an analysis, you typically start with some set of input files
+containing the data you are interested in
+and want to end up with some set of output files containing the results of your
+measurements.
+A workflow is what gets you from the input to the output.</p>
+<p>Let us consider a simple example.
+Create a new directory to work in and generate some fake input files:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir basic_tutorial
+<span class="nb">cd</span> basic_tutorial
+mkdir input
+touch input/<span class="o">{</span>a..z<span class="o">}</span>.in
+ls input/
+</pre></div>
+</div>
+<p>You should see a list of empty files named <code class="docutils literal notranslate"><span class="pre">a.in</span></code>, <code class="docutils literal notranslate"><span class="pre">b.in</span></code>, …, and <code class="docutils literal notranslate"><span class="pre">z.in</span></code>.</p>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="perform-the-workflow"><i class="fa fa-square-o"></i> Perform the workflow</p>
+</div>
+<div class="panel-body docutils container">
+<p>Add the text <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">a.</span></code> to the end of <code class="docutils literal notranslate"><span class="pre">input/a.in</span></code>
+and save it as <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code> without modifying <code class="docutils literal notranslate"><span class="pre">input/a.in</span></code>.
+Do this for each file in <code class="docutils literal notranslate"><span class="pre">input/</span></code>.</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>You could open each file, type the appropriate text
+(<em>e.g.</em>, <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">a.</span></code>, <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">b.</span></code>, <em>etc.</em>),
+and save it as the appropriate output file,
+but since this is such a simple workflow,
+we can easily make the shell do it for us:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p output  <span class="c1"># make the directory if needed</span>
+<span class="k">for</span> file <span class="k">in</span> input/*.in<span class="p">;</span> <span class="k">do</span>
+  <span class="nv">noext</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="p">%.in</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># drop the extension</span>
+  <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">noext</span><span class="p">##input/</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># drop the directory</span>
+  <span class="nv">ofile</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">.out&quot;</span>  <span class="c1"># declare output file name</span>
+  cat <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span> &gt; <span class="s2">&quot;</span><span class="nv">$ofile</span><span class="s2">&quot;</span>  <span class="c1"># create output file with contents of input file</span>
+  <span class="nb">echo</span> <span class="s2">&quot;My name is </span><span class="nv">$name</span><span class="s2">.&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="nv">$ofile</span><span class="s2">&quot;</span>  <span class="c1"># append the required text</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Congratulations, you’ve just defined and executed a workflow!</p>
+</section>
+<section id="why-use-a-workflow-management-system">
+<h3>Why use a workflow management system?<a class="headerlink" href="#why-use-a-workflow-management-system" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><p>“The Snakemake workflow management system is a tool
+to create reproducible and scalable data analyses”</p>
+</div></blockquote>
+<p>The example workflow above is very simple,
+but you can probably imagine more complicated ones.
+Suppose you wanted to adjust your input files in more complicated ways,
+had multiple types of input or output files,
+or wanted to do calculations that didn’t depend on just one input file.
+Or suppose that your calculations took a long time
+and you only wanted to re-run them if the inputs had changed.
+These are all reasons to use a workflow management system.</p>
+<ul class="simple">
+<li><p>A workflow management system allows you to:</p>
+<ul>
+<li><p>Keep a record of how your scripts are used
+and what their input dependencies are</p></li>
+<li><p>Run multiple steps in sequence, parallelising where possible</p></li>
+<li><p>Automatically detect if something changes and then reprocess data if needed</p></li>
+</ul>
+</li>
+<li><p>Using a workflow management system forces you to:</p>
+<ul>
+<li><p>Keep your code and your locations in order</p></li>
+<li><p>Structure your code so that it is user-independent</p></li>
+<li><p>Standardise your scripts</p>
+<ul>
+<li><p>Bonus: Standardised scripts can sometimes be used across analyses!</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>If you have ever performed an HEP analysis
+or looked at the code for someone else’s analysis,
+you probably understand why the above features are so useful.</p>
+<p>Snakemake allows you to create a set of rules,
+each one defining a step of your analysis.
+The rules need to be written in a file called <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code>.
+For each rule you need to provide:</p>
+<ul class="simple">
+<li><p>The <em>input</em>: Data files, scripts, executables or any other files.</p></li>
+<li><p>The expected <em>output</em>. It’s not required to list all possible outputs.
+Just those that you want to monitor
+or that are used by a subsequent step as inputs.</p></li>
+<li><p>A <em>command</em> to run to process the input and create the output.</p></li>
+</ul>
+<p>The basic rule is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">myname</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;myinput1&quot;</span><span class="p">,</span> <span class="s2">&quot;myinput2&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;myoutput&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;Some command to go from in to out&quot;</span>
+</pre></div>
+</div>
+<p>Let’s give it a try with our simple example above.
+In the same <code class="docutils literal notranslate"><span class="pre">basic_tutorial</span></code> directory,
+let us first remove all our hard work by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm -rf output/
+</pre></div>
+</div>
+<p>Now, we create our <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code>.
+In your favorite text editor,
+open a new file called <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> and type</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">name_files</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/a.in&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/a.out&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat input/a.in &gt; output/a.out &amp;&amp; echo &#39;My name is a.&#39; &gt;&gt; output/a.out&quot;</span>
+</pre></div>
+</div>
+<p>Snakemake now knows how to create <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code>.</p>
+<p>You can run it by calling</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake output/a.out --cores <span class="m">1</span>
+</pre></div>
+</div>
+<p>This tells Snakemake that you want to generate <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code> if needed
+and to use only one computing core to do so.
+When you run it,
+you should see something like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Building DAG of jobs...
+Using shell: /cvmfs/lhcbdev.cern.ch/conda/envs/default/2021-09-07_04-06/linux-64/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count    min threads    max threads
+----------  -------  -------------  -------------
+name_files        1              1              1
+total             1              1              1
+
+Select jobs to execute...
+
+[Mon Nov 15 18:30:25 2021]
+rule name_files:
+    input: input/a.in
+    output: output/a.out
+    jobid: 0
+    resources: tmpdir=/tmp/username
+
+[Mon Nov 15 18:30:26 2021]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /afs/cern.ch/user/u/username/basic_tutorial/.snakemake/log/2021-11-15T183022.449488.snakemake.log
+</pre></div>
+</div>
+<p>Here, we see that Snakemake selected the rule <code class="docutils literal notranslate"><span class="pre">name_files</span></code> to create <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code>.
+Calling <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">output/a.out</span></code>,
+we see that the expected file was created with the appropriate text.
+Notice that we did not have to tell Snakemake to create the <code class="docutils literal notranslate"><span class="pre">output/</span></code> directory;
+Snakemake took care of it automatically.</p>
+<p>Now, run <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">output/a.out</span> <span class="pre">--cores</span> <span class="pre">1</span></code> again.
+You should see output like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Building DAG of jobs...
+Nothing to be done.
+Complete log: /afs/cern.ch/user/u/username/basic_tutorial/.snakemake/log/2021-11-15T183344.711303.snakemake.log
+</pre></div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code> already exists, Snakemake did not try to create it again.</p>
+<p>We still have files b-z to create.
+We could create 25 more rules, one for each of the remaining files,
+but Snakemake provides a feature called <code class="docutils literal notranslate"><span class="pre">wildcards</span></code> so we don’t have to.
+We edit our <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> to read</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">name_files</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/</span><span class="si">{name}</span><span class="s2">.in&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">.out&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; echo &#39;My name is </span><span class="si">{wildcards.name}</span><span class="s2">.&#39; &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Take a moment to understand what is happening in this rule declaration.
+Wildcards are defined in <code class="docutils literal notranslate"><span class="pre">output</span></code>
+and can then be accessed in <code class="docutils literal notranslate"><span class="pre">input</span></code> and <code class="docutils literal notranslate"><span class="pre">shell</span></code>.
+<strong>All wildcards must be present in <code class="docutils literal notranslate"><span class="pre">output</span></code>.</strong>
+We are essentially telling Snakemake that this is a rule that can create
+files of the form <code class="docutils literal notranslate"><span class="pre">output/{name}.out</span></code>;
+we cannot specify wildcards in <code class="docutils literal notranslate"><span class="pre">input</span></code> that are not present in <code class="docutils literal notranslate"><span class="pre">output</span></code>
+because Snakemake will not know what they should be.</p>
+<blockquote>
+<div><p>Notice that the wildcard <code class="docutils literal notranslate"><span class="pre">name</span></code> appears as <code class="docutils literal notranslate"><span class="pre">{name}</span></code>
+in the declaration of <code class="docutils literal notranslate"><span class="pre">input</span></code> and <code class="docutils literal notranslate"><span class="pre">output</span></code>
+but as <code class="docutils literal notranslate"><span class="pre">{wildcards.name}</span></code> in the declaration of <code class="docutils literal notranslate"><span class="pre">shell</span></code>.
+This is an unavoidable quirk of how Snakemake works,
+and you must remember it to avoid errors.</p>
+</div></blockquote>
+<p>Snakemake can now handle all of our input and output.
+Run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake output/<span class="o">{</span>a..z<span class="o">}</span>.out --cores <span class="m">4</span>
+</pre></div>
+</div>
+<p>and notice that Snakemake has created all the output,
+just as we did manually before.</p>
+<p>Snakemake has many features that our original solution,
+simply running a shell script, does not,
+but one is particularly obvious in this case:
+Since we told Snakemake to run with 4 cores,
+it created (up to) 4 output files at once.
+We didn’t have to wait for each output file to be created one-by-one;
+we were able to take advantage of our computing power
+to perform multiple tasks <em>at the same time</em>.
+This built-in parallelism is one of the nicest features
+of using a workflow manager.</p>
+<blockquote>
+<div><p>You can see how many cores are on the machine you’re using by calling
+<code class="docutils literal notranslate"><span class="pre">nproc</span></code> from the command line.
+If you’re on lxplus, there should be 10.
+If you want Snakemake to use all of them,
+you can use <code class="docutils literal notranslate"><span class="pre">--cores</span> <span class="pre">all</span></code>.
+<strong>This is bad practice on a shared machine</strong>, like on lxplus;
+you should leave some computing resources available to other users
+so that they can at least log in.</p>
+</div></blockquote>
+<p>We can tell Snakemake which files to create from within our Snakefile.
+At the beginning of the file, add</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">name_all</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;output/</span><span class="si">{</span><span class="nb">chr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">.out&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Notice that we have used python list-comprehension
+to declare the input files for rule <code class="docutils literal notranslate"><span class="pre">name_all</span></code>.
+Snakemake is python-based,
+so you can execute arbitrary python code anywhere in your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code>
+if you want to.
+Also notice that we have given a list as the input instead of a file name;
+Snakemake can handle both.</p>
+</div></blockquote>
+<p>We have declared a new rule, <code class="docutils literal notranslate"><span class="pre">name_all</span></code>, at the beginning of the file
+with all our required output files listed as <code class="docutils literal notranslate"><span class="pre">input</span></code>
+and no <code class="docutils literal notranslate"><span class="pre">output</span></code> files declared.
+Snakemake interprets the first rule in the <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> as the default rule,
+and Snakemake will run it if no other output is requested.
+If we remove <code class="docutils literal notranslate"><span class="pre">output/</span></code>,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm -r output/
+</pre></div>
+</div>
+<p>and run Snakemake again, this time without specifying any output,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake --cores <span class="m">4</span>
+</pre></div>
+</div>
+<p>we see that <code class="docutils literal notranslate"><span class="pre">output/</span></code> is produced the same as before.</p>
+<p>Congratulations, you’ve just defined a workflow using Snakemake!</p>
+</section>
+<section id="re-running-rules">
+<h3>Re-running rules<a class="headerlink" href="#re-running-rules" title="Permalink to this headline"></a></h3>
+<p>We saw above that if an output file already exists,
+Snakemake will not create it again.
+If you call <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">--cores</span> <span class="pre">4</span></code> now,
+you should see that it exits without running anything,
+since all the files in <code class="docutils literal notranslate"><span class="pre">output/</span></code> already exist.
+Now, open input/a.in and add some text:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>I have been modified.
+</pre></div>
+</div>
+<p>Run Snakemake again.
+Now, you should see that Snakemake runs <code class="docutils literal notranslate"><span class="pre">name_files</span></code> just once to create <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code>.
+It does not try to create any of the other files,
+and it creates <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code> even though it already exists.
+This is because we listed <code class="docutils literal notranslate"><span class="pre">input/a.in</span></code> as an input;
+since it had been modified since the creation of <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code>,
+Snakemake decided <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code> needed to be updated
+and ran <code class="docutils literal notranslate"><span class="pre">name_files</span></code> again.</p>
+<p>We can force the re-running of rules
+using the <code class="docutils literal notranslate"><span class="pre">--force</span></code> or <code class="docutils literal notranslate"><span class="pre">-f</span></code> command-line argument.
+Calling</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake output/a.out --cores <span class="m">4</span> -f
+</pre></div>
+</div>
+<p>will tell Snakemake to create <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code> regardless of modification times.
+If we want to re-run the whole workflow, we can use <code class="docutils literal notranslate"><span class="pre">--forceall</span></code>.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="always-do-a-dry-run!"><i class="fa fa-info-circle"></i> Always do a dry run!</p>
+</div>
+<div class="panel-body docutils container">
+<p>Since Snakemake relies on modification times to decide which rules to run,
+using version control software (such as git) can become complicated,
+as files are routinely modified and then returned to their original form.
+You can find a helpful solution for this problem <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/project_info/faq.html?highlight=git#git-is-messing-up-the-modification-times-of-my-input-files-what-can-i-do">here</a>.</p>
+<p>Regardless of whether you use version control,
+<strong>always do a dry run before executing your workflow!</strong>
+You can do this by calling Snakemake with
+the <code class="docutils literal notranslate"><span class="pre">--dry-run</span></code> or <code class="docutils literal notranslate"><span class="pre">-n</span></code> command-line argument,
+which will print the rules Snakemake would execute
+but prevents them from actually being executed.
+If you have many rules and don’t want to fill up your terminal with output,
+you can use the <code class="docutils literal notranslate"><span class="pre">--quiet</span></code> or <code class="docutils literal notranslate"><span class="pre">-q</span></code> command-line argument in addition to <code class="docutils literal notranslate"><span class="pre">-n</span></code>
+to print just a summary.</p>
+<p>It’s worth reiterating because this can easily become an issue
+for complicated workflows
+and it will save you a lot of wasted time:
+<strong>Always run with <code class="docutils literal notranslate"><span class="pre">-n</span></code> first!</strong></p>
+</div>
+</div>
+</section>
+<section id="chaining-rules">
+<h3>Chaining rules<a class="headerlink" href="#chaining-rules" title="Permalink to this headline"></a></h3>
+<p>We can also tell our <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> how to create our input files.
+In our simple example here,
+our inputs are just empty files in the <code class="docutils literal notranslate"><span class="pre">input/</span></code> directory,
+which we created above by calling <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">input/{a..z}.in</span></code>.
+Let’s create a rule to do this for us.</p>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="create-the-input"><i class="fa fa-square-o"></i> Create the input</p>
+</div>
+<div class="panel-body docutils container">
+<p>Add a rule to <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> that can create
+<code class="docutils literal notranslate"><span class="pre">input/a.in</span></code>, <code class="docutils literal notranslate"><span class="pre">input/b.in</span></code>, …, and <code class="docutils literal notranslate"><span class="pre">input/z.in</span></code>.</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>Add a rule like the following to your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">create_input</span><span class="p">:</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;input/</span><span class="si">{name}</span><span class="s2">.in&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;touch </span><span class="si">{output}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>You can name it anything you like and use any wildcard you want;
+it will work regardless.</p>
+<p>To check your solution, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm -rf input/ output/
+snakemake --cores <span class="m">4</span>
+</pre></div>
+</div>
+<p>Snakemake should create both the input and the output.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Take a moment to understand what has happened.
+We told Snakemake we wanted to generate <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code>, …, <code class="docutils literal notranslate"><span class="pre">output/z.out</span></code>,
+and it knew to create <code class="docutils literal notranslate"><span class="pre">input/a.in</span></code>, …, <code class="docutils literal notranslate"><span class="pre">input/z.in</span></code>
+because the rule <code class="docutils literal notranslate"><span class="pre">name_files</span></code> depends on them.</p>
+<p>We can make this dependency more explicit.
+Modify <code class="docutils literal notranslate"><span class="pre">name_files</span></code> to read</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">name_files</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="n">rules</span><span class="o">.</span><span class="n">create_input</span><span class="o">.</span><span class="n">output</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">.out&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; echo &#39;My name is </span><span class="si">{wildcards.name}</span><span class="s2">.&#39; &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>As long as it is declared after rule <code class="docutils literal notranslate"><span class="pre">create_input</span></code>
+and all of the wildcards of <code class="docutils literal notranslate"><span class="pre">create_input</span></code> are also declared in <code class="docutils literal notranslate"><span class="pre">name_files</span></code>,
+this should produce the same output as before.</p>
+<p>Notice that we could also just ask Snakemake to produce <code class="docutils literal notranslate"><span class="pre">input/a.in</span></code>
+without reqesting <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code>;
+as far as Snakemake is concerned,
+<code class="docutils literal notranslate"><span class="pre">input/a.in</span></code> is just another file it knows how to produce.</p>
+</section>
+<section id="the-limits-of-wildcards">
+<h3>The limits of wildcards<a class="headerlink" href="#the-limits-of-wildcards" title="Permalink to this headline"></a></h3>
+<p>Our <a class="reference download internal" download="" href="../_downloads/99eff8789327fe1c0ad012fd469a30e6/Snakefile"><code class="xref download docutils literal notranslate"><code class="docutils literal notranslate"><span class="pre">Snakefile</span></code></code></a>
+isn’t limited to creating <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code>, …, <code class="docutils literal notranslate"><span class="pre">output/z.out</span></code>.
+Trying calling</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake output/hello_world.out --cores <span class="m">4</span>
+</pre></div>
+</div>
+<p>and observe what happens.
+Snakemake has created <code class="docutils literal notranslate"><span class="pre">input/hello_world.in</span></code> and <code class="docutils literal notranslate"><span class="pre">output/hello_world.out</span></code>.</p>
+<p>Now try</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake output/foo.bar --cores <span class="m">4</span>
+</pre></div>
+</div>
+<p>This time, Snakemake raises a <code class="docutils literal notranslate"><span class="pre">MissingRuleException</span></code>;
+this is because the extension <code class="docutils literal notranslate"><span class="pre">.bar</span></code> doesn’t match the <code class="docutils literal notranslate"><span class="pre">output</span></code>
+for rule <code class="docutils literal notranslate"><span class="pre">name_files</span></code>, which expects the <code class="docutils literal notranslate"><span class="pre">.out</span></code> extension.</p>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="allow-arbitrary-output-file-extensions"><i class="fa fa-square-o"></i> Allow arbitrary output file extensions</p>
+</div>
+<div class="panel-body docutils container">
+<p>Teach <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> how to create an output file with any file extension.</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>Modify <code class="docutils literal notranslate"><span class="pre">name_files</span></code> to read:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">name_files</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="n">rules</span><span class="o">.</span><span class="n">create_input</span><span class="o">.</span><span class="n">output</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">.</span><span class="si">{ext}</span><span class="s2">&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; echo &#39;My name is </span><span class="si">{wildcards.name}</span><span class="s2">.&#39; &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Notice that this doesn’t affect the <code class="docutils literal notranslate"><span class="pre">input</span></code> file extension,
+which is still <code class="docutils literal notranslate"><span class="pre">.in</span></code>.
+Now, if you run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake output/foo.bar --cores <span class="m">4</span>
+</pre></div>
+</div>
+<p>Snakemake should generate <code class="docutils literal notranslate"><span class="pre">input/foo.in</span></code> and <code class="docutils literal notranslate"><span class="pre">output/foo.bar</span></code></p>
+</div>
+</div>
+</div>
+</div>
+<p>As you can see from this challenge,
+Snakemake allows <code class="docutils literal notranslate"><span class="pre">input</span></code> and <code class="docutils literal notranslate"><span class="pre">output</span></code> files to be of any type;
+you could be creating <code class="docutils literal notranslate"><span class="pre">.root</span></code> files, <code class="docutils literal notranslate"><span class="pre">.gif</span></code> files, or <code class="docutils literal notranslate"><span class="pre">.docx</span></code> files
+and Snakemake will execute regardless.</p>
+<p>You can see the whole working <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> <a class="reference download internal" download="" href="../_downloads/99eff8789327fe1c0ad012fd469a30e6/Snakefile"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+</section>
+</section>
+<section id="advanced-tutorial">
+<h2>Advanced Tutorial<a class="headerlink" href="#advanced-tutorial" title="Permalink to this headline"></a></h2>
+<p>In this tutorial,
+we will examine more advanced Snakemake topics using pre-defined inputs.
+To begin, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir advanced_tutorial
+<span class="nb">cd</span> advanced_tutorial
+wget https://github.com/hsf-training/analysis-essentials/raw/master/snakemake/code/advanced_tutorial/input.tar
+tar -xvf input.tar
+ls input/
+</pre></div>
+</div>
+<p>You should see <code class="docutils literal notranslate"><span class="pre">address.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">phone.txt</span></code>.
+The first contains names followed by addresses;
+the second contains names followed by phone numbers.</p>
+<p>You can find the ultimate solution,
+how your workflow might look after solving
+all of the challenges in this tutorial,
+<a class="reference external" href="https://github.com/hsf-training/analysis-essentials/raw/master/snakemake/code/advanced_tutorial.tar">here</a>.</p>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="get-luca's-address-and-phone-number"><i class="fa fa-square-o"></i> Get Luca’s address and phone number</p>
+</div>
+<div class="panel-body docutils container">
+<p>Write a <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> with a single rule that creates an output file
+with Luca’s address and phone number.
+Hint: the command <code class="docutils literal notranslate"><span class="pre">grep</span></code> lists all lines in a file containing a given text.</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>Your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> could look something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">Luca_info</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/address.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;input/phone.txt&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/Luca/info.txt&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep Luca </span><span class="si">{input[0]}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; grep Luca </span><span class="si">{input[1]}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Notice that we specified multiple input files and referred to them by index.
+We could also have named them:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">Luca_info</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;input/address.txt&quot;</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;input/phone.txt&quot;</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/Luca/info.txt&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep Luca </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; grep Luca </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="get-luca's-address-and-phone-number-in-three-steps"><i class="fa fa-square-o"></i> Get Luca’s address and phone number in three steps</p>
+</div>
+<div class="panel-body docutils container">
+<p>Remember that one of the nice things about using Snakemake
+is that we can run things in parallel instead of sequentially.
+Modify your Snakefile to get Luca’s address and phone number in separate rules,
+then merge them into a single output file.</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>Your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> could look something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/Luca/address.txt&quot;</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/Luca/phone.txt&quot;</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/Luca/info.txt&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+
+
+<span class="n">rule</span> <span class="n">get_address</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/address.txt&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/Luca/address.txt&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep Luca </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+
+
+<span class="n">rule</span> <span class="n">get_phone</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/phone.txt&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/Luca/phone.txt&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep Luca </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>This is not much better than our original solution,
+since we still end up running two sequential bash commands in the final step,
+but one can easily imagine this being helpful if the rules
+<code class="docutils literal notranslate"><span class="pre">get_address</span></code> and <code class="docutils literal notranslate"><span class="pre">get_phone</span></code> took a long time.</p>
+</div>
+</div>
+</div>
+</div>
+<p>In the solution above,
+we don’t really need the output of <code class="docutils literal notranslate"><span class="pre">get_address</span></code> and <code class="docutils literal notranslate"><span class="pre">get_phone</span></code>;
+they are just waypoints on our way to the output of <code class="docutils literal notranslate"><span class="pre">merge_data</span></code>
+and we could delete them when we finished.
+Snakemake provides a way to do this for us, using the <code class="docutils literal notranslate"><span class="pre">temp</span></code> utility function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/Luca/address.txt&quot;</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/Luca/phone.txt&quot;</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/Luca/info.txt&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+
+
+<span class="n">rule</span> <span class="n">get_address</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/address.txt&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/Luca/address.txt&quot;</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep Luca </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+
+
+<span class="n">rule</span> <span class="n">get_phone</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/phone.txt&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/Luca/phone.txt&quot;</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep Luca </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>This tells Snakemake to remove the specified output once all the rules
+that use it as an input are finished.
+Note that you can only mark <code class="docutils literal notranslate"><span class="pre">output</span></code> as temporary in this way, not <code class="docutils literal notranslate"><span class="pre">input</span></code>.</p>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="use-wildcards"><i class="fa fa-square-o"></i> Use wildcards</p>
+</div>
+<div class="panel-body docutils container">
+<p>Modify your Snakefile to get anyone’s address and phone number.
+Tell it to get Luca’s, Fred’s, and Guillaume’s by default.</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>Your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> could look something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">run</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;output/Luca/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Fred/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Guillaume/info.txt&quot;</span><span class="p">]</span>
+
+
+<span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/info.txt&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+
+
+<span class="n">rule</span> <span class="n">get_address</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/address.txt&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+
+
+<span class="n">rule</span> <span class="n">get_phone</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/phone.txt&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The Snakemake workflow can be represented by a directed acyclic graph (DAG).
+In the above solution for just Luca, it looks something like this:</p>
+<p><a class="reference download internal" download="" href="../_downloads/08f34498f4f732572fc8292f7323bd03/DAG_single.png"><code class="xref download docutils literal notranslate"><img alt="DAG" src="../_images/DAG_single-wide.png" /></code></a></p>
+<p>In the most recent solution for Luca, Fred, and Guillaume,
+it looks more like this:</p>
+<p><a class="reference download internal" download="" href="../_downloads/040447715d4afcb75465bb675d104f7e/DAG_multiple.png"><code class="xref download docutils literal notranslate"><img alt="DAG" src="../_images/DAG_multiple.png" /></code></a></p>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="use-more-wildcards"><i class="fa fa-square-o"></i> Use more wildcards</p>
+</div>
+<div class="panel-body docutils container">
+<p>Reduce your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> to contain just three rules.</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>Your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> could look something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">run</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;output/Luca/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Fred/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Guillaume/info.txt&quot;</span><span class="p">]</span>
+
+
+<span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/info.txt&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+
+
+<span class="n">rule</span> <span class="n">get_info</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Since the rules <code class="docutils literal notranslate"><span class="pre">get_address</span></code> and <code class="docutils literal notranslate"><span class="pre">get_phone</span></code> were so nearly identical,
+we simply combined them into a single rule called <code class="docutils literal notranslate"><span class="pre">get_info</span></code> using wildcards.</p>
+</div>
+</div>
+</div>
+</div>
+<section id="running-scripts">
+<h3>Running scripts<a class="headerlink" href="#running-scripts" title="Permalink to this headline"></a></h3>
+<p>Snakemake can execute anything in the command-line,
+including calling python scripts.</p>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="call-python-scripts"><i class="fa fa-square-o"></i> Call python scripts</p>
+</div>
+<div class="panel-body docutils container">
+<p>Modify your workflow to look up anyone’s address and phone number
+and write them in a single output file
+<em>without including their name</em>.</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>Instead of using shell commands,
+we can write a python file, <code class="docutils literal notranslate"><span class="pre">get_info.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Extract information about a person.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;person of interest&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;infile&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;text file with information&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;outfile&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;where to write extracted information&quot;</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+<span class="c1"># -- find information</span>
+<span class="n">found</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">ln</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">ln</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="n">ln</span>
+            <span class="k">break</span>  <span class="c1"># assume only one line with info</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">found</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">name</span><span class="p">):]</span>
+<span class="c1"># -- write information</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">outfile</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> could then look something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">run</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;output/Luca/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Fred/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Guillaume/info.txt&quot;</span><span class="p">]</span>
+
+
+<span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/info.txt&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+
+
+<span class="n">rule</span> <span class="n">get_info</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">exe</span><span class="o">=</span><span class="s2">&quot;get_info.py&quot;</span><span class="p">,</span>
+        <span class="n">infile</span><span class="o">=</span><span class="s2">&quot;input/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;python </span><span class="si">{input.exe}</span><span class="s2"> </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input.infile}</span><span class="s2"> </span><span class="si">{output}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Notice that we included <code class="docutils literal notranslate"><span class="pre">get_info.py</span></code> as an input.
+If you modify it (add an additional comment, for example),
+Snakemake will run the rule <code class="docutils literal notranslate"><span class="pre">get_info</span></code> again.
+You do not have to list it as an input if you do not want this behaviour;
+in such a case, you would drop it from the <code class="docutils literal notranslate"><span class="pre">input</span></code> declarations
+and modify the shell command to read
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">get_info.py</span> <span class="pre">{wildcards.name}</span> <span class="pre">{input.infile}</span> <span class="pre">{output}</span></code></p>
+</div>
+</div>
+</div>
+</div>
+<p>You have two ways to specify commands.
+One is <code class="docutils literal notranslate"><span class="pre">shell</span></code>, which we’ve been using.
+The other is <code class="docutils literal notranslate"><span class="pre">run</span></code> that instead directly takes python code.
+For example,
+the previous solution could be written</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">run</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;output/Luca/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Fred/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Guillaume/info.txt&quot;</span><span class="p">]</span>
+
+
+<span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/info.txt&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+
+
+<span class="n">rule</span> <span class="n">get_info</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">infile</span><span class="o">=</span><span class="s2">&quot;input/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
+    <span class="n">run</span><span class="p">:</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">infile</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">ln</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">ln</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">wildcards</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+                    <span class="n">found</span> <span class="o">=</span> <span class="n">ln</span>
+                    <span class="k">break</span>  <span class="c1"># assume only one line with info</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">found</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">wildcards</span><span class="o">.</span><span class="n">name</span><span class="p">):]</span>  <span class="c1"># assume space follows name</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">output</span><span class="p">),</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also mix and match by calling
+<a class="reference external" href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html"><code class="docutils literal notranslate"><span class="pre">shell</span></code></a>
+from within the python code.
+Instead of <code class="docutils literal notranslate"><span class="pre">shell</span></code> or <code class="docutils literal notranslate"><span class="pre">run</span></code>,
+you can also declare
+<a class="reference external" href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html"><code class="docutils literal notranslate"><span class="pre">script</span></code></a>,
+which is similar to <code class="docutils literal notranslate"><span class="pre">run</span></code> but it allows you to refer to an external file.</p>
+</section>
+<section id="log-files">
+<h3>Log files<a class="headerlink" href="#log-files" title="Permalink to this headline"></a></h3>
+<p>Within Snakemake,
+a log file is a special type of output file that is not deleted if a rule fails.</p>
+<blockquote>
+<div><p>If an error is raised during the execution of a rule,
+Snakemake deletes the files listed as <code class="docutils literal notranslate"><span class="pre">output</span></code>,
+since they could be corrupted.
+To see this happen,
+simply add the line <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">False</span></code> anywhere in your python code.
+A log file, by contrast, is not deleted.</p>
+</div></blockquote>
+<p>In practice, log files allow you to monitor the behaviour of your rules
+and debug when things go wrong.
+To declare a log file, simply add it to your rule declaration:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">myname</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;myinput1&quot;</span><span class="p">,</span> <span class="s2">&quot;myinput2&quot;</span>
+    <span class="n">log</span><span class="p">:</span> <span class="s2">&quot;mylog&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;myoutput&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;Some command to go from in to out and create log&quot;</span>
+</pre></div>
+</div>
+<p>Just as with <code class="docutils literal notranslate"><span class="pre">output</span></code>,
+you must supply a command that produces a <code class="docutils literal notranslate"><span class="pre">log</span></code> file.
+The shell redirect command <code class="docutils literal notranslate"><span class="pre">&amp;&gt;</span></code> is particularly useful here;
+it captures both <code class="docutils literal notranslate"><span class="pre">stdout</span></code> and <code class="docutils literal notranslate"><span class="pre">stderr</span></code> and saves them in a (recreated) file.
+You can read more about redirection in the bash manual
+<a class="reference external" href="https://www.gnu.org/software/bash/manual/html_node/Redirections.html">here</a>.</p>
+<blockquote>
+<div><p>Note that this redirection is only available if you are declaring <code class="docutils literal notranslate"><span class="pre">shell</span></code>
+actions in your rule declarations;
+if you are using <code class="docutils literal notranslate"><span class="pre">run</span></code> or <code class="docutils literal notranslate"><span class="pre">script</span></code>, you might consider using
+the <a class="reference external" href="https://docs.python.org/3/howto/logging.html"><code class="docutils literal notranslate"><span class="pre">logging</span></code> package</a>.</p>
+</div></blockquote>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="add-log-files"><i class="fa fa-square-o"></i> Add log files</p>
+</div>
+<div class="panel-body docutils container">
+<p>Modify your workflow to print progress updates and save them in log files.</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>First, we modify <code class="docutils literal notranslate"><span class="pre">get_info.py</span></code> to print status updates:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Extract information about a person.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;person of interest&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;infile&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;text file with information&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;outfile&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;where to write extracted information&quot;</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+<span class="c1"># -- find information</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;extracting information...&quot;</span><span class="p">)</span>
+<span class="n">found</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">ln</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">ln</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="n">ln</span>
+            <span class="k">break</span>  <span class="c1"># assume only one line with info</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="si">}</span><span class="s2"> contains no info on &#39;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">found</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">name</span><span class="p">):]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;found information&quot;</span><span class="p">)</span>
+<span class="c1"># -- write information</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;writing information...&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">outfile</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> could then look something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">run</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;output/Luca/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Fred/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Guillaume/info.txt&quot;</span><span class="p">]</span>
+
+
+<span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/info.txt&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+
+
+<span class="n">rule</span> <span class="n">get_info</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">exe</span><span class="o">=</span><span class="s2">&quot;get_info.py&quot;</span><span class="p">,</span>
+        <span class="n">infile</span><span class="o">=</span><span class="s2">&quot;input/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">,</span>
+    <span class="n">log</span><span class="p">:</span> <span class="s2">&quot;log/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;python </span><span class="si">{input.exe}</span><span class="s2"> </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input.infile}</span><span class="s2"> </span><span class="si">{output}</span><span class="s2"> &amp;&gt; </span><span class="si">{log}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">log</span></code> includes all the wildcards used in <code class="docutils literal notranslate"><span class="pre">output</span></code>;
+this ensures that every instance of the rule has a unique log file.
+If you run Snakemake with <code class="docutils literal notranslate"><span class="pre">--forceall</span></code>,
+you should see your log files created in the <code class="docutils literal notranslate"><span class="pre">log/</span></code> directory.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="config-files">
+<h3>Config files<a class="headerlink" href="#config-files" title="Permalink to this headline"></a></h3>
+<p>Often you want to run the same rule on different samples
+or with different options for your scripts.
+This can be done in snakemake using config files written in <a class="reference external" href="https://learn.getgrav.org/advanced/yaml">yaml</a>.</p>
+<p>For example let’s declare some data files in a cfg.yaml file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">:</span>
+    <span class="o">-</span> <span class="s1">&#39;data1.root&#39;</span>
+    <span class="o">-</span> <span class="s1">&#39;data2.root&#39;</span>
+</pre></div>
+</div>
+<p>Now in your Snakefile you can load this config file
+and then its content will be available
+to the rules as a dictionary called “config”.
+Yes, it seems black magic, but it works!
+Your Snakefile will look something like this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">configfile</span><span class="p">:</span> <span class="s">&#39;/path/to/cfg.yaml&#39;</span>
+
+<span class="nt">rule dosomething</span><span class="p">:</span>
+    <span class="nt">input</span><span class="p">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">exe=&#39;mycode.py&#39;,</span>
+        <span class="l l-Scalar l-Scalar-Plain">data=config[&#39;data&#39;],</span>
+    <span class="nt">output</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;plot1.pdf&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;plot2.pdf&#39;</span><span class="p p-Indicator">]</span>
+    <span class="nt">shell</span><span class="p">:</span> <span class="s">&quot;python</span><span class="nv"> </span><span class="s">{input.exe}</span><span class="nv"> </span><span class="s">{input.data}</span><span class="nv"> </span><span class="s">{output}&quot;</span>
+</pre></div>
+</div>
+<p>The config dictionary can be used anywhere,
+also inside the shell command or even outside a rule.</p>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="make-a-config-file"><i class="fa fa-square-o"></i> Make a config file</p>
+</div>
+<div class="panel-body docutils container">
+<p>Download some alternate input files:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://github.com/hsf-training/analysis-essentials/raw/master/snakemake/code/advanced_tutorial/input_alt.tar
+tar -xvf input_alt.tar
+ls input_alt/
+</pre></div>
+</div>
+<p>You should see a new set of addresses and phone numbers.</p>
+<p>Create a config file that can specify which set of addresses and phone numbers
+should be used.</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>First, we create <code class="docutils literal notranslate"><span class="pre">cfg.yaml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">data</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">input_alt</span>
+</pre></div>
+</div>
+<p>Then, modify your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> to look something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configfile</span><span class="p">:</span> <span class="s2">&quot;cfg.yaml&quot;</span>
+
+<span class="n">rule</span> <span class="n">run</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;output/Luca/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Fred/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Guillaume/info.txt&quot;</span><span class="p">]</span>
+
+
+<span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/info.txt&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+
+
+<span class="n">rule</span> <span class="n">get_info</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">exe</span><span class="o">=</span><span class="s2">&quot;get_info.py&quot;</span><span class="p">,</span>
+        <span class="n">infile</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/</span><span class="se">{{</span><span class="s2">info</span><span class="se">}}</span><span class="s2">.txt&quot;</span><span class="p">,</span>
+    <span class="n">log</span><span class="p">:</span> <span class="s2">&quot;log/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;python </span><span class="si">{input.exe}</span><span class="s2"> </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input.infile}</span><span class="s2"> </span><span class="si">{output}</span><span class="s2"> &amp;&gt; </span><span class="si">{log}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Notice that we have escaped the braces around <code class="docutils literal notranslate"><span class="pre">info</span></code>
+in the declaration of <code class="docutils literal notranslate"><span class="pre">input.infile</span></code>;
+this is because we have used an f-string,
+which uses braces to determine which items to replace.
+Putting double braces around <code class="docutils literal notranslate"><span class="pre">info</span></code> tells the interpreter that
+we want the braces to remain after the f-string substitution is complete,
+allowing Snakemake to identify <code class="docutils literal notranslate"><span class="pre">info</span></code> as a wildcard.</p>
+</div></blockquote>
+<p>Be careful–unless you explicitly declare your config file as an <code class="docutils literal notranslate"><span class="pre">input</span></code>,
+Snakemake will not automatically rerun a rule when it changes.
+You will have to remember to force it to run.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="includes">
+<h3>Includes<a class="headerlink" href="#includes" title="Permalink to this headline"></a></h3>
+<p>The Snakefile can quickly grow to a monster with tens of rules.
+For this reason it’s possible to split them into more files
+and then include them into the Snakefile.
+For example you might have a <code class="docutils literal notranslate"><span class="pre">fit_rules.snake</span></code> and <code class="docutils literal notranslate"><span class="pre">efficiency_rules.snake</span></code>
+and then your Snakefile will look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">:</span> <span class="s2">&quot;/path/to/fit_rules.snake&quot;</span>
+<span class="n">include</span><span class="p">:</span> <span class="s2">&quot;/path/to/efficiency_rules.snake&quot;</span>
+</pre></div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="use-includes"><i class="fa fa-square-o"></i> Use includes</p>
+</div>
+<div class="panel-body docutils container">
+<p>Move your rules to other files and include them.</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>You could create <code class="docutils literal notranslate"><span class="pre">merge.snake</span></code>,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/info.txt&quot;</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>and <code class="docutils literal notranslate"><span class="pre">get.snake</span></code>,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">get_info</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="n">exe</span><span class="o">=</span><span class="s2">&quot;get_info.py&quot;</span><span class="p">,</span>
+        <span class="n">infile</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/</span><span class="se">{{</span><span class="s2">info</span><span class="se">}}</span><span class="s2">.txt&quot;</span><span class="p">,</span>
+    <span class="n">log</span><span class="p">:</span> <span class="s2">&quot;log/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;python </span><span class="si">{input.exe}</span><span class="s2"> </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input.infile}</span><span class="s2"> </span><span class="si">{output}</span><span class="s2"> &amp;&gt; </span><span class="si">{log}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Your modified Snakefile would then look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configfile</span><span class="p">:</span> <span class="s2">&quot;cfg.yaml&quot;</span>
+<span class="n">include</span><span class="p">:</span> <span class="s2">&quot;merge.snake&quot;</span>
+<span class="n">include</span><span class="p">:</span> <span class="s2">&quot;get.snake&quot;</span>
+
+<span class="n">rule</span> <span class="n">run</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;output/Luca/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Fred/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Guillaume/info.txt&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--
+### Reports
+
+TODO: make this section into a workable tutorial
+
+As well as executing rules Snakemake is also able to produce *reports*.
+These are html files and can contain information
+such as a diagram of your DAG as well as statistics
+about the run time of your rules and summaries of your outputs.
+To include a file in the report simply add the `report` flag to it, *e.g.*,
+```python
+rule myRule:
+	input: SomeFile.root
+	output: report(Output.pdf) # this will now be included in the report
+	shell: "python RuleForExecution.py {input}"
+```
+
+N.B. the reporting feature does not work with files already marked as `temp`.
+
+To produce the report, first run Snakemake as normal,
+and then produce the report on what just happened by adding the `--report` flag
+to the same command.
+You can report on just specific targets by specifying them on the command-line.
+
+Some screenshots of what a report may look like are shown below.
+Information in the report includes:
+a graph showing the DAG of the completed jobs
+(each node of this graph can be clicked to show the rule in more detail),
+the time taken to run each job,
+and a summary of all the produced files.
+
+Ideally, every plot which is included in an ANA note
+would have a report explaining how it was made.
+
+[![Reporting DAG](img/Reporting_DAG.png)](img/Reporting_DAG.png)
+[![Reporting stats](img/Reporting_stats.png)](img/Reporting_stats.png)
+[![Reporting rule](img/Reporting_rule.png)](img/Reporting_rule.png)
+
+For more information on using reports as well as more examples,
+see the Snakemake documentation
+[here](https://snakemake.readthedocs.io/en/stable/snakefiles/reporting.html).
+--></section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../shell-extras/shell2.html" class="btn btn-neutral float-left" title="More about the UNIX shell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../git/README.html" class="btn btn-neutral float-right" title="Git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    Hello world
+
+
+</body>
+</html>

@@ -1,82 +1,41 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>7: Demonstration of distribution reweighting &mdash; Analysis essentials  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Likelihood inference" href="50LikelihoodInference.html" />
     <link rel="prev" title="6: Neural networks" href="33OLDDemoNeuralNetworks.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Analysis essentials
-          
-
-          
-            
             <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -84,18 +43,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../python/README.html">An introduction to Python</a><ul>
@@ -355,6 +303,26 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../snakemake/README.html">Analysis automation with Snakemake</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#documentation-and-environments">Documentation and environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#workflow-preservation">Workflow preservation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#basic-tutorial">Basic Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#what-is-a-workflow">What is a workflow?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#why-use-a-workflow-management-system">Why use a workflow management system?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#re-running-rules">Re-running rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#chaining-rules">Chaining rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#the-limits-of-wildcards">The limits of wildcards</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#advanced-tutorial">Advanced Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#running-scripts">Running scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#log-files">Log files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#config-files">Config files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../git/README.html">Git</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../git/01-basics.html">Automated Version Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/02-setup.html">Setting Up Git</a></li>
@@ -398,75 +366,31 @@
 </li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Analysis essentials</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="README.html">Advanced Python Tutorial</a> &raquo;</li>
-        
       <li>7: Demonstration of distribution reweighting</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/hsf-training/analysis-essentials/blob/master/advanced-python/40DemoReweighting.ipynb" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS for nbsphinx extension */
@@ -737,8 +661,8 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="7:-Demonstration-of-distribution-reweighting">
-<h1>7: Demonstration of distribution reweighting<a class="headerlink" href="#7:-Demonstration-of-distribution-reweighting" title="Permalink to this headline">¶</a></h1>
+<section id="7:-Demonstration-of-distribution-reweighting">
+<h1>7: Demonstration of distribution reweighting<a class="headerlink" href="#7:-Demonstration-of-distribution-reweighting" title="Permalink to this headline"></a></h1>
 <ul class="simple">
 <li><p>Reweighting in HEP is used to minimize difference between real data and Monte-Carlo simulation.</p></li>
 <li><p>Known process is used, for which real data can be obtained.</p></li>
@@ -764,8 +688,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="section" id="Downloading-data">
-<h2>Downloading data<a class="headerlink" href="#Downloading-data" title="Permalink to this headline">¶</a></h2>
+<section id="Downloading-data">
+<h2>Downloading data<a class="headerlink" href="#Downloading-data" title="Permalink to this headline"></a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -787,9 +711,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="prepare-train-and-test-samples">
-<h2>prepare train and test samples<a class="headerlink" href="#prepare-train-and-test-samples" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="prepare-train-and-test-samples">
+<h2>prepare train and test samples<a class="headerlink" href="#prepare-train-and-test-samples" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>train part is used to train reweighting rule</p></li>
 <li><p>test part is used to evaluate reweighting rule comparing the following things:</p>
@@ -836,8 +760,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="section" id="Original-distributions">
-<h3>Original distributions<a class="headerlink" href="#Original-distributions" title="Permalink to this headline">¶</a></h3>
+<section id="Original-distributions">
+<h3>Original distributions<a class="headerlink" href="#Original-distributions" title="Permalink to this headline"></a></h3>
 <p>KS = Kolmogorov-Smirnov distance: a measure of how well two distributions agree, the lower the distance, the better the agreement. In this case we want a low KS value.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -886,10 +810,10 @@ KS over  mu_pt_sum  =  0.21639364439970188
 <img alt="../_images/advanced-python_40DemoReweighting_9_1.png" src="../_images/advanced-python_40DemoReweighting_9_1.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="train-part-of-original-distribution">
-<h2>train part of original distribution<a class="headerlink" href="#train-part-of-original-distribution" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="train-part-of-original-distribution">
+<h2>train part of original distribution<a class="headerlink" href="#train-part-of-original-distribution" title="Permalink to this headline"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -904,11 +828,11 @@ KS over  mu_pt_sum  =  0.21639364439970188
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.5200743482586956
-KS over  pt_b  =  0.22021624875457207
-KS over  pt_phi  =  0.4023206467663448
-KS over  vchi2_b  =  0.4068070547200243
-KS over  mu_pt_sum  =  0.22021624875457207
+KS over  hSPD  =  0.5175015422885463
+KS over  pt_b  =  0.2163659800978711
+KS over  pt_phi  =  0.3983848855722638
+KS over  vchi2_b  =  0.4010960099440565
+KS over  mu_pt_sum  =  0.2163659800978711
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -918,9 +842,9 @@ KS over  mu_pt_sum  =  0.22021624875457207
 <img alt="../_images/advanced-python_40DemoReweighting_11_1.png" src="../_images/advanced-python_40DemoReweighting_11_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="test-part-for-target-distribution">
-<h2>test part for target distribution<a class="headerlink" href="#test-part-for-target-distribution" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="test-part-for-target-distribution">
+<h2>test part for target distribution<a class="headerlink" href="#test-part-for-target-distribution" title="Permalink to this headline"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -935,11 +859,11 @@ KS over  mu_pt_sum  =  0.22021624875457207
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.5217417713113333
-KS over  pt_b  =  0.2063956340231789
-KS over  pt_phi  =  0.4018638653235208
-KS over  vchi2_b  =  0.40022853012577453
-KS over  mu_pt_sum  =  0.2063956340231789
+KS over  hSPD  =  0.5289337276627603
+KS over  pt_b  =  0.21686153366878302
+KS over  pt_phi  =  0.4144875176271744
+KS over  vchi2_b  =  0.41637966610786986
+KS over  mu_pt_sum  =  0.21686153366878302
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -949,9 +873,9 @@ KS over  mu_pt_sum  =  0.2063956340231789
 <img alt="../_images/advanced-python_40DemoReweighting_13_1.png" src="../_images/advanced-python_40DemoReweighting_13_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="Bins-based-reweighting-in-n-dimensions">
-<h2>Bins-based reweighting in n dimensions<a class="headerlink" href="#Bins-based-reweighting-in-n-dimensions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Bins-based-reweighting-in-n-dimensions">
+<h2>Bins-based reweighting in n dimensions<a class="headerlink" href="#Bins-based-reweighting-in-n-dimensions" title="Permalink to this headline"></a></h2>
 <p>Typical way to reweight distributions is based on bins.</p>
 <p>Usually histogram reweighting is used, in each bin the weight of original distribution is multiplied by:</p>
 <p><span class="math notranslate nohighlight">\(m_{bin} = \frac{w_{target}}{w_{original}}\)</span></p>
@@ -981,11 +905,11 @@ KS over  mu_pt_sum  =  0.2063956340231789
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.4073072080127418
-KS over  pt_b  =  0.10824063051929256
-KS over  pt_phi  =  0.2814683393736376
-KS over  vchi2_b  =  0.3383824531136481
-KS over  mu_pt_sum  =  0.10824063051929256
+KS over  hSPD  =  0.42451683120488837
+KS over  pt_b  =  0.12345733360399153
+KS over  pt_phi  =  0.2952646481011184
+KS over  vchi2_b  =  0.35804294642874124
+KS over  mu_pt_sum  =  0.12345733360399153
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -995,9 +919,9 @@ KS over  mu_pt_sum  =  0.10824063051929256
 <img alt="../_images/advanced-python_40DemoReweighting_15_1.png" src="../_images/advanced-python_40DemoReweighting_15_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="Gradient-Boosted-Reweighter">
-<h2>Gradient Boosted Reweighter<a class="headerlink" href="#Gradient-Boosted-Reweighter" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Gradient-Boosted-Reweighter">
+<h2>Gradient Boosted Reweighter<a class="headerlink" href="#Gradient-Boosted-Reweighter" title="Permalink to this headline"></a></h2>
 <p>This algorithm is inspired by gradient boosting and is able to fight curse of dimensionality. It uses decision trees and special loss functiion (<strong>ReweightLossFunction</strong>).</p>
 <p>A classifier is trained to discriminate between real data and MC. This means we are able to reweight in several variables rather than just one. <code class="docutils literal notranslate"><span class="pre">GBReweighter</span></code> from <code class="docutils literal notranslate"><span class="pre">hep_ml</span></code> is able to handle many variables and requires less data (for the same performance).</p>
 <p><strong>GBReweighter</strong> supports negative weights (to reweight MC to splotted real data).</p>
@@ -1019,24 +943,531 @@ KS over  mu_pt_sum  =  0.10824063051929256
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.03248016027456957
-KS over  pt_b  =  0.043371003139864805
-KS over  pt_phi  =  0.039182605517572605
-KS over  vchi2_b  =  0.020145149253185113
-KS over  mu_pt_sum  =  0.043371003139864805
+KS over  hSPD  =  0.05096104754649422
+KS over  pt_b  =  0.026729223648584544
+KS over  pt_phi  =  0.03886080678995896
+KS over  vchi2_b  =  0.022636657514362835
+KS over  mu_pt_sum  =  0.026729223648584544
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_40DemoReweighting_17_1.png" src="../_images/advanced-python_40DemoReweighting_17_1.png" />
+<img alt="../_images/advanced-python_40DemoReweighting_17_2.png" src="../_images/advanced-python_40DemoReweighting_17_2.png" />
 </div>
 </div>
-<div class="section" id="Comparing-some-simple-expressions:">
-<h3>Comparing some simple expressions:<a class="headerlink" href="#Comparing-some-simple-expressions:" title="Permalink to this headline">¶</a></h3>
+<section id="Comparing-some-simple-expressions:">
+<h3>Comparing some simple expressions:<a class="headerlink" href="#Comparing-some-simple-expressions:" title="Permalink to this headline"></a></h3>
 <p>The most interesting is checking some other variables in multidimensional distributions (those are expressed via original variables). Here we can check the KS distance in multidimensional distributions. (The lower the value, the better agreement of distributions.)</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -1070,9 +1501,9 @@ KS over  mu_pt_sum  =  0.043371003139864805
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.5217417713113333
-Bins reweight KS: 0.4073072080127418
-GB Reweight   KS: 0.03248016027456957
+No reweight   KS: 0.5289337276627603
+Bins reweight KS: 0.42451683120488837
+GB Reweight   KS: 0.05096104754649422
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1089,9 +1520,9 @@ GB Reweight   KS: 0.03248016027456957
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.08972356388751104
-Bins reweight KS: 0.11587315217469527
-GB Reweight   KS: 0.035350101078683194
+No reweight   KS: 0.09138258496566126
+Bins reweight KS: 0.11680897740899238
+GB Reweight   KS: 0.0380226650917731
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1108,9 +1539,9 @@ GB Reweight   KS: 0.035350101078683194
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.3643815903756049
-Bins reweight KS: 0.33034731616218704
-GB Reweight   KS: 0.027766136160298327
+No reweight   KS: 0.37538627979920713
+Bins reweight KS: 0.343755372463045
+GB Reweight   KS: 0.02559592326632598
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1127,9 +1558,9 @@ GB Reweight   KS: 0.027766136160298327
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.4755070535346624
-Bins reweight KS: 0.37098005891747254
-GB Reweight   KS: 0.050005525689543306
+No reweight   KS: 0.49199836411108133
+Bins reweight KS: 0.4011935502156432
+GB Reweight   KS: 0.0453624065671239
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1146,15 +1577,15 @@ GB Reweight   KS: 0.050005525689543306
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.48853033501285437
-Bins reweight KS: 0.39717219334435216
-GB Reweight   KS: 0.02942993189887677
+No reweight   KS: 0.5083371277754456
+Bins reweight KS: 0.42567026281200776
+GB Reweight   KS: 0.027786773607425874
 </pre></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="GB-discrimination">
-<h2>GB-discrimination<a class="headerlink" href="#GB-discrimination" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="GB-discrimination">
+<h2>GB-discrimination<a class="headerlink" href="#GB-discrimination" title="Permalink to this headline"></a></h2>
 <p>Let’s check how well a classifier is able to distinguish these distributions.</p>
 <p>For this puprose we split the data into train and test, then we train a classifier to distinguish between the real data and MC distributions.</p>
 <p>We can use the ROC Area Under Curve as a measure of performance. If ROC AUC = 0.5 on the test sample, the distibutions are identical, if ROC AUC = 1.0, they are ideally separable. So we want a ROC AUC as close to 0.5 as possible to know that we cannot separate the reweighted distributions.</p>
@@ -1190,18 +1621,18 @@ GB Reweight   KS: 0.02942993189887677
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-original 0.9335055548691953
-bins 0.9073826429063524
-gb_weights 0.471424778116851
+original 0.9393863803433383
+bins 0.9133595500625891
+gb_weights 0.5496540802485601
 </pre></div></div>
 </div>
-<div class="section" id="Great!">
-<h3>Great!<a class="headerlink" href="#Great!" title="Permalink to this headline">¶</a></h3>
+<section id="Great!">
+<h3>Great!<a class="headerlink" href="#Great!" title="Permalink to this headline"></a></h3>
 <p>To the classifier, the two datasets seem now nearly undistingishable. Can we improve that? The <code class="docutils literal notranslate"><span class="pre">GBReweighter</span></code> is quite sensible to its hyperparameters, especially to <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code>. Feel free to go back and increase it (to e.g. 250). What happens?</p>
 <p>Answer: we get an even lower score! 0.49! Yeey! Or wait…</p>
-</div>
-<div class="section" id="What-did-just-happen?">
-<h3>What did just happen?<a class="headerlink" href="#What-did-just-happen?" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="What-did-just-happen?">
+<h3>What did just happen?<a class="headerlink" href="#What-did-just-happen?" title="Permalink to this headline"></a></h3>
 <p>Our algorithm completely overfitted the distribution. The problem is that while for the classification we have a true label for each event, we do not have a true weight for each event, we just have a <em>true distribution</em> so a “true local density” of the events. Or something like that.</p>
 <p>As powerful as the <code class="docutils literal notranslate"><span class="pre">GBReweighter</span></code> is, as much does it need some care to be taken when choosing the hyperparameters as it can easily overfit. And, worse, the overfitting cannot be spotted so easily.</p>
 <p>While this is a topic on its own, whatever you do with the <code class="docutils literal notranslate"><span class="pre">GBReweighter</span></code>, be sure to <em>really</em> validate your result.</p>
@@ -1248,21 +1679,21 @@ Text(0.5, 1.0, &#39;predicted weights&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(994.0323835625516, 66842.7230307158)
+(773.2141362881141, 73380.05502563338)
 </pre></div></div>
 </div>
 <p>With such a high weight for a single event, this does not look desireable. And be aware of ad-hoc solutions: just clipping or removing weights is completely <strong>wrong</strong> as this would disturb the distribution completely.</p>
 <p>A good way to proceed is to play around with the hyperparameters in order to avoid overfitting until the weights distribution looks “reasonable”. Especially we don’t want to have high weights in there if avoidable.</p>
-</div>
-</div>
-<div class="section" id="How-to-tune">
-<h2>How to tune<a class="headerlink" href="#How-to-tune" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="How-to-tune">
+<h2>How to tune<a class="headerlink" href="#How-to-tune" title="Permalink to this headline"></a></h2>
 <p>First find an appropriate number of estimators.</p>
 <p><code class="docutils literal notranslate"><span class="pre">max_depth</span></code> basically determines the order of correlations to be taken into account.</p>
 <p><code class="docutils literal notranslate"><span class="pre">n_estimators</span></code> has a tradeoff vs <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code>. Increasing the former by a factor of n and reducing the latter by a factor of 1 / n keeps the reweighter with the same capability (e.g. overfitting) but tends to smooth out things. So use this at the end as more estimators take more time.</p>
-</div>
-<div class="section" id="Folding-reweighter">
-<h2>Folding reweighter<a class="headerlink" href="#Folding-reweighter" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Folding-reweighter">
+<h2>Folding reweighter<a class="headerlink" href="#Folding-reweighter" title="Permalink to this headline"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">FoldingReweighter</span></code> uses k folding in order to obtain unbiased weights for the whole distribution.</p>
 <p>The hyperparameters have been adjusted here. Be aware that <code class="docutils literal notranslate"><span class="pre">n_estimators=80</span></code> with <code class="docutils literal notranslate"><span class="pre">learning_rate=0.01</span></code> reads as <code class="docutils literal notranslate"><span class="pre">n_estimators=8</span></code> and <code class="docutils literal notranslate"><span class="pre">learning_rate=0.1</span></code> (in the above). So we greatly reduced the number of estimators.</p>
 <div class="nbinput docutils container">
@@ -1290,26 +1721,353 @@ Text(0.5, 1.0, &#39;predicted weights&#39;)
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+/usr/share/miniconda/envs/example-environment/lib/python3.8/site-packages/sklearn/tree/_classes.py:359: FutureWarning: Criterion &#39;mse&#39; was deprecated in v1.0 and will be removed in version 1.2. Use `criterion=&#39;squared_error&#39;` which is equivalent.
+  warnings.warn(
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 KFold prediction using folds column
-KS over  hSPD  =  0.30673660460731667
-KS over  pt_b  =  0.18064521984350823
-KS over  pt_phi  =  0.3078888952546915
-KS over  vchi2_b  =  0.2975765005952944
-KS over  mu_pt_sum  =  0.18064521984350823
+KS over  hSPD  =  0.30726356436027114
+KS over  pt_b  =  0.18090723723533092
+KS over  pt_phi  =  0.308159707460818
+KS over  vchi2_b  =  0.2993017044383566
+KS over  mu_pt_sum  =  0.18090723723533092
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_40DemoReweighting_32_1.png" src="../_images/advanced-python_40DemoReweighting_32_1.png" />
+<img alt="../_images/advanced-python_40DemoReweighting_32_2.png" src="../_images/advanced-python_40DemoReweighting_32_2.png" />
 </div>
 </div>
-</div>
-<div class="section" id="GB-discrimination-for-reweighting-rule">
-<h2>GB discrimination for reweighting rule<a class="headerlink" href="#GB-discrimination-for-reweighting-rule" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="GB-discrimination-for-reweighting-rule">
+<h2>GB discrimination for reweighting rule<a class="headerlink" href="#GB-discrimination-for-reweighting-rule" title="Permalink to this headline"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
@@ -1337,8 +2095,8 @@ KS over  mu_pt_sum  =  0.18064521984350823
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-original 0.9371037522080232
-2-folding 0.8265308329350503
+original 0.9366392768174324
+2-folding 0.8260498596395016
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1368,55 +2126,38 @@ Text(0.5, 1.0, &#39;predicted weights&#39;)
 <img alt="../_images/advanced-python_40DemoReweighting_35_1.png" src="../_images/advanced-python_40DemoReweighting_35_1.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="50LikelihoodInference.html" class="btn btn-neutral float-right" title="Likelihood inference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="33OLDDemoNeuralNetworks.html" class="btn btn-neutral float-left" title="6: Neural networks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="50LikelihoodInference.html" class="btn btn-neutral float-right" title="Likelihood inference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.
-
-    </p>
+    <p>&#169; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
-  
     Hello world
 
 

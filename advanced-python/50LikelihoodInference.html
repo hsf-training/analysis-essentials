@@ -1,82 +1,41 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Likelihood inference &mdash; Analysis essentials  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="8: sPlot" href="60sPlot.html" />
     <link rel="prev" title="7: Demonstration of distribution reweighting" href="40DemoReweighting.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> Analysis essentials
-          
-
-          
-            
             <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -84,18 +43,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../python/README.html">An introduction to Python</a><ul>
@@ -355,6 +303,26 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../snakemake/README.html">Analysis automation with Snakemake</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#documentation-and-environments">Documentation and environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#workflow-preservation">Workflow preservation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#basic-tutorial">Basic Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#what-is-a-workflow">What is a workflow?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#why-use-a-workflow-management-system">Why use a workflow management system?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#re-running-rules">Re-running rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#chaining-rules">Chaining rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#the-limits-of-wildcards">The limits of wildcards</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#advanced-tutorial">Advanced Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#running-scripts">Running scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#log-files">Log files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#config-files">Config files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../git/README.html">Git</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../git/01-basics.html">Automated Version Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/02-setup.html">Setting Up Git</a></li>
@@ -398,75 +366,31 @@
 </li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Analysis essentials</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="README.html">Advanced Python Tutorial</a> &raquo;</li>
-        
       <li>Likelihood inference</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            
               <a href="https://github.com/hsf-training/analysis-essentials/blob/master/advanced-python/50LikelihoodInference.ipynb" class="fa fa-github"> Edit on GitHub</a>
-            
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS for nbsphinx extension */
@@ -737,20 +661,20 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Likelihood-inference">
-<h1>Likelihood inference<a class="headerlink" href="#Likelihood-inference" title="Permalink to this headline">¶</a></h1>
+<section id="Likelihood-inference">
+<h1>Likelihood inference<a class="headerlink" href="#Likelihood-inference" title="Permalink to this headline"></a></h1>
 <p>In most analysis, fitting a model to data is a crucial, last step in the chain in order to extract information about the parameters of interest.</p>
 <p><strong>Model</strong>: First, this involves building a model that depends on various parameters - some that are of immediate interest to us (Parameter Of Interest, POI) and some that help to describe the observables that we expect in the data but do not have any relevant physical meaning such as detectoreffects (Nuisance Parameter).</p>
 <p><strong>Loss</strong>: With the model and the data, a likelihood (or sometimes also a <span class="math notranslate nohighlight">\(\chi^2\)</span> loss) is built. This is a function of the parameters and reflects the <em>likelihood of finding the data given the parameters</em>. The most likely parameter combination is retrieved when maximising the likelihood; also called the Maximum Likelihood (ML) estimator. Except for trivial cases, this has to be done numerically.</p>
 <p>While this procedure returns an estimate of the <em>best-fit</em>, it does not say anything about the <em>uncertainty</em> of our measurement. Therefore, advanced statistical methods are needed that perform toy studies; these are fits to generated samples under different conditions such as fixing a parameter to a certain value.</p>
-<div class="section" id="Scope-of-this-tutorial">
-<h2>Scope of this tutorial<a class="headerlink" href="#Scope-of-this-tutorial" title="Permalink to this headline">¶</a></h2>
+<section id="Scope-of-this-tutorial">
+<h2>Scope of this tutorial<a class="headerlink" href="#Scope-of-this-tutorial" title="Permalink to this headline"></a></h2>
 <p>Here, we focus on the libraries that are available to perform likelihood fits. For unbinned fits in Python, the libraries that we will consider here are <a class="reference external" href="https://github.com/zfit/zfit">zfit</a> (likelihood model fitting library) and <a class="reference external" href="https://github.com/scikit-hep/hepstats">hepstats</a> (higher level statistical inference; can use <code class="docutils literal notranslate"><span class="pre">zfit</span></code> models), both which are relatively young and written in pure Python.</p>
 <p>An alternative to be mentioned is <a class="reference external" href="http://roofit.sourceforge.net/">RooFit</a> and <a class="reference external" href="https://twiki.cern.ch/twiki/bin/view/RooStats/WebHome">RooStats</a>, an older, well-proven, reliable C++ framework that has Python bindings and acts as a standard in HEP for this kind of fits.</p>
 <p>In case your analysis involved pure binned and templated fits, <a class="reference external" href="https://github.com/scikit-hep/pyhf">pyhf</a> provides a specialized library for this kind of fits.</p>
-</div>
-<div class="section" id="Getting-started">
-<h2>Getting started<a class="headerlink" href="#Getting-started" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Getting-started">
+<h2>Getting started<a class="headerlink" href="#Getting-started" title="Permalink to this headline"></a></h2>
 <p>In order to get started with <code class="docutils literal notranslate"><span class="pre">zfit</span></code>, it is recommendable to have a look at the <a class="reference external" href="https://github.com/zfit/zfit-tutorials">zfit-tutorials</a> or the <a class="reference external" href="https://www.youtube.com/playlist?list=PLAuzjeTfC3tNeP6o2sbCr3Jsa6ATvEYR6">recorded</a> <a class="reference external" href="https://www.youtube.com/watch?v=YDW-XxrSbns">tutorials</a>, which also contains <code class="docutils literal notranslate"><span class="pre">hepstats</span></code> tutorials; more the latter can be found <a class="reference external" href="https://github.com/scikit-hep/hepstats/tree/master/notebooks">here</a>.</p>
 <p>Before we continue, it is highly recommended to follow the <a class="reference external" href="https://github.com/zfit/zfit-tutorials/blob/master/Introduction.ipynb">zfit introduction tutorial</a></p>
 <div class="nbinput nblast docutils container">
@@ -834,9 +758,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Difference-of-the-two-spaces">
-<h2>Difference of the two spaces<a class="headerlink" href="#Difference-of-the-two-spaces" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Difference-of-the-two-spaces">
+<h2>Difference of the two spaces<a class="headerlink" href="#Difference-of-the-two-spaces" title="Permalink to this headline"></a></h2>
 <p>While the first space is defined over the whole space from 2.8 to 3.5, the second consists of two distinct regions. Therefore we can use the original space and zfit applies the cut, the same as we did before to the <code class="docutils literal notranslate"><span class="pre">bkg_df</span></code>.</p>
 <p>The difference comes when using the normalization in the PDF: we can either normalize it over the whole range or only over part of it.</p>
 <div class="nbinput nblast docutils container">
@@ -883,9 +807,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Plotting">
-<h2>Plotting<a class="headerlink" href="#Plotting" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Plotting">
+<h2>Plotting<a class="headerlink" href="#Plotting" title="Permalink to this headline"></a></h2>
 <p>Plots can simply be made with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">mplhep</span></code>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -938,7 +862,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_7634/792816345.py:7: UserWarning: The function &lt;function Space.limit1d at 0x7feec96fc550&gt; may does not return the actual area/limits but rather the rectangular limits. &lt;zfit Space obs=(&#39;Jpsi_M&#39;,), axes=(0,), limits=(array([[2.8]]), array([[3.5]]))&gt; can also have functional limits that are arbitrarily defined and lay inside the rect_limits. To test if a value is inside, use `inside` or `filter`.
+/tmp/ipykernel_7711/792816345.py:7: UserWarning: The function &lt;function Space.limit1d at 0x7f49c26edb80&gt; may does not return the actual area/limits but rather the rectangular limits. &lt;zfit Space obs=(&#39;Jpsi_M&#39;,), axes=(0,), limits=(array([[2.8]]), array([[3.5]]))&gt; can also have functional limits that are arbitrarily defined and lay inside the rect_limits. To test if a value is inside, use `inside` or `filter`.
   lower, upper = data.data_range.limit1d
 </pre></div></div>
 </div>
@@ -958,9 +882,9 @@ div.rendered_html tbody tr:hover {
 <img alt="../_images/advanced-python_50LikelihoodInference_16_2.png" src="../_images/advanced-python_50LikelihoodInference_16_2.png" />
 </div>
 </div>
-</div>
-<div class="section" id="Loss">
-<h2>Loss<a class="headerlink" href="#Loss" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Loss">
+<h2>Loss<a class="headerlink" href="#Loss" title="Permalink to this headline"></a></h2>
 <p>Since we have now the models and the datasets, we can e.g. pre-fit the signal PDF to the simulation.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -1007,14 +931,14 @@ Extended PDFs are given to a normal UnbinnedNLL. This won&#39;t take the yield i
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7fef4c8eca60&gt;] constraints=[]&gt;
+&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7f4a14dd9ac0&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
 ╒═════════╤═════════════╤══════════════════╤═════════╤═════════════╕
 │ valid   │ converged   │ param at limit   │ edm     │ min value   │
 ╞═════════╪═════════════╪══════════════════╪═════════╪═════════════╡
-│ <span class="ansi-green-intense-bg">True</span>    │ True        │ False            │ 1.3e-07 │ -1.382e+05  │
+│ True    │ True        │ False            │ 1.3e-07 │ -1.382e+05  │
 ╘═════════╧═════════════╧══════════════════╧═════════╧═════════════╛
 
 <span class="ansi-bold">Parameters
@@ -1024,8 +948,8 @@ mu        3.097       False
 sigma   0.01503       False
 </pre></div></div>
 </div>
-<div class="section" id="Fixing-parameters">
-<h3>Fixing parameters<a class="headerlink" href="#Fixing-parameters" title="Permalink to this headline">¶</a></h3>
+<section id="Fixing-parameters">
+<h3>Fixing parameters<a class="headerlink" href="#Fixing-parameters" title="Permalink to this headline"></a></h3>
 <p>Sometimes we want to fix parameters obtained from MC, such as tailes. Here we will fix the <code class="docutils literal notranslate"><span class="pre">sigma</span></code>, just for demonstration purpose.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
@@ -1070,23 +994,23 @@ sigma   0.01503       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7feec6a69160&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f49bf81fcd0&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
-╒═════════╤═════════════╤══════════════════╤═══════╤═════════════╕
-│ valid   │ converged   │ param at limit   │ edm   │ min value   │
-╞═════════╪═════════════╪══════════════════╪═══════╪═════════════╡
-│ <span class="ansi-green-intense-bg">True</span>    │ True        │ False            │ 4e-05 │ 811.4       │
-╘═════════╧═════════════╧══════════════════╧═══════╧═════════════╛
+╒═════════╤═════════════╤══════════════════╤═════════╤═════════════╕
+│ valid   │ converged   │ param at limit   │ edm     │ min value   │
+╞═════════╪═════════════╪══════════════════╪═════════╪═════════════╡
+│ True    │ True        │ False            │ 1.8e-05 │ 815.3       │
+╘═════════╧═════════════╧══════════════════╧═════════╧═════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name         value    at limit
 ---------  -------  ----------
-bkg_yield     6044       False
-sig_yield     98.9       False
-lambda      -1.023       False
-mu           3.088       False
+bkg_yield     6024       False
+sig_yield    107.8       False
+lambda       -1.02       False
+mu           3.092       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1152,8 +1076,8 @@ Z = \Phi^{-1}(1 - p_0).
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-p_value for the Null hypothesis = 2.0020801519970988e-05
-Significance (in units of sigma) = 4.107239469321687
+p_value for the Null hypothesis = 2.3158036928094816e-06
+Significance (in units of sigma) = 4.5808180184455605
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1162,62 +1086,45 @@ Significance (in units of sigma) = 4.107239469321687
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(2.0020801519970988e-05, 4.107239469321687)
+(2.3158036928094816e-06, 4.5808180184455605)
 </pre></div></div>
 </div>
 <p><strong>Exercise</strong> play around! First things first: repeat the fit. The difference we will see is statistical fluctuation from the resampling of the data; we take only a fraction at random.</p>
 <p>Change the fraction of data that we have, the BDT cut, the signal model…</p>
 <p>Attention: it is easy to have a significance of <code class="docutils literal notranslate"><span class="pre">inf</span></code> here</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="60sPlot.html" class="btn btn-neutral float-right" title="8: sPlot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="40DemoReweighting.html" class="btn btn-neutral float-left" title="7: Demonstration of distribution reweighting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="60sPlot.html" class="btn btn-neutral float-right" title="8: sPlot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.
-
-    </p>
+    <p>&#169; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
-  
     Hello world
 
 
