@@ -309,6 +309,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#basic-tutorial">Basic Tutorial</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#what-is-a-workflow">What is a workflow?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#why-use-a-workflow-management-system">Why use a workflow management system?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#introducing-snakemake">Introducing Snakemake</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#re-running-rules">Re-running rules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#chaining-rules">Chaining rules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#the-limits-of-wildcards">The limits of wildcards</a></li>
@@ -722,7 +723,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fdabf3a2af0&gt;
+&lt;matplotlib.legend.Legend at 0x7fbec9ab70d0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -991,12 +992,12 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-name           value    at limit
----------  ---------  ----------
-bkg_yield     118400       False
-sig_yield      19850       False
-lambda     -0.001993       False
-mu              5279       False
+name          value    at limit
+---------  --------  ----------
+bkg_yield    118300       False
+sig_yield     19990       False
+lambda     -0.00202       False
+mu             5279       False
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1050,7 +1051,7 @@ mu              5279       False
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_7850/4284826777.py:6: UserWarning: The function &lt;function Space.limit1d at 0x7fdac1574940&gt; may does not return the actual area/limits but rather the rectangular limits. &lt;zfit Space obs=(&#39;mass&#39;,), axes=(0,), limits=(array([[5000.]]), array([[6000.]]))&gt; can also have functional limits that are arbitrarily defined and lay inside the rect_limits. To test if a value is inside, use `inside` or `filter`.
+/tmp/ipykernel_7594/4284826777.py:6: UserWarning: The function &lt;function Space.limit1d at 0x7fbecbc7b940&gt; may does not return the actual area/limits but rather the rectangular limits. &lt;zfit Space obs=(&#39;mass&#39;,), axes=(0,), limits=(array([[5000.]]), array([[6000.]]))&gt; can also have functional limits that are arbitrarily defined and lay inside the rect_limits. To test if a value is inside, use `inside` or `filter`.
   lower, upper = data.data_range.limit1d
 </pre></div></div>
 </div>
@@ -1098,9 +1099,9 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&lt;zfit.Parameter &#39;bkg_yield&#39; floating=True value=1.184e+05&gt;: array([-0.19994283,  0.40537243, -0.20072885, ...,  1.12217413,
-        1.12217413,  1.12217413]), &lt;zfit.Parameter &#39;sig_yield&#39; floating=True value=1.985e+04&gt;: array([ 1.19993824,  0.59462904,  1.20072425, ..., -0.12216547,
-       -0.12216547, -0.12216547])}
+{&lt;zfit.Parameter &#39;bkg_yield&#39; floating=True value=1.183e+05&gt;: array([-0.15891069, -0.18011628, -0.0129293 , ...,  1.12292204,
+        1.12292204,  0.90723288]), &lt;zfit.Parameter &#39;sig_yield&#39; floating=True value=1.999e+04&gt;: array([ 1.15891012,  1.18011554,  1.01292987, ..., -0.12291259,
+       -0.12291259,  0.09277488])}
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1118,8 +1119,8 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Sum of signal sWeights:  19850.10647292049
-Sum of background sWeights:  118373.72231838969
+Sum of signal sWeights:  19991.2197495995
+Sum of background sWeights:  118282.79733825839
 </pre></div></div>
 </div>
 <p>Now we can apply the signal <strong>sWeights</strong> on the lifetime distribution and retrieve its signal components.</p>
@@ -1170,7 +1171,7 @@ Sum of background sWeights:  118373.72231838969
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Correlation between m and t: 0.03721222908295933
+Correlation between m and t: 0.03270036583115839
 </pre></div></div>
 </div>
 <p>Let’s apply to signal <strong>sWeights</strong> on the mass distribution to see how bad the results of <strong>sPlot</strong> is when applied on a variable that is correlated with the discrimant variable.</p>
@@ -1311,7 +1312,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fdab04ab160&gt;
+&lt;matplotlib.legend.Legend at 0x7fbea6b8f730&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1356,7 +1357,7 @@ Text(0.5, 0, &#39;p&#39;)
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 ((0.0, 10.0),
- &lt;matplotlib.legend.Legend at 0x7fdab03daca0&gt;,
+ &lt;matplotlib.legend.Legend at 0x7fbea6a96d00&gt;,
  Text(0.5, 0, &#39;mass&#39;))
 </pre></div></div>
 </div>
@@ -1451,7 +1452,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--0.33759774166579093
+-0.3387938889268214
 </pre></div></div>
 </div>
 <p>But within each class there is no correlation, so the requirement is satisfied:</p>
@@ -1470,8 +1471,8 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.01128215112621601
--0.01297613059112001
+-0.0018703695543996607
+-0.0006446074604235539
 </pre></div></div>
 </div>
 <p>as a demonstration why this is important let’s use sweights to reconstruct mass (obviously mass is correlated with mass):</p>

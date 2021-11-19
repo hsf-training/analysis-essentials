@@ -309,6 +309,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#basic-tutorial">Basic Tutorial</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#what-is-a-workflow">What is a workflow?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#why-use-a-workflow-management-system">Why use a workflow management system?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#introducing-snakemake">Introducing Snakemake</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#re-running-rules">Re-running rules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#chaining-rules">Chaining rules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#the-limits-of-wildcards">The limits of wildcards</a></li>
@@ -862,7 +863,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_7711/792816345.py:7: UserWarning: The function &lt;function Space.limit1d at 0x7f49c26edb80&gt; may does not return the actual area/limits but rather the rectangular limits. &lt;zfit Space obs=(&#39;Jpsi_M&#39;,), axes=(0,), limits=(array([[2.8]]), array([[3.5]]))&gt; can also have functional limits that are arbitrarily defined and lay inside the rect_limits. To test if a value is inside, use `inside` or `filter`.
+/tmp/ipykernel_7456/792816345.py:7: UserWarning: The function &lt;function Space.limit1d at 0x7ff34a4a4b80&gt; may does not return the actual area/limits but rather the rectangular limits. &lt;zfit Space obs=(&#39;Jpsi_M&#39;,), axes=(0,), limits=(array([[2.8]]), array([[3.5]]))&gt; can also have functional limits that are arbitrarily defined and lay inside the rect_limits. To test if a value is inside, use `inside` or `filter`.
   lower, upper = data.data_range.limit1d
 </pre></div></div>
 </div>
@@ -931,7 +932,7 @@ Extended PDFs are given to a normal UnbinnedNLL. This won&#39;t take the yield i
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7f4a14dd9ac0&gt;] constraints=[]&gt;
+&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7ff3475d7190&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
@@ -994,23 +995,23 @@ sigma   0.01503       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f49bf81fcd0&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7ff3475dfd30&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
 ╒═════════╤═════════════╤══════════════════╤═════════╤═════════════╕
 │ valid   │ converged   │ param at limit   │ edm     │ min value   │
 ╞═════════╪═════════════╪══════════════════╪═════════╪═════════════╡
-│ True    │ True        │ False            │ 1.8e-05 │ 815.3       │
+│ True    │ True        │ False            │ 2.5e-05 │ 809.9       │
 ╘═════════╧═════════════╧══════════════════╧═════════╧═════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name         value    at limit
 ---------  -------  ----------
-bkg_yield     6024       False
-sig_yield    107.8       False
-lambda       -1.02       False
-mu           3.092       False
+bkg_yield     5997       False
+sig_yield    107.9       False
+lambda      -1.067       False
+mu           3.104       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1076,8 +1077,8 @@ Z = \Phi^{-1}(1 - p_0).
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-p_value for the Null hypothesis = 2.3158036928094816e-06
-Significance (in units of sigma) = 4.5808180184455605
+p_value for the Null hypothesis = 2.0905400096582483e-06
+Significance (in units of sigma) = 4.60217184527388
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1086,7 +1087,7 @@ Significance (in units of sigma) = 4.5808180184455605
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(2.3158036928094816e-06, 4.5808180184455605)
+(2.0905400096582483e-06, 4.60217184527388)
 </pre></div></div>
 </div>
 <p><strong>Exercise</strong> play around! First things first: repeat the fit. The difference we will see is statistical fluctuation from the resampling of the data; we take only a fraction at random.</p>

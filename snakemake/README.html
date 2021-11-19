@@ -307,6 +307,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#basic-tutorial">Basic Tutorial</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#what-is-a-workflow">What is a workflow?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#why-use-a-workflow-management-system">Why use a workflow management system?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#introducing-snakemake">Introducing Snakemake</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#re-running-rules">Re-running rules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#chaining-rules">Chaining rules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#the-limits-of-wildcards">The limits of wildcards</a></li>
@@ -439,10 +440,11 @@ This environment comes with very recent versions of
 ROOT, python, cmake, g++, snakemake, <em>etc.</em>, ready to use.
 In general, it is recommended that if you are running non-lhcb software
 (<em>e.g.</em>, code you’ve written yourself for your analysis)
-it should be done with <code class="docutils literal notranslate"><span class="pre">lb-conda</span></code>.</p>
+it should be done with <code class="docutils literal notranslate"><span class="pre">lb-conda</span></code>.
+More information on using <code class="docutils literal notranslate"><span class="pre">lb-conda</span></code> can be found <a class="reference external" href="https://gitlab.cern.ch/lhcb-core/lbcondawrappers/-/blob/master/README.md">here</a>.</p>
 <div class="panel panel-callout docutils container">
 <div class="panel-header open docutils container">
-<p id="accessing-the-lb-conda-environment"><i class="fa fa-info-circle"></i> accessing the lb-conda environment</p>
+<p id="accessing-the-lb-conda-environment"><i class="fa fa-info-circle"></i> Accessing the lb-conda environment</p>
 </div>
 <div class="panel-body docutils container">
 <p>To have access to <code class="docutils literal notranslate"><span class="pre">lb-conda</span></code> you must first have sourced <code class="docutils literal notranslate"><span class="pre">LbEnv</span></code>.
@@ -464,8 +466,8 @@ by running <code class="docutils literal notranslate"><span class="pre">lb-conda
 Be careful if you do this–it can lead to conflicts in the environment.</p>
 </div>
 </div>
-<p>More information on using <code class="docutils literal notranslate"><span class="pre">lb-conda</span></code> can be found <a class="reference external" href="https://gitlab.cern.ch/lhcb-core/lbcondawrappers/-/blob/master/README.md">here</a>.</p>
-<p>You can now check if Snakemake is working by calling <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">--help</span></code> in the <code class="docutils literal notranslate"><span class="pre">lb-conda</span> <span class="pre">default</span></code> environment.</p>
+<p>You can check if Snakemake is working by calling <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">--help</span></code>
+in the <code class="docutils literal notranslate"><span class="pre">lb-conda</span> <span class="pre">default</span></code> environment.</p>
 </section>
 <section id="workflow-preservation">
 <h2>Workflow preservation<a class="headerlink" href="#workflow-preservation" title="Permalink to this headline"></a></h2>
@@ -564,6 +566,9 @@ and what their input dependencies are</p></li>
 <p>If you have ever performed an HEP analysis
 or looked at the code for someone else’s analysis,
 you probably understand why the above features are so useful.</p>
+</section>
+<section id="introducing-snakemake">
+<h3>Introducing Snakemake<a class="headerlink" href="#introducing-snakemake" title="Permalink to this headline"></a></h3>
 <p>Snakemake allows you to create a set of rules,
 each one defining a step of your analysis.
 The rules need to be written in a file called <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code>.
@@ -662,13 +667,18 @@ We are essentially telling Snakemake that this is a rule that can create
 files of the form <code class="docutils literal notranslate"><span class="pre">output/{name}.out</span></code>;
 we cannot specify wildcards in <code class="docutils literal notranslate"><span class="pre">input</span></code> that are not present in <code class="docutils literal notranslate"><span class="pre">output</span></code>
 because Snakemake will not know what they should be.</p>
-<blockquote>
-<div><p>Notice that the wildcard <code class="docutils literal notranslate"><span class="pre">name</span></code> appears as <code class="docutils literal notranslate"><span class="pre">{name}</span></code>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="wildcard-syntax"><i class="fa fa-info-circle"></i> Wildcard syntax</p>
+</div>
+<div class="panel-body docutils container">
+<p>Notice that the wildcard <code class="docutils literal notranslate"><span class="pre">name</span></code> appears as <code class="docutils literal notranslate"><span class="pre">{name}</span></code>
 in the declaration of <code class="docutils literal notranslate"><span class="pre">input</span></code> and <code class="docutils literal notranslate"><span class="pre">output</span></code>
 but as <code class="docutils literal notranslate"><span class="pre">{wildcards.name}</span></code> in the declaration of <code class="docutils literal notranslate"><span class="pre">shell</span></code>.
 This is an unavoidable quirk of how Snakemake works,
 and you must remember it to avoid errors.</p>
-</div></blockquote>
+</div>
+</div>
 <p>Snakemake can now handle all of our input and output.
 Run</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake output/<span class="o">{</span>a..z<span class="o">}</span>.out --cores <span class="m">4</span>
@@ -686,8 +696,12 @@ we were able to take advantage of our computing power
 to perform multiple tasks <em>at the same time</em>.
 This built-in parallelism is one of the nicest features
 of using a workflow manager.</p>
-<blockquote>
-<div><p>You can see how many cores are on the machine you’re using by calling
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="how-many-cores-should-i-use?"><i class="fa fa-info-circle"></i> How many cores should I use?</p>
+</div>
+<div class="panel-body docutils container">
+<p>You can see how many cores are on the machine you’re using by calling
 <code class="docutils literal notranslate"><span class="pre">nproc</span></code> from the command line.
 If you’re on lxplus, there should be 10.
 If you want Snakemake to use all of them,
@@ -695,22 +709,14 @@ you can use <code class="docutils literal notranslate"><span class="pre">--cores
 <strong>This is bad practice on a shared machine</strong>, like on lxplus;
 you should leave some computing resources available to other users
 so that they can at least log in.</p>
-</div></blockquote>
+</div>
+</div>
 <p>We can tell Snakemake which files to create from within our Snakefile.
 At the beginning of the file, add</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">name_all</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;output/</span><span class="si">{</span><span class="nb">chr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">.out&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
 </pre></div>
 </div>
-<blockquote>
-<div><p>Notice that we have used python list-comprehension
-to declare the input files for rule <code class="docutils literal notranslate"><span class="pre">name_all</span></code>.
-Snakemake is python-based,
-so you can execute arbitrary python code anywhere in your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code>
-if you want to.
-Also notice that we have given a list as the input instead of a file name;
-Snakemake can handle both.</p>
-</div></blockquote>
 <p>We have declared a new rule, <code class="docutils literal notranslate"><span class="pre">name_all</span></code>, at the beginning of the file
 with all our required output files listed as <code class="docutils literal notranslate"><span class="pre">input</span></code>
 and no <code class="docutils literal notranslate"><span class="pre">output</span></code> files declared.
@@ -725,6 +731,30 @@ If we remove <code class="docutils literal notranslate"><span class="pre">output
 </pre></div>
 </div>
 <p>we see that <code class="docutils literal notranslate"><span class="pre">output/</span></code> is produced the same as before.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="snakemake-and-python"><i class="fa fa-info-circle"></i> Snakemake and python</p>
+</div>
+<div class="panel-body docutils container">
+<p>Notice that we have used python list-comprehension
+to declare the input files for rule <code class="docutils literal notranslate"><span class="pre">name_all</span></code>.
+Snakemake is python-based,
+so you can execute arbitrary python code anywhere in your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code>
+if you want to.</p>
+</div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="types-of-input"><i class="fa fa-info-circle"></i> Types of input</p>
+</div>
+<div class="panel-body docutils container">
+<p>Notice that we have given a list as the input to rule <code class="docutils literal notranslate"><span class="pre">name_all</span></code>
+instead of a file name.
+Snakemake can interpret many types of input,
+including strings, tuples, lists, and even functions!
+See the documentation <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html">here</a>.</p>
+</div>
+</div>
 <p>Congratulations, you’ve just defined a workflow using Snakemake!</p>
 </section>
 <section id="re-running-rules">
@@ -838,7 +868,7 @@ as far as Snakemake is concerned,
 </section>
 <section id="the-limits-of-wildcards">
 <h3>The limits of wildcards<a class="headerlink" href="#the-limits-of-wildcards" title="Permalink to this headline"></a></h3>
-<p>Our <a class="reference download internal" download="" href="../_downloads/99eff8789327fe1c0ad012fd469a30e6/Snakefile"><code class="xref download docutils literal notranslate"><code class="docutils literal notranslate"><span class="pre">Snakefile</span></code></code></a>
+<p>Our <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code>
 isn’t limited to creating <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code>, …, <code class="docutils literal notranslate"><span class="pre">output/z.out</span></code>.
 Trying calling</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>snakemake output/hello_world.out --cores <span class="m">4</span>
@@ -887,13 +917,30 @@ Snakemake allows <code class="docutils literal notranslate"><span class="pre">in
 you could be creating <code class="docutils literal notranslate"><span class="pre">.root</span></code> files, <code class="docutils literal notranslate"><span class="pre">.gif</span></code> files, or <code class="docutils literal notranslate"><span class="pre">.docx</span></code> files
 and Snakemake will execute regardless.</p>
 <p>You can see the whole working <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> <a class="reference download internal" download="" href="../_downloads/99eff8789327fe1c0ad012fd469a30e6/Snakefile"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+<div class="panel panel-keypoints docutils container">
+<div class="panel-header open docutils container">
+<p id="key-points"><i class="fa fa-key"></i> Key Points</p>
+</div>
+<div class="panel-body docutils container">
+<ul class="simple">
+<li><p>Explain what a workflow is.</p></li>
+<li><p>Explain some of the benefits of using a workflow management system.</p></li>
+<li><p>Define a workflow using Snakemake.</p></li>
+</ul>
+</div>
+</div>
 </section>
 </section>
 <section id="advanced-tutorial">
 <h2>Advanced Tutorial<a class="headerlink" href="#advanced-tutorial" title="Permalink to this headline"></a></h2>
 <p>In this tutorial,
-we will examine more advanced Snakemake topics using pre-defined inputs.
-To begin, run</p>
+we will examine more advanced Snakemake topics using pre-defined inputs.</p>
+<div class="panel panel-prereq docutils container">
+<div class="panel-header open docutils container">
+<p id="prerequisites"><i class="fa fa-rocket"></i> Prerequisites</p>
+</div>
+<div class="panel-body docutils container">
+<p>To begin, run</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir advanced_tutorial
 <span class="nb">cd</span> advanced_tutorial
 wget https://github.com/hsf-training/analysis-essentials/raw/master/snakemake/code/advanced_tutorial/input.tar
@@ -903,10 +950,13 @@ ls input/
 </div>
 <p>You should see <code class="docutils literal notranslate"><span class="pre">address.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">phone.txt</span></code>.
 The first contains names followed by addresses;
-the second contains names followed by phone numbers.</p>
-<p>You can find the ultimate solution,
-how your workflow might look after solving
-all of the challenges in this tutorial,
+the second contains names followed by phone numbers.
+These are the pre-defined input files</p>
+</div>
+</div>
+<p>You can find the ultimate solution
+(how your workflow might look after solving
+all of the challenges in this tutorial)
 <a class="reference external" href="https://github.com/hsf-training/analysis-essentials/raw/master/snakemake/code/advanced_tutorial.tar">here</a>.</p>
 <div class="panel panel-challenge docutils container">
 <div class="panel-header open docutils container">
@@ -1215,14 +1265,20 @@ which is similar to <code class="docutils literal notranslate"><span class="pre"
 <h3>Log files<a class="headerlink" href="#log-files" title="Permalink to this headline"></a></h3>
 <p>Within Snakemake,
 a log file is a special type of output file that is not deleted if a rule fails.</p>
-<blockquote>
-<div><p>If an error is raised during the execution of a rule,
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="snakemake-and-execution-failures"><i class="fa fa-info-circle"></i> Snakemake and execution failures</p>
+</div>
+<div class="panel-body docutils container">
+<p>If an error is raised during the execution of a rule,
 Snakemake deletes the files listed as <code class="docutils literal notranslate"><span class="pre">output</span></code>,
 since they could be corrupted.
 To see this happen,
-simply add the line <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">False</span></code> anywhere in your python code.
+simply add the line <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">False</span></code> to the end of <a class="reference download internal" download="" href="../_downloads/a8ebd47bc69f97c9104b4cc89bb04d1b/get_info.py"><code class="xref download docutils literal notranslate"><code class="docutils literal notranslate"><span class="pre">get_info.py</span></code></code></a>
+and run it using Snakemake.
 A log file, by contrast, is not deleted.</p>
-</div></blockquote>
+</div>
+</div>
 <p>In practice, log files allow you to monitor the behaviour of your rules
 and debug when things go wrong.
 To declare a log file, simply add it to your rule declaration:</p>
@@ -1349,6 +1405,11 @@ also inside the shell command or even outside a rule.</p>
 <p id="make-a-config-file"><i class="fa fa-square-o"></i> Make a config file</p>
 </div>
 <div class="panel-body docutils container">
+<div class="panel panel-prereq docutils container">
+<div class="panel-header open docutils container">
+<p id="prerequisites"><i class="fa fa-rocket"></i> Prerequisites</p>
+</div>
+<div class="panel-body docutils container">
 <p>Download some alternate input files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://github.com/hsf-training/analysis-essentials/raw/master/snakemake/code/advanced_tutorial/input_alt.tar
 tar -xvf input_alt.tar
@@ -1356,8 +1417,10 @@ ls input_alt/
 </pre></div>
 </div>
 <p>You should see a new set of addresses and phone numbers.</p>
-<p>Create a config file that can specify which set of addresses and phone numbers
-should be used.</p>
+</div>
+</div>
+<p>Create a config file that can specify whether to use
+the addresses and phone numbers in <code class="docutils literal notranslate"><span class="pre">input/</span></code> or those in <code class="docutils literal notranslate"><span class="pre">input_alt/</span></code>.</p>
 <div class="panel panel-solution docutils container">
 <div class="panel-header docutils container">
 <p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
@@ -1503,7 +1566,20 @@ would have a report explaining how it was made.
 For more information on using reports as well as more examples,
 see the Snakemake documentation
 [here](https://snakemake.readthedocs.io/en/stable/snakefiles/reporting.html).
---></section>
+--><div class="panel panel-keypoints docutils container">
+<div class="panel-header open docutils container">
+<p id="key-points"><i class="fa fa-key"></i> Key Points</p>
+</div>
+<div class="panel-body docutils container">
+<ul class="simple">
+<li><p>Explain a DAG and how <code class="docutils literal notranslate"><span class="pre">Snakemake</span></code> rules can relate to each other.</p></li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> that can run existing scripts.</p></li>
+<li><p>Keep track of progress and problems using log files.</p></li>
+<li><p>Explain the benefits of <code class="docutils literal notranslate"><span class="pre">include</span></code> in Snakemake and how to use them.</p></li>
+</ul>
+</div>
+</div>
+</section>
 </section>
 </section>
 

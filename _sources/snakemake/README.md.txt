@@ -23,8 +23,9 @@ ROOT, python, cmake, g++, snakemake, *etc.*, ready to use.
 In general, it is recommended that if you are running non-lhcb software
 (*e.g.*, code you've written yourself for your analysis)
 it should be done with `lb-conda`.
+More information on using `lb-conda` can be found [here](https://gitlab.cern.ch/lhcb-core/lbcondawrappers/-/blob/master/README.md).
 
-{% callout "accessing the `lb-conda` environment" %}
+{% callout "Accessing the `lb-conda` environment" %}
 
 To have access to `lb-conda` you must first have sourced `LbEnv`.
 This is done by default on lxplus;
@@ -48,9 +49,8 @@ Be careful if you do this--it can lead to conflicts in the environment.
 
 {% endcallout %}
 
-More information on using `lb-conda` can be found [here](https://gitlab.cern.ch/lhcb-core/lbcondawrappers/-/blob/master/README.md).
-
-You can now check if Snakemake is working by calling `snakemake --help` in the `lb-conda default` environment.
+You can check if Snakemake is working by calling `snakemake --help`
+in the `lb-conda default` environment.
 
 ## Workflow preservation
 
@@ -138,6 +138,8 @@ These are all reasons to use a workflow management system.
 If you have ever performed an HEP analysis
 or looked at the code for someone else's analysis,
 you probably understand why the above features are so useful.
+
+### Introducing Snakemake
 
 Snakemake allows you to create a set of rules,
 each one defining a step of your analysis.
@@ -243,11 +245,15 @@ files of the form `output/{name}.out`;
 we cannot specify wildcards in `input` that are not present in `output`
 because Snakemake will not know what they should be.
 
-> Notice that the wildcard `name` appears as `{name}`
-> in the declaration of `input` and `output`
-> but as `{wildcards.name}` in the declaration of `shell`.
-> This is an unavoidable quirk of how Snakemake works,
-> and you must remember it to avoid errors.
+{% callout "Wildcard syntax" %}
+
+Notice that the wildcard `name` appears as `{name}`
+in the declaration of `input` and `output`
+but as `{wildcards.name}` in the declaration of `shell`.
+This is an unavoidable quirk of how Snakemake works,
+and you must remember it to avoid errors.
+
+{% endcallout %}
 
 Snakemake can now handle all of our input and output.
 Run
@@ -268,14 +274,18 @@ to perform multiple tasks *at the same time*.
 This built-in parallelism is one of the nicest features
 of using a workflow manager.
 
-> You can see how many cores are on the machine you're using by calling
-> `nproc` from the command line.
-> If you're on lxplus, there should be 10.
-> If you want Snakemake to use all of them,
-> you can use `--cores all`.
-> **This is bad practice on a shared machine**, like on lxplus;
-> you should leave some computing resources available to other users
-> so that they can at least log in.
+{% callout "How many cores should I use?" %}
+
+You can see how many cores are on the machine you're using by calling
+`nproc` from the command line.
+If you're on lxplus, there should be 10.
+If you want Snakemake to use all of them,
+you can use `--cores all`.
+**This is bad practice on a shared machine**, like on lxplus;
+you should leave some computing resources available to other users
+so that they can at least log in.
+
+{% endcallout %}
 
 We can tell Snakemake which files to create from within our Snakefile.
 At the beginning of the file, add
@@ -283,14 +293,6 @@ At the beginning of the file, add
 rule name_all:
     input: [f"output/{chr(x)}.out" for x in range(ord('a'), ord('z') + 1)]
 ```
-
-> Notice that we have used python list-comprehension
-> to declare the input files for rule `name_all`.
-> Snakemake is python-based,
-> so you can execute arbitrary python code anywhere in your `Snakefile`
-> if you want to.
-> Also notice that we have given a list as the input instead of a file name;
-> Snakemake can handle both.
 
 We have declared a new rule, `name_all`, at the beginning of the file
 with all our required output files listed as `input`
@@ -306,6 +308,26 @@ and run Snakemake again, this time without specifying any output,
 snakemake --cores 4
 ```
 we see that `output/` is produced the same as before.
+
+{% callout "Snakemake and python" %}
+
+Notice that we have used python list-comprehension
+to declare the input files for rule `name_all`.
+Snakemake is python-based,
+so you can execute arbitrary python code anywhere in your `Snakefile`
+if you want to.
+
+{% endcallout %}
+
+{% callout "Types of input" %}
+
+Notice that we have given a list as the input to rule `name_all`
+instead of a file name.
+Snakemake can interpret many types of input,
+including strings, tuples, lists, and even functions!
+See the documentation [here](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html).
+
+{% endcallout %}
 
 Congratulations, you've just defined a workflow using Snakemake!
 
@@ -421,7 +443,7 @@ as far as Snakemake is concerned,
 
 ### The limits of wildcards
 
-Our [`Snakefile`](code/basic_tutorial/Snakefile)
+Our `Snakefile`
 isn't limited to creating `output/a.out`, ..., `output/z.out`.
 Trying calling
 ```bash
@@ -470,10 +492,21 @@ and Snakemake will execute regardless.
 
 You can see the whole working `Snakefile` [here](code/basic_tutorial/Snakefile).
 
+{% keypoints "Key Points" %}
+
+- Explain what a workflow is.
+- Explain some of the benefits of using a workflow management system.
+- Define a workflow using Snakemake.
+
+{% endkeypoints %}
+
 ## Advanced Tutorial
 
 In this tutorial,
 we will examine more advanced Snakemake topics using pre-defined inputs.
+
+{% prereq "Prerequisites" %}
+
 To begin, run
 ```bash
 mkdir advanced_tutorial
@@ -485,10 +518,13 @@ ls input/
 You should see `address.txt` and `phone.txt`.
 The first contains names followed by addresses;
 the second contains names followed by phone numbers.
+These are the pre-defined input files
 
-You can find the ultimate solution,
-how your workflow might look after solving
-all of the challenges in this tutorial,
+{% endprereq %}
+
+You can find the ultimate solution
+(how your workflow might look after solving
+all of the challenges in this tutorial)
 [here](https://github.com/hsf-training/analysis-essentials/raw/master/snakemake/code/advanced_tutorial.tar).
 
 {% challenge "Get Luca's address and phone number" %}
@@ -787,12 +823,17 @@ which is similar to `run` but it allows you to refer to an external file.
 Within Snakemake,
 a log file is a special type of output file that is not deleted if a rule fails.
 
-> If an error is raised during the execution of a rule,
-> Snakemake deletes the files listed as `output`,
-> since they could be corrupted.
-> To see this happen,
-> simply add the line `assert False` anywhere in your python code.
-> A log file, by contrast, is not deleted.
+{% callout "Snakemake and execution failures" %}
+
+If an error is raised during the execution of a rule,
+Snakemake deletes the files listed as `output`,
+since they could be corrupted.
+To see this happen,
+simply add the line `assert False` to the end of [`get_info.py`](code/advanced_tutorial/get_info.py)
+and run it using Snakemake.
+A log file, by contrast, is not deleted.
+
+{% endcallout %}
 
 In practice, log files allow you to monitor the behaviour of your rules
 and debug when things go wrong.
@@ -918,6 +959,9 @@ also inside the shell command or even outside a rule.
 
 {% challenge "Make a config file" %}
 
+
+{% prereq "Prerequisites" %}
+
 Download some alternate input files:
 ```bash
 wget https://github.com/hsf-training/analysis-essentials/raw/master/snakemake/code/advanced_tutorial/input_alt.tar
@@ -926,8 +970,10 @@ ls input_alt/
 ```
 You should see a new set of addresses and phone numbers.
 
-Create a config file that can specify which set of addresses and phone numbers
-should be used.
+{% endprereq %}
+
+Create a config file that can specify whether to use
+the addresses and phone numbers in `input/` or those in `input_alt/`.
 
 {% solution "Solution" %}
 
@@ -1070,3 +1116,12 @@ For more information on using reports as well as more examples,
 see the Snakemake documentation
 [here](https://snakemake.readthedocs.io/en/stable/snakefiles/reporting.html).
 -->
+
+{% keypoints "Key Points" %}
+
+- Explain a DAG and how `Snakemake` rules can relate to each other.
+- Create a `Snakefile` that can run existing scripts.
+- Keep track of progress and problems using log files.
+- Explain the benefits of `include` in Snakemake and how to use them.
+
+{% endkeypoints %}
