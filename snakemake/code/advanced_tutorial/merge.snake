@@ -1,0 +1,6 @@
+rule merge_data:
+    input:
+        address="output/{name}/address.txt",
+        phone="output/{name}/phone.txt",
+    output: report("output/{name}/info.txt")
+    shell: "cat {input.address} > {output} && cat {input.phone} >> {output}"

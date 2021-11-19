@@ -1,0 +1,7 @@
+rule get_info:
+    input:
+        exe="get_info.py",
+        infile=f"{config['data']}/{{info}}.txt",
+    log: "log/{name}/{info}.txt"
+    output: temp("output/{name}/{info}.txt")
+    shell: "python {input.exe} {wildcards.name} {input.infile} {output} &> {log}"
