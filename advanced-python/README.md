@@ -63,7 +63,7 @@ More tutorials for general machine learning algorithms can be found in the
 ### Reweighting
 
 Reweighting a distribution can be a useful technique to apply corrections.
-- 40 demonstrates two methods of non-parametric reweighting of two distributions in order
+- 45 demonstrates two methods of non-parametric reweighting of two distributions in order
 to correct for MC and data differences. Histogram-based as well as the more powerful, yet
 harder to control GradientBoostingReweighter are introduced
 
