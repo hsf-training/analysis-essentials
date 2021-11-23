@@ -26,9 +26,8 @@ a knowledge base that one can always come back to lock up things.
 ```
 
 
-## Lesson overview 
 
-### Pure Python, advanced
+**Pure Python, advanced**
 
  - Notebook 10 starts out with a repetition of the basics of Python.
  - In notebook 11, advanced concepts like
@@ -36,7 +35,7 @@ exceptions, context manager and the factory-pattern together with decorators is 
 - 12 is a tutorial about classes, especially on the focus of dunder (`__meth__`) methods and
 covers from simpler `__len__` and add up to the advanced `__getattr__`.
 
-### Data loading and plotting
+**Data loading and plotting**
 
 Notebook 20 introduced data loading with uproot, Pandas DataFrames as the default container for columnar data
 that can apply cuts and the plotting libraries.
@@ -45,7 +44,7 @@ More on pandas can be found in their
 [excellent documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html) 
 or by searching the web
 
-### Multivariate Analysis and Machine Learning
+**Multivariate Analysis and Machine Learning**
 
 These notebooks provide an introduction to more sophisticated cuts using machine learning techniques.
 - 30 starts out with the basics of using a BDT and the scikit-learn standard library for this kind
@@ -60,14 +59,14 @@ More tutorials for general machine learning algorithms can be found in the
 [scikit-learn tutorial section](https://scikit-learn.org/stable/tutorial/basic/tutorial.html)
 
 
-### Reweighting
+**Reweighting**
 
 Reweighting a distribution can be a useful technique to apply corrections.
 - 45 demonstrates two methods of non-parametric reweighting of two distributions in order
 to correct for MC and data differences. Histogram-based as well as the more powerful, yet
 harder to control GradientBoostingReweighter are introduced
 
-### Statistical Inference
+**Statistical Inference**
 
 The last step in most analysis is the inference through a likelihood based method. This involves
 to fit a model to data or toy datasets repeatedly in order to infer the physical parameters that
@@ -80,12 +79,12 @@ is used to estimate the significance of the discovery.
 More tutorials on [zfit](https://github.com/zfit/zfit-tutorials) as well as 
 [hepstats](https://github.com/scikit-hep/hepstats/tree/master/notebooks) are available.
 
-### sPlot technique
+**sPlot technique**
 
 The sPlot - or sWeights - technique is introduced; a technique to statistically subtract the background
 events in a variable. The technique as well as the library to obtain the weights is demonstrated.
 
-### Scikit-HEP
+**Scikit-HEP**
 
 Many libraries that are seen in this tutorial are part of 
 [Scikit-HEP, the HEP Python ecosystem](https://scikit-hep.org/).
