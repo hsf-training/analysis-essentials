@@ -776,6 +776,60 @@ and modify the shell command to read
 
 {% endchallenge %}
 
+{% callout "Listing dependencies" %}
+
+Your rule can depend on files that you don't list as `input`;
+Snakemake just won't know about them.
+How many of the dependencies to list as `input`
+is a matter of personal preference.
+You will certainly want to include any input data files.
+In the example above,
+the python script is included as a dependency,
+which means that Snakemake will run rule `get_info` if it changes.
+This is probably the behaviour that you want--after all,
+if you change how to create the output file,
+it should be recreated.
+
+The tricky part is if you find yourself making a lot of minor changes.
+Suppose you update the documentation in a file
+without changing any of the actual commands;
+Snakemake will still re-run the rule--it has no way of knowing
+whether the changes you made were substantial or inconsequential.
+Also, notice that you could make substantial changes to the `shell` command
+in a rule of your `Snakefile` and Snakemake would not re-run it
+(unless you listed your `Snakefile` as an `input`,
+which is not recommended).
+
+One philosophy is to avoid listing the executable code as an input
+and to remember to re-run the changed rules manually
+(most easily done using the `--forcerun` or `-R`
+[argument](https://snakemake.readthedocs.io/en/stable/executing/cli.html)).
+This has the benefit of treating changes to rule definitions
+and changes to executable files equally,
+that is, having Snakemake ignore them both.
+The downside, of course, is that if you have a complicated DAG,
+this is not always easy to keep track of,
+and besides, one of the reasons to use Snakemake is
+so you don't have to remember such things.
+
+In practice, the solution is subjective and situation-dependent.
+You probably don't want to list your `numpy` distribution as an `input`,
+you probably do want to list your python executable as one.
+To avoid re-running rules just because you changed a comment,
+you could use `touch -m` to adjust the modification time of the file;
+you could creatively use [`--allowed-rules`](https://snakemake.readthedocs.io/en/stable/executing/cli.html)
+to avoid specific rules;
+or, if you are using git,
+you could use a combination of [`--date`](https://git-scm.com/docs/git-commit)
+and the solution [here](https://snakemake.readthedocs.io/en/stable/project_info/faq.html?highlight=git#git-is-messing-up-the-modification-times-of-my-input-files-what-can-i-do).
+These workarounds all require you to be careful, however,
+and can lead to unexpected results.
+
+The cleanest solution is to just live with the fact that you will have to re-run
+rules after minor changes.
+
+{% endcallout %}
+
 You have two ways to specify commands.
 One is `shell`, which we've been using.
 The other is `run` that instead directly takes python code.
