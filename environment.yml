@@ -2,8 +2,10 @@ name: analysis-essentials
 channels:
   - conda-forge
 dependencies:
+  - boost-histogram
   - hep_ml
   - hepunits
+  - hist
   - ipython
   - matplotlib
   - mplhep
@@ -18,12 +20,14 @@ dependencies:
   - scipy
   - uproot >4.0.5,<5
   - uproot3
+  - vector
   - wget
   - xgboost
   - pip:
     - git+https://github.com/hsf-training/python-lesson.git
-    - tensorflow  # lacking behind pip versions
-    - zfit >=0.6.4,<0.8
+    - tensorflow
+    - zfit >=0.8,<0.10
+    - keras <2.7  # temporary fix for https://github.com/keras-team/keras/issues/15579
     - hepstats
     - formulate
     - starterkit-ci
