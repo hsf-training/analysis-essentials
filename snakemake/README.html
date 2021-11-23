@@ -1286,6 +1286,58 @@ and modify the shell command to read
 </div>
 </div>
 </div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="listing-dependencies"><i class="fa fa-info-circle"></i> Listing dependencies</p>
+</div>
+<div class="panel-body docutils container">
+<p>Your rule can depend on files that you don’t list as <code class="docutils literal notranslate"><span class="pre">input</span></code>;
+Snakemake just won’t know about them.
+How many of the dependencies to list as <code class="docutils literal notranslate"><span class="pre">input</span></code>
+is a matter of personal preference.
+You will certainly want to include any input data files.
+In the example above,
+the python script is included as a dependency,
+which means that Snakemake will run rule <code class="docutils literal notranslate"><span class="pre">get_info</span></code> if it changes.
+This is probably the behaviour that you want–after all,
+if you change how to create the output file,
+it should be recreated.</p>
+<p>The tricky part is if you find yourself making a lot of minor changes.
+Suppose you update the documentation in a file
+without changing any of the actual commands;
+Snakemake will still re-run the rule–it has no way of knowing
+whether the changes you made were substantial or inconsequential.
+Also, notice that you could make substantial changes to the <code class="docutils literal notranslate"><span class="pre">shell</span></code> command
+in a rule of your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> and Snakemake would not re-run it
+(unless you listed your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> as an <code class="docutils literal notranslate"><span class="pre">input</span></code>,
+which is not recommended).</p>
+<p>One philosophy is to avoid listing the executable code as an input
+and to remember to re-run the changed rules manually
+(most easily done using the <code class="docutils literal notranslate"><span class="pre">--forcerun</span></code> or <code class="docutils literal notranslate"><span class="pre">-R</span></code>
+<a class="reference external" href="https://snakemake.readthedocs.io/en/stable/executing/cli.html">argument</a>).
+This has the benefit of treating changes to rule definitions
+and changes to executable files equally,
+that is, having Snakemake ignore them both.
+The downside, of course, is that if you have a complicated DAG,
+this is not always easy to keep track of,
+and besides, one of the reasons to use Snakemake is
+so you don’t have to remember such things.</p>
+<p>In practice, the solution is subjective and situation-dependent.
+You probably don’t want to list your <code class="docutils literal notranslate"><span class="pre">numpy</span></code> distribution as an <code class="docutils literal notranslate"><span class="pre">input</span></code>,
+you probably do want to list your python executable as one.
+To avoid re-running rules just because you changed a comment,
+you could use <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">-m</span></code> to adjust the modification time of the file;
+you could creatively use <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/executing/cli.html"><code class="docutils literal notranslate"><span class="pre">--allowed-rules</span></code></a>
+to avoid specific rules;
+or, if you are using git,
+you could use a combination of <a class="reference external" href="https://git-scm.com/docs/git-commit"><code class="docutils literal notranslate"><span class="pre">--date</span></code></a>
+and the solution <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/project_info/faq.html?highlight=git#git-is-messing-up-the-modification-times-of-my-input-files-what-can-i-do">here</a>.
+These workarounds all require you to be careful, however,
+and can lead to unexpected results.</p>
+<p>The cleanest solution is to just live with the fact that you will have to re-run
+rules after minor changes.</p>
+</div>
+</div>
 <p>You have two ways to specify commands.
 One is <code class="docutils literal notranslate"><span class="pre">shell</span></code>, which we’ve been using.
 The other is <code class="docutils literal notranslate"><span class="pre">run</span></code> that instead directly takes python code.
