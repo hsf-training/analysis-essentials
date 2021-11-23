@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8: sPlot &mdash; Analysis essentials  documentation</title>
+  <title>9: sPlot &mdash; Analysis essentials  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Scikit-HEP" href="70ScikitHEPUniverse.html" />
-    <link rel="prev" title="Likelihood inference" href="50LikelihoodInference.html" /> 
+    <link rel="next" title="10: Scikit-HEP" href="70ScikitHEPUniverse.html" />
+    <link rel="prev" title="8: Likelihood inference" href="50LikelihoodInference.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -137,111 +137,178 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="README.html">Advanced Python Tutorial</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="README.html#pure-python-advanced">Pure Python, advanced</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#data-loading-and-plotting">Data loading and plotting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#multivariate-analysis-and-machine-learning">Multivariate Analysis and Machine Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#reweighting">Reweighting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#statistical-inference">Statistical Inference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#splot-technique">sPlot technique</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="README.html#scikit-hep">Scikit-HEP</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="10Basics.html">1: Basics</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="10Basics.html#Basics">Basics</a></li>
-<li class="toctree-l4"><a class="reference internal" href="10Basics.html#Markdown">Markdown</a></li>
-<li class="toctree-l4"><a class="reference internal" href="10Basics.html#Jupyter">Jupyter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="10Basics.html#Importing-modules">Importing modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10Basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="10Basics.html#Basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10Basics.html#Importing-modules">Importing modules</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="11AdvancedPython.html">Advanced Python Concepts</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Packing-and-unpacking-of-values">Packing and unpacking of values</a></li>
-<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Context-manager">Context manager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Using-a-class">Using a class</a></li>
-<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Decorators-and-factories">Decorators and factories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Exceptions">Exceptions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Catching-exceptions">Catching exceptions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Exceptions-as-control-flow">Exceptions as control-flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="11AdvancedPython.html">Advanced Python Concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="11AdvancedPython.html#Packing-and-unpacking-of-values">Packing and unpacking of values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11AdvancedPython.html#Context-manager">Context manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Using-yield">Using <code class="docutils literal notranslate"><span class="pre">yield</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html">Advanced Classes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#Dunder">Dunder</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#len">len</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#str">str</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#Callable">Callable</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#Indexing-(iterating)">Indexing (iterating)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11AdvancedPython.html#Using-a-class">Using a class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11AdvancedPython.html#Decorators-and-factories">Decorators and factories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Decorator">Decorator</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
-<li class="toctree-l3"><a class="reference internal" href="20DataAndPlotting.html">2: First look at data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="20DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="20DataAndPlotting.html#Loading-data">Loading data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="20DataAndPlotting.html#Adding-variables">Adding variables</a></li>
-<li class="toctree-l4"><a class="reference internal" href="20DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11AdvancedPython.html#Exceptions">Exceptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#Custom-Exception">Custom Exception</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="30Classification.html">3: Multivariate Analysis</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="30Classification.html#Using-a-classifier">Using a classifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11AdvancedPython.html#Catching-exceptions">Catching exceptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#pitfall-“guaranteed-execution”">pitfall “guaranteed execution”</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html">4: Extension on Classification</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="31ClassificationExtension.html#Alternative-implimentations">Alternative implimentations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="31ClassificationExtension.html#Feature-engineering">Feature engineering</a></li>
-<li class="toctree-l4"><a class="reference internal" href="31ClassificationExtension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="31ClassificationExtension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11AdvancedPython.html#Exceptions-as-control-flow">Exceptions as control-flow</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="32BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="32BoostingToUniformity.html#Loading-data">Loading data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Dunder">Dunder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#len">len</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#str">str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Callable">Callable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Indexing-(iterating)">Indexing (iterating)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#self">self</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="33OLDDemoNeuralNetworks.html">6: Neural networks</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Downloading-a-dataset">Downloading a dataset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Example-of-training-a-network">Example of training a network</a></li>
-<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Creating-your-own-neural-network">Creating your own neural network</a></li>
-<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Example-of-a-very-specific-neural-network">Example of a very specific neural network</a></li>
-<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Fitting-very-specific-expressions-as-estimators">Fitting very specific expressions as estimators</a></li>
-<li class="toctree-l4"><a class="reference internal" href="33OLDDemoNeuralNetworks.html#Ensembling-of-neural-neworks">Ensembling of neural neworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20DataAndPlotting.html">2: First look at data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="20DataAndPlotting.html#Two-plotting-libraries?">Two plotting libraries?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="20DataAndPlotting.html#5.-The-toy-dataset">5. The toy dataset</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="40DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#Downloading-data">Downloading data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a></li>
-<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
-<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
-<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#GB-discrimination">GB-discrimination</a></li>
-<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#How-to-tune">How to tune</a></li>
-<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="40DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20DataAndPlotting.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="20DataAndPlotting.html#6.-Plotting-a-simple-histogram">6. Plotting a simple histogram</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html">Likelihood inference</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Scope-of-this-tutorial">Scope of this tutorial</a></li>
-<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Getting-started">Getting started</a></li>
-<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Difference-of-the-two-spaces">Difference of the two spaces</a></li>
-<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Plotting">Plotting</a></li>
-<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Loss">Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20DataAndPlotting.html#Adding-variables">Adding variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="20DataAndPlotting.html#Using-rectangular-cuts">Using rectangular cuts</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">8: sPlot</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Simple-sPlot-example">Simple sPlot example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Observed-distributions">Observed distributions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Applying-sWeights">Applying sWeights</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#More-complex-case">More complex case</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Splot">Splot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Alternative:-Known-probabilities">Alternative: Known probabilities</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Appying-sPlot">Appying sPlot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="70ScikitHEPUniverse.html">Scikit-HEP</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="70ScikitHEPUniverse.html#formulate---converting-expressions">formulate - converting expressions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="70ScikitHEPUniverse.html#Particle">Particle</a></li>
-<li class="toctree-l4"><a class="reference internal" href="70ScikitHEPUniverse.html#hepunits">hepunits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="30Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="30Classification.html#Using-a-classifier">Using a classifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="30Classification.html#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">TODO Add a diagram of a decision tree for the above plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="31ClassificationExtension.html">4: Extension on Classification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="32BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="32BoostingToUniformity.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="32BoostingToUniformity.html#Distributions-in-the-Dalitz-features-for-signal-and-background">Distributions in the Dalitz features for signal and background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="32BoostingToUniformity.html#Preparation-of-train/test-datasets">Preparation of train/test datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="32BoostingToUniformity.html#Setting-up-classifiers,-training">Setting up classifiers, training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="32BoostingToUniformity.html#Let’s-look-at-the-results-of-training">Let’s look at the results of training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="32BoostingToUniformity.html#ROC-curves-after-training">ROC curves after training</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="40Histograms.html">6: Histograms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Axes">Axes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="40Histograms.html#Regular">Regular</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40Histograms.html#Variable">Variable</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Axis-Name">Axis Name</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="40Histograms.html#Compatibility-with-mplhep">Compatibility with mplhep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="40Histograms.html#Plotting-with-hist">Plotting with hist</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Multiple-dimensions">Multiple dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Access-Bins">Access Bins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Getting-Density">Getting Density</a></li>
+<li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Projecting-axes">Projecting axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Accessing-everything-relevant">Accessing everything relevant</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="40Histograms.html#Multi-dimensional">Multi dimensional</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Arithmetics">Arithmetics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Weights">Weights</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="45DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="45DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="45DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="45DemoReweighting.html#Original-distributions">Original distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="45DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="45DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="45DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="45DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="45DemoReweighting.html#Comparing-some-simple-expressions:">Comparing some simple expressions:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="45DemoReweighting.html#GB-discrimination">GB-discrimination</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="45DemoReweighting.html#Great!">Great!</a></li>
+<li class="toctree-l4"><a class="reference internal" href="45DemoReweighting.html#What-did-just-happen?">What did just happen?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="45DemoReweighting.html#How-to-tune">How to tune</a></li>
+<li class="toctree-l3"><a class="reference internal" href="45DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="45DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="50LikelihoodInference.html">8: Likelihood inference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Scope-of-this-tutorial">Scope of this tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Getting-started">Getting started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Difference-of-the-two-spaces">Difference of the two spaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Plotting">Plotting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Loss">Loss</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Fixing-parameters">Fixing parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">9: sPlot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Applying-sWeights">Applying sWeights</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Compare">Compare</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#More-complex-case">More complex case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Splot">Splot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Alternative:-Known-probabilities">Alternative: Known probabilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Building-sPlot-over-mass">Building sPlot over mass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Of-course-we-don’t-have-labels-which-events-are-signal-and-which-are-background-beforehand">Of course we don’t have labels which events are signal and which are background beforehand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#We-have-no-information-about-real-labels">We have no information about real labels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Under-assumption-of-linearity:">Under assumption of linearity:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Minimization-of-variation">Minimization of variation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Uncorrelatedness">Uncorrelatedness</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="70ScikitHEPUniverse.html">10: Scikit-HEP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="70ScikitHEPUniverse.html#formulate---converting-expressions">formulate - converting expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="70ScikitHEPUniverse.html#Particle">Particle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="70ScikitHEPUniverse.html#hepunits">hepunits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="70ScikitHEPUniverse.html#Vector">Vector</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="70ScikitHEPUniverse.html#Vector-properties">Vector properties</a></li>
 </ul>
 </li>
 </ul>
@@ -382,7 +449,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="README.html">Advanced Python Tutorial</a> &raquo;</li>
-      <li>8: sPlot</li>
+      <li>9: sPlot</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/hsf-training/analysis-essentials/blob/master/advanced-python/60sPlot.ipynb" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -662,8 +729,8 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="8:-sPlot">
-<h1>8: sPlot<a class="headerlink" href="#8:-sPlot" title="Permalink to this headline"></a></h1>
+<section id="9:-sPlot">
+<h1>9: sPlot<a class="headerlink" href="#9:-sPlot" title="Permalink to this headline"></a></h1>
 <p>This notebook explains <strong>sPlot</strong> and how to use <code class="docutils literal notranslate"><span class="pre">zfit</span></code> and <code class="docutils literal notranslate"><span class="pre">hepstats</span></code> to compute the sWeights with <code class="docutils literal notranslate"><span class="pre">compute_sweights</span></code>. Alternatively, if the probabilities are already available, <code class="docutils literal notranslate"><span class="pre">hep_ml.splot</span></code> can be used. <strong>sPlot</strong> is a way to reconstruct features of mixture components based on known properties of distributions. This method is frequently used in High Energy Physics.</p>
 <p>If you prefer explanations without code, find them <a class="reference external" href="http://arogozhnikov.github.io/2015/10/07/splot.html">here</a></p>
 <div class="nbinput docutils container">
@@ -723,7 +790,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f1a226227f0&gt;
+&lt;matplotlib.legend.Legend at 0x7fc0ad7e0760&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -994,9 +1061,9 @@ div.rendered_html tbody tr:hover {
 <div class="highlight"><pre>
 name           value    at limit
 ---------  ---------  ----------
-bkg_yield     118300       False
-sig_yield      20020       False
-lambda     -0.002014       False
+bkg_yield     118100       False
+sig_yield      20220       False
+lambda     -0.001993       False
 mu              5279       False
 </pre></div></div>
 </div>
@@ -1047,15 +1114,6 @@ mu              5279       False
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/tmp/ipykernel_7883/4284826777.py:6: UserWarning: The function &lt;function Space.limit1d at 0x7f1a24798280&gt; may does not return the actual area/limits but rather the rectangular limits. &lt;zfit Space obs=(&#39;mass&#39;,), axes=(0,), limits=(array([[5000.]]), array([[6000.]]))&gt; can also have functional limits that are arbitrarily defined and lay inside the rect_limits. To test if a value is inside, use `inside` or `filter`.
-  lower, upper = data.data_range.limit1d
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
@@ -1068,7 +1126,7 @@ mu              5279       False
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_60sPlot_23_2.png" src="../_images/advanced-python_60sPlot_23_2.png" />
+<img alt="../_images/advanced-python_60sPlot_23_1.png" src="../_images/advanced-python_60sPlot_23_1.png" />
 </div>
 </div>
 <p><strong>sPlot</strong> will use the fitted yield for each sources to derive the so-called <strong>sWeights</strong> for each data point:</p>
@@ -1099,9 +1157,9 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&lt;zfit.Parameter &#39;bkg_yield&#39; floating=True value=1.183e+05&gt;: array([-0.16133097,  1.08769945, -0.1746184 , ...,  1.12285049,
-        1.04035632,  1.12285049]), &lt;zfit.Parameter &#39;sig_yield&#39; floating=True value=2.002e+04&gt;: array([ 1.16133296, -0.08768675,  1.17462028, ..., -0.12283749,
-       -0.04034402, -0.12283749])}
+{&lt;zfit.Parameter &#39;bkg_yield&#39; floating=True value=1.181e+05&gt;: array([ 0.52591279, -0.19691556, -0.05128984, ...,  1.12218462,
+        1.12219221,  1.12219221]), &lt;zfit.Parameter &#39;sig_yield&#39; floating=True value=2.022e+04&gt;: array([ 0.47409054,  1.19691313,  1.05128856, ..., -0.12217655,
+       -0.12218414, -0.12218414])}
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1119,8 +1177,8 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Sum of signal sWeights:  20015.476989221443
-Sum of background sWeights:  118272.00362728124
+Sum of signal sWeights:  20215.25500402827
+Sum of background sWeights:  118140.56603870273
 </pre></div></div>
 </div>
 <p>Now we can apply the signal <strong>sWeights</strong> on the lifetime distribution and retrieve its signal components.</p>
@@ -1171,7 +1229,7 @@ Sum of background sWeights:  118272.00362728124
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Correlation between m and t: 0.032599984664301355
+Correlation between m and t: 0.033249108332571796
 </pre></div></div>
 </div>
 <p>Let’s apply to signal <strong>sWeights</strong> on the mass distribution to see how bad the results of <strong>sPlot</strong> is when applied on a variable that is correlated with the discrimant variable.</p>
@@ -1312,7 +1370,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f1a146cde50&gt;
+&lt;matplotlib.legend.Legend at 0x7fc08a924580&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1358,7 +1416,7 @@ Text(0.5, 0, &#39;p&#39;)
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 ((0.0, 10.0),
- &lt;matplotlib.legend.Legend at 0x7f1a1a111160&gt;,
+ &lt;matplotlib.legend.Legend at 0x7fc08a87bfd0&gt;,
  Text(0.5, 0, &#39;mass&#39;))
 </pre></div></div>
 </div>
@@ -1454,7 +1512,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--0.33260726728035095
+-0.3465931380972931
 </pre></div></div>
 </div>
 <p>But within each class there is no correlation, so the requirement is satisfied:</p>
@@ -1473,8 +1531,8 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--0.008331691513587898
-0.019972670442630822
+-0.008133036192896327
+-0.015775165584676832
 </pre></div></div>
 </div>
 <p>as a demonstration why this is important let’s use sweights to reconstruct mass (obviously mass is correlated with mass):</p>
@@ -1563,8 +1621,8 @@ Text(0.5, 0, &#39;p&#39;)
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="50LikelihoodInference.html" class="btn btn-neutral float-left" title="Likelihood inference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="70ScikitHEPUniverse.html" class="btn btn-neutral float-right" title="Scikit-HEP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="50LikelihoodInference.html" class="btn btn-neutral float-left" title="8: Likelihood inference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="70ScikitHEPUniverse.html" class="btn btn-neutral float-right" title="10: Scikit-HEP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
