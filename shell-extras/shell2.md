@@ -84,7 +84,7 @@ The owner and the group can be managed by the [`chown`](http://www.linfo.org/cho
 
 What happens if we now write `echo $CHARACTER` in the terminal? Can you explain why?
 
-### Let's now try the following: {.callout}
+{%callout "Let's now try the following:" %}
 
 ```
 source StarWars.sh
@@ -104,6 +104,8 @@ echo $CHARACTER
 ```
 
 Is there any difference?
+
+{% endcallout %}
 
 `Exercise (5 min):` Change the file permissions so that your friends can read, write, and execute (or not) the `StarWars.sh` shell script and try to set their Star Wars character to something you like.
 

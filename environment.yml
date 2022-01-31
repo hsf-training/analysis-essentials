@@ -1,18 +1,33 @@
-name: example-environment
+name: analysis-essentials
 channels:
   - conda-forge
 dependencies:
+  - boost-histogram
+  - hep_ml
+  - hepunits
+  - hist
   - ipython
   - matplotlib
-  - uproot
+  - mplhep
+  - nb_conda
+  - nb_conda_kernels
   - numpy
   - pandas
+  - particle
+  - pandoc
+  - pip
   - scikit-learn
   - scipy
-  - tensorflow
-  - xgboost
-  - hep_ml
+  - uproot >4.0.5,<5
+  - uproot3
+  - vector
   - wget
-  - pip
+  - xgboost
   - pip:
-    - git+https://github.com/hsf-training/python-lesson.git@0.0.2
+    - git+https://github.com/hsf-training/python-lesson.git
+    - tensorflow
+    - zfit >=0.8,<0.10
+    - keras <2.7  # temporary fix for https://github.com/keras-team/keras/issues/15579
+    - hepstats
+    - formulate
+    - starterkit-ci

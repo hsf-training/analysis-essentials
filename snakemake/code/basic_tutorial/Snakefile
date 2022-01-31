@@ -1,0 +1,13 @@
+rule name_all:
+    input: [f"output/{chr(x)}.out" for x in range(ord('a'), ord('z') + 1)]
+
+
+rule create_input:
+    output: "input/{name}.in"
+    shell: "touch {output}"
+
+
+rule name_files:
+    input: rules.create_input.output
+    output: "output/{name}.{ext}"
+    shell: "cat {input} > {output} && echo 'My name is {wildcards.name}.' >> {output}"

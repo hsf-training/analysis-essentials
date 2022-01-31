@@ -1,0 +1,6 @@
+configfile: "cfg.yaml"
+include: "merge.snake"
+include: "get.snake"
+
+rule run:
+    input: ["output/Luca/info.txt", "output/Fred/info.txt", "output/Guillaume/info.txt"]
