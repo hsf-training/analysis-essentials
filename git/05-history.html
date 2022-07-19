@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -482,7 +483,7 @@
 }
 </style>
 <section id="exploring-history">
-<h1>Exploring History<a class="headerlink" href="#exploring-history" title="Permalink to this headline"></a></h1>
+<h1>Exploring History<a class="headerlink" href="#exploring-history" title="Permalink to this heading"></a></h1>
 <div class="panel panel-objectives docutils container">
 <div class="panel-header open docutils container">
 <p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
@@ -516,15 +517,15 @@ An ill-considered change
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git diff HEAD mars.txt
 </pre></div>
 </div>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/mars.txt b/mars.txt</span>
-<span class="gh">index b36abfd..0848c8d 100644</span>
-<span class="gd">--- a/mars.txt</span>
-<span class="gi">+++ b/mars.txt</span>
-<span class="gu">@@ -1,3 +1,4 @@</span>
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
- But the Mummy will appreciate the lack of humidity
-<span class="gi">+An ill-considered change.</span>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/mars.txt b/mars.txt</span><span class="w"></span>
+<span class="gh">index b36abfd..0848c8d 100644</span><span class="w"></span>
+<span class="gd">--- a/mars.txt</span><span class="w"></span>
+<span class="gi">+++ b/mars.txt</span><span class="w"></span>
+<span class="gu">@@ -1,3 +1,4 @@</span><span class="w"></span>
+<span class="w"> </span>Cold and dry, but everything is my favorite color<span class="w"></span>
+<span class="w"> </span>The two moons may be a problem for Wolfman<span class="w"></span>
+<span class="w"> </span>But the Mummy will appreciate the lack of humidity<span class="w"></span>
+<span class="gi">+An ill-considered change.</span><span class="w"></span>
 </pre></div>
 </div>
 <p>which is the same as what you would get if you leave out <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> (try it).  The
@@ -538,33 +539,33 @@ again, but with the notation <code class="docutils literal notranslate"><span cl
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git diff HEAD~2 mars.txt
 </pre></div>
 </div>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/mars.txt b/mars.txt</span>
-<span class="gh">index df0654a..b36abfd 100644</span>
-<span class="gd">--- a/mars.txt</span>
-<span class="gi">+++ b/mars.txt</span>
-<span class="gu">@@ -1 +1,3 @@</span>
- Cold and dry, but everything is my favorite color
-<span class="gi">+The two moons may be a problem for Wolfman</span>
-<span class="gi">+But the Mummy will appreciate the lack of humidity</span>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/mars.txt b/mars.txt</span><span class="w"></span>
+<span class="gh">index df0654a..b36abfd 100644</span><span class="w"></span>
+<span class="gd">--- a/mars.txt</span><span class="w"></span>
+<span class="gi">+++ b/mars.txt</span><span class="w"></span>
+<span class="gu">@@ -1 +1,3 @@</span><span class="w"></span>
+<span class="w"> </span>Cold and dry, but everything is my favorite color<span class="w"></span>
+<span class="gi">+The two moons may be a problem for Wolfman</span><span class="w"></span>
+<span class="gi">+But the Mummy will appreciate the lack of humidity</span><span class="w"></span>
 </pre></div>
 </div>
 <p>We could also use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code> which shows us what changes we made at an older commit as well as the commit message, rather than the <em>differences</em> between a commit and our working directory that we see by using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git show HEAD~2 mars.txt
 </pre></div>
 </div>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
-Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
-Date:   Thu Aug 22 10:07:21 2013 -0400
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="w">commit 34961b159c27df3b475cfe4415d94a6d1fcd064d</span>
+<span class="w">Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;</span>
+<span class="w">Date:   Thu Aug 22 10:07:21 2013 -0400</span>
 
-    Add concerns about effects of Mars&#39; moons on Wolfman
+<span class="w"> </span>   Add concerns about effects of Mars&#39; moons on Wolfman<span class="w"></span>
 
-<span class="gh">diff --git a/mars.txt b/mars.txt</span>
-<span class="gh">index df0654a..315bf3a 100644</span>
-<span class="gd">--- a/mars.txt</span>
-<span class="gi">+++ b/mars.txt</span>
-<span class="gu">@@ -1 +1,2 @@</span>
- Cold and dry, but everything is my favorite color
-<span class="gi">+The two moons may be a problem for Wolfman</span>
+<span class="gh">diff --git a/mars.txt b/mars.txt</span><span class="w"></span>
+<span class="gh">index df0654a..315bf3a 100644</span><span class="w"></span>
+<span class="gd">--- a/mars.txt</span><span class="w"></span>
+<span class="gi">+++ b/mars.txt</span><span class="w"></span>
+<span class="gu">@@ -1 +1,2 @@</span><span class="w"></span>
+<span class="w"> </span>Cold and dry, but everything is my favorite color<span class="w"></span>
+<span class="gi">+The two moons may be a problem for Wolfman</span><span class="w"></span>
 </pre></div>
 </div>
 <p>In this way,
@@ -587,14 +588,14 @@ so let’s try this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
 </pre></div>
 </div>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/mars.txt b/mars.txt</span>
-<span class="gh">index df0654a..b36abfd 100644</span>
-<span class="gd">--- a/mars.txt</span>
-<span class="gi">+++ b/mars.txt</span>
-<span class="gu">@@ -1 +1,3 @@</span>
- Cold and dry, but everything is my favorite color
-<span class="gi">+The two moons may be a problem for Wolfman</span>
-<span class="gi">+But the Mummy will appreciate the lack of humidity</span>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/mars.txt b/mars.txt</span><span class="w"></span>
+<span class="gh">index df0654a..b36abfd 100644</span><span class="w"></span>
+<span class="gd">--- a/mars.txt</span><span class="w"></span>
+<span class="gi">+++ b/mars.txt</span><span class="w"></span>
+<span class="gu">@@ -1 +1,3 @@</span><span class="w"></span>
+<span class="w"> </span>Cold and dry, but everything is my favorite color<span class="w"></span>
+<span class="gi">+The two moons may be a problem for Wolfman</span><span class="w"></span>
+<span class="gi">+But the Mummy will appreciate the lack of humidity</span><span class="w"></span>
 </pre></div>
 </div>
 <p>That’s the right answer,
@@ -603,14 +604,14 @@ so Git lets us use just the first few characters:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git diff f22b25e mars.txt
 </pre></div>
 </div>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/mars.txt b/mars.txt</span>
-<span class="gh">index df0654a..b36abfd 100644</span>
-<span class="gd">--- a/mars.txt</span>
-<span class="gi">+++ b/mars.txt</span>
-<span class="gu">@@ -1 +1,3 @@</span>
- Cold and dry, but everything is my favorite color
-<span class="gi">+The two moons may be a problem for Wolfman</span>
-<span class="gi">+But the Mummy will appreciate the lack of humidity</span>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/mars.txt b/mars.txt</span><span class="w"></span>
+<span class="gh">index df0654a..b36abfd 100644</span><span class="w"></span>
+<span class="gd">--- a/mars.txt</span><span class="w"></span>
+<span class="gi">+++ b/mars.txt</span><span class="w"></span>
+<span class="gu">@@ -1 +1,3 @@</span><span class="w"></span>
+<span class="w"> </span>Cold and dry, but everything is my favorite color<span class="w"></span>
+<span class="gi">+The two moons may be a problem for Wolfman</span><span class="w"></span>
+<span class="gi">+But the Mummy will appreciate the lack of humidity</span><span class="w"></span>
 </pre></div>
 </div>
 <p>All right! So

@@ -16,11 +16,12 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -669,11 +670,12 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
 /* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
 div.rendered_html table {
   border: none;
   border-collapse: collapse;
@@ -682,10 +684,14 @@ div.rendered_html table {
   font-size: 12px;
   table-layout: fixed;
 }
+.jp-RenderedHTMLCommon thead,
 div.rendered_html thead {
   border-bottom: 1px solid black;
   vertical-align: bottom;
 }
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
 div.rendered_html tr,
 div.rendered_html th,
 div.rendered_html td {
@@ -697,12 +703,15 @@ div.rendered_html td {
   max-width: none;
   border: none;
 }
+.jp-RenderedHTMLCommon th,
 div.rendered_html th {
   font-weight: bold;
 }
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
 div.rendered_html tbody tr:nth-child(odd) {
   background: #f5f5f5;
 }
+.jp-RenderedHTMLCommon tbody tr:hover,
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
@@ -730,15 +739,14 @@ div.rendered_html tbody tr:hover {
 }
 </style>
 <section id="9:-sPlot">
-<h1>9: sPlot<a class="headerlink" href="#9:-sPlot" title="Permalink to this headline"></a></h1>
+<h1>9: sPlot<a class="headerlink" href="#9:-sPlot" title="Permalink to this heading"></a></h1>
 <p>This notebook explains <strong>sPlot</strong> and how to use <code class="docutils literal notranslate"><span class="pre">zfit</span></code> and <code class="docutils literal notranslate"><span class="pre">hepstats</span></code> to compute the sWeights with <code class="docutils literal notranslate"><span class="pre">compute_sweights</span></code>. Alternatively, if the probabilities are already available, <code class="docutils literal notranslate"><span class="pre">hep_ml.splot</span></code> can be used. <strong>sPlot</strong> is a way to reconstruct features of mixture components based on known properties of distributions. This method is frequently used in High Energy Physics.</p>
 <p>If you prefer explanations without code, find them <a class="reference external" href="http://arogozhnikov.github.io/2015/10/07/splot.html">here</a></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">mplhep</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mplhep</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">zfit</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -752,21 +760,28 @@ div.rendered_html tbody tr:hover {
 <div class="highlight"><pre>
 /usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/zfit/__init__.py:37: UserWarning: TensorFlow warnings are by default suppressed by zfit. In order to show them, set the environment variable ZFIT_DISABLE_TF_WARNINGS=0. In order to suppress the TensorFlow warnings AND this warning, set ZFIT_DISABLE_TF_WARNINGS=1.
   warnings.warn(&#34;TensorFlow warnings are by default suppressed by zfit.&#34;
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/tensorflow_addons/utils/ensure_tf_install.py:53: UserWarning: Tensorflow Addons supports using Python ops for all Tensorflow versions above or equal to 2.7.0 and strictly below 2.10.0 (nightly versions are not supported).
+ The versions of TensorFlow you are currently using is 2.6.5 and is not supported.
+Some things might work, some things might not.
+If you were to encounter a bug, do not file an issue.
+If you want to make sure you&#39;re using a tested and supported configuration, either change the TensorFlow version or the TensorFlow Addons&#39;s version.
+You can find the compatibility matrix in TensorFlow Addon&#39;s readme:
+https://github.com/tensorflow/addons
+  warnings.warn(
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">size</span> <span class="o">=</span> <span class="mi">10000</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="mi">10000</span>
 <span class="n">sig_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
 <span class="n">bck_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <section id="Simple-sPlot-example">
-<h2>Simple sPlot example<a class="headerlink" href="#Simple-sPlot-example" title="Permalink to this headline"></a></h2>
+<h2>Simple sPlot example<a class="headerlink" href="#Simple-sPlot-example" title="Permalink to this heading"></a></h2>
 <p>First we start with a simple (and not very useful in practice) example:</p>
 <ul class="simple">
 <li><p>Assume we have two types of particles (say, electrons and positrons).</p></li>
@@ -776,8 +791,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sig_data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;electron&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sig_data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;electron&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bck_data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;positron&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$p_x$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -790,7 +804,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fca8a159760&gt;
+&lt;matplotlib.legend.Legend at 0x7f37b30105b0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -802,7 +816,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </section>
 <section id="Observed-distributions">
-<h2>Observed distributions<a class="headerlink" href="#Observed-distributions" title="Permalink to this headline"></a></h2>
+<h2>Observed distributions<a class="headerlink" href="#Observed-distributions" title="Permalink to this heading"></a></h2>
 <p>Picture above shows how this distibution should look like, but due to inaccuracies during classification we will observe a different picture.</p>
 <p>Let’s assume that with a probability of 80% particle is classified correctly (and we are not using <span class="math notranslate nohighlight">\(p_x\)</span> during classification).</p>
 <p>And when we look at distribution of px for particles which were classified as electrons or positrons, we see that they were distorted. We lost the original shapes of distributions.</p>
@@ -810,8 +824,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">n_sig1</span><span class="p">,</span> <span class="n">n_bck1</span> <span class="o">=</span> <span class="mi">8000</span><span class="p">,</span> <span class="mi">2000</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_sig1</span><span class="p">,</span> <span class="n">n_bck1</span> <span class="o">=</span> <span class="mi">8000</span><span class="p">,</span> <span class="mi">2000</span>
 <span class="n">n_sig2</span><span class="p">,</span> <span class="n">n_bck2</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">8000</span>
 <span class="n">first_bin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">sig_data</span><span class="p">[:</span><span class="n">n_sig1</span><span class="p">],</span> <span class="n">bck_data</span><span class="p">[:</span><span class="n">n_bck1</span><span class="p">]])</span>
 <span class="n">second_bin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">sig_data</span><span class="p">[</span><span class="n">n_sig1</span><span class="p">:],</span> <span class="n">bck_data</span><span class="p">[</span><span class="n">n_bck1</span><span class="p">:]])</span>
@@ -822,8 +835,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="n">n_sig1</span><span class="p">,</span> <span class="n">n_sig2</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="n">n_bck1</span><span class="p">,</span> <span class="n">n_bck2</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="p">[</span><span class="n">n_sig1</span><span class="p">,</span> <span class="n">n_sig2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
@@ -854,7 +866,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </section>
 <section id="Applying-sWeights">
-<h2>Applying sWeights<a class="headerlink" href="#Applying-sWeights" title="Permalink to this headline"></a></h2>
+<h2>Applying sWeights<a class="headerlink" href="#Applying-sWeights" title="Permalink to this heading"></a></h2>
 <p>We can think of it in the following way: there are 2 bins. In first 80% are electrons, 20% are signal. And visa versa in second bin.</p>
 <p>To reconstruct initial distribution, we can plot histogram, where each event from first bin has weight 0.8, and each event from second bin has weight -0.2. This numbers are called sWeights.</p>
 <p>So, if we had 8000 <span class="math notranslate nohighlight">\(e^{-}\)</span> + 2000 <span class="math notranslate nohighlight">\(e^{+}\)</span> in first bin and 8000 <span class="math notranslate nohighlight">\(e^{+}\)</span> + 2000 <span class="math notranslate nohighlight">\(e^{-}\)</span> ($ e^-, e^+$ are electron and positron). After summing with introduced sWeights:</p>
@@ -867,8 +879,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">plot_with_weights</span><span class="p">(</span><span class="n">datas</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_with_weights</span><span class="p">(</span><span class="n">datas</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">datas</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">datas</span><span class="p">)</span>
     <span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="o">*</span> <span class="n">w</span> <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">datas</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span> <span class="p">])</span>
@@ -880,8 +891,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plot_with_weights</span><span class="p">([</span><span class="n">first_bin</span><span class="p">,</span> <span class="n">second_bin</span><span class="p">],</span> <span class="p">[</span><span class="n">n_bck2</span><span class="p">,</span> <span class="o">-</span><span class="n">n_bck1</span><span class="p">],</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;reconstructed electron&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_with_weights</span><span class="p">([</span><span class="n">first_bin</span><span class="p">,</span> <span class="n">second_bin</span><span class="p">],</span> <span class="p">[</span><span class="n">n_bck2</span><span class="p">,</span> <span class="o">-</span><span class="n">n_bck1</span><span class="p">],</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;reconstructed electron&#39;</span><span class="p">)</span>
 <span class="n">plot_with_weights</span><span class="p">([</span><span class="n">first_bin</span><span class="p">,</span> <span class="n">second_bin</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="n">n_sig2</span><span class="p">,</span> <span class="n">n_sig1</span><span class="p">],</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;reconstructed positron&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;px&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
@@ -896,14 +906,13 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <section id="Compare">
-<h3>Compare<a class="headerlink" href="#Compare" title="Permalink to this headline"></a></h3>
+<h3>Compare<a class="headerlink" href="#Compare" title="Permalink to this heading"></a></h3>
 <p>let’s compare reconstructed distribution for electrons with an original one:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plot_with_weights</span><span class="p">([</span><span class="n">first_bin</span><span class="p">,</span> <span class="n">second_bin</span><span class="p">],</span> <span class="p">[</span><span class="n">n_bck2</span><span class="p">,</span> <span class="o">-</span><span class="n">n_bck1</span><span class="p">],</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;reconstructed electons&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_with_weights</span><span class="p">([</span><span class="n">first_bin</span><span class="p">,</span> <span class="n">second_bin</span><span class="p">],</span> <span class="p">[</span><span class="n">n_bck2</span><span class="p">,</span> <span class="o">-</span><span class="n">n_bck1</span><span class="p">],</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;reconstructed electons&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
 <span class="n">plot_with_weights</span><span class="p">([</span><span class="n">sig_data</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;original electons&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
@@ -919,14 +928,13 @@ div.rendered_html tbody tr:hover {
 </section>
 </section>
 <section id="More-complex-case">
-<h2>More complex case<a class="headerlink" href="#More-complex-case" title="Permalink to this headline"></a></h2>
+<h2>More complex case<a class="headerlink" href="#More-complex-case" title="Permalink to this heading"></a></h2>
 <p>In the case when we have only two ‘bins’ is simple and straightforward. But when there are more than two bins, the solution is not unique. There are many appropriate combinations of sWeights, which one to choose?</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
@@ -951,7 +959,7 @@ div.rendered_html tbody tr:hover {
 <p>Typically this is a distribution over mass. By fitting mass we are able to split mixture into two parts: signal channel and everything else.</p>
 </section>
 <section id="Splot">
-<h2>Splot<a class="headerlink" href="#Splot" title="Permalink to this headline"></a></h2>
+<h2>Splot<a class="headerlink" href="#Splot" title="Permalink to this heading"></a></h2>
 <p>This is now an demonstration of the <strong>sPlot</strong> algorithm, described in <a class="reference external" href="https://arxiv.org/pdf/physics/0402083.pdf">Pivk:2004ty</a>.</p>
 <p>If a data sample is populated by different sources of events, like signal and background, <strong>sPlot</strong> is able to unfold the contributions of the different sources for a given variable.</p>
 <p>Let’s construct a dataset with two variables, the invariant mass and lifetime, for the resonant signal defined above and the combinatorial background. To do this, we build the model in zfit.</p>
@@ -959,8 +967,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mu</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;mu&#39;</span><span class="p">,</span> <span class="mi">5279</span><span class="p">,</span> <span class="mi">5100</span><span class="p">,</span> <span class="mi">5400</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;mu&#39;</span><span class="p">,</span> <span class="mi">5279</span><span class="p">,</span> <span class="mi">5100</span><span class="p">,</span> <span class="mi">5400</span><span class="p">)</span>
 <span class="n">sigma</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;sigma&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 
 <span class="n">lambd</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;lambda&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.002</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">)</span>
@@ -971,8 +978,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">obs</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Space</span><span class="p">(</span><span class="s1">&#39;mass&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obs</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Space</span><span class="p">(</span><span class="s1">&#39;mass&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">))</span>
 
 <span class="n">signal_pdf</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">Gauss</span><span class="p">(</span><span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">,</span> <span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="p">)</span>
 <span class="n">comb_bkg_pdf</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">Exponential</span><span class="p">(</span><span class="n">lambd</span><span class="p">,</span> <span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="p">)</span>
@@ -994,8 +1000,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Signal distributions.</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Signal distributions.</span>
 <span class="n">nsig_sw</span> <span class="o">=</span> <span class="mi">20000</span>
 <span class="n">np_sig_m_sw</span> <span class="o">=</span> <span class="n">signal_pdf</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">nsig_sw</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,)</span>
 <span class="n">np_sig_t_sw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">nsig_sw</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1039,8 +1044,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Builds the loss.</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Builds the loss.</span>
 <span class="n">data_sw</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="n">np_m_sw</span><span class="p">)</span>
 <span class="n">nll_sw</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">loss</span><span class="o">.</span><span class="n">ExtendedUnbinnedNLL</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_sw</span><span class="p">)</span>
 
@@ -1061,9 +1065,9 @@ div.rendered_html tbody tr:hover {
 <div class="highlight"><pre>
 name           value    at limit
 ---------  ---------  ----------
-bkg_yield     118200       False
-sig_yield      20040       False
-lambda     -0.001983       False
+bkg_yield     118300       False
+sig_yield      19830       False
+lambda     -0.002007       False
 mu              5279       False
 </pre></div></div>
 </div>
@@ -1071,8 +1075,7 @@ mu              5279       False
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">plot_fit_projection</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_fit_projection</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="c1"># The function will be reused.</span>
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
@@ -1106,8 +1109,7 @@ mu              5279       False
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Visualization of the result.</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualization of the result.</span>
 <span class="n">zfit</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">set_values</span><span class="p">(</span><span class="n">nll_sw</span><span class="o">.</span><span class="n">get_params</span><span class="p">(),</span> <span class="n">result_sw</span><span class="p">)</span>
 <span class="n">plot_fit_projection</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_sw</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
@@ -1143,8 +1145,7 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">hepstats.splot</span> <span class="kn">import</span> <span class="n">compute_sweights</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hepstats.splot</span> <span class="kn">import</span> <span class="n">compute_sweights</span>
 
 <span class="n">weights</span> <span class="o">=</span> <span class="n">compute_sweights</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_sw</span><span class="p">)</span>
 
@@ -1157,17 +1158,16 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&lt;zfit.Parameter &#39;bkg_yield&#39; floating=True value=1.182e+05&gt;: array([ 0.13919964,  0.28553294, -0.1577027 , ...,  0.94179228,
-        0.96319093,  1.12298286]), &lt;zfit.Parameter &#39;sig_yield&#39; floating=True value=2.004e+04&gt;: array([ 0.86080176,  0.71446992,  1.15770115, ...,  0.05821711,
-        0.03681868, -0.12297166])}
+{&lt;zfit.Parameter &#39;bkg_yield&#39; floating=True value=1.183e+05&gt;: array([-0.11408781, -0.19865711, -0.16824204, ...,  1.12208581,
+        1.12208581,  1.12208581]), &lt;zfit.Parameter &#39;sig_yield&#39; floating=True value=1.983e+04&gt;: array([ 1.11408452,  1.19865308,  1.16823827, ..., -0.12207819,
+       -0.12207819, -0.12207819])}
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum of signal sWeights: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="n">sig_yield</span><span class="p">]))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum of signal sWeights: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="n">sig_yield</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum of background sWeights: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="n">bkg_yield</span><span class="p">]))</span>
 </pre></div>
 </div>
@@ -1177,8 +1177,8 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Sum of signal sWeights:  20035.070115591818
-Sum of background sWeights:  118220.10955055377
+Sum of signal sWeights:  19831.84689676028
+Sum of background sWeights:  118334.88154501232
 </pre></div></div>
 </div>
 <p>Now we can apply the signal <strong>sWeights</strong> on the lifetime distribution and retrieve its signal components.</p>
@@ -1186,8 +1186,7 @@ Sum of background sWeights:  118220.10955055377
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="n">nbins</span> <span class="o">=</span> <span class="mi">40</span>
 
 <span class="n">sorter</span> <span class="o">=</span> <span class="n">np_m_sw</span><span class="o">.</span><span class="n">argsort</span><span class="p">()</span>
@@ -1219,8 +1218,7 @@ Sum of background sWeights:  118220.10955055377
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Correlation between m and t: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">np_m_sw</span><span class="p">,</span> <span class="n">np_t_sw</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Correlation between m and t: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">np_m_sw</span><span class="p">,</span> <span class="n">np_t_sw</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1229,7 +1227,7 @@ Sum of background sWeights:  118220.10955055377
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Correlation between m and t: 0.029679930679209623
+Correlation between m and t: 0.03057470326086893
 </pre></div></div>
 </div>
 <p>Let’s apply to signal <strong>sWeights</strong> on the mass distribution to see how bad the results of <strong>sPlot</strong> is when applied on a variable that is correlated with the discrimant variable.</p>
@@ -1237,8 +1235,7 @@ Correlation between m and t: 0.029679930679209623
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">np_m_sw</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">),</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">[</span><span class="n">sig_yield</span><span class="p">]);</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">np_m_sw</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">),</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">[</span><span class="n">sig_yield</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
@@ -1251,17 +1248,16 @@ Correlation between m and t: 0.029679930679209623
 </div>
 </section>
 <section id="Alternative:-Known-probabilities">
-<h2>Alternative: Known probabilities<a class="headerlink" href="#Alternative:-Known-probabilities" title="Permalink to this headline"></a></h2>
+<h2>Alternative: Known probabilities<a class="headerlink" href="#Alternative:-Known-probabilities" title="Permalink to this heading"></a></h2>
 <p>If the probabilities are already known <em>beforehand</em>, fitting a curve with <code class="docutils literal notranslate"><span class="pre">zfit</span></code> is an extra step that is not required in order to obtain the sWeights. The next example uses <code class="docutils literal notranslate"><span class="pre">hep_ml</span></code> in order to compute the sWeights; the same function as <code class="docutils literal notranslate"><span class="pre">hepstats</span></code> also uses internally.</p>
 <section id="Building-sPlot-over-mass">
-<h3>Building sPlot over mass<a class="headerlink" href="#Building-sPlot-over-mass" title="Permalink to this headline"></a></h3>
+<h3>Building sPlot over mass<a class="headerlink" href="#Building-sPlot-over-mass" title="Permalink to this heading"></a></h3>
 <p>Let’s show how this works. First we generate two fake distributions (signal and background) with 2 variables: mass and momentum <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">expon</span><span class="p">,</span> <span class="n">norm</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">expon</span><span class="p">,</span> <span class="n">norm</span>
 </pre></div>
 </div>
 </div>
@@ -1269,8 +1265,7 @@ Correlation between m and t: 0.029679930679209623
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 <span class="n">size</span> <span class="o">=</span> <span class="mi">10000</span>
 
 <span class="n">sig_mass_distr</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1304,14 +1299,13 @@ Correlation between m and t: 0.029679930679209623
 </div>
 </section>
 <section id="Of-course-we-don’t-have-labels-which-events-are-signal-and-which-are-background-beforehand">
-<h3>Of course we don’t have labels which events are signal and which are background beforehand<a class="headerlink" href="#Of-course-we-don’t-have-labels-which-events-are-signal-and-which-are-background-beforehand" title="Permalink to this headline"></a></h3>
+<h3>Of course we don’t have labels which events are signal and which are background beforehand<a class="headerlink" href="#Of-course-we-don’t-have-labels-which-events-are-signal-and-which-are-background-beforehand" title="Permalink to this heading"></a></h3>
 <p>And we observe the mixture of two distributions:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 <span class="n">mass</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">sig_mass</span><span class="p">,</span> <span class="n">bck_mass</span><span class="p">])</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">sig_p</span><span class="p">,</span> <span class="n">bck_p</span><span class="p">])</span>
 
@@ -1347,15 +1341,14 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 </section>
 <section id="We-have-no-information-about-real-labels">
-<h3>We have no information about real labels<a class="headerlink" href="#We-have-no-information-about-real-labels" title="Permalink to this headline"></a></h3>
+<h3>We have no information about real labels<a class="headerlink" href="#We-have-no-information-about-real-labels" title="Permalink to this heading"></a></h3>
 <p>But we know a priori that background is distributed as exponential distribution and signal - as gaussian (more complex models can be met in practice, but idea is the same).</p>
 <p>After fitting the mixture (let me skip this process), we will get the following result:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;signal&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">expon</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;bck&#39;</span><span class="p">)</span>
@@ -1370,7 +1363,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fca7c39f520&gt;
+&lt;matplotlib.legend.Legend at 0x7f37a45ee4f0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1383,15 +1376,14 @@ Text(0.5, 0, &#39;p&#39;)
 </section>
 </section>
 <section id="Fitting-doesn’t-give-us-information-about-real-labels">
-<h2>Fitting doesn’t give us information about real labels<a class="headerlink" href="#Fitting-doesn’t-give-us-information-about-real-labels" title="Permalink to this headline"></a></h2>
+<h2>Fitting doesn’t give us information about real labels<a class="headerlink" href="#Fitting-doesn’t-give-us-information-about-real-labels" title="Permalink to this heading"></a></h2>
 <p>But it gives an information about probabilities, thus now we can estimate number of signal and background events within each bin.</p>
 <p>We won’t use bins, but instead we will get for each event probability that it is signal or background:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">pandas</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
 
 <span class="n">probs</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">sig</span><span class="o">=</span><span class="n">sig_mass_distr</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">mass</span><span class="p">),</span> <span class="n">bck</span><span class="o">=</span><span class="n">bck_mass_distr</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">mass</span><span class="p">)))</span>
 <span class="n">probs</span> <span class="o">=</span> <span class="n">probs</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">probs</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -1402,8 +1394,7 @@ Text(0.5, 0, &#39;p&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">probs</span><span class="o">.</span><span class="n">sig</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;sig probability&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">probs</span><span class="o">.</span><span class="n">sig</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;sig probability&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">probs</span><span class="o">.</span><span class="n">bck</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;bck probability&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(),</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;mass&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1416,7 +1407,7 @@ Text(0.5, 0, &#39;p&#39;)
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 ((0.0, 10.0),
- &lt;matplotlib.legend.Legend at 0x7fca81e64ca0&gt;,
+ &lt;matplotlib.legend.Legend at 0x7f37aaaeddf0&gt;,
  Text(0.5, 0, &#39;mass&#39;))
 </pre></div></div>
 </div>
@@ -1429,14 +1420,13 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 </section>
 <section id="Appying-sPlot">
-<h2>Appying sPlot<a class="headerlink" href="#Appying-sPlot" title="Permalink to this headline"></a></h2>
+<h2>Appying sPlot<a class="headerlink" href="#Appying-sPlot" title="Permalink to this heading"></a></h2>
 <p>sPlot converts probabilities to sWeights, using an implementation from <code class="docutils literal notranslate"><span class="pre">hep_ml</span></code>:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">hep_ml</span> <span class="kn">import</span> <span class="n">splot</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hep_ml</span> <span class="kn">import</span> <span class="n">splot</span>
 
 <span class="n">sWeights</span> <span class="o">=</span> <span class="n">splot</span><span class="o">.</span><span class="n">compute_sweights</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span>
 </pre></div>
@@ -1447,8 +1437,7 @@ Text(0.5, 0, &#39;p&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">sWeights</span><span class="o">.</span><span class="n">sig</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;sig sWeight&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">sWeights</span><span class="o">.</span><span class="n">sig</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;sig sWeight&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">sWeights</span><span class="o">.</span><span class="n">bck</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;bck sWeight&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(),</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;mass&#39;</span><span class="p">);</span>
 </pre></div>
@@ -1463,14 +1452,13 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 </section>
 <section id="Using-sWeights-to-reconstruct-initial-distribution">
-<h2>Using sWeights to reconstruct initial distribution<a class="headerlink" href="#Using-sWeights-to-reconstruct-initial-distribution" title="Permalink to this headline"></a></h2>
+<h2>Using sWeights to reconstruct initial distribution<a class="headerlink" href="#Using-sWeights-to-reconstruct-initial-distribution" title="Permalink to this heading"></a></h2>
 <p>Let’s check that we achieved our goal and can reconstruct momentum distribution for signal and background:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
 <span class="n">hist_conf</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sig_p</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;original sig p&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">hist_conf</span><span class="p">)</span>
@@ -1494,15 +1482,14 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 </section>
 <section id="An-important-requirement-of-sPlot">
-<h2>An important requirement of sPlot<a class="headerlink" href="#An-important-requirement-of-sPlot" title="Permalink to this headline"></a></h2>
+<h2>An important requirement of sPlot<a class="headerlink" href="#An-important-requirement-of-sPlot" title="Permalink to this heading"></a></h2>
 <p>Reconstructed variable (i.e. <span class="math notranslate nohighlight">\(p\)</span>) and splotted variable (i.e. mass) shall be statistically independent for each class.</p>
 <p>Read the line above again. Reconstructed and splotted variable are correlated:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">mass</span> <span class="o">-</span> <span class="mi">4</span><span class="p">),</span> <span class="n">p</span><span class="p">)</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">mass</span> <span class="o">-</span> <span class="mi">4</span><span class="p">),</span> <span class="n">p</span><span class="p">)</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1512,7 +1499,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--0.33914173628764377
+-0.33599161417983586
 </pre></div></div>
 </div>
 <p>But within each class there is no correlation, so the requirement is satisfied:</p>
@@ -1520,8 +1507,7 @@ Text(0.5, 0, &#39;p&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">sig_mass</span> <span class="o">-</span> <span class="mi">4</span><span class="p">),</span> <span class="n">sig_p</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">sig_mass</span> <span class="o">-</span> <span class="mi">4</span><span class="p">),</span> <span class="n">sig_p</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">bck_mass</span> <span class="o">-</span> <span class="mi">4</span><span class="p">),</span> <span class="n">bck_p</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1531,8 +1517,8 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--0.005935557330594563
-0.00664696890373245
+0.010357553651790825
+0.006461699995312847
 </pre></div></div>
 </div>
 <p>as a demonstration why this is important let’s use sweights to reconstruct mass (obviously mass is correlated with mass):</p>
@@ -1540,8 +1526,7 @@ Text(0.5, 0, &#39;p&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">hist_conf</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hist_conf</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sig_mass</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;original sig mass&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">hist_conf</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">sWeights</span><span class="o">.</span><span class="n">sig</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;reconstructed sig mass&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">hist_conf</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;mass&#39;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -1559,7 +1544,7 @@ Text(0.5, 0, &#39;p&#39;)
 <p><span class="math notranslate nohighlight">\(\def\ps{p_s(x)}\)</span> <span class="math notranslate nohighlight">\(\def\pb{p_b(x)}\)</span> <span class="math notranslate nohighlight">\(\def\ws{sw_s(x)}\)</span> <span class="math notranslate nohighlight">\(\def\wb{sw_b(x)}\)</span></p>
 </section>
 <section id="Derivation-of-sWeights-(optional)">
-<h2>Derivation of sWeights (optional)<a class="headerlink" href="#Derivation-of-sWeights-(optional)" title="Permalink to this headline"></a></h2>
+<h2>Derivation of sWeights (optional)<a class="headerlink" href="#Derivation-of-sWeights-(optional)" title="Permalink to this heading"></a></h2>
 <p>Now, after we seen how this works, let’s derive a formula for sWeights.</p>
 <p>The only information we have from fitting over mass is $ <span class="math">\ps `$, $ :nbsphinx-math:</span>pb`$ which are probabilities of event <span class="math notranslate nohighlight">\(x\)</span> to be signal and background.</p>
 <p>Our main goal is to correctly reconstruct histogram. Let’s reconstruct the number of <em>signal</em> events in <em>particular</em> bin. Let’s introduce unknown <span class="math notranslate nohighlight">\(p_s\)</span> and <span class="math notranslate nohighlight">\(p_b\)</span> - probability that signal or background event will be in the named bin.</p>
@@ -1572,7 +1557,7 @@ Text(0.5, 0, &#39;p&#39;)
 <p>where <span class="math notranslate nohighlight">\(\ws\)</span> are sPlot weights and are subject to find.</p>
 <p>This way we can guarantee that mean contribution of background are 0 (expectation is zero, but observed number will not be zero due to statistical deviation).</p>
 <section id="Under-assumption-of-linearity:">
-<h3>Under assumption of linearity:<a class="headerlink" href="#Under-assumption-of-linearity:" title="Permalink to this headline"></a></h3>
+<h3>Under assumption of linearity:<a class="headerlink" href="#Under-assumption-of-linearity:" title="Permalink to this heading"></a></h3>
 <p><em>assuming</em> that splot weight can be computed as a linear combination of conditional probabilities:</p>
 <p>$ <span class="math">\ws `= a_1 :nbsphinx-math:</span>pb <cite>+ a_2 :nbsphinx-math:</cite>ps`$</p>
 <p>We can easily reconstruct those numbers, first let’s rewrite our system:</p>
@@ -1583,7 +1568,7 @@ Text(0.5, 0, &#39;p&#39;)
 <p>NB. There is little difference between <span class="math notranslate nohighlight">\(V\)</span> matrix I use and <span class="math notranslate nohighlight">\(V\)</span> matrix in the paper.</p>
 </section>
 <section id="Minimization-of-variation">
-<h3>Minimization of variation<a class="headerlink" href="#Minimization-of-variation" title="Permalink to this headline"></a></h3>
+<h3>Minimization of variation<a class="headerlink" href="#Minimization-of-variation" title="Permalink to this heading"></a></h3>
 <p><span class="math notranslate nohighlight">\(\def\Var{\mathbb{V}\,}\)</span></p>
 <p>Previous part allows one to get the correct result. But there is still no explanation of reason for linearity.</p>
 <p>Apart from having correct mean, we should also minimize variation of any reconstructed variable. Let’s try to optimize it</p>
@@ -1600,14 +1585,14 @@ Text(0.5, 0, &#39;p&#39;)
 + \lambda_2 \left[\sum_x \ws \; \ps - N_{sig} \right]\]</div>
 </section>
 <section id="Uncorrelatedness">
-<h3>Uncorrelatedness<a class="headerlink" href="#Uncorrelatedness" title="Permalink to this headline"></a></h3>
+<h3>Uncorrelatedness<a class="headerlink" href="#Uncorrelatedness" title="Permalink to this heading"></a></h3>
 <p>The main assuption we used here is that distribution inside each bin is abolutely indentical.</p>
 <p>In other words, we stated that there is no correlation between the index of bin and the reconstructed variable. Remember that bin corresponds to some interval in mass, and finaly we get:</p>
 <p><strong>reconstructed variable shall not be correlated with mass variables (or any other splotted variable)</strong></p>
 </section>
 </section>
 <section id="Conclusion">
-<h2>Conclusion<a class="headerlink" href="#Conclusion" title="Permalink to this headline"></a></h2>
+<h2>Conclusion<a class="headerlink" href="#Conclusion" title="Permalink to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>sPlot allows reconstruction of some variables.</p></li>
 <li><p>the only information used is probabilities taken from fit over variable. If fact, any probability estimates fit well.</p></li>

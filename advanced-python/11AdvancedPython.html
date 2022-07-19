@@ -16,11 +16,12 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -669,11 +670,12 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
 /* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
 div.rendered_html table {
   border: none;
   border-collapse: collapse;
@@ -682,10 +684,14 @@ div.rendered_html table {
   font-size: 12px;
   table-layout: fixed;
 }
+.jp-RenderedHTMLCommon thead,
 div.rendered_html thead {
   border-bottom: 1px solid black;
   vertical-align: bottom;
 }
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
 div.rendered_html tr,
 div.rendered_html th,
 div.rendered_html td {
@@ -697,12 +703,15 @@ div.rendered_html td {
   max-width: none;
   border: none;
 }
+.jp-RenderedHTMLCommon th,
 div.rendered_html th {
   font-weight: bold;
 }
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
 div.rendered_html tbody tr:nth-child(odd) {
   background: #f5f5f5;
 }
+.jp-RenderedHTMLCommon tbody tr:hover,
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
@@ -730,7 +739,7 @@ div.rendered_html tbody tr:hover {
 }
 </style>
 <section id="Advanced-Python-Concepts">
-<h1>Advanced Python Concepts<a class="headerlink" href="#Advanced-Python-Concepts" title="Permalink to this headline"></a></h1>
+<h1>Advanced Python Concepts<a class="headerlink" href="#Advanced-Python-Concepts" title="Permalink to this heading"></a></h1>
 <p>In this tutorial, a few advanced concepts (not class related) are introduced. This includes</p>
 <ul class="simple">
 <li><p>packing and unpacking</p></li>
@@ -742,21 +751,19 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 </pre></div>
 </div>
 </div>
 <section id="Packing-and-unpacking-of-values">
-<h2>Packing and unpacking of values<a class="headerlink" href="#Packing-and-unpacking-of-values" title="Permalink to this headline"></a></h2>
+<h2>Packing and unpacking of values<a class="headerlink" href="#Packing-and-unpacking-of-values" title="Permalink to this heading"></a></h2>
 <p>Using <code class="docutils literal notranslate"><span class="pre">*</span></code> or <code class="docutils literal notranslate"><span class="pre">**</span></code> we can pack/unpack list-like objects and dict-like objects, respectively. They act as a “removal” of the parenthesis when situated on the right and as an “adder” of parenthesis when situated on the left of the assigmenemt operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>).</p>
 <p>Let’s play around…</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -764,8 +771,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">b</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
 </pre></div>
 </div>
 </div>
@@ -783,8 +789,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="o">*</span><span class="n">d3</span><span class="p">,</span> <span class="n">d4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1"># nothing left for d3</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="o">*</span><span class="n">d3</span><span class="p">,</span> <span class="n">d4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1"># nothing left for d3</span>
 </pre></div>
 </div>
 </div>
@@ -792,8 +797,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">d3</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d3</span>
 </pre></div>
 </div>
 </div>
@@ -811,8 +815,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -821,8 +824,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">b</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">b</span>
 </pre></div>
 </div>
 </div>
@@ -831,8 +833,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;args are </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;kwargs are </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -842,8 +843,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mykwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mykwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
 <span class="n">myargs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">myargs</span><span class="p">,</span> <span class="o">*</span><span class="n">mykwargs</span><span class="p">)</span>
 </pre></div>
@@ -862,8 +862,7 @@ kwargs are {}
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">func</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">func</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -880,14 +879,13 @@ kwargs are {&#39;a&#39;: 4}
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># play around with it!</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># play around with it!</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="Context-manager">
-<h2>Context manager<a class="headerlink" href="#Context-manager" title="Permalink to this headline"></a></h2>
+<h2>Context manager<a class="headerlink" href="#Context-manager" title="Permalink to this heading"></a></h2>
 <p>A context manager is an object that responds to a <code class="docutils literal notranslate"><span class="pre">with</span></code> statement. It may returns something. The basic idea is that some action is performed when entering a context and again when exiting it.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>with context as var:
     # do something
@@ -903,15 +901,14 @@ var = return_from_context_entering_code
 <p>The great advantage here is that the “leaving code” is automatically executed whenever we step out of the context!</p>
 <p>This proved to be incredibly useful when operations have cleanup code that we need to execute yet that is tedious to write manually and can be forgotten.</p>
 <section id="Using-yield">
-<h3>Using <code class="docutils literal notranslate"><span class="pre">yield</span></code><a class="headerlink" href="#Using-yield" title="Permalink to this headline"></a></h3>
+<h3>Using <code class="docutils literal notranslate"><span class="pre">yield</span></code><a class="headerlink" href="#Using-yield" title="Permalink to this heading"></a></h3>
 <p>One way to create a context manager is to have a function that has a <code class="docutils literal notranslate"><span class="pre">yield</span></code>.</p>
 <p><em>What is ``yield``?</em>: It’s like a return, except that the executioin stops at the <code class="docutils literal notranslate"><span class="pre">yield</span></code>, lets other code execute and, at some point, <strong>continues</strong> again where the yield was. Examples are: - iterator: a function that yields elements. Everytime it is called, it is supposed to yield an element and then continue from there - asynchronous programing: it stops and waits until something else is finished - in the context manager, as we will see</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">contextlib</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">contextlib</span>
 
 
 <span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
@@ -926,8 +923,7 @@ var = return_from_context_entering_code
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">with</span> <span class="n">printer</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">as</span> <span class="n">number</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">printer</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">as</span> <span class="n">number</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;we&#39;re inside, with number=</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;left manager&quot;</span><span class="p">)</span>
 </pre></div>
@@ -945,14 +941,13 @@ left manager
 </pre></div></div>
 </div>
 <section id="Where-is-this-useful">
-<h4>Where is this useful<a class="headerlink" href="#Where-is-this-useful" title="Permalink to this headline"></a></h4>
+<h4>Where is this useful<a class="headerlink" href="#Where-is-this-useful" title="Permalink to this heading"></a></h4>
 <p>Basically with stateful objects. This includes anything that can be set and changed (mutable objects).</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tmp.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">textfile</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tmp.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">textfile</span><span class="p">:</span>
     <span class="n">textfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;asdf&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -962,8 +957,7 @@ left manager
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">contextlib</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">contextlib</span>
 
 
 <span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
@@ -979,8 +973,7 @@ left manager
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">testdict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;the answer&#39;</span><span class="p">}</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">testdict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;the answer&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -994,8 +987,7 @@ left manager
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># SOLUTION</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SOLUTION</span>
 <span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
 <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">yield</span> <span class="n">x</span>
@@ -1019,8 +1011,7 @@ inside
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
 <span class="k">def</span> <span class="nf">set_answer</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
     <span class="n">old_value</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
     <span class="n">obj</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span>
@@ -1033,14 +1024,13 @@ inside
 </section>
 </section>
 <section id="Using-a-class">
-<h2>Using a class<a class="headerlink" href="#Using-a-class" title="Permalink to this headline"></a></h2>
+<h2>Using a class<a class="headerlink" href="#Using-a-class" title="Permalink to this heading"></a></h2>
 <p>Instead of using the <code class="docutils literal notranslate"><span class="pre">yield</span></code>, we can have advanced control over the enter and exit methods by creating a class and implementing the two methods <code class="docutils literal notranslate"><span class="pre">__enter__</span></code> and <code class="docutils literal notranslate"><span class="pre">__exit__</span></code></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">MyContext</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyContext</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
@@ -1060,8 +1050,7 @@ inside
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">with</span> <span class="n">MyContext</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">as</span> <span class="n">x</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">MyContext</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">as</span> <span class="n">x</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1079,14 +1068,13 @@ exited
 <p>While a class is way more powerful and offers ways to catch exceptions and more in the exit, ususally the functional way is enough and should then be preferred. If it doesn’t give you enough flexibility, remember the class, look it up and figure out all the things needed.</p>
 </section>
 <section id="Decorators-and-factories">
-<h2>Decorators and factories<a class="headerlink" href="#Decorators-and-factories" title="Permalink to this headline"></a></h2>
+<h2>Decorators and factories<a class="headerlink" href="#Decorators-and-factories" title="Permalink to this heading"></a></h2>
 <p>Sometimes we can’t write a function fully by hand but want to create it programatically. This pattern is called a “factory”. To achieve this, instead of having a function that returns an integer (an object), a list (an object), a dict (an object) or an array (an object), we return a function (an object). We see that the concept of Python, “everything is an object”, starts being very useful here.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">make_power_func</span><span class="p">(</span><span class="n">power</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_power_func</span><span class="p">(</span><span class="n">power</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="n">power</span>
     <span class="k">return</span> <span class="n">func</span>
@@ -1097,8 +1085,7 @@ exited
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">pow3</span> <span class="o">=</span> <span class="n">make_power_func</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pow3</span> <span class="o">=</span> <span class="n">make_power_func</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1106,8 +1093,7 @@ exited
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">pow3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pow3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1124,8 +1110,7 @@ exited
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">make_power_func</span><span class="p">(</span><span class="n">power</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_power_func</span><span class="p">(</span><span class="n">power</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="n">power</span>
     <span class="n">power</span> <span class="o">=</span> <span class="mi">42</span>
@@ -1137,8 +1122,7 @@ exited
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">pow3</span> <span class="o">=</span> <span class="n">make_power_func</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pow3</span> <span class="o">=</span> <span class="n">make_power_func</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1146,8 +1130,7 @@ exited
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">pow3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pow3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1164,8 +1147,7 @@ exited
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Exercise: test it here</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise: test it here</span>
 </pre></div>
 </div>
 </div>
@@ -1187,8 +1169,7 @@ pow3(...)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># SOLUTION</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SOLUTION</span>
 <span class="k">def</span> <span class="nf">timed_func</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">wrapped_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
@@ -1205,8 +1186,7 @@ pow3(...)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">add_notime</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_notime</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </pre></div>
 </div>
@@ -1215,8 +1195,7 @@ pow3(...)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">add_timed</span> <span class="o">=</span> <span class="n">timed_func</span><span class="p">(</span><span class="n">add_notime</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add_timed</span> <span class="o">=</span> <span class="n">timed_func</span><span class="p">(</span><span class="n">add_notime</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1224,8 +1203,7 @@ pow3(...)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 </pre></div>
 </div>
 </div>
@@ -1233,8 +1211,7 @@ pow3(...)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">add_timed</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add_timed</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1245,27 +1222,25 @@ pow3(...)
 <div class="highlight"><pre>
 ()
 {&#39;y&#39;: 4, &#39;x&#39;: 5}
-time needed: 2.384185791015625e-06
+time needed: 9.5367431640625e-07
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># test it here</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># test it here</span>
 </pre></div>
 </div>
 </div>
 <section id="Decorator">
-<h3>Decorator<a class="headerlink" href="#Decorator" title="Permalink to this headline"></a></h3>
+<h3>Decorator<a class="headerlink" href="#Decorator" title="Permalink to this heading"></a></h3>
 <p>There is another way, just syntactical sugar, to make this automatic: a decorator. It is invoked as below</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nd">@timed_func</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@timed_func</span>
 <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </pre></div>
@@ -1275,7 +1250,7 @@ time needed: 2.384185791015625e-06
 </section>
 </section>
 <section id="Exceptions">
-<h2>Exceptions<a class="headerlink" href="#Exceptions" title="Permalink to this headline"></a></h2>
+<h2>Exceptions<a class="headerlink" href="#Exceptions" title="Permalink to this heading"></a></h2>
 <p>Exceptions are used to stop the execution at a certain point and surface to higher stacks in the code, e.g. to go up in the call stack. A typical use-case is when an error is encountered, such as the wrong type of object is given. Exceptions can also be caught in a <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">...</span> <span class="pre">except</span> <span class="pre">...</span></code> block in order to handle the exception.</p>
 <p>There are a few built-in exceptions, the most common ones are: - <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>: object has the wrong type, e.g. string instead of float - <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>: the value of the object is illegal, e.g. negative but should be positive - <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code>: if a function is illegally executed or a status is wrong. E.g. if an object first has to be loaded before it gets parsed. It covers any error that does not fall into an other category. - <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>, <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>: if a key or index is not available,
 e.g. in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> or <code class="docutils literal notranslate"><span class="pre">list</span></code></p>
@@ -1284,8 +1259,7 @@ e.g. in a <code class="docutils literal notranslate"><span class="pre">dict</sp
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Has to be int, not str&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Has to be int, not str&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1296,8 +1270,8 @@ e.g. in a <code class="docutils literal notranslate"><span class="pre">dict</sp
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_4875/1597038215.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">raise</span> TypeError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Has to be int, not str&#34;</span><span class="ansi-blue-fg">)</span>
+Input <span class="ansi-green-fg">In [35]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">TypeError</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Has to be int, not str</span><span style="color: rgb(175,0,0)">&#34;</span>)
 
 <span class="ansi-red-fg">TypeError</span>: Has to be int, not str
 </pre></div></div>
@@ -1307,8 +1281,7 @@ e.g. in a <code class="docutils literal notranslate"><span class="pre">dict</sp
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">raise</span> <span class="ne">TypeError</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="ne">TypeError</span>
 </pre></div>
 </div>
 </div>
@@ -1319,22 +1292,21 @@ e.g. in a <code class="docutils literal notranslate"><span class="pre">dict</sp
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_4875/2270127484.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">raise</span> TypeError
+Input <span class="ansi-green-fg">In [36]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">TypeError</span>
 
 <span class="ansi-red-fg">TypeError</span>:
 </pre></div></div>
 </div>
 <section id="Custom-Exception">
-<h3>Custom Exception<a class="headerlink" href="#Custom-Exception" title="Permalink to this headline"></a></h3>
+<h3>Custom Exception<a class="headerlink" href="#Custom-Exception" title="Permalink to this heading"></a></h3>
 <p>In Python, exceptions are simply a class. And as such, we can inherit from it and create our own exception.</p>
 <p><strong>Attention</strong>: inherit from <code class="docutils literal notranslate"><span class="pre">Exception</span></code> or subclasses of it such as <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>, <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>, but NEVER from <code class="docutils literal notranslate"><span class="pre">BaseException</span></code>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">MyError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
@@ -1343,8 +1315,7 @@ e.g. in a <code class="docutils literal notranslate"><span class="pre">dict</sp
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">raise</span> <span class="n">MyError</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="n">MyError</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1355,8 +1326,8 @@ e.g. in a <code class="docutils literal notranslate"><span class="pre">dict</sp
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">MyError</span>                                   Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_4875/2720251497.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">raise</span> MyError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Hello world&#34;</span><span class="ansi-blue-fg">)</span>
+Input <span class="ansi-green-fg">In [38]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> MyError(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Hello world</span><span style="color: rgb(175,0,0)">&#34;</span>)
 
 <span class="ansi-red-fg">MyError</span>: Hello world
 </pre></div></div>
@@ -1366,8 +1337,7 @@ e.g. in a <code class="docutils literal notranslate"><span class="pre">dict</sp
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">NegativeValueError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NegativeValueError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
@@ -1375,14 +1345,13 @@ e.g. in a <code class="docutils literal notranslate"><span class="pre">dict</sp
 </section>
 </section>
 <section id="Catching-exceptions">
-<h2>Catching exceptions<a class="headerlink" href="#Catching-exceptions" title="Permalink to this headline"></a></h2>
+<h2>Catching exceptions<a class="headerlink" href="#Catching-exceptions" title="Permalink to this heading"></a></h2>
 <p>An exception can be caught in a <code class="docutils literal notranslate"><span class="pre">try..except</span></code> block. This works as follows: - if an exception is raised in the <code class="docutils literal notranslate"><span class="pre">try</span></code> block, the next <code class="docutils literal notranslate"><span class="pre">except</span></code> is invoked - it is tested whether the raised exception is of type subclass of the exception type specified to be caught. For example, <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">TypeError</span></code> checks if the raised error is of type <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> or a subclass of it. - if that is not the case, it goes to the next <code class="docutils literal notranslate"><span class="pre">except</span></code> statement (yes, there can be multiple) - … more below</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">try</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="k">raise</span> <span class="n">NegativeValueError</span><span class="p">(</span><span class="s2">&quot;Negative value encountered&quot;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Caught </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -1403,8 +1372,7 @@ Caught Negative value encountered
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">try</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">TypeError</span>
 <span class="c1"># Anti-pattern, do NOT use in general!</span>
 <span class="k">except</span><span class="p">:</span>  <span class="c1"># any exception if not specified</span>
@@ -1416,8 +1384,7 @@ Caught Negative value encountered
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">try</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Type was wrong, unfortunately&quot;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>  <span class="c1"># any exception</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;caught TypeError: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -1442,12 +1409,11 @@ caught TypeError: Type was wrong, unfortunately
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_4875/404234681.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> TypeError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Type was wrong, unfortunately&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">except</span> TypeError <span class="ansi-green-fg">as</span> error<span class="ansi-blue-fg">:</span>  <span class="ansi-red-fg"># any exception</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;caught TypeError: {error}&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span>     <span class="ansi-green-fg">raise</span>
+Input <span class="ansi-green-fg">In [42]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
+<span class="ansi-green-fg">----&gt; 2</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">TypeError</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Type was wrong, unfortunately</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">TypeError</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> error:  <span style="color: rgb(95,135,135)"># any exception</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">caught TypeError: </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>error<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)">&#39;</span>)
 
 <span class="ansi-red-fg">TypeError</span>: Type was wrong, unfortunately
 </pre></div></div>
@@ -1457,8 +1423,7 @@ caught TypeError: Type was wrong, unfortunately
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">try</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;no error raised&#39;</span><span class="p">)</span>
 <span class="c1">#     raise TypeError(&quot;Type was wrong, unfortunately&quot;)</span>
 <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>  <span class="c1"># any exception</span>
@@ -1488,8 +1453,7 @@ Executed after block
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">try</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
 <span class="c1">#     pass</span>
 <span class="c1">#     raise TypeError(&quot;Type was wrong, unfortunately&quot;)</span>
     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Type was wrong, unfortunately&quot;</span><span class="p">)</span>
@@ -1520,12 +1484,13 @@ Finally run
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">RuntimeError</span>                              Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_4875/282767810.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-red-fg">#     pass</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-red-fg">#     raise TypeError(&#34;Type was wrong, unfortunately&#34;)</span>
-<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> RuntimeError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Type was wrong, unfortunately&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-green-fg">except</span> TypeError <span class="ansi-green-fg">as</span> error<span class="ansi-blue-fg">:</span>  <span class="ansi-red-fg"># any exception</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#39;caught Type {error}&#39;</span><span class="ansi-blue-fg">)</span>
+Input <span class="ansi-green-fg">In [44]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(95,135,135)">#     pass</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(95,135,135)">#     raise TypeError(&#34;Type was wrong, unfortunately&#34;)</span>
+<span class="ansi-green-fg">----&gt; 4</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">RuntimeError</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Type was wrong, unfortunately</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">TypeError</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> error:  <span style="color: rgb(95,135,135)"># any exception</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">caught Type </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>error<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)">&#39;</span>)
 
 <span class="ansi-red-fg">RuntimeError</span>: Type was wrong, unfortunately
 </pre></div></div>
@@ -1535,8 +1500,7 @@ Finally run
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">try</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">ValueError</span>
 <span class="k">finally</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;raised&#39;</span><span class="p">)</span>
@@ -1558,24 +1522,23 @@ raised
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_4875/889863002.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">raise</span> ValueError
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">finally</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;raised&#39;</span><span class="ansi-blue-fg">)</span>
+Input <span class="ansi-green-fg">In [45]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
+<span class="ansi-green-fg">----&gt; 2</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ValueError</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-bold" style="color: rgb(0,135,0)">finally</span>:
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">raised</span><span style="color: rgb(175,0,0)">&#39;</span>)
 
 <span class="ansi-red-fg">ValueError</span>:
 </pre></div></div>
 </div>
 <section id="pitfall-“guaranteed-execution”">
-<h3>pitfall “guaranteed execution”<a class="headerlink" href="#pitfall-“guaranteed-execution”" title="Permalink to this headline"></a></h3>
+<h3>pitfall “guaranteed execution”<a class="headerlink" href="#pitfall-“guaranteed-execution”" title="Permalink to this heading"></a></h3>
 <p>As the <code class="docutils literal notranslate"><span class="pre">finally</span></code> is guaranteed to be executed, this can have an odd effect: possible return statements can be ignored <em>before the finally</em> <strong>IF</strong> the <code class="docutils literal notranslate"><span class="pre">finally</span></code> also has a return statement. The logic says here that the <code class="docutils literal notranslate"><span class="pre">finally</span></code> return <em>must</em> be executed, as it is guaranteed to be executed.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;called inside func&#39;</span><span class="p">)</span>
@@ -1595,8 +1558,7 @@ raised
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">func</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">func</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1621,7 +1583,7 @@ cleaned up
 </section>
 </section>
 <section id="Exceptions-as-control-flow">
-<h2>Exceptions as control-flow<a class="headerlink" href="#Exceptions-as-control-flow" title="Permalink to this headline"></a></h2>
+<h2>Exceptions as control-flow<a class="headerlink" href="#Exceptions-as-control-flow" title="Permalink to this heading"></a></h2>
 <p>We are used to control-flow elements such as <code class="docutils literal notranslate"><span class="pre">if...elif...else</span></code> blocks. However, exceptions <em>can</em> also be used for this. They do not replace other ways of control-flow, however there are sometimes situations in which they provide a golden solution to steer the execution.</p>
 <p>As an example, consider an <code class="docutils literal notranslate"><span class="pre">add</span></code> function that <em>sometimes</em> can add three elements - which is, for the sake of a good example, favorable as more performant (real world cases of this exist in larger scale, but too complicated to explain here) - and sometimes not. Also assume that the <code class="docutils literal notranslate"><span class="pre">add</span></code> function is called again maybe inside. A solution is to execute <code class="docutils literal notranslate"><span class="pre">add</span></code> with three elements. If an error is raised, we catch it (the specific one), and run the function again with two arguments and add the
 third argument by calling <code class="docutils literal notranslate"><span class="pre">add</span></code> again.</p>
@@ -1630,8 +1592,7 @@ third argument by calling <code class="docutils literal notranslate"><span class
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">c</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">MyError</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
@@ -1642,8 +1603,7 @@ third argument by calling <code class="docutils literal notranslate"><span class
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1654,14 +1614,14 @@ third argument by calling <code class="docutils literal notranslate"><span class
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">MyError</span>                                   Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_4875/2901316762.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>add<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">)</span>
+Input <span class="ansi-green-fg">In [49]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">add</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">1</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">2</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">3</span><span class="ansi-yellow-bg">)</span>
 
-<span class="ansi-green-fg">/tmp/ipykernel_4875/3957629404.py</span> in <span class="ansi-cyan-fg">add</span><span class="ansi-blue-fg">(a, b, c)</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> add<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">,</span> b<span class="ansi-blue-fg">,</span> c<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-green-fg">if</span> c <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">raise</span> MyError
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-green-fg">return</span> a <span class="ansi-blue-fg">+</span> b
+Input <span class="ansi-green-fg">In [48]</span>, in <span class="ansi-cyan-fg">add</span><span class="ansi-blue-fg">(a, b, c)</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">add</span>(a, b, c<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">None</span>):
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> c <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">----&gt; 3</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> MyError
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> a <span style="color: rgb(98,98,98)">+</span> b
 
 <span class="ansi-red-fg">MyError</span>:
 </pre></div></div>
@@ -1670,8 +1630,7 @@ third argument by calling <code class="docutils literal notranslate"><span class
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">try</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="k">except</span> <span class="n">MyError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>

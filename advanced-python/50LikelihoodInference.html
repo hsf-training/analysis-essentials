@@ -16,11 +16,12 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -669,11 +670,12 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
 /* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
 div.rendered_html table {
   border: none;
   border-collapse: collapse;
@@ -682,10 +684,14 @@ div.rendered_html table {
   font-size: 12px;
   table-layout: fixed;
 }
+.jp-RenderedHTMLCommon thead,
 div.rendered_html thead {
   border-bottom: 1px solid black;
   vertical-align: bottom;
 }
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
 div.rendered_html tr,
 div.rendered_html th,
 div.rendered_html td {
@@ -697,12 +703,15 @@ div.rendered_html td {
   max-width: none;
   border: none;
 }
+.jp-RenderedHTMLCommon th,
 div.rendered_html th {
   font-weight: bold;
 }
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
 div.rendered_html tbody tr:nth-child(odd) {
   background: #f5f5f5;
 }
+.jp-RenderedHTMLCommon tbody tr:hover,
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
@@ -730,28 +739,27 @@ div.rendered_html tbody tr:hover {
 }
 </style>
 <section id="8:-Likelihood-inference">
-<h1>8: Likelihood inference<a class="headerlink" href="#8:-Likelihood-inference" title="Permalink to this headline"></a></h1>
+<h1>8: Likelihood inference<a class="headerlink" href="#8:-Likelihood-inference" title="Permalink to this heading"></a></h1>
 <p><em>(note: in order to run this notebook, first run 20 creating the data and 30, adding a BDT)</em></p>
 <p>In most analysis, fitting a model to data is a crucial, last step in the chain in order to extract information about the parameters of interest.</p>
 <p><strong>Model</strong>: First, this involves building a model that depends on various parameters - some that are of immediate interest to us (Parameter Of Interest, POI) and some that help to describe the observables that we expect in the data but do not have any relevant physical meaning such as detectoreffects (Nuisance Parameter).</p>
 <p><strong>Loss</strong>: With the model and the data, a likelihood (or sometimes also a <span class="math notranslate nohighlight">\(\chi^2\)</span> loss) is built. This is a function of the parameters and reflects the <em>likelihood of finding the data given the parameters</em>. The most likely parameter combination is retrieved when maximising the likelihood; also called the Maximum Likelihood (ML) estimator. Except for trivial cases, this has to be done numerically.</p>
 <p>While this procedure returns an estimate of the <em>best-fit</em>, it does not say anything about the <em>uncertainty</em> of our measurement. Therefore, advanced statistical methods are needed that perform toy studies; these are fits to generated samples under different conditions such as fixing a parameter to a certain value.</p>
 <section id="Scope-of-this-tutorial">
-<h2>Scope of this tutorial<a class="headerlink" href="#Scope-of-this-tutorial" title="Permalink to this headline"></a></h2>
+<h2>Scope of this tutorial<a class="headerlink" href="#Scope-of-this-tutorial" title="Permalink to this heading"></a></h2>
 <p>Here, we focus on the libraries that are available to perform likelihood fits. For unbinned fits in Python, the libraries that we will consider here are <a class="reference external" href="https://github.com/zfit/zfit">zfit</a> (likelihood model fitting library) and <a class="reference external" href="https://github.com/scikit-hep/hepstats">hepstats</a> (higher level statistical inference; can use <code class="docutils literal notranslate"><span class="pre">zfit</span></code> models), both which are relatively young and written in pure Python.</p>
 <p>An alternative to be mentioned is <a class="reference external" href="http://roofit.sourceforge.net/">RooFit</a> and <a class="reference external" href="https://twiki.cern.ch/twiki/bin/view/RooStats/WebHome">RooStats</a>, an older, well-proven, reliable C++ framework that has Python bindings and acts as a standard in HEP for this kind of fits.</p>
 <p>In case your analysis involved pure binned and templated fits, <a class="reference external" href="https://github.com/scikit-hep/pyhf">pyhf</a> provides a specialized library for this kind of fits.</p>
 </section>
 <section id="Getting-started">
-<h2>Getting started<a class="headerlink" href="#Getting-started" title="Permalink to this headline"></a></h2>
+<h2>Getting started<a class="headerlink" href="#Getting-started" title="Permalink to this heading"></a></h2>
 <p>In order to get started with <code class="docutils literal notranslate"><span class="pre">zfit</span></code>, it is recommendable to have a look at the <a class="reference external" href="https://zfit-tutorials.readthedocs.io/en/latest/index.html">zfit-tutorials</a> or the <a class="reference external" href="https://www.youtube.com/playlist?list=PLAuzjeTfC3tNeP6o2sbCr3Jsa6ATvEYR6">recorded</a> <a class="reference external" href="https://www.youtube.com/watch?v=YDW-XxrSbns">tutorials</a>, which also contains <code class="docutils literal notranslate"><span class="pre">hepstats</span></code> tutorials; more the latter can be found <a class="reference external" href="https://github.com/scikit-hep/hepstats/tree/master/notebooks">here</a>.</p>
 <p>Before we continue, it is highly recommended to follow the <a class="reference external" href="https://zfit-tutorials.readthedocs.io/en/latest/tutorials/introduction/README.html">zfit introduction tutorial</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="o">%</span><span class="k">store</span> -r bkg_df
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">store</span> -r bkg_df
 <span class="o">%</span><span class="k">store</span> -r mc_df
 <span class="o">%</span><span class="k">store</span> -r data_df
 </pre></div>
@@ -761,8 +769,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">hepstats</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hepstats</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">mplhep</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -777,14 +784,21 @@ div.rendered_html tbody tr:hover {
 <div class="highlight"><pre>
 /usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/zfit/__init__.py:37: UserWarning: TensorFlow warnings are by default suppressed by zfit. In order to show them, set the environment variable ZFIT_DISABLE_TF_WARNINGS=0. In order to suppress the TensorFlow warnings AND this warning, set ZFIT_DISABLE_TF_WARNINGS=1.
   warnings.warn(&#34;TensorFlow warnings are by default suppressed by zfit.&#34;
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/tensorflow_addons/utils/ensure_tf_install.py:53: UserWarning: Tensorflow Addons supports using Python ops for all Tensorflow versions above or equal to 2.7.0 and strictly below 2.10.0 (nightly versions are not supported).
+ The versions of TensorFlow you are currently using is 2.6.5 and is not supported.
+Some things might work, some things might not.
+If you were to encounter a bug, do not file an issue.
+If you want to make sure you&#39;re using a tested and supported configuration, either change the TensorFlow version or the TensorFlow Addons&#39;s version.
+You can find the compatibility matrix in TensorFlow Addon&#39;s readme:
+https://github.com/tensorflow/addons
+  warnings.warn(
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># apply cuts</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># apply cuts</span>
 <span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;BDT &gt; 0.4&#39;</span>
 <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">mc_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -800,8 +814,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">obs</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Space</span><span class="p">(</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">,</span> <span class="n">limits</span><span class="o">=</span><span class="p">(</span><span class="mf">2.8</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">))</span>  <span class="c1"># defining the observable</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obs</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Space</span><span class="p">(</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">,</span> <span class="n">limits</span><span class="o">=</span><span class="p">(</span><span class="mf">2.8</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">))</span>  <span class="c1"># defining the observable</span>
 </pre></div>
 </div>
 </div>
@@ -809,8 +822,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># bkg = zfit.Data.from_pandas(bkg_df[&#39;Jpsi_M&#39;], obs=obs)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bkg = zfit.Data.from_pandas(bkg_df[&#39;Jpsi_M&#39;], obs=obs)</span>
 <span class="c1"># OR</span>
 <span class="c1"># obs_bkg = zfit.Space(&#39;Jpsi_M&#39;, limits=(2.8, 3.0)) + zfit.Space(&#39;Jpsi_M&#39;, limits=(3.2, 3.5))</span>
 <span class="c1"># bkg_two = zfit.Data.from_pandas(data_df[&#39;Jpsi_M&#39;], obs=obs_bkg)</span>
@@ -821,23 +833,21 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mc</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">],</span> <span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">],</span> <span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">],</span> <span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="Difference-of-the-two-spaces">
-<h2>Difference of the two spaces<a class="headerlink" href="#Difference-of-the-two-spaces" title="Permalink to this headline"></a></h2>
+<h2>Difference of the two spaces<a class="headerlink" href="#Difference-of-the-two-spaces" title="Permalink to this heading"></a></h2>
 <p>While the first space is defined over the whole space from 2.8 to 3.5, the second consists of two distinct regions. Therefore we can use the original space and zfit applies the cut, the same as we did before to the <code class="docutils literal notranslate"><span class="pre">bkg_df</span></code>.</p>
 <p>The difference comes when using the normalization in the PDF: we can either normalize it over the whole range or only over part of it.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">lambd</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;lambda&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lambd</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;lambda&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">bkg_yield</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;bkg_yield&#39;</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200000</span><span class="p">,</span> <span class="n">step_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">mu</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;mu&#39;</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">)</span>
@@ -850,8 +860,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">bkg_pdf</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">Exponential</span><span class="p">(</span><span class="n">lambd</span><span class="p">,</span> <span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bkg_pdf</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">Exponential</span><span class="p">(</span><span class="n">lambd</span><span class="p">,</span> <span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="p">)</span>
 <span class="n">bkg_pdf</span><span class="o">.</span><span class="n">set_yield</span><span class="p">(</span><span class="n">bkg_yield</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -860,8 +869,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sig_pdf</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">Gauss</span><span class="p">(</span><span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sig_pdf</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">Gauss</span><span class="p">(</span><span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">)</span>
 <span class="n">sig_pdf</span><span class="o">.</span><span class="n">set_yield</span><span class="p">(</span><span class="n">sig_yield</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -870,21 +878,19 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">model</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">SumPDF</span><span class="p">([</span><span class="n">bkg_pdf</span><span class="p">,</span> <span class="n">sig_pdf</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">SumPDF</span><span class="p">([</span><span class="n">bkg_pdf</span><span class="p">,</span> <span class="n">sig_pdf</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="Plotting">
-<h2>Plotting<a class="headerlink" href="#Plotting" title="Permalink to this headline"></a></h2>
+<h2>Plotting<a class="headerlink" href="#Plotting" title="Permalink to this heading"></a></h2>
 <p>Plots can simply be made with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">mplhep</span></code>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">plot_fit</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_fit</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="c1"># The function will be reused.</span>
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
@@ -920,8 +926,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plot_fit</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>  <span class="c1"># before the fit</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_fit</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>  <span class="c1"># before the fit</span>
 </pre></div>
 </div>
 </div>
@@ -943,14 +948,13 @@ div.rendered_html tbody tr:hover {
 </div>
 </section>
 <section id="Loss">
-<h2>Loss<a class="headerlink" href="#Loss" title="Permalink to this headline"></a></h2>
+<h2>Loss<a class="headerlink" href="#Loss" title="Permalink to this heading"></a></h2>
 <p>Since we have now the models and the datasets, we can e.g. pre-fit the signal PDF to the simulation.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sig_nll</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">loss</span><span class="o">.</span><span class="n">UnbinnedNLL</span><span class="p">(</span><span class="n">sig_pdf</span><span class="p">,</span> <span class="n">mc</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sig_nll</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">loss</span><span class="o">.</span><span class="n">UnbinnedNLL</span><span class="p">(</span><span class="n">sig_pdf</span><span class="p">,</span> <span class="n">mc</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -969,8 +973,7 @@ Extended PDFs are given to a normal UnbinnedNLL. This won&#39;t take the yield i
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">minimizer</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">minimize</span><span class="o">.</span><span class="n">Minuit</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minimizer</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">minimize</span><span class="o">.</span><span class="n">Minuit</span><span class="p">()</span>
 <span class="c1"># minimizer = zfit.minimize.NLoptLBFGSV1()  # can be changed but maybe not as powerful as iminuit</span>
 <span class="c1"># minimizer = zfit.minimize.ScipySLSQPV1()</span>
 </pre></div>
@@ -980,8 +983,7 @@ Extended PDFs are given to a normal UnbinnedNLL. This won&#39;t take the yield i
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">minimizer</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">sig_nll</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minimizer</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">sig_nll</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -992,7 +994,7 @@ Extended PDFs are given to a normal UnbinnedNLL. This won&#39;t take the yield i
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7ff9e4aed280&gt;] constraints=[]&gt;
+&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7f93769c0fa0&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
@@ -1010,14 +1012,13 @@ sigma   0.01503       False
 </pre></div></div>
 </div>
 <section id="Fixing-parameters">
-<h3>Fixing parameters<a class="headerlink" href="#Fixing-parameters" title="Permalink to this headline"></a></h3>
+<h3>Fixing parameters<a class="headerlink" href="#Fixing-parameters" title="Permalink to this heading"></a></h3>
 <p>Sometimes we want to fix parameters obtained from MC, such as tailes. Here we will fix the <code class="docutils literal notranslate"><span class="pre">sigma</span></code>, just for demonstration purpose.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sigma</span><span class="o">.</span><span class="n">floating</span> <span class="o">=</span> <span class="kc">False</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma</span><span class="o">.</span><span class="n">floating</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
 </div>
 </div>
@@ -1025,8 +1026,7 @@ sigma   0.01503       False
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">nll</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">loss</span><span class="o">.</span><span class="n">ExtendedUnbinnedNLL</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nll</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">loss</span><span class="o">.</span><span class="n">ExtendedUnbinnedNLL</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1034,8 +1034,7 @@ sigma   0.01503       False
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">result</span> <span class="o">=</span> <span class="n">minimizer</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">nll</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">minimizer</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">nll</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1043,8 +1042,7 @@ sigma   0.01503       False
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">result</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span>
 </pre></div>
 </div>
 </div>
@@ -1055,22 +1053,22 @@ sigma   0.01503       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7ff95d61dbe0&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f93769db220&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
-╒═════════╤═════════════╤══════════════════╤═════════╤═════════════╕
-│ valid   │ converged   │ param at limit   │ edm     │ min value   │
-╞═════════╪═════════════╪══════════════════╪═════════╪═════════════╡
-│ True    │ True        │ False            │ 6.4e-06 │ 812.7       │
-╘═════════╧═════════════╧══════════════════╧═════════╧═════════════╛
+╒═════════╤═════════════╤══════════════════╤═══════╤═════════════╕
+│ valid   │ converged   │ param at limit   │ edm   │ min value   │
+╞═════════╪═════════════╪══════════════════╪═══════╪═════════════╡
+│ True    │ True        │ False            │ 8e-06 │ 837.6       │
+╘═════════╧═════════════╧══════════════════╧═══════╧═════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name         value    at limit
 ---------  -------  ----------
-bkg_yield     5970       False
-sig_yield      133       False
-lambda      -1.083       False
+bkg_yield     6003       False
+sig_yield    137.4       False
+lambda     -0.9397       False
 mu           3.096       False
 </pre></div></div>
 </div>
@@ -1078,8 +1076,7 @@ mu           3.096       False
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">result</span><span class="o">.</span><span class="n">hesse</span><span class="p">()</span>  <span class="c1"># calculate hessian error</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">hesse</span><span class="p">()</span>  <span class="c1"># calculate hessian error</span>
 <span class="n">result</span><span class="o">.</span><span class="n">errors</span><span class="p">()</span>  <span class="c1"># profile, using minos like uncertainty</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
@@ -1100,31 +1097,30 @@ mu           3.096       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 FitResult of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7ff95d61dbe0&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f93769db220&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
-╒═════════╤═════════════╤══════════════════╤═════════╤═════════════╕
-│ valid   │ converged   │ param at limit   │ edm     │ min value   │
-╞═════════╪═════════════╪══════════════════╪═════════╪═════════════╡
-│ True    │ True        │ False            │ 6.4e-06 │ 812.7       │
-╘═════════╧═════════════╧══════════════════╧═════════╧═════════════╛
+╒═════════╤═════════════╤══════════════════╤═══════╤═════════════╕
+│ valid   │ converged   │ param at limit   │ edm   │ min value   │
+╞═════════╪═════════════╪══════════════════╪═══════╪═════════════╡
+│ True    │ True        │ False            │ 8e-06 │ 837.6       │
+╘═════════╧═════════════╧══════════════════╧═══════╧═════════════╛
 
 Parameters
 name         value    minuit_hesse         minuit_minos    at limit
 ---------  -------  --------------  -------------------  ----------
-bkg_yield     5970     +/-      81  -     80   +     81       False
-sig_yield      133     +/-      26  -     25   +     26       False
-lambda      -1.083     +/-   0.065  -  0.065   +  0.065       False
-mu           3.096     +/-  0.0035  - 0.0036   + 0.0035       False
+bkg_yield     6003     +/-      81  -     80   +     81       False
+sig_yield    137.4     +/-      26  -     26   +     26       False
+lambda     -0.9397     +/-   0.065  -  0.065   +  0.064       False
+mu           3.096     +/-  0.0038  - 0.0039   + 0.0038       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plot_fit</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_fit</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1145,12 +1141,11 @@ mu           3.096     +/-  0.0035  - 0.0036   + 0.0035       False
 </div>
 </div>
 <p><strong>Exercise</strong>: use <code class="docutils literal notranslate"><span class="pre">hepstats</span></code> to check the significance of our signal</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">hepstats.hypotests.calculators</span> <span class="kn">import</span> <span class="n">AsymptoticCalculator</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hepstats.hypotests.calculators</span> <span class="kn">import</span> <span class="n">AsymptoticCalculator</span>
 <span class="kn">from</span> <span class="nn">hepstats.hypotests.parameters</span> <span class="kn">import</span> <span class="n">POI</span>
 
 <span class="c1"># the null hypothesis</span>
@@ -1158,6 +1153,15 @@ mu           3.096     +/-  0.0035  - 0.0036   + 0.0035       False
 <span class="n">calculator</span> <span class="o">=</span> <span class="n">AsymptoticCalculator</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">result</span><span class="p">,</span> <span class="n">minimizer</span><span class="o">=</span><span class="n">minimizer</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/tqdm/auto.py:22: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+</pre></div></div>
 </div>
 <p>There is another calculator in <code class="docutils literal notranslate"><span class="pre">hepstats</span></code> called <code class="docutils literal notranslate"><span class="pre">FrequentistCalculator</span></code> which constructs the test statistic distribution <span class="math notranslate nohighlight">\(f(q_{0} |H_{0})\)</span> with pseudo-experiments (toys), but it takes more time.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Discovery</span></code> class is a high-level class that takes as input a calculator and a <code class="docutils literal notranslate"><span class="pre">POI</span></code> instance representing the null hypothesis, it basically asks the calculator to compute the p-value and also computes the signifance as</p>
@@ -1168,8 +1172,7 @@ Z = \Phi^{-1}(1 - p_0).
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">hepstats.hypotests</span> <span class="kn">import</span> <span class="n">Discovery</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hepstats.hypotests</span> <span class="kn">import</span> <span class="n">Discovery</span>
 
 <span class="n">discovery</span> <span class="o">=</span> <span class="n">Discovery</span><span class="p">(</span><span class="n">calculator</span><span class="o">=</span><span class="n">calculator</span><span class="p">,</span> <span class="n">poinull</span><span class="o">=</span><span class="n">sig_yield_poi</span><span class="p">)</span>
 <span class="n">discovery</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
@@ -1182,8 +1185,8 @@ Z = \Phi^{-1}(1 - p_0).
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-p_value for the Null hypothesis = 9.64755630938896e-09
-Significance (in units of sigma) = 5.618205323587264
+p_value for the Null hypothesis = 4.5430285089409495e-09
+Significance (in units of sigma) = 5.7469630588620815
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1192,7 +1195,7 @@ Significance (in units of sigma) = 5.618205323587264
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(9.64755630938896e-09, 5.618205323587264)
+(4.5430285089409495e-09, 5.7469630588620815)
 </pre></div></div>
 </div>
 <p><strong>Exercise</strong> play around! First things first: repeat the fit. The difference we will see is statistical fluctuation from the resampling of the data; we take only a fraction at random.</p>

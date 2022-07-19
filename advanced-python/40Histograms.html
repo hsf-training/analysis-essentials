@@ -16,11 +16,12 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -669,11 +670,12 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
 /* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
 div.rendered_html table {
   border: none;
   border-collapse: collapse;
@@ -682,10 +684,14 @@ div.rendered_html table {
   font-size: 12px;
   table-layout: fixed;
 }
+.jp-RenderedHTMLCommon thead,
 div.rendered_html thead {
   border-bottom: 1px solid black;
   vertical-align: bottom;
 }
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
 div.rendered_html tr,
 div.rendered_html th,
 div.rendered_html td {
@@ -697,12 +703,15 @@ div.rendered_html td {
   max-width: none;
   border: none;
 }
+.jp-RenderedHTMLCommon th,
 div.rendered_html th {
   font-weight: bold;
 }
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
 div.rendered_html tbody tr:nth-child(odd) {
   background: #f5f5f5;
 }
+.jp-RenderedHTMLCommon tbody tr:hover,
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
@@ -730,7 +739,7 @@ div.rendered_html tbody tr:hover {
 }
 </style>
 <section id="6:-Histograms">
-<h1>6: Histograms<a class="headerlink" href="#6:-Histograms" title="Permalink to this headline"></a></h1>
+<h1>6: Histograms<a class="headerlink" href="#6:-Histograms" title="Permalink to this heading"></a></h1>
 <p>In nearly every High Energy Physics analysis, histograms have their place: - plotting of variables - calculating efficiency correction tables (weights) - performing binned fits</p>
 <p>and many more.</p>
 <p>Scikit-HEP offers libraries to deal with histograms in Python in a performant way: <a class="reference external" href="https://hist.readthedocs.io/en/latest/">hist</a> is a user-friendly analysis library for histograms and is directly built on top of the workhorse <a class="reference external" href="https://boost-histogram.readthedocs.io/en/latest/">boost-histogram</a>, which can also be used directly. Hist simply provides more functionality.</p>
@@ -740,8 +749,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># jupyter magic to load the previous data sets</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># jupyter magic to load the previous data sets</span>
 <span class="o">%</span><span class="k">store</span> -r bkg_df
 <span class="o">%</span><span class="k">store</span> -r mc_df
 <span class="o">%</span><span class="k">store</span> -r data_df
@@ -757,8 +765,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Let&#39;s get started with a simple example</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s get started with a simple example</span>
 
 <span class="c1"># Compose axis however you like; this is a 2D histogram</span>
 <span class="n">h</span> <span class="o">=</span> <span class="n">bh</span><span class="o">.</span><span class="n">Histogram</span><span class="p">(</span><span class="n">bh</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">Regular</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
@@ -781,7 +788,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ColormeshArtists(pcolormesh=&lt;matplotlib.collections.QuadMesh object at 0x7fb3f8fd8d90&gt;, cbar=&lt;matplotlib.colorbar.Colorbar object at 0x7fb3f0f8af10&gt;, text=[])
+ColormeshArtists(pcolormesh=&lt;matplotlib.collections.QuadMesh object at 0x7f757def18b0&gt;, cbar=&lt;matplotlib.colorbar.Colorbar object at 0x7f7575ea49d0&gt;, text=[])
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -792,20 +799,20 @@ ColormeshArtists(pcolormesh=&lt;matplotlib.collections.QuadMesh object at 0x7fb3
 </div>
 </div>
 <section id="Axes">
-<h2>Axes<a class="headerlink" href="#Axes" title="Permalink to this headline"></a></h2>
+<h2>Axes<a class="headerlink" href="#Axes" title="Permalink to this heading"></a></h2>
 <p>A cental part of a histogram are the axes: They difine the binning and other treats of the axis.</p>
 <p>A Hist (<em>this refers by default to hist.Hist, but usually also applies for bh.Histogram as the former inherits from the latter</em>) can have multiple axes of different types.</p>
 <p>All axes are described <a class="reference external" href="https://hist.readthedocs.io/en/latest/user-guide/axes.html#axes">here</a>.</p>
 <p>The most important types are</p>
 <section id="Regular">
-<h3>Regular<a class="headerlink" href="#Regular" title="Permalink to this headline"></a></h3>
+<h3>Regular<a class="headerlink" href="#Regular" title="Permalink to this heading"></a></h3>
 <p>This is an axis with lower, upper limits, <strong>regularly</strong> split into n bins.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>axis_reg = hist.axis.Regular(nbins, lower, upper, name=name)
 </pre></div>
 </div>
 </section>
 <section id="Variable">
-<h3>Variable<a class="headerlink" href="#Variable" title="Permalink to this headline"></a></h3>
+<h3>Variable<a class="headerlink" href="#Variable" title="Permalink to this heading"></a></h3>
 <p>A variable axis allows to set the bin edges arbitrarily using an array-like object.mro</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>axis_var = hist.axis.Variable([0, 0.5, 3.1, 3.4], name=&quot;eta&quot;)
 </pre></div>
@@ -813,14 +820,13 @@ ColormeshArtists(pcolormesh=&lt;matplotlib.collections.QuadMesh object at 0x7fb3
 </section>
 </section>
 <section id="Axis-Name">
-<h2>Axis Name<a class="headerlink" href="#Axis-Name" title="Permalink to this headline"></a></h2>
+<h2>Axis Name<a class="headerlink" href="#Axis-Name" title="Permalink to this heading"></a></h2>
 <p>An axis (in hist, in bh only a label is possible) have a name, which can be used as the identifier when working with the histogram (instead of using plain integer indexes).</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -828,8 +834,7 @@ ColormeshArtists(pcolormesh=&lt;matplotlib.collections.QuadMesh object at 0x7fb3
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="n">axis1</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">Regular</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mass&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -839,8 +844,7 @@ ColormeshArtists(pcolormesh=&lt;matplotlib.collections.QuadMesh object at 0x7fb3
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_h</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">Hist</span><span class="p">(</span><span class="n">axis1</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_h</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">Hist</span><span class="p">(</span><span class="n">axis1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -848,8 +852,7 @@ ColormeshArtists(pcolormesh=&lt;matplotlib.collections.QuadMesh object at 0x7fb3
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_h</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_h</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -888,21 +891,19 @@ Double() Σ=168384.0 <em>(168385.0 with flow)</em>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mc_h</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">Hist</span><span class="p">(</span><span class="n">axis1</span><span class="p">)</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">])</span>  <span class="c1"># we can also chain the commands</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc_h</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">Hist</span><span class="p">(</span><span class="n">axis1</span><span class="p">)</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">])</span>  <span class="c1"># we can also chain the commands</span>
 </pre></div>
 </div>
 </div>
 <section id="Compatibility-with-mplhep">
-<h3>Compatibility with mplhep<a class="headerlink" href="#Compatibility-with-mplhep" title="Permalink to this headline"></a></h3>
+<h3>Compatibility with mplhep<a class="headerlink" href="#Compatibility-with-mplhep" title="Permalink to this heading"></a></h3>
 <p>With bh and hist, the <a class="reference external" href="https://github.com/scikit-hep/uhi">Unified Histogram Interface</a> was also born. This allows objects to be plotted so that a library such as mplhep knows what to do with it.</p>
 <p>In short, mplhep and hist work seemless together:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data_h</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data_h</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -912,7 +913,7 @@ Double() Σ=168384.0 <em>(168385.0 with flow)</em>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7fb3f0e485e0&gt;, errorbar=&lt;ErrorbarContainer object of 3 artists&gt;, legend_artist=&lt;ErrorbarContainer object of 3 artists&gt;)]
+[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7f7575d566a0&gt;, errorbar=&lt;ErrorbarContainer object of 3 artists&gt;, legend_artist=&lt;ErrorbarContainer object of 3 artists&gt;)]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -924,14 +925,13 @@ Double() Σ=168384.0 <em>(168385.0 with flow)</em>
 </div>
 </section>
 <section id="Plotting-with-hist">
-<h3>Plotting with hist<a class="headerlink" href="#Plotting-with-hist" title="Permalink to this headline"></a></h3>
+<h3>Plotting with hist<a class="headerlink" href="#Plotting-with-hist" title="Permalink to this heading"></a></h3>
 <p>hist itself provides also plotting functionality</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_h</span><span class="o">.</span><span class="n">plot1d</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_h</span><span class="o">.</span><span class="n">plot1d</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -941,7 +941,7 @@ Double() Σ=168384.0 <em>(168385.0 with flow)</em>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7fb3e35d3430&gt;, errorbar=&lt;ErrorbarContainer object of 3 artists&gt;, legend_artist=&lt;ErrorbarContainer object of 3 artists&gt;)]
+[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7f7567e7a820&gt;, errorbar=&lt;ErrorbarContainer object of 3 artists&gt;, legend_artist=&lt;ErrorbarContainer object of 3 artists&gt;)]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -955,8 +955,7 @@ Double() Σ=168384.0 <em>(168385.0 with flow)</em>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_h</span><span class="o">.</span><span class="n">plot1d</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_h</span><span class="o">.</span><span class="n">plot1d</span><span class="p">()</span>
 <span class="n">mc_h</span><span class="o">.</span><span class="n">plot1d</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -967,7 +966,7 @@ Double() Σ=168384.0 <em>(168385.0 with flow)</em>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7fb3e356e790&gt;, errorbar=&lt;ErrorbarContainer object of 3 artists&gt;, legend_artist=&lt;ErrorbarContainer object of 3 artists&gt;)]
+[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7f7567d95a30&gt;, errorbar=&lt;ErrorbarContainer object of 3 artists&gt;, legend_artist=&lt;ErrorbarContainer object of 3 artists&gt;)]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -981,8 +980,7 @@ Double() Σ=168384.0 <em>(168385.0 with flow)</em>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mc_df</span><span class="o">.</span><span class="n">columns</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc_df</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 </div>
 </div>
@@ -1004,14 +1002,13 @@ Index([&#39;Jpsi_PE&#39;, &#39;Jpsi_PX&#39;, &#39;Jpsi_PY&#39;, &#39;Jpsi_PZ&#39
 </section>
 </section>
 <section id="Multiple-dimensions">
-<h2>Multiple dimensions<a class="headerlink" href="#Multiple-dimensions" title="Permalink to this headline"></a></h2>
+<h2>Multiple dimensions<a class="headerlink" href="#Multiple-dimensions" title="Permalink to this heading"></a></h2>
 <p>Histograms can be multiple dimensional. Let’s add a dimension to it.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="n">axis_bdt</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">Regular</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;BDT&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1020,8 +1017,7 @@ Index([&#39;Jpsi_PE&#39;, &#39;Jpsi_PX&#39;, &#39;Jpsi_PY&#39;, &#39;Jpsi_PZ&#39
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mc_h2d</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">Hist</span><span class="p">(</span><span class="n">axis1</span><span class="p">,</span> <span class="n">axis_bdt</span><span class="p">)</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">BDT</span><span class="o">=</span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">],</span> <span class="n">mass</span><span class="o">=</span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">])</span> <span class="c1"># using names</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc_h2d</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">Hist</span><span class="p">(</span><span class="n">axis1</span><span class="p">,</span> <span class="n">axis_bdt</span><span class="p">)</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">BDT</span><span class="o">=</span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">],</span> <span class="n">mass</span><span class="o">=</span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">])</span> <span class="c1"># using names</span>
 </pre></div>
 </div>
 </div>
@@ -1029,8 +1025,7 @@ Index([&#39;Jpsi_PE&#39;, &#39;Jpsi_PX&#39;, &#39;Jpsi_PY&#39;, &#39;Jpsi_PZ&#39
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_h2d</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">Hist</span><span class="p">(</span><span class="n">axis1</span><span class="p">,</span> <span class="n">axis_bdt</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_h2d</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">Hist</span><span class="p">(</span><span class="n">axis1</span><span class="p">,</span> <span class="n">axis_bdt</span><span class="p">)</span>
 <span class="n">data_h2d</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">],</span> <span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">])</span> <span class="c1"># order based</span>
 </pre></div>
 </div>
@@ -2078,8 +2073,7 @@ Double() Σ=168383.0 <em>(168385.0 with flow)</em>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mplhep</span><span class="o">.</span><span class="n">hist2dplot</span><span class="p">(</span><span class="n">data_h2d</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mplhep</span><span class="o">.</span><span class="n">hist2dplot</span><span class="p">(</span><span class="n">data_h2d</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2089,7 +2083,7 @@ Double() Σ=168383.0 <em>(168385.0 with flow)</em>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ColormeshArtists(pcolormesh=&lt;matplotlib.collections.QuadMesh object at 0x7fb3e351d040&gt;, cbar=&lt;matplotlib.colorbar.Colorbar object at 0x7fb3e340e850&gt;, text=[])
+ColormeshArtists(pcolormesh=&lt;matplotlib.collections.QuadMesh object at 0x7f7567d36550&gt;, cbar=&lt;matplotlib.colorbar.Colorbar object at 0x7f7567d36a00&gt;, text=[])
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -2101,14 +2095,13 @@ ColormeshArtists(pcolormesh=&lt;matplotlib.collections.QuadMesh object at 0x7fb3
 </div>
 </section>
 <section id="Access-Bins">
-<h2>Access Bins<a class="headerlink" href="#Access-Bins" title="Permalink to this headline"></a></h2>
+<h2>Access Bins<a class="headerlink" href="#Access-Bins" title="Permalink to this heading"></a></h2>
 <p>hist allows you to access the bins of your Hist by various ways. Besides the normal access by index, you can use locations (supported by boost-histogram), complex numbers, and the dictionary to access the bins.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Access by bin number</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access by bin number</span>
 <span class="n">data_h2d</span><span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -2124,15 +2117,14 @@ ColormeshArtists(pcolormesh=&lt;matplotlib.collections.QuadMesh object at 0x7fb3
 </div>
 </section>
 <section id="Getting-Density">
-<h2>Getting Density<a class="headerlink" href="#Getting-Density" title="Permalink to this headline"></a></h2>
+<h2>Getting Density<a class="headerlink" href="#Getting-Density" title="Permalink to this heading"></a></h2>
 <p>If you want to get the density of an existing histogram, .density() is capable to do it and will return you the density array without overflow and underflow bins.</p>
 <p>A histogram is a count, so it’s an <strong>integral over a density</strong>. To obtain the density, one can devide by the area of the bin, this gives the “average density” in a bin.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">density</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">density</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2346,14 +2338,13 @@ array([[0.24562342, 1.20355474, 2.32523501, 3.37322826, 4.07734872,
 </div>
 </section>
 <section id="Projecting-axes">
-<h2>Projecting axes<a class="headerlink" href="#Projecting-axes" title="Permalink to this headline"></a></h2>
+<h2>Projecting axes<a class="headerlink" href="#Projecting-axes" title="Permalink to this heading"></a></h2>
 <p>We can also project onto a certain axis</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="s2">&quot;mass&quot;</span><span class="p">)</span>  <span class="c1"># we will here retain the 1D histogram</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="s2">&quot;mass&quot;</span><span class="p">)</span>  <span class="c1"># we will here retain the 1D histogram</span>
 </pre></div>
 </div>
 </div>
@@ -2390,14 +2381,13 @@ Double() Σ=168384.0 <em>(168385.0 with flow)</em>
 </div>
 </section>
 <section id="Accessing-everything-relevant">
-<h2>Accessing everything relevant<a class="headerlink" href="#Accessing-everything-relevant" title="Permalink to this headline"></a></h2>
+<h2>Accessing everything relevant<a class="headerlink" href="#Accessing-everything-relevant" title="Permalink to this heading"></a></h2>
 <p>Hist is transparent and let’s us use many things</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">axes</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">axes</span>
 </pre></div>
 </div>
 </div>
@@ -2415,8 +2405,7 @@ Double() Σ=168384.0 <em>(168385.0 with flow)</em>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2433,8 +2422,7 @@ Regular(50, 2.75, 3.5, name=&#39;mass&#39;, label=&#39;mass&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">edges</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">edges</span>
 </pre></div>
 </div>
 </div>
@@ -2461,8 +2449,7 @@ array([2.7500011 , 2.76500103, 2.78000096, 2.79500089, 2.81000082,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">centers</span>  <span class="c1"># bin centers</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">centers</span>  <span class="c1"># bin centers</span>
 </pre></div>
 </div>
 </div>
@@ -2488,8 +2475,7 @@ array([2.75750106, 2.772501  , 2.78750093, 2.80250086, 2.81750079,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">widths</span>  <span class="c1"># bin widths</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">widths</span>  <span class="c1"># bin widths</span>
 </pre></div>
 </div>
 </div>
@@ -2512,14 +2498,13 @@ array([0.01499993, 0.01499993, 0.01499993, 0.01499993, 0.01499993,
 </pre></div></div>
 </div>
 <section id="Multi-dimensional">
-<h3>Multi dimensional<a class="headerlink" href="#Multi-dimensional" title="Permalink to this headline"></a></h3>
+<h3>Multi dimensional<a class="headerlink" href="#Multi-dimensional" title="Permalink to this heading"></a></h3>
 <p>All this attributes are also already available in <code class="docutils literal notranslate"><span class="pre">edges</span></code>, they are ready to be broadcasted. So they have the shape of (1, …, N, …, 1).</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">edges</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_h2d</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">edges</span>
 <span class="n">data_h2d</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">centers</span>
 <span class="n">data_h2d</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">widths</span>
 <span class="n">areas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">data_h2d</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">widths</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -2740,23 +2725,21 @@ areas = [[0.00072536 0.00072536 0.00072536 0.00072536 0.00072536 0.00072536
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
 </section>
 </section>
 <section id="Arithmetics">
-<h2>Arithmetics<a class="headerlink" href="#Arithmetics" title="Permalink to this headline"></a></h2>
+<h2>Arithmetics<a class="headerlink" href="#Arithmetics" title="Permalink to this heading"></a></h2>
 <p>We can use the histograms to do math! We can multiply, add with each other or with scalars.</p>
 <p>We can find the ratio between two histograms by dividing them</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_df_bdt</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;BDT &gt; 0.9&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_df_bdt</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;BDT &gt; 0.9&quot;</span><span class="p">)</span>
 
 <span class="n">data_bdt_h2d</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">Hist</span><span class="p">(</span><span class="n">axis1</span><span class="p">,</span> <span class="n">axis_bdt</span><span class="p">)</span>
 <span class="n">data_bdt_h2d</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">data_df_bdt</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">],</span> <span class="n">data_df_bdt</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">])</span> <span class="c1"># order based</span>
@@ -3806,8 +3789,7 @@ Double() Σ=734.0 <em>(735.0 with flow)</em>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ratio</span> <span class="o">=</span> <span class="n">data_bdt_h2d</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="s2">&quot;mass&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="n">data_h2d</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="s2">&quot;mass&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ratio</span> <span class="o">=</span> <span class="n">data_bdt_h2d</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="s2">&quot;mass&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="n">data_h2d</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="s2">&quot;mass&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3815,8 +3797,7 @@ Double() Σ=734.0 <em>(735.0 with flow)</em>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ratio</span><span class="o">.</span><span class="n">plot1d</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ratio</span><span class="o">.</span><span class="n">plot1d</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -3826,7 +3807,7 @@ Double() Σ=734.0 <em>(735.0 with flow)</em>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7fb3e03be160&gt;, errorbar=None, legend_artist=None)]
+[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7f7593f86fd0&gt;, errorbar=None, legend_artist=None)]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -3840,8 +3821,7 @@ Double() Σ=734.0 <em>(735.0 with flow)</em>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ratio_large</span> <span class="o">=</span> <span class="n">ratio</span> <span class="o">*</span> <span class="mi">10</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ratio_large</span> <span class="o">=</span> <span class="n">ratio</span> <span class="o">*</span> <span class="mi">10</span>
 <span class="n">ratio_large</span><span class="o">.</span><span class="n">plot1d</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -3852,7 +3832,7 @@ Double() Σ=734.0 <em>(735.0 with flow)</em>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7fb40bffaa60&gt;, errorbar=None, legend_artist=None)]
+[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7f7593fc2e80&gt;, errorbar=None, legend_artist=None)]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -3867,22 +3847,20 @@ Double() Σ=734.0 <em>(735.0 with flow)</em>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="Weights">
-<h2>Weights<a class="headerlink" href="#Weights" title="Permalink to this headline"></a></h2>
+<h2>Weights<a class="headerlink" href="#Weights" title="Permalink to this heading"></a></h2>
 <p>Weights are an essential part in HEP histograms and hist fully supports weigths. We can simply give an array of weights when filling the histogram.</p>
 <p>We first need to specify the storage type to be of type <code class="docutils literal notranslate"><span class="pre">Weight</span></code> in order to make sure we keep track of the weigths.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">mc_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">mc_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">storage</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">Weight</span><span class="p">()</span>
 <span class="n">mc_h2d</span> <span class="o">=</span> <span class="n">hist</span><span class="o">.</span><span class="n">Hist</span><span class="p">(</span><span class="n">axis1</span><span class="p">,</span> <span class="n">axis_bdt</span><span class="p">,</span> <span class="n">storage</span><span class="o">=</span><span class="n">storage</span><span class="p">)</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">BDT</span><span class="o">=</span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">],</span> <span class="n">mass</span><span class="o">=</span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span> <span class="c1"># using names</span>
 </pre></div>
@@ -3892,8 +3870,7 @@ Double() Σ=734.0 <em>(735.0 with flow)</em>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mc_h2d</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc_h2d</span>
 </pre></div>
 </div>
 </div>
@@ -3996,8 +3973,8 @@ BDT
 <rect x="95.0000000000001" y="-25.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="100.00000000000009" y="-25.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="105.00000000000009" y="-25.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-25.0" width="5.0" height="12.5" opacity="0.000645397623797407" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-25.0" width="5.0" height="12.5" opacity="0.00022518649985297964" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-25.0" width="5.0" height="12.5" opacity="0.0006350910246071534" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-25.0" width="5.0" height="12.5" opacity="0.00022001387194360277" fill="currentColor" stroke-width="0.1"/>
 <rect x="119.99999999999993" y="-25.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="125.00000000000009" y="-25.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="130.00000000000006" y="-25.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4044,12 +4021,12 @@ BDT
 <rect x="84.99999999999996" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="95.0000000000001" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0004268685610116576" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.003000201214717077" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.009472455701303298" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.013319987396728928" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0026168160907117993" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.00020461354453028816" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0004287419665694045" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0029207538542191953" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.009649433480697769" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.013296906971634527" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0026225535959624457" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.00024166777417827" fill="currentColor" stroke-width="0.1"/>
 <rect x="130.00000000000006" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4094,13 +4071,13 @@ BDT
 <rect x="84.99999999999996" y="-50.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-50.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="95.0000000000001" y="-50.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.0013347988142470356" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.018114885853006895" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.05993327043706336" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-50.0" width="5.0" height="12.5" opacity="0.05902855293906319" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-50.0" width="5.0" height="12.5" opacity="0.020521267237809844" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.0015125578794419686" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-50.0" width="5.0" height="12.5" opacity="0.00024105478008826142" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.001267225480708916" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.017914340178097565" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.05914585102101613" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-50.0" width="5.0" height="12.5" opacity="0.05829733833003534" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-50.0" width="5.0" height="12.5" opacity="0.020328971289072174" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.0015914382380291421" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-50.0" width="5.0" height="12.5" opacity="0.00021805348529388346" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-50.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-50.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4144,13 +4121,13 @@ BDT
 <rect x="84.99999999999996" y="-62.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-62.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="95.0000000000001" y="-62.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.0015491698170591152" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.0362298716425566" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.12518268747851413" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-62.5" width="5.0" height="12.5" opacity="0.14818336049329647" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-62.5" width="5.0" height="12.5" opacity="0.05191584669987892" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.005223372033140478" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-62.5" width="5.0" height="12.5" opacity="0.00021916519941702695" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.001529412514131712" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.036631510308424944" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.12305600369399691" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-62.5" width="5.0" height="12.5" opacity="0.14698171324780726" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-62.5" width="5.0" height="12.5" opacity="0.05131667286356983" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.005137862610374202" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-62.5" width="5.0" height="12.5" opacity="0.00020386872202704935" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-62.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-62.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4193,14 +4170,14 @@ BDT
 <rect x="79.99999999999994" y="-75.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-75.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-75.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-75.0" width="5.0" height="12.5" opacity="0.00021377996849108907" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.006154536104236176" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.06775238017912803" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.265808006972349" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-75.0" width="5.0" height="12.5" opacity="0.2974928459244928" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-75.0" width="5.0" height="12.5" opacity="0.1033901283220902" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.009050688978576289" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-75.0" width="5.0" height="12.5" opacity="0.0008012582498785343" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-75.0" width="5.0" height="12.5" opacity="0.00021372517670933185" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.006197988655343303" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.0675135386647137" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.2666531139413897" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-75.0" width="5.0" height="12.5" opacity="0.2962358836556897" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-75.0" width="5.0" height="12.5" opacity="0.10259117416271331" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.00891942824842365" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-75.0" width="5.0" height="12.5" opacity="0.0008072157271653536" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-75.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-75.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4243,14 +4220,14 @@ BDT
 <rect x="79.99999999999994" y="-87.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-87.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-87.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-87.5" width="5.0" height="12.5" opacity="0.0006628451342812194" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.01006409287813177" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.1265694188540605" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.5095782631540094" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-87.5" width="5.0" height="12.5" opacity="0.6016641188849446" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-87.5" width="5.0" height="12.5" opacity="0.1788487414959214" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.0193077943516346" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-87.5" width="5.0" height="12.5" opacity="0.001432377873107429" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-87.5" width="5.0" height="12.5" opacity="0.0006298313633607305" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.009898109695579232" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.126252054389331" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.5072396847329038" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-87.5" width="5.0" height="12.5" opacity="0.5999179023199905" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-87.5" width="5.0" height="12.5" opacity="0.17837806270013778" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.01937935178481706" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-87.5" width="5.0" height="12.5" opacity="0.001448964705844051" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-87.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-87.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4294,13 +4271,13 @@ BDT
 <rect x="84.99999999999996" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="95.0000000000001" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.02011731709302006" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.20263403955438422" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.8773151938749925" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.020305399368603327" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.2027372967192729" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.8734283156317117" fill="currentColor" stroke-width="0.1"/>
 <rect x="115.00000000000007" y="-100.00000000000001" width="5.0" height="12.5" opacity="1.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.3252766899223039" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.02842817003041583" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0014967937130731077" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.32253270646632537" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.028223741712466933" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0015455744519071684" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4342,15 +4319,15 @@ BDT
 <rect x="74.9999999999998" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="79.99999999999994" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="90.0000000000001" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.00022903931410037608" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0014644251008198844" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.018190473904574178" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.20555925571784753" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.8112925144101468" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.9362246649689351" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.3166276086619143" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.03732255325244907" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0032138359341977786" fill="currentColor" stroke-width="0.1"/>
+<rect x="90.0000000000001" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.00019169682155466362" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0015095221905172442" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.01855046531796808" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.20585290940787687" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.8106382601903903" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.9339224317450552" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.31639392869072386" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.03693136505484722" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0032605603478298418" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4393,14 +4370,14 @@ BDT
 <rect x="79.99999999999994" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0006340113298070441" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.020746600771025712" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.18786084518086588" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.7012776943775529" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.8446990163840242" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.28323766748657137" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.033619320300287345" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0013136007276944117" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0006407346809115869" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.020668330952478182" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.1880629439497296" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.7022253965565127" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.8408340852706155" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.2824830416271238" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.03277878617439131" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.001224014112065413" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4443,15 +4420,15 @@ BDT
 <rect x="79.99999999999994" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0018263148555413956" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.019631575130237458" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.170263377230074" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.6624753189425662" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.7828220408007086" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.26287291397805174" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.03402698033048561" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0017818544310412188" fill="currentColor" stroke-width="0.1"/>
-<rect x="135.00000000000006" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.00020464061717797278" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.001794838045045297" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.019426626534339714" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.16904473847862334" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.6619828499318344" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.7790784449589047" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.2614216497448626" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.034154626413563725" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0016922725741322759" fill="currentColor" stroke-width="0.1"/>
+<rect x="135.00000000000006" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.000216853747795864" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="149.99999999999991" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4493,14 +4470,14 @@ BDT
 <rect x="79.99999999999994" y="-150.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-150.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-150.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-150.0" width="5.0" height="12.5" opacity="0.0008742396274803985" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.017067056979304437" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.16393855456105552" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.575041734758106" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-150.0" width="5.0" height="12.5" opacity="0.6799283555894303" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-150.0" width="5.0" height="12.5" opacity="0.24590348604244117" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.0288854755711005" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-150.0" width="5.0" height="12.5" opacity="0.0023994677878694487" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-150.0" width="5.0" height="12.5" opacity="0.0008600663287564097" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.01732484203020902" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.16243349833516876" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.574269801545843" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-150.0" width="5.0" height="12.5" opacity="0.6777984016282526" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-150.0" width="5.0" height="12.5" opacity="0.2443140623114305" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.02924846659061287" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-150.0" width="5.0" height="12.5" opacity="0.002375446999089353" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-150.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-150.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4543,15 +4520,15 @@ BDT
 <rect x="79.99999999999994" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0011623734661358348" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.017547108241055456" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.15947647019723846" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.5568783647768434" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.6334463186390075" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.2508600955984548" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.03539462002891284" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0029091019076976973" fill="currentColor" stroke-width="0.1"/>
-<rect x="135.00000000000006" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0002066918914806284" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0010878735491874577" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.017609914164609698" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.15631015815739327" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.5542020313493466" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.632806549413475" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.25033849358925814" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.03538601483363305" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0029799246922592986" fill="currentColor" stroke-width="0.1"/>
+<rect x="135.00000000000006" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0002153417867937568" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="149.99999999999991" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4592,15 +4569,15 @@ BDT
 <rect x="74.9999999999998" y="-175.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="79.99999999999994" y="-175.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-175.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="90.0000000000001" y="-175.0" width="5.0" height="12.5" opacity="0.00021089197370424676" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-175.0" width="5.0" height="12.5" opacity="0.0025497851884370543" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.018237648449544615" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.14507263120108205" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.48783492545299423" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-175.0" width="5.0" height="12.5" opacity="0.5496265372430182" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-175.0" width="5.0" height="12.5" opacity="0.22653649979047852" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.03275974991884915" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-175.0" width="5.0" height="12.5" opacity="0.0026709365015615085" fill="currentColor" stroke-width="0.1"/>
+<rect x="90.0000000000001" y="-175.0" width="5.0" height="12.5" opacity="0.0001981910470001634" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-175.0" width="5.0" height="12.5" opacity="0.0025689907492622063" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.01756917792269681" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.14552719501312164" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.48832761174972533" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-175.0" width="5.0" height="12.5" opacity="0.5487276619399476" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-175.0" width="5.0" height="12.5" opacity="0.2240794689944235" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.03229070417141516" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-175.0" width="5.0" height="12.5" opacity="0.002448268840227261" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-175.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-175.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4643,14 +4620,14 @@ BDT
 <rect x="79.99999999999994" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0017337728576636681" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.025377860364058206" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.14906282326741307" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.4765436976792222" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.5922781763749934" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.23448213714321686" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0437264229734667" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.003990278498814465" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0016337944058367204" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.025369437650618228" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.14815150048915515" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.47523850766946124" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.5922828873702596" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.23431446653756335" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.04323336272163896" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.003924646084756559" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4692,16 +4669,16 @@ BDT
 <rect x="74.9999999999998" y="-200.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="79.99999999999994" y="-200.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-200.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="90.0000000000001" y="-200.0" width="5.0" height="12.5" opacity="0.0002508108286197023" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-200.0" width="5.0" height="12.5" opacity="0.0025330467728434" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.023953751383973713" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.15147462786898566" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.47498388743339687" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-200.0" width="5.0" height="12.5" opacity="0.5195220325478805" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-200.0" width="5.0" height="12.5" opacity="0.20849293430174082" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.03856841047883662" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-200.0" width="5.0" height="12.5" opacity="0.006201307459675282" fill="currentColor" stroke-width="0.1"/>
-<rect x="135.00000000000006" y="-200.0" width="5.0" height="12.5" opacity="0.0006666810189418575" fill="currentColor" stroke-width="0.1"/>
+<rect x="90.0000000000001" y="-200.0" width="5.0" height="12.5" opacity="0.00021618225549201091" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-200.0" width="5.0" height="12.5" opacity="0.002577257141017363" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.024280555635830318" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.15005006600535647" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.4758875738889445" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-200.0" width="5.0" height="12.5" opacity="0.5179503810766007" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-200.0" width="5.0" height="12.5" opacity="0.2075905802227491" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.038536186025012235" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-200.0" width="5.0" height="12.5" opacity="0.006427953879481816" fill="currentColor" stroke-width="0.1"/>
+<rect x="135.00000000000006" y="-200.0" width="5.0" height="12.5" opacity="0.0006461333527784216" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-200.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="149.99999999999991" y="-200.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4742,16 +4719,16 @@ BDT
 <rect x="74.9999999999998" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="79.99999999999994" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="90.0000000000001" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.00021451247514665331" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.003427296137888425" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.027495861577220393" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.14590590225161046" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.46208847278717796" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.5237680625966454" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.220743269477665" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.04135391345971534" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0034617229839784464" fill="currentColor" stroke-width="0.1"/>
-<rect x="135.00000000000006" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.00040288800915144155" fill="currentColor" stroke-width="0.1"/>
+<rect x="90.0000000000001" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.00019997822841141737" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0035995121830471187" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.027334023733889243" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.14589051051417304" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.4604485860163202" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.522333795385227" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.21898128888906196" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.04129492364313652" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0033566572155580114" fill="currentColor" stroke-width="0.1"/>
+<rect x="135.00000000000006" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0003931463593467338" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="149.99999999999991" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4792,16 +4769,16 @@ BDT
 <rect x="74.9999999999998" y="-225.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="79.99999999999994" y="-225.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-225.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="90.0000000000001" y="-225.0" width="5.0" height="12.5" opacity="0.00037940946341541334" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-225.0" width="5.0" height="12.5" opacity="0.004777946473558493" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.03298290627944848" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.15703511004559007" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.45965279146793925" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-225.0" width="5.0" height="12.5" opacity="0.5298268968788667" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-225.0" width="5.0" height="12.5" opacity="0.22300552958208616" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.056951133269052" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-225.0" width="5.0" height="12.5" opacity="0.006958619683955233" fill="currentColor" stroke-width="0.1"/>
-<rect x="135.00000000000006" y="-225.0" width="5.0" height="12.5" opacity="0.0008712368594076012" fill="currentColor" stroke-width="0.1"/>
+<rect x="90.0000000000001" y="-225.0" width="5.0" height="12.5" opacity="0.00042530518291623284" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-225.0" width="5.0" height="12.5" opacity="0.004793977748015506" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.032803769370644165" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.15606293589921416" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.45984399198163406" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-225.0" width="5.0" height="12.5" opacity="0.5298007194613353" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-225.0" width="5.0" height="12.5" opacity="0.2241351309589815" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.05714986437431667" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-225.0" width="5.0" height="12.5" opacity="0.007160210500748236" fill="currentColor" stroke-width="0.1"/>
+<rect x="135.00000000000006" y="-225.0" width="5.0" height="12.5" opacity="0.0007784836455129939" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-225.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="149.99999999999991" y="-225.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4841,18 +4818,18 @@ BDT
 <rect x="70.0000000000001" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="74.9999999999998" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="79.99999999999994" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="84.99999999999996" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.00044134571179535643" fill="currentColor" stroke-width="0.1"/>
-<rect x="90.0000000000001" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.00043461974986925726" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.008660446547814888" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.05248786238981079" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.21118143017700008" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.5196956162863482" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.5786473489386066" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.2851583507983178" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.07514978420497281" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.014584235528205246" fill="currentColor" stroke-width="0.1"/>
-<rect x="135.00000000000006" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0028146314078739535" fill="currentColor" stroke-width="0.1"/>
-<rect x="140.00000000000006" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.00043472056595521085" fill="currentColor" stroke-width="0.1"/>
+<rect x="84.99999999999996" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0003545028513374167" fill="currentColor" stroke-width="0.1"/>
+<rect x="90.0000000000001" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.00042468331431097083" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.00847119389607477" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.05244725582072049" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.20930317278368302" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.5168670873620225" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.5759483008436749" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.28504193722677845" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.07574583185625823" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.014498576901887841" fill="currentColor" stroke-width="0.1"/>
+<rect x="135.00000000000006" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.002800441424764457" fill="currentColor" stroke-width="0.1"/>
+<rect x="140.00000000000006" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0004214242683710072" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="149.99999999999991" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="155.00000000000006" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4889,24 +4866,24 @@ BDT
 <rect x="59.999999999999964" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="65.00000000000011" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="70.0000000000001" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="74.9999999999998" y="-250.0" width="5.0" height="12.5" opacity="0.00019381482201040462" fill="currentColor" stroke-width="0.1"/>
+<rect x="74.9999999999998" y="-250.0" width="5.0" height="12.5" opacity="0.0002123948477957277" fill="currentColor" stroke-width="0.1"/>
 <rect x="79.99999999999994" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="84.99999999999996" y="-250.0" width="5.0" height="12.5" opacity="0.0016771412705748779" fill="currentColor" stroke-width="0.1"/>
-<rect x="90.0000000000001" y="-250.0" width="5.0" height="12.5" opacity="0.005531796951410465" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-250.0" width="5.0" height="12.5" opacity="0.0215397857334684" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.072535514068978" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.209815697825665" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.4993992488268402" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-250.0" width="5.0" height="12.5" opacity="0.5609323214078501" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-250.0" width="5.0" height="12.5" opacity="0.2883376718329536" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.0951994616826461" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.027362800260083538" fill="currentColor" stroke-width="0.1"/>
-<rect x="135.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.005403130090292138" fill="currentColor" stroke-width="0.1"/>
-<rect x="140.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.002347413905187279" fill="currentColor" stroke-width="0.1"/>
-<rect x="145.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.0004271589761855844" fill="currentColor" stroke-width="0.1"/>
-<rect x="149.99999999999991" y="-250.0" width="5.0" height="12.5" opacity="0.0006589874779600419" fill="currentColor" stroke-width="0.1"/>
+<rect x="84.99999999999996" y="-250.0" width="5.0" height="12.5" opacity="0.0017915077434073837" fill="currentColor" stroke-width="0.1"/>
+<rect x="90.0000000000001" y="-250.0" width="5.0" height="12.5" opacity="0.0056062981309352835" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-250.0" width="5.0" height="12.5" opacity="0.02093541005079215" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.07214582431881218" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.21003694616262025" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.496906050203665" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-250.0" width="5.0" height="12.5" opacity="0.5571387808623876" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-250.0" width="5.0" height="12.5" opacity="0.2881152143594705" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.09545349300585307" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.027007763612436852" fill="currentColor" stroke-width="0.1"/>
+<rect x="135.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.005381670979218923" fill="currentColor" stroke-width="0.1"/>
+<rect x="140.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.0023351128430865336" fill="currentColor" stroke-width="0.1"/>
+<rect x="145.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.0004269741875354978" fill="currentColor" stroke-width="0.1"/>
+<rect x="149.99999999999991" y="-250.0" width="5.0" height="12.5" opacity="0.0006578807453857372" fill="currentColor" stroke-width="0.1"/>
 <rect x="155.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="160.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.00022494898783035312" fill="currentColor" stroke-width="0.1"/>
+<rect x="160.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.00019973356711535496" fill="currentColor" stroke-width="0.1"/>
 <rect x="165.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="169.99999999999991" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="175.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4930,7 +4907,7 @@ BDT
 Regular(50, 2.75, 3.5, name='mass', label='mass')<br/>
 Regular(20, 0.026503, 0.993653, name='BDT', label='BDT')<br/>
 <hr style="margin-top:.2em; margin-bottom:.2em;"/>
-Weight() Σ=WeightedSum(value=120026, variance=121288) <em>(WeightedSum(value=120086, variance=121349) with flow)</em>
+Weight() Σ=WeightedSum(value=119986, variance=121202) <em>(WeightedSum(value=120045, variance=121262) with flow)</em>
 
 </div>
 </div>
@@ -4940,8 +4917,7 @@ Weight() Σ=WeightedSum(value=120026, variance=121288) <em>(WeightedSum(value=12
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mc_h2d</span><span class="o">.</span><span class="n">variances</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc_h2d</span><span class="o">.</span><span class="n">variances</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -5030,7 +5006,7 @@ array([[0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 8.13849025e-01],
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 9.82311685e-01],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
@@ -5040,72 +5016,72 @@ array([[0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 2.12545249e+00, 7.80260830e+00],
+        0.00000000e+00, 0.00000000e+00, 1.36945791e+00, 8.88436804e+00],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        1.13655366e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 9.63584881e-01, 0.00000000e+00, 1.36289513e+00,
-        9.96953684e-01, 1.56032236e+00, 2.08009231e+00, 2.57368832e+01],
+        8.00186425e-01, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
+        0.00000000e+00, 8.55321559e-01, 0.00000000e+00, 1.01765704e+00,
+        8.70816779e-01, 1.96968188e+00, 1.97770745e+00, 2.65941178e+01],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 9.90156612e-01, 3.18987195e+00, 0.00000000e+00,
-        6.68581298e+00, 2.91667966e+00, 9.06430423e+00, 4.16233739e+00,
-        5.90183679e+00, 1.18317101e+01, 8.17649008e+00, 1.17053222e+01,
-        1.61023365e+01, 2.16763178e+01, 4.10922141e+01, 1.01694047e+02],
-       [0.00000000e+00, 0.00000000e+00, 1.97603810e+00, 6.45847814e+00,
-        7.53253140e+00, 2.85563820e+01, 4.84595275e+01, 9.41419948e+01,
-        8.41645472e+01, 9.82221086e+01, 9.27615980e+01, 7.77870889e+01,
-        8.22251432e+01, 8.67638655e+01, 1.19340170e+02, 1.12144649e+02,
-        1.29979100e+02, 1.55535615e+02, 2.45875754e+02, 3.43800203e+02],
-       [0.00000000e+00, 0.00000000e+00, 1.40726270e+01, 8.65463074e+01,
-        1.68854007e+02, 3.20132463e+02, 5.91753385e+02, 9.52275978e+02,
-        9.63780969e+02, 8.82189761e+02, 8.00816514e+02, 7.73587065e+02,
-        7.59166652e+02, 6.79212516e+02, 7.02405920e+02, 7.13290347e+02,
-        6.85679864e+02, 7.41303594e+02, 9.95342057e+02, 9.87843641e+02],
-       [0.00000000e+00, 3.01029013e+00, 4.59384731e+01, 2.84040752e+02,
-        5.95044670e+02, 1.24650266e+03, 2.39297448e+03, 4.12759726e+03,
-        3.81044582e+03, 3.29387176e+03, 3.11503063e+03, 2.70245284e+03,
-        2.62568066e+03, 2.29274187e+03, 2.24269776e+03, 2.22498876e+03,
-        2.17695129e+03, 2.15844265e+03, 2.44414428e+03, 2.35323438e+03],
-       [0.00000000e+00, 1.09863790e+00, 6.25280408e+01, 2.78261046e+02,
-        7.01545360e+02, 1.40073987e+03, 2.83193863e+03, 4.69536375e+03,
-        4.40709181e+03, 3.97596605e+03, 3.68918486e+03, 3.19786811e+03,
-        2.97303799e+03, 2.57950684e+03, 2.78008287e+03, 2.44410475e+03,
-        2.46436142e+03, 2.48395131e+03, 2.72091000e+03, 2.64409341e+03],
-       [0.00000000e+00, 0.00000000e+00, 1.24539770e+01, 9.78756816e+01,
-        2.45975932e+02, 4.86295934e+02, 8.38841426e+02, 1.53298120e+03,
-        1.48745689e+03, 1.32985641e+03, 1.23888780e+03, 1.15777508e+03,
-        1.18133429e+03, 1.07063553e+03, 1.10337180e+03, 9.79705168e+02,
-        1.04218390e+03, 1.04602649e+03, 1.33812361e+03, 1.35914487e+03],
-       [0.00000000e+00, 0.00000000e+00, 9.07065464e-01, 7.13991840e+00,
-        2.48221840e+01, 4.26849168e+01, 9.04920050e+01, 1.33024069e+02,
-        1.75094818e+02, 1.61640442e+02, 1.58942959e+02, 1.35378001e+02,
-        1.66699166e+02, 1.54239580e+02, 2.05123755e+02, 1.80990567e+02,
-        1.95568785e+02, 2.65902712e+02, 3.52405449e+02, 4.46515742e+02],
-       [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 1.25892938e+00,
-        1.04067007e+00, 3.51180241e+00, 6.38808399e+00, 6.94961416e+00,
-        1.50320140e+01, 6.28114491e+00, 8.66257267e+00, 1.14199364e+01,
-        1.32548407e+01, 1.29582168e+01, 1.93424402e+01, 2.89317210e+01,
-        1.63725936e+01, 3.20396123e+01, 6.84794291e+01, 1.29120070e+02],
-       [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 9.07305510e-01, 0.00000000e+00,
-        9.25585950e-01, 0.00000000e+00, 0.00000000e+00, 3.24546999e+00,
-        1.76317036e+00, 4.14162130e+00, 1.32870772e+01, 2.55011777e+01],
+        0.00000000e+00, 9.94655583e-01, 2.90114111e+00, 0.00000000e+00,
+        7.10750909e+00, 3.00774578e+00, 8.96942392e+00, 4.05138910e+00,
+        5.19608853e+00, 1.20645161e+01, 7.31463329e+00, 1.20966664e+01,
+        1.78273597e+01, 2.18783525e+01, 3.94775424e+01, 9.67101606e+01],
+       [0.00000000e+00, 0.00000000e+00, 2.00156881e+00, 5.92996086e+00,
+        7.33016997e+00, 2.90550290e+01, 4.68714634e+01, 9.64940824e+01,
+        8.80728935e+01, 9.77620583e+01, 9.12296866e+01, 8.05028386e+01,
+        8.33161118e+01, 8.09132379e+01, 1.19696612e+02, 1.15829964e+02,
+        1.29343535e+02, 1.54610512e+02, 2.46971092e+02, 3.41612243e+02],
+       [0.00000000e+00, 0.00000000e+00, 1.34722956e+01, 8.48904886e+01,
+        1.73534208e+02, 3.19284025e+02, 5.90730102e+02, 9.56867327e+02,
+        9.70625289e+02, 8.88693748e+02, 7.93565733e+02, 7.63244902e+02,
+        7.33438483e+02, 6.87093019e+02, 6.97702372e+02, 7.03317633e+02,
+        6.89289302e+02, 7.35631780e+02, 9.82942535e+02, 9.94495068e+02],
+       [0.00000000e+00, 2.95501659e+00, 4.74496155e+01, 2.77935720e+02,
+        5.78394425e+02, 1.26045885e+03, 2.38360341e+03, 4.11203577e+03,
+        3.82325679e+03, 3.31878651e+03, 3.12657131e+03, 2.70881918e+03,
+        2.61399211e+03, 2.30859896e+03, 2.24203519e+03, 2.24641991e+03,
+        2.17323485e+03, 2.16939157e+03, 2.42843742e+03, 2.34162587e+03],
+       [0.00000000e+00, 1.05405066e+00, 6.26518167e+01, 2.72936654e+02,
+        6.93717911e+02, 1.39615757e+03, 2.83021996e+03, 4.71802431e+03,
+        4.40807757e+03, 3.95982114e+03, 3.67350922e+03, 3.19384461e+03,
+        2.98099383e+03, 2.58418936e+03, 2.79271783e+03, 2.44124358e+03,
+        2.46325921e+03, 2.49722294e+03, 2.70974640e+03, 2.62075098e+03],
+       [0.00000000e+00, 0.00000000e+00, 1.25225101e+01, 9.66794173e+01,
+        2.41205550e+02, 4.80727475e+02, 8.39016725e+02, 1.51527505e+03,
+        1.49169626e+03, 1.32972959e+03, 1.23093568e+03, 1.15056322e+03,
+        1.18180814e+03, 1.05270229e+03, 1.10732709e+03, 9.75533924e+02,
+        1.03167378e+03, 1.06161800e+03, 1.34352955e+03, 1.36274621e+03],
+       [0.00000000e+00, 0.00000000e+00, 1.27174149e+00, 7.91220007e+00,
+        2.42417133e+01, 4.18584814e+01, 9.18055513e+01, 1.31654329e+02,
+        1.72410003e+02, 1.54605921e+02, 1.61260126e+02, 1.39157001e+02,
+        1.67914716e+02, 1.51076183e+02, 2.01416998e+02, 1.81391242e+02,
+        1.96244790e+02, 2.69213433e+02, 3.60039018e+02, 4.51178356e+02],
+       [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 1.03535055e+00,
+        9.05029126e-01, 3.60208032e+00, 6.61683056e+00, 7.48619996e+00,
+        1.55597819e+01, 5.48833672e+00, 7.88494026e+00, 1.12801021e+01,
+        1.38783888e+01, 1.09932863e+01, 1.87361520e+01, 3.13432151e+01,
+        1.54753434e+01, 3.41305131e+01, 6.82834597e+01, 1.26426028e+02],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 2.07704368e+00, 1.10208881e+01],
+        0.00000000e+00, 0.00000000e+00, 1.02398883e+00, 0.00000000e+00,
+        1.00975957e+00, 0.00000000e+00, 0.00000000e+00, 3.03545635e+00,
+        1.68390818e+00, 3.31196572e+00, 1.32963177e+01, 2.55118287e+01],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 1.97681622e+00],
+        0.00000000e+00, 0.00000000e+00, 1.93911242e+00, 1.09128180e+01],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 3.16272249e+00],
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 1.98732293e+00],
+       [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 3.16112393e+00],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
@@ -5115,7 +5091,7 @@ array([[0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 1.09632158e+00],
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 8.68687299e-01],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
@@ -5208,8 +5184,7 @@ array([[0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>

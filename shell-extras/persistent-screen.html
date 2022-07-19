@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -482,9 +483,9 @@
 }
 </style>
 <section id="persistent-screen-or-tmux-session-on-lxplus">
-<h1>Persistent screen or tmux session on lxplus<a class="headerlink" href="#persistent-screen-or-tmux-session-on-lxplus" title="Permalink to this headline"></a></h1>
+<h1>Persistent screen or tmux session on lxplus<a class="headerlink" href="#persistent-screen-or-tmux-session-on-lxplus" title="Permalink to this heading"></a></h1>
 <section id="setting-up-password-less-kerberos-token">
-<h2>Setting up password-less kerberos token<a class="headerlink" href="#setting-up-password-less-kerberos-token" title="Permalink to this headline"></a></h2>
+<h2>Setting up password-less kerberos token<a class="headerlink" href="#setting-up-password-less-kerberos-token" title="Permalink to this heading"></a></h2>
 <p>In order for the kerberos token to be refreshed automatically, it must be possible to do so without a password.
 Therefore, we create a keytab (similar to a private ssh key) on lxplus using the keytab utility. After starting it by typing <code class="docutils literal notranslate"><span class="pre">ktutil</span></code>, type the following three lines into the prompt and confirm the first two steps with your password.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>add_entry -password -p USERNAME@CERN.CH -k <span class="m">1</span> -e arcfour-hmac-md5
@@ -497,7 +498,7 @@ This will create a file called USERNAME.keytab in the current directory. It is s
 <p><strong>NOTE</strong> that the domain name <code class="docutils literal notranslate"><span class="pre">CERN.CH</span></code> has to be all uppercase, while the <code class="docutils literal notranslate"><span class="pre">USERNAME</span></code> should match your case-sensitive CERN username.</p>
 </section>
 <section id="making-use-of-the-keytab">
-<h2>Making use of the keytab<a class="headerlink" href="#making-use-of-the-keytab" title="Permalink to this headline"></a></h2>
+<h2>Making use of the keytab<a class="headerlink" href="#making-use-of-the-keytab" title="Permalink to this heading"></a></h2>
 <p>This keytab file can now be used to obtain kerberos tokens without having to type a password:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kinit -k -t USERNAME.keytab USERNAME@CERN.CH
 </pre></div>
@@ -505,7 +506,7 @@ This will create a file called USERNAME.keytab in the current directory. It is s
 <p>where <code class="docutils literal notranslate"><span class="pre">-k</span></code> tells <code class="docutils literal notranslate"><span class="pre">kinit</span></code> to use a keytab file and <code class="docutils literal notranslate"><span class="pre">-t</span> <span class="pre">USERNAME.keytab</span></code> where this keytab actually is.</p>
 </section>
 <section id="using-k5reauth-to-automatically-refresh-your-kerberos-token">
-<h2>Using k5reauth to automatically refresh your kerberos token<a class="headerlink" href="#using-k5reauth-to-automatically-refresh-your-kerberos-token" title="Permalink to this headline"></a></h2>
+<h2>Using k5reauth to automatically refresh your kerberos token<a class="headerlink" href="#using-k5reauth-to-automatically-refresh-your-kerberos-token" title="Permalink to this heading"></a></h2>
 <p>To create a permanent session of <code class="docutils literal notranslate"><span class="pre">tmux</span></code> or <code class="docutils literal notranslate"><span class="pre">screen</span></code>, the <code class="docutils literal notranslate"><span class="pre">k5reauth</span></code> command is used, which by default creates a new shell and attaches it as a child to itself and keeps renewing the kerberos token for its children. <code class="docutils literal notranslate"><span class="pre">k5reauth</span></code> can start processes other than a new shell by specifying the program you want to start as an argument</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>k5reauth -f -i <span class="m">3600</span> -p .... -- &lt;command&gt;
 </pre></div>

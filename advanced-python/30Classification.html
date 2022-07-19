@@ -16,11 +16,12 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -669,11 +670,12 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
 /* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
 div.rendered_html table {
   border: none;
   border-collapse: collapse;
@@ -682,10 +684,14 @@ div.rendered_html table {
   font-size: 12px;
   table-layout: fixed;
 }
+.jp-RenderedHTMLCommon thead,
 div.rendered_html thead {
   border-bottom: 1px solid black;
   vertical-align: bottom;
 }
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
 div.rendered_html tr,
 div.rendered_html th,
 div.rendered_html td {
@@ -697,12 +703,15 @@ div.rendered_html td {
   max-width: none;
   border: none;
 }
+.jp-RenderedHTMLCommon th,
 div.rendered_html th {
   font-weight: bold;
 }
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
 div.rendered_html tbody tr:nth-child(odd) {
   background: #f5f5f5;
 }
+.jp-RenderedHTMLCommon tbody tr:hover,
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
@@ -730,7 +739,7 @@ div.rendered_html tbody tr:hover {
 }
 </style>
 <section id="3:-Multivariate-Analysis">
-<h1>3: Multivariate Analysis<a class="headerlink" href="#3:-Multivariate-Analysis" title="Permalink to this headline"></a></h1>
+<h1>3: Multivariate Analysis<a class="headerlink" href="#3:-Multivariate-Analysis" title="Permalink to this heading"></a></h1>
 <p>In this lesson we will use ‘Multivariate Analysis’ to improve the signal significance of our data sample. This involves training a Boosted Decision Tree (<strong>BDT</strong>) which can distinguish between signal-like and background-like events. The BDT takes a number of input variables and makes a prediction on whether the event is signal or background.</p>
 <ul class="simple">
 <li><p>First we need to load the data which we stored in the previous lesson and import the modules we need:</p></li>
@@ -739,19 +748,17 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="o">%</span><span class="k">store</span> -r bkg_df
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">store</span> -r bkg_df
 <span class="o">%</span><span class="k">store</span> -r mc_df
 <span class="o">%</span><span class="k">store</span> -r data_df
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">mplhep</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mplhep</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">uproot</span>
@@ -763,15 +770,23 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/xgboost/compat.py:36: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
+  from pandas import MultiIndex, Int64Index
+</pre></div></div>
+</div>
 <section id="Using-a-classifier">
-<h2>Using a classifier<a class="headerlink" href="#Using-a-classifier" title="Permalink to this headline"></a></h2>
+<h2>Using a classifier<a class="headerlink" href="#Using-a-classifier" title="Permalink to this heading"></a></h2>
 <p>Rectangular cuts are give good simple selections however you can often get better performance by using a more advanced technique. This generally works by taking adavantage of the corellation between variables. For example if we look in two dimensions, <code class="docutils literal notranslate"><span class="pre">Jpsi_eta</span></code> and <code class="docutils literal notranslate"><span class="pre">mum_P</span></code>:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;mup_PT&#39;</span><span class="p">],</span> <span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;mum_PT&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;mup_PT&#39;</span><span class="p">],</span> <span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;mum_PT&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="s1">&#39;mup_PT&#39;</span><span class="p">],</span> <span class="n">bkg_df</span><span class="p">[</span><span class="s1">&#39;mum_PT&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Background&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;mup_PT&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;mum_PT&#39;</span><span class="p">)</span>
@@ -785,7 +800,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f89a4ea5040&gt;
+&lt;matplotlib.legend.Legend at 0x7f847455ffa0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -797,7 +812,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>We can see that there if we cut out 2 (or more) dimensional regions we can remove background more effectively. This is the idea behind decision trees.</p>
 <section id="TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">
-<h3>TODO Add a diagram of a decision tree for the above plot<a class="headerlink" href="#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot" title="Permalink to this headline"></a></h3>
+<h3>TODO Add a diagram of a decision tree for the above plot<a class="headerlink" href="#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot" title="Permalink to this heading"></a></h3>
 <p>In machine learning there is a concept known as “boosting” which comes from the question:</p>
 <blockquote>
 <div><p>Can a set of weak learners create a single strong learner?</p>
@@ -812,8 +827,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">training_columns</span> <span class="o">=</span> <span class="p">[</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">training_columns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;Jpsi_PT&#39;</span><span class="p">,</span>
     <span class="s1">&#39;mup_PT&#39;</span><span class="p">,</span> <span class="s1">&#39;mup_eta&#39;</span><span class="p">,</span> <span class="s1">&#39;mup_ProbNNmu&#39;</span><span class="p">,</span>
     <span class="s1">&#39;mum_PT&#39;</span><span class="p">,</span> <span class="s1">&#39;mum_eta&#39;</span><span class="p">,</span> <span class="s1">&#39;mum_ProbNNmu&#39;</span><span class="p">,</span>
@@ -835,8 +849,7 @@ Stored &#39;training_columns&#39; (list)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># We then define the classifier we want to use</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We then define the classifier we want to use</span>
 <span class="n">bdt</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">()</span>
 <span class="c1"># bdt = XGBClassifier() # we could also use this one</span>
 </pre></div>
@@ -850,8 +863,7 @@ Stored &#39;training_columns&#39; (list)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">bkg_df</span> <span class="o">=</span> <span class="n">bkg_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bkg_df</span> <span class="o">=</span> <span class="n">bkg_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">bkg_df</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Use 0 for background</span>
 <span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Use 1 for signal</span>
 </pre></div>
@@ -861,8 +873,7 @@ Stored &#39;training_columns&#39; (list)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Now merge the data together</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now merge the data together</span>
 <span class="n">training_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">bkg_df</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">],</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="c1"># Store training_data for later</span>
 <span class="o">%</span><span class="k">store</span> training_data
@@ -881,8 +892,7 @@ Stored &#39;training_data&#39; (DataFrame)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># We can now fit the BDT</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can now fit the BDT</span>
 <span class="n">bdt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -891,18 +901,15 @@ Stored &#39;training_data&#39; (DataFrame)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-GradientBoostingClassifier()
-</pre></div></div>
+<div class="output_area rendered_html docutils container">
+<style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>GradientBoostingClassifier()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">GradientBoostingClassifier</label><div class="sk-toggleable__content"><pre>GradientBoostingClassifier()</pre></div></div></div></div></div></div>
 </div>
 <p>Once a classifier has been trained we can apply it to a dataset to get a variable tells us how signal or background like each candidate is. There are a few different functions to do this, but in this case we will use <code class="docutils literal notranslate"><span class="pre">bdt.predict_proba</span></code>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -925,8 +932,7 @@ array([[0.11268477, 0.88731523],
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># We can now use slicing to select column 1 in the array from for all rows</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can now use slicing to select column 1 in the array from for all rows</span>
 <span class="n">probabilities</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">probabilities</span>
 </pre></div>
@@ -947,8 +953,7 @@ array([0.88731523, 0.71369706, 0.41318691, ..., 0.36839431, 0.26573531,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">bkg_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
@@ -960,8 +965,7 @@ array([0.88731523, 0.71369706, 0.41318691, ..., 0.36839431, 0.26573531,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span><span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">,</span> <span class="n">data_df</span><span class="p">,</span> <span class="n">training_data</span><span class="p">]:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span><span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">,</span> <span class="n">data_df</span><span class="p">,</span> <span class="n">training_data</span><span class="p">]:</span>
     <span class="n">df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -972,8 +976,7 @@ array([0.88731523, 0.71369706, 0.41318691, ..., 0.36839431, 0.26573531,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">plot_comparision</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_comparision</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">):</span>
     <span class="c1"># create histograms</span>
     <span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -997,8 +1000,7 @@ array([0.88731523, 0.71369706, 0.41318691, ..., 0.36839431, 0.26573531,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;BDT&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;BDT&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1014,8 +1016,7 @@ array([0.88731523, 0.71369706, 0.41318691, ..., 0.36839431, 0.26573531,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;No cuts&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;No cuts&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Jpsi_PT &gt; 4&#39;</span><span class="p">)</span>
 <span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$J/</span><span class="se">\\</span><span class="s1">psi$ p$_T$ only&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1036,7 +1037,7 @@ array([0.88731523, 0.71369706, 0.41318691, ..., 0.36839431, 0.26573531,
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f89c7e84b80&gt;
+&lt;matplotlib.legend.Legend at 0x7f8486d40670&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1051,8 +1052,7 @@ array([0.88731523, 0.71369706, 0.41318691, ..., 0.36839431, 0.26573531,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># That would be too nice to use in analysis</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># That would be too nice to use in analysis</span>
 <span class="kn">from</span> <span class="nn">python_lesson</span> <span class="kn">import</span> <span class="n">check_truth</span>
 
 <span class="n">check_truth</span><span class="p">(</span><span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;BDT &gt; 0.95&#39;</span><span class="p">))</span>
@@ -1071,15 +1071,14 @@ Significance metric is 8.59
 </pre></div></div>
 </div>
 <section id="Evaluating-classifier-performance">
-<h4>Evaluating classifier performance<a class="headerlink" href="#Evaluating-classifier-performance" title="Permalink to this headline"></a></h4>
+<h4>Evaluating classifier performance<a class="headerlink" href="#Evaluating-classifier-performance" title="Permalink to this heading"></a></h4>
 <p>So far we have used a magical function to evalueate the classifier performance. Unfortuanately, we can’t use such a tool when using analysis on real data as that would be too easy! Instead, we have a few other tools we can use to see how good a classifier is.</p>
 <p>We have already used one tool: the distributions of the classifier output on signal and background training data.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;BDT&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;BDT&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1097,8 +1096,7 @@ Significance metric is 8.59
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">y_score</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_score</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">],</span> <span class="n">y_score</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1109,8 +1107,7 @@ Significance metric is 8.59
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Randomly guess&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Randomly guess&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;ROC curve&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
@@ -1134,8 +1131,7 @@ Significance metric is 8.59
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">area</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">area</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1143,8 +1139,7 @@ Significance metric is 8.59
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;ROC curve (area = </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
@@ -1170,8 +1165,7 @@ the peak.</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">n_sig</span> <span class="o">=</span> <span class="mi">1200</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_sig</span> <span class="o">=</span> <span class="mi">1200</span>
 <span class="n">n_bkg</span> <span class="o">=</span> <span class="mi">23000</span>
 </pre></div>
 </div>
@@ -1181,8 +1175,7 @@ the peak.</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">S</span> <span class="o">=</span> <span class="n">n_sig</span><span class="o">*</span><span class="n">tpr</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">n_sig</span><span class="o">*</span><span class="n">tpr</span>
 <span class="n">B</span> <span class="o">=</span> <span class="n">n_bkg</span><span class="o">*</span><span class="n">fpr</span>
 <span class="n">metric</span> <span class="o">=</span> <span class="n">S</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">S</span><span class="o">+</span><span class="n">B</span><span class="p">)</span>
 </pre></div>
@@ -1193,7 +1186,7 @@ the peak.</p>
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_5880/4020814425.py:3: RuntimeWarning: invalid value encountered in true_divide
+/tmp/ipykernel_6515/4020814425.py:3: RuntimeWarning: invalid value encountered in true_divide
   metric = S/np.sqrt(S+B)
 </pre></div></div>
 </div>
@@ -1202,8 +1195,7 @@ the peak.</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thresholds</span><span class="p">,</span> <span class="n">metric</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thresholds</span><span class="p">,</span> <span class="n">metric</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;BDT cut value&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">frac</span><span class="si">{S}</span><span class="s1">{</span><span class="se">\\</span><span class="s1">sqrt{S+B}}$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
@@ -1231,8 +1223,7 @@ the peak.</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">optimal_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">metric</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimal_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">metric</span><span class="p">)</span>
 <span class="n">optimal_metric</span> <span class="o">=</span> <span class="n">metric</span><span class="p">[</span><span class="n">optimal_index</span><span class="p">]</span>
 <span class="n">optimal_cut</span> <span class="o">=</span> <span class="n">thresholds</span><span class="p">[</span><span class="n">optimal_index</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The optimal cut value is </span><span class="si">{</span><span class="n">optimal_cut</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> with and S/sqrt(S+B) of </span><span class="si">{</span><span class="n">optimal_metric</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -1251,8 +1242,7 @@ The optimal cut value is 2.00 with and S/sqrt(S+B) of nan
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;No cuts&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;No cuts&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;BDT &gt; </span><span class="si">{</span><span class="n">optimal_cut</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Using BDT only&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1266,14 +1256,16 @@ The optimal cut value is 2.00 with and S/sqrt(S+B) of nan
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/mplhep/plot.py:44: RuntimeWarning: divide by zero encountered in true_divide
-  binnorms /= np.outer(np.diff(bins), per_hist_norm).T
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/mplhep/plot.py:350: RuntimeWarning: invalid value encountered in multiply
-  h *= density_arr
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/mplhep/plot.py:353: RuntimeWarning: invalid value encountered in multiply
-  _yerr_lo[i] = _yerr_lo[i] * density_arr[i]
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/mplhep/plot.py:354: RuntimeWarning: invalid value encountered in multiply
-  _yerr_hi[i] = _yerr_hi[i] * density_arr[i]
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/mplhep/utils.py:263: RuntimeWarning: divide by zero encountered in double_scalars
+  self.flat_scale(1 / np.sum(np.diff(self.edges) * self.values))
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/mplhep/error_estimation.py:38: RuntimeWarning: All sumw are zero!  Cannot compute meaningful error bars
+  warnings.warn(
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/mplhep/utils.py:243: RuntimeWarning: invalid value encountered in multiply
+  self.values *= scale
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/mplhep/utils.py:244: RuntimeWarning: invalid value encountered in multiply
+  self.yerr_lo *= scale
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/mplhep/utils.py:245: RuntimeWarning: invalid value encountered in multiply
+  self.yerr_hi *= scale
 /usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/numpy/core/_methods.py:43: RuntimeWarning: invalid value encountered in reduce
   return umr_minimum(a, axis, None, out, keepdims, initial, where)
 /usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/numpy/core/_methods.py:39: RuntimeWarning: invalid value encountered in reduce
@@ -1286,7 +1278,7 @@ The optimal cut value is 2.00 with and S/sqrt(S+B) of nan
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f89c7e91af0&gt;
+&lt;matplotlib.legend.Legend at 0x7f846c468f10&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1300,28 +1292,35 @@ The optimal cut value is 2.00 with and S/sqrt(S+B) of nan
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Using BDT only&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Using BDT only&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.8/site-packages/mplhep/error_estimation.py:38: RuntimeWarning: All sumw are zero!  Cannot compute meaningful error bars
+  warnings.warn(
+</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_30Classification_47_0.png" src="../_images/advanced-python_30Classification_47_0.png" />
+<img alt="../_images/advanced-python_30Classification_47_1.png" src="../_images/advanced-python_30Classification_47_1.png" />
 </div>
 </div>
 </section>
 <section id="Collecting-it-all-together">
-<h4>Collecting it all together<a class="headerlink" href="#Collecting-it-all-together" title="Permalink to this headline"></a></h4>
+<h4>Collecting it all together<a class="headerlink" href="#Collecting-it-all-together" title="Permalink to this heading"></a></h4>
 <p>Let’s define some helpful functions that we use later based on what we did above:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">plot_roc</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_roc</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">y_score</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">],</span> <span class="n">y_score</span><span class="p">)</span>
     <span class="n">area</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
@@ -1345,8 +1344,7 @@ The optimal cut value is 2.00 with and S/sqrt(S+B) of nan
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">plot_significance</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_significance</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">y_score</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">],</span> <span class="n">y_score</span><span class="p">)</span>
 
@@ -1370,8 +1368,7 @@ The optimal cut value is 2.00 with and S/sqrt(S+B) of nan
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://cern.ch/starterkit/data/advanced-python-2018/real_data.root&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://cern.ch/starterkit/data/advanced-python-2018/real_data.root&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
     <span class="n">data_df</span> <span class="o">=</span> <span class="n">datafile</span><span class="p">[</span><span class="s1">&#39;DecayTree&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">&#39;pd&#39;</span><span class="p">)</span>
 <span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://cern.ch/starterkit/data/advanced-python-2018/simulated_data.root&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">mcfile</span><span class="p">:</span>
     <span class="n">mc_df</span> <span class="o">=</span> <span class="n">mcfile</span><span class="p">[</span><span class="s1">&#39;DecayTree&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">&#39;pd&#39;</span><span class="p">)</span>
@@ -1426,7 +1423,7 @@ Data succesfully loaded
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_5880/4278176416.py:9: RuntimeWarning: invalid value encountered in true_divide
+/tmp/ipykernel_6515/4278176416.py:9: RuntimeWarning: invalid value encountered in true_divide
   metric = S/np.sqrt(S+B)
 </pre></div></div>
 </div>
@@ -1455,8 +1452,7 @@ Data succesfully loaded
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="o">%</span><span class="k">store</span> bkg_df
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">store</span> bkg_df
 <span class="o">%</span><span class="k">store</span> mc_df
 <span class="o">%</span><span class="k">store</span> data_df
 </pre></div>
@@ -1476,8 +1472,7 @@ Stored &#39;data_df&#39; (DataFrame)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>

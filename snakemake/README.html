@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -481,7 +482,7 @@
 }
 </style>
 <section id="analysis-automation-with-snakemake">
-<h1>Analysis automation with Snakemake<a class="headerlink" href="#analysis-automation-with-snakemake" title="Permalink to this headline"></a></h1>
+<h1>Analysis automation with Snakemake<a class="headerlink" href="#analysis-automation-with-snakemake" title="Permalink to this heading"></a></h1>
 <div class="panel panel-objectives docutils container">
 <div class="panel-header open docutils container">
 <p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
@@ -494,7 +495,7 @@
 </div>
 </div>
 <section id="documentation-and-environments">
-<h2>Documentation and environments<a class="headerlink" href="#documentation-and-environments" title="Permalink to this headline"></a></h2>
+<h2>Documentation and environments<a class="headerlink" href="#documentation-and-environments" title="Permalink to this heading"></a></h2>
 <p>You can find full documentation for Snakemake
 <a class="reference external" href="https://snakemake.readthedocs.io/en/stable/index.html">here</a>;
 you can also ask any questions you have on the
@@ -537,15 +538,15 @@ Be careful if you do this–it can lead to conflicts in the environment.</p>
 in the <code class="docutils literal notranslate"><span class="pre">lb-conda</span> <span class="pre">default</span></code> environment.</p>
 </section>
 <section id="workflow-preservation">
-<h2>Workflow preservation<a class="headerlink" href="#workflow-preservation" title="Permalink to this headline"></a></h2>
+<h2>Workflow preservation<a class="headerlink" href="#workflow-preservation" title="Permalink to this heading"></a></h2>
 <p>There is an ongoing effort at LHCb to ensure analysis workflows are preserved.
 You can learn more about this effort and how Snakemake figures into it
 <a class="reference external" href="https://lhcb-dpa.web.cern.ch/lhcb-dpa/wp6/workflow-preservation.html">here</a>.</p>
 </section>
 <section id="basic-tutorial">
-<h2>Basic Tutorial<a class="headerlink" href="#basic-tutorial" title="Permalink to this headline"></a></h2>
+<h2>Basic Tutorial<a class="headerlink" href="#basic-tutorial" title="Permalink to this heading"></a></h2>
 <section id="what-is-a-workflow">
-<h3>What is a workflow?<a class="headerlink" href="#what-is-a-workflow" title="Permalink to this headline"></a></h3>
+<h3>What is a workflow?<a class="headerlink" href="#what-is-a-workflow" title="Permalink to this heading"></a></h3>
 <p>When performing an analysis, you typically start with some set of input files
 containing the data you are interested in
 and want to end up with some set of output files containing the results of your
@@ -596,7 +597,7 @@ we can easily make the shell do it for us:</p>
 <p>Congratulations, you’ve just defined and executed a workflow!</p>
 </section>
 <section id="why-use-a-workflow-management-system">
-<h3>Why use a workflow management system?<a class="headerlink" href="#why-use-a-workflow-management-system" title="Permalink to this headline"></a></h3>
+<h3>Why use a workflow management system?<a class="headerlink" href="#why-use-a-workflow-management-system" title="Permalink to this heading"></a></h3>
 <blockquote>
 <div><p>“The Snakemake workflow management system is a tool
 to create reproducible and scalable data analyses”</p>
@@ -635,7 +636,7 @@ or looked at the code for someone else’s analysis,
 you probably understand why the above features are so useful.</p>
 </section>
 <section id="introducing-snakemake">
-<h3>Introducing Snakemake<a class="headerlink" href="#introducing-snakemake" title="Permalink to this headline"></a></h3>
+<h3>Introducing Snakemake<a class="headerlink" href="#introducing-snakemake" title="Permalink to this heading"></a></h3>
 <p>Snakemake allows you to create a set of rules,
 each one defining a step of your analysis.
 The rules need to be written in a file called <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code>.
@@ -825,7 +826,7 @@ See the documentation <a class="reference external" href="https://snakemake.read
 <p>Congratulations, you’ve just defined a workflow using Snakemake!</p>
 </section>
 <section id="re-running-rules">
-<h3>Re-running rules<a class="headerlink" href="#re-running-rules" title="Permalink to this headline"></a></h3>
+<h3>Re-running rules<a class="headerlink" href="#re-running-rules" title="Permalink to this heading"></a></h3>
 <p>We saw above that if an output file already exists,
 Snakemake will not create it again.
 If you call <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">--cores</span> <span class="pre">4</span></code> now,
@@ -877,7 +878,7 @@ and it will save you a lot of wasted time:
 </div>
 </section>
 <section id="chaining-rules">
-<h3>Chaining rules<a class="headerlink" href="#chaining-rules" title="Permalink to this headline"></a></h3>
+<h3>Chaining rules<a class="headerlink" href="#chaining-rules" title="Permalink to this heading"></a></h3>
 <p>We can also tell our <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> how to create our input files.
 In our simple example here,
 our inputs are just empty files in the <code class="docutils literal notranslate"><span class="pre">input/</span></code> directory,
@@ -934,7 +935,7 @@ as far as Snakemake is concerned,
 <code class="docutils literal notranslate"><span class="pre">input/a.in</span></code> is just another file it knows how to produce.</p>
 </section>
 <section id="the-limits-of-wildcards">
-<h3>The limits of wildcards<a class="headerlink" href="#the-limits-of-wildcards" title="Permalink to this headline"></a></h3>
+<h3>The limits of wildcards<a class="headerlink" href="#the-limits-of-wildcards" title="Permalink to this heading"></a></h3>
 <p>Our <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code>
 isn’t limited to creating <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code>, …, <code class="docutils literal notranslate"><span class="pre">output/z.out</span></code>.
 Trying calling</p>
@@ -999,7 +1000,7 @@ and Snakemake will execute regardless.</p>
 </section>
 </section>
 <section id="advanced-tutorial">
-<h2>Advanced Tutorial<a class="headerlink" href="#advanced-tutorial" title="Permalink to this headline"></a></h2>
+<h2>Advanced Tutorial<a class="headerlink" href="#advanced-tutorial" title="Permalink to this heading"></a></h2>
 <p>In this tutorial,
 we will examine more advanced Snakemake topics using pre-defined inputs.</p>
 <div class="panel panel-prereq docutils container">
@@ -1214,7 +1215,7 @@ we simply combined them into a single rule called <code class="docutils literal 
 </div>
 </div>
 <section id="running-scripts">
-<h3>Running scripts<a class="headerlink" href="#running-scripts" title="Permalink to this headline"></a></h3>
+<h3>Running scripts<a class="headerlink" href="#running-scripts" title="Permalink to this heading"></a></h3>
 <p>Snakemake can execute anything in the command-line,
 including calling python scripts.</p>
 <div class="panel panel-challenge docutils container">
@@ -1381,7 +1382,7 @@ you can also declare
 which is similar to <code class="docutils literal notranslate"><span class="pre">run</span></code> but it allows you to refer to an external file.</p>
 </section>
 <section id="log-files">
-<h3>Log files<a class="headerlink" href="#log-files" title="Permalink to this headline"></a></h3>
+<h3>Log files<a class="headerlink" href="#log-files" title="Permalink to this heading"></a></h3>
 <p>Within Snakemake,
 a log file is a special type of output file that is not deleted if a rule fails.</p>
 <div class="panel panel-callout docutils container">
@@ -1492,7 +1493,7 @@ you should see your log files created in the <code class="docutils literal notra
 </div>
 </section>
 <section id="config-files">
-<h3>Config files<a class="headerlink" href="#config-files" title="Permalink to this headline"></a></h3>
+<h3>Config files<a class="headerlink" href="#config-files" title="Permalink to this heading"></a></h3>
 <p>Often you want to run the same rule on different samples
 or with different options for your scripts.
 This can be done in snakemake using config files written in <a class="reference external" href="https://learn.getgrav.org/advanced/yaml">yaml</a>.</p>
@@ -1507,14 +1508,14 @@ and then its content will be available
 to the rules as a dictionary called “config”.
 Yes, it seems black magic, but it works!
 Your Snakefile will look something like this:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">configfile</span><span class="p">:</span> <span class="s">&#39;/path/to/cfg.yaml&#39;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">configfile</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/cfg.yaml&#39;</span><span class="w"></span>
 
-<span class="nt">rule dosomething</span><span class="p">:</span>
-    <span class="nt">input</span><span class="p">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">exe=&#39;mycode.py&#39;,</span>
-        <span class="l l-Scalar l-Scalar-Plain">data=config[&#39;data&#39;],</span>
-    <span class="nt">output</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;plot1.pdf&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;plot2.pdf&#39;</span><span class="p p-Indicator">]</span>
-    <span class="nt">shell</span><span class="p">:</span> <span class="s">&quot;python</span><span class="nv"> </span><span class="s">{input.exe}</span><span class="nv"> </span><span class="s">{input.data}</span><span class="nv"> </span><span class="s">{output}&quot;</span>
+<span class="nt">rule dosomething</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">exe=&#39;mycode.py&#39;,</span><span class="w"></span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">data=config[&#39;data&#39;],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;plot1.pdf&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;plot2.pdf&#39;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">    </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;python</span><span class="nv"> </span><span class="s">{input.exe}</span><span class="nv"> </span><span class="s">{input.data}</span><span class="nv"> </span><span class="s">{output}&quot;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The config dictionary can be used anywhere,
@@ -1546,7 +1547,7 @@ the addresses and phone numbers in <code class="docutils literal notranslate"><s
 </div>
 <div class="panel-body docutils container">
 <p>First, we create <code class="docutils literal notranslate"><span class="pre">cfg.yaml</span></code>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">data</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">input_alt</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">input_alt</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Then, modify your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> to look something like this:</p>
@@ -1591,7 +1592,7 @@ You will have to remember to force it to run.</p>
 </div>
 </section>
 <section id="includes">
-<h3>Includes<a class="headerlink" href="#includes" title="Permalink to this headline"></a></h3>
+<h3>Includes<a class="headerlink" href="#includes" title="Permalink to this heading"></a></h3>
 <p>The Snakefile can quickly grow to a monster with tens of rules.
 For this reason it’s possible to split them into more files
 and then include them into the Snakefile.

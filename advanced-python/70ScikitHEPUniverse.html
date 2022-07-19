@@ -16,11 +16,12 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -669,11 +670,12 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
 /* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
 div.rendered_html table {
   border: none;
   border-collapse: collapse;
@@ -682,10 +684,14 @@ div.rendered_html table {
   font-size: 12px;
   table-layout: fixed;
 }
+.jp-RenderedHTMLCommon thead,
 div.rendered_html thead {
   border-bottom: 1px solid black;
   vertical-align: bottom;
 }
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
 div.rendered_html tr,
 div.rendered_html th,
 div.rendered_html td {
@@ -697,12 +703,15 @@ div.rendered_html td {
   max-width: none;
   border: none;
 }
+.jp-RenderedHTMLCommon th,
 div.rendered_html th {
   font-weight: bold;
 }
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
 div.rendered_html tbody tr:nth-child(odd) {
   background: #f5f5f5;
 }
+.jp-RenderedHTMLCommon tbody tr:hover,
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
@@ -730,19 +739,18 @@ div.rendered_html tbody tr:hover {
 }
 </style>
 <section id="10:-Scikit-HEP">
-<h1>10: Scikit-HEP<a class="headerlink" href="#10:-Scikit-HEP" title="Permalink to this headline"></a></h1>
+<h1>10: Scikit-HEP<a class="headerlink" href="#10:-Scikit-HEP" title="Permalink to this heading"></a></h1>
 <p>The <a class="reference external" href="https://scikit-hep.org/">Scikit-HEP project</a> is a well maintained collection of HEP packages in Python that are useful for analysis. It contains tools ranging from plotting helpers, PDG lookup, DecayLanguage converters over high-performance histogramming libraries and ROOT I/O up to likelihood fitting and statistics libraries.</p>
 <p>This is a minimal overview over the packages that are available and have not yet been used in the other tutorials.</p>
 <section id="formulate---converting-expressions">
-<h2>formulate - converting expressions<a class="headerlink" href="#formulate---converting-expressions" title="Permalink to this headline"></a></h2>
+<h2>formulate - converting expressions<a class="headerlink" href="#formulate---converting-expressions" title="Permalink to this heading"></a></h2>
 <p>The package <a class="reference external" href="https://github.com/scikit-hep/formulate">formulate</a> converts between different style of expressions, notably between <a class="reference external" href="https://root.cern.ch/doc/master/classTFormula.html">ROOT</a> and <a class="reference external" href="https://numexpr.readthedocs.io/en/latest/user_guide.html">numexpr</a>. The former was used in the previous notebooks to apply cuts and create new variables with Pandas DataFrames <code class="docutils literal notranslate"><span class="pre">query</span></code> and <code class="docutils literal notranslate"><span class="pre">eval</span></code> methods.</p>
 <p>The standard usage is with a <code class="docutils literal notranslate"><span class="pre">from_style</span></code> and <code class="docutils literal notranslate"><span class="pre">to_style</span></code>, but it allows for more as it parses the string such as the variables used can be extracted.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">formulate</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">formulate</span>
 
 <span class="n">momentum</span> <span class="o">=</span> <span class="n">formulate</span><span class="o">.</span><span class="n">from_root</span><span class="p">(</span><span class="s1">&#39;TMath::Sqrt(X_PX**2 + X_PY**2 + X_PZ**2)&#39;</span><span class="p">)</span>
 <span class="n">momentum</span>
@@ -762,8 +770,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">momentum</span><span class="o">.</span><span class="n">to_numexpr</span><span class="p">()</span>  <span class="c1"># as used in Pandas eval/query</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">momentum</span><span class="o">.</span><span class="n">to_numexpr</span><span class="p">()</span>  <span class="c1"># as used in Pandas eval/query</span>
 </pre></div>
 </div>
 </div>
@@ -780,8 +787,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">momentum</span><span class="o">.</span><span class="n">to_root</span><span class="p">()</span>  <span class="c1"># as used in ROOT</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">momentum</span><span class="o">.</span><span class="n">to_root</span><span class="p">()</span>  <span class="c1"># as used in ROOT</span>
 </pre></div>
 </div>
 </div>
@@ -796,14 +802,13 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 </div>
 </section>
 <section id="Particle">
-<h2>Particle<a class="headerlink" href="#Particle" title="Permalink to this headline"></a></h2>
+<h2>Particle<a class="headerlink" href="#Particle" title="Permalink to this heading"></a></h2>
 <p><a class="reference external" href="https://github.com/scikit-hep/particle">particle</a> provides an easy access to particle properties such as mass and decay width from PDG. One example is to get the actual particle in a <code class="docutils literal notranslate"><span class="pre">Particle</span></code> object which holds all the relevant information.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Particle</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Particle</span>
 
 <span class="kn">from</span> <span class="nn">particle</span> <span class="kn">import</span> <span class="n">Particle</span>
 
@@ -816,8 +821,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">piplus</span><span class="o">.</span><span class="n">mass</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">piplus</span><span class="o">.</span><span class="n">mass</span>
 </pre></div>
 </div>
 </div>
@@ -834,8 +838,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">piplus</span><span class="o">.</span><span class="n">charge</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">piplus</span><span class="o">.</span><span class="n">charge</span>
 </pre></div>
 </div>
 </div>
@@ -852,8 +855,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">piplus</span><span class="o">.</span><span class="n">width</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">piplus</span><span class="o">.</span><span class="n">width</span>
 </pre></div>
 </div>
 </div>
@@ -870,8 +872,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">piplus</span><span class="o">.</span><span class="n">name</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">piplus</span><span class="o">.</span><span class="n">name</span>
 </pre></div>
 </div>
 </div>
@@ -889,8 +890,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">Particle</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">pdgid</span><span class="o">.</span><span class="n">has_bottom</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">charge</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Particle</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">pdgid</span><span class="o">.</span><span class="n">has_bottom</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">charge</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -934,15 +934,14 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 </div>
 </section>
 <section id="hepunits">
-<h2>hepunits<a class="headerlink" href="#hepunits" title="Permalink to this headline"></a></h2>
+<h2>hepunits<a class="headerlink" href="#hepunits" title="Permalink to this heading"></a></h2>
 <p>Ever hardcoded a physics constant? Or needed to manually convert units? That’s what the neat <a class="reference external" href="https://github.com/scikit-hep/hepunits">hepunits</a> package is for.</p>
 <p>It contains constants as well as units that all get converted into the standard units (e.g. MeV) which allows for calculations without the need to explicitly convert by just adding the unit; furthermore it greatly increases readability</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">hepunits.constants</span> <span class="kn">import</span> <span class="n">c_light</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hepunits.constants</span> <span class="kn">import</span> <span class="n">c_light</span>
 
 <span class="n">c_light</span>
 </pre></div>
@@ -961,8 +960,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">hepunits</span> <span class="k">as</span> <span class="nn">u</span>  <span class="c1"># u for units</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hepunits</span> <span class="k">as</span> <span class="nn">u</span>  <span class="c1"># u for units</span>
 </pre></div>
 </div>
 </div>
@@ -970,8 +968,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="mi">150</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">MeV</span> <span class="o">+</span> <span class="mf">1.1</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">GeV</span>  <span class="c1"># result in MeV</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">150</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">MeV</span> <span class="o">+</span> <span class="mf">1.1</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">GeV</span>  <span class="c1"># result in MeV</span>
 </pre></div>
 </div>
 </div>
@@ -986,14 +983,13 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 </div>
 </section>
 <section id="Vector">
-<h2>Vector<a class="headerlink" href="#Vector" title="Permalink to this headline"></a></h2>
+<h2>Vector<a class="headerlink" href="#Vector" title="Permalink to this heading"></a></h2>
 <p>Manipulating and calculation vector quantities can be done using the <a class="reference external" href="https://github.com/scikit-hep/vector">vector</a> library. It provides functionality to load, combine and work with vectors.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">vector</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">vector</span>
 </pre></div>
 </div>
 </div>
@@ -1001,8 +997,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># NumPy-like arguments (literally passed through to NumPy)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NumPy-like arguments (literally passed through to NumPy)</span>
 <span class="n">vector</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
     <span class="p">(</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
 <span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)])</span>
@@ -1024,8 +1019,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
     <span class="s2">&quot;eta&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">3.1</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">],</span>
     <span class="s2">&quot;M&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.1</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">],</span>
 <span class="p">})</span>
-
-</pre></div>
+<br/></pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1040,14 +1034,13 @@ MomentumNumpy4D([(1.1, 2.1, 3.1, 4.1), (1.2, 2.2, 3.2, 4.2), (1.3, 2.3, 3.3, 4.3
 </pre></div></div>
 </div>
 <section id="Vector-properties">
-<h3>Vector properties<a class="headerlink" href="#Vector-properties" title="Permalink to this headline"></a></h3>
+<h3>Vector properties<a class="headerlink" href="#Vector-properties" title="Permalink to this heading"></a></h3>
 <p>Vectors can have properties and provide quantities as attributes</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">vector</span><span class="o">.</span><span class="n">obj</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">theta</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">.</span><span class="n">obj</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">theta</span>
 <span class="n">vector</span><span class="o">.</span><span class="n">obj</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">eta</span>
 </pre></div>
 </div>
@@ -1065,8 +1058,7 @@ MomentumNumpy4D([(1.1, 2.1, 3.1, 4.1), (1.2, 2.2, 3.2, 4.2), (1.3, 2.3, 3.3, 4.3
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">vector</span><span class="o">.</span><span class="n">obj</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># Cartesian 4D vector</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">.</span><span class="n">obj</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># Cartesian 4D vector</span>
 </pre></div>
 </div>
 </div>
@@ -1083,8 +1075,7 @@ vector.obj(x=3, y=4, z=-2, t=10)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>

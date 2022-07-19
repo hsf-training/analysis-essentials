@@ -16,11 +16,12 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -669,11 +670,12 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
 /* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
 div.rendered_html table {
   border: none;
   border-collapse: collapse;
@@ -682,10 +684,14 @@ div.rendered_html table {
   font-size: 12px;
   table-layout: fixed;
 }
+.jp-RenderedHTMLCommon thead,
 div.rendered_html thead {
   border-bottom: 1px solid black;
   vertical-align: bottom;
 }
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
 div.rendered_html tr,
 div.rendered_html th,
 div.rendered_html td {
@@ -697,12 +703,15 @@ div.rendered_html td {
   max-width: none;
   border: none;
 }
+.jp-RenderedHTMLCommon th,
 div.rendered_html th {
   font-weight: bold;
 }
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
 div.rendered_html tbody tr:nth-child(odd) {
   background: #f5f5f5;
 }
+.jp-RenderedHTMLCommon tbody tr:hover,
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
@@ -730,22 +739,21 @@ div.rendered_html tbody tr:hover {
 }
 </style>
 <section id="2:-First-look-at-data">
-<h1>2: First look at data<a class="headerlink" href="#2:-First-look-at-data" title="Permalink to this headline"></a></h1>
+<h1>2: First look at data<a class="headerlink" href="#2:-First-look-at-data" title="Permalink to this heading"></a></h1>
 <p>In this lesson we will look at a toy dataset simulating <span class="math notranslate nohighlight">\(J/\psi \rightarrow \mu^+ \mu^-\)</span> events. We will discuss ways of loading the data in python, data formats and plotting with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <a class="reference external" href="https://mplhep.readthedocs.io/en/latest/index.html">mplhep</a>.</p>
 <section id="Two-plotting-libraries?">
-<h2>Two plotting libraries?<a class="headerlink" href="#Two-plotting-libraries?" title="Permalink to this headline"></a></h2>
+<h2>Two plotting libraries?<a class="headerlink" href="#Two-plotting-libraries?" title="Permalink to this heading"></a></h2>
 <p>While <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is a general Python library, the latter is a <a class="reference external" href="https://scikit-hep.org/">Scikit-HEP</a> package. Scikit-HEP is an organisation which collects, improves and maintains Python packages that are still general, yet cover (often rather special) use cases in High Energy Physics. <code class="docutils literal notranslate"><span class="pre">mplhep</span></code> as an example provides plotting functionality and styles to mimic typical plots that you see in HEP. However, it’s built completely on top of matplotlib and the same can be achieved with pure
 matplotlib (but more cumbersome). Another example is uproot that we will use to read ROOT files.</p>
 </section>
 <section id="Recap:-Importing-modules">
-<h2>Recap: Importing modules<a class="headerlink" href="#Recap:-Importing-modules" title="Permalink to this headline"></a></h2>
+<h2>Recap: Importing modules<a class="headerlink" href="#Recap:-Importing-modules" title="Permalink to this heading"></a></h2>
 <p>It’s generally seen as good practice to put imports at the top of your file:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">mplhep</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mplhep</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">uproot</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -753,7 +761,7 @@ matplotlib (but more cumbersome). Another example is uproot that we will use to 
 </div>
 </div>
 <section id="5.-The-toy-dataset">
-<h3>5. The toy dataset<a class="headerlink" href="#5.-The-toy-dataset" title="Permalink to this headline"></a></h3>
+<h3>5. The toy dataset<a class="headerlink" href="#5.-The-toy-dataset" title="Permalink to this heading"></a></h3>
 <p>We’re going to look at some fake <span class="math notranslate nohighlight">\(J/\psi \rightarrow \mu^+ \mu^-\)</span> data, the variables available are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Jpsi_M</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_P</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_PT</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_PE</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_PX</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_PY</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_PZ</span></code></p></li>
@@ -774,7 +782,7 @@ matplotlib (but more cumbersome). Another example is uproot that we will use to 
 </section>
 </section>
 <section id="Loading-data">
-<h2>Loading data<a class="headerlink" href="#Loading-data" title="Permalink to this headline"></a></h2>
+<h2>Loading data<a class="headerlink" href="#Loading-data" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">uproot</span></code> is a way of reading ROOT files without having ROOT installed, see the github reposity <a class="reference external" href="https://github.com/scikit-hep/uproot">here</a></p></li>
 <li><p>We can look at the objects that are available in the file and access objects using dictionary style syntax</p></li>
@@ -801,8 +809,7 @@ matplotlib (but more cumbersome). Another example is uproot that we will use to 
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">my_file</span> <span class="o">=</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://cern.ch/starterkit/data/advanced-python-2018/real_data.root&#39;</span><span class="p">,</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_file</span> <span class="o">=</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://cern.ch/starterkit/data/advanced-python-2018/real_data.root&#39;</span><span class="p">,</span>
                       <span class="n">httpsource</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;chunkbytes&#39;</span><span class="p">:</span> <span class="mi">1024</span><span class="o">*</span><span class="mi">1024</span><span class="p">,</span> <span class="s1">&#39;limitbytes&#39;</span><span class="p">:</span> <span class="mi">33554432</span><span class="p">,</span> <span class="s1">&#39;parallel&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">})</span>
 
 <span class="n">my_file</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -823,8 +830,7 @@ matplotlib (but more cumbersome). Another example is uproot that we will use to 
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">tree</span> <span class="o">=</span> <span class="n">my_file</span><span class="p">[</span><span class="s1">&#39;DecayTree&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span> <span class="o">=</span> <span class="n">my_file</span><span class="p">[</span><span class="s1">&#39;DecayTree&#39;</span><span class="p">]</span>
 <span class="c1"># Get a numpy array containing the J/Ψ mass</span>
 <span class="n">tree</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">&#39;np&#39;</span><span class="p">)</span>
 </pre></div>
@@ -844,8 +850,7 @@ array([3.101106  , 3.1071159 , 3.08600438, ..., 3.00478927, 2.77311478,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Load data as a pandas DataFrame</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data as a pandas DataFrame</span>
 <span class="n">data_df</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">&#39;pd&#39;</span><span class="p">)</span>
 <span class="n">my_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># usually, it&#39;s better to open the file with a &quot;with&quot; statement -&gt; needs no closing</span>
 
@@ -1030,8 +1035,7 @@ array([3.101106  , 3.1071159 , 3.08600438, ..., 3.00478927, 2.77311478,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_df</span><span class="o">.</span><span class="n">columns</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_df</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 </div>
 </div>
@@ -1050,13 +1054,12 @@ Index([&#39;Jpsi_PE&#39;, &#39;Jpsi_PX&#39;, &#39;Jpsi_PY&#39;, &#39;Jpsi_PZ&#39
 </pre></div></div>
 </div>
 <section id="6.-Plotting-a-simple-histogram">
-<h3>6. Plotting a simple histogram<a class="headerlink" href="#6.-Plotting-a-simple-histogram" title="Permalink to this headline"></a></h3>
+<h3>6. Plotting a simple histogram<a class="headerlink" href="#6.-Plotting-a-simple-histogram" title="Permalink to this heading"></a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Start with a basic histogram</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start with a basic histogram</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jpsi mass&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1086,8 +1089,7 @@ Text(0.5, 0, &#39;Jpsi mass&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># One of the features of mplhep is that we can set an experiment specific style</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># One of the features of mplhep is that we can set an experiment specific style</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="n">mplhep</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">LHCb2</span><span class="p">)</span>  <span class="c1"># or ATLAS/CMS</span>
 </pre></div>
@@ -1097,8 +1099,7 @@ Text(0.5, 0, &#39;Jpsi mass&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># plotting again</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plotting again</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jpsi mass&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1124,8 +1125,7 @@ Text(1, 0, &#39;Jpsi mass&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># And similar with mplhep</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># And similar with mplhep</span>
 <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Jpsi mass&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1151,8 +1151,7 @@ Text(1, 0, &#39;Jpsi mass&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># ... except that it can do a lot more!</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ... except that it can do a lot more!</span>
 
 <span class="c1"># we need to histogram only once!</span>
 <span class="n">h</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># TRY OUT: change the binning</span>
@@ -1185,8 +1184,7 @@ Text(1, 0, &#39;Jpsi mass&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">plot_mass</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_mass</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="n">h</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">])</span>
     <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># feel free to adjust</span>
     <span class="c1"># You can also use LaTeX in the axis label</span>
@@ -1207,13 +1205,12 @@ Text(1, 0, &#39;Jpsi mass&#39;)
 </section>
 </section>
 <section id="Adding-variables">
-<h2>Adding variables<a class="headerlink" href="#Adding-variables" title="Permalink to this headline"></a></h2>
+<h2>Adding variables<a class="headerlink" href="#Adding-variables" title="Permalink to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># When making the ROOT file we forgot to add some variables, no bother lets add them now!</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># When making the ROOT file we forgot to add some variables, no bother lets add them now!</span>
 <span class="n">data_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">data_df</span><span class="o">.</span><span class="n">head</span><span class="p">()[</span><span class="s1">&#39;Jpsi_eta&#39;</span><span class="p">]</span>
 </pre></div>
@@ -1238,8 +1235,7 @@ Name: Jpsi_eta, dtype: float64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;mup_P = sqrt(mup_PX**2 + mup_PY**2 + mup_PZ**2)&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;mup_P = sqrt(mup_PX**2 + mup_PY**2 + mup_PZ**2)&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">data_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="c1"># We can also get multiple columns at the same time</span>
 <span class="n">data_df</span><span class="o">.</span><span class="n">head</span><span class="p">()[[</span><span class="s1">&#39;mum_P&#39;</span><span class="p">,</span> <span class="s1">&#39;mup_P&#39;</span><span class="p">]]</span>
@@ -1304,7 +1300,7 @@ Name: Jpsi_eta, dtype: float64
 </div></div>
 </div>
 <section id="Using-rectangular-cuts">
-<h3>Using rectangular cuts<a class="headerlink" href="#Using-rectangular-cuts" title="Permalink to this headline"></a></h3>
+<h3>Using rectangular cuts<a class="headerlink" href="#Using-rectangular-cuts" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>We want to increase the ‘signal significance’ of our sample - this means more signal events with respect to background</p></li>
 <li><p>To do this we can cut on certain discriminating variables</p></li>
@@ -1314,8 +1310,7 @@ Name: Jpsi_eta, dtype: float64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">)</span>
 <span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Jpsi_PT &gt; 4&#39;</span><span class="p">)</span>
 <span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">)</span>
 </pre></div>
@@ -1332,8 +1327,7 @@ Name: Jpsi_eta, dtype: float64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">)</span>
 <span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Jpsi_PT &gt; 4&#39;</span><span class="p">)</span>
 <span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">)</span>
 <span class="c1"># Lets add some PID cuts as well</span>
@@ -1354,8 +1348,7 @@ Name: Jpsi_eta, dtype: float64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">plot_mass</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_mass</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">h</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">])</span>
     <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># feel free to adjust</span>
     <span class="c1"># You can also use LaTeX in the axis label</span>
@@ -1377,7 +1370,7 @@ Name: Jpsi_eta, dtype: float64
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fbebc7aba00&gt;
+&lt;matplotlib.legend.Legend at 0x7f03c04611f0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1392,8 +1385,7 @@ Name: Jpsi_eta, dtype: float64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data_df</span><span class="o">.</span><span class="n">columns</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_df</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 </div>
 </div>
@@ -1415,8 +1407,7 @@ Index([&#39;Jpsi_PE&#39;, &#39;Jpsi_PX&#39;, &#39;Jpsi_PY&#39;, &#39;Jpsi_PZ&#39
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">python_lesson</span> <span class="kn">import</span> <span class="n">check_truth</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">python_lesson</span> <span class="kn">import</span> <span class="n">check_truth</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Originally the significance is&#39;</span><span class="p">)</span>
 <span class="n">check_truth</span><span class="p">(</span><span class="n">data_df</span><span class="p">)</span>
@@ -1454,7 +1445,7 @@ Significance metric is 4.31
 </section>
 </section>
 <section id="Comparing-distributions">
-<h2>Comparing distributions<a class="headerlink" href="#Comparing-distributions" title="Permalink to this headline"></a></h2>
+<h2>Comparing distributions<a class="headerlink" href="#Comparing-distributions" title="Permalink to this heading"></a></h2>
 <p>Before we just used the cuts that were told to you but how do we pick them?</p>
 <p>One way is to get a sample of simulated data, we have a file in <code class="docutils literal notranslate"><span class="pre">data/simulated_data.root</span></code>.</p>
 <p><strong>Exercise:</strong> Load it into a pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> called <code class="docutils literal notranslate"><span class="pre">mc_df</span></code>. Don’t forget to add the <code class="docutils literal notranslate"><span class="pre">Jpsi_eta</span></code>, <code class="docutils literal notranslate"><span class="pre">mup_P</span></code> and <code class="docutils literal notranslate"><span class="pre">mum_P</span></code> columns!</p>
@@ -1462,8 +1453,7 @@ Significance metric is 4.31
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://starterkit.web.cern.ch/starterkit/data/advanced-python-2018/simulated_data.root&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">mc_file</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://starterkit.web.cern.ch/starterkit/data/advanced-python-2018/simulated_data.root&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">mc_file</span><span class="p">:</span>
     <span class="n">mc_df</span> <span class="o">=</span> <span class="n">mc_file</span><span class="p">[</span><span class="s1">&#39;DecayTree&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">&#39;pd&#39;</span><span class="p">)</span>
 
 <span class="c1"># mc_file = uproot.open(&#39;https://starterkit.web.cern.ch/starterkit/data/advanced-python-2018/simulated_data.root&#39;)</span>
@@ -1481,8 +1471,7 @@ Significance metric is 4.31
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">bkg_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;~(3.0 &lt; Jpsi_M &lt; 3.2)&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bkg_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;~(3.0 &lt; Jpsi_M &lt; 3.2)&#39;</span><span class="p">)</span>
 <span class="n">plot_mass</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1501,8 +1490,7 @@ Significance metric is 4.31
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">var</span> <span class="o">=</span> <span class="s1">&#39;Jpsi_PT&#39;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="s1">&#39;Jpsi_PT&#39;</span>
 <span class="c1"># let&#39;s first create the histograms</span>
 <span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
 <span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">)</span>  <span class="c1"># using the same bins here</span>
@@ -1521,7 +1509,7 @@ Significance metric is 4.31
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fbebc1a1f40&gt;
+&lt;matplotlib.legend.Legend at 0x7f03c04c0a00&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1535,8 +1523,7 @@ Significance metric is 4.31
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Those are hard to compare!</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Those are hard to compare!</span>
 <span class="c1"># We can add the density keyword argument to normalise the distributions</span>
 
 <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MC Signal&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1553,7 +1540,7 @@ Significance metric is 4.31
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fbeafffef40&gt;
+&lt;matplotlib.legend.Legend at 0x7f03c035ddf0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1568,8 +1555,7 @@ Significance metric is 4.31
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">plot_comparision</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_comparision</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">):</span>
     <span class="c1"># create histograms</span>
     <span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1586,8 +1572,7 @@ Significance metric is 4.31
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1596,8 +1581,7 @@ Significance metric is 4.31
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">data_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">data_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>  <span class="c1"># creates a new figure</span>
     <span class="n">plot_comparision</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 </pre></div>
@@ -1608,7 +1592,7 @@ Significance metric is 4.31
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_5427/3447827755.py:2: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+/tmp/ipykernel_5916/3447827755.py:2: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
   plt.figure()  # creates a new figure
 </pre></div></div>
 </div>
@@ -1841,8 +1825,7 @@ Significance metric is 4.31
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1851,8 +1834,7 @@ Significance metric is 4.31
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="o">%</span><span class="k">store</span> bkg_df
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">store</span> bkg_df
 <span class="o">%</span><span class="k">store</span> mc_df
 <span class="o">%</span><span class="k">store</span> data_df
 </pre></div>
@@ -1872,8 +1854,7 @@ Stored &#39;data_df&#39; (DataFrame)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1881,8 +1862,7 @@ Stored &#39;data_df&#39; (DataFrame)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>

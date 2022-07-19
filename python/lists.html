@@ -16,11 +16,12 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -484,7 +485,7 @@
 }
 </style>
 <section id="lists-and-looping">
-<h1>Lists and looping<a class="headerlink" href="#lists-and-looping" title="Permalink to this headline"></a></h1>
+<h1>Lists and looping<a class="headerlink" href="#lists-and-looping" title="Permalink to this heading"></a></h1>
 <p>Now things start to get <em>really</em> interesting! Lists are collections of things
 stored in a specific order. They can be defined literally by wrapping things in
 square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>, separating items with commas <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
@@ -623,7 +624,7 @@ content of the list <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <section id="looping">
-<h2>Looping<a class="headerlink" href="#looping" title="Permalink to this headline"></a></h2>
+<h2>Looping<a class="headerlink" href="#looping" title="Permalink to this heading"></a></h2>
 <p>When you’ve got a collection of things, it’s pretty common to want to access
 each one sequentially. This is called looping, or iterating, and is super easy.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
@@ -823,7 +824,7 @@ trying to see how you’d accomplish something similar with different building
 blocks.</p>
 </section>
 <section id="list-comprehension">
-<h2>List comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this headline"></a></h2>
+<h2>List comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this heading"></a></h2>
 <p>We’ve already made a new list from an existing one when we created <code class="docutils literal notranslate"><span class="pre">a_doubled</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_doubled</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a_doubled</span><span class="p">):</span>
@@ -859,7 +860,7 @@ responsible; if you find you’re doing something complicated, it’s probably
 better to write a full <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 </section>
 <section id="tuples">
-<h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline"></a></h2>
+<h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading"></a></h2>
 <p>A close relative of lists are tuples, which differ in that they cannot be
 mutated after creation.  You can create tuples literally using parentheses, or
 convert things to tuples using the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> method.</p>

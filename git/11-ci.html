@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -482,7 +483,7 @@
 }
 </style>
 <section id="gitlab-ci">
-<h1>GitLab CI<a class="headerlink" href="#gitlab-ci" title="Permalink to this headline"></a></h1>
+<h1>GitLab CI<a class="headerlink" href="#gitlab-ci" title="Permalink to this heading"></a></h1>
 <div class="panel panel-objectives docutils container">
 <div class="panel-header open docutils container">
 <p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
@@ -511,12 +512,12 @@ repositories without the need to sign up to additional services.</p>
 directory of your repository called <code class="docutils literal notranslate"><span class="pre">.gitlab-ci.yml</span></code>. This file is used to
 specify a pipeline, which can be built up of any number of interconnected stages
 with each job having it’s own environment. A minimal example of this file is:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">my_first_job</span><span class="p">:</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gitlab-registry.cern.ch/ci-tools/ci-worker:cc7</span>
-    <span class="nt">script</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python -c &#39;import this&#39;</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">echo &quot;My first CI produced file&quot; &gt; output.txt</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ls</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">my_first_job</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitlab-registry.cern.ch/ci-tools/ci-worker:cc7</span><span class="w"></span>
+<span class="w">    </span><span class="nt">script</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python -c &#39;import this&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;My first CI produced file&quot; &gt; output.txt</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ls</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This creates a single job named <code class="docutils literal notranslate"><span class="pre">my_first_job</span></code> and the <code class="docutils literal notranslate"><span class="pre">image:</span></code> key defines a
@@ -560,46 +561,46 @@ as an “artefact”. Additionally artefacts can be used in later stages in a
 pipeline by being marked as a dependency.</p>
 <p>Our first pipeline can be extended to produced a plot using python and then
 compile a LaTeX document using this plot by modify <code class="docutils literal notranslate"><span class="pre">.gitlab-ci.yml</span></code> to contain:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">stages</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">first_stage</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">second_stage</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">stages</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">first_stage</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">second_stage</span><span class="w"></span>
 
-<span class="nt">my_first_job</span><span class="p">:</span>
-    <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">first_stage</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gitlab-registry.cern.ch/ci-tools/ci-worker:cc7</span>
-    <span class="nt">script</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python -c &#39;import this&#39;</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">echo &quot;My first CI produced file&quot; &gt; output.txt</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ls</span>
-    <span class="nt">artifacts</span><span class="p">:</span>
-        <span class="nt">paths</span><span class="p">:</span>
-            <span class="p p-Indicator">-</span> <span class="s">&quot;*.txt&quot;</span>
+<span class="nt">my_first_job</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">first_stage</span><span class="w"></span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitlab-registry.cern.ch/ci-tools/ci-worker:cc7</span><span class="w"></span>
+<span class="w">    </span><span class="nt">script</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python -c &#39;import this&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;My first CI produced file&quot; &gt; output.txt</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ls</span><span class="w"></span>
+<span class="w">    </span><span class="nt">artifacts</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">paths</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;*.txt&quot;</span><span class="w"></span>
 
-<span class="nt">make_plot</span><span class="p">:</span>
-    <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">first_stage</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">continuumio/anaconda3:latest</span>
-    <span class="nt">before_script</span><span class="p">:</span>
-        <span class="c1"># Matplotlib should use a backend that is suitable for CI</span>
-        <span class="p p-Indicator">-</span> <span class="s">&#39;echo</span><span class="nv"> </span><span class="s">&quot;backend</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">Agg&quot;</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">matplotlibrc&#39;</span>
-    <span class="nt">script</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mkdir -p plots/</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python make_plot.py</span>
-    <span class="nt">artifacts</span><span class="p">:</span>
-        <span class="nt">paths</span><span class="p">:</span>
-            <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">plots/</span>
+<span class="nt">make_plot</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">first_stage</span><span class="w"></span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">continuumio/anaconda3:latest</span><span class="w"></span>
+<span class="w">    </span><span class="nt">before_script</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># Matplotlib should use a backend that is suitable for CI</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;echo</span><span class="nv"> </span><span class="s">&quot;backend</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">Agg&quot;</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">matplotlibrc&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">script</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdir -p plots/</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python make_plot.py</span><span class="w"></span>
+<span class="w">    </span><span class="nt">artifacts</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">paths</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plots/</span><span class="w"></span>
 
-<span class="nt">make_document</span><span class="p">:</span>
-    <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">second_stage</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gitlab-registry.cern.ch/ci-tools/ci-worker:cc7</span>
-    <span class="nt">before_script</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">yum install -y texlive ghostscript latexmk</span>
-    <span class="nt">script</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">latexmk -pdf my_document.tex</span>
-    <span class="nt">dependencies</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">make_plot</span>
-    <span class="nt">artifacts</span><span class="p">:</span>
-        <span class="nt">paths</span><span class="p">:</span>
-            <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">my_document.pdf</span>
+<span class="nt">make_document</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">second_stage</span><span class="w"></span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitlab-registry.cern.ch/ci-tools/ci-worker:cc7</span><span class="w"></span>
+<span class="w">    </span><span class="nt">before_script</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yum install -y texlive ghostscript latexmk</span><span class="w"></span>
+<span class="w">    </span><span class="nt">script</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">latexmk -pdf my_document.tex</span><span class="w"></span>
+<span class="w">    </span><span class="nt">dependencies</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make_plot</span><span class="w"></span>
+<span class="w">    </span><span class="nt">artifacts</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">paths</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_document.pdf</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Each keyword in the configuration does the following:</p>

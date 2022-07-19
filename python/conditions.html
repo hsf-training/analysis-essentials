@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -482,7 +483,7 @@
 }
 </style>
 <section id="conditions">
-<h1>Conditions<a class="headerlink" href="#conditions" title="Permalink to this headline"></a></h1>
+<h1>Conditions<a class="headerlink" href="#conditions" title="Permalink to this heading"></a></h1>
 <p>Sometimes, often while looping, you only want to do things depending on
 something’s value. Specifying <em>conditions</em> like this is pretty simple in Python.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pizzas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Pineapple&#39;</span><span class="p">,</span> <span class="s1">&#39;Cheese&#39;</span><span class="p">,</span> <span class="s1">&#39;Pepperoni&#39;</span><span class="p">,</span> <span class="s1">&#39;Hot dog&#39;</span><span class="p">]</span>
@@ -652,7 +653,7 @@ with <code class="docutils literal notranslate"><span class="pre">in</span></cod
 </pre></div>
 </div>
 <section id="truthiness">
-<h2>Truthiness<a class="headerlink" href="#truthiness" title="Permalink to this headline"></a></h2>
+<h2>Truthiness<a class="headerlink" href="#truthiness" title="Permalink to this heading"></a></h2>
 <p>It’s conventional not to explicitly compare a condition to <code class="docutils literal notranslate"><span class="pre">True</span></code>, because the
 <code class="docutils literal notranslate"><span class="pre">if</span></code> statement already does that for us.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="p">(</span><span class="s1">&#39;Pineapple&#39;</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
@@ -699,7 +700,7 @@ used as placeholder for an empty value.</p>
 <p>It behaves as false-y value in conditions.</p>
 </section>
 <section id="conditions-in-loops">
-<h2>Conditions in loops<a class="headerlink" href="#conditions-in-loops" title="Permalink to this headline"></a></h2>
+<h2>Conditions in loops<a class="headerlink" href="#conditions-in-loops" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops and comprehensions are the most common ways of iterating in Python.
 We’ve already seen that using conditions in these can be useful.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">not_cheesy</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pizzas</span> <span class="k">if</span> <span class="s1">&#39;cheese&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>

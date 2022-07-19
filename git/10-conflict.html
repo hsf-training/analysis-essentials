@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -482,7 +483,7 @@
 }
 </style>
 <section id="conflicts">
-<h1>Conflicts<a class="headerlink" href="#conflicts" title="Permalink to this headline"></a></h1>
+<h1>Conflicts<a class="headerlink" href="#conflicts" title="Permalink to this heading"></a></h1>
 <div class="panel panel-objectives docutils container">
 <div class="panel-header open docutils container">
 <p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
@@ -604,14 +605,14 @@ and marks that conflict in the affected file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat mars.txt
 </pre></div>
 </div>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-We added a different line in the other copy
-<span class="gh">=======</span>
-This line added to Wolfman&#39;s copy
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; dabb4c8c450e8475aee9b14b4383acc99f42af1d
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="w">Cold and dry, but everything is my favorite color</span>
+<span class="w">The two moons may be a problem for Wolfman</span>
+<span class="w">But the Mummy will appreciate the lack of humidity</span>
+<span class="w">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
+<span class="w">We added a different line in the other copy</span>
+<span class="gh">=======</span><span class="w"></span>
+<span class="w">This line added to Wolfman&#39;s copy</span>
+<span class="w">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dabb4c8c450e8475aee9b14b4383acc99f42af1d</span>
 </pre></div>
 </div>
 <p>Our change—the one in <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>—is preceded by <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></code>.
