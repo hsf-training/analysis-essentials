@@ -994,7 +994,7 @@ Extended PDFs are given to a normal UnbinnedNLL. This won&#39;t take the yield i
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7f93769c0fa0&gt;] constraints=[]&gt;
+&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7ffa52f2fa00&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
@@ -1053,23 +1053,23 @@ sigma   0.01503       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f93769db220&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7ffa52f2fca0&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
-╒═════════╤═════════════╤══════════════════╤═══════╤═════════════╕
-│ valid   │ converged   │ param at limit   │ edm   │ min value   │
-╞═════════╪═════════════╪══════════════════╪═══════╪═════════════╡
-│ True    │ True        │ False            │ 8e-06 │ 837.6       │
-╘═════════╧═════════════╧══════════════════╧═══════╧═════════════╛
+╒═════════╤═════════════╤══════════════════╤═════════╤═════════════╕
+│ valid   │ converged   │ param at limit   │ edm     │ min value   │
+╞═════════╪═════════════╪══════════════════╪═════════╪═════════════╡
+│ True    │ True        │ False            │ 0.00021 │ 845.3       │
+╘═════════╧═════════════╧══════════════════╧═════════╧═════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name         value    at limit
 ---------  -------  ----------
-bkg_yield     6003       False
-sig_yield    137.4       False
-lambda     -0.9397       False
-mu           3.096       False
+bkg_yield     6068       False
+sig_yield    79.57       False
+lambda     -0.8389       False
+mu           3.094       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1097,23 +1097,23 @@ mu           3.096       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 FitResult of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f93769db220&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7ffa52f2fca0&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
-╒═════════╤═════════════╤══════════════════╤═══════╤═════════════╕
-│ valid   │ converged   │ param at limit   │ edm   │ min value   │
-╞═════════╪═════════════╪══════════════════╪═══════╪═════════════╡
-│ True    │ True        │ False            │ 8e-06 │ 837.6       │
-╘═════════╧═════════════╧══════════════════╧═══════╧═════════════╛
+╒═════════╤═════════════╤══════════════════╤═════════╤═════════════╕
+│ valid   │ converged   │ param at limit   │ edm     │ min value   │
+╞═════════╪═════════════╪══════════════════╪═════════╪═════════════╡
+│ True    │ True        │ False            │ 0.00021 │ 845.3       │
+╘═════════╧═════════════╧══════════════════╧═════════╧═════════════╛
 
 Parameters
 name         value    minuit_hesse         minuit_minos    at limit
 ---------  -------  --------------  -------------------  ----------
-bkg_yield     6003     +/-      81  -     80   +     81       False
-sig_yield    137.4     +/-      26  -     26   +     26       False
-lambda     -0.9397     +/-   0.065  -  0.065   +  0.064       False
-mu           3.096     +/-  0.0038  - 0.0039   + 0.0038       False
+bkg_yield     6068     +/-      81  -     82   +     81       False
+sig_yield    79.57     +/-      25  -     24   +     25       False
+lambda     -0.8389     +/-   0.064  -  0.064   +  0.064       False
+mu           3.094     +/-  0.0079  - 0.0077   + 0.0085       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1185,8 +1185,8 @@ Z = \Phi^{-1}(1 - p_0).
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-p_value for the Null hypothesis = 4.5430285089409495e-09
-Significance (in units of sigma) = 5.7469630588620815
+p_value for the Null hypothesis = 0.0003816104226938011
+Significance (in units of sigma) = 3.3657997810549807
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1195,7 +1195,7 @@ Significance (in units of sigma) = 5.7469630588620815
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(4.5430285089409495e-09, 5.7469630588620815)
+(0.0003816104226938011, 3.3657997810549807)
 </pre></div></div>
 </div>
 <p><strong>Exercise</strong> play around! First things first: repeat the fit. The difference we will see is statistical fluctuation from the resampling of the data; we take only a fraction at random.</p>
