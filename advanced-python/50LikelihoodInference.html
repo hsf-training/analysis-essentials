@@ -753,7 +753,7 @@ div.rendered_html tbody tr:hover {
 </section>
 <section id="Getting-started">
 <h2>Getting started<a class="headerlink" href="#Getting-started" title="Permalink to this heading"></a></h2>
-<p>In order to get started with <code class="docutils literal notranslate"><span class="pre">zfit</span></code>, it is recommendable to have a look at the <a class="reference external" href="https://zfit-tutorials.readthedocs.io/en/latest/index.html">zfit-tutorials</a> or the <a class="reference external" href="https://www.youtube.com/playlist?list=PLAuzjeTfC3tNeP6o2sbCr3Jsa6ATvEYR6">recorded</a> <a class="reference external" href="https://www.youtube.com/watch?v=YDW-XxrSbns">tutorials</a>, which also contains <code class="docutils literal notranslate"><span class="pre">hepstats</span></code> tutorials; more the latter can be found <a class="reference external" href="https://github.com/scikit-hep/hepstats/tree/master/notebooks">here</a>.</p>
+<p>In order to get started with <code class="docutils literal notranslate"><span class="pre">zfit</span></code>, it is recommendable to have a look at the <a class="reference external" href="https://zfit-tutorials.readthedocs.io/en/latest/index.html">zfit-tutorials</a> or the <a class="reference external" href="https://www.youtube.com/playlist?list=PLAuzjeTfC3tNeP6o2sbCr3Jsa6ATvEYR6">recorded</a> <a class="reference external" href="https://www.youtube.com/watch?v=YDW-XxrSbns">tutorials</a>, which also contains <code class="docutils literal notranslate"><span class="pre">hepstats</span></code> tutorials; more on the latter can be found <a class="reference external" href="https://github.com/scikit-hep/hepstats/tree/master/notebooks">here</a>.</p>
 <p>Before we continue, it is highly recommended to follow the <a class="reference external" href="https://zfit-tutorials.readthedocs.io/en/latest/tutorials/introduction/README.html">zfit introduction tutorial</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -994,7 +994,7 @@ Extended PDFs are given to a normal UnbinnedNLL. This won&#39;t take the yield i
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7ffa52f2fa00&gt;] constraints=[]&gt;
+&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7f3959da8490&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
@@ -1053,23 +1053,23 @@ sigma   0.01503       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7ffa52f2fca0&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f3909704c10&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
 ╒═════════╤═════════════╤══════════════════╤═════════╤═════════════╕
 │ valid   │ converged   │ param at limit   │ edm     │ min value   │
 ╞═════════╪═════════════╪══════════════════╪═════════╪═════════════╡
-│ True    │ True        │ False            │ 0.00021 │ 845.3       │
+│ True    │ True        │ False            │ 6.1e-05 │ 795.6       │
 ╘═════════╧═════════════╧══════════════════╧═════════╧═════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name         value    at limit
 ---------  -------  ----------
-bkg_yield     6068       False
-sig_yield    79.57       False
-lambda     -0.8389       False
-mu           3.094       False
+bkg_yield     6032       False
+sig_yield    86.62       False
+lambda      -1.101       False
+mu           3.092       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1097,23 +1097,23 @@ mu           3.094       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 FitResult of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7ffa52f2fca0&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f3909704c10&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
 ╒═════════╤═════════════╤══════════════════╤═════════╤═════════════╕
 │ valid   │ converged   │ param at limit   │ edm     │ min value   │
 ╞═════════╪═════════════╪══════════════════╪═════════╪═════════════╡
-│ True    │ True        │ False            │ 0.00021 │ 845.3       │
+│ True    │ True        │ False            │ 6.1e-05 │ 795.6       │
 ╘═════════╧═════════════╧══════════════════╧═════════╧═════════════╛
 
 Parameters
 name         value    minuit_hesse         minuit_minos    at limit
 ---------  -------  --------------  -------------------  ----------
-bkg_yield     6068     +/-      81  -     82   +     81       False
-sig_yield    79.57     +/-      25  -     24   +     25       False
-lambda     -0.8389     +/-   0.064  -  0.064   +  0.064       False
-mu           3.094     +/-  0.0079  - 0.0077   + 0.0085       False
+bkg_yield     6032     +/-      81  -     80   +     82       False
+sig_yield    86.62     +/-      25  -     25   +     25       False
+lambda      -1.101     +/-   0.065  -  0.065   +  0.064       False
+mu           3.092     +/-  0.0048  - 0.0049   + 0.0049       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1185,8 +1185,8 @@ Z = \Phi^{-1}(1 - p_0).
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-p_value for the Null hypothesis = 0.0003816104226938011
-Significance (in units of sigma) = 3.3657997810549807
+p_value for the Null hypothesis = 0.00011171717862246133
+Significance (in units of sigma) = 3.6909314441378016
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1195,7 +1195,7 @@ Significance (in units of sigma) = 3.3657997810549807
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(0.0003816104226938011, 3.3657997810549807)
+(0.00011171717862246133, 3.6909314441378016)
 </pre></div></div>
 </div>
 <p><strong>Exercise</strong> play around! First things first: repeat the fit. The difference we will see is statistical fluctuation from the resampling of the data; we take only a fraction at random.</p>

@@ -804,7 +804,7 @@ https://github.com/tensorflow/addons
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f6054b91340&gt;
+&lt;matplotlib.legend.Legend at 0x7f156a770250&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1065,9 +1065,9 @@ https://github.com/tensorflow/addons
 <div class="highlight"><pre>
 name           value    at limit
 ---------  ---------  ----------
-bkg_yield     118500       False
-sig_yield      19960       False
-lambda     -0.001991       False
+bkg_yield     117900       False
+sig_yield      20100       False
+lambda     -0.002007       False
 mu              5279       False
 </pre></div></div>
 </div>
@@ -1158,9 +1158,9 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&lt;zfit.Parameter &#39;bkg_yield&#39; floating=True value=1.185e+05&gt;: array([ 0.30135017,  0.0057631 , -0.19937018, ...,  1.12198536,
-        1.12198536,  1.12198536]), &lt;zfit.Parameter &#39;sig_yield&#39; floating=True value=1.996e+04&gt;: array([ 0.6986475 ,  0.99423227,  1.19936396, ..., -0.12198129,
-       -0.12198129, -0.12198129])}
+{&lt;zfit.Parameter &#39;bkg_yield&#39; floating=True value=1.179e+05&gt;: array([-0.15633288,  0.13032279, -0.2008073 , ...,  1.12226242,
+        1.12226242,  1.12226242]), &lt;zfit.Parameter &#39;sig_yield&#39; floating=True value=2.01e+04&gt;: array([ 1.15632969,  0.86967606,  1.2008038 , ..., -0.12225654,
+       -0.12225654, -0.12225654])}
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1177,8 +1177,8 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Sum of signal sWeights:  19962.717882330075
-Sum of background sWeights:  118496.5580227843
+Sum of signal sWeights:  20101.45119271117
+Sum of background sWeights:  117912.09877934362
 </pre></div></div>
 </div>
 <p>Now we can apply the signal <strong>sWeights</strong> on the lifetime distribution and retrieve its signal components.</p>
@@ -1227,7 +1227,7 @@ Sum of background sWeights:  118496.5580227843
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Correlation between m and t: 0.03185663672740262
+Correlation between m and t: 0.03631485801951949
 </pre></div></div>
 </div>
 <p>Let’s apply to signal <strong>sWeights</strong> on the mass distribution to see how bad the results of <strong>sPlot</strong> is when applied on a variable that is correlated with the discrimant variable.</p>
@@ -1363,7 +1363,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f6048124250&gt;
+&lt;matplotlib.legend.Legend at 0x7f155cbed670&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1407,7 +1407,7 @@ Text(0.5, 0, &#39;p&#39;)
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 ((0.0, 10.0),
- &lt;matplotlib.legend.Legend at 0x7f604c846f40&gt;,
+ &lt;matplotlib.legend.Legend at 0x7f155cc03af0&gt;,
  Text(0.5, 0, &#39;mass&#39;))
 </pre></div></div>
 </div>
@@ -1499,7 +1499,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--0.34296014432681554
+-0.3443166192218583
 </pre></div></div>
 </div>
 <p>But within each class there is no correlation, so the requirement is satisfied:</p>
@@ -1517,8 +1517,8 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--0.0009502806997064237
-0.0076168613601417055
+-0.01673770320162309
+-0.009017663559522954
 </pre></div></div>
 </div>
 <p>as a demonstration why this is important let’s use sweights to reconstruct mass (obviously mass is correlated with mass):</p>
