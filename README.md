@@ -1,4 +1,5 @@
-# Analysis essentials [![Build Status](https://api.travis-ci.org/hsf-training/analysis-essentials.svg?branch=master)](https://travis-ci.org/hsf-training/analysis-essentials)
+# Analysis essentials [![Build Status](https://api.travis-ci.org/hsf-training/analysis-essentials.svg?branch=master)](https://travis-ci.org/hsf-training/analysis-essentials) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/hsf-training/analysis-essentials/master)
+
 
 This is the source material for the [analysis essentials website][website], a
 series of lessons for helping high-energy physics analysts become more
