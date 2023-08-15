@@ -11,6 +11,7 @@ exclude_patterns += [
     'miniconda/**',
     'shell/data-shell/**',
     'README.md',
+    'LICENSE.md',
 ]
 
 html_context = {
