@@ -15,7 +15,7 @@ In exchange,
 we will address your issues and/or assess your change proposal as promptly as we can,
 and help you become a member of our community.
 Everyone involved in [HSF training][hsf-training]
-agrees to abide by our [code of conduct](CODE_OF_CONDUCT.md).
+agrees to abide by our [code of conduct](CONDUCT.md).
 
 ## How to Contribute
 
@@ -49,12 +49,12 @@ There are many ways to contribute,
 from writing new exercises and improving existing ones
 to updating or filling in the documentation
 and submitting [bug reports][issues]
-about things that do not work, aren not clear, or are missing.
+about things that do not work, are not clear, or are missing.
 If you are looking for ideas, please see the 'Issues' tab for
 a list of issues associated with this repository,
 or you may also look at all issues in [hsf-training][hsf-training-issues]
 
-There is also [a list](hsf-training-gfis) of all issues that are particularly easy and suitable
+There is also [a list][hsf-training-gfis] of all issues that are particularly easy and suitable
 for first contributions.
 
 Comments on issues and reviews of pull requests are just as welcome:

@@ -19,29 +19,36 @@ There are two options for running these lessons. Running locally should be prefe
 
 ### Local
 
-This tutorial uses `Python 3.7` and requires some packages.
-It is recommended to use [Conda](https://docs.conda.io/en/latest/) to install the correct packages.
+This tutorial uses `Python 3.11` and requires some packages.
+It is recommended to use [mambaforge](https://github.com/conda-forge/miniforge#mambaforge) to install the correct packages.
+**Note:** `mamba` is like `conda` and can be used interchangeably. "forge" in the name refers to the [conda-forge](https://conda-forge.org/) channel, _the_ open-source maintained channel which contains a lot of packages.
 
-To install `Conda` you will need to do the following:
+To install `Conda`/`mamba` you will need to do the following:
 
- - Install `Conda` according to the instructions [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html#installing-in-silent-mode)
- - You can add `source /my/path/for/miniconda/etc/profile.d/conda.sh` to your `.bashrc`
- - Add the channel:
+ - Install `mamba` according to the instructions [here](https://github.com/conda-forge/miniforge#install)
+ - To add `mamba`/`conda` to your shell, follow the instructions after the installation and execute
 ```bash
-conda config --add channels conda-forge
+mamba init
+```
+ - In order no not use the base environment (which you almost never should), do
+```bash
+conda config --set auto_activate_base false
 ```
 
-Now to use your first ```Conda``` environment:
- - Create an environment with some packages already installed:
+
+Now to use your first ```Conda/Mamba``` environment:
+ 
+ - This will install the above packages. In order to make sure that you install all of the packages needed in the tutorial, you can use the `environment.yml` file (make sure that the file `environment.yml` is in the current directory):
 ```bash
-conda create -n my-analysis-env python=3.7 jupyterlab ipython matplotlib uproot numpy pandas scikit-learn scipy tensorflow xgboost hep_ml wget
+mamba env create -f environment.yml
 ```
- - Activate your environment by doing: `conda activate my-analysis-env`
- - You can install additional packages by doing: `conda install package_name`
- - For the lessons to work fully you will also need to install a special helper package with pip:
+ - Alternatively, you could create an environment with some packages already in this way
 ```bash
-pip install git+https://github.com/hsf-training/python-lesson.git
+mamba create -n analysis-essentials python=3.11 jupyterlab ipython matplotlib uproot numpy pandas scikit-learn scipy tensorflow xgboost hep_ml wget
 ```
+ - Activate your environment by doing: `mamba activate analysis-essentials`
+ - You can install additional packages by doing: `mamba install package_name`
+
 
 You will also need [Jupyter](https://jupyterlab.readthedocs.io/) to run the examples in this tutorial.
 Jupyter was already installed in the previous command and can be ran by following the instructions [here](https://jupyterlab.readthedocs.io/en/stable/getting_started/starting.html).
@@ -86,4 +93,6 @@ If you have any problems or questions, you can [open an issue][issues] on this r
     snakemake/README.md
     git/README.md
     CONTRIBUTING.md
+    CONDUCT.md
+    LICENSE.md
 ```

@@ -21,6 +21,7 @@ html_context = {
     'conf_py_path': '/',
 }
 
+
 html_static_path += [
     f'_static',
 ]
