@@ -11,7 +11,6 @@ exclude_patterns += [
     'miniconda/**',
     'shell/data-shell/**',
     'README.md',
-    'LICENSE.md',
 ]
 
 html_context = {
@@ -21,6 +20,7 @@ html_context = {
     'github_version': 'master',
     'conf_py_path': '/',
 }
+
 
 html_static_path += [
     f'_static',
