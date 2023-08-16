@@ -41,7 +41,7 @@ def hsf_ci_setup(app):
 
 setup.extra_setup_funcs += [hsf_ci_setup]
 
-nbsphinx_execute = 'auto'
+nbsphinx_execute = 'always'
 nbsphinx_timeout = 60*20
 # FIXME: This should be removed
 # nbsphinx_execute = 'never'
