@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>7: Demonstration of distribution reweighting &mdash; Analysis essentials  documentation</title>
@@ -9,15 +9,16 @@
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
       <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/panels.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
@@ -34,12 +35,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Analysis essentials
-            <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Analysis essentials
+              <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -161,7 +166,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="11AdvancedPython.html#Catching-exceptions">Catching exceptions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#pitfall-“guaranteed-execution”">pitfall “guaranteed execution”</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11AdvancedPython.html#pitfall-%22guaranteed-execution%22">pitfall “guaranteed execution”</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="11AdvancedPython.html#Exceptions-as-control-flow">Exceptions as control-flow</a></li>
@@ -213,7 +218,7 @@
 <li class="toctree-l4"><a class="reference internal" href="32BoostingToUniformity.html#Distributions-in-the-Dalitz-features-for-signal-and-background">Distributions in the Dalitz features for signal and background</a></li>
 <li class="toctree-l4"><a class="reference internal" href="32BoostingToUniformity.html#Preparation-of-train/test-datasets">Preparation of train/test datasets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="32BoostingToUniformity.html#Setting-up-classifiers,-training">Setting up classifiers, training</a></li>
-<li class="toctree-l4"><a class="reference internal" href="32BoostingToUniformity.html#Let’s-look-at-the-results-of-training">Let’s look at the results of training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="32BoostingToUniformity.html#Let's-look-at-the-results-of-training">Let’s look at the results of training</a></li>
 <li class="toctree-l4"><a class="reference internal" href="32BoostingToUniformity.html#ROC-curves-after-training">ROC curves after training</a></li>
 </ul>
 </li>
@@ -287,11 +292,11 @@
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Splot">Splot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Alternative:-Known-probabilities">Alternative: Known probabilities</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Building-sPlot-over-mass">Building sPlot over mass</a></li>
-<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Of-course-we-don’t-have-labels-which-events-are-signal-and-which-are-background-beforehand">Of course we don’t have labels which events are signal and which are background beforehand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="60sPlot.html#Of-course-we-don't-have-labels-which-events-are-signal-and-which-are-background-beforehand">Of course we don’t have labels which events are signal and which are background beforehand</a></li>
 <li class="toctree-l4"><a class="reference internal" href="60sPlot.html#We-have-no-information-about-real-labels">We have no information about real labels</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Fitting-doesn’t-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Fitting-doesn't-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Appying-sPlot">Appying sPlot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
@@ -423,16 +428,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#getting-started">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#dependencies">Dependencies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributing-notebooks">Contributing notebooks</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributor-agreement">Contributor Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#how-to-contribute">How to Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#what-to-contribute">What to Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#using-github">Using GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#other-resources">Other Resources</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
 </ul>
 
         </div>
@@ -448,9 +453,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="README.html">Advanced Python Tutorial</a> &raquo;</li>
-      <li>7: Demonstration of distribution reweighting</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="README.html">Advanced Python Tutorial</a></li>
+      <li class="breadcrumb-item active">7: Demonstration of distribution reweighting</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/hsf-training/analysis-essentials/blob/master/advanced-python/45DemoReweighting.ipynb" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -460,285 +465,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-.jp-RenderedHTMLCommon table,
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.jp-RenderedHTMLCommon thead,
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-.jp-RenderedHTMLCommon tr,
-.jp-RenderedHTMLCommon th,
-.jp-RenderedHTMLCommon td,
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-.jp-RenderedHTMLCommon th,
-div.rendered_html th {
-  font-weight: bold;
-}
-.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.jp-RenderedHTMLCommon tbody tr:hover,
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="7:-Demonstration-of-distribution-reweighting">
+  <section id="7:-Demonstration-of-distribution-reweighting">
 <h1>7: Demonstration of distribution reweighting<a class="headerlink" href="#7:-Demonstration-of-distribution-reweighting" title="Permalink to this heading"></a></h1>
 <ul class="simple">
 <li><p>Reweighting in HEP is used to minimize difference between real data and Monte-Carlo simulation.</p></li>
@@ -822,6 +549,7 @@ div.rendered_html tbody tr:hover {
 
 <span class="n">hist_settings</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;bins&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;density&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">}</span>
 
+
 <span class="k">def</span> <span class="nf">draw_distributions</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">new_original_weights</span><span class="p">):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
     <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">columns</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
@@ -900,11 +628,11 @@ KS over  mu_pt_sum  =  0.21639364439970188
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.5170665174129254
-KS over  pt_b  =  0.21549674626683318
-KS over  pt_phi  =  0.40070777114440437
-KS over  vchi2_b  =  0.40245931342664004
-KS over  mu_pt_sum  =  0.21549674626683318
+KS over  hSPD  =  0.5209480895522285
+KS over  pt_b  =  0.21542472636650256
+KS over  pt_phi  =  0.4011197910449372
+KS over  vchi2_b  =  0.40545724377491255
+KS over  mu_pt_sum  =  0.21542472636650256
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -930,11 +658,11 @@ KS over  mu_pt_sum  =  0.21549674626683318
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.5334475269539376
-KS over  pt_b  =  0.22120587987286633
-KS over  pt_phi  =  0.40705874239868967
-KS over  vchi2_b  =  0.4142118683089644
-KS over  mu_pt_sum  =  0.22120587987286633
+KS over  hSPD  =  0.5205837000559714
+KS over  pt_b  =  0.22305134750950334
+KS over  pt_phi  =  0.4056418507739977
+KS over  vchi2_b  =  0.40406346539904864
+KS over  mu_pt_sum  =  0.22305134750950334
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -975,11 +703,11 @@ KS over  mu_pt_sum  =  0.22120587987286633
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.42863624879323187
-KS over  pt_b  =  0.12643137585836178
-KS over  pt_phi  =  0.2879532533863654
-KS over  vchi2_b  =  0.35373773290850885
-KS over  mu_pt_sum  =  0.12643137585836178
+KS over  hSPD  =  0.411265866697557
+KS over  pt_b  =  0.1234295830370864
+KS over  pt_phi  =  0.2796332093872414
+KS over  vchi2_b  =  0.3439573123166725
+KS over  mu_pt_sum  =  0.1234295830370864
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1014,11 +742,11 @@ KS over  mu_pt_sum  =  0.12643137585836178
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.0347095621152409
-KS over  pt_b  =  0.025211070013842152
-KS over  pt_phi  =  0.03053187424458037
-KS over  vchi2_b  =  0.03684974158016552
-KS over  mu_pt_sum  =  0.025211070013842152
+KS over  hSPD  =  0.042525466858945205
+KS over  pt_b  =  0.01943527043292348
+KS over  pt_phi  =  0.01587644430683821
+KS over  vchi2_b  =  0.04177921678080654
+KS over  mu_pt_sum  =  0.01943527043292348
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1061,9 +789,9 @@ KS over  mu_pt_sum  =  0.025211070013842152
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.5334475269539376
-Bins reweight KS: 0.42863624879323187
-GB Reweight   KS: 0.0347095621152409
+No reweight   KS: 0.5205837000559714
+Bins reweight KS: 0.411265866697557
+GB Reweight   KS: 0.042525466858945205
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1079,9 +807,9 @@ GB Reweight   KS: 0.0347095621152409
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.09012817049079563
-Bins reweight KS: 0.11352328240467435
-GB Reweight   KS: 0.02190268041831478
+No reweight   KS: 0.0888738388362402
+Bins reweight KS: 0.11524252551740502
+GB Reweight   KS: 0.019686649437638037
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1097,9 +825,9 @@ GB Reweight   KS: 0.02190268041831478
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.37901963253191406
-Bins reweight KS: 0.34424900596261393
-GB Reweight   KS: 0.031860685902892816
+No reweight   KS: 0.36669597873598525
+Bins reweight KS: 0.3331478464351834
+GB Reweight   KS: 0.028575236851033914
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1115,9 +843,9 @@ GB Reweight   KS: 0.031860685902892816
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.4847105939189398
-Bins reweight KS: 0.39303454488565615
-GB Reweight   KS: 0.03632797862321624
+No reweight   KS: 0.4754024208168911
+Bins reweight KS: 0.37926739131069986
+GB Reweight   KS: 0.025743927999637373
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1133,9 +861,9 @@ GB Reweight   KS: 0.03632797862321624
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.5001298186913166
-Bins reweight KS: 0.4091388317915871
-GB Reweight   KS: 0.013885328548535414
+No reweight   KS: 0.5014548252199376
+Bins reweight KS: 0.4070872646801475
+GB Reweight   KS: 0.018995810779753874
 </pre></div></div>
 </div>
 </section>
@@ -1176,14 +904,14 @@ GB Reweight   KS: 0.013885328548535414
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-original 0.9359999166274395
-bins 0.9095742001748905
-gb_weights 0.4893777931359195
+original 0.9350153663555378
+bins 0.9069764542352352
+gb_weights 0.493287868372586
 </pre></div></div>
 </div>
 <section id="Great!">
 <h3>Great!<a class="headerlink" href="#Great!" title="Permalink to this heading"></a></h3>
-<p>To the classifier, the two datasets seem now nearly undistingishable. Can we improve that? The <code class="docutils literal notranslate"><span class="pre">GBReweighter</span></code> is quite sensible to its hyperparameters, especially to <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code>. Feel free to go back and increase it (to e.g. 250). What happens?</p>
+<p>To the classifier, the two datasets seem now nearly undistingishable. Can we improve that? The <code class="docutils literal notranslate"><span class="pre">GBReweighter</span></code> is quite sensible to its hyperparameters, especially to <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code>. Feel free to go back and increase it (to e.g. 250). What happens?</p>
 <p>Answer: we get an even lower score! 0.49! Yeey! Or wait…</p>
 </section>
 <section id="What-did-just-happen?">
@@ -1232,7 +960,7 @@ Text(0.5, 1.0, &#39;predicted weights&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(641.8825873922033, 69099.26440929338)
+(523.0162274016437, 68751.25580663193)
 </pre></div></div>
 </div>
 <p>With such a high weight for a single event, this does not look desireable. And be aware of ad-hoc solutions: just clipping or removing weights is completely <strong>wrong</strong> as this would disturb the distribution completely.</p>
@@ -1243,7 +971,7 @@ Text(0.5, 1.0, &#39;predicted weights&#39;)
 <h2>How to tune<a class="headerlink" href="#How-to-tune" title="Permalink to this heading"></a></h2>
 <p>First find an appropriate number of estimators.</p>
 <p><code class="docutils literal notranslate"><span class="pre">max_depth</span></code> basically determines the order of correlations to be taken into account.</p>
-<p><code class="docutils literal notranslate"><span class="pre">n_estimators</span></code> has a tradeoff vs <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code>. Increasing the former by a factor of n and reducing the latter by a factor of 1 / n keeps the reweighter with the same capability (e.g. overfitting) but tends to smooth out things. So use this at the end as more estimators take more time.</p>
+<p><code class="docutils literal notranslate"><span class="pre">n_estimators</span></code> has a tradeoff vs <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code>. Increasing the former by a factor of n and reducing the latter by a factor of 1 / n keeps the reweighter with the same capability (e.g. overfitting) but tends to smooth out things. So use this at the end as more estimators take more time.</p>
 </section>
 <section id="Folding-reweighter">
 <h2>Folding reweighter<a class="headerlink" href="#Folding-reweighter" title="Permalink to this heading"></a></h2>
@@ -1276,11 +1004,11 @@ Text(0.5, 1.0, &#39;predicted weights&#39;)
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 KFold prediction using folds column
-KS over  hSPD  =  0.3069343038595975
-KS over  pt_b  =  0.1808053376835848
-KS over  pt_phi  =  0.3082330336192169
-KS over  vchi2_b  =  0.2982631515629319
-KS over  mu_pt_sum  =  0.1808053376835848
+KS over  hSPD  =  0.3068393946163279
+KS over  pt_b  =  0.18092185186096443
+KS over  pt_phi  =  0.30835294633290417
+KS over  vchi2_b  =  0.2980165329845733
+KS over  mu_pt_sum  =  0.18092185186096443
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1319,8 +1047,8 @@ KS over  mu_pt_sum  =  0.1808053376835848
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-original 0.9369223085837554
-2-folding 0.8268759949345327
+original 0.9368604142741526
+2-folding 0.826594050558518
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">

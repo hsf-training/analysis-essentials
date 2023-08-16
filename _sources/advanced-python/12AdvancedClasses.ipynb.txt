@@ -27,16 +27,19 @@
     "    def __init__(self, name):\n",
     "        self.name = name\n",
     "\n",
+    "\n",
     "class ValueLeft(NamedValue):    \n",
     "    def __add__(self, other):\n",
     "        print(f\"add called on {self.name}\")\n",
     "        return 42\n",
     "    \n",
+    "\n",
     "class ValueRight(NamedValue):\n",
     "    def __radd__(self, other):\n",
     "        print(\"radd called on {self.name}\")\n",
     "        return 24\n",
     "    \n",
+    "\n",
     "class Value(ValueRight, ValueLeft):\n",
     "    pass"
    ]
@@ -97,14 +100,17 @@
     "    def __init__(self, name):\n",
     "        self.name = name\n",
     "        \n",
+    "\n",
     "class NameRepr(Name):\n",
     "    def __repr__(self):\n",
     "        return self.name\n",
+    "\n",
     "\n",
     "class NameStr(Name):\n",
     "    def __str__(self):\n",
     "        return f'I am {self.name}'\n",
     "    \n",
+    "\n",
     "class NameStrRepr(NameStr, NameRepr):\n",
     "    pass"
    ]
@@ -135,6 +141,7 @@
     "    def __call__(self, *args, **kwargs):\n",
     "        print(f\"called with args {args} and kwargs {kwargs}\")\n",
     "        \n",
+    "\n",
     "class NotCallable:\n",
     "    pass"
    ]

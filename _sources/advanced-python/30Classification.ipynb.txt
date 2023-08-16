@@ -258,6 +258,7 @@
     "    plt.xlim(bins[0], bins[-1])\n",
     "    plt.legend(loc='best')\n",
     "\n",
+    "\n",
     "def plot_mass(df, **kwargs):\n",
     "    h, bins = np.histogram(df['Jpsi_M'], bins=100, range=[2.75, 3.5])\n",
     "    mplhep.histplot(h, bins, yerr=True, **kwargs)  # feel free to adjust\n",
