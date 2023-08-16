@@ -54,7 +54,7 @@ If you are looking for ideas, please see the 'Issues' tab for
 a list of issues associated with this repository,
 or you may also look at all issues in [hsf-training][hsf-training-issues]
 
-There is also [a list](hsf-training-gfis) of all issues that are particularly easy and suitable
+There is also [a list][hsf-training-gfis] of all issues that are particularly easy and suitable
 for first contributions.
 
 Comments on issues and reviews of pull requests are just as welcome:
