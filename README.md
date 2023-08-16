@@ -94,4 +94,5 @@ If you have any problems or questions, you can [open an issue][issues] on this r
     git/README.md
     CONTRIBUTING.md
     CONDUCT.md
+    LICENSE.md
 ```
