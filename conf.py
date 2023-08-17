@@ -45,3 +45,8 @@ nbsphinx_execute = 'always'
 nbsphinx_timeout = 60*20
 # FIXME: This should be removed
 # nbsphinx_execute = 'never'
+
+_PLAUSIBLE_SNIPPET = '<script defer data-domain="hepsoftwarefoundation.org" src="https://views.scientific-python.org/js/script.js"></script>'
+
+def setup(app):
+    app.add_js_file(None, body=_PLAUSIBLE_SNIPPET)
