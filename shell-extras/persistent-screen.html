@@ -468,23 +468,39 @@
 <section id="setting-up-password-less-kerberos-token">
 <h2>Setting up password-less kerberos token<a class="headerlink" href="#setting-up-password-less-kerberos-token" title="Link to this heading"></a></h2>
 <p>In order for the kerberos token to be refreshed automatically, it must be possible to do so without a password.
-Therefore, we create a keytab (similar to a private ssh key) on lxplus using the keytab utility. After starting it by typing <code class="docutils literal notranslate"><span class="pre">ktutil</span></code>, type the following three lines into the prompt and confirm the first two steps with your password.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>add_entry<span class="w"> </span>-password<span class="w"> </span>-p<span class="w"> </span>USERNAME@CERN.CH<span class="w"> </span>-k<span class="w"> </span><span class="m">1</span><span class="w"> </span>-e<span class="w"> </span>arcfour-hmac-md5
-add_entry<span class="w"> </span>-password<span class="w"> </span>-p<span class="w"> </span>USERNAME@CERN.CH<span class="w"> </span>-k<span class="w"> </span><span class="m">1</span><span class="w"> </span>-e<span class="w"> </span>aes256-cts
-wkt<span class="w"> </span>USERNAME.keytab
+Therefore, we create a keytab (similar to a private ssh key) on lxplus using the provided <code class="docutils literal notranslate"><span class="pre">cern-get-keytab</span></code> utility. Note it will prompt for your password, in order to generate the keytab.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="the-old-way"><i class="fa fa-info-circle"></i> The old way</p>
+</div>
+<div class="panel-body docutils container">
+<p>The former recipe was to start <code class="docutils literal notranslate"><span class="pre">ktutil</span></code>, then type the following three lines into the prompt and confirm the first two steps with your password.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cern-get-keytab<span class="w"> </span>--user<span class="w"> </span>USERNAME<span class="w"> </span>--keytab<span class="w"> </span>USERNAME.keytab
 </pre></div>
 </div>
 <p>and close the <code class="docutils literal notranslate"><span class="pre">ktutil</span></code> prompt with <code class="docutils literal notranslate"><span class="pre">Ctrl+D</span></code>.
-This will create a file called USERNAME.keytab in the current directory. It is strongly recommended to store this file in a directory to which only you have access as anyone who obtains a copy of this file can use it to obtain tokens in your name.</p>
-<p><strong>NOTE</strong> that the domain name <code class="docutils literal notranslate"><span class="pre">CERN.CH</span></code> has to be all uppercase, while the <code class="docutils literal notranslate"><span class="pre">USERNAME</span></code> should match your case-sensitive CERN username.</p>
+This would create a file called USERNAME.keytab in the current directory.
+Since <a class="reference external" href="https://cern.service-now.com/service-portal?id=outage&amp;n=OTG0077802">OTG0077802</a>, this recipe no longer works, and you will have to create a new keytab using these updated instructions.</p>
+</div>
+</div>
+<p>CERN <a class="reference external" href="https://cern.service-now.com/service-portal?id=kb_article&amp;n=KB0003405">provides</a> a shortcut command on lxplus9 (it will not work properly on lxplus7, though you can still use the created keytab from lxplus7 or lxplus8), which will prompt you for your password:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cern-get-keytab<span class="w"> </span>--keytab<span class="w"> </span>~/private/<span class="nv">$USER</span>.keytab<span class="w"> </span>--user<span class="w"> </span>--login<span class="w"> </span><span class="nv">$USER</span>
+</pre></div>
+</div>
+<p>This will create a file called <code class="docutils literal notranslate"><span class="pre">$USER.keytab</span></code> (where <code class="docutils literal notranslate"><span class="pre">$USER</span></code> is your username) in the directory <code class="docutils literal notranslate"><span class="pre">~/private/</span></code>. By default, on lxplus, only <code class="docutils literal notranslate"><span class="pre">$USER</span></code> has access to this directory; anyone who can access this file can use it to obtain tokens in your name, so be careful if you decide to move it to a different directory.</p>
+<p>To test if the keytab works:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kdestroy<span class="p">;</span><span class="w"> </span>kinit<span class="w"> </span>-kt<span class="w"> </span>~/private/<span class="nv">$USER</span>.keytab<span class="w"> </span><span class="nv">$USER</span><span class="p">;</span><span class="w"> </span>klist
+</pre></div>
+</div>
+<p>This should display information about a ticket cache.</p>
 </section>
 <section id="making-use-of-the-keytab">
 <h2>Making use of the keytab<a class="headerlink" href="#making-use-of-the-keytab" title="Link to this heading"></a></h2>
 <p>This keytab file can now be used to obtain kerberos tokens without having to type a password:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kinit<span class="w"> </span>-k<span class="w"> </span>-t<span class="w"> </span>USERNAME.keytab<span class="w"> </span>USERNAME@CERN.CH
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kinit<span class="w"> </span>-k<span class="w"> </span>-t<span class="w"> </span>~/private/<span class="nv">$USER</span>.keytab<span class="w"> </span><span class="nv">$USER</span>@CERN.CH
 </pre></div>
 </div>
-<p>where <code class="docutils literal notranslate"><span class="pre">-k</span></code> tells <code class="docutils literal notranslate"><span class="pre">kinit</span></code> to use a keytab file and <code class="docutils literal notranslate"><span class="pre">-t</span> <span class="pre">USERNAME.keytab</span></code> where this keytab actually is.</p>
+<p>where <code class="docutils literal notranslate"><span class="pre">-k</span></code> tells <code class="docutils literal notranslate"><span class="pre">kinit</span></code> to use a keytab file and <code class="docutils literal notranslate"><span class="pre">-t</span> <span class="pre">~/private/$USER.keytab</span></code> where this keytab actually is.</p>
 </section>
 <section id="using-k5reauth-to-automatically-refresh-your-kerberos-token">
 <h2>Using k5reauth to automatically refresh your kerberos token<a class="headerlink" href="#using-k5reauth-to-automatically-refresh-your-kerberos-token" title="Link to this heading"></a></h2>
@@ -493,10 +509,17 @@ This will create a file called USERNAME.keytab in the current directory. It is s
 </pre></div>
 </div>
 <p>To start <code class="docutils literal notranslate"><span class="pre">screen</span></code> or <code class="docutils literal notranslate"><span class="pre">tmux</span></code> run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>k5reauth<span class="w"> </span>-f<span class="w"> </span>-i<span class="w"> </span><span class="m">3600</span><span class="w"> </span>-p<span class="w"> </span>USERNAME<span class="w"> </span>-k<span class="w"> </span>/path/to/USERNAME.keytab<span class="w"> </span>--<span class="w"> </span>tmux<span class="w"> </span>new-session<span class="w"> </span>-s<span class="w"> </span>NAME
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>k5reauth<span class="w"> </span>-f<span class="w"> </span>-i<span class="w"> </span><span class="m">3600</span><span class="w"> </span>-p<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span>-k<span class="w"> </span>~/private/<span class="nv">$USER</span>.keytab<span class="w"> </span>--<span class="w"> </span>tmux<span class="w"> </span>new-session<span class="w"> </span>-s<span class="w"> </span>NAME
 </pre></div>
 </div>
-<p>which will create a <code class="docutils literal notranslate"><span class="pre">tmux</span></code> session whose kerberos token is refreshed automatically every 3600 seconds. When attaching back to the process, a simple</p>
+<p>which will create a <code class="docutils literal notranslate"><span class="pre">tmux</span></code> session whose kerberos token is refreshed automatically every 3600 seconds.</p>
+<p>This is not enough to actually get a persistent session. From inside the <code class="docutils literal notranslate"><span class="pre">tmux</span></code> session, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kinit<span class="w"> </span><span class="nv">$USER</span>@CERN.CH
+</pre></div>
+</div>
+<p>Make a note of which lxplus machine you are on. Then, detach the session (<kbd>^B D</kbd> by default) and log out. Finally, log back into the same machine, attach the session using <code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">a</span></code>, and run <code class="docutils literal notranslate"><span class="pre">kinit</span> <span class="pre">$USER&#64;CERN.CH</span></code> again.
+Now, you should have a persistent tmux session on the machine you logged in to.</p>
+<p>When attaching back to the process in the future, a simple</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tmux<span class="w"> </span>attach-session<span class="w"> </span>-t<span class="w"> </span>NAME
 </pre></div>
 </div>
@@ -508,9 +531,9 @@ This will create a file called USERNAME.keytab in the current directory. It is s
 <p>You will almost certainly want to use an alias or function to access this command. One way to do that would be to copy and paste the following into your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> (if you use bash):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ktmux<span class="o">(){</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c1">#if no argument passed</span>
-<span class="w">        </span>k5reauth<span class="w"> </span>-f<span class="w"> </span>-i<span class="w"> </span><span class="m">3600</span><span class="w"> </span>-p<span class="w"> </span>USERNAME<span class="w"> </span>-k<span class="w"> </span>/path/to/USERNAME.keytab<span class="w"> </span>--<span class="w"> </span>tmux<span class="w"> </span>new-session
+<span class="w">        </span>k5reauth<span class="w"> </span>-f<span class="w"> </span>-i<span class="w"> </span><span class="m">3600</span><span class="w"> </span>-p<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span>-k<span class="w"> </span>~/private/<span class="nv">$USER</span>.keytab<span class="w"> </span>--<span class="w"> </span>tmux<span class="w"> </span>new-session
 <span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="c1">#pass the argument as the tmux session name</span>
-<span class="w">        </span>k5reauth<span class="w"> </span>-f<span class="w"> </span>-i<span class="w"> </span><span class="m">3600</span><span class="w"> </span>-p<span class="w"> </span>USERNAME<span class="w"> </span>-k<span class="w"> </span>/path/to/USERNAME.keytab<span class="w"> </span>--<span class="w"> </span>tmux<span class="w"> </span>new-session<span class="w"> </span>-s<span class="w"> </span><span class="nv">$1</span>
+<span class="w">        </span>k5reauth<span class="w"> </span>-f<span class="w"> </span>-i<span class="w"> </span><span class="m">3600</span><span class="w"> </span>-p<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span>-k<span class="w"> </span>~/private/<span class="nv">$USER</span>.keytab<span class="w"> </span>--<span class="w"> </span>tmux<span class="w"> </span>new-session<span class="w"> </span>-s<span class="w"> </span><span class="nv">$1</span>
 <span class="w">    </span><span class="k">fi</span>
 <span class="o">}</span>
 </pre></div>
@@ -519,6 +542,7 @@ This will create a file called USERNAME.keytab in the current directory. It is s
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ktmux<span class="w"> </span>Test
 </pre></div>
 </div>
+<p>Note that you will still have to follow the rest of the recipe (<code class="docutils literal notranslate"><span class="pre">kinit</span></code>, detach, log out, log in, attach, <code class="docutils literal notranslate"><span class="pre">kinit</span></code>) manually to get a persistent session.</p>
 </section>
 </section>
 
