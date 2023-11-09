@@ -14,12 +14,13 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/panels.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script><script defer data-domain="hepsoftwarefoundation.org" src="https://views.scientific-python.org/js/script.js"></script></script>
+        <script src="../_static/panels.js?v=0f4bdeea"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -466,7 +467,7 @@
            <div itemprop="articleBody">
              
   <section id="Advanced-Python-Concepts">
-<h1>Advanced Python Concepts<a class="headerlink" href="#Advanced-Python-Concepts" title="Permalink to this heading"></a></h1>
+<h1>Advanced Python Concepts<a class="headerlink" href="#Advanced-Python-Concepts" title="Link to this heading"></a></h1>
 <p>In this tutorial, a few advanced concepts (not class related) are introduced. This includes</p>
 <ul class="simple">
 <li><p>packing and unpacking</p></li>
@@ -483,7 +484,7 @@
 </div>
 </div>
 <section id="Packing-and-unpacking-of-values">
-<h2>Packing and unpacking of values<a class="headerlink" href="#Packing-and-unpacking-of-values" title="Permalink to this heading"></a></h2>
+<h2>Packing and unpacking of values<a class="headerlink" href="#Packing-and-unpacking-of-values" title="Link to this heading"></a></h2>
 <p>Using <code class="docutils literal notranslate"><span class="pre">*</span></code> or <code class="docutils literal notranslate"><span class="pre">**</span></code> we can pack/unpack list-like objects and dict-like objects, respectively. They act as a “removal” of the parenthesis when situated on the right and as an “adder” of parenthesis when situated on the left of the assigmenemt operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>).</p>
 <p>Let’s play around…</p>
 <div class="nbinput nblast docutils container">
@@ -612,7 +613,7 @@ kwargs are {&#39;a&#39;: 4}
 </div>
 </section>
 <section id="Context-manager">
-<h2>Context manager<a class="headerlink" href="#Context-manager" title="Permalink to this heading"></a></h2>
+<h2>Context manager<a class="headerlink" href="#Context-manager" title="Link to this heading"></a></h2>
 <p>A context manager is an object that responds to a <code class="docutils literal notranslate"><span class="pre">with</span></code> statement. It may returns something. The basic idea is that some action is performed when entering a context and again when exiting it.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>with context as var:
     # do something
@@ -628,7 +629,7 @@ var = return_from_context_entering_code
 <p>The great advantage here is that the “leaving code” is automatically executed whenever we step out of the context!</p>
 <p>This proved to be incredibly useful when operations have cleanup code that we need to execute yet that is tedious to write manually and can be forgotten.</p>
 <section id="Using-yield">
-<h3>Using <code class="docutils literal notranslate"><span class="pre">yield</span></code><a class="headerlink" href="#Using-yield" title="Permalink to this heading"></a></h3>
+<h3>Using <code class="docutils literal notranslate"><span class="pre">yield</span></code><a class="headerlink" href="#Using-yield" title="Link to this heading"></a></h3>
 <p>One way to create a context manager is to have a function that has a <code class="docutils literal notranslate"><span class="pre">yield</span></code>.</p>
 <p><em>What is ``yield``?</em>: It’s like a return, except that the executioin stops at the <code class="docutils literal notranslate"><span class="pre">yield</span></code>, lets other code execute and, at some point, <strong>continues</strong> again where the yield was. Examples are: - iterator: a function that yields elements. Everytime it is called, it is supposed to yield an element and then continue from there - asynchronous programing: it stops and waits until something else is finished - in the context manager, as we will see</p>
 <div class="nbinput nblast docutils container">
@@ -668,7 +669,7 @@ left manager
 </pre></div></div>
 </div>
 <section id="Where-is-this-useful">
-<h4>Where is this useful<a class="headerlink" href="#Where-is-this-useful" title="Permalink to this heading"></a></h4>
+<h4>Where is this useful<a class="headerlink" href="#Where-is-this-useful" title="Link to this heading"></a></h4>
 <p>Basically with stateful objects. This includes anything that can be set and changed (mutable objects).</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
@@ -752,7 +753,7 @@ inside
 </section>
 </section>
 <section id="Using-a-class">
-<h2>Using a class<a class="headerlink" href="#Using-a-class" title="Permalink to this heading"></a></h2>
+<h2>Using a class<a class="headerlink" href="#Using-a-class" title="Link to this heading"></a></h2>
 <p>Instead of using the <code class="docutils literal notranslate"><span class="pre">yield</span></code>, we can have advanced control over the enter and exit methods by creating a class and implementing the two methods <code class="docutils literal notranslate"><span class="pre">__enter__</span></code> and <code class="docutils literal notranslate"><span class="pre">__exit__</span></code></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
@@ -796,7 +797,7 @@ exited
 <p>While a class is way more powerful and offers ways to catch exceptions and more in the exit, ususally the functional way is enough and should then be preferred. If it doesn’t give you enough flexibility, remember the class, look it up and figure out all the things needed.</p>
 </section>
 <section id="Decorators-and-factories">
-<h2>Decorators and factories<a class="headerlink" href="#Decorators-and-factories" title="Permalink to this heading"></a></h2>
+<h2>Decorators and factories<a class="headerlink" href="#Decorators-and-factories" title="Link to this heading"></a></h2>
 <p>Sometimes we can’t write a function fully by hand but want to create it programatically. This pattern is called a “factory”. To achieve this, instead of having a function that returns an integer (an object), a list (an object), a dict (an object) or an array (an object), we return a function (an object). We see that the concept of Python, “everything is an object”, starts being very useful here.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
@@ -950,7 +951,7 @@ pow3(...)
 <div class="highlight"><pre>
 ()
 {&#39;y&#39;: 4, &#39;x&#39;: 5}
-time needed: 1.6689300537109375e-06
+time needed: 9.5367431640625e-07
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -962,7 +963,7 @@ time needed: 1.6689300537109375e-06
 </div>
 </div>
 <section id="Decorator">
-<h3>Decorator<a class="headerlink" href="#Decorator" title="Permalink to this heading"></a></h3>
+<h3>Decorator<a class="headerlink" href="#Decorator" title="Link to this heading"></a></h3>
 <p>There is another way, just syntactical sugar, to make this automatic: a decorator. It is invoked as below</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
@@ -978,7 +979,7 @@ time needed: 1.6689300537109375e-06
 </section>
 </section>
 <section id="Exceptions">
-<h2>Exceptions<a class="headerlink" href="#Exceptions" title="Permalink to this heading"></a></h2>
+<h2>Exceptions<a class="headerlink" href="#Exceptions" title="Link to this heading"></a></h2>
 <p>Exceptions are used to stop the execution at a certain point and surface to higher stacks in the code, e.g. to go up in the call stack. A typical use-case is when an error is encountered, such as the wrong type of object is given. Exceptions can also be caught in a <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">...</span> <span class="pre">except</span> <span class="pre">...</span></code> block in order to handle the exception.</p>
 <p>There are a few built-in exceptions, the most common ones are: - <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>: object has the wrong type, e.g. string instead of float - <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>: the value of the object is illegal, e.g. negative but should be positive - <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code>: if a function is illegally executed or a status is wrong. E.g. if an object first has to be loaded before it gets parsed. It covers any error that does not fall into an other category. - <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>, <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>: if a key or index is not available,
 e.g. in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> or <code class="docutils literal notranslate"><span class="pre">list</span></code></p>
@@ -1027,7 +1028,7 @@ Cell <span class="ansi-green-fg">In[36], line 1</span>
 </pre></div></div>
 </div>
 <section id="Custom-Exception">
-<h3>Custom Exception<a class="headerlink" href="#Custom-Exception" title="Permalink to this heading"></a></h3>
+<h3>Custom Exception<a class="headerlink" href="#Custom-Exception" title="Link to this heading"></a></h3>
 <p>In Python, exceptions are simply a class. And as such, we can inherit from it and create our own exception.</p>
 <p><strong>Attention</strong>: inherit from <code class="docutils literal notranslate"><span class="pre">Exception</span></code> or subclasses of it such as <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>, <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>, but NEVER from <code class="docutils literal notranslate"><span class="pre">BaseException</span></code>.</p>
 <div class="nbinput nblast docutils container">
@@ -1073,7 +1074,7 @@ Cell <span class="ansi-green-fg">In[38], line 1</span>
 </section>
 </section>
 <section id="Catching-exceptions">
-<h2>Catching exceptions<a class="headerlink" href="#Catching-exceptions" title="Permalink to this heading"></a></h2>
+<h2>Catching exceptions<a class="headerlink" href="#Catching-exceptions" title="Link to this heading"></a></h2>
 <p>An exception can be caught in a <code class="docutils literal notranslate"><span class="pre">try..except</span></code> block. This works as follows: - if an exception is raised in the <code class="docutils literal notranslate"><span class="pre">try</span></code> block, the next <code class="docutils literal notranslate"><span class="pre">except</span></code> is invoked - it is tested whether the raised exception is of type subclass of the exception type specified to be caught. For example, <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">TypeError</span></code> checks if the raised error is of type <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> or a subclass of it. - if that is not the case, it goes to the next <code class="docutils literal notranslate"><span class="pre">except</span></code> statement (yes, there can be multiple) - … more below</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
@@ -1260,7 +1261,7 @@ Cell <span class="ansi-green-fg">In[45], line 2</span>
 </pre></div></div>
 </div>
 <section id="pitfall-%22guaranteed-execution%22">
-<h3>pitfall “guaranteed execution”<a class="headerlink" href="#pitfall-%22guaranteed-execution%22" title="Permalink to this heading"></a></h3>
+<h3>pitfall “guaranteed execution”<a class="headerlink" href="#pitfall-%22guaranteed-execution%22" title="Link to this heading"></a></h3>
 <p>As the <code class="docutils literal notranslate"><span class="pre">finally</span></code> is guaranteed to be executed, this can have an odd effect: possible return statements can be ignored <em>before the finally</em> <strong>IF</strong> the <code class="docutils literal notranslate"><span class="pre">finally</span></code> also has a return statement. The logic says here that the <code class="docutils literal notranslate"><span class="pre">finally</span></code> return <em>must</em> be executed, as it is guaranteed to be executed.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
@@ -1311,7 +1312,7 @@ cleaned up
 </section>
 </section>
 <section id="Exceptions-as-control-flow">
-<h2>Exceptions as control-flow<a class="headerlink" href="#Exceptions-as-control-flow" title="Permalink to this heading"></a></h2>
+<h2>Exceptions as control-flow<a class="headerlink" href="#Exceptions-as-control-flow" title="Link to this heading"></a></h2>
 <p>We are used to control-flow elements such as <code class="docutils literal notranslate"><span class="pre">if...elif...else</span></code> blocks. However, exceptions <em>can</em> also be used for this. They do not replace other ways of control-flow, however there are sometimes situations in which they provide a golden solution to steer the execution.</p>
 <p>As an example, consider an <code class="docutils literal notranslate"><span class="pre">add</span></code> function that <em>sometimes</em> can add three elements - which is, for the sake of a good example, favorable as more performant (real world cases of this exist in larger scale, but too complicated to explain here) - and sometimes not. Also assume that the <code class="docutils literal notranslate"><span class="pre">add</span></code> function is called again maybe inside. A solution is to execute <code class="docutils literal notranslate"><span class="pre">add</span></code> with three elements. If an error is raised, we catch it (the specific one), and run the function again with two arguments and add the
 third argument by calling <code class="docutils literal notranslate"><span class="pre">add</span></code> again.</p>

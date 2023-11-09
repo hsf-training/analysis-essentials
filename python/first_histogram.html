@@ -13,12 +13,13 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/panels.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script><script defer data-domain="hepsoftwarefoundation.org" src="https://views.scientific-python.org/js/script.js"></script></script>
+        <script src="../_static/panels.js?v=0f4bdeea"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -465,7 +466,7 @@
            <div itemprop="articleBody">
              
   <section id="making-your-first-histogram">
-<h1>Making your first histogram<a class="headerlink" href="#making-your-first-histogram" title="Permalink to this heading"></a></h1>
+<h1>Making your first histogram<a class="headerlink" href="#making-your-first-histogram" title="Link to this heading"></a></h1>
 <p>In this section we are going to make our first plots using Python. For this we
 will use some public LHCb data for <span class="math notranslate nohighlight">\(` B^+ \rightarrow H^+ H^+ H^-  `\)</span> from the
 <a class="reference external" href="http://opendata.cern.ch/?ln=en">CERN open data portal</a>. This data is available
@@ -564,7 +565,7 @@ In [6]: my_tree.Print()
 way, they are often slow and tedious to use. Luckily people have built more
 specialised bindings to allow ROOT to be used in a more pythonic way.</p>
 <section id="pandas">
-<h2>Pandas<a class="headerlink" href="#pandas" title="Permalink to this heading"></a></h2>
+<h2>Pandas<a class="headerlink" href="#pandas" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://pandas.pydata.org/"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a> is a library for doing data analysis on
 tabular data, using a data structure known as dataframes. These typically have
 columns with labels (like <code class="docutils literal notranslate"><span class="pre">TLeaf</span></code>s in a <code class="docutils literal notranslate"><span class="pre">TTree</span></code>) with many rows. The
@@ -633,7 +634,7 @@ B+ meson.</p>
 </div>
 </section>
 <section id="plotting-histograms">
-<h2>Plotting histograms<a class="headerlink" href="#plotting-histograms" title="Permalink to this heading"></a></h2>
+<h2>Plotting histograms<a class="headerlink" href="#plotting-histograms" title="Link to this heading"></a></h2>
 <p>Now that we have the momentum of the <span class="math notranslate nohighlight">\(` B+ `\)</span> meson, it would be useful to plot
 its distribution in a histogram. We could use ROOT for this but the most popular Python library for
 plotting is known as <a class="reference external" href="https://matplotlib.org/"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a> and this is what we
@@ -688,7 +689,7 @@ and a legend like so:</p>
 <p><img alt="B flight distance (v3)" src="../_images/B_flight_distance_v3.png" /></p>
 </section>
 <section id="applying-cuts">
-<h2>Applying cuts<a class="headerlink" href="#applying-cuts" title="Permalink to this heading"></a></h2>
+<h2>Applying cuts<a class="headerlink" href="#applying-cuts" title="Link to this heading"></a></h2>
 <p>When analysing data it is often useful to “throw away” some data in order to in
 order change the contributions of a sample. Most commonly this is to remove some
 background(s) so we can more precisely study a process of interest. This is

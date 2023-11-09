@@ -13,12 +13,13 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/panels.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script><script defer data-domain="hepsoftwarefoundation.org" src="https://views.scientific-python.org/js/script.js"></script></script>
+        <script src="../_static/panels.js?v=0f4bdeea"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -463,7 +464,7 @@
            <div itemprop="articleBody">
              
   <section id="collaborating-with-pull-requests">
-<h1>Collaborating with Pull Requests<a class="headerlink" href="#collaborating-with-pull-requests" title="Permalink to this heading"></a></h1>
+<h1>Collaborating with Pull Requests<a class="headerlink" href="#collaborating-with-pull-requests" title="Link to this heading"></a></h1>
 <div class="panel panel-objectives docutils container">
 <div class="panel-header open docutils container">
 <p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
@@ -491,7 +492,7 @@ seen</span></a>:</p>
 which has been subsequently adopted by its most famous clone,
 <a class="reference external" href="https://gitlab.com">GitLab</a>.</p>
 <section id="what-is-a-pull-or-merge-request">
-<h2>What is a Pull (or Merge) Request<a class="headerlink" href="#what-is-a-pull-or-merge-request" title="Permalink to this heading"></a></h2>
+<h2>What is a Pull (or Merge) Request<a class="headerlink" href="#what-is-a-pull-or-merge-request" title="Link to this heading"></a></h2>
 <p>Pull Requests are a way to <strong>propose changes</strong> to a remote repository without
 having write permissions to it, and therefore without pushing to it directly.
 Note that GitLab (which we are going to use for the following examples) uses the
@@ -529,7 +530,7 @@ part of the <code class="docutils literal notranslate"><span class="pre">git</sp
 </div>
 </section>
 <section id="fork-the-original-project-repository">
-<h2>Fork the original project repository<a class="headerlink" href="#fork-the-original-project-repository" title="Permalink to this heading"></a></h2>
+<h2>Fork the original project repository<a class="headerlink" href="#fork-the-original-project-repository" title="Link to this heading"></a></h2>
 <p>The first step when collaborating to a project is to create a <strong>fork</strong>
 of the remote repository. Let’s see exactly what it means with an example.</p>
 <p>Connect to our example repository using a Web browser:</p>
@@ -561,7 +562,7 @@ original repository and any forks made by other users.</p>
 </div>
 </section>
 <section id="clone-a-remote-project-and-its-fork">
-<h2>Clone a remote project and its fork<a class="headerlink" href="#clone-a-remote-project-and-its-fork" title="Permalink to this heading"></a></h2>
+<h2>Clone a remote project and its fork<a class="headerlink" href="#clone-a-remote-project-and-its-fork" title="Link to this heading"></a></h2>
 <p>Now it is time to open your terminal and clone the remote project. <a class="reference internal" href="07-gitlab.html"><span class="doc">As we have
 already seen</span></a> we can use the SSH URL for cloning the project:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>test_merge_requests/
@@ -617,7 +618,7 @@ it explicitly with <code class="docutils literal notranslate"><span class="pre">
 </div>
 </section>
 <section id="sync-your-local-repository-with-remote-changes">
-<h2>Sync your local repository with remote changes<a class="headerlink" href="#sync-your-local-repository-with-remote-changes" title="Permalink to this heading"></a></h2>
+<h2>Sync your local repository with remote changes<a class="headerlink" href="#sync-your-local-repository-with-remote-changes" title="Link to this heading"></a></h2>
 <p>You are now ready to start working on your new feature on your laptop. First off
 since you are using different remotes, make sure your local Git working
 directory is up-to-date with the upstream (<em>i.e.</em> the “main”, or <code class="docutils literal notranslate"><span class="pre">origin</span></code>)
@@ -653,7 +654,7 @@ commands, but they are very useful when your working area got messed up somehow.
 </div>
 </section>
 <section id="implement-your-new-feature">
-<h2>Implement your new feature<a class="headerlink" href="#implement-your-new-feature" title="Permalink to this heading"></a></h2>
+<h2>Implement your new feature<a class="headerlink" href="#implement-your-new-feature" title="Link to this heading"></a></h2>
 <p>You can now implement your new “feature” by adding a bunch of files with some
 random content to your local repository. As an exercise, you can try to add a
 file named after your CERN username:</p>
@@ -696,7 +697,7 @@ fork, or on the upstream repository.</p>
 </div>
 </section>
 <section id="push-changes">
-<h2>Push changes<a class="headerlink" href="#push-changes" title="Permalink to this heading"></a></h2>
+<h2>Push changes<a class="headerlink" href="#push-changes" title="Link to this heading"></a></h2>
 <p>Without further ado let’s push:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>push
 </pre></div>
@@ -765,7 +766,7 @@ in sync and contain the commit you’ve just authored</p></li>
 </div>
 </section>
 <section id="create-a-pull-or-merge-request">
-<h2>Create a Pull (or Merge) Request<a class="headerlink" href="#create-a-pull-or-merge-request" title="Permalink to this heading"></a></h2>
+<h2>Create a Pull (or Merge) Request<a class="headerlink" href="#create-a-pull-or-merge-request" title="Link to this heading"></a></h2>
 <p>As we have said before, Pull Requests are not part of Git but they depend on
 the provider hosting your Git repositories. On GitLab you need to point your
 Web browser to your repository:</p>
@@ -803,7 +804,7 @@ button.</p>
 <p>Now, sit back and relax!</p>
 </section>
 <section id="discussing-amending-retiring-a-merge-request">
-<h2>Discussing, amending, retiring a Merge Request<a class="headerlink" href="#discussing-amending-retiring-a-merge-request" title="Permalink to this heading"></a></h2>
+<h2>Discussing, amending, retiring a Merge Request<a class="headerlink" href="#discussing-amending-retiring-a-merge-request" title="Link to this heading"></a></h2>
 <p>Once a Merge Request is opened the repository owners are notified (usually via
 email), and they (or even somebody else, depending on the repository’s
 permissions) can add comments and requests before accepting your changes.</p>
@@ -874,7 +875,7 @@ of the page:</p>
 <p><img alt="Close" src="../_images/gitlab-pr-close.png" /></p>
 </section>
 <section id="accepting-a-pull-request">
-<h2>Accepting a Pull Request<a class="headerlink" href="#accepting-a-pull-request" title="Permalink to this heading"></a></h2>
+<h2>Accepting a Pull Request<a class="headerlink" href="#accepting-a-pull-request" title="Link to this heading"></a></h2>
 <p>When a Merge Request looks good, the repository owners will click on the
 <strong>Merge</strong> button:</p>
 <p><img alt="Merge" src="../_images/gitlab-pr-merge.png" /></p>
@@ -883,7 +884,7 @@ want to work on a new feature, you can simply start over by <a class="reference 
 changes first as explained earlier</span></a>.</p>
 </section>
 <section id="the-social-side-of-coding">
-<h2>The social side of coding<a class="headerlink" href="#the-social-side-of-coding" title="Permalink to this heading"></a></h2>
+<h2>The social side of coding<a class="headerlink" href="#the-social-side-of-coding" title="Link to this heading"></a></h2>
 <p>Using Pull Requests can seem overly complicated at first, but they are a very
 efficient way to truly collaborate on large projects.</p>
 <ul class="simple">
@@ -912,7 +913,7 @@ as in real life - try not to go on a rampage, at least not too quickly!</p>
 </div>
 </section>
 <section id="automatic-testing">
-<h2>Automatic testing<a class="headerlink" href="#automatic-testing" title="Permalink to this heading"></a></h2>
+<h2>Automatic testing<a class="headerlink" href="#automatic-testing" title="Link to this heading"></a></h2>
 <p>Merge requests can be configured to prevent changes from being merged into the
 main branch of a repository if any of the project’s builds or tests fail to run
 correctly. This is useful to try and ensure that the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch always

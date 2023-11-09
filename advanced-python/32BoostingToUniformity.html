@@ -14,12 +14,13 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/panels.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script><script defer data-domain="hepsoftwarefoundation.org" src="https://views.scientific-python.org/js/script.js"></script></script>
+        <script src="../_static/panels.js?v=0f4bdeea"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -466,7 +467,7 @@
            <div itemprop="articleBody">
              
   <section id="5:-Boosting-to-Uniformity">
-<h1>5: Boosting to Uniformity<a class="headerlink" href="#5:-Boosting-to-Uniformity" title="Permalink to this heading"></a></h1>
+<h1>5: Boosting to Uniformity<a class="headerlink" href="#5:-Boosting-to-Uniformity" title="Link to this heading"></a></h1>
 <p>In physics applications frequently we need to achieve uniformity of predictions along some features. For instance, when testing for the existence of a new particle, we need a classifier to be uniform in background along the mass (otherwise one can get false discovery due to so-called peaking background).</p>
 <p>This notebook contains some comparison of classifiers. The target is to obtain flat effiency in <strong>signal</strong> (without significally loosing quality of classification) in Dalitz features.</p>
 <p>The classifiers compared are</p>
@@ -493,7 +494,7 @@
 </div>
 </div>
 <section id="Loading-data">
-<h2>Loading data<a class="headerlink" href="#Loading-data" title="Permalink to this heading"></a></h2>
+<h2>Loading data<a class="headerlink" href="#Loading-data" title="Link to this heading"></a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -507,7 +508,7 @@
 </div>
 </div>
 <section id="Distributions-in-the-Dalitz-features-for-signal-and-background">
-<h3>Distributions in the Dalitz features for signal and background<a class="headerlink" href="#Distributions-in-the-Dalitz-features-for-signal-and-background" title="Permalink to this heading"></a></h3>
+<h3>Distributions in the Dalitz features for signal and background<a class="headerlink" href="#Distributions-in-the-Dalitz-features-for-signal-and-background" title="Link to this heading"></a></h3>
 <p>As we can see, the background is distributed mostly in the corners of Dalitz plot, and for traditional classifiers this results in poor effieciency of signal in the corners.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -529,7 +530,7 @@
 </div>
 </section>
 <section id="Preparation-of-train/test-datasets">
-<h3>Preparation of train/test datasets<a class="headerlink" href="#Preparation-of-train/test-datasets" title="Permalink to this heading"></a></h3>
+<h3>Preparation of train/test datasets<a class="headerlink" href="#Preparation-of-train/test-datasets" title="Link to this heading"></a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -540,7 +541,7 @@
 </div>
 </section>
 <section id="Setting-up-classifiers,-training">
-<h3>Setting up classifiers, training<a class="headerlink" href="#Setting-up-classifiers,-training" title="Permalink to this heading"></a></h3>
+<h3>Setting up classifiers, training<a class="headerlink" href="#Setting-up-classifiers,-training" title="Link to this heading"></a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -586,7 +587,7 @@
 </div>
 </section>
 <section id="Let's-look-at-the-results-of-training">
-<h3>Let’s look at the results of training<a class="headerlink" href="#Let's-look-at-the-results-of-training" title="Permalink to this heading"></a></h3>
+<h3>Let’s look at the results of training<a class="headerlink" href="#Let's-look-at-the-results-of-training" title="Link to this heading"></a></h3>
 <p>dependence of classification quality on the number of trees built (ROC AUC - an area under the ROC curve, the more the better)</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -605,7 +606,7 @@
 </div>
 </section>
 <section id="ROC-curves-after-training">
-<h3>ROC curves after training<a class="headerlink" href="#ROC-curves-after-training" title="Permalink to this heading"></a></h3>
+<h3>ROC curves after training<a class="headerlink" href="#ROC-curves-after-training" title="Link to this heading"></a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>

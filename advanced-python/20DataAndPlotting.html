@@ -14,12 +14,13 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/panels.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script><script defer data-domain="hepsoftwarefoundation.org" src="https://views.scientific-python.org/js/script.js"></script></script>
+        <script src="../_static/panels.js?v=0f4bdeea"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -466,15 +467,15 @@
            <div itemprop="articleBody">
              
   <section id="2:-First-look-at-data">
-<h1>2: First look at data<a class="headerlink" href="#2:-First-look-at-data" title="Permalink to this heading"></a></h1>
+<h1>2: First look at data<a class="headerlink" href="#2:-First-look-at-data" title="Link to this heading"></a></h1>
 <p>In this lesson we will look at a toy dataset simulating <span class="math notranslate nohighlight">\(J/\psi \rightarrow \mu^+ \mu^-\)</span> events. We will discuss ways of loading the data in python, data formats and plotting with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <a class="reference external" href="https://mplhep.readthedocs.io/en/latest/index.html">mplhep</a>.</p>
 <section id="Two-plotting-libraries?">
-<h2>Two plotting libraries?<a class="headerlink" href="#Two-plotting-libraries?" title="Permalink to this heading"></a></h2>
+<h2>Two plotting libraries?<a class="headerlink" href="#Two-plotting-libraries?" title="Link to this heading"></a></h2>
 <p>While <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is a general Python library, the latter is a <a class="reference external" href="https://scikit-hep.org/">Scikit-HEP</a> package. Scikit-HEP is an organisation which collects, improves and maintains Python packages that are still general, yet cover (often rather special) use cases in High Energy Physics. <code class="docutils literal notranslate"><span class="pre">mplhep</span></code> as an example provides plotting functionality and styles to mimic typical plots that you see in HEP. However, it’s built completely on top of matplotlib and the same can be achieved with pure
 matplotlib (but more cumbersome). Another example is uproot that we will use to read ROOT files.</p>
 </section>
 <section id="Recap:-Importing-modules">
-<h2>Recap: Importing modules<a class="headerlink" href="#Recap:-Importing-modules" title="Permalink to this heading"></a></h2>
+<h2>Recap: Importing modules<a class="headerlink" href="#Recap:-Importing-modules" title="Link to this heading"></a></h2>
 <p>It’s generally seen as good practice to put imports at the top of your file:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -488,7 +489,7 @@ matplotlib (but more cumbersome). Another example is uproot that we will use to 
 </div>
 </div>
 <section id="5.-The-toy-dataset">
-<h3>5. The toy dataset<a class="headerlink" href="#5.-The-toy-dataset" title="Permalink to this heading"></a></h3>
+<h3>5. The toy dataset<a class="headerlink" href="#5.-The-toy-dataset" title="Link to this heading"></a></h3>
 <p>We’re going to look at some fake <span class="math notranslate nohighlight">\(J/\psi \rightarrow \mu^+ \mu^-\)</span> data, the variables available are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Jpsi_M</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_P</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_PT</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_PE</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_PX</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_PY</span></code> <code class="docutils literal notranslate"><span class="pre">Jpsi_PZ</span></code></p></li>
@@ -509,7 +510,7 @@ matplotlib (but more cumbersome). Another example is uproot that we will use to 
 </section>
 </section>
 <section id="Loading-data">
-<h2>Loading data<a class="headerlink" href="#Loading-data" title="Permalink to this heading"></a></h2>
+<h2>Loading data<a class="headerlink" href="#Loading-data" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">uproot</span></code> is a way of reading ROOT files without having ROOT installed, see the github reposity <a class="reference external" href="https://github.com/scikit-hep/uproot">here</a></p></li>
 <li><p>We can look at the objects that are available in the file and access objects using dictionary style syntax</p></li>
@@ -781,7 +782,7 @@ Index([&#39;Jpsi_PE&#39;, &#39;Jpsi_PX&#39;, &#39;Jpsi_PY&#39;, &#39;Jpsi_PZ&#39
 </pre></div></div>
 </div>
 <section id="6.-Plotting-a-simple-histogram">
-<h3>6. Plotting a simple histogram<a class="headerlink" href="#6.-Plotting-a-simple-histogram" title="Permalink to this heading"></a></h3>
+<h3>6. Plotting a simple histogram<a class="headerlink" href="#6.-Plotting-a-simple-histogram" title="Link to this heading"></a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -933,7 +934,7 @@ Text(1, 0, &#39;Jpsi mass&#39;)
 </section>
 </section>
 <section id="Adding-variables">
-<h2>Adding variables<a class="headerlink" href="#Adding-variables" title="Permalink to this heading"></a></h2>
+<h2>Adding variables<a class="headerlink" href="#Adding-variables" title="Link to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
@@ -1028,7 +1029,7 @@ Name: Jpsi_eta, dtype: float64
 </div></div>
 </div>
 <section id="Using-rectangular-cuts">
-<h3>Using rectangular cuts<a class="headerlink" href="#Using-rectangular-cuts" title="Permalink to this heading"></a></h3>
+<h3>Using rectangular cuts<a class="headerlink" href="#Using-rectangular-cuts" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>We want to increase the ‘signal significance’ of our sample - this means more signal events with respect to background</p></li>
 <li><p>To do this we can cut on certain discriminating variables</p></li>
@@ -1099,7 +1100,7 @@ Name: Jpsi_eta, dtype: float64
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7efc01cf6a10&gt;
+&lt;matplotlib.legend.Legend at 0x7f040aebaf50&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1174,7 +1175,7 @@ Significance metric is 4.31
 </section>
 </section>
 <section id="Comparing-distributions">
-<h2>Comparing distributions<a class="headerlink" href="#Comparing-distributions" title="Permalink to this heading"></a></h2>
+<h2>Comparing distributions<a class="headerlink" href="#Comparing-distributions" title="Link to this heading"></a></h2>
 <p>Before we just used the cuts that were told to you but how do we pick them?</p>
 <p>One way is to get a sample of simulated data, we have a file in <code class="docutils literal notranslate"><span class="pre">data/simulated_data.root</span></code>.</p>
 <p><strong>Exercise:</strong> Load it into a pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> called <code class="docutils literal notranslate"><span class="pre">mc_df</span></code>. Don’t forget to add the <code class="docutils literal notranslate"><span class="pre">Jpsi_eta</span></code>, <code class="docutils literal notranslate"><span class="pre">mup_P</span></code> and <code class="docutils literal notranslate"><span class="pre">mum_P</span></code> columns!</p>
@@ -1238,7 +1239,7 @@ Significance metric is 4.31
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7efc01c3c310&gt;
+&lt;matplotlib.legend.Legend at 0x7f040ae233d0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1269,7 +1270,7 @@ Significance metric is 4.31
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7efc0250c750&gt;
+&lt;matplotlib.legend.Legend at 0x7f040b868690&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1321,7 +1322,7 @@ Significance metric is 4.31
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_6397/3447827755.py:2: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+/tmp/ipykernel_6346/3447827755.py:2: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
   plt.figure()  # creates a new figure
 </pre></div></div>
 </div>

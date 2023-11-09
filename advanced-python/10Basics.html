@@ -14,12 +14,13 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/panels.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script><script defer data-domain="hepsoftwarefoundation.org" src="https://views.scientific-python.org/js/script.js"></script></script>
+        <script src="../_static/panels.js?v=0f4bdeea"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -466,7 +467,7 @@
            <div itemprop="articleBody">
              
   <section id="1:-Basics">
-<h1>1: Basics<a class="headerlink" href="#1:-Basics" title="Permalink to this heading"></a></h1>
+<h1>1: Basics<a class="headerlink" href="#1:-Basics" title="Link to this heading"></a></h1>
 <p>In this Advanced Python Tutorial we will cover some useful python skills and tips. The lessons are as follows:</p>
 <ul class="simple">
 <li><p>Basics</p></li>
@@ -487,7 +488,7 @@
 <li><p>Importing moduels</p></li>
 </ul>
 <section id="Basics">
-<h2>Basics<a class="headerlink" href="#Basics" title="Permalink to this heading"></a></h2>
+<h2>Basics<a class="headerlink" href="#Basics" title="Link to this heading"></a></h2>
 <p><strong>Mutability</strong></p>
 <ul class="simple">
 <li><p>Let’s start by comparing some <strong>mutable</strong> and <strong>immutable</strong> objects.</p></li>
@@ -620,7 +621,7 @@ The square of 5 is 25
 </div>
 </section>
 <section id="Markdown">
-<h2>Markdown<a class="headerlink" href="#Markdown" title="Permalink to this heading"></a></h2>
+<h2>Markdown<a class="headerlink" href="#Markdown" title="Link to this heading"></a></h2>
 <p>Write comments inline about your code:</p>
 <p>Use LaTeX:</p>
 <p><span class="math notranslate nohighlight">\(A = \frac{1}{B+C}\)</span></p>
@@ -673,7 +674,7 @@ The square of 5 is 25
 </div>
 </section>
 <section id="Jupyter">
-<h2>Jupyter<a class="headerlink" href="#Jupyter" title="Permalink to this heading"></a></h2>
+<h2>Jupyter<a class="headerlink" href="#Jupyter" title="Link to this heading"></a></h2>
 <p>Jupyter has some very useful features included that can help make trying things out faster…</p>
 <p>Cells have a return value which is shown after the finish runing if it’s not <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
 <div class="nbinput docutils container">
@@ -737,7 +738,7 @@ The square of 5 is 25
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
---2023-08-21 16:15:58--  https://example.com/index.html
+--2023-11-09 20:15:31--  https://example.com/index.html
 Resolving example.com (example.com)... 93.184.216.34, 2606:2800:220:1:248:1893:25c8:1946
 Connecting to example.com (example.com)|93.184.216.34|:443... connected.
 HTTP request sent, awaiting response... 200 OK
@@ -746,7 +747,7 @@ Saving to: ‘index.html’
 
 index.html          100%[===================&gt;]   1.23K  --.-KB/s    in 0s
 
-2023-08-21 16:15:58 (81.5 MB/s) - ‘index.html’ saved [1256/1256]
+2023-11-09 20:15:31 (70.0 MB/s) - ‘index.html’ saved [1256/1256]
 
 </pre></div></div>
 </div>
@@ -764,8 +765,8 @@ index.html          100%[===================&gt;]   1.23K  --.-KB/s    in 0s
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-CPU times: user 782 µs, sys: 0 ns, total: 782 µs
-Wall time: 787 µs
+CPU times: user 737 µs, sys: 171 µs, total: 908 µs
+Wall time: 913 µs
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -794,8 +795,8 @@ Wall time: 787 µs
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-CPU times: user 1.65 ms, sys: 0 ns, total: 1.65 ms
-Wall time: 1.65 ms
+CPU times: user 1.97 ms, sys: 0 ns, total: 1.97 ms
+Wall time: 1.98 ms
 </pre></div></div>
 </div>
 <p>If something takes longer than you expect, you can profile it to find out where it spends it’s time:</p>
@@ -881,7 +882,7 @@ junk<span class="o">?</span>
 </div>
 </section>
 <section id="Importing-modules">
-<h2>Importing modules<a class="headerlink" href="#Importing-modules" title="Permalink to this heading"></a></h2>
+<h2>Importing modules<a class="headerlink" href="#Importing-modules" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>It is good practice to import all modules at the beginning of your python script or notebook</p></li>
 <li><p>Avoid using <strong>wildcard imports</strong> as you it makes it unclear where things come from: for example <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">math</span> <span class="pre">import</span> <span class="pre">*</span></code></p></li>

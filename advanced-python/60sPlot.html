@@ -14,12 +14,13 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/panels.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script><script defer data-domain="hepsoftwarefoundation.org" src="https://views.scientific-python.org/js/script.js"></script></script>
+        <script src="../_static/panels.js?v=0f4bdeea"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -466,7 +467,7 @@
            <div itemprop="articleBody">
              
   <section id="9:-sPlot">
-<h1>9: sPlot<a class="headerlink" href="#9:-sPlot" title="Permalink to this heading"></a></h1>
+<h1>9: sPlot<a class="headerlink" href="#9:-sPlot" title="Link to this heading"></a></h1>
 <p>This notebook explains <strong>sPlot</strong> and how to use <code class="docutils literal notranslate"><span class="pre">zfit</span></code> and <code class="docutils literal notranslate"><span class="pre">hepstats</span></code> to compute the sWeights with <code class="docutils literal notranslate"><span class="pre">compute_sweights</span></code>. Alternatively, if the probabilities are already available, <code class="docutils literal notranslate"><span class="pre">hep_ml.splot</span></code> can be used. <strong>sPlot</strong> is a way to reconstruct features of mixture components based on known properties of distributions. This method is frequently used in High Energy Physics.</p>
 <p>If you prefer explanations without code, find them <a class="reference external" href="http://arogozhnikov.github.io/2015/10/07/splot.html">here</a></p>
 <div class="nbinput docutils container">
@@ -500,7 +501,7 @@
 </div>
 </div>
 <section id="Simple-sPlot-example">
-<h2>Simple sPlot example<a class="headerlink" href="#Simple-sPlot-example" title="Permalink to this heading"></a></h2>
+<h2>Simple sPlot example<a class="headerlink" href="#Simple-sPlot-example" title="Link to this heading"></a></h2>
 <p>First we start with a simple (and not very useful in practice) example:</p>
 <ul class="simple">
 <li><p>Assume we have two types of particles (say, electrons and positrons).</p></li>
@@ -523,7 +524,7 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fd4d2dda2d0&gt;
+&lt;matplotlib.legend.Legend at 0x7fc48918c310&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -535,7 +536,7 @@
 </div>
 </section>
 <section id="Observed-distributions">
-<h2>Observed distributions<a class="headerlink" href="#Observed-distributions" title="Permalink to this heading"></a></h2>
+<h2>Observed distributions<a class="headerlink" href="#Observed-distributions" title="Link to this heading"></a></h2>
 <p>Picture above shows how this distibution should look like, but due to inaccuracies during classification we will observe a different picture.</p>
 <p>Let’s assume that with a probability of 80% particle is classified correctly (and we are not using <span class="math notranslate nohighlight">\(p_x\)</span> during classification).</p>
 <p>And when we look at distribution of px for particles which were classified as electrons or positrons, we see that they were distorted. We lost the original shapes of distributions.</p>
@@ -585,7 +586,7 @@
 </div>
 </section>
 <section id="Applying-sWeights">
-<h2>Applying sWeights<a class="headerlink" href="#Applying-sWeights" title="Permalink to this heading"></a></h2>
+<h2>Applying sWeights<a class="headerlink" href="#Applying-sWeights" title="Link to this heading"></a></h2>
 <p>We can think of it in the following way: there are 2 bins. In first 80% are electrons, 20% are signal. And visa versa in second bin.</p>
 <p>To reconstruct initial distribution, we can plot histogram, where each event from first bin has weight 0.8, and each event from second bin has weight -0.2. This numbers are called sWeights.</p>
 <p>So, if we had 8000 <span class="math notranslate nohighlight">\(e^{-}\)</span> + 2000 <span class="math notranslate nohighlight">\(e^{+}\)</span> in first bin and 8000 <span class="math notranslate nohighlight">\(e^{+}\)</span> + 2000 <span class="math notranslate nohighlight">\(e^{-}\)</span> ($ e^-, e^+$ are electron and positron). After summing with introduced sWeights:</p>
@@ -625,7 +626,7 @@
 </div>
 </div>
 <section id="Compare">
-<h3>Compare<a class="headerlink" href="#Compare" title="Permalink to this heading"></a></h3>
+<h3>Compare<a class="headerlink" href="#Compare" title="Link to this heading"></a></h3>
 <p>let’s compare reconstructed distribution for electrons with an original one:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
@@ -647,7 +648,7 @@
 </section>
 </section>
 <section id="More-complex-case">
-<h2>More complex case<a class="headerlink" href="#More-complex-case" title="Permalink to this heading"></a></h2>
+<h2>More complex case<a class="headerlink" href="#More-complex-case" title="Link to this heading"></a></h2>
 <p>In the case when we have only two ‘bins’ is simple and straightforward. But when there are more than two bins, the solution is not unique. There are many appropriate combinations of sWeights, which one to choose?</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -678,7 +679,7 @@
 <p>Typically this is a distribution over mass. By fitting mass we are able to split mixture into two parts: signal channel and everything else.</p>
 </section>
 <section id="Splot">
-<h2>Splot<a class="headerlink" href="#Splot" title="Permalink to this heading"></a></h2>
+<h2>Splot<a class="headerlink" href="#Splot" title="Link to this heading"></a></h2>
 <p>This is now an demonstration of the <strong>sPlot</strong> algorithm, described in <a class="reference external" href="https://arxiv.org/pdf/physics/0402083.pdf">Pivk:2004ty</a>.</p>
 <p>If a data sample is populated by different sources of events, like signal and background, <strong>sPlot</strong> is able to unfold the contributions of the different sources for a given variable.</p>
 <p>Let’s construct a dataset with two variables, the invariant mass and lifetime, for the resonant signal defined above and the combinatorial background. To do this, we build the model in zfit.</p>
@@ -784,10 +785,10 @@
 <div class="highlight"><pre>
 name         value  (rounded)    at limit
 ---------  ------------------  ----------
-bkg_yield              118421       False
-sig_yield             20050.8       False
-lambda            -0.00200794       False
-mu                    5278.59       False
+bkg_yield              118098       False
+sig_yield             20092.8       False
+lambda            -0.00202754       False
+mu                    5278.98       False
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -877,9 +878,9 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&lt;zfit.Parameter &#39;bkg_yield&#39; floating=True value=1.184e+05&gt;: array([-0.07716267,  0.59851713, -0.2001501 , ...,  1.12242404,
-        1.12242404,  1.12242404]), &lt;zfit.Parameter &#39;sig_yield&#39; floating=True value=2.005e+04&gt;: array([ 1.07716501,  0.40149064,  1.20015145, ..., -0.12241207,
-       -0.12241207, -0.12241207])}
+{&lt;zfit.Parameter &#39;bkg_yield&#39; floating=True value=1.181e+05&gt;: array([ 0.0065188 ,  0.19334121, -0.18956193, ...,  1.12188645,
+       -0.19607437,  1.12192696]), &lt;zfit.Parameter &#39;sig_yield&#39; floating=True value=2.009e+04&gt;: array([ 0.99348316,  0.80666203,  1.18956254, ..., -0.12187685,
+        1.19607494, -0.12191737])}
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -896,8 +897,8 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Sum of signal sWeights:  20050.806902327884
-Sum of background sWeights:  118420.55330052102
+Sum of signal sWeights:  20092.832164835945
+Sum of background sWeights:  118098.24026987074
 </pre></div></div>
 </div>
 <p>Now we can apply the signal <strong>sWeights</strong> on the lifetime distribution and retrieve its signal components.</p>
@@ -946,7 +947,7 @@ Sum of background sWeights:  118420.55330052102
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Correlation between m and t: 0.031626045845237004
+Correlation between m and t: 0.031706619360597356
 </pre></div></div>
 </div>
 <p>Let’s apply to signal <strong>sWeights</strong> on the mass distribution to see how bad the results of <strong>sPlot</strong> is when applied on a variable that is correlated with the discrimant variable.</p>
@@ -967,10 +968,10 @@ Correlation between m and t: 0.031626045845237004
 </div>
 </section>
 <section id="Alternative:-Known-probabilities">
-<h2>Alternative: Known probabilities<a class="headerlink" href="#Alternative:-Known-probabilities" title="Permalink to this heading"></a></h2>
+<h2>Alternative: Known probabilities<a class="headerlink" href="#Alternative:-Known-probabilities" title="Link to this heading"></a></h2>
 <p>If the probabilities are already known <em>beforehand</em>, fitting a curve with <code class="docutils literal notranslate"><span class="pre">zfit</span></code> is an extra step that is not required in order to obtain the sWeights. The next example uses <code class="docutils literal notranslate"><span class="pre">hep_ml</span></code> in order to compute the sWeights; the same function as <code class="docutils literal notranslate"><span class="pre">hepstats</span></code> also uses internally.</p>
 <section id="Building-sPlot-over-mass">
-<h3>Building sPlot over mass<a class="headerlink" href="#Building-sPlot-over-mass" title="Permalink to this heading"></a></h3>
+<h3>Building sPlot over mass<a class="headerlink" href="#Building-sPlot-over-mass" title="Link to this heading"></a></h3>
 <p>Let’s show how this works. First we generate two fake distributions (signal and background) with 2 variables: mass and momentum <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
@@ -1018,7 +1019,7 @@ Correlation between m and t: 0.031626045845237004
 </div>
 </section>
 <section id="Of-course-we-don't-have-labels-which-events-are-signal-and-which-are-background-beforehand">
-<h3>Of course we don’t have labels which events are signal and which are background beforehand<a class="headerlink" href="#Of-course-we-don't-have-labels-which-events-are-signal-and-which-are-background-beforehand" title="Permalink to this heading"></a></h3>
+<h3>Of course we don’t have labels which events are signal and which are background beforehand<a class="headerlink" href="#Of-course-we-don't-have-labels-which-events-are-signal-and-which-are-background-beforehand" title="Link to this heading"></a></h3>
 <p>And we observe the mixture of two distributions:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
@@ -1060,7 +1061,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 </section>
 <section id="We-have-no-information-about-real-labels">
-<h3>We have no information about real labels<a class="headerlink" href="#We-have-no-information-about-real-labels" title="Permalink to this heading"></a></h3>
+<h3>We have no information about real labels<a class="headerlink" href="#We-have-no-information-about-real-labels" title="Link to this heading"></a></h3>
 <p>But we know a priori that background is distributed as exponential distribution and signal - as gaussian (more complex models can be met in practice, but idea is the same).</p>
 <p>After fitting the mixture (let me skip this process), we will get the following result:</p>
 <div class="nbinput docutils container">
@@ -1082,7 +1083,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fd4c4a89750&gt;
+&lt;matplotlib.legend.Legend at 0x7fc47c1f0590&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1095,7 +1096,7 @@ Text(0.5, 0, &#39;p&#39;)
 </section>
 </section>
 <section id="Fitting-doesn't-give-us-information-about-real-labels">
-<h2>Fitting doesn’t give us information about real labels<a class="headerlink" href="#Fitting-doesn't-give-us-information-about-real-labels" title="Permalink to this heading"></a></h2>
+<h2>Fitting doesn’t give us information about real labels<a class="headerlink" href="#Fitting-doesn't-give-us-information-about-real-labels" title="Link to this heading"></a></h2>
 <p>But it gives an information about probabilities, thus now we can estimate number of signal and background events within each bin.</p>
 <p>We won’t use bins, but instead we will get for each event probability that it is signal or background:</p>
 <div class="nbinput nblast docutils container">
@@ -1126,7 +1127,7 @@ Text(0.5, 0, &#39;p&#39;)
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 ((0.0, 10.0),
- &lt;matplotlib.legend.Legend at 0x7fd4c4e59790&gt;,
+ &lt;matplotlib.legend.Legend at 0x7fc47c3d4cd0&gt;,
  Text(0.5, 0, &#39;mass&#39;))
 </pre></div></div>
 </div>
@@ -1139,7 +1140,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 </section>
 <section id="Appying-sPlot">
-<h2>Appying sPlot<a class="headerlink" href="#Appying-sPlot" title="Permalink to this heading"></a></h2>
+<h2>Appying sPlot<a class="headerlink" href="#Appying-sPlot" title="Link to this heading"></a></h2>
 <p>sPlot converts probabilities to sWeights, using an implementation from <code class="docutils literal notranslate"><span class="pre">hep_ml</span></code>:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
@@ -1171,7 +1172,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 </section>
 <section id="Using-sWeights-to-reconstruct-initial-distribution">
-<h2>Using sWeights to reconstruct initial distribution<a class="headerlink" href="#Using-sWeights-to-reconstruct-initial-distribution" title="Permalink to this heading"></a></h2>
+<h2>Using sWeights to reconstruct initial distribution<a class="headerlink" href="#Using-sWeights-to-reconstruct-initial-distribution" title="Link to this heading"></a></h2>
 <p>Let’s check that we achieved our goal and can reconstruct momentum distribution for signal and background:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
@@ -1201,7 +1202,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 </section>
 <section id="An-important-requirement-of-sPlot">
-<h2>An important requirement of sPlot<a class="headerlink" href="#An-important-requirement-of-sPlot" title="Permalink to this heading"></a></h2>
+<h2>An important requirement of sPlot<a class="headerlink" href="#An-important-requirement-of-sPlot" title="Link to this heading"></a></h2>
 <p>Reconstructed variable (i.e. <span class="math notranslate nohighlight">\(p\)</span>) and splotted variable (i.e. mass) shall be statistically independent for each class.</p>
 <p>Read the line above again. Reconstructed and splotted variable are correlated:</p>
 <div class="nbinput docutils container">
@@ -1218,7 +1219,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--0.3349819663564059
+-0.34495151496553955
 </pre></div></div>
 </div>
 <p>But within each class there is no correlation, so the requirement is satisfied:</p>
@@ -1236,8 +1237,8 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--0.012845388327951656
-0.0076406266638960624
+0.00038079437364165185
+-0.0015770204104652037
 </pre></div></div>
 </div>
 <p>as a demonstration why this is important let’s use sweights to reconstruct mass (obviously mass is correlated with mass):</p>
@@ -1263,7 +1264,7 @@ Text(0.5, 0, &#39;p&#39;)
 <p><span class="math notranslate nohighlight">\(\def\ps{p_s(x)}\)</span> <span class="math notranslate nohighlight">\(\def\pb{p_b(x)}\)</span> <span class="math notranslate nohighlight">\(\def\ws{sw_s(x)}\)</span> <span class="math notranslate nohighlight">\(\def\wb{sw_b(x)}\)</span></p>
 </section>
 <section id="Derivation-of-sWeights-(optional)">
-<h2>Derivation of sWeights (optional)<a class="headerlink" href="#Derivation-of-sWeights-(optional)" title="Permalink to this heading"></a></h2>
+<h2>Derivation of sWeights (optional)<a class="headerlink" href="#Derivation-of-sWeights-(optional)" title="Link to this heading"></a></h2>
 <p>Now, after we seen how this works, let’s derive a formula for sWeights.</p>
 <p>The only information we have from fitting over mass is $ <span class="math">\ps `$, $ :nbsphinx-math:</span>pb`$ which are probabilities of event <span class="math notranslate nohighlight">\(x\)</span> to be signal and background.</p>
 <p>Our main goal is to correctly reconstruct histogram. Let’s reconstruct the number of <em>signal</em> events in <em>particular</em> bin. Let’s introduce unknown <span class="math notranslate nohighlight">\(p_s\)</span> and <span class="math notranslate nohighlight">\(p_b\)</span> - probability that signal or background event will be in the named bin.</p>
@@ -1276,7 +1277,7 @@ Text(0.5, 0, &#39;p&#39;)
 <p>where <span class="math notranslate nohighlight">\(\ws\)</span> are sPlot weights and are subject to find.</p>
 <p>This way we can guarantee that mean contribution of background are 0 (expectation is zero, but observed number will not be zero due to statistical deviation).</p>
 <section id="Under-assumption-of-linearity:">
-<h3>Under assumption of linearity:<a class="headerlink" href="#Under-assumption-of-linearity:" title="Permalink to this heading"></a></h3>
+<h3>Under assumption of linearity:<a class="headerlink" href="#Under-assumption-of-linearity:" title="Link to this heading"></a></h3>
 <p><em>assuming</em> that splot weight can be computed as a linear combination of conditional probabilities:</p>
 <p>$ <span class="math">\ws `= a_1 :nbsphinx-math:</span>pb <cite>+ a_2 :nbsphinx-math:</cite>ps`$</p>
 <p>We can easily reconstruct those numbers, first let’s rewrite our system:</p>
@@ -1287,7 +1288,7 @@ Text(0.5, 0, &#39;p&#39;)
 <p>NB. There is little difference between <span class="math notranslate nohighlight">\(V\)</span> matrix I use and <span class="math notranslate nohighlight">\(V\)</span> matrix in the paper.</p>
 </section>
 <section id="Minimization-of-variation">
-<h3>Minimization of variation<a class="headerlink" href="#Minimization-of-variation" title="Permalink to this heading"></a></h3>
+<h3>Minimization of variation<a class="headerlink" href="#Minimization-of-variation" title="Link to this heading"></a></h3>
 <p><span class="math notranslate nohighlight">\(\def\Var{\mathbb{V}\,}\)</span></p>
 <p>Previous part allows one to get the correct result. But there is still no explanation of reason for linearity.</p>
 <p>Apart from having correct mean, we should also minimize variation of any reconstructed variable. Let’s try to optimize it</p>
@@ -1304,14 +1305,14 @@ Text(0.5, 0, &#39;p&#39;)
 + \lambda_2 \left[\sum_x \ws \; \ps - N_{sig} \right]\]</div>
 </section>
 <section id="Uncorrelatedness">
-<h3>Uncorrelatedness<a class="headerlink" href="#Uncorrelatedness" title="Permalink to this heading"></a></h3>
+<h3>Uncorrelatedness<a class="headerlink" href="#Uncorrelatedness" title="Link to this heading"></a></h3>
 <p>The main assuption we used here is that distribution inside each bin is abolutely indentical.</p>
 <p>In other words, we stated that there is no correlation between the index of bin and the reconstructed variable. Remember that bin corresponds to some interval in mass, and finaly we get:</p>
 <p><strong>reconstructed variable shall not be correlated with mass variables (or any other splotted variable)</strong></p>
 </section>
 </section>
 <section id="Conclusion">
-<h2>Conclusion<a class="headerlink" href="#Conclusion" title="Permalink to this heading"></a></h2>
+<h2>Conclusion<a class="headerlink" href="#Conclusion" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>sPlot allows reconstruction of some variables.</p></li>
 <li><p>the only information used is probabilities taken from fit over variable. If fact, any probability estimates fit well.</p></li>

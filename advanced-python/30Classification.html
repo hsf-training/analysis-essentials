@@ -14,12 +14,13 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/panels.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script><script defer data-domain="hepsoftwarefoundation.org" src="https://views.scientific-python.org/js/script.js"></script></script>
+        <script src="../_static/panels.js?v=0f4bdeea"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -466,7 +467,7 @@
            <div itemprop="articleBody">
              
   <section id="3:-Multivariate-Analysis">
-<h1>3: Multivariate Analysis<a class="headerlink" href="#3:-Multivariate-Analysis" title="Permalink to this heading"></a></h1>
+<h1>3: Multivariate Analysis<a class="headerlink" href="#3:-Multivariate-Analysis" title="Link to this heading"></a></h1>
 <p>In this lesson we will use ‘Multivariate Analysis’ to improve the signal significance of our data sample. This involves training a Boosted Decision Tree (<strong>BDT</strong>) which can distinguish between signal-like and background-like events. The BDT takes a number of input variables and makes a prediction on whether the event is signal or background.</p>
 <ul class="simple">
 <li><p>First we need to load the data which we stored in the previous lesson and import the modules we need:</p></li>
@@ -498,7 +499,7 @@
 </div>
 </div>
 <section id="Using-a-classifier">
-<h2>Using a classifier<a class="headerlink" href="#Using-a-classifier" title="Permalink to this heading"></a></h2>
+<h2>Using a classifier<a class="headerlink" href="#Using-a-classifier" title="Link to this heading"></a></h2>
 <p>Rectangular cuts are give good simple selections however you can often get better performance by using a more advanced technique. This generally works by taking adavantage of the corellation between variables. For example if we look in two dimensions, <code class="docutils literal notranslate"><span class="pre">Jpsi_eta</span></code> and <code class="docutils literal notranslate"><span class="pre">mum_P</span></code>:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -518,7 +519,7 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7efcd902e2d0&gt;
+&lt;matplotlib.legend.Legend at 0x7f7539ad5a50&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -530,7 +531,7 @@
 </div>
 <p>We can see that there if we cut out 2 (or more) dimensional regions we can remove background more effectively. This is the idea behind decision trees.</p>
 <section id="TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">
-<h3>TODO Add a diagram of a decision tree for the above plot<a class="headerlink" href="#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot" title="Permalink to this heading"></a></h3>
+<h3>TODO Add a diagram of a decision tree for the above plot<a class="headerlink" href="#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot" title="Link to this heading"></a></h3>
 <p>In machine learning there is a concept known as “boosting” which comes from the question:</p>
 <blockquote>
 <div><p>Can a set of weak learners create a single strong learner?</p>
@@ -568,8 +569,8 @@ Stored &#39;training_columns&#39; (list)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We then define the classifier we want to use</span>
-<span class="n">bdt</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">()</span>
-<span class="c1"># bdt = XGBClassifier() # we could also use this one</span>
+<span class="c1"># bdt = GradientBoostingClassifier()  # we could also use this one</span>
+<span class="n">bdt</span> <span class="o">=</span> <span class="n">XGBClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>  <span class="c1"># less estimator is faster, for demonstration, but 100-300 is usually better</span>
 </pre></div>
 </div>
 </div>
@@ -620,7 +621,27 @@ Stored &#39;training_data&#39; (DataFrame)
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<style>#sk-container-id-1 {color: black;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>GradientBoostingClassifier()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">GradientBoostingClassifier</label><div class="sk-toggleable__content"><pre>GradientBoostingClassifier()</pre></div></div></div></div></div></div>
+<style>#sk-container-id-1 {color: black;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=None, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=20, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">XGBClassifier</label><div class="sk-toggleable__content"><pre>XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=None, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=20, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...)</pre></div></div></div></div></div></div>
 </div>
 <p>Once a classifier has been trained we can apply it to a dataset to get a variable tells us how signal or background like each candidate is. There are a few different functions to do this, but in this case we will use <code class="docutils literal notranslate"><span class="pre">bdt.predict_proba</span></code>.</p>
 <div class="nbinput docutils container">
@@ -637,11 +658,11 @@ Stored &#39;training_data&#39; (DataFrame)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-array([[0.11268477, 0.88731523],
-       [0.28630294, 0.71369706],
-       [0.58681309, 0.41318691],
-       [0.65955735, 0.34044265],
-       [0.3134157 , 0.6865843 ]])
+array([[0.0951997 , 0.9048003 ],
+       [0.22529536, 0.77470464],
+       [0.63189864, 0.3681014 ],
+       [0.6602049 , 0.33979508],
+       [0.36177772, 0.6382223 ]], dtype=float32)
 </pre></div></div>
 </div>
 <p>This has returned a <span class="math notranslate nohighlight">\(N_\text{samples}\)</span> by <span class="math notranslate nohighlight">\(N_\text{classes}\)</span> array. The first column is the ‘probability’ that the candiate is catagory 0 (background) and the second column is the probability that the candidate is catagory 1 (signal). These probabilities sum to 1 for each event are only valid under certain assumptions which typically don’t apply in HEP.</p>
@@ -662,8 +683,8 @@ array([[0.11268477, 0.88731523],
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-array([0.88731523, 0.71369706, 0.41318691, ..., 0.36839431, 0.26573531,
-       0.30684678])
+array([0.9048003 , 0.77470464, 0.3681014 , ..., 0.367871  , 0.22820437,
+       0.29143938], dtype=float32)
 </pre></div></div>
 </div>
 <p><strong>CHALLENGE:</strong> Add a new column to each of <code class="docutils literal notranslate"><span class="pre">mc_df</span></code>, <code class="docutils literal notranslate"><span class="pre">bkg_df</span></code>, <code class="docutils literal notranslate"><span class="pre">data_df</span></code> and <code class="docutils literal notranslate"><span class="pre">training_data</span></code> called BDT which contains the signal probability of the classifier.</p>
@@ -756,7 +777,7 @@ array([0.88731523, 0.71369706, 0.41318691, ..., 0.36839431, 0.26573531,
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7efcd90f6a10&gt;
+&lt;matplotlib.legend.Legend at 0x7f75301c0f10&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -784,13 +805,13 @@ array([0.88731523, 0.71369706, 0.41318691, ..., 0.36839431, 0.26573531,
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading reference dataset, this will take a moment...
-Data contains 102 signal events
-Data contains 126 background events
+Data contains 125 signal events
+Data contains 207 background events
 Significance metric is 8.59
 </pre></div></div>
 </div>
 <section id="Evaluating-classifier-performance">
-<h4>Evaluating classifier performance<a class="headerlink" href="#Evaluating-classifier-performance" title="Permalink to this heading"></a></h4>
+<h4>Evaluating classifier performance<a class="headerlink" href="#Evaluating-classifier-performance" title="Link to this heading"></a></h4>
 <p>So far we have used a magical function to evalueate the classifier performance. Unfortuanately, we can’t use such a tool when using analysis on real data as that would be too easy! Instead, we have a few other tools we can use to see how good a classifier is.</p>
 <p>We have already used one tool: the distributions of the classifier output on signal and background training data.</p>
 <div class="nbinput docutils container">
@@ -905,7 +926,7 @@ the peak.</p>
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_6778/4020814425.py:3: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_6728/4020814425.py:3: RuntimeWarning: invalid value encountered in divide
   metric = S/np.sqrt(S+B)
 </pre></div></div>
 </div>
@@ -985,10 +1006,6 @@ The optimal cut value is inf with and S/sqrt(S+B) of nan
   self.yerr_lo *= scale
 /usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:244: RuntimeWarning: invalid value encountered in multiply
   self.yerr_hi *= scale
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/matplotlib/axes/_axes.py:1185: RuntimeWarning: All-NaN axis encountered
-  miny = np.nanmin(masked_verts[..., 1])
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/matplotlib/axes/_axes.py:1186: RuntimeWarning: All-NaN axis encountered
-  maxy = np.nanmax(masked_verts[..., 1])
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -997,7 +1014,7 @@ The optimal cut value is inf with and S/sqrt(S+B) of nan
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7efccfd5f090&gt;
+&lt;matplotlib.legend.Legend at 0x7f753066e910&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1033,7 +1050,7 @@ The optimal cut value is inf with and S/sqrt(S+B) of nan
 </div>
 </section>
 <section id="Collecting-it-all-together">
-<h4>Collecting it all together<a class="headerlink" href="#Collecting-it-all-together" title="Permalink to this heading"></a></h4>
+<h4>Collecting it all together<a class="headerlink" href="#Collecting-it-all-together" title="Link to this heading"></a></h4>
 <p>Let’s define some helpful functions that we use later based on what we did above:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
@@ -1142,7 +1159,7 @@ Data succesfully loaded
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_6778/4278176416.py:9: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_6728/4278176416.py:9: RuntimeWarning: invalid value encountered in divide
   metric = S/np.sqrt(S+B)
 </pre></div></div>
 </div>

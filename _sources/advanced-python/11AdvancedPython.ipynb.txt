@@ -17,7 +17,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.287777986Z",
+     "start_time": "2023-11-09T18:21:57.475130307Z"
+    }
+   },
    "outputs": [],
    "source": [
     "import time"
@@ -37,7 +42,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.288125493Z",
+     "start_time": "2023-11-09T18:21:57.475439183Z"
+    }
+   },
    "outputs": [],
    "source": [
     "a, c, *b = [3, 4, 4.5, 5, 6]"
@@ -46,7 +56,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.288659478Z",
+     "start_time": "2023-11-09T18:21:57.475730863Z"
+    }
+   },
    "outputs": [],
    "source": [
     "b"
@@ -62,7 +77,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.289024121Z",
+     "start_time": "2023-11-09T18:21:57.476020895Z"
+    }
+   },
    "outputs": [],
    "source": [
     "d1, d2, *d3, d4 = [1, 2, 3]  # nothing left for d3"
@@ -71,7 +91,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.289770343Z",
+     "start_time": "2023-11-09T18:21:57.476279441Z"
+    }
+   },
    "outputs": [],
    "source": [
     "d3"
@@ -87,7 +112,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.289972173Z",
+     "start_time": "2023-11-09T18:21:57.476626713Z"
+    }
+   },
    "outputs": [],
    "source": [
     "a = [3, 4, 5]"
@@ -103,7 +133,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.290148105Z",
+     "start_time": "2023-11-09T18:21:57.519751245Z"
+    }
+   },
    "outputs": [],
    "source": [
     "d, e, f, g, h, i = *a, *b"
@@ -119,7 +154,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.290328424Z",
+     "start_time": "2023-11-09T18:21:57.519943991Z"
+    }
+   },
    "outputs": [],
    "source": [
     "def func(*args, **kwargs):\n",
@@ -130,7 +170,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.291657968Z",
+     "start_time": "2023-11-09T18:21:57.520119691Z"
+    }
+   },
    "outputs": [],
    "source": [
     "mykwargs = {'a': 5, 'b': 3}\n",
@@ -141,7 +186,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.297387283Z",
+     "start_time": "2023-11-09T18:21:57.520366676Z"
+    }
+   },
    "outputs": [],
    "source": [
     "func(5, a=4)"
@@ -150,7 +200,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.297741024Z",
+     "start_time": "2023-11-09T18:21:57.520883499Z"
+    }
+   },
    "outputs": [],
    "source": [
     "# play around with it!"
@@ -193,7 +248,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.324668018Z",
+     "start_time": "2023-11-09T18:21:57.563095740Z"
+    }
+   },
    "outputs": [],
    "source": [
     "import contextlib\n",
@@ -209,7 +269,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.326374361Z",
+     "start_time": "2023-11-09T18:21:57.563347017Z"
+    }
+   },
    "outputs": [],
    "source": [
     "with printer(5) as number:\n",
@@ -229,7 +294,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.354444565Z",
+     "start_time": "2023-11-09T18:21:57.563714577Z"
+    }
+   },
    "outputs": [],
    "source": [
     "with open('tmp.txt', 'w') as textfile:\n",
@@ -246,7 +316,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.355126940Z",
+     "start_time": "2023-11-09T18:21:57.563857095Z"
+    }
+   },
    "outputs": [],
    "source": [
     "import contextlib\n",
@@ -269,7 +344,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.358277200Z",
+     "start_time": "2023-11-09T18:21:57.569931680Z"
+    }
+   },
    "outputs": [],
    "source": [
     "testdict = {'value': 11, 'name': 'the answer'}"
@@ -291,7 +371,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.359563889Z",
+     "start_time": "2023-11-09T18:21:57.611213702Z"
+    }
+   },
    "outputs": [],
    "source": [
     "# SOLUTION\n",
@@ -308,7 +393,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.359882492Z",
+     "start_time": "2023-11-09T18:21:57.611718752Z"
+    }
+   },
    "outputs": [],
    "source": [
     "@contextlib.contextmanager\n",
@@ -331,7 +421,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.394698482Z",
+     "start_time": "2023-11-09T18:21:57.611948597Z"
+    }
+   },
    "outputs": [],
    "source": [
     "class MyContext:\n",
@@ -352,7 +447,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.397073702Z",
+     "start_time": "2023-11-09T18:21:57.612144179Z"
+    }
+   },
    "outputs": [],
    "source": [
     "with MyContext(5) as x:\n",
@@ -378,7 +478,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.397374445Z",
+     "start_time": "2023-11-09T18:21:57.659281779Z"
+    }
+   },
    "outputs": [],
    "source": [
     "def make_power_func(power):\n",
@@ -390,7 +495,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.397643363Z",
+     "start_time": "2023-11-09T18:21:57.659526538Z"
+    }
+   },
    "outputs": [],
    "source": [
     "pow3 = make_power_func(3)"
@@ -399,7 +509,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.398133567Z",
+     "start_time": "2023-11-09T18:21:57.659712907Z"
+    }
+   },
    "outputs": [],
    "source": [
     "pow3(2)"
@@ -408,7 +523,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.398357818Z",
+     "start_time": "2023-11-09T18:21:57.659911070Z"
+    }
+   },
    "outputs": [],
    "source": [
     "def make_power_func(power):\n",
@@ -421,7 +541,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.404364977Z",
+     "start_time": "2023-11-09T18:21:57.660055943Z"
+    }
+   },
    "outputs": [],
    "source": [
     "pow3 = make_power_func(3)"
@@ -430,7 +555,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.406575801Z",
+     "start_time": "2023-11-09T18:21:57.707103066Z"
+    }
+   },
    "outputs": [],
    "source": [
     "pow3(2)"
@@ -439,7 +569,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.419570582Z",
+     "start_time": "2023-11-09T18:21:57.707383203Z"
+    }
+   },
    "outputs": [],
    "source": [
     "# Exercise: test it here"
@@ -475,7 +610,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.421942708Z",
+     "start_time": "2023-11-09T18:21:57.714163427Z"
+    }
+   },
    "outputs": [],
    "source": [
     "# SOLUTION\n",
@@ -493,7 +633,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.422417608Z",
+     "start_time": "2023-11-09T18:21:57.755158988Z"
+    }
+   },
    "outputs": [],
    "source": [
     "def add_notime(x, y):\n",
@@ -503,7 +648,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.422731709Z",
+     "start_time": "2023-11-09T18:21:57.755389720Z"
+    }
+   },
    "outputs": [],
    "source": [
     "add_timed = timed_func(add_notime)"
@@ -512,7 +662,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.422948361Z",
+     "start_time": "2023-11-09T18:21:57.755554232Z"
+    }
+   },
    "outputs": [],
    "source": [
     "import time"
@@ -521,7 +676,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.425073110Z",
+     "start_time": "2023-11-09T18:21:57.755705542Z"
+    }
+   },
    "outputs": [],
    "source": [
     "add_timed(y=4, x=5)"
@@ -530,7 +690,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.425479931Z",
+     "start_time": "2023-11-09T18:21:57.756004166Z"
+    }
+   },
    "outputs": [],
    "source": [
     "# test it here"
@@ -548,7 +713,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:58.425804868Z",
+     "start_time": "2023-11-09T18:21:57.756157832Z"
+    }
+   },
    "outputs": [],
    "source": [
     "@timed_func\n",
@@ -587,7 +757,11 @@
    "metadata": {
     "tags": [
      "raises-exception"
-    ]
+    ],
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:21:59.048528979Z",
+     "start_time": "2023-11-09T18:21:57.803005602Z"
+    }
    },
    "outputs": [],
    "source": [
@@ -607,7 +781,10 @@
    "metadata": {
     "tags": [
      "raises-exception"
-    ]
+    ],
+    "ExecuteTime": {
+     "start_time": "2023-11-09T18:21:58.751370683Z"
+    }
    },
    "outputs": [],
    "source": [
@@ -632,7 +809,11 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "start_time": "2023-11-09T18:21:58.795021637Z"
+    }
+   },
    "outputs": [],
    "source": [
     "class MyError(Exception):\n",
@@ -645,7 +826,10 @@
    "metadata": {
     "tags": [
      "raises-exception"
-    ]
+    ],
+    "ExecuteTime": {
+     "start_time": "2023-11-09T18:21:58.795152334Z"
+    }
    },
    "outputs": [],
    "source": [
@@ -666,7 +850,11 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "start_time": "2023-11-09T18:21:58.795308728Z"
+    }
+   },
    "outputs": [],
    "source": [
     "class NegativeValueError(ValueError):\n",
@@ -693,7 +881,11 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "start_time": "2023-11-09T18:21:58.795410621Z"
+    }
+   },
    "outputs": [],
    "source": [
     "try:\n",
@@ -727,7 +919,11 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "start_time": "2023-11-09T18:21:58.795520523Z"
+    }
+   },
    "outputs": [],
    "source": [
     "try:\n",
@@ -743,7 +939,10 @@
    "metadata": {
     "tags": [
      "raises-exception"
-    ]
+    ],
+    "ExecuteTime": {
+     "start_time": "2023-11-09T18:21:58.795603420Z"
+    }
    },
    "outputs": [],
    "source": [
@@ -771,11 +970,11 @@
    "cell_type": "code",
    "execution_count": null,
    "metadata": {
-    "jupyter": {
-     "outputs_hidden": false
-    },
     "pycharm": {
      "name": "#%%\n"
+    },
+    "ExecuteTime": {
+     "start_time": "2023-11-09T18:21:58.795680122Z"
     }
    },
    "outputs": [],
@@ -806,15 +1005,15 @@
    "cell_type": "code",
    "execution_count": null,
    "metadata": {
-    "jupyter": {
-     "outputs_hidden": false
-    },
     "pycharm": {
      "name": "#%%\n"
     },
     "tags": [
      "raises-exception"
-    ]
+    ],
+    "ExecuteTime": {
+     "start_time": "2023-11-09T18:21:58.795985110Z"
+    }
    },
    "outputs": [],
    "source": [
@@ -844,15 +1043,15 @@
    "cell_type": "code",
    "execution_count": null,
    "metadata": {
-    "jupyter": {
-     "outputs_hidden": false
-    },
     "pycharm": {
      "name": "#%%\n"
     },
     "tags": [
      "raises-exception"
-    ]
+    ],
+    "ExecuteTime": {
+     "start_time": "2023-11-09T18:21:58.796186073Z"
+    }
    },
    "outputs": [],
    "source": [
@@ -875,11 +1074,11 @@
    "cell_type": "code",
    "execution_count": null,
    "metadata": {
-    "jupyter": {
-     "outputs_hidden": false
-    },
     "pycharm": {
      "name": "#%%\n"
+    },
+    "ExecuteTime": {
+     "start_time": "2023-11-09T18:21:58.796374250Z"
     }
    },
    "outputs": [],
@@ -903,11 +1102,11 @@
    "cell_type": "code",
    "execution_count": null,
    "metadata": {
-    "jupyter": {
-     "outputs_hidden": false
-    },
     "pycharm": {
      "name": "#%%\n"
+    },
+    "ExecuteTime": {
+     "start_time": "2023-11-09T18:21:58.796560001Z"
     }
    },
    "outputs": [],
@@ -933,11 +1132,11 @@
    "cell_type": "code",
    "execution_count": null,
    "metadata": {
-    "jupyter": {
-     "outputs_hidden": false
-    },
     "pycharm": {
      "name": "#%%\n"
+    },
+    "ExecuteTime": {
+     "start_time": "2023-11-09T18:21:58.796721888Z"
     }
    },
    "outputs": [],
@@ -952,15 +1151,15 @@
    "cell_type": "code",
    "execution_count": null,
    "metadata": {
-    "jupyter": {
-     "outputs_hidden": false
-    },
     "pycharm": {
      "name": "#%%\n"
     },
     "tags": [
      "raises-exception"
-    ]
+    ],
+    "ExecuteTime": {
+     "start_time": "2023-11-09T18:21:58.796792565Z"
+    }
    },
    "outputs": [],
    "source": [
@@ -971,11 +1170,11 @@
    "cell_type": "code",
    "execution_count": null,
    "metadata": {
-    "jupyter": {
-     "outputs_hidden": false
-    },
     "pycharm": {
      "name": "#%%\n"
+    },
+    "ExecuteTime": {
+     "start_time": "2023-11-09T18:21:58.796936035Z"
     }
    },
    "outputs": [],

@@ -14,12 +14,13 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/panels.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script><script defer data-domain="hepsoftwarefoundation.org" src="https://views.scientific-python.org/js/script.js"></script></script>
+        <script src="../_static/panels.js?v=0f4bdeea"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -466,10 +467,10 @@
            <div itemprop="articleBody">
              
   <section id="Advanced-Classes">
-<h1>Advanced Classes<a class="headerlink" href="#Advanced-Classes" title="Permalink to this heading"></a></h1>
+<h1>Advanced Classes<a class="headerlink" href="#Advanced-Classes" title="Link to this heading"></a></h1>
 <p>This tutorial focuses on the invocation of dunder methods and demystifies the operators in Python.</p>
 <section id="Dunder">
-<h2>Dunder<a class="headerlink" href="#Dunder" title="Permalink to this heading"></a></h2>
+<h2>Dunder<a class="headerlink" href="#Dunder" title="Link to this heading"></a></h2>
 <p>Dunder (<strong>D</strong>ouble <strong>under</strong>score) methods <code class="docutils literal notranslate"><span class="pre">__meth__</span></code> are names which are reserved for Python only and should not be invented by us (implemented; yes). Just to be precise, <code class="docutils literal notranslate"><span class="pre">__meth</span></code> is fine.</p>
 <p>These methods are used to delegate the actual operator call. When we invoke any operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, but also <code class="docutils literal notranslate"><span class="pre">()</span></code> and so on), the object that this is applied on is checked for a corresponding method. For the <code class="docutils literal notranslate"><span class="pre">+</span></code>, the object (on the left) is checked for a <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method. If this is not found or return a <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> either alternatives are tried or an error is raised if all possibilities are tried.</p>
 <p>Alternatives involve in this case to call the <code class="docutils literal notranslate"><span class="pre">__radd__</span></code> (<strong>r</strong>ight <strong>add</strong>) on the <em>object on the right</em> <strong>IF</strong> the objects are of different types.</p>
@@ -536,11 +537,11 @@ add called on val left
 </div>
 </section>
 <section id="len">
-<h2>len<a class="headerlink" href="#len" title="Permalink to this heading"></a></h2>
+<h2>len<a class="headerlink" href="#len" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">len</span></code> method simply checks if there is a <code class="docutils literal notranslate"><span class="pre">__len__</span></code> implemented.</p>
 </section>
 <section id="str">
-<h2>str<a class="headerlink" href="#str" title="Permalink to this heading"></a></h2>
+<h2>str<a class="headerlink" href="#str" title="Link to this heading"></a></h2>
 <p>To have a nice, representable, human readable string, <code class="docutils literal notranslate"><span class="pre">__str__</span></code> should be implemented. There is a similar one, which is <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>. This is also a string representation of the object, yet more targeted towards the developers.</p>
 <p>If no <code class="docutils literal notranslate"><span class="pre">__str__</span></code> is provided, it falls back to <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>, which, if not provided, uses a default implementation.</p>
 <div class="nbinput nblast docutils container">
@@ -570,7 +571,7 @@ add called on val left
 <p><strong>Exercise</strong>: try it out by using <code class="docutils literal notranslate"><span class="pre">str(...)</span></code> and <code class="docutils literal notranslate"><span class="pre">repr(...)</span></code></p>
 </section>
 <section id="Callable">
-<h2>Callable<a class="headerlink" href="#Callable" title="Permalink to this heading"></a></h2>
+<h2>Callable<a class="headerlink" href="#Callable" title="Link to this heading"></a></h2>
 <p>In Python, a callable is any object that can be called. Calling an object means to have <code class="docutils literal notranslate"><span class="pre">(...)</span></code> attached behind it. This operator looks for a <code class="docutils literal notranslate"><span class="pre">__call__</span></code> method.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -633,7 +634,7 @@ called with args () and kwargs {}
 <p><code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">'NotCallable'</span> <span class="pre">object</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">callable</span></code> translates to <code class="docutils literal notranslate"><span class="pre">has</span> <span class="pre">no</span> <span class="pre">__call__</span> <span class="pre">method</span></code></p>
 </section>
 <section id="Indexing-(iterating)">
-<h2>Indexing (iterating)<a class="headerlink" href="#Indexing-(iterating)" title="Permalink to this heading"></a></h2>
+<h2>Indexing (iterating)<a class="headerlink" href="#Indexing-(iterating)" title="Link to this heading"></a></h2>
 <p>There are a few methods when it comes down to iteration. However, we won’t go into these details but rather look at the normal indexing. That is controlled via <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> and <code class="docutils literal notranslate"><span class="pre">__setitem__</span></code> and invoked with the <code class="docutils literal notranslate"><span class="pre">[]</span></code> operator.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -705,7 +706,7 @@ setitem of one invoked with index 2 and item 3
 </div>
 </section>
 <section id="self">
-<h2>self<a class="headerlink" href="#self" title="Permalink to this heading"></a></h2>
+<h2>self<a class="headerlink" href="#self" title="Link to this heading"></a></h2>
 <p>What is actually self? Nothing else than the object itself. However, we can rename it however we like.</p>
 <p><em>Read the following well</em> If an instance is create of a class and a method is called on that instance, the <em>first</em> argument to the method is the instance itself. <strong>Fullstop</strong></p>
 <p>What are the consequences of this?</p>
@@ -769,7 +770,7 @@ setitem of one invoked with index 2 and item 3
 </section>
 </section>
 <section id="Danger-zone">
-<h1>Danger zone<a class="headerlink" href="#Danger-zone" title="Permalink to this heading"></a></h1>
+<h1>Danger zone<a class="headerlink" href="#Danger-zone" title="Link to this heading"></a></h1>
 <p>The following is only for fun and should <em>not</em> be used in real live, except you do <em>really</em> know what you’re doing and at least two independent colleagues agree that this is the right way to go</p>
 <p>We have seen that basically everything is an operator and it has a dunder method. Everything? Quiz: what did we miss?</p>
 <p>Solution: the <code class="docutils literal notranslate"><span class="pre">.</span></code> the access operator. Yes, you guessed right. Let’s override it</p>

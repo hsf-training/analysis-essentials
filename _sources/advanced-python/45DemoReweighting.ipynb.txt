@@ -25,7 +25,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:25:53.648661700Z",
+     "start_time": "2023-11-09T18:25:53.142978500Z"
+    }
+   },
    "outputs": [],
    "source": [
     "%matplotlib inline\n",
@@ -47,7 +52,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:27:45.758389346Z",
+     "start_time": "2023-11-09T18:25:53.489875451Z"
+    }
+   },
    "outputs": [],
    "source": [
     "columns = ['hSPD', 'pt_b', 'pt_phi', 'vchi2_b', 'mu_pt_sum']\n",
@@ -80,7 +90,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:27:45.959472949Z",
+     "start_time": "2023-11-09T18:27:45.799133696Z"
+    }
+   },
    "outputs": [],
    "source": [
     "from sklearn.model_selection import train_test_split\n",
@@ -97,7 +112,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:27:45.975481005Z",
+     "start_time": "2023-11-09T18:27:45.965651595Z"
+    }
+   },
    "outputs": [],
    "source": [
     "from hep_ml.metrics_utils import ks_2samp_weighted\n",
@@ -128,7 +148,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:27:45.990266338Z",
+     "start_time": "2023-11-09T18:27:45.971355495Z"
+    }
+   },
    "outputs": [],
    "source": [
     "# pay attention, actually we have very few data\n",
@@ -138,7 +163,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:27:52.291018726Z",
+     "start_time": "2023-11-09T18:27:45.983111062Z"
+    }
+   },
    "outputs": [],
    "source": [
     "draw_distributions(original, target, original_weights)"
@@ -154,7 +184,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:27:56.786090353Z",
+     "start_time": "2023-11-09T18:27:52.282166289Z"
+    }
+   },
    "outputs": [],
    "source": [
     "draw_distributions(original_train, target_train, original_weights_train)"
@@ -170,7 +205,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:28:00.210019779Z",
+     "start_time": "2023-11-09T18:27:56.779869734Z"
+    }
+   },
    "outputs": [],
    "source": [
     "draw_distributions(original_test, target_test, original_weights_test)"
@@ -201,7 +241,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:28:21.654914654Z",
+     "start_time": "2023-11-09T18:28:00.206358826Z"
+    }
+   },
    "outputs": [],
    "source": [
     "bins_reweighter = reweight.BinsReweighter(n_bins=20, n_neighs=1.)\n",
@@ -230,7 +275,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:33:22.286971428Z",
+     "start_time": "2023-11-09T18:28:21.649791476Z"
+    }
+   },
    "outputs": [],
    "source": [
     "reweighter = reweight.GBReweighter(n_estimators=250, learning_rate=0.1, max_depth=3, min_samples_leaf=1000,\n",
@@ -254,7 +304,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:33:22.445738489Z",
+     "start_time": "2023-11-09T18:33:22.284510361Z"
+    }
+   },
    "outputs": [],
    "source": [
     "def check_ks_of_expression(expression):\n",
@@ -272,7 +327,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:33:22.447484398Z",
+     "start_time": "2023-11-09T18:33:22.327051319Z"
+    }
+   },
    "outputs": [],
    "source": [
     "check_ks_of_expression('hSPD')"
@@ -281,7 +341,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:33:22.658006592Z",
+     "start_time": "2023-11-09T18:33:22.415016102Z"
+    }
+   },
    "outputs": [],
    "source": [
     "check_ks_of_expression('hSPD * pt_phi')"
@@ -290,7 +355,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:33:22.903957662Z",
+     "start_time": "2023-11-09T18:33:22.656149470Z"
+    }
+   },
    "outputs": [],
    "source": [
     "check_ks_of_expression('hSPD * pt_phi * vchi2_b')"
@@ -299,7 +369,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:33:23.155559842Z",
+     "start_time": "2023-11-09T18:33:22.899381940Z"
+    }
+   },
    "outputs": [],
    "source": [
     "check_ks_of_expression('pt_b * pt_phi / hSPD ')"
@@ -308,7 +383,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:33:23.345847337Z",
+     "start_time": "2023-11-09T18:33:23.155057276Z"
+    }
+   },
    "outputs": [],
    "source": [
     "check_ks_of_expression('hSPD * pt_b * vchi2_b / pt_phi')"
@@ -330,7 +410,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:33:42.202790691Z",
+     "start_time": "2023-11-09T18:33:23.345111007Z"
+    }
+   },
    "outputs": [],
    "source": [
     "from sklearn.ensemble import GradientBoostingClassifier\n",
@@ -378,7 +463,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:33:43.726731060Z",
+     "start_time": "2023-11-09T18:33:42.207967134Z"
+    }
+   },
    "outputs": [],
    "source": [
     "plt.hist(weights['gb_weights'], bins=50)\n",
@@ -389,7 +479,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:33:43.730253817Z",
+     "start_time": "2023-11-09T18:33:43.723035309Z"
+    }
+   },
    "outputs": [],
    "source": [
     "np.max(weights['gb_weights']), np.sum(weights['gb_weights'])"
@@ -426,7 +521,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:38:48.740721947Z",
+     "start_time": "2023-11-09T18:33:43.728815796Z"
+    }
+   },
    "outputs": [],
    "source": [
     "# define base reweighter\n",
@@ -455,7 +555,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:40:00.647769707Z",
+     "start_time": "2023-11-09T18:38:48.738767636Z"
+    }
+   },
    "outputs": [],
    "source": [
     "data = np.concatenate([original, target])\n",
@@ -477,7 +582,12 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2023-11-09T18:40:01.473145845Z",
+     "start_time": "2023-11-09T18:40:00.647093226Z"
+    }
+   },
    "outputs": [],
    "source": [
     "plt.hist(weights['2-folding'], bins=50)\n",

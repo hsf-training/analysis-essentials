@@ -14,12 +14,13 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/panels.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script><script defer data-domain="hepsoftwarefoundation.org" src="https://views.scientific-python.org/js/script.js"></script></script>
+        <script src="../_static/panels.js?v=0f4bdeea"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -466,20 +467,20 @@
            <div itemprop="articleBody">
              
   <section id="8:-Likelihood-inference">
-<h1>8: Likelihood inference<a class="headerlink" href="#8:-Likelihood-inference" title="Permalink to this heading"></a></h1>
+<h1>8: Likelihood inference<a class="headerlink" href="#8:-Likelihood-inference" title="Link to this heading"></a></h1>
 <p><em>(note: in order to run this notebook, first run 20 creating the data and 30, adding a BDT)</em></p>
 <p>In most analysis, fitting a model to data is a crucial, last step in the chain in order to extract information about the parameters of interest.</p>
 <p><strong>Model</strong>: First, this involves building a model that depends on various parameters - some that are of immediate interest to us (Parameter Of Interest, POI) and some that help to describe the observables that we expect in the data but do not have any relevant physical meaning such as detectoreffects (Nuisance Parameter).</p>
 <p><strong>Loss</strong>: With the model and the data, a likelihood (or sometimes also a <span class="math notranslate nohighlight">\(\chi^2\)</span> loss) is built. This is a function of the parameters and reflects the <em>likelihood of finding the data given the parameters</em>. The most likely parameter combination is retrieved when maximising the likelihood; also called the Maximum Likelihood (ML) estimator. Except for trivial cases, this has to be done numerically.</p>
 <p>While this procedure returns an estimate of the <em>best-fit</em>, it does not say anything about the <em>uncertainty</em> of our measurement. Therefore, advanced statistical methods are needed that perform toy studies; these are fits to generated samples under different conditions such as fixing a parameter to a certain value.</p>
 <section id="Scope-of-this-tutorial">
-<h2>Scope of this tutorial<a class="headerlink" href="#Scope-of-this-tutorial" title="Permalink to this heading"></a></h2>
+<h2>Scope of this tutorial<a class="headerlink" href="#Scope-of-this-tutorial" title="Link to this heading"></a></h2>
 <p>Here, we focus on the libraries that are available to perform likelihood fits. For unbinned fits in Python, the libraries that we will consider here are <a class="reference external" href="https://github.com/zfit/zfit">zfit</a> (likelihood model fitting library) and <a class="reference external" href="https://github.com/scikit-hep/hepstats">hepstats</a> (higher level statistical inference; can use <code class="docutils literal notranslate"><span class="pre">zfit</span></code> models), both which are relatively young and written in pure Python.</p>
 <p>An alternative to be mentioned is <a class="reference external" href="http://roofit.sourceforge.net/">RooFit</a> and <a class="reference external" href="https://twiki.cern.ch/twiki/bin/view/RooStats/WebHome">RooStats</a>, an older, well-proven, reliable C++ framework that has Python bindings and acts as a standard in HEP for this kind of fits.</p>
 <p>In case your analysis involved pure binned and templated fits, <a class="reference external" href="https://github.com/scikit-hep/pyhf">pyhf</a> provides a specialized library for this kind of fits.</p>
 </section>
 <section id="Getting-started">
-<h2>Getting started<a class="headerlink" href="#Getting-started" title="Permalink to this heading"></a></h2>
+<h2>Getting started<a class="headerlink" href="#Getting-started" title="Link to this heading"></a></h2>
 <p>In order to get started with <code class="docutils literal notranslate"><span class="pre">zfit</span></code>, it is recommendable to have a look at the <a class="reference external" href="https://zfit-tutorials.readthedocs.io/en/latest/index.html">zfit-tutorials</a> or the <a class="reference external" href="https://www.youtube.com/playlist?list=PLAuzjeTfC3tNeP6o2sbCr3Jsa6ATvEYR6">recorded</a> <a class="reference external" href="https://www.youtube.com/watch?v=YDW-XxrSbns">tutorials</a>, which also contains <code class="docutils literal notranslate"><span class="pre">hepstats</span></code> tutorials; more on the latter can be found <a class="reference external" href="https://github.com/scikit-hep/hepstats/tree/master/notebooks">here</a>.</p>
 <p>Before we continue, it is highly recommended to follow the <a class="reference external" href="https://zfit-tutorials.readthedocs.io/en/latest/tutorials/introduction/README.html">zfit introduction tutorial</a></p>
 <div class="nbinput nblast docutils container">
@@ -559,7 +560,7 @@
 </div>
 </section>
 <section id="Difference-of-the-two-spaces">
-<h2>Difference of the two spaces<a class="headerlink" href="#Difference-of-the-two-spaces" title="Permalink to this heading"></a></h2>
+<h2>Difference of the two spaces<a class="headerlink" href="#Difference-of-the-two-spaces" title="Link to this heading"></a></h2>
 <p>While the first space is defined over the whole space from 2.8 to 3.5, the second consists of two distinct regions. Therefore we can use the original space and zfit applies the cut, the same as we did before to the <code class="docutils literal notranslate"><span class="pre">bkg_df</span></code>.</p>
 <p>The difference comes when using the normalization in the PDF: we can either normalize it over the whole range or only over part of it.</p>
 <div class="nbinput nblast docutils container">
@@ -603,7 +604,7 @@
 </div>
 </section>
 <section id="Plotting">
-<h2>Plotting<a class="headerlink" href="#Plotting" title="Permalink to this heading"></a></h2>
+<h2>Plotting<a class="headerlink" href="#Plotting" title="Link to this heading"></a></h2>
 <p>Plots can simply be made with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">mplhep</span></code>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -666,7 +667,7 @@
 </div>
 </section>
 <section id="Loss">
-<h2>Loss<a class="headerlink" href="#Loss" title="Permalink to this heading"></a></h2>
+<h2>Loss<a class="headerlink" href="#Loss" title="Link to this heading"></a></h2>
 <p>Since we have now the models and the datasets, we can e.g. pre-fit the signal PDF to the simulation.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -681,7 +682,7 @@
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/core/loss.py:801: AdvancedFeatureWarning: Either you&#39;re using an advanced feature OR causing unwanted behavior. To turn this warning off, use `zfit.settings.advanced_warnings[&#39;extended_in_UnbinnedNLL&#39;] = False`  or &#39;all&#39; (use with care) with `zfit.settings.advanced_warnings[&#39;all&#39;] = False
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/core/loss.py:807: AdvancedFeatureWarning: Either you&#39;re using an advanced feature OR causing unwanted behavior. To turn this warning off, use `zfit.settings.advanced_warnings[&#39;extended_in_UnbinnedNLL&#39;] = False`  or &#39;all&#39; (use with care) with `zfit.settings.advanced_warnings[&#39;all&#39;] = False
 Extended PDFs ([&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]]) are given to a normal UnbinnedNLL.  This won&#39;t take the yield into account and simply treat the PDFs as non-extended PDFs. To create an extended NLL, use the `ExtendedUnbinnedNLL`.
   warn_advanced_feature(
 </pre></div></div>
@@ -712,15 +713,15 @@ Extended PDFs ([&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  par
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7fb3199d04d0&gt;] constraints=[]&gt;
+&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7f173bae1090&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
-╒═════════╤═════════════╤══════════════════╤═════════╤═════════════╕
-│ valid   │ converged   │ param at limit   │ edm     │ min value   │
-╞═════════╪═════════════╪══════════════════╪═════════╪═════════════╡
-│ <span class="ansi-green-intense-bg">True</span>    │ True        │ False            │ 5.2e-06 │ -129185     │
-╘═════════╧═════════════╧══════════════════╧═════════╧═════════════╛
+╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════════╕
+│  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | internal) │
+╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════════╡
+│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 5.2e-06 │             -275181.55 | -129185 │
+╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name      value  (rounded)    at limit
@@ -730,7 +731,7 @@ sigma            0.0150308       False
 </pre></div></div>
 </div>
 <section id="Fixing-parameters">
-<h3>Fixing parameters<a class="headerlink" href="#Fixing-parameters" title="Permalink to this heading"></a></h3>
+<h3>Fixing parameters<a class="headerlink" href="#Fixing-parameters" title="Link to this heading"></a></h3>
 <p>Sometimes we want to fix parameters obtained from MC, such as tailes. Here we will fix the <code class="docutils literal notranslate"><span class="pre">sigma</span></code>, just for demonstration purpose.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
@@ -771,23 +772,23 @@ sigma            0.0150308       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7fb3199f4d90&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f173bad71d0&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
-╒═════════╤═════════════╤══════════════════╤═════════╤═════════════╕
-│ valid   │ converged   │ param at limit   │ edm     │ min value   │
-╞═════════╪═════════════╪══════════════════╪═════════╪═════════════╡
-│ <span class="ansi-green-intense-bg">True</span>    │ True        │ False            │ 0.00014 │ 9803.207    │
-╘═════════╧═════════════╧══════════════════╧═════════╧═════════════╛
+╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════════╕
+│  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | internal) │
+╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════════╡
+│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 2.4e-05 │             -2304.23 |  9829.933 │
+╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name         value  (rounded)    at limit
 ---------  ------------------  ----------
-bkg_yield             6011.69       False
-sig_yield             128.432       False
-lambda               -1.04779       False
-mu                    3.10658       False
+bkg_yield             6044.42       False
+sig_yield             107.336       False
+lambda              -0.912186       False
+mu                    3.09891       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -805,12 +806,12 @@ mu                    3.10658       False
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1180: ChangedFeatureWarning: The behavior of this functionality recently changed.To turn this warning off, use `zfit.settings.changed_warnings.hesse_name = False`  or &#39;all&#39; with `zfit.settings.changed_warnings.all = False
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1204: ChangedFeatureWarning: The behavior of this functionality recently changed.To turn this warning off, use `zfit.settings.changed_warnings.hesse_name = False`  or &#39;all&#39; with `zfit.settings.changed_warnings.all = False
 Default name of hesse (which is currently the method name such as `minuit_hesse`or `hesse_np`) has changed to `hesse` (it still adds the old one as well. This will be removed in the future). INSTRUCTIONS: to stay compatible,  change wherever you access the error to &#39;hesse&#39; (if you don&#39;t explicitly specify the name in hesse(...).
   warn_changed_feature(message, &#34;hesse_name&#34;)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1316: FutureWarning: &#39;minuit_minos&#39; will be changed as the default errors method to a custom implementationwith the same functionality. If you want to make sure that &#39;minuit_minos&#39; will be used in the future, add it explicitly as in `errors(method=&#39;minuit_minos&#39;)`
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1340: FutureWarning: &#39;minuit_minos&#39; will be changed as the default errors method to a custom implementationwith the same functionality. If you want to make sure that &#39;minuit_minos&#39; will be used in the future, add it explicitly as in `errors(method=&#39;minuit_minos&#39;)`
   warnings.warn(
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1337: ChangedFeatureWarning: The behavior of this functionality recently changed.To turn this warning off, use `zfit.settings.changed_warnings.errors_name = False`  or &#39;all&#39; with `zfit.settings.changed_warnings.all = False
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1361: ChangedFeatureWarning: The behavior of this functionality recently changed.To turn this warning off, use `zfit.settings.changed_warnings.errors_name = False`  or &#39;all&#39; with `zfit.settings.changed_warnings.all = False
 Default name of errors (which is currently the method name such as `minuit_minos`or `zfit_errors`) has changed to `errors`. Old names are still added as well for compatibility but will be removed in the future. INSTRUCTIONS: to stay compatible, change wherever you access the error to &#39;errors&#39; or specify the name explicitly in errors(...).
   warn_changed_feature(message, &#34;errors_name&#34;)
 </pre></div></div>
@@ -821,23 +822,23 @@ Default name of errors (which is currently the method name such as `minuit_minos
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 FitResult of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7fb3199f4d90&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f173bad71d0&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
-╒═════════╤═════════════╤══════════════════╤═════════╤═════════════╕
-│ valid   │ converged   │ param at limit   │ edm     │ min value   │
-╞═════════╪═════════════╪══════════════════╪═════════╪═════════════╡
-│ True    │ True        │ False            │ 0.00014 │ 9803.207    │
-╘═════════╧═════════════╧══════════════════╧═════════╧═════════════╛
+╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════════╕
+│  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | internal) │
+╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════════╡
+│  True   │    True     │      False       │ 2.4e-05 │             -2304.23 |  9829.933 │
+╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
 
 Parameters
 name         value  (rounded)        hesse               errors         minuit_minos    at limit
 ---------  ------------------  -----------  -------------------  -------------------  ----------
-bkg_yield             6011.69  +/-      81  -     81   +     80  -     81   +     80       False
-sig_yield             128.432  +/-      26  -     25   +     26  -     25   +     26       False
-lambda               -1.04779  +/-   0.065  -  0.064   +  0.065  -  0.064   +  0.065       False
-mu                    3.10658  +/-  0.0037  - 0.0038   + 0.0037  - 0.0038   + 0.0037       False
+bkg_yield             6044.42  +/-      81  -     80   +     82  -     80   +     82       False
+sig_yield             107.336  +/-      25  -     25   +     25  -     25   +     25       False
+lambda              -0.912186  +/-   0.064  -  0.065   +  0.064  -  0.065   +  0.064       False
+mu                    3.09891  +/-  0.0042  - 0.0043   + 0.0042  - 0.0043   + 0.0042       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -909,8 +910,8 @@ Z = \Phi^{-1}(1 - p_0).
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-p_value for the Null hypothesis = 2.8378805638773485e-08
-Significance (in units of sigma) = 5.4287264102326525
+p_value for the Null hypothesis = 2.655763928660626e-06
+Significance (in units of sigma) = 4.552091284639857
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -919,7 +920,7 @@ Significance (in units of sigma) = 5.4287264102326525
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(2.8378805638773485e-08, 5.4287264102326525)
+(2.655763928660626e-06, 4.552091284639857)
 </pre></div></div>
 </div>
 <p><strong>Exercise</strong> play around! First things first: repeat the fit. The difference we will see is statistical fluctuation from the resampling of the data; we take only a fraction at random.</p>

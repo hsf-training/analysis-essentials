@@ -14,12 +14,13 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/panels.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script><script defer data-domain="hepsoftwarefoundation.org" src="https://views.scientific-python.org/js/script.js"></script></script>
+        <script src="../_static/panels.js?v=0f4bdeea"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -466,7 +467,7 @@
            <div itemprop="articleBody">
              
   <section id="Classes">
-<h1>Classes<a class="headerlink" href="#Classes" title="Permalink to this heading"></a></h1>
+<h1>Classes<a class="headerlink" href="#Classes" title="Link to this heading"></a></h1>
 <p>In programming, classes, or more general OOP (Object Oriented Programing) is a fundamental paradigm (next to others, e.g. functional programming). It is powerful and e.g. Java is fully based on it. Python is a multi-paradigm (and multi-everything anyway) language, meaning there are classes, functions etc.</p>
 <p>However, classes play in Python an extremely important role - although one does not directly have to know about it - since actually every object in Python “comes from a class”. But we’re going ahead of things.</p>
 <p>Let’s start with an example problem</p>
@@ -664,7 +665,7 @@
 <p>The call to calculate the mass is still not perfect: We want something that - “feeds itself to the function called”. - is created through a function (“constructor”) - has attributes (better then this [’…’] accesing would be with the dot)</p>
 <p>…more like this: <code class="docutils literal notranslate"><span class="pre">particle1.calc_mass()</span></code></p>
 <section id="Welcome-to-classes">
-<h2>Welcome to classes<a class="headerlink" href="#Welcome-to-classes" title="Permalink to this heading"></a></h2>
+<h2>Welcome to classes<a class="headerlink" href="#Welcome-to-classes" title="Link to this heading"></a></h2>
 <p><strong>A class is a blueprint of an object</strong></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
@@ -780,7 +781,7 @@
 </div>
 </section>
 <section id="Inheritance:-a-glance">
-<h2>Inheritance: a glance<a class="headerlink" href="#Inheritance:-a-glance" title="Permalink to this heading"></a></h2>
+<h2>Inheritance: a glance<a class="headerlink" href="#Inheritance:-a-glance" title="Link to this heading"></a></h2>
 <p>Instead of completely rewriting <code class="docutils literal notranslate"><span class="pre">Particle</span></code>, we can also inherit the class from it. This means we “overtake” the parent class and add/replace certain fields.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
@@ -823,7 +824,7 @@ __main__.Particle
 </div>
 <p>We have one problem now: the particle is again a <code class="docutils literal notranslate"><span class="pre">Particle</span></code>, not a <code class="docutils literal notranslate"><span class="pre">VerboseParticle</span></code>. This is because we “hardcoded” the name into the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method.</p>
 <section id="How-to-fix">
-<h3>How to fix<a class="headerlink" href="#How-to-fix" title="Permalink to this heading"></a></h3>
+<h3>How to fix<a class="headerlink" href="#How-to-fix" title="Link to this heading"></a></h3>
 <p>Let’s first step back. We have seen quite a few things in this lecture. This was an introduction into classes in a minimal time. Classes are a powerful yet non-trivial concept that require to know a lot more than the simple behavior that we just looked at. There are many concepts - interfaces, multiple inheritance and MRO, inheritance vs composition, private vs public, getter and setter, stateful/stateless, classmethods and staticmethods, … - that we just did not cover here, as it takes a full
 fledged course on OOP to master these things.</p>
 <p>The problem above should make one thing clear: it is a powerful, yet difficult tool to use and without the proper knowledge, things can go wrong in completely unexpected corners; that’s why good software practices are not just a nice-to-have but a mandatory asset to guarantee the best-possible (most bugfree) codebase.</p>
