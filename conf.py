@@ -21,6 +21,7 @@ html_context = {
     'conf_py_path': '/',
 }
 
+
 html_static_path += [
     f'_static',
 ]
@@ -42,5 +43,10 @@ setup.extra_setup_funcs += [hsf_ci_setup]
 
 nbsphinx_execute = 'always'
 nbsphinx_timeout = 60*20
-# FIXME: This should be removed
-# nbsphinx_execute = 'never'
+
+_PLAUSIBLE_SNIPPET = '<script defer data-domain="hepsoftwarefoundation.org" src="https://views.scientific-python.org/js/script.js"></script>'
+
+old_setup = setup  # imported from conf.py
+def setup(app):
+    app.add_js_file(None, body=_PLAUSIBLE_SNIPPET)
+    old_setup(app)

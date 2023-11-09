@@ -1,6 +1,16 @@
 name: Build webpage
 
-on: [push, pull_request]
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  pull_request:
+  push:
+    tags:
+      - "*"
+    branches:
+      - master
 
 jobs:
   build-pages:
@@ -8,13 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - uses: conda-incubator/setup-miniconda@v2
         with:
           mamba-version: "*"
           channels: conda-forge,defaults
-          python-version: 3.8
+          python-version: 3.11
           environment-file: environment.yml
           activate-environment: analysis-essentials
 
