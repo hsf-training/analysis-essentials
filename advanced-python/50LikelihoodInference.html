@@ -19,7 +19,7 @@
         <script src="../_static/documentation_options.js?v=5929fcd5"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script><script defer data-domain="hepsoftwarefoundation.org" src="https://views.scientific-python.org/js/script.js"></script></script>
+        <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
         <script src="../_static/panels.js?v=0f4bdeea"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
@@ -713,7 +713,7 @@ Extended PDFs ([&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  par
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7efbd7b71310&gt;] constraints=[]&gt;
+&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7f08adfa6e90&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
@@ -772,23 +772,23 @@ sigma            0.0150308       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7efbd7b4ce90&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f08ae003d50&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
 ╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════════╕
 │  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | internal) │
 ╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════════╡
-│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 3.5e-05 │             -2294.12 |  9832.347 │
+│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 4.2e-06 │             -2296.78 |  9845.164 │
 ╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name         value  (rounded)    at limit
 ---------  ------------------  ----------
-bkg_yield             6008.52       False
-sig_yield             105.199       False
-lambda              -0.932648       False
-mu                    3.09986       False
+bkg_yield              5989.9       False
+sig_yield             144.094       False
+lambda              -0.867064       False
+mu                     3.0913       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -822,23 +822,23 @@ Default name of errors (which is currently the method name such as `minuit_minos
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 FitResult of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7efbd7b4ce90&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f08ae003d50&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
 ╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════════╕
 │  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | internal) │
 ╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════════╡
-│  True   │    True     │      False       │ 3.5e-05 │             -2294.12 |  9832.347 │
+│  True   │    True     │      False       │ 4.2e-06 │             -2296.78 |  9845.164 │
 ╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
 
 Parameters
 name         value  (rounded)        hesse               errors         minuit_minos    at limit
 ---------  ------------------  -----------  -------------------  -------------------  ----------
-bkg_yield             6008.52  +/-      81  -     80   +     82  -     80   +     82       False
-sig_yield             105.199  +/-      25  -     25   +     25  -     25   +     25       False
-lambda              -0.932648  +/-   0.065  -  0.065   +  0.064  -  0.065   +  0.064       False
-mu                    3.09986  +/-  0.0047  - 0.0049   + 0.0047  - 0.0049   + 0.0047       False
+bkg_yield              5989.9  +/-      81  -     80   +     81  -     80   +     81       False
+sig_yield             144.094  +/-      26  -     26   +     26  -     26   +     26       False
+lambda              -0.867064  +/-   0.065  -  0.065   +  0.064  -  0.065   +  0.064       False
+mu                     3.0913  +/-  0.0039  - 0.0039   + 0.0038  - 0.0039   + 0.0038       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -910,8 +910,8 @@ Z = \Phi^{-1}(1 - p_0).
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-p_value for the Null hypothesis = 3.953901831055262e-06
-Significance (in units of sigma) = 4.46766493596919
+p_value for the Null hypothesis = 1.04915476306644e-09
+Significance (in units of sigma) = 5.990007816434966
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -920,7 +920,7 @@ Significance (in units of sigma) = 4.46766493596919
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(3.953901831055262e-06, 4.46766493596919)
+(1.04915476306644e-09, 5.990007816434966)
 </pre></div></div>
 </div>
 <p><strong>Exercise</strong> play around! First things first: repeat the fit. The difference we will see is statistical fluctuation from the resampling of the data; we take only a fraction at random.</p>
