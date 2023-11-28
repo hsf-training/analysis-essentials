@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>8: Likelihood inference &mdash; Analysis essentials  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/hsf.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
+      <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -713,7 +715,7 @@ Extended PDFs ([&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  par
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7f08adfa6e90&gt;] constraints=[]&gt;
+&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7fbcf8e71b50&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
@@ -772,23 +774,23 @@ sigma            0.0150308       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f08ae003d50&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7fbcf0ac5590&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
 ╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════════╕
 │  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | internal) │
 ╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════════╡
-│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 4.2e-06 │             -2296.78 |  9845.164 │
+│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 2.4e-05 │             -2338.81 |  9804.947 │
 ╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name         value  (rounded)    at limit
 ---------  ------------------  ----------
-bkg_yield              5989.9       False
-sig_yield             144.094       False
-lambda              -0.867064       False
-mu                     3.0913       False
+bkg_yield             6019.62       False
+sig_yield             126.399       False
+lambda               -1.04872       False
+mu                    3.09438       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -822,23 +824,23 @@ Default name of errors (which is currently the method name such as `minuit_minos
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 FitResult of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f08ae003d50&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7fbcf0ac5590&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
 ╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════════╕
 │  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | internal) │
 ╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════════╡
-│  True   │    True     │      False       │ 4.2e-06 │             -2296.78 |  9845.164 │
+│  True   │    True     │      False       │ 2.4e-05 │             -2338.81 |  9804.947 │
 ╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
 
 Parameters
 name         value  (rounded)        hesse               errors         minuit_minos    at limit
 ---------  ------------------  -----------  -------------------  -------------------  ----------
-bkg_yield              5989.9  +/-      81  -     80   +     81  -     80   +     81       False
-sig_yield             144.094  +/-      26  -     26   +     26  -     26   +     26       False
-lambda              -0.867064  +/-   0.065  -  0.065   +  0.064  -  0.065   +  0.064       False
-mu                     3.0913  +/-  0.0039  - 0.0039   + 0.0038  - 0.0039   + 0.0038       False
+bkg_yield             6019.62  +/-      81  -     81   +     81  -     81   +     81       False
+sig_yield             126.399  +/-      26  -     25   +     26  -     25   +     26       False
+lambda               -1.04872  +/-   0.065  -  0.065   +  0.064  -  0.065   +  0.064       False
+mu                    3.09438  +/-  0.0044  - 0.0045   + 0.0043  - 0.0045   + 0.0043       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -910,8 +912,8 @@ Z = \Phi^{-1}(1 - p_0).
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-p_value for the Null hypothesis = 1.04915476306644e-09
-Significance (in units of sigma) = 5.990007816434966
+p_value for the Null hypothesis = 6.263464435996013e-08
+Significance (in units of sigma) = 5.285635234552657
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -920,7 +922,7 @@ Significance (in units of sigma) = 5.990007816434966
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(1.04915476306644e-09, 5.990007816434966)
+(6.263464435996013e-08, 5.285635234552657)
 </pre></div></div>
 </div>
 <p><strong>Exercise</strong> play around! First things first: repeat the fit. The difference we will see is statistical fluctuation from the resampling of the data; we take only a fraction at random.</p>
