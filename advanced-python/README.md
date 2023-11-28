@@ -15,9 +15,9 @@ a knowledge base that one can always come back to lock up things.
     12AdvancedClasses.ipynb
     20DataAndPlotting.ipynb
     30Classification.ipynb
-    4bModelTuning.ipynb
     31ClassificationExtension.ipynb
     32BoostingToUniformity.ipynb
+    33ModelTuning.ipynb
     40Histograms.ipynb
     45DemoReweighting.ipynb
     50LikelihoodInference.ipynb
