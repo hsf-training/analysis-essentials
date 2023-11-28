@@ -44,9 +44,13 @@ setup.extra_setup_funcs += [hsf_ci_setup]
 nbsphinx_execute = 'always'
 nbsphinx_timeout = 60*20
 
-_PLAUSIBLE_SNIPPET = '<script defer data-domain="hepsoftwarefoundation.org" src="https://views.scientific-python.org/js/script.js"></script>'
 
 old_setup = setup  # imported from conf.py
+
+
 def setup(app):
-    app.add_js_file(None, body=_PLAUSIBLE_SNIPPET)
+    app.add_js_file(
+        "https://views.scientific-python.org/js/script.js",
+        **{"defer": "defer", "data-domain": "hepsoftwarefoundation.org"}
+    )
     old_setup(app)
