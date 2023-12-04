@@ -13,6 +13,14 @@ able to follow the experiment-specific lessons that are taught afterwards.
 Contributions to the lessons are highly encouraged. Please see the
 [contributing guide][contributing] for details on how to participate.
 
+{% callout "HSF Software Training" %}
+
+This training module is part of the [HSF Software Training Center](https://hepsoftwarefoundation.org/training/curriculum.html),
+a series of training modules that serves HEP newcomers the software skills needed
+as they enter the field, and in parallel, instill best practices for writing software.
+
+{% endcallout %}
+
 ## Prerequisites
 
 There are two options for running these lessons. Running locally should be prefered on Linux and macOS as it is faster and makes it easier to save you work. On Windows it is likely easier to use Binder however care is needed to prevent notebooks being lost when the server is shut down.
