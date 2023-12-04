@@ -3,7 +3,7 @@
 from starterkit_ci.sphinx_config import *  # NOQA
 
 project = 'Analysis essentials'
-copyright = 'HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation'
+copyright = 'HSF CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on Software Carpentry (https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation'
 author = 'HSF'
 html_logo = 'hsf_logo_angled.png'
 
