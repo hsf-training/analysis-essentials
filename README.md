@@ -1,4 +1,4 @@
-# Analysis essentials [![Build Status]([https://github.com/hsf-training/analysis-essentials/actions/workflows/build.yml/badge.svg](https://github.com/hsf-training/analysis-essentials/actions/workflows/build.yml/badge.svg))](https://github.com/hsf-training/analysis-essentials/actions/workflows/build.yml/badge.svg) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/hsf-training/analysis-essentials/master)
+# Analysis essentials [![Build Status](https://github.com/hsf-training/analysis-essentials/actions/workflows/build.yml/badge.svg)](https://github.com/hsf-training/analysis-essentials/actions/workflows/build.yml/badge.svg) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/hsf-training/analysis-essentials/master)
 
 
 This is the source material for the [analysis essentials website][website], a
@@ -12,6 +12,14 @@ able to follow the experiment-specific lessons that are taught afterwards.
 
 Contributions to the lessons are highly encouraged. Please see the
 [contributing guide][contributing] for details on how to participate.
+
+{% callout "HSF Software Training" %}
+
+This training module is part of the [HSF Software Training Center](https://hepsoftwarefoundation.org/training/curriculum.html),
+a series of training modules that serves HEP newcomers the software skills needed
+as they enter the field, and in parallel, instill best practices for writing software.
+
+{% endcallout %}
 
 ## Prerequisites
 
