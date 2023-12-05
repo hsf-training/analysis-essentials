@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="7: Demonstration of distribution reweighting" href="45DemoReweighting.html" />
-    <link rel="prev" title="5: Boosting to Uniformity" href="32BoostingToUniformity.html" /> 
+    <link rel="prev" title="Model tuning setup" href="33ModelTuning.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -227,6 +227,10 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html">Model tuning setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#Cross-validation">Cross-validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#k-folding-&amp;-early-stopping"><span class="math notranslate nohighlight">\(k\)</span>-folding &amp; early stopping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#Hyperameter-optimisation">Hyperameter optimisation</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">6: Histograms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Axes">Axes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#Regular">Regular</a></li>
@@ -518,7 +522,7 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ColormeshArtists(pcolormesh=&lt;matplotlib.collections.QuadMesh object at 0x7ffadd7f7590&gt;, cbar=&lt;matplotlib.colorbar.Colorbar object at 0x7ffadd7ada90&gt;, text=[])
+ColormeshArtists(pcolormesh=&lt;matplotlib.collections.QuadMesh object at 0x7f225b12fe10&gt;, cbar=&lt;matplotlib.colorbar.Colorbar object at 0x7f225b0dec50&gt;, text=[])
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -643,7 +647,7 @@ Double() Σ=168384.0 <em>(168385.0 with flow)</em>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7ffadd7addd0&gt;, errorbar=&lt;ErrorbarContainer object of 3 artists&gt;, legend_artist=&lt;ErrorbarContainer object of 3 artists&gt;)]
+[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7f225af399d0&gt;, errorbar=&lt;ErrorbarContainer object of 3 artists&gt;, legend_artist=&lt;ErrorbarContainer object of 3 artists&gt;)]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -671,7 +675,7 @@ Double() Σ=168384.0 <em>(168385.0 with flow)</em>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7ffaafc07110&gt;, errorbar=&lt;ErrorbarContainer object of 3 artists&gt;, legend_artist=&lt;ErrorbarContainer object of 3 artists&gt;)]
+[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7f222ea819d0&gt;, errorbar=&lt;ErrorbarContainer object of 3 artists&gt;, legend_artist=&lt;ErrorbarContainer object of 3 artists&gt;)]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -696,7 +700,7 @@ Double() Σ=168384.0 <em>(168385.0 with flow)</em>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7ffaafaf4a90&gt;, errorbar=&lt;ErrorbarContainer object of 3 artists&gt;, legend_artist=&lt;ErrorbarContainer object of 3 artists&gt;)]
+[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7f222e910490&gt;, errorbar=&lt;ErrorbarContainer object of 3 artists&gt;, legend_artist=&lt;ErrorbarContainer object of 3 artists&gt;)]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1813,7 +1817,7 @@ Double() Σ=168383.0 <em>(168385.0 with flow)</em>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ColormeshArtists(pcolormesh=&lt;matplotlib.collections.QuadMesh object at 0x7ffaaf990b50&gt;, cbar=&lt;matplotlib.colorbar.Colorbar object at 0x7ffaaf9d3510&gt;, text=[])
+ColormeshArtists(pcolormesh=&lt;matplotlib.collections.QuadMesh object at 0x7f222ea23f90&gt;, cbar=&lt;matplotlib.colorbar.Colorbar object at 0x7f222e77ec50&gt;, text=[])
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -3537,7 +3541,7 @@ Double() Σ=734.0 <em>(735.0 with flow)</em>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7ffaaf9a7150&gt;, errorbar=None, legend_artist=None)]
+[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7f222c68a0d0&gt;, errorbar=None, legend_artist=None)]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -3562,7 +3566,7 @@ Double() Σ=734.0 <em>(735.0 with flow)</em>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7ffaafa27110&gt;, errorbar=None, legend_artist=None)]
+[StairsArtists(stairs=&lt;matplotlib.patches.StepPatch object at 0x7f222c6e91d0&gt;, errorbar=None, legend_artist=None)]
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -3703,8 +3707,8 @@ BDT
 <rect x="95.0000000000001" y="-25.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="100.00000000000009" y="-25.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="105.00000000000009" y="-25.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-25.0" width="5.0" height="12.5" opacity="0.0006742975493904343" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-25.0" width="5.0" height="12.5" opacity="0.0002250084163073123" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-25.0" width="5.0" height="12.5" opacity="0.0005908611688717569" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-25.0" width="5.0" height="12.5" opacity="0.0002246753998958271" fill="currentColor" stroke-width="0.1"/>
 <rect x="119.99999999999993" y="-25.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="125.00000000000009" y="-25.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="130.00000000000006" y="-25.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -3751,12 +3755,12 @@ BDT
 <rect x="84.99999999999996" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="95.0000000000001" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0003927678459419174" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.003038779172472728" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.009539000811147152" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.013322009988637485" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0026222621565199318" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.00020847669525719898" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0003967661732168027" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0030765182394547376" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.009066681763861826" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.013153079860199037" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0024711097377373443" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0002048368796137891" fill="currentColor" stroke-width="0.1"/>
 <rect x="130.00000000000006" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-37.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -3801,13 +3805,13 @@ BDT
 <rect x="84.99999999999996" y="-50.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-50.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="95.0000000000001" y="-50.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.00130562036734071" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.01777648746268099" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.06026035260352946" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-50.0" width="5.0" height="12.5" opacity="0.058819179991972295" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-50.0" width="5.0" height="12.5" opacity="0.020279597335031523" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.0014910082341150512" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-50.0" width="5.0" height="12.5" opacity="0.00021435017139733595" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.0012828414338483692" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.018033322390717404" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.058743982196656996" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-50.0" width="5.0" height="12.5" opacity="0.05884059163334069" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-50.0" width="5.0" height="12.5" opacity="0.02038959130451824" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.0014700401317643763" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-50.0" width="5.0" height="12.5" opacity="0.0002343523682507841" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-50.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-50.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-50.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -3851,13 +3855,13 @@ BDT
 <rect x="84.99999999999996" y="-62.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-62.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="95.0000000000001" y="-62.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.0014897846169496297" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.03646763643556574" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.12356668876176655" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-62.5" width="5.0" height="12.5" opacity="0.14765886288158844" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-62.5" width="5.0" height="12.5" opacity="0.05129788142368026" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.00536051419813944" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-62.5" width="5.0" height="12.5" opacity="0.00023635288607210182" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.0015550136245360195" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.036368282048405205" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.12359699078169896" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-62.5" width="5.0" height="12.5" opacity="0.14642531168954817" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-62.5" width="5.0" height="12.5" opacity="0.05090916039558148" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.0049303521719118925" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-62.5" width="5.0" height="12.5" opacity="0.0002496165961436807" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-62.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-62.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-62.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -3900,14 +3904,14 @@ BDT
 <rect x="79.99999999999994" y="-75.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-75.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-75.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-75.0" width="5.0" height="12.5" opacity="0.00020872087772448776" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.00651738380965942" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.068024469116784" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.2662486221919976" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-75.0" width="5.0" height="12.5" opacity="0.29591371435714653" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-75.0" width="5.0" height="12.5" opacity="0.10280773771716997" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.008948951746782393" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-75.0" width="5.0" height="12.5" opacity="0.0008491950650146118" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-75.0" width="5.0" height="12.5" opacity="0.0002102093639367882" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.006357703441071185" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.06728943771784443" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.26507147870928405" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-75.0" width="5.0" height="12.5" opacity="0.29670302321394726" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-75.0" width="5.0" height="12.5" opacity="0.10287970313566194" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.00910285497356812" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-75.0" width="5.0" height="12.5" opacity="0.0008390291373137692" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-75.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-75.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-75.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -3950,14 +3954,14 @@ BDT
 <rect x="79.99999999999994" y="-87.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-87.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-87.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-87.5" width="5.0" height="12.5" opacity="0.0006311267355766835" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.009835947039882095" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.12630950018678652" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.5090054237520568" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-87.5" width="5.0" height="12.5" opacity="0.6007928126933815" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-87.5" width="5.0" height="12.5" opacity="0.17953012827729767" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.019441483886365036" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-87.5" width="5.0" height="12.5" opacity="0.0015054634651464173" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-87.5" width="5.0" height="12.5" opacity="0.0006784532740649128" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.009655578480992669" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.12799540800473366" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.5100640211651175" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-87.5" width="5.0" height="12.5" opacity="0.6007825813547102" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-87.5" width="5.0" height="12.5" opacity="0.1793272986716493" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.01937311719162031" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-87.5" width="5.0" height="12.5" opacity="0.001449617230124992" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-87.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-87.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-87.5" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4001,13 +4005,13 @@ BDT
 <rect x="84.99999999999996" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="95.0000000000001" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.020078968929335906" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.20223906990737578" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.8761302105988317" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.02041757599060423" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.2024181838825261" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.8735314748003734" fill="currentColor" stroke-width="0.1"/>
 <rect x="115.00000000000007" y="-100.00000000000001" width="5.0" height="12.5" opacity="1.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.32435375108955955" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.028337516693579614" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0015581487500212169" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.3227440097035438" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.028326205940264984" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0014451655469071307" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-100.00000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4049,15 +4053,15 @@ BDT
 <rect x="74.9999999999998" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="79.99999999999994" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="90.0000000000001" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.00020969784936163434" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0016478586088849317" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.018598096477936376" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.20681925962134504" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.8117365278666551" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.9343097850869864" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.3169740612063548" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.037394530401770515" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0029827693247818296" fill="currentColor" stroke-width="0.1"/>
+<rect x="90.0000000000001" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0002431553461469819" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0015065937282603434" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.018305473296309462" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.20636673395636623" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.8126557063464146" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.9368077899422661" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.31681389071287813" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.037354791376965506" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0033582603728273294" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-112.50000000000001" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4100,14 +4104,14 @@ BDT
 <rect x="79.99999999999994" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0006413979961510666" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.020459252509377024" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.18750804673768" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.7028674345340205" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.8443269317803574" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.2838763486065618" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.03313103445751514" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0013056266771134567" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0006725142891952729" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.02059795121700543" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.1876904170626317" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.7006172384393893" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.8433193200187342" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.2826932534191665" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.03295372898650396" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0012661933558632552" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-125.00000000000003" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4150,15 +4154,15 @@ BDT
 <rect x="79.99999999999994" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.001736878047601386" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.019639647748369224" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.1687453680423566" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.6612665478712121" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.7816910680537418" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.26288380516825927" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.034047386292565" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0017219473960110722" fill="currentColor" stroke-width="0.1"/>
-<rect x="135.00000000000006" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.00024094492333369123" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0016765081056162316" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.019671660238940715" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.1687104360147076" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.6603021232231896" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.7814328143833411" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.26177406213855575" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.03390890510902545" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0017458603397662287" fill="currentColor" stroke-width="0.1"/>
+<rect x="135.00000000000006" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.00021205987341466772" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="149.99999999999991" y="-137.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4200,14 +4204,14 @@ BDT
 <rect x="79.99999999999994" y="-150.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-150.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-150.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-150.0" width="5.0" height="12.5" opacity="0.0008713394502460351" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.017350804577283493" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.1639663342525873" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.574480342947144" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-150.0" width="5.0" height="12.5" opacity="0.6795966072511377" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-150.0" width="5.0" height="12.5" opacity="0.24496175477521162" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.028985996875871018" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-150.0" width="5.0" height="12.5" opacity="0.0024376576868841066" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-150.0" width="5.0" height="12.5" opacity="0.0007951721974397117" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.01767882466115751" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.1626694920509494" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.5727988556869785" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-150.0" width="5.0" height="12.5" opacity="0.6782555362867458" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-150.0" width="5.0" height="12.5" opacity="0.24537166298465754" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.028649278441653343" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-150.0" width="5.0" height="12.5" opacity="0.0024074175922025776" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-150.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-150.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-150.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4250,15 +4254,15 @@ BDT
 <rect x="79.99999999999994" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0010785509811303837" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.01758135235992817" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.15779854090859993" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.5543532855704494" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.6354011406017986" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.24983154478500064" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.03543837400101513" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.002958159213309748" fill="currentColor" stroke-width="0.1"/>
-<rect x="135.00000000000006" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.00021081068574015742" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.001075330879306941" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.01781690078360447" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.15610638830589502" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.5526102100689705" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.633653365543491" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.2505186484502263" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.034720331767550634" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.003077290142213982" fill="currentColor" stroke-width="0.1"/>
+<rect x="135.00000000000006" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.00022038784920840876" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="149.99999999999991" y="-162.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4299,15 +4303,15 @@ BDT
 <rect x="74.9999999999998" y="-175.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="79.99999999999994" y="-175.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-175.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="90.0000000000001" y="-175.0" width="5.0" height="12.5" opacity="0.00022133530901254688" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-175.0" width="5.0" height="12.5" opacity="0.0025778470362827917" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.018071041585534277" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.14562167148012806" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.48933406811690944" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-175.0" width="5.0" height="12.5" opacity="0.5495160096915093" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-175.0" width="5.0" height="12.5" opacity="0.2248021902086674" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.03238854852189762" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-175.0" width="5.0" height="12.5" opacity="0.0026064171925547475" fill="currentColor" stroke-width="0.1"/>
+<rect x="90.0000000000001" y="-175.0" width="5.0" height="12.5" opacity="0.00023722900155397962" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-175.0" width="5.0" height="12.5" opacity="0.002563181414829445" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.01800099888987844" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.1447621594824284" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.4874763500643048" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-175.0" width="5.0" height="12.5" opacity="0.5500247714791552" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-175.0" width="5.0" height="12.5" opacity="0.22496006579819416" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.03233549283112389" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-175.0" width="5.0" height="12.5" opacity="0.0026012773954315047" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-175.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-175.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-175.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4350,14 +4354,14 @@ BDT
 <rect x="79.99999999999994" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="90.0000000000001" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0017620522441142987" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.02530281392270457" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.14891048562735743" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.4770509193353012" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.5921107407234757" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.233545304926068" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.04378896674373958" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.003907591360839277" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.001575839142065941" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.02529006019210265" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.1483716962231531" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.4756386452808991" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.5921496634307372" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.23340496481175615" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.043700446818255696" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.003980294321522657" fill="currentColor" stroke-width="0.1"/>
 <rect x="135.00000000000006" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-187.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4399,16 +4403,16 @@ BDT
 <rect x="74.9999999999998" y="-200.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="79.99999999999994" y="-200.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-200.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="90.0000000000001" y="-200.0" width="5.0" height="12.5" opacity="0.00023683265593120857" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-200.0" width="5.0" height="12.5" opacity="0.0025692029350111788" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.024131228017525926" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.15022055329353107" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.4785178545963891" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-200.0" width="5.0" height="12.5" opacity="0.5189874723229523" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-200.0" width="5.0" height="12.5" opacity="0.2084112536348525" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.03864372624822014" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-200.0" width="5.0" height="12.5" opacity="0.0062252759788894935" fill="currentColor" stroke-width="0.1"/>
-<rect x="135.00000000000006" y="-200.0" width="5.0" height="12.5" opacity="0.0006530875361380223" fill="currentColor" stroke-width="0.1"/>
+<rect x="90.0000000000001" y="-200.0" width="5.0" height="12.5" opacity="0.00021738974509219827" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-200.0" width="5.0" height="12.5" opacity="0.002699371636814891" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.02427108107338919" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.15101848829486164" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.47499296348326114" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-200.0" width="5.0" height="12.5" opacity="0.5180260955389417" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-200.0" width="5.0" height="12.5" opacity="0.2089748708170869" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.038644281203432405" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-200.0" width="5.0" height="12.5" opacity="0.006267922003418444" fill="currentColor" stroke-width="0.1"/>
+<rect x="135.00000000000006" y="-200.0" width="5.0" height="12.5" opacity="0.0006009152084007924" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-200.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-200.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="149.99999999999991" y="-200.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4449,16 +4453,16 @@ BDT
 <rect x="74.9999999999998" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="79.99999999999994" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="90.0000000000001" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0002458879046173532" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.003557410593255023" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.02720697966833997" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.14544697050650396" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.4611024797981418" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.5225890122989147" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.21860794934797634" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.041200145064718" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0033407533993528604" fill="currentColor" stroke-width="0.1"/>
-<rect x="135.00000000000006" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0003720235694801145" fill="currentColor" stroke-width="0.1"/>
+<rect x="90.0000000000001" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0001819628380607651" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.003383498815038103" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.02732744387242125" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.1458503317230925" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.4605871585723208" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.5228025804578698" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.21926035616222667" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.04080811645052527" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.003439828775548918" fill="currentColor" stroke-width="0.1"/>
+<rect x="135.00000000000006" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0004714635783960025" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="149.99999999999991" y="-212.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4499,16 +4503,16 @@ BDT
 <rect x="74.9999999999998" y="-225.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="79.99999999999994" y="-225.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="84.99999999999996" y="-225.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="90.0000000000001" y="-225.0" width="5.0" height="12.5" opacity="0.0004485180397498042" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-225.0" width="5.0" height="12.5" opacity="0.004791677200009962" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.03316115526794547" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.15657003842344452" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.4590568974371922" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-225.0" width="5.0" height="12.5" opacity="0.5315667432082315" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-225.0" width="5.0" height="12.5" opacity="0.22378013481994175" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.05705069473351893" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-225.0" width="5.0" height="12.5" opacity="0.007338222292869852" fill="currentColor" stroke-width="0.1"/>
-<rect x="135.00000000000006" y="-225.0" width="5.0" height="12.5" opacity="0.0008100063314273923" fill="currentColor" stroke-width="0.1"/>
+<rect x="90.0000000000001" y="-225.0" width="5.0" height="12.5" opacity="0.00041720280213798617" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-225.0" width="5.0" height="12.5" opacity="0.005025402715764666" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.03266434514500771" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.15566347083369356" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.45966710475055056" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-225.0" width="5.0" height="12.5" opacity="0.53170512301775" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-225.0" width="5.0" height="12.5" opacity="0.2227809972932576" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.05820405927411509" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-225.0" width="5.0" height="12.5" opacity="0.006824553195955987" fill="currentColor" stroke-width="0.1"/>
+<rect x="135.00000000000006" y="-225.0" width="5.0" height="12.5" opacity="0.0008075136203117878" fill="currentColor" stroke-width="0.1"/>
 <rect x="140.00000000000006" y="-225.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-225.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="149.99999999999991" y="-225.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4548,18 +4552,18 @@ BDT
 <rect x="70.0000000000001" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="74.9999999999998" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="79.99999999999994" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="84.99999999999996" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.000508038740750301" fill="currentColor" stroke-width="0.1"/>
-<rect x="90.0000000000001" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0004654749756226366" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.008747351766918404" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.05265890003483373" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.21117231895006183" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.5191018777616889" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.5781847958650495" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.28525192601320826" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0750931992480432" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.014367532957284218" fill="currentColor" stroke-width="0.1"/>
-<rect x="135.00000000000006" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0027679243807970048" fill="currentColor" stroke-width="0.1"/>
-<rect x="140.00000000000006" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0003746368706038034" fill="currentColor" stroke-width="0.1"/>
+<rect x="84.99999999999996" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0004544188485402357" fill="currentColor" stroke-width="0.1"/>
+<rect x="90.0000000000001" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0004605537848491894" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.008740397972849437" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.052548729823687995" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.2106192624731403" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.5190056616637703" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.5779372822004667" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.284455739510123" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.07518672495308952" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.014479741646961693" fill="currentColor" stroke-width="0.1"/>
+<rect x="135.00000000000006" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.002763639230973001" fill="currentColor" stroke-width="0.1"/>
+<rect x="140.00000000000006" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.00038884682272352655" fill="currentColor" stroke-width="0.1"/>
 <rect x="145.00000000000009" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="149.99999999999991" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="155.00000000000006" y="-237.49999999999997" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4596,24 +4600,24 @@ BDT
 <rect x="59.999999999999964" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="65.00000000000011" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="70.0000000000001" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="74.9999999999998" y="-250.0" width="5.0" height="12.5" opacity="0.00020497747054385926" fill="currentColor" stroke-width="0.1"/>
+<rect x="74.9999999999998" y="-250.0" width="5.0" height="12.5" opacity="0.00018094060841717565" fill="currentColor" stroke-width="0.1"/>
 <rect x="79.99999999999994" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="84.99999999999996" y="-250.0" width="5.0" height="12.5" opacity="0.0016852287263674696" fill="currentColor" stroke-width="0.1"/>
-<rect x="90.0000000000001" y="-250.0" width="5.0" height="12.5" opacity="0.005622181582845249" fill="currentColor" stroke-width="0.1"/>
-<rect x="95.0000000000001" y="-250.0" width="5.0" height="12.5" opacity="0.021211099869947146" fill="currentColor" stroke-width="0.1"/>
-<rect x="100.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.07179392343739097" fill="currentColor" stroke-width="0.1"/>
-<rect x="105.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.20810792973787645" fill="currentColor" stroke-width="0.1"/>
-<rect x="110.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.4967517748127741" fill="currentColor" stroke-width="0.1"/>
-<rect x="115.00000000000007" y="-250.0" width="5.0" height="12.5" opacity="0.5592102762424667" fill="currentColor" stroke-width="0.1"/>
-<rect x="119.99999999999993" y="-250.0" width="5.0" height="12.5" opacity="0.2883816612488668" fill="currentColor" stroke-width="0.1"/>
-<rect x="125.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.09643169851595237" fill="currentColor" stroke-width="0.1"/>
-<rect x="130.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.02678391811872909" fill="currentColor" stroke-width="0.1"/>
-<rect x="135.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.005342846923959867" fill="currentColor" stroke-width="0.1"/>
-<rect x="140.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.0023299293036954986" fill="currentColor" stroke-width="0.1"/>
-<rect x="145.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.0003883604576508885" fill="currentColor" stroke-width="0.1"/>
-<rect x="149.99999999999991" y="-250.0" width="5.0" height="12.5" opacity="0.0006609478778290917" fill="currentColor" stroke-width="0.1"/>
+<rect x="84.99999999999996" y="-250.0" width="5.0" height="12.5" opacity="0.0016988713309325145" fill="currentColor" stroke-width="0.1"/>
+<rect x="90.0000000000001" y="-250.0" width="5.0" height="12.5" opacity="0.005684080090038014" fill="currentColor" stroke-width="0.1"/>
+<rect x="95.0000000000001" y="-250.0" width="5.0" height="12.5" opacity="0.02135407144199252" fill="currentColor" stroke-width="0.1"/>
+<rect x="100.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.07132919599166096" fill="currentColor" stroke-width="0.1"/>
+<rect x="105.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.2098715818189424" fill="currentColor" stroke-width="0.1"/>
+<rect x="110.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.4970639660175561" fill="currentColor" stroke-width="0.1"/>
+<rect x="115.00000000000007" y="-250.0" width="5.0" height="12.5" opacity="0.5575641814095595" fill="currentColor" stroke-width="0.1"/>
+<rect x="119.99999999999993" y="-250.0" width="5.0" height="12.5" opacity="0.2873437245924929" fill="currentColor" stroke-width="0.1"/>
+<rect x="125.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.09493730037798752" fill="currentColor" stroke-width="0.1"/>
+<rect x="130.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.02743693327329442" fill="currentColor" stroke-width="0.1"/>
+<rect x="135.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.0054465322193521975" fill="currentColor" stroke-width="0.1"/>
+<rect x="140.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.0023625544160382535" fill="currentColor" stroke-width="0.1"/>
+<rect x="145.00000000000009" y="-250.0" width="5.0" height="12.5" opacity="0.00043697355298052645" fill="currentColor" stroke-width="0.1"/>
+<rect x="149.99999999999991" y="-250.0" width="5.0" height="12.5" opacity="0.0006696121548219364" fill="currentColor" stroke-width="0.1"/>
 <rect x="155.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
-<rect x="160.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.00022290629657450176" fill="currentColor" stroke-width="0.1"/>
+<rect x="160.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.0001997984653522198" fill="currentColor" stroke-width="0.1"/>
 <rect x="165.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="169.99999999999991" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
 <rect x="175.00000000000006" y="-250.0" width="5.0" height="12.5" opacity="0.0" fill="currentColor" stroke-width="0.1"/>
@@ -4637,7 +4641,7 @@ BDT
 Regular(50, 2.75, 3.5, name='mass')<br/>
 Regular(20, 0.026503, 0.993653, name='BDT')<br/>
 <hr style="margin-top:.2em; margin-bottom:.2em;"/>
-Weight() Σ=WeightedSum(value=119937, variance=121100) <em>(WeightedSum(value=119996, variance=121159) with flow)</em>
+Weight() Σ=WeightedSum(value=119979, variance=121186) <em>(WeightedSum(value=120037, variance=121243) with flow)</em>
 
 </div>
 </div>
@@ -4736,7 +4740,7 @@ array([[0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 9.10684983e-01],
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 7.11808036e-01],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
@@ -4746,72 +4750,72 @@ array([[0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 2.79741173e+00, 7.74188613e+00],
+        0.00000000e+00, 0.00000000e+00, 2.24487689e+00, 7.85882089e+00],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        9.53111850e-01, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 1.06183569e+00, 0.00000000e+00, 1.21573547e+00,
-        1.31047955e+00, 2.18145621e+00, 2.36209258e+00, 2.65239522e+01],
+        1.28545962e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
+        0.00000000e+00, 1.22356306e+00, 0.00000000e+00, 1.02746941e+00,
+        7.19873519e-01, 1.95465730e+00, 2.30909340e+00, 2.72702804e+01],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 9.44251538e-01, 2.88713398e+00, 0.00000000e+00,
-        8.45066071e+00, 3.02332355e+00, 8.26904642e+00, 4.14772005e+00,
-        5.14308661e+00, 1.20718638e+01, 8.48223904e+00, 1.19994277e+01,
-        1.72882288e+01, 2.18258041e+01, 4.17996096e+01, 9.85537295e+01],
-       [0.00000000e+00, 0.00000000e+00, 1.68304711e+00, 6.18935957e+00,
-        6.96520605e+00, 3.20216689e+01, 4.60612194e+01, 9.38953470e+01,
-        8.80652470e+01, 9.56532494e+01, 9.27854584e+01, 8.03515963e+01,
-        8.24784486e+01, 8.52023024e+01, 1.18724314e+02, 1.14080313e+02,
-        1.27318908e+02, 1.57455060e+02, 2.47900738e+02, 3.36633323e+02],
-       [0.00000000e+00, 0.00000000e+00, 1.44606217e+01, 8.34145105e+01,
-        1.71492313e+02, 3.22363384e+02, 5.89101908e+02, 9.48758269e+02,
-        9.75152472e+02, 8.79804992e+02, 7.87249949e+02, 7.74013956e+02,
-        7.42999832e+02, 6.83870535e+02, 7.01215618e+02, 7.01124779e+02,
-        6.81486058e+02, 7.36868198e+02, 9.95957304e+02, 9.72624665e+02],
-       [0.00000000e+00, 3.29424059e+00, 4.61320215e+01, 2.86908330e+02,
-        5.79941174e+02, 1.25153951e+03, 2.38814914e+03, 4.11956879e+03,
-        3.81596897e+03, 3.30952919e+03, 3.10517725e+03, 2.69929146e+03,
-        2.60423565e+03, 2.30782398e+03, 2.24876298e+03, 2.25875511e+03,
-        2.16848271e+03, 2.15167584e+03, 2.43969324e+03, 2.32950360e+03],
-       [0.00000000e+00, 1.09737091e+00, 6.25858881e+01, 2.76626124e+02,
-        6.96458559e+02, 1.38692299e+03, 2.82469706e+03, 4.69725477e+03,
-        4.38981243e+03, 3.97418684e+03, 3.68156843e+03, 3.19575908e+03,
-        2.99205433e+03, 2.58022263e+03, 2.77877407e+03, 2.43990852e+03,
-        2.45380774e+03, 2.50145310e+03, 2.71663416e+03, 2.62867588e+03],
-       [0.00000000e+00, 0.00000000e+00, 1.25776872e+01, 9.57191748e+01,
-        2.39925507e+02, 4.81217701e+02, 8.45705493e+02, 1.52444633e+03,
-        1.49107019e+03, 1.33735860e+03, 1.23871453e+03, 1.15108587e+03,
-        1.17148366e+03, 1.05470074e+03, 1.09502003e+03, 9.79475424e+02,
-        1.02190107e+03, 1.05391040e+03, 1.33966776e+03, 1.35876669e+03],
-       [0.00000000e+00, 0.00000000e+00, 9.42043472e-01, 6.96800348e+00,
-        2.62515463e+01, 4.17210517e+01, 9.21369793e+01, 1.32324172e+02,
-        1.75748093e+02, 1.56917216e+02, 1.59926647e+02, 1.36242109e+02,
-        1.67337375e+02, 1.50988413e+02, 2.05855126e+02, 1.81559336e+02,
-        1.94425224e+02, 2.66846824e+02, 3.51713065e+02, 4.57783748e+02],
-       [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 9.95872148e-01,
-        1.21081484e+00, 3.95013135e+00, 7.09492786e+00, 7.56748884e+00,
-        1.30331969e+01, 6.19475258e+00, 8.07872281e+00, 1.18482636e+01,
-        1.37234047e+01, 1.23181737e+01, 1.85277758e+01, 2.92038002e+01,
-        1.52673780e+01, 3.55826663e+01, 6.63087401e+01, 1.23699419e+02],
-       [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 1.25832109e+00, 0.00000000e+00,
-        9.63254747e-01, 0.00000000e+00, 0.00000000e+00, 3.12235888e+00,
-        1.53224368e+00, 3.56613300e+00, 1.28596399e+01, 2.51844033e+01],
+        0.00000000e+00, 9.60715749e-01, 3.41624383e+00, 0.00000000e+00,
+        7.05968847e+00, 3.29351927e+00, 7.74497127e+00, 3.46705660e+00,
+        5.09690537e+00, 1.19645327e+01, 6.85968025e+00, 1.33679243e+01,
+        1.57783868e+01, 2.40483462e+01, 4.17592337e+01, 1.00253414e+02],
+       [0.00000000e+00, 0.00000000e+00, 1.71217488e+00, 6.06557184e+00,
+        7.53873523e+00, 3.05171229e+01, 4.45205112e+01, 9.71539430e+01,
+        8.56081055e+01, 9.70010174e+01, 9.34391992e+01, 8.36875434e+01,
+        8.50011740e+01, 8.45660782e+01, 1.18953693e+02, 1.15375552e+02,
+        1.29006672e+02, 1.53200064e+02, 2.47482033e+02, 3.33230323e+02],
+       [0.00000000e+00, 0.00000000e+00, 1.48027212e+01, 8.60605250e+01,
+        1.70810855e+02, 3.16491055e+02, 6.06014001e+02, 9.52494677e+02,
+        9.73914171e+02, 8.84210063e+02, 7.89280152e+02, 7.64216452e+02,
+        7.30442274e+02, 6.78988431e+02, 6.98071786e+02, 7.11437696e+02,
+        6.88054501e+02, 7.30976827e+02, 9.93098395e+02, 9.91173843e+02],
+       [0.00000000e+00, 2.54463953e+00, 4.18512816e+01, 2.73344691e+02,
+        5.82455461e+02, 1.24488814e+03, 2.40710746e+03, 4.10719444e+03,
+        3.83497252e+03, 3.29754425e+03, 3.10627320e+03, 2.68938450e+03,
+        2.59539009e+03, 2.29797742e+03, 2.24358645e+03, 2.23311868e+03,
+        2.17077596e+03, 2.16465686e+03, 2.44733345e+03, 2.33957550e+03],
+       [0.00000000e+00, 1.09749321e+00, 6.13776213e+01, 2.77451038e+02,
+        6.86334836e+02, 1.39891536e+03, 2.83442547e+03, 4.71155365e+03,
+        4.42507966e+03, 3.97649616e+03, 3.68914293e+03, 3.19207268e+03,
+        2.98475107e+03, 2.59318399e+03, 2.78820930e+03, 2.43822042e+03,
+        2.46236600e+03, 2.51144617e+03, 2.72310205e+03, 2.62170925e+03],
+       [0.00000000e+00, 0.00000000e+00, 1.11721422e+01, 9.69810136e+01,
+        2.36932793e+02, 4.83252101e+02, 8.46331084e+02, 1.51454113e+03,
+        1.49376904e+03, 1.32993106e+03, 1.23223087e+03, 1.15788521e+03,
+        1.18387311e+03, 1.05985175e+03, 1.09772494e+03, 9.87485490e+02,
+        1.03141955e+03, 1.04778645e+03, 1.33525667e+03, 1.35373825e+03],
+       [0.00000000e+00, 0.00000000e+00, 9.12235768e-01, 6.73371337e+00,
+        2.21988542e+01, 4.32222408e+01, 9.13445760e+01, 1.32362331e+02,
+        1.76046476e+02, 1.55643825e+02, 1.59069493e+02, 1.33523348e+02,
+        1.61313421e+02, 1.51019594e+02, 2.05778806e+02, 1.82051912e+02,
+        1.91202181e+02, 2.78232365e+02, 3.53950646e+02, 4.45726919e+02],
+       [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 1.19406918e+00,
+        1.35468308e+00, 3.84957735e+00, 6.62374206e+00, 6.54295099e+00,
+        1.64966670e+01, 5.86291671e+00, 8.36424594e+00, 1.15202946e+01,
+        1.48864214e+01, 1.23950701e+01, 1.93022679e+01, 2.98027130e+01,
+        1.61919812e+01, 3.09685710e+01, 6.79245651e+01, 1.30441966e+02],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 1.54332648e+00, 1.07622270e+01],
+        0.00000000e+00, 0.00000000e+00, 9.77704895e-01, 0.00000000e+00,
+        1.05600527e+00, 0.00000000e+00, 0.00000000e+00, 2.64398499e+00,
+        2.41863804e+00, 3.61489662e+00, 1.29021650e+01, 2.60009982e+01],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 1.63542026e+00],
+        0.00000000e+00, 0.00000000e+00, 1.64395150e+00, 1.11265858e+01],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 3.17061091e+00],
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 2.10185059e+00],
+       [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 3.26265875e+00],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
@@ -4821,7 +4825,7 @@ array([[0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
-        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 1.07696252e+00],
+        0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 8.67910795e-01],
        [0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
         0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
@@ -4925,7 +4929,7 @@ array([[0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="32BoostingToUniformity.html" class="btn btn-neutral float-left" title="5: Boosting to Uniformity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="33ModelTuning.html" class="btn btn-neutral float-left" title="Model tuning setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="45DemoReweighting.html" class="btn btn-neutral float-right" title="7: Demonstration of distribution reweighting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

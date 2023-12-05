@@ -227,6 +227,10 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html">Model tuning setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#Cross-validation">Cross-validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#k-folding-&amp;-early-stopping"><span class="math notranslate nohighlight">\(k\)</span>-folding &amp; early stopping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#Hyperameter-optimisation">Hyperameter optimisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="40Histograms.html">6: Histograms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Axes">Axes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="40Histograms.html#Regular">Regular</a></li>
@@ -631,11 +635,11 @@ KS over  mu_pt_sum  =  0.21639364439970188
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.5156855920397914
-KS over  pt_b  =  0.21655790049539936
-KS over  pt_phi  =  0.40098759203992257
-KS over  vchi2_b  =  0.4008577412873192
-KS over  mu_pt_sum  =  0.21655790049539936
+KS over  hSPD  =  0.5189031442785965
+KS over  pt_b  =  0.21864335323219553
+KS over  pt_phi  =  0.4040172437812535
+KS over  vchi2_b  =  0.40197332337688885
+KS over  mu_pt_sum  =  0.21864335323219553
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -661,11 +665,11 @@ KS over  mu_pt_sum  =  0.21655790049539936
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.5349948352919339
-KS over  pt_b  =  0.2186267423985006
-KS over  pt_phi  =  0.40570017944398995
-KS over  vchi2_b  =  0.4190193199037889
-KS over  mu_pt_sum  =  0.2186267423985006
+KS over  hSPD  =  0.5248047931356201
+KS over  pt_b  =  0.21013963551546289
+KS over  pt_phi  =  0.3981443846296356
+KS over  vchi2_b  =  0.4141894232427642
+KS over  mu_pt_sum  =  0.21013963551546289
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -706,11 +710,11 @@ KS over  mu_pt_sum  =  0.2186267423985006
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.422441714758149
-KS over  pt_b  =  0.12677696816879896
-KS over  pt_phi  =  0.28474973396506753
-KS over  vchi2_b  =  0.35898454615318415
-KS over  mu_pt_sum  =  0.12677696816879896
+KS over  hSPD  =  0.41866212978423195
+KS over  pt_b  =  0.11142920724900418
+KS over  pt_phi  =  0.2842441175357383
+KS over  vchi2_b  =  0.3584318420399073
+KS over  mu_pt_sum  =  0.11142920724900418
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -745,11 +749,11 @@ KS over  mu_pt_sum  =  0.12677696816879896
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.03217169466295844
-KS over  pt_b  =  0.025191053763857663
-KS over  pt_phi  =  0.01655078927147796
-KS over  vchi2_b  =  0.019564308695496885
-KS over  mu_pt_sum  =  0.025191053763857663
+KS over  hSPD  =  0.065155691421791
+KS over  pt_b  =  0.02412255682087794
+KS over  pt_phi  =  0.02219092215534907
+KS over  vchi2_b  =  0.03718234599982073
+KS over  mu_pt_sum  =  0.02412255682087794
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -792,9 +796,9 @@ KS over  mu_pt_sum  =  0.025191053763857663
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.5349948352919339
-Bins reweight KS: 0.422441714758149
-GB Reweight   KS: 0.03217169466295844
+No reweight   KS: 0.5248047931356201
+Bins reweight KS: 0.41866212978423195
+GB Reweight   KS: 0.065155691421791
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -810,9 +814,9 @@ GB Reweight   KS: 0.03217169466295844
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.0926377791458517
-Bins reweight KS: 0.11704096606996
-GB Reweight   KS: 0.015420404242764474
+No reweight   KS: 0.08735009774315758
+Bins reweight KS: 0.11134749546025266
+GB Reweight   KS: 0.027136127025454204
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -828,9 +832,9 @@ GB Reweight   KS: 0.015420404242764474
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.3840710595045477
-Bins reweight KS: 0.35116495983828233
-GB Reweight   KS: 0.02535331811437247
+No reweight   KS: 0.38024835105456145
+Bins reweight KS: 0.3451427468147462
+GB Reweight   KS: 0.053086205978590484
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -846,9 +850,9 @@ GB Reweight   KS: 0.02535331811437247
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.48524080917727963
-Bins reweight KS: 0.38830084545483246
-GB Reweight   KS: 0.026489082799482734
+No reweight   KS: 0.48169954374173374
+Bins reweight KS: 0.38796053715637735
+GB Reweight   KS: 0.024396047566916143
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -864,9 +868,9 @@ GB Reweight   KS: 0.026489082799482734
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.500734019400126
-Bins reweight KS: 0.40922205373573045
-GB Reweight   KS: 0.032198216282448566
+No reweight   KS: 0.4983756892378554
+Bins reweight KS: 0.40988423969268584
+GB Reweight   KS: 0.02699910637948144
 </pre></div></div>
 </div>
 </section>
@@ -907,9 +911,9 @@ GB Reweight   KS: 0.032198216282448566
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-original 0.9386297176409792
-bins 0.9144644309485523
-gb_weights 0.5019282739727966
+original 0.9374592570494621
+bins 0.9115125171263688
+gb_weights 0.501844760405895
 </pre></div></div>
 </div>
 <section id="Great!">
@@ -963,7 +967,7 @@ Text(0.5, 1.0, &#39;predicted weights&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(758.6517790501049, 70277.66517397111)
+(871.7682168272794, 70182.19010706048)
 </pre></div></div>
 </div>
 <p>With such a high weight for a single event, this does not look desireable. And be aware of ad-hoc solutions: just clipping or removing weights is completely <strong>wrong</strong> as this would disturb the distribution completely.</p>
@@ -1007,11 +1011,11 @@ Text(0.5, 1.0, &#39;predicted weights&#39;)
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 KFold prediction using folds column
-KS over  hSPD  =  0.3074714594016793
-KS over  pt_b  =  0.1806792562204062
-KS over  pt_phi  =  0.3075349572920717
-KS over  vchi2_b  =  0.2979131637598553
-KS over  mu_pt_sum  =  0.1806792562204062
+KS over  hSPD  =  0.3065739491440109
+KS over  pt_b  =  0.18089826446734364
+KS over  pt_phi  =  0.30837164172605774
+KS over  vchi2_b  =  0.2992482815935028
+KS over  mu_pt_sum  =  0.18089826446734364
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1050,8 +1054,8 @@ KS over  mu_pt_sum  =  0.1806792562204062
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-original 0.9370274619025954
-2-folding 0.8260994325408639
+original 0.9367973434735825
+2-folding 0.8258958058413335
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
