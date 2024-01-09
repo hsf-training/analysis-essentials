@@ -29,7 +29,12 @@ repos:
 #      - id: black
 #        args: [ --line-length=120 ]
 #
-  - repo: https://github.com/roy-ht/pre-commit-jupyter
-    rev: v1.2.1
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.6.1
     hooks:
-      - id: jupyter-notebook-cleanup
+      - id: nbstripout
+
+#  - repo: https://github.com/roy-ht/pre-commit-jupyter
+#    rev: v1.2.1
+#    hooks:
+#      - id: jupyter-notebook-cleanup
