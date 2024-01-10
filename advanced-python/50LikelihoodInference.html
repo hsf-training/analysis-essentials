@@ -719,7 +719,7 @@ Extended PDFs ([&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  par
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7ff7725399d0&gt;] constraints=[]&gt;
+&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7fc3f595e5d0&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
@@ -778,23 +778,23 @@ sigma            0.0150308       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7ff772573e50&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7fc3f59bd310&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
-╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════════╕
-│  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | internal) │
-╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════════╡
-│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 4.6e-06 │                -2315.70 |   9829 │
-╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
+╒═════════╤═════════════╤══════════════════╤═══════╤══════════════════════════════════╕
+│  valid  │  converged  │  param at limit  │  edm  │   approx. fmin (full | internal) │
+╞═════════╪═════════════╪══════════════════╪═══════╪══════════════════════════════════╡
+│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 1e-05 │             -2348.00 |  9786.795 │
+╘═════════╧═════════════╧══════════════════╧═══════╧══════════════════════════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name         value  (rounded)    at limit
 ---------  ------------------  ----------
-bkg_yield             5969.89       False
-sig_yield             147.093       False
-lambda               -0.97802       False
-mu                    3.09624       False
+bkg_yield             5985.17       False
+sig_yield             116.848       False
+lambda               -1.15731       False
+mu                    3.09828       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -815,11 +815,128 @@ mu                    3.09624       False
 /usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1204: ChangedFeatureWarning: The behavior of this functionality recently changed.To turn this warning off, use `zfit.settings.changed_warnings.hesse_name = False`  or &#39;all&#39; with `zfit.settings.changed_warnings.all = False
 Default name of hesse (which is currently the method name such as `minuit_hesse`or `hesse_np`) has changed to `hesse` (it still adds the old one as well. This will be removed in the future). INSTRUCTIONS: to stay compatible,  change wherever you access the error to &#39;hesse&#39; (if you don&#39;t explicitly specify the name in hesse(...).
   warn_changed_feature(message, &#34;hesse_name&#34;)
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
 /usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1340: FutureWarning: &#39;minuit_minos&#39; will be changed as the default errors method to a custom implementationwith the same functionality. If you want to make sure that &#39;minuit_minos&#39; will be used in the future, add it explicitly as in `errors(method=&#39;minuit_minos&#39;)`
   warnings.warn(
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
 /usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1361: ChangedFeatureWarning: The behavior of this functionality recently changed.To turn this warning off, use `zfit.settings.changed_warnings.errors_name = False`  or &#39;all&#39; with `zfit.settings.changed_warnings.all = False
 Default name of errors (which is currently the method name such as `minuit_minos`or `zfit_errors`) has changed to `errors`. Old names are still added as well for compatibility but will be removed in the future. INSTRUCTIONS: to stay compatible, change wherever you access the error to &#39;errors&#39; or specify the name explicitly in errors(...).
   warn_changed_feature(message, &#34;errors_name&#34;)
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+FitResult
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ of
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7fc3f59bd310&gt;] constraints=[]&gt;
+with
+&lt;Minuit Minuit tol=0.001&gt;
+
+╒═════════╤═════════════╤══════════════════╤═══════╤══════════════════════════════════╕
+│  valid  │  converged  │  param at limit  │  edm  │   approx. fmin (full | internal) │
+╞═════════╪═════════════╪══════════════════╪═══════╪══════════════════════════════════╡
+│
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+   │    True
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+     │      False
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+       │ 1e-05 │             -2348.00 |  9786.795 │
+╘═════════╧═════════════╧══════════════════╧═══════╧══════════════════════════════════╛
+
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Parameters
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+name         value  (rounded)        hesse               errors         minuit_minos    at limit
+---------  ------------------  -----------  -------------------  -------------------  ----------
+bkg_yield             5985.17  +/-      81  -     80   +     81  -     80   +     81       False
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+sig_yield             116.848  +/-      26  -     25   +     26  -     25   +     26       False
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+lambda               -1.15731  +/-   0.065  -  0.065   +  0.065  -  0.065   +  0.065       False
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+mu                    3.09828  +/-   0.006  - 0.0061   +  0.006  - 0.0061   +  0.006       False
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -827,24 +944,7 @@ Default name of errors (which is currently the method name such as `minuit_minos
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-FitResult of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7ff772573e50&gt;] constraints=[]&gt;
-with
-&lt;Minuit Minuit tol=0.001&gt;
 
-╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════════╕
-│  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | internal) │
-╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════════╡
-│  True   │    True     │      False       │ 4.6e-06 │                -2315.70 |   9829 │
-╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
-
-Parameters
-name         value  (rounded)        hesse               errors         minuit_minos    at limit
----------  ------------------  -----------  -------------------  -------------------  ----------
-bkg_yield             5969.89  +/-      81  -     80   +     81  -     80   +     81       False
-sig_yield             147.093  +/-      26  -     26   +     26  -     26   +     26       False
-lambda               -0.97802  +/-   0.065  -  0.065   +  0.065  -  0.065   +  0.065       False
-mu                    3.09624  +/-  0.0035  - 0.0035   + 0.0035  - 0.0035   + 0.0035       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -916,8 +1016,31 @@ Z = \Phi^{-1}(1 - p_0).
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-p_value for the Null hypothesis = 3.3277369748674346e-10
-Significance (in units of sigma) = 6.174068365809127
+p_value for the Null hypothesis = 4.986763889602841e-07
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Significance (in units of sigma) = 4.892160067803639
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -926,7 +1049,7 @@ Significance (in units of sigma) = 6.174068365809127
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(3.3277369748674346e-10, 6.174068365809127)
+(4.986763889602841e-07, 4.892160067803639)
 </pre></div></div>
 </div>
 <p><strong>Exercise</strong> play around! First things first: repeat the fit. The difference we will see is statistical fluctuation from the resampling of the data; we take only a fraction at random.</p>
@@ -947,7 +1070,7 @@ Significance (in units of sigma) = 6.174068365809127
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.</p>
+    <p>&#169; Copyright HSF CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on Software Carpentry (https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

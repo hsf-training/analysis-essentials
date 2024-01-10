@@ -634,13 +634,13 @@
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4887/2007768199.py:15: SettingWithCopyWarning:
+/tmp/ipykernel_4651/2007768199.py:15: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   bkg_df[&#39;catagory&#39;] = 0  # Use 0 for background
-/tmp/ipykernel_4887/2007768199.py:19: SettingWithCopyWarning:
+/tmp/ipykernel_4651/2007768199.py:19: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -660,7 +660,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <span class="n">LR</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># the coefficient of step size decay, eta, has alias &#39;learning_rate&#39; with default 0.3</span>
 
 <span class="n">stime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">bdt</span> <span class="o">=</span> <span class="n">XGBClassifier</span><span class="p">(</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="n">LR</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span> <span class="n">n_threads</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">bdt</span> <span class="o">=</span> <span class="n">XGBClassifier</span><span class="p">(</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="n">LR</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">bdt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XGBoost --- </span><span class="si">%s</span><span class="s2"> seconds ---&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">stime</span><span class="p">))</span>
 
@@ -672,20 +672,9 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:19] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-XGBoost --- 0.8653702735900879 seconds ---
+XGBoost --- 0.8686127662658691 seconds ---
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -693,7 +682,7 @@ XGBoost --- 0.8653702735900879 seconds ---
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4887/1948164059.py:13: SettingWithCopyWarning:
+/tmp/ipykernel_4651/3009250180.py:13: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -762,9 +751,9 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:885: UserWarning: `eval_metric` in `fit` method is deprecated for better compatibility with scikit-learn, use `eval_metric` in constructor or`set_params` instead.
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:889: UserWarning: `eval_metric` in `fit` method is deprecated for better compatibility with scikit-learn, use `eval_metric` in constructor or`set_params` instead.
   warnings.warn(
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:20] WARNING: /workspace/src/learner.cc:742:
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:54:24] WARNING: /workspace/src/learner.cc:742:
 Parameters: { &#34;n_threads&#34; } are not used.
 
   warnings.warn(smsg, UserWarning)
@@ -776,7 +765,7 @@ Parameters: { &#34;n_threads&#34; } are not used.
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-XGBoost cross-validation --- 2.028329849243164 seconds ---
+XGBoost cross-validation --- 2.057788610458374 seconds ---
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -798,7 +787,7 @@ XGBoost cross-validation --- 2.028329849243164 seconds ---
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4887/3553768138.py:13: SettingWithCopyWarning:
+/tmp/ipykernel_4651/3553768138.py:13: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -833,15 +822,15 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 bdt :  S/sqrt(S+B) = 15.405805978293522  at x = 0.80857503
-bdt_cv :  S/sqrt(S+B) = 15.191654835213551  at x = 0.7748454
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_33ModelTuning_15_1.png" src="../_images/advanced-python_33ModelTuning_15_1.png" />
-</div>
+<div class="highlight"><pre>
+bdt_cv :  S/sqrt(S+B) = 15.273454027276424  at x = 0.81235266
+</pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -850,11 +839,18 @@ bdt_cv :  S/sqrt(S+B) = 15.191654835213551  at x = 0.7748454
 <img alt="../_images/advanced-python_33ModelTuning_15_2.png" src="../_images/advanced-python_33ModelTuning_15_2.png" />
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="../_images/advanced-python_33ModelTuning_15_3.png" src="../_images/advanced-python_33ModelTuning_15_3.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_33ModelTuning_15_4.png" src="../_images/advanced-python_33ModelTuning_15_4.png" />
 </div>
 </div>
 </section>
@@ -893,88 +889,10 @@ bdt_cv :  S/sqrt(S+B) = 15.191654835213551  at x = 0.7748454
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:24] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:25] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:26] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:27] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-XGBoost k-folding --- 2.7665019035339355 seconds ---
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:28] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:28] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:28] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:28] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:29] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:29] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:29] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:29] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:30] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:30] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:30] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:30] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
+XGBoost k-folding --- 2.7279951572418213 seconds ---
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1049,7 +967,7 @@ roc_auc:   [0.87520356 0.87239133 0.8768386  0.87975731]  -&gt;  best fold = 3
                        <span class="c1">#colsample_bytree=0.8, scale_pos_weight=1,</span>
                        <span class="c1">#objective=&#39;binary:logistic&#39;, # default for binary classification</span>
                        <span class="c1">#objective=&#39;mutli:softprob&#39;, num_class=3, # for multiclassifiers</span>
-                       <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span> <span class="n">n_threads</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+                       <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Timing the CV using early stopping</span>
 <span class="n">stime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -1065,37 +983,29 @@ roc_auc:   [0.87520356 0.87239133 0.8768386  0.87975731]  -&gt;  best fold = 3
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+XGBoost early-stop folding --- 15.981419086456299 seconds ---
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:31] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:889: UserWarning: `eval_metric` in `fit` method is deprecated for better compatibility with scikit-learn, use `eval_metric` in constructor or`set_params` instead.
+  warnings.warn(
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:889: UserWarning: `early_stopping_rounds` in `fit` method is deprecated for better compatibility with scikit-learn, use `early_stopping_rounds` in constructor or`set_params` instead.
+  warnings.warn(
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<div class="highlight"><pre>
-
-XGBoost early-stop folding --- 16.478813409805298 seconds ---
-</pre></div></div>
+<img alt="../_images/advanced-python_33ModelTuning_21_2.png" src="../_images/advanced-python_33ModelTuning_21_2.png" />
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:885: UserWarning: `eval_metric` in `fit` method is deprecated for better compatibility with scikit-learn, use `eval_metric` in constructor or`set_params` instead.
-  warnings.warn(
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:885: UserWarning: `early_stopping_rounds` in `fit` method is deprecated for better compatibility with scikit-learn, use `early_stopping_rounds` in constructor or`set_params` instead.
-  warnings.warn(
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:47] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-</pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1108,21 +1018,21 @@ Parameters: { &#34;n_threads&#34; } are not used.
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_33ModelTuning_21_4.png" src="../_images/advanced-python_33ModelTuning_21_4.png" />
-</div>
+<div class="highlight"><pre>
+XGBoost early-stop limit --- 6.290315866470337 seconds ---
+</pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-XGBoost early-stop limit --- 6.426403045654297 seconds ---
 
 Model Report : best iteration 320
 Train Accuracy : 0.878406430077885
 Test Accuracy : 0.8180580234817411
 
-modelfit(bdt_es) --- 23.512092351913452 seconds ---
+modelfit(bdt_es) --- 22.87963104248047 seconds ---
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1130,7 +1040,7 @@ modelfit(bdt_es) --- 23.512092351913452 seconds ---
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4887/635539270.py:18: SettingWithCopyWarning:
+/tmp/ipykernel_4651/41647419.py:18: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -1165,16 +1075,16 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-bdt_cv :  S/sqrt(S+B) = 15.191654835213551  at x = 0.7748454
-bdt_es :  S/sqrt(S+B) = 18.05205070820643  at x = 0.7961289
+bdt_cv :  S/sqrt(S+B) = 15.273454027276424  at x = 0.81235266
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_33ModelTuning_23_1.png" src="../_images/advanced-python_33ModelTuning_23_1.png" />
-</div>
+<div class="highlight"><pre>
+bdt_es :  S/sqrt(S+B) = 18.05205070820643  at x = 0.7961289
+</pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1183,11 +1093,18 @@ bdt_es :  S/sqrt(S+B) = 18.05205070820643  at x = 0.7961289
 <img alt="../_images/advanced-python_33ModelTuning_23_2.png" src="../_images/advanced-python_33ModelTuning_23_2.png" />
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="../_images/advanced-python_33ModelTuning_23_3.png" src="../_images/advanced-python_33ModelTuning_23_3.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_33ModelTuning_23_4.png" src="../_images/advanced-python_33ModelTuning_23_4.png" />
 </div>
 </div>
 </section>
@@ -1248,7 +1165,7 @@ bdt_es :  S/sqrt(S+B) = 18.05205070820643  at x = 0.7961289
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Running with estimators maximum for shortened training</span>
 <span class="n">bdt_st</span> <span class="o">=</span> <span class="n">XGBClassifier</span><span class="p">(</span> <span class="n">learning_rate</span> <span class="o">=</span> <span class="n">LR</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="n">estimators</span><span class="p">,</span>
-                        <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>           <span class="n">n_threads</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+                        <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>           <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Running timed hyperparameter gridscan</span>
 <span class="n">stime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -1267,46 +1184,33 @@ bdt_es :  S/sqrt(S+B) = 18.05205070820643  at x = 0.7961289
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:885: UserWarning: `eval_metric` in `fit` method is deprecated for better compatibility with scikit-learn, use `eval_metric` in constructor or`set_params` instead.
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:889: UserWarning: `eval_metric` in `fit` method is deprecated for better compatibility with scikit-learn, use `eval_metric` in constructor or`set_params` instead.
   warnings.warn(
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:885: UserWarning: `early_stopping_rounds` in `fit` method is deprecated for better compatibility with scikit-learn, use `early_stopping_rounds` in constructor or`set_params` instead.
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:889: UserWarning: `early_stopping_rounds` in `fit` method is deprecated for better compatibility with scikit-learn, use `early_stopping_rounds` in constructor or`set_params` instead.
   warnings.warn(
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:885: UserWarning: `eval_metric` in `fit` method is deprecated for better compatibility with scikit-learn, use `eval_metric` in constructor or`set_params` instead.
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:889: UserWarning: `eval_metric` in `fit` method is deprecated for better compatibility with scikit-learn, use `eval_metric` in constructor or`set_params` instead.
   warnings.warn(
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:885: UserWarning: `early_stopping_rounds` in `fit` method is deprecated for better compatibility with scikit-learn, use `early_stopping_rounds` in constructor or`set_params` instead.
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:889: UserWarning: `early_stopping_rounds` in `fit` method is deprecated for better compatibility with scikit-learn, use `early_stopping_rounds` in constructor or`set_params` instead.
   warnings.warn(
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:885: UserWarning: `eval_metric` in `fit` method is deprecated for better compatibility with scikit-learn, use `eval_metric` in constructor or`set_params` instead.
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:889: UserWarning: `eval_metric` in `fit` method is deprecated for better compatibility with scikit-learn, use `eval_metric` in constructor or`set_params` instead.
   warnings.warn(
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:885: UserWarning: `early_stopping_rounds` in `fit` method is deprecated for better compatibility with scikit-learn, use `early_stopping_rounds` in constructor or`set_params` instead.
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:889: UserWarning: `early_stopping_rounds` in `fit` method is deprecated for better compatibility with scikit-learn, use `early_stopping_rounds` in constructor or`set_params` instead.
   warnings.warn(
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:885: UserWarning: `eval_metric` in `fit` method is deprecated for better compatibility with scikit-learn, use `eval_metric` in constructor or`set_params` instead.
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:889: UserWarning: `eval_metric` in `fit` method is deprecated for better compatibility with scikit-learn, use `eval_metric` in constructor or`set_params` instead.
   warnings.warn(
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:885: UserWarning: `early_stopping_rounds` in `fit` method is deprecated for better compatibility with scikit-learn, use `early_stopping_rounds` in constructor or`set_params` instead.
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:889: UserWarning: `early_stopping_rounds` in `fit` method is deprecated for better compatibility with scikit-learn, use `early_stopping_rounds` in constructor or`set_params` instead.
   warnings.warn(
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:58] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:58] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:58] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:18:58] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:885: UserWarning: `eval_metric` in `fit` method is deprecated for better compatibility with scikit-learn, use `eval_metric` in constructor or`set_params` instead.
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:889: UserWarning: `eval_metric` in `fit` method is deprecated for better compatibility with scikit-learn, use `eval_metric` in constructor or`set_params` instead.
   warnings.warn(
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:885: UserWarning: `early_stopping_rounds` in `fit` method is deprecated for better compatibility with scikit-learn, use `early_stopping_rounds` in constructor or`set_params` instead.
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:889: UserWarning: `early_stopping_rounds` in `fit` method is deprecated for better compatibility with scikit-learn, use `early_stopping_rounds` in constructor or`set_params` instead.
   warnings.warn(
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:19:13] WARNING: /workspace/src/learner.cc:742:
-Parameters: { &#34;n_threads&#34; } are not used.
-
-  warnings.warn(smsg, UserWarning)
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1314,15 +1218,8 @@ Parameters: { &#34;n_threads&#34; } are not used.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-XGBoost grid-scan --- 19.02249240875244 seconds ---
+XGBoost grid-scan --- 19.071139097213745 seconds ---
 </pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/advanced-python_33ModelTuning_26_2.png" src="../_images/advanced-python_33ModelTuning_26_2.png" />
-</div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -1335,11 +1232,18 @@ XGBoost grid-scan --- 19.02249240875244 seconds ---
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
+<img alt="../_images/advanced-python_33ModelTuning_26_4.png" src="../_images/advanced-python_33ModelTuning_26_4.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
 <div class="highlight"><pre>
 Suggestion: {&#39;max_depth&#39;: 7, &#39;min_child_weight&#39;: 3}
 Accuracy: 0.8091291887649159
 
-hpgridscan(bdt_st) --- 19.313124895095825 seconds ---
+hpgridscan(bdt_st) --- 19.30479145050049 seconds ---
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1347,7 +1251,7 @@ hpgridscan(bdt_st) --- 19.313124895095825 seconds ---
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4887/65905117.py:13: SettingWithCopyWarning:
+/tmp/ipykernel_4651/1018627576.py:13: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -1364,7 +1268,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <span class="c1">#bdt_opt = XGBClassifier( learning_rate = LR, n_estimators=1000,</span>
 <span class="c1">#                         max_depth=gs.best_params_[&#39;max_depth&#39;],</span>
 <span class="c1">#                         min_child_weight=gs.best_params_[&#39;min_child_weight&#39;],</span>
-<span class="c1">#                         seed=123, n_threads=-1 )</span>
+<span class="c1">#                         seed=123, n_jobs=-1 )</span>
 
 <span class="c1">## Run with CV early stopping</span>
 <span class="c1">#stime = time.time()</span>
@@ -1438,8 +1342,29 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 bdt :  S/sqrt(S+B) = 15.225756452547515  at x = 0.8237634
-bdt_cv :  S/sqrt(S+B) = 15.191654835213551  at x = 0.7748454
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+bdt_cv :  S/sqrt(S+B) = 15.273454027276424  at x = 0.81235266
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
 bdt_es :  S/sqrt(S+B) = 18.05205070820643  at x = 0.7961289
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
 bdt_gs :  S/sqrt(S+B) = 17.817070520310462  at x = 0.8272739
 </pre></div></div>
 </div>
@@ -1449,21 +1374,21 @@ bdt_gs :  S/sqrt(S+B) = 17.817070520310462  at x = 0.8272739
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f2785d067d0&gt;
+&lt;matplotlib.legend.Legend at 0x7f5f0deeacd0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_33ModelTuning_30_2.png" src="../_images/advanced-python_33ModelTuning_30_2.png" />
+<img alt="../_images/advanced-python_33ModelTuning_30_5.png" src="../_images/advanced-python_33ModelTuning_30_5.png" />
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_33ModelTuning_30_3.png" src="../_images/advanced-python_33ModelTuning_30_3.png" />
+<img alt="../_images/advanced-python_33ModelTuning_30_6.png" src="../_images/advanced-python_33ModelTuning_30_6.png" />
 </div>
 </div>
 <p>Comparing our data sample’s mass plot having applied the cut optimised for <span class="math notranslate nohighlight">\(\sigma=\frac{S}{\sqrt{S+B}}\)</span> from each BDT output, we can see how the improved model reduces relative background. However, while we define our signal training sample from MC you’ll remember we defined our background training sample from the data !(3.0 &lt; JPsi_M &lt; 3.2).</p>
@@ -1489,7 +1414,7 @@ efficiency on mass.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f2785d16d90&gt;
+&lt;matplotlib.legend.Legend at 0x7f5f0dd81250&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1518,8 +1443,8 @@ efficiency on mass.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Notebook real time --- 318.3331835269928 seconds ---
-Notebook CPU time --- 189.0533064 seconds ---
+Notebook real time --- 315.9246733188629 seconds ---
+Notebook CPU time --- 186.5501554 seconds ---
 </pre></div></div>
 </div>
 </section>
@@ -1535,7 +1460,7 @@ Notebook CPU time --- 189.0533064 seconds ---
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright HSF [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on [swcarpentry](https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.</p>
+    <p>&#169; Copyright HSF CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on Software Carpentry (https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

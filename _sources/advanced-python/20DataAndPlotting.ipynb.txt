@@ -32,12 +32,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:11.209901401Z",
-     "start_time": "2023-11-09T18:22:10.715117611Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "import mplhep\n",
@@ -115,12 +110,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:11.213168925Z",
-     "start_time": "2023-11-09T18:22:10.715393509Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "my_file = uproot.open('https://cern.ch/starterkit/data/advanced-python-2018/real_data.root',\n",
@@ -139,12 +129,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:11.577169Z",
-     "start_time": "2023-11-09T18:22:10.996475027Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "tree = my_file['DecayTree']\n",
@@ -155,12 +140,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:24.452463022Z",
-     "start_time": "2023-11-09T18:22:11.577968658Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "# Load data as a pandas DataFrame\n",
@@ -174,12 +154,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:24.470597938Z",
-     "start_time": "2023-11-09T18:22:24.447634455Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "data_df.columns"
@@ -196,12 +171,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:24.855253849Z",
-     "start_time": "2023-11-09T18:22:24.453234659Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "# Start with a basic histogram\n",
@@ -234,10 +204,6 @@
    "metadata": {
     "pycharm": {
      "name": "#%%\n"
-    },
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:24.855582435Z",
-     "start_time": "2023-11-09T18:22:24.819219840Z"
     }
    },
    "outputs": [],
@@ -253,10 +219,6 @@
    "metadata": {
     "pycharm": {
      "name": "#%%\n"
-    },
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:25.965614384Z",
-     "start_time": "2023-11-09T18:22:24.819392199Z"
     }
    },
    "outputs": [],
@@ -272,10 +234,6 @@
    "metadata": {
     "pycharm": {
      "name": "#%%\n"
-    },
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:26.500198095Z",
-     "start_time": "2023-11-09T18:22:25.966183784Z"
     }
    },
    "outputs": [],
@@ -291,10 +249,6 @@
    "metadata": {
     "pycharm": {
      "name": "#%%\n"
-    },
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:27.468758686Z",
-     "start_time": "2023-11-09T18:22:26.499064264Z"
     }
    },
    "outputs": [],
@@ -314,12 +268,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:29.632389925Z",
-     "start_time": "2023-11-09T18:22:27.444982487Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "def plot_mass(df):\n",
@@ -343,12 +292,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:29.667859406Z",
-     "start_time": "2023-11-09T18:22:29.626043515Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "# When making the ROOT file we forgot to add some variables, no bother lets add them now!\n",
@@ -366,12 +310,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:29.978476627Z",
-     "start_time": "2023-11-09T18:22:29.648794140Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "data_df.eval('mup_P = sqrt(mup_PX**2 + mup_PY**2 + mup_PZ**2)', inplace=True)\n",
@@ -399,12 +338,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:30.368613646Z",
-     "start_time": "2023-11-09T18:22:29.678392856Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "plot_mass(data_df)\n",
@@ -415,12 +349,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:31.531723191Z",
-     "start_time": "2023-11-09T18:22:30.368802764Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "plot_mass(data_df)\n",
@@ -442,12 +371,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:32.129701102Z",
-     "start_time": "2023-11-09T18:22:31.166183480Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "def plot_mass(df, **kwargs):\n",
@@ -476,12 +400,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:32.156206263Z",
-     "start_time": "2023-11-09T18:22:32.129165982Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "data_df.columns"
@@ -490,12 +409,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:22:33.885426832Z",
-     "start_time": "2023-11-09T18:22:32.134501210Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "from python_lesson import check_truth\n",
@@ -526,12 +440,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:23:21.141300103Z",
-     "start_time": "2023-11-09T18:22:33.874056558Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "with uproot.open('https://starterkit.web.cern.ch/starterkit/data/advanced-python-2018/simulated_data.root') as mc_file:\n",
@@ -558,12 +467,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:23:21.631231066Z",
-     "start_time": "2023-11-09T18:23:21.182938710Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "bkg_df = data_df.query('~(3.0 < Jpsi_M < 3.2)')\n",
@@ -589,12 +493,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:23:22.134866766Z",
-     "start_time": "2023-11-09T18:23:21.630331279Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "var = 'Jpsi_PT'\n",
@@ -612,12 +511,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:23:22.642315719Z",
-     "start_time": "2023-11-09T18:23:22.130434993Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "# Those are hard to compare!\n",
@@ -640,12 +534,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:23:22.648142526Z",
-     "start_time": "2023-11-09T18:23:22.640877567Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "def plot_comparision(var, mc_df, bkg_df):\n",
@@ -663,12 +552,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:23:22.657440397Z",
-     "start_time": "2023-11-09T18:23:22.644203876Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": []
   },
@@ -682,12 +566,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:23:39.984761182Z",
-     "start_time": "2023-11-09T18:23:22.649403635Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": [
     "for var in data_df.columns:\n",
@@ -717,12 +596,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:23:39.987782824Z",
-     "start_time": "2023-11-09T18:23:39.981983050Z"
-    }
-   },
+   "metadata": {},
    "outputs": [],
    "source": []
   },
@@ -739,10 +613,6 @@
    "metadata": {
     "pycharm": {
      "name": "#%%\n"
-    },
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:23:40.835372688Z",
-     "start_time": "2023-11-09T18:23:39.986976807Z"
     }
    },
    "outputs": [],
@@ -758,10 +628,6 @@
    "metadata": {
     "pycharm": {
      "name": "#%%\n"
-    },
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:23:40.835551238Z",
-     "start_time": "2023-11-09T18:23:40.835014982Z"
     }
    },
    "outputs": [],
@@ -773,10 +639,6 @@
    "metadata": {
     "pycharm": {
      "name": "#%%\n"
-    },
-    "ExecuteTime": {
-     "end_time": "2023-11-09T18:23:40.835677817Z",
-     "start_time": "2023-11-09T18:23:40.835124429Z"
     }
    },
    "outputs": [],
