@@ -486,7 +486,7 @@
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
@@ -509,6 +509,21 @@
 <span class="kn">from</span> <span class="nn">xgboost.sklearn</span> <span class="kn">import</span> <span class="n">XGBClassifier</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/ipykernel_4718/1411477585.py:8: DeprecationWarning:
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+
+  import pandas as pd
+</pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -634,13 +649,31 @@
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4651/2007768199.py:15: SettingWithCopyWarning:
+/tmp/ipykernel_4718/2007768199.py:11: SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.eval(&#39;Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)&#39;, inplace=True)
+/tmp/ipykernel_4718/2007768199.py:12: SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.eval(&#39;mup_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#39;, inplace=True)
+/tmp/ipykernel_4718/2007768199.py:13: SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df.eval(&#39;mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#39;, inplace=True)
+/tmp/ipykernel_4718/2007768199.py:15: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   bkg_df[&#39;catagory&#39;] = 0  # Use 0 for background
-/tmp/ipykernel_4651/2007768199.py:19: SettingWithCopyWarning:
+/tmp/ipykernel_4718/2007768199.py:19: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -674,7 +707,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-XGBoost --- 0.8686127662658691 seconds ---
+XGBoost --- 0.8556647300720215 seconds ---
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -682,7 +715,7 @@ XGBoost --- 0.8686127662658691 seconds ---
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4651/3009250180.py:13: SettingWithCopyWarning:
+/tmp/ipykernel_4718/3009250180.py:13: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -753,7 +786,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <div class="highlight"><pre>
 /usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/sklearn.py:889: UserWarning: `eval_metric` in `fit` method is deprecated for better compatibility with scikit-learn, use `eval_metric` in constructor or`set_params` instead.
   warnings.warn(
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [14:54:24] WARNING: /workspace/src/learner.cc:742:
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/xgboost/core.py:160: UserWarning: [00:50:00] WARNING: /workspace/src/learner.cc:742:
 Parameters: { &#34;n_threads&#34; } are not used.
 
   warnings.warn(smsg, UserWarning)
@@ -765,7 +798,7 @@ Parameters: { &#34;n_threads&#34; } are not used.
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-XGBoost cross-validation --- 2.057788610458374 seconds ---
+XGBoost cross-validation --- 2.0221338272094727 seconds ---
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -787,7 +820,7 @@ XGBoost cross-validation --- 2.057788610458374 seconds ---
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4651/3553768138.py:13: SettingWithCopyWarning:
+/tmp/ipykernel_4718/3553768138.py:13: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -829,7 +862,7 @@ bdt :  S/sqrt(S+B) = 15.405805978293522  at x = 0.80857503
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-bdt_cv :  S/sqrt(S+B) = 15.273454027276424  at x = 0.81235266
+bdt_cv :  S/sqrt(S+B) = 15.284216832108756  at x = 0.82674176
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -892,7 +925,7 @@ bdt_cv :  S/sqrt(S+B) = 15.273454027276424  at x = 0.81235266
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-XGBoost k-folding --- 2.7279951572418213 seconds ---
+XGBoost k-folding --- 2.713792562484741 seconds ---
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -986,7 +1019,7 @@ roc_auc:   [0.87520356 0.87239133 0.8768386  0.87975731]  -&gt;  best fold = 3
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-XGBoost early-stop folding --- 15.981419086456299 seconds ---
+XGBoost early-stop folding --- 16.265354871749878 seconds ---
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1019,7 +1052,7 @@ XGBoost early-stop folding --- 15.981419086456299 seconds ---
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-XGBoost early-stop limit --- 6.290315866470337 seconds ---
+XGBoost early-stop limit --- 6.2194907665252686 seconds ---
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1032,7 +1065,7 @@ Model Report : best iteration 320
 Train Accuracy : 0.878406430077885
 Test Accuracy : 0.8180580234817411
 
-modelfit(bdt_es) --- 22.87963104248047 seconds ---
+modelfit(bdt_es) --- 23.111666679382324 seconds ---
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1040,7 +1073,7 @@ modelfit(bdt_es) --- 22.87963104248047 seconds ---
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4651/41647419.py:18: SettingWithCopyWarning:
+/tmp/ipykernel_4718/41647419.py:18: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -1075,7 +1108,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-bdt_cv :  S/sqrt(S+B) = 15.273454027276424  at x = 0.81235266
+bdt_cv :  S/sqrt(S+B) = 15.284216832108756  at x = 0.82674176
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1218,7 +1251,7 @@ bdt_es :  S/sqrt(S+B) = 18.05205070820643  at x = 0.7961289
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-XGBoost grid-scan --- 19.071139097213745 seconds ---
+XGBoost grid-scan --- 18.899073839187622 seconds ---
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1243,7 +1276,7 @@ XGBoost grid-scan --- 19.071139097213745 seconds ---
 Suggestion: {&#39;max_depth&#39;: 7, &#39;min_child_weight&#39;: 3}
 Accuracy: 0.8091291887649159
 
-hpgridscan(bdt_st) --- 19.30479145050049 seconds ---
+hpgridscan(bdt_st) --- 19.127185344696045 seconds ---
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1251,7 +1284,7 @@ hpgridscan(bdt_st) --- 19.30479145050049 seconds ---
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4651/1018627576.py:13: SettingWithCopyWarning:
+/tmp/ipykernel_4718/1018627576.py:13: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -1349,7 +1382,7 @@ bdt :  S/sqrt(S+B) = 15.225756452547515  at x = 0.8237634
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-bdt_cv :  S/sqrt(S+B) = 15.273454027276424  at x = 0.81235266
+bdt_cv :  S/sqrt(S+B) = 15.284216832108756  at x = 0.82674176
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1374,7 +1407,7 @@ bdt_gs :  S/sqrt(S+B) = 17.817070520310462  at x = 0.8272739
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f5f0deeacd0&gt;
+&lt;matplotlib.legend.Legend at 0x7f6c17de7910&gt;
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1414,7 +1447,7 @@ efficiency on mass.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f5f0dd81250&gt;
+&lt;matplotlib.legend.Legend at 0x7f6c17d51e10&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1443,8 +1476,8 @@ efficiency on mass.</p>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Notebook real time --- 315.9246733188629 seconds ---
-Notebook CPU time --- 186.5501554 seconds ---
+Notebook real time --- 401.37995314598083 seconds ---
+Notebook CPU time --- 182.2430899 seconds ---
 </pre></div></div>
 </div>
 </section>

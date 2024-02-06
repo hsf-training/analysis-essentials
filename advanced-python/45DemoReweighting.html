@@ -484,7 +484,7 @@
 <p>Here we have a <strong>toy example</strong> without a real physics meaning.</p>
 <p>Pay attention: equality of distibutions for each feature <span class="math notranslate nohighlight">\(\neq\)</span> equality of multivariate distributions.</p>
 <p>All samples are divided into <strong>training</strong> and <strong>validation</strong> part. Training part is used to fit reweighting rule and test part is used to estimate reweighting quality.</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
@@ -497,6 +497,21 @@
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/ipykernel_5167/453314117.py:4: DeprecationWarning:
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+
+  import pandas as pd
+</pre></div></div>
 </div>
 <section id="Downloading-data">
 <h2>Downloading data<a class="headerlink" href="#Downloading-data" title="Link to this heading"></a></h2>
@@ -663,7 +678,7 @@ KS over  mu_pt_sum  =  0.21639364439970188
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.5200099303482495
+KS over  hSPD  =  0.521532786069641
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -671,7 +686,7 @@ KS over  hSPD  =  0.5200099303482495
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  pt_b  =  0.21758393034661122
+KS over  pt_b  =  0.21869298507300033
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -679,7 +694,7 @@ KS over  pt_b  =  0.21758393034661122
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  pt_phi  =  0.40500588059713394
+KS over  pt_phi  =  0.40407485572151247
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -687,7 +702,7 @@ KS over  pt_phi  =  0.40500588059713394
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  vchi2_b  =  0.40462044775517775
+KS over  vchi2_b  =  0.40315059700877287
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -695,7 +710,7 @@ KS over  vchi2_b  =  0.40462044775517775
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  mu_pt_sum  =  0.21758393034661122
+KS over  mu_pt_sum  =  0.21869298507300033
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -721,8 +736,8 @@ KS over  mu_pt_sum  =  0.21758393034661122
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.5232076840141869
-KS over  pt_b  =  0.21652812124569376
+KS over  hSPD  =  0.5181806468942461
+KS over  pt_b  =  0.2117249270654996
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -730,8 +745,8 @@ KS over  pt_b  =  0.21652812124569376
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  pt_phi  =  0.39385195112839255
-KS over  vchi2_b  =  0.40594501884056267
+KS over  pt_phi  =  0.39734291550071926
+KS over  vchi2_b  =  0.4114962436121
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -739,7 +754,7 @@ KS over  vchi2_b  =  0.40594501884056267
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  mu_pt_sum  =  0.21652812124569376
+KS over  mu_pt_sum  =  0.2117249270654996
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -780,8 +795,8 @@ KS over  mu_pt_sum  =  0.21652812124569376
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.40952654771458574
-KS over  pt_b  =  0.11652765591222125
+KS over  hSPD  =  0.40882731291504454
+KS over  pt_b  =  0.11370672512099517
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -789,7 +804,7 @@ KS over  pt_b  =  0.11652765591222125
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  pt_phi  =  0.2693182103557125
+KS over  pt_phi  =  0.274164933082356
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -797,8 +812,8 @@ KS over  pt_phi  =  0.2693182103557125
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  vchi2_b  =  0.34592365812555204
-KS over  mu_pt_sum  =  0.11652765591222125
+KS over  vchi2_b  =  0.35385537482401175
+KS over  mu_pt_sum  =  0.11370672512099517
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -833,8 +848,8 @@ KS over  mu_pt_sum  =  0.11652765591222125
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.04687823298270344
-KS over  pt_b  =  0.026121777921275707
+KS over  hSPD  =  0.056483221287462415
+KS over  pt_b  =  0.024794142226322924
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -842,8 +857,8 @@ KS over  pt_b  =  0.026121777921275707
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  pt_phi  =  0.022813015758623933
-KS over  vchi2_b  =  0.048893751134951424
+KS over  pt_phi  =  0.06181648469069534
+KS over  vchi2_b  =  0.022084478634007865
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -851,7 +866,7 @@ KS over  vchi2_b  =  0.048893751134951424
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  mu_pt_sum  =  0.026121777921275707
+KS over  mu_pt_sum  =  0.024794142226322924
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -894,9 +909,9 @@ KS over  mu_pt_sum  =  0.026121777921275707
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.5232076840141869
-Bins reweight KS: 0.40952654771458574
-GB Reweight   KS: 0.04687823298270344
+No reweight   KS: 0.5181806468942461
+Bins reweight KS: 0.40882731291504454
+GB Reweight   KS: 0.056483221287462415
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -912,7 +927,7 @@ GB Reweight   KS: 0.04687823298270344
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.09380652676755549
+No reweight   KS: 0.09583124976705806
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -920,8 +935,8 @@ No reweight   KS: 0.09380652676755549
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Bins reweight KS: 0.12011671496948761
-GB Reweight   KS: 0.01928099679726153
+Bins reweight KS: 0.12280756843543553
+GB Reweight   KS: 0.05734825029784174
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -937,7 +952,7 @@ GB Reweight   KS: 0.01928099679726153
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.367992410744947
+No reweight   KS: 0.37176657078975295
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -945,8 +960,8 @@ No reweight   KS: 0.367992410744947
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Bins reweight KS: 0.3344074502355772
-GB Reweight   KS: 0.03686866384493581
+Bins reweight KS: 0.339807241724008
+GB Reweight   KS: 0.03192878543735511
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -962,7 +977,15 @@ GB Reweight   KS: 0.03686866384493581
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.47656210520414677
+No reweight   KS: 0.4755599757506862
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Bins reweight KS: 0.37788460332851737
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -970,8 +993,7 @@ No reweight   KS: 0.47656210520414677
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Bins reweight KS: 0.3807772951890118
-GB Reweight   KS: 0.03076521597555082
+GB Reweight   KS: 0.04467073507051755
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -987,7 +1009,15 @@ GB Reweight   KS: 0.03076521597555082
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.4910760063428767
+No reweight   KS: 0.49324049356537336
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Bins reweight KS: 0.4045896623115322
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -995,8 +1025,7 @@ No reweight   KS: 0.4910760063428767
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Bins reweight KS: 0.3984543685951991
-GB Reweight   KS: 0.04624222729495375
+GB Reweight   KS: 0.04795372086978622
 </pre></div></div>
 </div>
 </section>
@@ -1037,7 +1066,7 @@ GB Reweight   KS: 0.04624222729495375
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-original 0.9395759390021483
+original 0.9390359088931497
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1045,7 +1074,7 @@ original 0.9395759390021483
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-bins 0.9117746949904894
+bins 0.914814049291749
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1053,7 +1082,7 @@ bins 0.9117746949904894
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-gb_weights 0.5389975862617249
+gb_weights 0.5201009709703769
 </pre></div></div>
 </div>
 <section id="Great!">
@@ -1107,7 +1136,7 @@ Text(0.5, 1.0, &#39;predicted weights&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(638.9668514096913, 70631.53820041155)
+(907.1212756418231, 72559.2547546806)
 </pre></div></div>
 </div>
 <p>With such a high weight for a single event, this does not look desireable. And be aware of ad-hoc solutions: just clipping or removing weights is completely <strong>wrong</strong> as this would disturb the distribution completely.</p>
@@ -1158,7 +1187,7 @@ KFold prediction using folds column
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.3077610048887751
+KS over  hSPD  =  0.30650047651487633
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1166,7 +1195,7 @@ KS over  hSPD  =  0.3077610048887751
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  pt_b  =  0.1807535747531443
+KS over  pt_b  =  0.18075189416201726
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1174,7 +1203,7 @@ KS over  pt_b  =  0.1807535747531443
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  pt_phi  =  0.3080302885557679
+KS over  pt_phi  =  0.3076657623730652
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1182,7 +1211,7 @@ KS over  pt_phi  =  0.3080302885557679
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  vchi2_b  =  0.2987192541370194
+KS over  vchi2_b  =  0.2990922524201176
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1190,7 +1219,7 @@ KS over  vchi2_b  =  0.2987192541370194
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  mu_pt_sum  =  0.1807535747531443
+KS over  mu_pt_sum  =  0.18075189416201726
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1229,7 +1258,7 @@ KS over  mu_pt_sum  =  0.1807535747531443
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-original 0.9363354007422626
+original 0.9367389979362668
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1237,7 +1266,7 @@ original 0.9363354007422626
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-2-folding 0.8258681677520754
+2-folding 0.8257459844531432
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
