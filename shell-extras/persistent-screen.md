@@ -1,6 +1,19 @@
 ## Persistent screen or tmux session on lxplus
 
-### Setting up password-less kerberos token
+The behavior of screen and tmux on lxplus depends on which version of lxplus you are using.
+
+### lxplus7
+
+If you are using lxplus7, you must manually initialize a kerberos token to give the screen or tmux session permission to continue to write even after you log out.
+This requires jumping through a few hoops, described below.
+
+{% callout "Alternative for lxplus7" %}
+
+If you prefer, you can follow the instructions in [KB0002408](https://cern.service-now.com/service-portal?id=kb_article&n=KB0002408), instead of those below.
+
+{% endcallout %}
+
+#### Setting up password-less kerberos token on lxplus7
 
 In order for the kerberos token to be refreshed automatically, it must be possible to do so without a password.
 Therefore, we create a keytab (similar to a private ssh key) on lxplus using the provided `cern-get-keytab` utility. Note it will prompt for your password, in order to generate the keytab.
@@ -29,13 +42,14 @@ kdestroy; kinit -kt ~/private/$USER.keytab $USER; klist
 ```
 This should display information about a ticket cache.
 
-### Making use of the keytab
+#### Making use of the keytab on lxplus7
 This keytab file can now be used to obtain kerberos tokens without having to type a password:
 ```bash
 kinit -k -t ~/private/$USER.keytab $USER@CERN.CH
 ```
 where `-k` tells `kinit` to use a keytab file and `-t ~/private/$USER.keytab` where this keytab actually is.
-### Using k5reauth to automatically refresh your kerberos token
+
+#### Using k5reauth to automatically refresh your kerberos token on lxplus7
 To create a permanent session of `tmux` or `screen`, the `k5reauth` command is used, which by default creates a new shell and attaches it as a child to itself and keeps renewing the kerberos token for its children. `k5reauth` can start processes other than a new shell by specifying the program you want to start as an argument
 ```bash
 k5reauth -f -i 3600 -p .... -- <command>
@@ -78,3 +92,21 @@ You could then start a tmux session named “Test” using
 ktmux Test
 ```
 Note that you will still have to follow the rest of the recipe (`kinit`, detach, log out, log in, attach, `kinit`) manually to get a persistent session.
+
+### lxplus8
+
+If you are on lxplus8, many of the above issues do not apply. You can simply create a screen or tmux session as normal; then, when you log back in to that node, it will still be there. You don't even have to initialize a kerberos token.
+
+> This advice has not been tested for sessions lasting more than 24 hours.
+> If you're worried, you can follow the recipe for lxplus7 or lxplus9.
+
+### lxplus9
+
+If you are on lxplus9, your screen or tmux session will be killed when you log out.
+To avoid this, you must follow the recipe in [KB0008111](https://cern.service-now.com/service-portal?id=kb_article&n=KB0008111) to initialize the session:
+```bash
+systemctl --user start tmux.service
+tmux a
+```
+This will auto-renew your kerberos ticket as well, obviating the need to call `kinit` or use keytabs.
+The recipe for lxplus7 *will not work*.
