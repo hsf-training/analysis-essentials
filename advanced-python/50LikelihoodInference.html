@@ -358,9 +358,14 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../shell-extras/persistent-screen.html">Persistent screen or tmux session on lxplus</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#setting-up-password-less-kerberos-token">Setting up password-less kerberos token</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#making-use-of-the-keytab">Making use of the keytab</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token">Using k5reauth to automatically refresh your kerberos token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#lxplus7">lxplus7</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/persistent-screen.html#setting-up-password-less-kerberos-token-on-lxplus7">Setting up password-less kerberos token on lxplus7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/persistent-screen.html#making-use-of-the-keytab-on-lxplus7">Making use of the keytab on lxplus7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token-on-lxplus7">Using k5reauth to automatically refresh your kerberos token on lxplus7</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#lxplus8">lxplus8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#lxplus9">lxplus9</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../shell-extras/shell2.html">More about the UNIX shell</a><ul>
@@ -719,7 +724,7 @@ Extended PDFs ([&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  par
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7f880f943150&gt;] constraints=[]&gt;
+&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7fd10d606b50&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
@@ -778,23 +783,23 @@ sigma            0.0150308       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f880de43150&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7fd10d5e0ed0&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
-╒═════════╤═════════════╤══════════════════╤═══════╤══════════════════════════════════╕
-│  valid  │  converged  │  param at limit  │  edm  │   approx. fmin (full | internal) │
-╞═════════╪═════════════╪══════════════════╪═══════╪══════════════════════════════════╡
-│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 6e-05 │             -2379.99 |  9786.977 │
-╘═════════╧═════════════╧══════════════════╧═══════╧══════════════════════════════════╛
+╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════════╕
+│  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | internal) │
+╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════════╡
+│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 3.4e-06 │             -2350.89 |  9808.028 │
+╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name         value  (rounded)    at limit
 ---------  ------------------  ----------
-bkg_yield             6004.78       False
-sig_yield             157.381       False
-lambda               -1.15861       False
-mu                    3.10385       False
+bkg_yield             6037.18       False
+sig_yield             139.841       False
+lambda               -1.03434       False
+mu                    3.09003       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -850,13 +855,13 @@ FitResult
 <div class="output_area docutils container">
 <div class="highlight"><pre>
  of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f880de43150&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7fd10d5e0ed0&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
-╒═════════╤═════════════╤══════════════════╤═══════╤══════════════════════════════════╕
-│  valid  │  converged  │  param at limit  │  edm  │   approx. fmin (full | internal) │
-╞═════════╪═════════════╪══════════════════╪═══════╪══════════════════════════════════╡
+╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════════╕
+│  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | internal) │
+╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════════╡
 │
 </pre></div></div>
 </div>
@@ -889,8 +894,8 @@ True
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-       │ 6e-05 │             -2379.99 |  9786.977 │
-╘═════════╧═════════════╧══════════════════╧═══════╧══════════════════════════════════╛
+       │ 3.4e-06 │             -2350.89 |  9808.028 │
+╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
 
 </pre></div></div>
 </div>
@@ -909,7 +914,7 @@ Parameters
 <div class="highlight"><pre>
 name         value  (rounded)        hesse               errors         minuit_minos    at limit
 ---------  ------------------  -----------  -------------------  -------------------  ----------
-bkg_yield             6004.78  +/-      81  -     81   +     81  -     81   +     81       False
+bkg_yield             6037.18  +/-      81  -     81   +     81  -     81   +     81       False
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -918,7 +923,7 @@ bkg_yield             6004.78  +/-      81  -     81   +     81  -     81   +   
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-sig_yield             157.381  +/-      26  -     26   +     27  -     26   +     27       False
+sig_yield             139.841  +/-      26  -     26   +     26  -     26   +     26       False
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -927,7 +932,7 @@ sig_yield             157.381  +/-      26  -     26   +     27  -     26   +   
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-lambda               -1.15861  +/-   0.065  -  0.065   +  0.065  -  0.065   +  0.065       False
+lambda               -1.03434  +/-   0.065  -  0.065   +  0.064  -  0.065   +  0.064       False
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -936,7 +941,7 @@ lambda               -1.15861  +/-   0.065  -  0.065   +  0.065  -  0.065   +  0
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-mu                    3.10385  +/-  0.0035  - 0.0036   + 0.0034  - 0.0036   + 0.0034       False
+mu                    3.09003  +/-  0.0033  - 0.0034   + 0.0033  - 0.0034   + 0.0033       False
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1016,7 +1021,7 @@ Z = \Phi^{-1}(1 - p_0).
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-p_value for the Null hypothesis = 2.6984747769631667e-11
+p_value for the Null hypothesis = 2.3490038802975732e-09
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1032,7 +1037,7 @@ p_value for the Null hypothesis = 2.6984747769631667e-11
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Significance (in units of sigma) = 6.559552486475989
+Significance (in units of sigma) = 5.857530422707143
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1049,7 +1054,7 @@ Significance (in units of sigma) = 6.559552486475989
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(2.6984747769631667e-11, 6.559552486475989)
+(2.3490038802975732e-09, 5.857530422707143)
 </pre></div></div>
 </div>
 <p><strong>Exercise</strong> play around! First things first: repeat the fit. The difference we will see is statistical fluctuation from the resampling of the data; we take only a fraction at random.</p>

@@ -96,25 +96,10 @@ machine with:
 $ ssh lxplus0081.cern.ch
 ```
 
-Another complication are your kerberos tokens. These typically
-expire as soon as you disconnect from a `lxplus` machine. This means
-the program you left running inside the `screen` session will
-suddenly not be able to write to any files in your home directory
-anymore. This is particularly annoying if you are running `ganga`
-in your screen session.
-
-One way to stop your tokens from expiring is to type `kinit`
-when you first start a new `screen` session. The tokens you get
-this way will survive you disconnecting. However they will
-expire after 24 hours, so you will have to type `kinit` again
-to renew them if you leave `screen` running for longer than
-24 hours.
-
-```bash
-$ screen
-# now inside the screen session
-$ kinit
-```
+On lxplus, you will need to ensure your session is not killed and
+your write permissions continue when you log out.
+See the [persistent screen lesson](https://hsf-training.github.io/analysis-essentials/shell-extras/persistent-screen.html)
+for more information.
 
 {% callout "tmux" %}
 

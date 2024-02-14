@@ -355,9 +355,14 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Persistent screen or tmux session on lxplus</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#setting-up-password-less-kerberos-token">Setting up password-less kerberos token</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#making-use-of-the-keytab">Making use of the keytab</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#using-k5reauth-to-automatically-refresh-your-kerberos-token">Using k5reauth to automatically refresh your kerberos token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lxplus7">lxplus7</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-password-less-kerberos-token-on-lxplus7">Setting up password-less kerberos token on lxplus7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#making-use-of-the-keytab-on-lxplus7">Making use of the keytab on lxplus7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-k5reauth-to-automatically-refresh-your-kerberos-token-on-lxplus7">Using k5reauth to automatically refresh your kerberos token on lxplus7</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#lxplus8">lxplus8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lxplus9">lxplus9</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="shell2.html">More about the UNIX shell</a><ul>
@@ -471,8 +476,21 @@
              
   <section id="persistent-screen-or-tmux-session-on-lxplus">
 <h1>Persistent screen or tmux session on lxplus<a class="headerlink" href="#persistent-screen-or-tmux-session-on-lxplus" title="Link to this heading"></a></h1>
-<section id="setting-up-password-less-kerberos-token">
-<h2>Setting up password-less kerberos token<a class="headerlink" href="#setting-up-password-less-kerberos-token" title="Link to this heading"></a></h2>
+<p>The behavior of screen and tmux on lxplus depends on which version of lxplus you are using.</p>
+<section id="lxplus7">
+<h2>lxplus7<a class="headerlink" href="#lxplus7" title="Link to this heading"></a></h2>
+<p>If you are using lxplus7, you must manually initialize a kerberos token to give the screen or tmux session permission to continue to write even after you log out.
+This requires jumping through a few hoops, described below.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="alternative-for-lxplus7"><i class="fa fa-info-circle"></i> Alternative for lxplus7</p>
+</div>
+<div class="panel-body docutils container">
+<p>If you prefer, you can follow the instructions in <a class="reference external" href="https://cern.service-now.com/service-portal?id=kb_article&amp;n=KB0002408">KB0002408</a>, instead of those below.</p>
+</div>
+</div>
+<section id="setting-up-password-less-kerberos-token-on-lxplus7">
+<h3>Setting up password-less kerberos token on lxplus7<a class="headerlink" href="#setting-up-password-less-kerberos-token-on-lxplus7" title="Link to this heading"></a></h3>
 <p>In order for the kerberos token to be refreshed automatically, it must be possible to do so without a password.
 Therefore, we create a keytab (similar to a private ssh key) on lxplus using the provided <code class="docutils literal notranslate"><span class="pre">cern-get-keytab</span></code> utility. Note it will prompt for your password, in order to generate the keytab.</p>
 <div class="panel panel-callout docutils container">
@@ -500,16 +518,16 @@ Since <a class="reference external" href="https://cern.service-now.com/service-p
 </div>
 <p>This should display information about a ticket cache.</p>
 </section>
-<section id="making-use-of-the-keytab">
-<h2>Making use of the keytab<a class="headerlink" href="#making-use-of-the-keytab" title="Link to this heading"></a></h2>
+<section id="making-use-of-the-keytab-on-lxplus7">
+<h3>Making use of the keytab on lxplus7<a class="headerlink" href="#making-use-of-the-keytab-on-lxplus7" title="Link to this heading"></a></h3>
 <p>This keytab file can now be used to obtain kerberos tokens without having to type a password:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kinit<span class="w"> </span>-k<span class="w"> </span>-t<span class="w"> </span>~/private/<span class="nv">$USER</span>.keytab<span class="w"> </span><span class="nv">$USER</span>@CERN.CH
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">-k</span></code> tells <code class="docutils literal notranslate"><span class="pre">kinit</span></code> to use a keytab file and <code class="docutils literal notranslate"><span class="pre">-t</span> <span class="pre">~/private/$USER.keytab</span></code> where this keytab actually is.</p>
 </section>
-<section id="using-k5reauth-to-automatically-refresh-your-kerberos-token">
-<h2>Using k5reauth to automatically refresh your kerberos token<a class="headerlink" href="#using-k5reauth-to-automatically-refresh-your-kerberos-token" title="Link to this heading"></a></h2>
+<section id="using-k5reauth-to-automatically-refresh-your-kerberos-token-on-lxplus7">
+<h3>Using k5reauth to automatically refresh your kerberos token on lxplus7<a class="headerlink" href="#using-k5reauth-to-automatically-refresh-your-kerberos-token-on-lxplus7" title="Link to this heading"></a></h3>
 <p>To create a permanent session of <code class="docutils literal notranslate"><span class="pre">tmux</span></code> or <code class="docutils literal notranslate"><span class="pre">screen</span></code>, the <code class="docutils literal notranslate"><span class="pre">k5reauth</span></code> command is used, which by default creates a new shell and attaches it as a child to itself and keeps renewing the kerberos token for its children. <code class="docutils literal notranslate"><span class="pre">k5reauth</span></code> can start processes other than a new shell by specifying the program you want to start as an argument</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>k5reauth<span class="w"> </span>-f<span class="w"> </span>-i<span class="w"> </span><span class="m">3600</span><span class="w"> </span>-p<span class="w"> </span>....<span class="w"> </span>--<span class="w"> </span>&lt;command&gt;
 </pre></div>
@@ -549,6 +567,26 @@ Now, you should have a persistent tmux session on the machine you logged in to.<
 </pre></div>
 </div>
 <p>Note that you will still have to follow the rest of the recipe (<code class="docutils literal notranslate"><span class="pre">kinit</span></code>, detach, log out, log in, attach, <code class="docutils literal notranslate"><span class="pre">kinit</span></code>) manually to get a persistent session.</p>
+</section>
+</section>
+<section id="lxplus8">
+<h2>lxplus8<a class="headerlink" href="#lxplus8" title="Link to this heading"></a></h2>
+<p>If you are on lxplus8, many of the above issues do not apply. You can simply create a screen or tmux session as normal; then, when you log back in to that node, it will still be there. You don’t even have to initialize a kerberos token.</p>
+<blockquote>
+<div><p>This advice has not been tested for sessions lasting more than 24 hours.
+If you’re worried, you can follow the recipe for lxplus7 or lxplus9.</p>
+</div></blockquote>
+</section>
+<section id="lxplus9">
+<h2>lxplus9<a class="headerlink" href="#lxplus9" title="Link to this heading"></a></h2>
+<p>If you are on lxplus9, your screen or tmux session will be killed when you log out.
+To avoid this, you must follow the recipe in <a class="reference external" href="https://cern.service-now.com/service-portal?id=kb_article&amp;n=KB0008111">KB0008111</a> to initialize the session:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span>--user<span class="w"> </span>start<span class="w"> </span>tmux.service
+tmux<span class="w"> </span>a
+</pre></div>
+</div>
+<p>This will auto-renew your kerberos ticket as well, obviating the need to call <code class="docutils literal notranslate"><span class="pre">kinit</span></code> or use keytabs.
+The recipe for lxplus7 <em>will not work</em>.</p>
 </section>
 </section>
 
