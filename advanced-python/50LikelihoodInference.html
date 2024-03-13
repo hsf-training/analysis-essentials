@@ -693,7 +693,7 @@
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/core/loss.py:933: AdvancedFeatureWarning: Either you&#39;re using an advanced feature OR causing unwanted behavior. To turn this warning off, use `zfit.settings.advanced_warnings[&#39;extended_in_UnbinnedNLL&#39;] = False`  or &#39;all&#39; (use with care) with `zfit.settings.advanced_warnings[&#39;all&#39;] = False
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/core/loss.py:955: AdvancedFeatureWarning: Either you&#39;re using an advanced feature OR causing unwanted behavior. To turn this warning off, use `zfit.settings.advanced_warnings[&#39;extended_in_UnbinnedNLL&#39;] = False`  or &#39;all&#39; (use with care) with `zfit.settings.advanced_warnings[&#39;all&#39;] = False
 Extended PDFs ([&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]]) are given to a normal UnbinnedNLL.  This won&#39;t take the yield into account and simply treat the PDFs as non-extended PDFs. To create an extended NLL, use the `ExtendedUnbinnedNLL`.
   warn_advanced_feature(
 </pre></div></div>
@@ -724,7 +724,7 @@ Extended PDFs ([&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  par
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7fd10d606b50&gt;] constraints=[]&gt;
+&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7f640cf5cc90&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
@@ -783,23 +783,23 @@ sigma            0.0150308       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7fd10d5e0ed0&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f641077de90&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
 ╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════════╕
 │  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | internal) │
 ╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════════╡
-│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 3.4e-06 │             -2350.89 |  9808.028 │
+│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 0.00012 │            -49419.77 |  9810.432 │
 ╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name         value  (rounded)    at limit
 ---------  ------------------  ----------
-bkg_yield             6037.18       False
-sig_yield             139.841       False
-lambda               -1.03434       False
-mu                    3.09003       False
+bkg_yield             5970.09       False
+sig_yield             132.774       False
+lambda               -1.07835       False
+mu                    3.10916       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -827,7 +827,7 @@ Default name of hesse (which is currently the method name such as `minuit_hesse`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1340: FutureWarning: &#39;minuit_minos&#39; will be changed as the default errors method to a custom implementationwith the same functionality. If you want to make sure that &#39;minuit_minos&#39; will be used in the future, add it explicitly as in `errors(method=&#39;minuit_minos&#39;)`
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1342: FutureWarning: &#39;minuit_minos&#39; will be changed as the default errors method to a custom implementationwith the same functionality. If you want to make sure that &#39;minuit_minos&#39; will be used in the future, add it explicitly as in `errors(method=&#39;minuit_minos&#39;)`
   warnings.warn(
 </pre></div></div>
 </div>
@@ -836,7 +836,7 @@ Default name of hesse (which is currently the method name such as `minuit_hesse`
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1361: ChangedFeatureWarning: The behavior of this functionality recently changed.To turn this warning off, use `zfit.settings.changed_warnings.errors_name = False`  or &#39;all&#39; with `zfit.settings.changed_warnings.all = False
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1363: ChangedFeatureWarning: The behavior of this functionality recently changed.To turn this warning off, use `zfit.settings.changed_warnings.errors_name = False`  or &#39;all&#39; with `zfit.settings.changed_warnings.all = False
 Default name of errors (which is currently the method name such as `minuit_minos`or `zfit_errors`) has changed to `errors`. Old names are still added as well for compatibility but will be removed in the future. INSTRUCTIONS: to stay compatible, change wherever you access the error to &#39;errors&#39; or specify the name explicitly in errors(...).
   warn_changed_feature(message, &#34;errors_name&#34;)
 </pre></div></div>
@@ -855,7 +855,7 @@ FitResult
 <div class="output_area docutils container">
 <div class="highlight"><pre>
  of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7fd10d5e0ed0&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f641077de90&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
@@ -894,7 +894,7 @@ True
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-       │ 3.4e-06 │             -2350.89 |  9808.028 │
+       │ 0.00012 │            -49419.77 |  9810.432 │
 ╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
 
 </pre></div></div>
@@ -914,7 +914,7 @@ Parameters
 <div class="highlight"><pre>
 name         value  (rounded)        hesse               errors         minuit_minos    at limit
 ---------  ------------------  -----------  -------------------  -------------------  ----------
-bkg_yield             6037.18  +/-      81  -     81   +     81  -     81   +     81       False
+bkg_yield             5970.09  +/-      81  -     81   +     80  -     81   +     80       False
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -923,7 +923,7 @@ bkg_yield             6037.18  +/-      81  -     81   +     81  -     81   +   
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-sig_yield             139.841  +/-      26  -     26   +     26  -     26   +     26       False
+sig_yield             132.774  +/-      26  -     25   +     26  -     25   +     26       False
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -932,7 +932,7 @@ sig_yield             139.841  +/-      26  -     26   +     26  -     26   +   
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-lambda               -1.03434  +/-   0.065  -  0.065   +  0.064  -  0.065   +  0.064       False
+lambda               -1.07835  +/-   0.065  -  0.064   +  0.066  -  0.064   +  0.066       False
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -941,7 +941,7 @@ lambda               -1.03434  +/-   0.065  -  0.065   +  0.064  -  0.065   +  0
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-mu                    3.09003  +/-  0.0033  - 0.0034   + 0.0033  - 0.0034   + 0.0033       False
+mu                    3.10916  +/-   0.004  -  0.004   + 0.0041  -  0.004   + 0.0041       False
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1021,7 +1021,7 @@ Z = \Phi^{-1}(1 - p_0).
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 
-p_value for the Null hypothesis = 2.3490038802975732e-09
+p_value for the Null hypothesis = 9.846804593927061e-09
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1037,7 +1037,7 @@ p_value for the Null hypothesis = 2.3490038802975732e-09
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Significance (in units of sigma) = 5.857530422707143
+Significance (in units of sigma) = 5.614671436058858
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1054,7 +1054,7 @@ Significance (in units of sigma) = 5.857530422707143
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(2.3490038802975732e-09, 5.857530422707143)
+(9.846804593927061e-09, 5.614671436058858)
 </pre></div></div>
 </div>
 <p><strong>Exercise</strong> play around! First things first: repeat the fit. The difference we will see is statistical fluctuation from the resampling of the data; we take only a fraction at random.</p>
