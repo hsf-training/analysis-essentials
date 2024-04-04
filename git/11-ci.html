@@ -505,7 +505,7 @@ directory of your repository called <code class="docutils literal notranslate"><
 specify a pipeline, which can be built up of any number of interconnected stages
 with each job having it’s own environment. A minimal example of this file is:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">my_first_job</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitlab-registry.cern.ch/ci-tools/ci-worker:cc7</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitlab-registry.cern.ch/linuxsupport/alma9-base</span>
 <span class="w">    </span><span class="nt">script</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python -c &#39;import this&#39;</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;My first CI produced file&quot; &gt; output.txt</span>
@@ -515,7 +515,8 @@ with each job having it’s own environment. A minimal example of this file is:<
 <p>This creates a single job named <code class="docutils literal notranslate"><span class="pre">my_first_job</span></code> and the <code class="docutils literal notranslate"><span class="pre">image:</span></code> key defines a
 <a class="reference external" href="https://www.freecodecamp.org/news/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b/">docker image</a>
 which is used the define the environment that is used to run the job. In this case we use an
-<a class="reference external" href="https://gitlab.cern.ch/ci-tools/ci-worker/container_registry">official CERN CentOS 7 image</a>.
+<a class="reference external" href="https://gitlab.cern.ch:/linuxsupport/alma9-base/container_registry">official CERN AlmaLinux 9 image</a>.
+More images are listed at the <a class="reference external" href="https://linux.web.cern.ch/dockerimages/">documentation pages</a> for linux at CERN.
 The <code class="docutils literal notranslate"><span class="pre">script:</span></code> key then defines one or more commands which are executed
 sequentially. If any of the command return a non-zero exit code the execution
 stops and the “build” is marked as failed.</p>
