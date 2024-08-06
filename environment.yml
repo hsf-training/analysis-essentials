@@ -11,7 +11,7 @@ dependencies:
   - mplhep
   - nb_conda
   - nb_conda_kernels
-  - notebook<7.0.0  # fixes failed nb_conda install https://github.com/DeepLabCut/DeepLabCut/issues/2322
+  - notebook  # <7.0.0  # fixes failed nb_conda install https://github.com/DeepLabCut/DeepLabCut/issues/2322
   - numpy
   - pandas
   - particle
@@ -21,14 +21,15 @@ dependencies:
   - scikit-learn
   - scipy
   - uproot >=5.0.0  # 5.0.0 breaks the httpsource argument with open, TODO upgrade (what's the equivalent?) in the "get_truth" function
-  - uproot3
+  - aiohttp  # needed for uproot http access
+  - requests  # needed for uproot http access
   - vector
   - wget
-#  - xgboost
-  - zfit >=0.14.0
+  #  - xgboost
+  - zfit >=0.20.0
   - hepstats
   - pip:
-    - git+https://github.com/hsf-training/python-lesson.git
-    - formulate
-    - starterkit-ci
-    - xgboost
+      - git+https://github.com/hsf-training/python-lesson.git
+      - formulate
+      - starterkit-ci
+      - xgboost
