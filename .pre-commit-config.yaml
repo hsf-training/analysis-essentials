@@ -21,7 +21,7 @@ repos:
 
       - id: nbqa-pyupgrade
         additional_dependencies: [ pyupgrade ]
-        args: [ --py38-plus ]
+        args: [ --py39-plus ]
 #
 #  - repo: https://github.com/ambv/black
 #    rev: 21.9b0
@@ -35,4 +35,18 @@ repos:
       - id: nbstripout
 
 
+# needs rust, only activate if needed
+  - repo: https://github.com/shssoichiro/oxipng
+    rev: v9.1.2
+    hooks:
+      - id: oxipng
 
+#  - repo: https://github.com/astral-sh/ruff-pre-commit
+#    rev: "v0.5.0"
+#    hooks:
+#      - id: ruff
+#        types_or: [ python, pyi, jupyter ]
+#        args: [ --fix, --unsafe-fixes, --show-fixes , --line-length=120]
+#      # Run the formatter.
+#      - id: ruff-format
+#        types_or: [ python, pyi, jupyter ]
