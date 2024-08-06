@@ -47,11 +47,11 @@ Sounds good? Then let’s get going!
     00scripts.ipynb
     01basics.ipynb
     operators.md
-    numbers.md
-    strings.md
-    lists.md
-    dictionaries.md
-    conditions.md
+    numbers.ipynb
+    strings.ipynb
+    lists.ipynb
+    dictionaries.ipynb
+    conditions.ipynb
     methods.md
     scripting.md
     modules.md
