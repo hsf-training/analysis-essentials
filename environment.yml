@@ -26,9 +26,10 @@ dependencies:
   - vector
   - wget
   #  - xgboost
-  - zfit >=0.20.0
   - hepstats
   - pip:
+      - zfit >=0.24.0  # to have the newest version, TensorFlow is a bit stuck: https://github.com/conda-forge/tensorflow-feedstock/pull/408
+      - zfit-physics >=0.7.0
       - git+https://github.com/hsf-training/python-lesson.git
       - formulate
       - starterkit-ci
