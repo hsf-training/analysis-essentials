@@ -3,7 +3,7 @@ repos:
     rev: v5.0.0
     hooks:
       - id: check-added-large-files
-        args: ['--maxkb=1000']
+        args: [ '--maxkb=1000' ]
       - id: check-merge-conflict
       - id: check-case-conflict
       - id: check-symlinks
@@ -27,6 +27,8 @@ repos:
     rev: 0.8.1
     hooks:
       - id: nbstripout
+        args: [ --extra-keys="metadata.kernelspec metadata.language_info.codemirror_mode.version metadata.language_info.pygments_lexer metadata.language_info.version" ]
+
 
 
 # needs rust, only activate if needed
@@ -34,4 +36,5 @@ repos:
 #    rev: v9.1.2
 #    hooks:
 #      - id: oxipng
+#        args: [ --best --strip all --quiet ]
 
