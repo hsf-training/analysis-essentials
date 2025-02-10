@@ -4,8 +4,10 @@ channels:
   - nodefaults
 dependencies:
   - python ~=3.11.0
+  - aiohttp  # needed for uproot http access
   - boost-histogram
   - hep_ml
+  - hepstats
   - hepunits
   - hist
   - ipython
@@ -19,16 +21,14 @@ dependencies:
   - particle
   - pandoc
   - pip
-  - uv
+  - requests  # needed for uproot http access
   - scikit-learn
   - scipy
   - uproot >=5.0.0  # 5.0.0 breaks the httpsource argument with open, TODO upgrade (what's the equivalent?) in the "get_truth" function
-  - aiohttp  # needed for uproot http access
-  - requests  # needed for uproot http access
+  - uv
   - vector
   - wget
   #  - xgboost
-  - hepstats
   - pip:
       - zfit >=0.24.0  # to have the newest version, TensorFlow is a bit stuck: https://github.com/conda-forge/tensorflow-feedstock/pull/408
       - zfit-physics >=0.7.0
