@@ -3,7 +3,7 @@ repos:
     rev: v5.0.0
     hooks:
       - id: check-added-large-files
-        args: ['--maxkb=1000']
+        args: [ '--maxkb=1000' ]
       - id: check-merge-conflict
       - id: check-case-conflict
       - id: check-symlinks
@@ -21,16 +21,19 @@ repos:
 
       - id: nbqa-pyupgrade
         additional_dependencies: [ pyupgrade ]
-        args: [ --py38-plus ]
-#
-#  - repo: https://github.com/ambv/black
-#    rev: 21.9b0
-#    hooks:
-#      - id: black
-#        args: [ --line-length=120 ]
-#
+        args: [ --py39-plus ]
+
   - repo: https://github.com/kynan/nbstripout
     rev: 0.8.1
     hooks:
       - id: nbstripout
+        args: [ --extra-keys=metadata.language_info.codemirror_mode.version metadata.kernelspec metadata.language_info.pygments_lexer metadata.language_info.version ]
+
+
+  # needs rust, only activate if needed
+#  - repo: https://github.com/shssoichiro/oxipng
+#    rev: v9.1.3
+#    hooks:
+#      - id: oxipng
+#        args: [ "--", "--best", "--strip", "all", "--quiet" ]
 

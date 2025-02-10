@@ -4,6 +4,8 @@ Welcome to the advanced Python tutorials  of the starterkit. This lecture covers
 and the notebooks available may fill more than the scheduled lesson. However, they also serve as
 a knowledge base that one can always come back to lock up things.
 
+[//]: # (33ModelTuning.ipynb was commented out below, fails, would need to be fixed)
+
 ```eval_rst
 .. toctree::
     :maxdepth: 3
@@ -17,7 +19,6 @@ a knowledge base that one can always come back to lock up things.
     30Classification.ipynb
     31ClassificationExtension.ipynb
     32BoostingToUniformity.ipynb
-    33ModelTuning.ipynb
     40Histograms.ipynb
     45DemoReweighting.ipynb
     50LikelihoodInference.ipynb
