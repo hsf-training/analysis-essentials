@@ -180,15 +180,17 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="12AdvancedClasses.html">Advanced Classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Dunder">Dunder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#len">len</a></li>
-<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#str">str</a></li>
-<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Callable">Callable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Indexing-(iterating)">Indexing (iterating)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Dunder">Dunder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#len">len</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#str">str</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#Callable">Callable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#Indexing-(iterating)">Indexing (iterating)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="20DataAndPlotting.html">2: First look at data</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="20DataAndPlotting.html#Two-plotting-libraries?">Two plotting libraries?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="20DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a><ul>
@@ -526,10 +528,10 @@
 <div class="highlight"><pre>
 /usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/__init__.py:60: UserWarning: TensorFlow warnings are by default suppressed by zfit. In order to show them, set the environment variable ZFIT_DISABLE_TF_WARNINGS=0. In order to suppress the TensorFlow warnings AND this warning, set ZFIT_DISABLE_TF_WARNINGS=1.
   warnings.warn(
-2025-02-10 16:38:31.432500: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-02-10 17:08:46.074191: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1739205511.447009    5071 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1739205511.451435    5071 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1739207326.089547    5130 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1739207326.093905    5130 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -561,7 +563,7 @@ E0000 00:00:1739205511.451435    5071 cuda_blas.cc:1418] Unable to register cuBL
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-2025-02-10 16:38:34.110790: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:152] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+2025-02-10 17:08:48.805275: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:152] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -693,7 +695,7 @@ E0000 00:00:1739205511.451435    5071 cuda_blas.cc:1418] Unable to register cuBL
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_5071/4197811884.py:1: ExperimentalFeatureWarning: The function &lt;function assert_initialized.&lt;locals&gt;.wrapper at 0x7fcd1809ef20&gt; is EXPERIMENTAL, potentially unstable and likely to change in the future! Use it with caution and feedback (Gitter, Mattermost, e-mail or https://github.com/zfit/zfit/issues) is very welcome!
+/tmp/ipykernel_5130/4197811884.py:1: ExperimentalFeatureWarning: The function &lt;function assert_initialized.&lt;locals&gt;.wrapper at 0x7fe8380b6f20&gt; is EXPERIMENTAL, potentially unstable and likely to change in the future! Use it with caution and feedback (Gitter, Mattermost, e-mail or https://github.com/zfit/zfit/issues) is very welcome!
   model.plot.plotpdf()
 </pre></div></div>
 </div>
@@ -811,23 +813,23 @@ sigma            0.0150308       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.Data: Data obs=(&#39;Jpsi_M&#39;,) shape=(6145, 1)&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.Data: Data obs=(&#39;Jpsi_M&#39;,) shape=(6134, 1)&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
 ╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════╕
 │  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | opt.) │
 ╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════╡
-│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 1.6e-05 │         -2344.47 |  9804.663 │
+│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 2.2e-06 │         -2316.87 |  9844.683 │
 ╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name         value  (rounded)    at limit
 ---------  ------------------  ----------
-bkg_yield             6027.38       False
-sig_yield             117.625       False
-lambda               -1.08015       False
-mu                    3.09624       False
+bkg_yield             5966.58       False
+sig_yield             167.346       False
+lambda              -0.930775       False
+mu                     3.0945       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -846,23 +848,23 @@ mu                    3.09624       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 FitResult of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.Data: Data obs=(&#39;Jpsi_M&#39;,) shape=(6145, 1)&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.Data: Data obs=(&#39;Jpsi_M&#39;,) shape=(6134, 1)&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
 ╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════╕
 │  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | opt.) │
 ╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════╡
-│  True   │    True     │      False       │ 1.6e-05 │         -2344.47 |  9804.663 │
+│  True   │    True     │      False       │ 2.2e-06 │         -2316.87 |  9844.683 │
 ╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════╛
 
 Parameters
 name         value  (rounded)        hesse               errors    at limit
 ---------  ------------------  -----------  -------------------  ----------
-bkg_yield             6027.38  +/-      81  -     81   +     81       False
-sig_yield             117.625  +/-      25  -     25   +     26       False
-lambda               -1.08015  +/-   0.065  -  0.065   +  0.064       False
-mu                    3.09624  +/-   0.004  -  0.004   +  0.004       False
+bkg_yield             5966.58  +/-      81  -     80   +     81       False
+sig_yield             167.346  +/-      27  -     26   +     27       False
+lambda              -0.930775  +/-   0.065  -  0.065   +  0.065       False
+mu                     3.0945  +/-  0.0029  -  0.003   + 0.0029       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -934,7 +936,7 @@ Z = \Phi^{-1}(1 - p_0).
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(np.float64(3.4254362890617784e-07), np.float64(4.965544090312275))
+(np.float64(1.7773560401224131e-12), np.float64(6.953841409066184))
 </pre></div></div>
 </div>
 <p><strong>Exercise</strong> play around! First things first: repeat the fit. The difference we will see is statistical fluctuation from the resampling of the data; we take only a fraction at random.</p>

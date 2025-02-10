@@ -180,15 +180,17 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Advanced Classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Dunder">Dunder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#len">len</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#str">str</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Callable">Callable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Indexing-(iterating)">Indexing (iterating)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Dunder">Dunder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#len">len</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#str">str</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Callable">Callable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Indexing-(iterating)">Indexing (iterating)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#Danger-zone">Danger zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Danger-zone">Danger zone</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="20DataAndPlotting.html">2: First look at data</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="20DataAndPlotting.html#Two-plotting-libraries?">Two plotting libraries?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="20DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a><ul>
@@ -549,13 +551,12 @@ add called on val left
 42
 </pre></div></div>
 </div>
-</section>
 <section id="len">
-<h2>len<a class="headerlink" href="#len" title="Link to this heading"></a></h2>
+<h3>len<a class="headerlink" href="#len" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">len</span></code> method simply checks if there is a <code class="docutils literal notranslate"><span class="pre">__len__</span></code> implemented.</p>
 </section>
 <section id="str">
-<h2>str<a class="headerlink" href="#str" title="Link to this heading"></a></h2>
+<h3>str<a class="headerlink" href="#str" title="Link to this heading"></a></h3>
 <p>To have a nice, representable, human readable string, <code class="docutils literal notranslate"><span class="pre">__str__</span></code> should be implemented. There is a similar one, which is <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>. This is also a string representation of the object, yet more targeted towards the developers.</p>
 <p>If no <code class="docutils literal notranslate"><span class="pre">__str__</span></code> is provided, it falls back to <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>, which, if not provided, uses a default implementation.</p>
 <div class="nbinput nblast docutils container">
@@ -585,7 +586,7 @@ add called on val left
 <p><strong>Exercise</strong>: try it out by using <code class="docutils literal notranslate"><span class="pre">str(...)</span></code> and <code class="docutils literal notranslate"><span class="pre">repr(...)</span></code></p>
 </section>
 <section id="Callable">
-<h2>Callable<a class="headerlink" href="#Callable" title="Link to this heading"></a></h2>
+<h3>Callable<a class="headerlink" href="#Callable" title="Link to this heading"></a></h3>
 <p>In Python, a callable is any object that can be called. Calling an object means to have <code class="docutils literal notranslate"><span class="pre">(...)</span></code> attached behind it. This operator looks for a <code class="docutils literal notranslate"><span class="pre">__call__</span></code> method.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -648,7 +649,7 @@ called with args () and kwargs {}
 <p><code class="docutils literal notranslate"><span class="pre">TypeError:</span> <span class="pre">'NotCallable'</span> <span class="pre">object</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">callable</span></code> translates to <code class="docutils literal notranslate"><span class="pre">has</span> <span class="pre">no</span> <span class="pre">__call__</span> <span class="pre">method</span></code></p>
 </section>
 <section id="Indexing-(iterating)">
-<h2>Indexing (iterating)<a class="headerlink" href="#Indexing-(iterating)" title="Link to this heading"></a></h2>
+<h3>Indexing (iterating)<a class="headerlink" href="#Indexing-(iterating)" title="Link to this heading"></a></h3>
 <p>There are a few methods when it comes down to iteration. However, we won’t go into these details but rather look at the normal indexing. That is controlled via <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> and <code class="docutils literal notranslate"><span class="pre">__setitem__</span></code> and invoked with the <code class="docutils literal notranslate"><span class="pre">[]</span></code> operator.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -719,6 +720,7 @@ setitem of one invoked with index 2 and item 3
 </pre></div></div>
 </div>
 </section>
+</section>
 <section id="self">
 <h2>self<a class="headerlink" href="#self" title="Link to this heading"></a></h2>
 <p>What is actually self? Nothing else than the object itself. However, we can rename it however we like.</p>
@@ -782,9 +784,8 @@ setitem of one invoked with index 2 and item 3
 </div>
 <p>The latter works as well! Why not? <code class="docutils literal notranslate"><span class="pre">add</span></code> is a method that we call and we give it two arguments. Forgetting about class dynamics, it makes actually complete sense.</p>
 </section>
-</section>
 <section id="Danger-zone">
-<h1>Danger zone<a class="headerlink" href="#Danger-zone" title="Link to this heading"></a></h1>
+<h2>Danger zone<a class="headerlink" href="#Danger-zone" title="Link to this heading"></a></h2>
 <p>The following is only for fun and should <em>not</em> be used in real live, except you do <em>really</em> know what you’re doing and at least two independent colleagues agree that this is the right way to go</p>
 <p>We have seen that basically everything is an operator and it has a dunder method. Everything? Quiz: what did we miss?</p>
 <p>Solution: the <code class="docutils literal notranslate"><span class="pre">.</span></code> the access operator. Yes, you guessed right. Let’s override it</p>
@@ -998,6 +999,7 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 <p>And then there is the maybe most important sentence of all in Python:</p>
 <p><strong>We’re all adults here.</strong></p>
 <p>Behave like one when coding ;)</p>
+</section>
 </section>
 
 
