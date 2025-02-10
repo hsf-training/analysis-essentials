@@ -28,6 +28,8 @@
    "metadata": {},
    "outputs": [],
    "source": [
+    "from xgboost import XGBClassifier\n",
+    "\n",
     "%matplotlib inline\n",
     "\n",
     "import numpy as np\n",
@@ -53,12 +55,10 @@
     "columns = ['hSPD', 'pt_b', 'pt_phi', 'vchi2_b', 'mu_pt_sum']\n",
     "\n",
     "with uproot.open('https://starterkit.web.cern.ch/starterkit/data/advanced-python-2019/MC_distribution.root',\n",
-    "                            httpsource={'chunkbytes': 1024*1024, 'limitbytes': 33554432, 'parallel': 64}\n",
     "                            ) as original_file:\n",
     "    original_tree = original_file['tree']\n",
     "    original = original_tree.arrays(library='pd')\n",
     "with uproot.open('https://starterkit.web.cern.ch/starterkit/data/advanced-python-2019/RD_distribution.root',\n",
-    "                          httpsource={'chunkbytes': 1024*1024, 'limitbytes': 33554432, 'parallel': 64}\n",
     "                          ) as target_file:\n",
     "    target_tree = target_file['tree']\n",
     "    target = target_tree.arrays(library='pd')\n",
@@ -233,8 +233,8 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "reweighter = reweight.GBReweighter(n_estimators=250, learning_rate=0.1, max_depth=3, min_samples_leaf=1000,\n",
-    "                                   gb_args={'subsample': 0.4})\n",
+    "reweighter = reweight.GBReweighter(n_estimators=50, learning_rate=0.1, max_depth=3, min_samples_leaf=1000,\n",
+    "                                   gb_args={'subsample': 0.7})\n",
     "reweighter.fit(original_train, target_train)\n",
     "\n",
     "gb_weights_test = reweighter.predict_weights(original_test)\n",
@@ -333,9 +333,9 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "from sklearn.ensemble import GradientBoostingClassifier\n",
     "from sklearn.metrics import roc_auc_score\n",
     "from sklearn.model_selection import train_test_split\n",
+    "from xgboost import XGBClassifier\n",
     "\n",
     "data = np.concatenate([original_test, target_test])\n",
     "labels = np.array([0] * len(original_test) + [1] * len(target_test))\n",
@@ -349,7 +349,7 @@
     "for name, new_weights in weights.items():\n",
     "    W = np.concatenate([new_weights / new_weights.sum() * len(target_test), [1] * len(target_test)])\n",
     "    Xtr, Xts, Ytr, Yts, Wtr, Wts = train_test_split(data, labels, W, random_state=42, train_size=0.51)\n",
-    "    clf = GradientBoostingClassifier(subsample=0.3, n_estimators=50).fit(Xtr, Ytr, sample_weight=Wtr)\n",
+    "    clf = XGBClassifier(subsample=0.8, n_estimators=50).fit(Xtr, Ytr, sample_weight=Wtr)\n",
     "\n",
     "    print(name, roc_auc_score(Yts, clf.predict_proba(Xts)[:, 1], sample_weight=Wts))"
    ]
@@ -430,8 +430,8 @@
    "outputs": [],
    "source": [
     "# define base reweighter\n",
-    "reweighter_base = reweight.GBReweighter(n_estimators=80,\n",
-    "                                        learning_rate=0.01, max_depth=4, min_samples_leaf=100,\n",
+    "reweighter_base = reweight.GBReweighter(n_estimators=40,\n",
+    "                                        learning_rate=0.02, max_depth=4, min_samples_leaf=100,\n",
     "                                        gb_args={'subsample': 0.8})\n",
     "reweighter = reweight.FoldingReweighter(reweighter_base, n_folds=2)\n",
     "# it is not needed divide data into train/test parts; reweighter can be train on the whole samples\n",
@@ -469,7 +469,7 @@
     "for name, new_weights in weights.items():\n",
     "    W = np.concatenate([new_weights / new_weights.sum() * len(target), [1] * len(target)])\n",
     "    Xtr, Xts, Ytr, Yts, Wtr, Wts = train_test_split(data, labels, W, random_state=42, train_size=0.51)\n",
-    "    clf = GradientBoostingClassifier(subsample=0.6, n_estimators=30).fit(Xtr, Ytr, sample_weight=Wtr)\n",
+    "    clf = XGBClassifier(subsample=0.6, n_estimators=30).fit(Xtr, Ytr, sample_weight=Wtr)\n",
     "\n",
     "    print(name, roc_auc_score(Yts, clf.predict_proba(Xts)[:, 1], sample_weight=Wts))"
    ]
@@ -487,22 +487,14 @@
   }
  ],
  "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
   "language_info": {
    "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
+    "name": "ipython"
    },
    "file_extension": ".py",
    "mimetype": "text/x-python",
    "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.9.7"
+   "nbconvert_exporter": "python"
   }
  },
  "nbformat": 4,

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,26 +7,23 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lists and looping &mdash; Analysis essentials  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
-        <script src="../_static/panels.js?v=0f4bdeea"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
+      <script src="../_static/panels.js?v=0f4bdeea"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -81,26 +80,30 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings.html">Strings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="strings.html#formatting">Formatting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strings.html#Formatting">Formatting</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Lists and looping</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#looping">Looping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#list-comprehension">List comprehension</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tuples">Tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Looping">Looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Indentation">Indentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#List-comprehension-(Sugar,-can-be-skipped-on-first-read)">List comprehension (Sugar, can be skipped on first read)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Tuples">Tuples</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries.html">Dictionaries</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="conditions.html">Conditions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="conditions.html#truthiness">Truthiness</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conditions.html#conditions-in-loops">Conditions in loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditions.html#Truthiness">Truthiness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditions.html#Conditions-in-loops">Conditions in loops</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="methods.html">Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="methods.html#inline-methods">Inline methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="methods.html#Inline-methods">Inline methods</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scripting.html">Scripting</a><ul>
@@ -108,13 +111,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="modules.html">Modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#the-standard-library">The standard library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#modules-from-pypi">Modules from PyPi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#write-your-first-python-module">Write your first Python module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#write-a-structured-module">Write a structured module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#run-a-module">Run a module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#Using-modules-into-your-code:-import">Using modules into your code: import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#The-standard-library">The standard library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#Modules-from-PyPi">Modules from PyPi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#(Advanced)-Write-your-first-Python-module">(Advanced) Write your first Python module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#Module-name-restrictions">Module name restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#Write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#Run-a-module">Run a module</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a><ul>
@@ -226,10 +231,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html">Model tuning setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html#Cross-validation">Cross-validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html#k-folding-&amp;-early-stopping"><span class="math notranslate nohighlight">\(k\)</span>-folding &amp; early stopping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html#Hyperameter-optimisation">Hyperameter optimisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/40Histograms.html">6: Histograms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Axes">Axes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Regular">Regular</a></li>
@@ -279,8 +280,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html">8: Likelihood inference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Scope-of-this-tutorial">Scope of this tutorial</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Getting-started">Getting started</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Difference-of-the-two-spaces">Difference of the two spaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Plotting">Plotting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Creating-the-model">Creating the model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Plotting">Plotting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#A-quick-plot">A quick plot</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Loss">Loss</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Fixing-parameters">Fixing parameters</a></li>
 </ul>
@@ -468,7 +472,7 @@
           <li class="breadcrumb-item"><a href="README.html">An introduction to Python</a></li>
       <li class="breadcrumb-item active">Lists and looping</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/python/lists.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/python/lists.ipynb" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -476,453 +480,1099 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="lists-and-looping">
-<h1>Lists and looping<a class="headerlink" href="#lists-and-looping" title="Link to this heading"></a></h1>
-<p>Now things start to get <em>really</em> interesting! Lists are collections of things
-stored in a specific order. They can be defined literally by wrapping things in
-square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>, separating items with commas <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
-<span class="go">[4, 2, 9, 3]</span>
+  <section id="Lists-and-looping">
+<h1>Lists and looping<a class="headerlink" href="#Lists-and-looping" title="Link to this heading"></a></h1>
+<p>Now things start to get <em>really</em> interesting! Lists are collections of things stored in a specific order. They can be defined literally by wrapping things in square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>, separating items with commas <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[4, 2, 9, 3]
+</pre></div></div>
 </div>
 <p>Python lists can contain collections of whatever you like.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; excellent = [41, &#39;Hello&#39;, math.sin]
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<p>Each item in the list can be accessed by its <em>index</em>, its position in the list,
-which starts at zero for the first item. Indexing by negative numbers starts
-from the <em>last</em> item of the list.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="go">4</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="go">9</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="go">3</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">excellent</span> <span class="o">=</span> <span class="p">[</span><span class="mi">41</span><span class="p">,</span> <span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">]</span>
 </pre></div>
+</div>
+</div>
+<p>Each item in the list can be accessed by its <em>index</em>, its position in the list, which starts at zero for the first item. Indexing by negative numbers starts from the <em>last</em> item of the list.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+4
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+9
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+3
+</pre></div></div>
 </div>
 <p>We’ll get an error if we try to access an index that doesn’t exist:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">99</span><span class="p">]</span>
-<span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-<span class="gr">IndexError</span>: <span class="n">list index out of range</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">99</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">IndexError</span>                                Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[8], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">a</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">99</span><span class="ansi-yellow-bg">]</span>
+
+<span class="ansi-red-fg">IndexError</span>: list index out of range
+</pre></div></div>
 </div>
 <p>Like strings, lists have a length which can be found with the <code class="docutils literal notranslate"><span class="pre">len</span></code> method.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="go">4</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<p>Unlike strings, lists are <em>mutable</em>, which means we can modify lists in-place,
-without creating a new one.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
-<span class="go">[4, 2, 9, 3, 45]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="go">5</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We can see that lists are mutable because using the <code class="docutils literal notranslate"><span class="pre">append</span></code> method didn’t
-print anything, and our variable <code class="docutils literal notranslate"><span class="pre">a</span></code> now has a different value.</p>
-<p>Because lists are mutable, we can use the special <code class="docutils literal notranslate"><span class="pre">del</span></code> keyword to remove
-specific indices from the list.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
-<span class="go">[4, 2, 9, 45]</span>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="panel panel-callout docutils container">
-<div class="panel-header open docutils container">
-<p id="functions-and-keywords"><i class="fa fa-info-circle"></i> Functions and keywords</p>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+4
+</pre></div></div>
 </div>
-<div class="panel-body docutils container">
-<p><code class="docutils literal notranslate"><span class="pre">del</span></code> is a language keyword representing an action, and not a function. The
-syntactic difference is that functions take their arguments between parentheses,
-such as <code class="docutils literal notranslate"><span class="pre">my_function(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code>, whereas <code class="docutils literal notranslate"><span class="pre">del</span></code> does not.</p>
+<p>Unlike strings, lists are <em>mutable</em>, which means we can modify lists in-place, without creating a new one.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[4, 2, 9, 3, 45]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+5
+</pre></div></div>
+</div>
+<p>We can see that lists are mutable because using the <code class="docutils literal notranslate"><span class="pre">append</span></code> method didn’t print anything, and our variable <code class="docutils literal notranslate"><span class="pre">a</span></code> now has a different value.</p>
+<p>Because lists are mutable, we can use the special <code class="docutils literal notranslate"><span class="pre">del</span></code> keyword to remove specific indices from the list.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[4, 2, 9, 45]
+</pre></div></div>
+</div>
+<p><em>Good to know</em> <code class="docutils literal notranslate"><span class="pre">del</span></code> is a language keyword representing an action, and not a function. The syntactic difference is that functions take their arguments between parentheses, such as <code class="docutils literal notranslate"><span class="pre">my_function(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code>, whereas <code class="docutils literal notranslate"><span class="pre">del</span></code> does not.</p>
 <p>You can retrieve sub-lists by using <em>slice</em> notation whilst indexing.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="go">[2, 9]</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<p>This retrieves the part of list <code class="docutils literal notranslate"><span class="pre">a</span></code> starting from index <code class="docutils literal notranslate"><span class="pre">1</span></code> until <em>just before</em>
-index <code class="docutils literal notranslate"><span class="pre">-1</span></code>. The indexing is ‘exclusive’ in that it excludes the item of the
-last index. This is the convention of indexing in Python.</p>
-<p>You can omit a number in the first or second indexing position, and Python will
-assume you mean the first element (index zero) and last element (index
-<code class="docutils literal notranslate"><span class="pre">len(array)</span></code>).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-<span class="go">[4, 2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="go">[2, 9, 45]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[:]</span>
-<span class="go">[4, 2, 9, 45]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Slicing returns a copy of the array, so modifying the return value doesn’t
-affect the original array.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
-<span class="go">[2, 9, 45]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
-<span class="go">[3, 9, 45]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
-<span class="go">[4, 2, 9, 45]</span>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2, 9]
+</pre></div></div>
+</div>
+<p>This retrieves the part of list <code class="docutils literal notranslate"><span class="pre">a</span></code> starting from index <code class="docutils literal notranslate"><span class="pre">1</span></code> until <em>just before</em> index <code class="docutils literal notranslate"><span class="pre">-1</span></code>. The indexing is ‘exclusive’ in that it excludes the item of the last index. This is the convention of indexing in Python.</p>
+<p>You can omit a number in the first or second indexing position, and Python will assume you mean the first element (index zero) and last element (index <code class="docutils literal notranslate"><span class="pre">len(array)</span></code>).</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[4, 2]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2, 9, 45]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[:]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[4, 2, 9, 45]
+</pre></div></div>
+</div>
+<p>Slicing returns a copy of the array, so modifying the return value doesn’t affect the original array.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2, 9, 45]
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[3, 9, 45]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[4, 2, 9, 45]
+</pre></div></div>
 </div>
 <p>We did something cool there by assigning a value to a specific index, <code class="docutils literal notranslate"><span class="pre">b[0]</span> <span class="pre">=</span> <span class="pre">3</span></code>. The same trick works with slices.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">99</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">78</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
-<span class="go">[99, 2, 78, 45]</span>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<p>This is equivalent of <em>replacing</em> a certain range (<code class="docutils literal notranslate"><span class="pre">:2</span></code>, or items at position 0
-and 1) of the list <code class="docutils literal notranslate"><span class="pre">b</span></code> with other items from another list. Note that in our
-example we replace 2 elements with 3. The same syntax might be used for
-inserting elements at an arbitrary position in the list. If we want to insert
-the number 6 between the 2 and the 78 in the list above, we would use:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
-<span class="go">[99, 2, 6, 78, 45]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">99</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">78</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>meaning <em>take out 0 elements from the list starting a position 2 and insert the
-content of the list <code class="docutils literal notranslate"><span class="pre">[6]</span></code> in that position</em>.</p>
-<div class="panel panel-challenge docutils container">
-<div class="panel-header open docutils container">
-<p id="copying-a-list"><i class="fa fa-square-o"></i> Copying a list</p>
 </div>
-<div class="panel-body docutils container">
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[99, 2, 78, 45]
+</pre></div></div>
+</div>
+<p>This is equivalent of <em>replacing</em> a certain range (<code class="docutils literal notranslate"><span class="pre">:2</span></code>, or items at position 0 and 1) of the list <code class="docutils literal notranslate"><span class="pre">b</span></code> with other items from another list. Note that in our example we replace 2 elements with 3. The same syntax might be used for inserting elements at an arbitrary position in the list. If we want to insert the number 6 between the 2 and the 78 in the list above, we would use:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>meaning <em>take out 0 elements from the list starting a position 2 and insert the content of the list ``[6]`` in that position</em>.</p>
+<p><strong>Exercise</strong></p>
 <p>Slicing creates a copy, so what notation could you use to copy the full list?</p>
-<div class="panel panel-solution docutils container">
-<div class="panel-header docutils container">
-<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
-</div>
-<div class="panel-body docutils container">
-<p>You need to slice from the very beginning to the very end of the list.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[:]</span>
-<span class="go">[4, 2, 9, 45]</span>
+<p><strong>Solution</strong> You need to slice from the very beginning to the very end of the list.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[:]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[4, 2, 9, 45]
+</pre></div></div>
 </div>
 <p>This is equivalent to specifying the indices explicitly.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)]</span>
-<span class="go">[4, 2, 9, 45]</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<section id="looping">
-<h2>Looping<a class="headerlink" href="#looping" title="Link to this heading"></a></h2>
-<p>When you’ve got a collection of things, it’s pretty common to want to access
-each one sequentially. This is called looping, or iterating, and is super easy.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span> <span class="n">item</span>
-<span class="gp">...</span>
-<span class="go">4</span>
-<span class="go">2</span>
-<span class="go">9</span>
-<span class="go">45</span>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
-<p>We have to indent the code inside the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to tell Python that these
-lines should be run for every iteration.</p>
-<div class="panel panel-callout docutils container">
-<div class="panel-header open docutils container">
-<p id="indentation-in-python"><i class="fa fa-info-circle"></i> Indentation in Python</p>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[4, 2, 9, 45]
+</pre></div></div>
 </div>
-<div class="panel-body docutils container">
-<p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is a block, and every Python block requires indentation, unlike
-other “free-form” languages such as C++ or Java. This means that Python will
-throw an error if you don’t indent:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
-<span class="gp">... </span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-  File <span class="nb">&quot;&lt;ipython-input-56-11d6523211c0&gt;&quot;</span>, line <span class="m">2</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="w">        </span><span class="pm">^</span>
-<span class="gr">IndentationError</span>: <span class="n">expected an indented block</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
-<p>Indentation must be consistent within the same block, so if you indent two lines
-in the same <code class="docutils literal notranslate"><span class="pre">for</span></code> loop using a different number of spaces, Python will complain
-once again:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
-<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am in a loop&quot;</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-  File <span class="nb">&quot;&lt;ipython-input-57-5c3d29e65ad9&gt;&quot;</span>, line <span class="m">3</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="w">    </span><span class="pm">^</span>
-<span class="gr">IndentationError</span>: <span class="n">unexpected indent</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">==</span> <span class="n">a</span><span class="p">[:]</span>
 </pre></div>
 </div>
-<p>Indentation is necessary as Python does not use any keyword or symbol to
-determine the end of a block (<em>e.g.</em> there is no <code class="docutils literal notranslate"><span class="pre">endfor</span></code>). As a side effect,
-indentation forces you to make your code more readable!</p>
-<p>Note that it does not matter how many spaces you use for indentation. <strong>As a
-convention, we are using four spaces.</strong></p>
 </div>
-</div>
-<p>The variable name <code class="docutils literal notranslate"><span class="pre">item</span></code> can be whatever we want, but its value is changed by
-Python to be the element of the item we’re currently on, starting from the
-first.</p>
-<p>Because lists are mutable, we can try to modify the length of the list whilst
-we’re iterating.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_copy</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a_copy</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="k">del</span> <span class="n">a_copy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a_copy</span>
-<span class="go">[9, 45]</span>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
-<p>Intuitively, you might expect <code class="docutils literal notranslate"><span class="pre">a_copy</span></code> to be empty, but it’s not! The technical
-reasons aren’t important, but this highlights an important rule: <strong>never
-modify the length of a list whilst iterating over it!</strong> You won’t end up with
-what you expect.</p>
-<p>You can, however, freely modify the <em>values</em> of each item in the list whilst
-looping. This is a very common use case.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_copy</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a_copy</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="n">a_copy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">item</span>
-<span class="gp">... </span>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a_copy</span>
-<span class="go">[8, 4, 18, 90]</span>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
-<p>Keeping track of the current index ourselves, with <code class="docutils literal notranslate"><span class="pre">i</span></code> is annoying, but luckily
-Python gives us a nicer way of doing that.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_doubled</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a_doubled</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="n">a_doubled</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">item</span>
-<span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a_doubled</span>
-<span class="go">[8, 4, 18, 90]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="ow">is</span> <span class="n">a</span>
 </pre></div>
 </div>
-<p>There’s a lot going on here. Firstly, note that Python lets you assign values
-to multiple variables at the same time.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">one</span><span class="p">,</span> <span class="n">two</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">43</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">two</span><span class="p">,</span> <span class="n">one</span><span class="p">)</span>
-<span class="go">43 34</span>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
-<p>That’s already pretty cool! But then think about what happens if you had a list
-where each item was another list, each containing two numbers.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nested</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">29</span><span class="p">],</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">34</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">nested</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-<span class="gp">...</span>
-<span class="go">[20, 29]</span>
-<span class="go">[30, 34]</span>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<p>So, we can just assign each item in the sublist to separate variables in the
-<code class="docutils literal notranslate"><span class="pre">for</span></code> statement.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">one</span><span class="p">,</span> <span class="n">two</span> <span class="ow">in</span> <span class="n">nested</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">two</span><span class="p">,</span> <span class="n">one</span><span class="p">)</span>
-<span class="gp">...</span>
-<span class="go">29 20</span>
-<span class="go">34 30</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="ow">is</span> <span class="n">a</span><span class="p">[:]</span>  <span class="c1"># creates a copy!</span>
 </pre></div>
 </div>
-<p>Now we can understand a little better what <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> does: for each item in
-the list, it returns a new list containing the current index and the item.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="go">&lt;enumerate object at 0x7f5abe5b1190&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="go">[(0, 4), (1, 2), (2, 9), (3, 45)]</span>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<p>For performance reasons <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> doesn’t return a list directly, but instead
-something that the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement knows how to iterate over (this is called a
-<a class="reference external" href="https://wiki.python.org/moin/Generators">generator</a> and for the moment you
-don’t need to know how it works). We can convert it to a list with the <code class="docutils literal notranslate"><span class="pre">list</span></code>
-method when we want to see what’s it doing.</p>
-<p>This technique of looping over lists of lists lets us loop over two lists
-simultaneously, using the <code class="docutils literal notranslate"><span class="pre">zip</span></code> method.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span><span class="p">,</span> <span class="n">item2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a_doubled</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">item2</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
-<span class="gp">...</span>
-<span class="go">8 4</span>
-<span class="go">4 2</span>
-<span class="go">18 9</span>
-<span class="go">90 45</span>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<section id="Looping">
+<h2>Looping<a class="headerlink" href="#Looping" title="Link to this heading"></a></h2>
+<p>When you’ve got a collection of things, it’s pretty common to want to access each one sequentially. This is called looping, or iterating, and is super easy.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+4
+2
+9
+45
+</pre></div></div>
+</div>
+<p>We have to indent the code inside the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to tell Python that these lines should be run for every iteration.</p>
+<section id="Indentation">
+<h3>Indentation<a class="headerlink" href="#Indentation" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is a block, and every Python block requires indentation, unlike other “free-form” languages such as C++ or Java. This means that Python will throw an error if you don’t indent:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+99
+2
+6
+78
+45
+</pre></div></div>
+</div>
+<p>Indentation must be consistent within the same block, so if you indent two lines in the same <code class="docutils literal notranslate"><span class="pre">for</span></code> loop using a different number of spaces, Python will complain once again:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am in a loop&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+I am in a loop
+99
+I am in a loop
+2
+I am in a loop
+6
+I am in a loop
+78
+I am in a loop
+45
+</pre></div></div>
+</div>
+<p>Indentation is necessary as Python does not use any keyword or symbol to determine the end of a block (<em>e.g.</em> there is no <code class="docutils literal notranslate"><span class="pre">endfor</span></code>). As a side effect, indentation forces you to make your code more readable!</p>
+<p>Note that it does not matter how many spaces you use for indentation. <strong>As a convention, we are using four spaces.</strong></p>
+<p>The variable name <code class="docutils literal notranslate"><span class="pre">item</span></code> can be whatever we want, but its value is changed by Python to be the element of the item we’re currently on, starting from the first.</p>
+<p>Because lists are mutable, we can try to modify the length of the list whilst we’re iterating.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_copy</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a_copy</span><span class="p">:</span>
+    <span class="k">del</span> <span class="n">a_copy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_copy</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[9, 45]
+</pre></div></div>
+</div>
+<p>Intuitively, you might expect <code class="docutils literal notranslate"><span class="pre">a_copy</span></code> to be empty, but it’s not! The technical reasons aren’t important, but this highlights an important rule: <strong>never modify the length of a list whilst iterating over it!</strong> You won’t end up with what you expect.</p>
+<p>You can, however, freely modify the <em>values</em> of each item in the list whilst looping. This is a very common use case.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_copy</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a_copy</span><span class="p">:</span>
+    <span class="n">a_copy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">item</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_copy</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[8, 4, 18, 90]
+</pre></div></div>
+</div>
+<p>Keeping track of the current index ourselves, with <code class="docutils literal notranslate"><span class="pre">i</span></code> is annoying, but luckily Python gives us a nicer way of doing that.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_doubled</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a_doubled</span><span class="p">):</span>
+    <span class="n">a_doubled</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">item</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_doubled</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[8, 4, 18, 90]
+</pre></div></div>
+</div>
+<p>There’s a lot going on here. Firstly, note that Python lets you assign values to multiple variables at the same time.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">one</span><span class="p">,</span> <span class="n">two</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">43</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;one: </span><span class="si">{</span><span class="n">one</span><span class="si">}</span><span class="s2">, two: </span><span class="si">{</span><span class="n">two</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+one: 34, two: 43
+</pre></div></div>
+</div>
+<p>That’s already pretty cool! But then think about what happens if you had a list where each item was another list, each containing two numbers.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nested</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">29</span><span class="p">],</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">34</span><span class="p">]]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">nested</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[20, 29]
+[30, 34]
+</pre></div></div>
+</div>
+<p>So, we can just assign each item in the sublist to separate variables in the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">one</span><span class="p">,</span> <span class="n">two</span> <span class="ow">in</span> <span class="n">nested</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">two</span><span class="p">,</span> <span class="n">one</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+29 20
+34 30
+</pre></div></div>
+</div>
+<p>Now we can understand a little better what <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> does: for each item in the list, it returns a new list containing the current index and the item.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;enumerate at 0x7fd5902d41d0&gt;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[(0, 4), (1, 2), (2, 9), (3, 45)]
+</pre></div></div>
+</div>
+<p>For more advanced reasons <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> doesn’t return a list directly, but instead something that the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement knows how to iterate over (this is called a <a class="reference external" href="https://wiki.python.org/moin/Generators">generator</a> and for the moment you don’t need to know how it works). We can convert it to a list with the <code class="docutils literal notranslate"><span class="pre">list</span></code> method when we want to see what’s it doing.</p>
+<p>This technique of looping over lists of lists lets us loop over two lists simultaneously, using the <code class="docutils literal notranslate"><span class="pre">zip</span></code> method.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span><span class="p">,</span> <span class="n">item2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a_doubled</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item2</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+8 4
+4 2
+18 9
+90 45
+</pre></div></div>
 </div>
 <p>Neat! As before, we can see what <code class="docutils literal notranslate"><span class="pre">zip</span></code> is doing explicitly by using <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a_doubled</span><span class="p">))</span>
-<span class="go">[(4, 8), (2, 4), (9, 18), (45, 90)]</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
 </pre></div>
 </div>
-<p>You can see that the structure of the list that’s iterated over, the output of
-<code class="docutils literal notranslate"><span class="pre">zip</span></code>, is identical to that for <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</p>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a_doubled</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[(4, 8), (2, 4), (9, 18), (45, 90)]
+</pre></div></div>
+</div>
+<p>You can see that the structure of the list that’s iterated over, the output of <code class="docutils literal notranslate"><span class="pre">zip</span></code>, is identical to that for <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</p>
 <p>Finally, we’ll take a quick look at the <code class="docutils literal notranslate"><span class="pre">range</span></code> method.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-<span class="go">        print(i)</span>
-<span class="go">0</span>
-<span class="go">1</span>
-<span class="go">2</span>
-<span class="go">3</span>
-<span class="go">4</span>
-<span class="go">5</span>
-<span class="go">6</span>
-<span class="go">7</span>
-<span class="go">8</span>
-<span class="go">9</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
 </pre></div>
 </div>
-<p>The arguments to <code class="docutils literal notranslate"><span class="pre">range</span></code> work just like slicing, the second argument is treated
-exclusively, as its value is excluded from the output. Again like slicing, we
-can specify a third argument as the step size for the iteration.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-<span class="go">        print(i)</span>
-<span class="go">0</span>
-<span class="go">2</span>
-<span class="go">4</span>
-<span class="go">6</span>
-<span class="go">8</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>If you only give a single argument to <code class="docutils literal notranslate"><span class="pre">range</span></code>, it assumes you’ve given the end
-value, and want a starting value of zero.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-<span class="go">        print(i)</span>
-<span class="go">0</span>
-<span class="go">1</span>
-<span class="go">2</span>
-<span class="go">3</span>
-<span class="go">4</span>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></div></div>
+</div>
+<p>The arguments to <code class="docutils literal notranslate"><span class="pre">range</span></code> work just like slicing, the second argument is treated exclusively, as its value is excluded from the output. Again like slicing, we can specify a third argument as the step size for the iteration.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
 </pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0
+2
+4
+6
+8
+</pre></div></div>
+</div>
+<p>If you only give a single argument to <code class="docutils literal notranslate"><span class="pre">range</span></code>, it assumes you’ve given the end value, and want a starting value of zero.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0
+1
+2
+3
+4
+</pre></div></div>
 </div>
 <p>This reads “give me a list of length 5, in steps of 1, starting from zero”.</p>
-<p>Now that we know how to easily generate sequences of numbers, we can write
-<code class="docutils literal notranslate"><span class="pre">enumerate</span></code> by hand!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)),</span> <span class="n">a</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
-<span class="gp">...</span>
-<span class="go">0 4</span>
-<span class="go">1 2</span>
-<span class="go">2 9</span>
-<span class="go">3 45</span>
+<p>Now that we know how to easily generate sequences of numbers, we can write <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> by hand!</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
 </pre></div>
 </div>
-<p>Just like before! When you see something cool like <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>, it can be fun
-trying to see how you’d accomplish something similar with different building
-blocks.</p>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)),</span> <span class="n">a</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0 4
+1 2
+2 9
+3 45
+</pre></div></div>
+</div>
+<p>Just like before! When you see something cool like <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>, it can be fun trying to see how you’d accomplish something similar with different building blocks.</p>
 </section>
-<section id="list-comprehension">
-<h2>List comprehension<a class="headerlink" href="#list-comprehension" title="Link to this heading"></a></h2>
+</section>
+<section id="List-comprehension-(Sugar,-can-be-skipped-on-first-read)">
+<h2>List comprehension (Sugar, can be skipped on first read)<a class="headerlink" href="#List-comprehension-(Sugar,-can-be-skipped-on-first-read)" title="Link to this heading"></a></h2>
 <p>We’ve already made a new list from an existing one when we created <code class="docutils literal notranslate"><span class="pre">a_doubled</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_doubled</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a_doubled</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="n">a_doubled</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">item</span>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
 </pre></div>
 </div>
-<p>Creating a new list from an existing one is a common operation, so Python has a
-shorthand syntax called <em>list comprehension</em>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_doubled</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a_doubled</span>
-<span class="go">[8, 4, 18, 90]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_doubled</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a_doubled</span><span class="p">):</span>
+    <span class="n">a_doubled</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">item</span>
 </pre></div>
+</div>
+</div>
+<p>Creating a new list from an existing one is a common operation, so Python has a shorthand syntax called <em>list comprehension</em>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_doubled</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_doubled</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[8, 4, 18, 90]
+</pre></div></div>
 </div>
 <p>Isn’t that beautiful?</p>
 <p>We can use the same multi-variable stuff we learnt whilst looping.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">index</span><span class="o">*</span><span class="n">item</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">)]</span>
-<span class="go">[0, 2, 18, 135]</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
 </pre></div>
 </div>
-<p>We’re not restricted to creating new lists with the same structure as the
-original.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[[</span><span class="n">item</span><span class="p">,</span> <span class="n">item</span><span class="o">*</span><span class="n">item</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
-<span class="go">[[4, 16], [2, 4], [9, 81], [45, 2025]]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">index</span><span class="o">*</span><span class="n">item</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">)]</span>
 </pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[0, 2, 18, 135]
+</pre></div></div>
+</div>
+<p>We’re not restricted to creating new lists with the same structure as the original.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">item</span><span class="p">,</span> <span class="n">item</span><span class="o">*</span><span class="n">item</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[[4, 16], [2, 4], [9, 81], [45, 2025]]
+</pre></div></div>
 </div>
 <p>We can even filter out items from the original list using <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[[</span><span class="n">item</span><span class="p">,</span> <span class="n">item</span><span class="o">*</span><span class="n">item</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">if</span> <span class="n">item</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
-<span class="go">[[4, 16], [2, 4]]</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
 </pre></div>
 </div>
-<p>List comprehensions are a powerful way of succinctly creating new lists. But be
-responsible; if you find you’re doing something complicated, it’s probably
-better to write a full <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
-</section>
-<section id="tuples">
-<h2>Tuples<a class="headerlink" href="#tuples" title="Link to this heading"></a></h2>
-<p>A close relative of lists are tuples, which differ in that they cannot be
-mutated after creation.  You can create tuples literally using parentheses, or
-convert things to tuples using the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> method.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-<span class="gr">TypeError</span>: <span class="n">&#39;tuple&#39; object doesn&#39;t support item deletion</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-<span class="gr">AttributeError</span>: <span class="n">&#39;tuple&#39; object has no attribute &#39;append&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-<span class="gr">TypeError</span>: <span class="n">&#39;tuple&#39; object does not support item assignment</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="mi">65</span><span class="p">,</span> <span class="s1">&#39;yes&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
-<span class="go">(65, &#39;yes&#39;)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">item</span><span class="p">,</span> <span class="n">item</span><span class="o">*</span><span class="n">item</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">if</span> <span class="n">item</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Tuples are usually used to describe data whose length is meaningful in and of
-itself. For example, you could express coordinates as a tuple.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coords</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">coords</span>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
 </pre></div>
 </div>
-<p>This is nice because it doesn’t make sense to append to an <span class="math notranslate nohighlight">\(` (x, y) `\)</span>
-coordinate, nor to ‘delete’ a dimension. Generally, it can be useful if the
-data structure you’re using respects the <em>meaning</em> of the data you’re storing.</p>
-<p>If you can’t think of a use for tuples yourself, its worth keeping in mind that
-Python creates tuples for groups of things by default. We saw that
-earlier when we used <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">]))</span>
-<span class="go">[(0, 4), (1, 9)]</span>
-</pre></div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[[4, 16], [2, 4]]
+</pre></div></div>
 </div>
-<p>Each element of the list is a tuple.</p>
-<div class="panel panel-challenge docutils container">
-<div class="panel-header open docutils container">
-<p id="write-a-list-comprehension-yourself"><i class="fa fa-square-o"></i> Write a list comprehension yourself</p>
-</div>
-<div class="panel-body docutils container">
-<p>Compute the square of the magnitude of the sum of the following two
-three-vectors, using a single list comprehension and the global <code class="docutils literal notranslate"><span class="pre">sum</span></code> method.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kaon</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.4</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pion</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">19.8</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>It might help to first think about how you’d compute the quantity for a single
-vector.</p>
-<div class="panel panel-solution docutils container">
-<div class="panel-header docutils container">
-<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
-</div>
-<div class="panel-body docutils container">
+<p>List comprehensions are a powerful way of succinctly creating new lists. But be responsible; if you find you’re doing something complicated, it’s probably better to write a full <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<p><strong>Exercise</strong> Write a list comprehension yourself</p>
+<p>Compute the square of the magnitude of the sum of the following two three-vectors, using a single list comprehension and the global <code class="docutils literal notranslate"><span class="pre">sum</span></code> method.</p>
+<p>It might help to first think about how you’d compute the quantity for a single vector.</p>
 <p>Not sure what the <code class="docutils literal notranslate"><span class="pre">sum</span></code> method does? Ask for <code class="docutils literal notranslate"><span class="pre">help</span></code>!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
 </pre></div>
 </div>
-<p>The square magnitude is the sum of the squares of the components, where the
-components are the sum of the two input vectors.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">magsq</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([(</span><span class="n">k</span> <span class="o">+</span> <span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">pi</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">kaon</span><span class="p">,</span> <span class="n">pion</span><span class="p">)])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Help on built-in function sum in module builtins:
+
+sum(iterable, /, start=0)
+    Return the sum of a &#39;start&#39; value (default: 0) plus an iterable of numbers
+
+    When the iterable is empty, return the start value.
+    This function is intended specifically for use with numeric values and may
+    reject non-numeric types.
+
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kaon</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.4</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">]</span>
+<span class="n">pion</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">19.8</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Solution</strong></p>
+<p>The square magnitude is the sum of the squares of the components, where the components are the sum of the two input vectors.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">magsq</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([(</span><span class="n">k</span> <span class="o">+</span> <span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">pi</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">kaon</span><span class="p">,</span> <span class="n">pion</span><span class="p">)])</span>
+</pre></div>
+</div>
 </div>
 <p>The square root of this is around 40.42.</p>
+</section>
+<section id="Tuples">
+<h2>Tuples<a class="headerlink" href="#Tuples" title="Link to this heading"></a></h2>
+<p>A close relative of lists are tuples, which differ in that they cannot be mutated after creation. You can create tuples literally using parentheses, or convert things to tuples using the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> method.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[62], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">del</span> <span class="ansi-yellow-bg">a</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">0</span><span class="ansi-yellow-bg">]</span>
+
+<span class="ansi-red-fg">TypeError</span>: &#39;tuple&#39; object doesn&#39;t support item deletion
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[63], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">a</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">append</span>(<span style="color: rgb(98,98,98)">5</span>)
+
+<span class="ansi-red-fg">AttributeError</span>: &#39;tuple&#39; object has no attribute &#39;append&#39;
+</pre></div></div>
+</div>
+<p>Tuples are usually used to describe data whose length is meaningful in and of itself. For example, you could express coordinates as a tuple.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coords</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">coords</span>
+</pre></div>
+</div>
+</div>
+<p>This is nice because it doesn’t make sense to append to an <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">(x,</span> <span class="pre">y)</span> <span class="pre">$</span></code> coordinate, nor to ‘delete’ a dimension. Generally, it can be useful if the data structure you’re using respects the <em>meaning</em> of the data you’re storing.</p>
+<p>If you can’t think of a use for tuples yourself, its worth keeping in mind that Python creates tuples for groups of things by default. We saw that earlier when we used <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[(0, 4), (1, 9)]
+</pre></div></div>
+</div>
+<p>Each element of the list is a tuple.</p>
 </section>
 </section>
 

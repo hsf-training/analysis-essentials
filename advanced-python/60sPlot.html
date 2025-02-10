@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,27 +7,23 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>9: sPlot &mdash; Analysis essentials  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
-        <script src="../_static/panels.js?v=0f4bdeea"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
+      <script src="../_static/panels.js?v=0f4bdeea"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -82,26 +80,30 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python/strings.html">Strings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/strings.html#formatting">Formatting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/strings.html#Formatting">Formatting</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/lists.html">Lists and looping</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#looping">Looping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#list-comprehension">List comprehension</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#tuples">Tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#Looping">Looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#Indentation">Indentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#List-comprehension-(Sugar,-can-be-skipped-on-first-read)">List comprehension (Sugar, can be skipped on first read)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#Tuples">Tuples</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/dictionaries.html">Dictionaries</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#truthiness">Truthiness</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#conditions-in-loops">Conditions in loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#inline-methods">Inline methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
@@ -109,13 +111,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#the-standard-library">The standard library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#modules-from-pypi">Modules from PyPi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-your-first-python-module">Write your first Python module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-a-structured-module">Write a structured module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#run-a-module">Run a module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Using-modules-into-your-code:-import">Using modules into your code: import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#The-standard-library">The standard library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Modules-from-PyPi">Modules from PyPi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#(Advanced)-Write-your-first-Python-module">(Advanced) Write your first Python module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#Module-name-restrictions">Module name restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Run-a-module">Run a module</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/classes.html">Classes</a><ul>
@@ -227,10 +231,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html">Model tuning setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#Cross-validation">Cross-validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#k-folding-&amp;-early-stopping"><span class="math notranslate nohighlight">\(k\)</span>-folding &amp; early stopping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#Hyperameter-optimisation">Hyperameter optimisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="40Histograms.html">6: Histograms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Axes">Axes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="40Histograms.html#Regular">Regular</a></li>
@@ -280,8 +280,11 @@
 <li class="toctree-l2"><a class="reference internal" href="50LikelihoodInference.html">8: Likelihood inference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Scope-of-this-tutorial">Scope of this tutorial</a></li>
 <li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Getting-started">Getting started</a></li>
-<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Difference-of-the-two-spaces">Difference of the two spaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Plotting">Plotting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Creating-the-model">Creating the model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Plotting">Plotting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#A-quick-plot">A quick plot</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Loss">Loss</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Fixing-parameters">Fixing parameters</a></li>
 </ul>
@@ -485,10 +488,10 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mplhep</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">zfit</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">mplhep</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">zfit</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 </pre></div>
 </div>
 </div>
@@ -497,8 +500,12 @@
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/__init__.py:63: UserWarning: TensorFlow warnings are by default suppressed by zfit. In order to show them, set the environment variable ZFIT_DISABLE_TF_WARNINGS=0. In order to suppress the TensorFlow warnings AND this warning, set ZFIT_DISABLE_TF_WARNINGS=1.
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/__init__.py:60: UserWarning: TensorFlow warnings are by default suppressed by zfit. In order to show them, set the environment variable ZFIT_DISABLE_TF_WARNINGS=0. In order to suppress the TensorFlow warnings AND this warning, set ZFIT_DISABLE_TF_WARNINGS=1.
   warnings.warn(
+2025-02-10 16:38:42.127193: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1739205522.141835    5228 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1739205522.146266    5228 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -535,7 +542,7 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f530b840310&gt;
+&lt;matplotlib.legend.Legend at 0x7f39dfb0d450&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -610,7 +617,7 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_with_weights</span><span class="p">(</span><span class="n">datas</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_with_weights</span><span class="p">(</span><span class="n">datas</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">datas</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">datas</span><span class="p">)</span>
     <span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="o">*</span> <span class="n">w</span> <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">datas</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span> <span class="p">])</span>
@@ -694,7 +701,7 @@
 <p>This is now an demonstration of the <strong>sPlot</strong> algorithm, described in <a class="reference external" href="https://arxiv.org/pdf/physics/0402083.pdf">Pivk:2004ty</a>.</p>
 <p>If a data sample is populated by different sources of events, like signal and background, <strong>sPlot</strong> is able to unfold the contributions of the different sources for a given variable.</p>
 <p>Let’s construct a dataset with two variables, the invariant mass and lifetime, for the resonant signal defined above and the combinatorial background. To do this, we build the model in zfit.</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
@@ -704,6 +711,14 @@
 <span class="n">lambd</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;lambda&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.002</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+2025-02-10 16:38:45.812168: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:152] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+</pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -789,56 +804,24 @@
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
+<div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 name         value  (rounded)    at limit
 ---------  ------------------  ----------
-bkg_yield              118300       False
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-
-sig_yield             20051.4       False
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-
-lambda            -0.00199917       False
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-
-mu                    5278.97       False
-</pre></div></div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-
+bkg_yield              118411       False
+sig_yield             19887.8       False
+lambda            -0.00199825       False
+mu                     5279.5       False
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_fit_projection</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_fit_projection</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="c1"># The function will be reused.</span>
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
@@ -908,7 +891,7 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hepstats.splot</span> <span class="kn">import</span> <span class="n">compute_sweights</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">hepstats.splot</span><span class="w"> </span><span class="kn">import</span> <span class="n">compute_sweights</span>
 
 <span class="n">weights</span> <span class="o">=</span> <span class="n">compute_sweights</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_sw</span><span class="p">)</span>
 
@@ -916,22 +899,14 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-{&lt;zfit.Parameter &#39;bkg_yield&#39; floating=True value=1.183e+05&gt;: array([-0.17594681, -0.18466255, -0.19475866, ...,  1.12230147,
-        1.12230147,  1.12230145]), &lt;zfit.Parameter &#39;sig_yield&#39; floating=True value=2.005e+04&gt;: array([ 1.17594495,  1.18466061,  1.19475664, ..., -0.12229238,
-       -0.12229238, -0.12229236])}
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-
+{&lt;zfit.Parameter &#39;bkg_yield&#39; floating=True value=1.184e+05&gt;: array([ 0.45115597,  0.25645613,  0.05003525, ..., -0.01541928,
+        1.04202287,  1.12189696]), &lt;zfit.Parameter &#39;sig_yield&#39; floating=True value=1.989e+04&gt;: array([ 0.54884142,  0.74354017,  0.94995989, ...,  1.01541406,
+       -0.04202217, -0.12189581])}
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -943,68 +918,13 @@ V_{nj}^{-1} = \sum_{e=1}^{N} \frac{f_n(x_e) f_j(x_e)}{(\sum_{k=1}^{N_S} N_{k}f_k
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Sum of signal sWeights:
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-20051.405419421702
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Sum of background sWeights:
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-118300.54019153646
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-
+Sum of signal sWeights:  19887.786819066674
+Sum of background sWeights:  118411.16574672642
 </pre></div></div>
 </div>
 <p>Now we can apply the signal <strong>sWeights</strong> on the lifetime distribution and retrieve its signal components.</p>
@@ -1048,20 +968,12 @@ Sum of background sWeights:
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Correlation between m and t: 0.029419631719876018
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-
+Correlation between m and t: 0.03102424949163931
 </pre></div></div>
 </div>
 <p>Let’s apply to signal <strong>sWeights</strong> on the mass distribution to see how bad the results of <strong>sPlot</strong> is when applied on a variable that is correlated with the discrimant variable.</p>
@@ -1091,7 +1003,7 @@ Correlation between m and t: 0.029419631719876018
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">expon</span><span class="p">,</span> <span class="n">norm</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">expon</span><span class="p">,</span> <span class="n">norm</span>
 </pre></div>
 </div>
 </div>
@@ -1197,7 +1109,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f52f86ba810&gt;
+&lt;matplotlib.legend.Legend at 0x7f39d7152d50&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1217,7 +1129,7 @@ Text(0.5, 0, &#39;p&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span>
 
 <span class="n">probs</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">sig</span><span class="o">=</span><span class="n">sig_mass_distr</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">mass</span><span class="p">),</span> <span class="n">bck</span><span class="o">=</span><span class="n">bck_mass_distr</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">mass</span><span class="p">)))</span>
 <span class="n">probs</span> <span class="o">=</span> <span class="n">probs</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">probs</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -1241,7 +1153,7 @@ Text(0.5, 0, &#39;p&#39;)
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 ((0.0, 10.0),
- &lt;matplotlib.legend.Legend at 0x7f530b38a810&gt;,
+ &lt;matplotlib.legend.Legend at 0x7f39dd515450&gt;,
  Text(0.5, 0, &#39;mass&#39;))
 </pre></div></div>
 </div>
@@ -1260,7 +1172,7 @@ Text(0.5, 0, &#39;p&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hep_ml</span> <span class="kn">import</span> <span class="n">splot</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">hep_ml</span><span class="w"> </span><span class="kn">import</span> <span class="n">splot</span>
 
 <span class="n">sWeights</span> <span class="o">=</span> <span class="n">splot</span><span class="o">.</span><span class="n">compute_sweights</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span>
 </pre></div>
@@ -1333,7 +1245,7 @@ Text(0.5, 0, &#39;p&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--0.34022948902215683
+np.float64(-0.3429816789120233)
 </pre></div></div>
 </div>
 <p>But within each class there is no correlation, so the requirement is satisfied:</p>
@@ -1346,36 +1258,13 @@ Text(0.5, 0, &#39;p&#39;)
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
--0.013756669739030345
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-0.0017086960668048139
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-
+-0.0031478144690297964
+0.005227468717251706
 </pre></div></div>
 </div>
 <p>as a demonstration why this is important let’s use sweights to reconstruct mass (obviously mass is correlated with mass):</p>

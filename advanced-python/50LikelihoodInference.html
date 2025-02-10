@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,27 +7,23 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>8: Likelihood inference &mdash; Analysis essentials  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
-        <script src="../_static/panels.js?v=0f4bdeea"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
+      <script src="../_static/panels.js?v=0f4bdeea"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -82,26 +80,30 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python/strings.html">Strings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/strings.html#formatting">Formatting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/strings.html#Formatting">Formatting</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/lists.html">Lists and looping</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#looping">Looping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#list-comprehension">List comprehension</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#tuples">Tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#Looping">Looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#Indentation">Indentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#List-comprehension-(Sugar,-can-be-skipped-on-first-read)">List comprehension (Sugar, can be skipped on first read)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#Tuples">Tuples</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/dictionaries.html">Dictionaries</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#truthiness">Truthiness</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#conditions-in-loops">Conditions in loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#inline-methods">Inline methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
@@ -109,13 +111,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#the-standard-library">The standard library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#modules-from-pypi">Modules from PyPi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-your-first-python-module">Write your first Python module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-a-structured-module">Write a structured module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#run-a-module">Run a module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Using-modules-into-your-code:-import">Using modules into your code: import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#The-standard-library">The standard library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Modules-from-PyPi">Modules from PyPi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#(Advanced)-Write-your-first-Python-module">(Advanced) Write your first Python module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#Module-name-restrictions">Module name restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Run-a-module">Run a module</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/classes.html">Classes</a><ul>
@@ -227,10 +231,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html">Model tuning setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#Cross-validation">Cross-validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#k-folding-&amp;-early-stopping"><span class="math notranslate nohighlight">\(k\)</span>-folding &amp; early stopping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#Hyperameter-optimisation">Hyperameter optimisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="40Histograms.html">6: Histograms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Axes">Axes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="40Histograms.html#Regular">Regular</a></li>
@@ -280,8 +280,11 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">8: Likelihood inference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Scope-of-this-tutorial">Scope of this tutorial</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Getting-started">Getting started</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Difference-of-the-two-spaces">Difference of the two spaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Plotting">Plotting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Creating-the-model">Creating the model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Plotting">Plotting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#A-quick-plot">A quick plot</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#Loss">Loss</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#Fixing-parameters">Fixing parameters</a></li>
 </ul>
@@ -508,11 +511,11 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hepstats</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">mplhep</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">zfit</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">hepstats</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mplhep</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">zfit</span>
 </pre></div>
 </div>
 </div>
@@ -521,8 +524,12 @@
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/__init__.py:63: UserWarning: TensorFlow warnings are by default suppressed by zfit. In order to show them, set the environment variable ZFIT_DISABLE_TF_WARNINGS=0. In order to suppress the TensorFlow warnings AND this warning, set ZFIT_DISABLE_TF_WARNINGS=1.
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/__init__.py:60: UserWarning: TensorFlow warnings are by default suppressed by zfit. In order to show them, set the environment variable ZFIT_DISABLE_TF_WARNINGS=0. In order to suppress the TensorFlow warnings AND this warning, set ZFIT_DISABLE_TF_WARNINGS=1.
   warnings.warn(
+2025-02-10 16:38:31.432500: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1739205511.447009    5071 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1739205511.451435    5071 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -541,27 +548,24 @@
 </div>
 </div>
 <p><strong>Exercise</strong>: write a fit to the data using <code class="docutils literal notranslate"><span class="pre">zfit</span></code></p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obs</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Space</span><span class="p">(</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">,</span> <span class="n">limits</span><span class="o">=</span><span class="p">(</span><span class="mf">2.8</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">))</span>  <span class="c1"># defining the observable</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obs</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Space</span><span class="p">(</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$J/</span><span class="se">\\</span><span class="s1">psi$ mass [GeV]&#39;</span><span class="p">)</span>  <span class="c1"># defining the observable</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+2025-02-10 16:38:34.110790: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:152] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+</pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bkg = zfit.Data.from_pandas(bkg_df[&#39;Jpsi_M&#39;], obs=obs)</span>
-<span class="c1"># OR</span>
-<span class="c1"># obs_bkg = zfit.Space(&#39;Jpsi_M&#39;, limits=(2.8, 3.0)) + zfit.Space(&#39;Jpsi_M&#39;, limits=(3.2, 3.5))</span>
-<span class="c1"># bkg_two = zfit.Data.from_pandas(data_df[&#39;Jpsi_M&#39;], obs=obs_bkg)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Data</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">],</span> <span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="p">)</span>
@@ -570,20 +574,27 @@
 </div>
 </div>
 </section>
-<section id="Difference-of-the-two-spaces">
-<h2>Difference of the two spaces<a class="headerlink" href="#Difference-of-the-two-spaces" title="Link to this heading"></a></h2>
-<p>While the first space is defined over the whole space from 2.8 to 3.5, the second consists of two distinct regions. Therefore we can use the original space and zfit applies the cut, the same as we did before to the <code class="docutils literal notranslate"><span class="pre">bkg_df</span></code>.</p>
-<p>The difference comes when using the normalization in the PDF: we can either normalize it over the whole range or only over part of it.</p>
+<section id="Creating-the-model">
+<h2>Creating the model<a class="headerlink" href="#Creating-the-model" title="Link to this heading"></a></h2>
+<p>In the following, we create an extended background and signal model and combine it. zfit takes care of correctly normalizing and adding the PDFs and the yields.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lambd</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;lambda&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\lambda$&quot;</span><span class="p">)</span>  <span class="c1"># label is optional</span>
+<span class="n">bkg_yield</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;bkg_yield&#39;</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200000</span><span class="p">,</span> <span class="n">step_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Bkg yield&quot;</span><span class="p">)</span>
+
+<span class="n">mu</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;mu&#39;</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">)</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;sigma&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">sig_yield</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;sig_yield&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">step_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Signal yield&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lambd</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;lambda&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">bkg_yield</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;bkg_yield&#39;</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200000</span><span class="p">,</span> <span class="n">step_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">mu</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;mu&#39;</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">)</span>
-<span class="n">sigma</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;sigma&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
-<span class="n">sig_yield</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="s1">&#39;sig_yield&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">step_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bkg_pdf</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">Exponential</span><span class="p">(</span><span class="n">lambd</span><span class="p">,</span> <span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="p">,</span> <span class="n">extended</span><span class="o">=</span><span class="n">bkg_yield</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -591,22 +602,12 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bkg_pdf</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">Exponential</span><span class="p">(</span><span class="n">lambd</span><span class="p">,</span> <span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="p">)</span>
-<span class="n">bkg_pdf</span><span class="o">.</span><span class="n">set_yield</span><span class="p">(</span><span class="n">bkg_yield</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sig_pdf</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">Gauss</span><span class="p">(</span><span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">,</span> <span class="n">extended</span><span class="o">=</span><span class="n">sig_yield</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sig_pdf</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">Gauss</span><span class="p">(</span><span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">)</span>
-<span class="n">sig_pdf</span><span class="o">.</span><span class="n">set_yield</span><span class="p">(</span><span class="n">sig_yield</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">SumPDF</span><span class="p">([</span><span class="n">bkg_pdf</span><span class="p">,</span> <span class="n">sig_pdf</span><span class="p">])</span>
@@ -618,23 +619,23 @@
 <h2>Plotting<a class="headerlink" href="#Plotting" title="Link to this heading"></a></h2>
 <p>Plots can simply be made with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">mplhep</span></code>.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_fit</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_fit</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="c1"># The function will be reused.</span>
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
 
-    <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">space</span><span class="o">.</span><span class="n">limit1d</span>
+    <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">space</span><span class="o">.</span><span class="n">v1</span><span class="o">.</span><span class="n">limits</span>
 
     <span class="c1"># Creates and histogram of the data and plots it with mplhep.</span>
-    <span class="n">counts</span><span class="p">,</span> <span class="n">bin_edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">unstack_x</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="n">nbins</span><span class="p">)</span>
-    <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bin_edges</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;errorbar&quot;</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">binneddata</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to_binned</span><span class="p">(</span><span class="n">nbins</span><span class="p">)</span>
+    <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">binneddata</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;errorbar&quot;</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                     <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Data&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
 
-    <span class="n">binwidth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">bin_edges</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># or tf.linspace</span>
+    <span class="n">binwidth</span> <span class="o">=</span> <span class="n">binneddata</span><span class="o">.</span><span class="n">space</span><span class="o">.</span><span class="n">binning</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">widths</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># all have the same width</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 
     <span class="c1"># Line plots of the total pdf and the sub-pdfs.</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">ext_pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">binwidth</span>
@@ -643,8 +644,8 @@
         <span class="n">ym</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">ext_pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">binwidth</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ym</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$J/</span><span class="se">\\</span><span class="s1">psi$ mass [GeV]&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">data_range</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">space</span><span class="o">.</span><span class="n">labels</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">space</span><span class="o">.</span><span class="n">labels</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 
@@ -653,7 +654,7 @@
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_fit</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>  <span class="c1"># before the fit</span>
@@ -661,26 +662,63 @@
 </div>
 </div>
 <div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;Axes: title={&#39;center&#39;: &#39;Jpsi_M&#39;}, xlabel=&#39;$J/\\psi$ mass [GeV]&#39;&gt;
+&lt;Axes: title={&#39;center&#39;: &#39;$J/\\psi$ mass [GeV]&#39;}, xlabel=&#39;$J/\\psi$ mass [GeV]&#39;&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_50LikelihoodInference_16_1.png" src="../_images/advanced-python_50LikelihoodInference_16_1.png" />
+<img alt="../_images/advanced-python_50LikelihoodInference_15_1.png" src="../_images/advanced-python_50LikelihoodInference_15_1.png" />
 </div>
 </div>
+<section id="A-quick-plot">
+<h3>A quick plot<a class="headerlink" href="#A-quick-plot" title="Link to this heading"></a></h3>
+<p>Sometimes, it’s useful to just quickly make a plot of the model without controlling all of the aspects. This can be done using the <code class="docutils literal notranslate"><span class="pre">plot</span></code> attribute of the model.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">plotpdf</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/ipykernel_5071/4197811884.py:1: ExperimentalFeatureWarning: The function &lt;function assert_initialized.&lt;locals&gt;.wrapper at 0x7fcd1809ef20&gt; is EXPERIMENTAL, potentially unstable and likely to change in the future! Use it with caution and feedback (Gitter, Mattermost, e-mail or https://github.com/zfit/zfit/issues) is very welcome!
+  model.plot.plotpdf()
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;Axes: xlabel=&#39;$J/\\psi$ mass [GeV]&#39;, ylabel=&#39;Extended probability density&#39;&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_50LikelihoodInference_17_2.png" src="../_images/advanced-python_50LikelihoodInference_17_2.png" />
+</div>
+</div>
+</section>
 </section>
 <section id="Loss">
 <h2>Loss<a class="headerlink" href="#Loss" title="Link to this heading"></a></h2>
 <p>Since we have now the models and the datasets, we can e.g. pre-fit the signal PDF to the simulation.</p>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
@@ -688,22 +726,12 @@
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/core/loss.py:955: AdvancedFeatureWarning: Either you&#39;re using an advanced feature OR causing unwanted behavior. To turn this warning off, use `zfit.settings.advanced_warnings[&#39;extended_in_UnbinnedNLL&#39;] = False`  or &#39;all&#39; (use with care) with `zfit.settings.advanced_warnings[&#39;all&#39;] = False
-Extended PDFs ([&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]]) are given to a normal UnbinnedNLL.  This won&#39;t take the yield into account and simply treat the PDFs as non-extended PDFs. To create an extended NLL, use the `ExtendedUnbinnedNLL`.
-  warn_advanced_feature(
-</pre></div></div>
-</div>
 <p>It warns us that we are using a non-extended loss. The extended loss also includes to fit the yield while the normal one does not. Since we want to fit the <em>shape</em> here only, we use the non-extended one.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minimizer</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">minimize</span><span class="o">.</span><span class="n">Minuit</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minimizer</span> <span class="o">=</span> <span class="n">zfit</span><span class="o">.</span><span class="n">minimize</span><span class="o">.</span><span class="n">Minuit</span><span class="p">(</span><span class="n">gradient</span><span class="o">=</span><span class="s2">&quot;zfit&quot;</span><span class="p">)</span>  <span class="c1"># to use the analytic gradient. Set it to true will use the iminuit one</span>
 <span class="c1"># minimizer = zfit.minimize.NLoptLBFGSV1()  # can be changed but maybe not as powerful as iminuit</span>
 <span class="c1"># minimizer = zfit.minimize.ScipySLSQPV1()</span>
 </pre></div>
@@ -724,15 +752,15 @@ Extended PDFs ([&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  par
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.core.data.Data object at 0x7f4f690a1690&gt;] constraints=[]&gt;
+&lt;UnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.dist_tfp.Gauss&#39;&gt;  params=[mu, sigma]] data=[&lt;zfit.Data: Data obs=(&#39;Jpsi_M&#39;,) shape=(99032, 1)&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
-╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════════╕
-│  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | internal) │
-╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════════╡
-│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 5.2e-06 │             -275181.55 | -129185 │
-╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
+╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════╕
+│  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | opt.) │
+╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════╡
+│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 5.2e-06 │         -275181.55 | -129185 │
+╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name      value  (rounded)    at limit
@@ -783,23 +811,23 @@ sigma            0.0150308       False
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-bold">FitResult</span> of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f4f6c6669d0&gt;] constraints=[]&gt;
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.Data: Data obs=(&#39;Jpsi_M&#39;,) shape=(6145, 1)&gt;] constraints=[]&gt;
 with
 &lt;Minuit Minuit tol=0.001&gt;
 
-╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════════╕
-│  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | internal) │
-╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════════╡
-│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 7.2e-06 │            -49911.66 |  9798.318 │
-╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
+╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════╕
+│  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | opt.) │
+╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════╡
+│  <span class="ansi-green-intense-bg">True</span>   │    True     │      False       │ 1.6e-05 │         -2344.47 |  9804.663 │
+╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════╛
 
 <span class="ansi-bold">Parameters
 </span>name         value  (rounded)    at limit
 ---------  ------------------  ----------
-bkg_yield             6022.95       False
-sig_yield             132.064       False
-lambda               -1.10864       False
-mu                    3.09598       False
+bkg_yield             6027.38       False
+sig_yield             117.625       False
+lambda               -1.08015       False
+mu                    3.09624       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -812,144 +840,29 @@ mu                    3.09598       False
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1204: ChangedFeatureWarning: The behavior of this functionality recently changed.To turn this warning off, use `zfit.settings.changed_warnings.hesse_name = False`  or &#39;all&#39; with `zfit.settings.changed_warnings.all = False
-Default name of hesse (which is currently the method name such as `minuit_hesse`or `hesse_np`) has changed to `hesse` (it still adds the old one as well. This will be removed in the future). INSTRUCTIONS: to stay compatible,  change wherever you access the error to &#39;hesse&#39; (if you don&#39;t explicitly specify the name in hesse(...).
-  warn_changed_feature(message, &#34;hesse_name&#34;)
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1342: FutureWarning: &#39;minuit_minos&#39; will be changed as the default errors method to a custom implementationwith the same functionality. If you want to make sure that &#39;minuit_minos&#39; will be used in the future, add it explicitly as in `errors(method=&#39;minuit_minos&#39;)`
-  warnings.warn(
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/zfit/minimizers/fitresult.py:1363: ChangedFeatureWarning: The behavior of this functionality recently changed.To turn this warning off, use `zfit.settings.changed_warnings.errors_name = False`  or &#39;all&#39; with `zfit.settings.changed_warnings.all = False
-Default name of errors (which is currently the method name such as `minuit_minos`or `zfit_errors`) has changed to `errors`. Old names are still added as well for compatibility but will be removed in the future. INSTRUCTIONS: to stay compatible, change wherever you access the error to &#39;errors&#39; or specify the name explicitly in errors(...).
-  warn_changed_feature(message, &#34;errors_name&#34;)
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-FitResult
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
- of
-&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.core.data.Data object at 0x7f4f6c6669d0&gt;] constraints=[]&gt;
-with
-&lt;Minuit Minuit tol=0.001&gt;
-
-╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════════╕
-│  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | internal) │
-╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════════╡
-│
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-True
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-   │    True
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-     │      False
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-       │ 7.2e-06 │            -49911.66 |  9798.318 │
-╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════════╛
-
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Parameters
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-name         value  (rounded)        hesse               errors         minuit_minos    at limit
----------  ------------------  -----------  -------------------  -------------------  ----------
-bkg_yield             6022.95  +/-      81  -     81   +     81  -     81   +     81       False
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-
-sig_yield             132.064  +/-      26  -     26   +     26  -     26   +     26       False
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-
-lambda               -1.10864  +/-   0.065  -  0.065   +  0.065  -  0.065   +  0.065       False
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-
-mu                    3.09598  +/-   0.004  - 0.0041   +  0.004  - 0.0041   +  0.004       False
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
+FitResult of
+&lt;ExtendedUnbinnedNLL model=[&lt;zfit.&lt;class &#39;zfit.models.functor.SumPDF&#39;&gt;  params=[Composed_autoparam_1, Composed_autoparam_2]] data=[&lt;zfit.Data: Data obs=(&#39;Jpsi_M&#39;,) shape=(6145, 1)&gt;] constraints=[]&gt;
+with
+&lt;Minuit Minuit tol=0.001&gt;
 
+╒═════════╤═════════════╤══════════════════╤═════════╤══════════════════════════════╕
+│  valid  │  converged  │  param at limit  │   edm   │   approx. fmin (full | opt.) │
+╞═════════╪═════════════╪══════════════════╪═════════╪══════════════════════════════╡
+│  True   │    True     │      False       │ 1.6e-05 │         -2344.47 |  9804.663 │
+╘═════════╧═════════════╧══════════════════╧═════════╧══════════════════════════════╛
+
+Parameters
+name         value  (rounded)        hesse               errors    at limit
+---------  ------------------  -----------  -------------------  ----------
+bkg_yield             6027.38  +/-      81  -     81   +     81       False
+sig_yield             117.625  +/-      25  -     25   +     26       False
+lambda               -1.08015  +/-   0.065  -  0.065   +  0.064       False
+mu                    3.09624  +/-   0.004  -  0.004   +  0.004       False
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -966,14 +879,14 @@ mu                    3.09598  +/-   0.004  - 0.0041   +  0.004  - 0.0041   +  0
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;Axes: title={&#39;center&#39;: &#39;Jpsi_M&#39;}, xlabel=&#39;$J/\\psi$ mass [GeV]&#39;&gt;
+&lt;Axes: title={&#39;center&#39;: &#39;$J/\\psi$ mass [GeV]&#39;}, xlabel=&#39;$J/\\psi$ mass [GeV]&#39;&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_50LikelihoodInference_28_1.png" src="../_images/advanced-python_50LikelihoodInference_28_1.png" />
+<img alt="../_images/advanced-python_50LikelihoodInference_29_1.png" src="../_images/advanced-python_50LikelihoodInference_29_1.png" />
 </div>
 </div>
 <p><strong>Exercise</strong>: use <code class="docutils literal notranslate"><span class="pre">hepstats</span></code> to check the significance of our signal</p>
@@ -981,8 +894,8 @@ mu                    3.09598  +/-   0.004  - 0.0041   +  0.004  - 0.0041   +  0
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hepstats.hypotests.calculators</span> <span class="kn">import</span> <span class="n">AsymptoticCalculator</span>
-<span class="kn">from</span> <span class="nn">hepstats.hypotests.parameters</span> <span class="kn">import</span> <span class="n">POI</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">hepstats.hypotests.calculators</span><span class="w"> </span><span class="kn">import</span> <span class="n">AsymptoticCalculator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">hepstats.hypotests.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">POI</span>
 
 <span class="c1"># the null hypothesis</span>
 <span class="n">sig_yield_poi</span> <span class="o">=</span> <span class="n">POI</span><span class="p">(</span><span class="n">sig_yield</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -1008,45 +921,12 @@ Z = \Phi^{-1}(1 - p_0).
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hepstats.hypotests</span> <span class="kn">import</span> <span class="n">Discovery</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">hepstats.hypotests</span><span class="w"> </span><span class="kn">import</span> <span class="n">Discovery</span>
 
 <span class="n">discovery</span> <span class="o">=</span> <span class="n">Discovery</span><span class="p">(</span><span class="n">calculator</span><span class="o">=</span><span class="n">calculator</span><span class="p">,</span> <span class="n">poinull</span><span class="o">=</span><span class="n">sig_yield_poi</span><span class="p">)</span>
 <span class="n">discovery</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-
-p_value for the Null hypothesis = 1.609327637819291e-08
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Significance (in units of sigma) = 5.529106707751598
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-
-</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
@@ -1054,7 +934,7 @@ Significance (in units of sigma) = 5.529106707751598
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(1.609327637819291e-08, 5.529106707751598)
+(np.float64(3.4254362890617784e-07), np.float64(4.965544090312275))
 </pre></div></div>
 </div>
 <p><strong>Exercise</strong> play around! First things first: repeat the fit. The difference we will see is statistical fluctuation from the resampling of the data; we take only a fraction at random.</p>

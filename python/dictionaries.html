@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,24 +7,23 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dictionaries &mdash; Analysis essentials  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
-        <script src="../_static/panels.js?v=0f4bdeea"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
+      <script src="../_static/panels.js?v=0f4bdeea"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -79,26 +80,30 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings.html">Strings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="strings.html#formatting">Formatting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strings.html#Formatting">Formatting</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="lists.html">Lists and looping</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="lists.html#looping">Looping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lists.html#list-comprehension">List comprehension</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lists.html#tuples">Tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#Looping">Looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lists.html#Indentation">Indentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#List-comprehension-(Sugar,-can-be-skipped-on-first-read)">List comprehension (Sugar, can be skipped on first read)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#Tuples">Tuples</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Dictionaries</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#dictionary-keys">Dictionary keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="conditions.html">Conditions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="conditions.html#truthiness">Truthiness</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conditions.html#conditions-in-loops">Conditions in loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditions.html#Truthiness">Truthiness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditions.html#Conditions-in-loops">Conditions in loops</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="methods.html">Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="methods.html#inline-methods">Inline methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="methods.html#Inline-methods">Inline methods</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scripting.html">Scripting</a><ul>
@@ -106,13 +111,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="modules.html">Modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#the-standard-library">The standard library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#modules-from-pypi">Modules from PyPi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#write-your-first-python-module">Write your first Python module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#write-a-structured-module">Write a structured module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#run-a-module">Run a module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#Using-modules-into-your-code:-import">Using modules into your code: import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#The-standard-library">The standard library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#Modules-from-PyPi">Modules from PyPi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#(Advanced)-Write-your-first-Python-module">(Advanced) Write your first Python module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#Module-name-restrictions">Module name restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#Write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#Run-a-module">Run a module</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a><ul>
@@ -224,10 +231,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html">Model tuning setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html#Cross-validation">Cross-validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html#k-folding-&amp;-early-stopping"><span class="math notranslate nohighlight">\(k\)</span>-folding &amp; early stopping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html#Hyperameter-optimisation">Hyperameter optimisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/40Histograms.html">6: Histograms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Axes">Axes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Regular">Regular</a></li>
@@ -277,8 +280,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html">8: Likelihood inference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Scope-of-this-tutorial">Scope of this tutorial</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Getting-started">Getting started</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Difference-of-the-two-spaces">Difference of the two spaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Plotting">Plotting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Creating-the-model">Creating the model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Plotting">Plotting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#A-quick-plot">A quick plot</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Loss">Loss</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Fixing-parameters">Fixing parameters</a></li>
 </ul>
@@ -466,7 +472,7 @@
           <li class="breadcrumb-item"><a href="README.html">An introduction to Python</a></li>
       <li class="breadcrumb-item active">Dictionaries</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/python/dictionaries.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/python/dictionaries.ipynb" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -474,193 +480,372 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="dictionaries">
-<h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading"></a></h1>
-<p>You can think of lists as a <em>mapping</em> from indices to values. The indices are
-always integers and go from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">len(the_list)</span> <span class="pre">-</span> <span class="pre">1</span></code>, and the values are the
-items.</p>
-<p>Dictionaries are collections, just like lists, but they have important
-differences:</p>
+  <section id="Dictionaries">
+<h1>Dictionaries<a class="headerlink" href="#Dictionaries" title="Link to this heading"></a></h1>
+<p>You can think of lists as a <em>mapping</em> from indices to values. The indices are always integers and go from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">len(the_list)</span> <span class="pre">-</span> <span class="pre">1</span></code>, and the values are the items.</p>
+<p>Dictionaries are collections, just like lists, but they have important differences:</p>
 <ul class="simple">
-<li><p>lists map sequential numeric indices to items, whereas dictionaries can map
-most object types to any object,</p></li>
-<li><p>lists are <em>ordered</em> collections of items, whereas dictionaries have no
-ordering.</p></li>
+<li><p>lists map sequential numeric indices to items, whereas dictionaries can map most object types to any object,</p></li>
+<li><p>lists are <em>ordered</em> collections of items, whereas dictionaries have no ordering.</p></li>
 </ul>
-<p>Since anything can be used as index for an item, indices must be always
-specified when creating a dictionary:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;excellent index&#39;</span><span class="p">:</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="go">0.5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;excellent index&#39;</span><span class="p">]</span>
-<span class="go">&lt;built-in function sin&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="mf">0.1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<p>Since anything can be used as index for an item, indices must be always specified when creating a dictionary:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<p>The “indices” of a dictionary are called <strong>keys</strong>, and the things they map to
-are <strong>values</strong>. Together, each key-value pair is an <strong>item</strong>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-<span class="go">dict_keys([1, 0.1, &#39;excellent index&#39;])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
-<span class="go">dict_values([0.5, 2, &lt;function math.sin&gt;])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span>
-<span class="go">{0.1: 2, 1: 0.5, &#39;excellent index&#39;: &lt;function math.sin&gt;}</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 </pre></div>
 </div>
-<p>As you can see, the values of a dictionary can be whatever we like, and need not
-be the same type of object.</p>
-<p>You can see that the order of the keys, values and items we get back are not the
-same as the order we created the dictionary with. If you run the same example on
-your own you might get a different ordering. This is what we mean when we define
-dictionaries as <em>unordered collections</em>: when you iterate over its content, you
-cannot rely on the ordering.</p>
-<p>It is however guaranteed that the <em>n</em>-th item returned by <code class="docutils literal notranslate"><span class="pre">keys()</span></code> corresponds
-to the <em>n</em>-th item returned by <code class="docutils literal notranslate"><span class="pre">values()</span></code>. This allows the following example
-to work flawlessly:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-<span class="gp">...</span>
-<span class="go">1 : 0.5</span>
-<span class="go">0.1 : 3</span>
-<span class="go">excellent index : &lt;built-in function sin&gt;</span>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<p>Of course, this could be considerably simpler just by using <code class="docutils literal notranslate"><span class="pre">items()</span></code>, which
-gives us <em>tuples of key-value pairs</em>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-<span class="gp">...</span>
-<span class="go">1 : 0.5</span>
-<span class="go">0.1 : 3</span>
-<span class="go">excellent index : &lt;built-in function sin&gt;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;excellent index&#39;</span><span class="p">:</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.5
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;excellent index&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;function math.sin(x, /)&gt;
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="mf">0.1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<p>The “indices” of a dictionary are called <strong>keys</strong>, and the things they map to are <strong>values</strong>. Together, each key-value pair is an <strong>item</strong>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+dict_keys([1, &#39;excellent index&#39;, 0.1])
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+dict_values([0.5, &lt;built-in function sin&gt;, 3])
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{1: 0.5, &#39;excellent index&#39;: &lt;function math.sin(x, /)&gt;, 0.1: 3}
+</pre></div></div>
+</div>
+<p>As you can see, the values of a dictionary can be whatever we like, and need not be the same type of object.</p>
+<p>You can see that the order of the keys, values and items we get back are not the same as the order we created the dictionary with. If you run the same example on your own you might get a different ordering. This is what we mean when we define dictionaries as <em>unordered collections</em>: when you iterate over its content, you cannot rely on the ordering.</p>
+<p>It is however guaranteed that the <em>n</em>-th item returned by <code class="docutils literal notranslate"><span class="pre">keys()</span></code> corresponds to the <em>n</em>-th item returned by <code class="docutils literal notranslate"><span class="pre">values()</span></code>. This allows the following example to work flawlessly:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1 : 0.5
+excellent index : &lt;built-in function sin&gt;
+0.1 : 3
+</pre></div></div>
+</div>
+<p>Of course, this could be considerably simpler just by using <code class="docutils literal notranslate"><span class="pre">items()</span></code>, which gives us <em>tuples of key-value pairs</em>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1 : 0.5
+excellent index : &lt;built-in function sin&gt;
+0.1 : 3
+</pre></div></div>
 </div>
 <p>We can create dictionaries from lists of 2-item lists.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;a thing&#39;</span><span class="p">,</span> <span class="s1">&#39;another&#39;</span><span class="p">]))</span>
-<span class="go">{0: &#39;a thing&#39;, 1: &#39;another&#39;}</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<p>And also with <em>dictionary comprehensions</em>, in a similar manner to list
-comprehensions, with the additional specification of the key.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">}</span>
-<span class="go">{0: 1, 1: 1, 2: 4, 4: 256, 5: 3125}</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;a thing&#39;</span><span class="p">,</span> <span class="s1">&#39;another&#39;</span><span class="p">]))</span>
 </pre></div>
 </div>
-<p>Note that dictionary comprehensions require at least Python 2.7 to work.</p>
-<section id="dictionary-keys">
-<h2>Dictionary keys<a class="headerlink" href="#dictionary-keys" title="Link to this heading"></a></h2>
-<p>There’s no restriction on values a dictionary might hold, but there is on keys.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dd</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dd</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-<span class="gr">TypeError</span>: <span class="n">unhashable type: &#39;list&#39;</span>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<p>In essence, keys must not be mutable. This includes numbers, strings, and
-tuples, but not lists. This restriction is a trade-off that allows Python to
-make accessing values in a dictionary by key very fast.</p>
-<div class="panel panel-callout docutils container">
-<div class="panel-header open docutils container">
-<p id="hashing"><i class="fa fa-info-circle"></i> Hashing</p>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{0: &#39;a thing&#39;, 1: &#39;another&#39;}
+</pre></div></div>
 </div>
-<div class="panel-body docutils container">
-<p>Immutable data types in Python have a <code class="docutils literal notranslate"><span class="pre">__hash__()</span></code> function, you can test it
-yourself:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;a string&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="fm">__hash__</span><span class="p">()</span>
-<span class="go">-8411828025894108412</span>
+<p>And also with <em>dictionary comprehensions</em>, in a similar manner to list comprehensions, with the additional specification of the key.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Hash_function">A hashing function</a> creates an
-encoded (but not unique) representation of the object as a number. When you
-look up an item in a Python dictionary with <code class="docutils literal notranslate"><span class="pre">my_dict[&quot;my_key&quot;]</span></code>, what happens
-internally is:</p>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{0: 1, 1: 1, 2: 4, 4: 256}
+</pre></div></div>
+</div>
+<section id="Dictionary-keys">
+<h2>Dictionary keys<a class="headerlink" href="#Dictionary-keys" title="Link to this heading"></a></h2>
+<p>There is no restriction on values a dictionary might hold, but there is on keys.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dd</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dd</span><span class="p">[</span><span class="n">numbers</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[14], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">dd</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg">numbers</span><span class="ansi-yellow-bg">]</span> <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">0</span>
+
+<span class="ansi-red-fg">TypeError</span>: unhashable type: &#39;list&#39;
+</pre></div></div>
+</div>
+<p>In essence, keys must not be mutable. This includes numbers, strings, and tuples, but not lists. This restriction is a trade-off that allows Python to make accessing values in a dictionary by key very fast.</p>
+<p><strong>Advanced (skip on first read)</strong> Immutable data types in Python have a <code class="docutils literal notranslate"><span class="pre">__hash__()</span></code> function, you can test it yourself:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;a string&quot;</span>
+<span class="n">s</span><span class="o">.</span><span class="fm">__hash__</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+-1334813307666937343
+</pre></div></div>
+</div>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Hash_function">A hashing function</a> creates an encoded (but not unique) representation of the object as a number. When you look up an item in a Python dictionary with <code class="docutils literal notranslate"><span class="pre">my_dict[&quot;my_key&quot;]</span></code>, what happens internally is:</p>
 <ul class="simple">
 <li><p>hash of <code class="docutils literal notranslate"><span class="pre">&quot;my_key&quot;</span></code> is calculated,</p></li>
-<li><p>this number is compared to every hash of every key in the dictionary, until a
-match between the hashes is found,</p></li>
-<li><p>if two hashes match, <em>and</em> the two objects are really identical, the
-corresponding dictionary item is returned.</p></li>
+<li><p>this number is compared to every hash of every key in the dictionary, until a match between the hashes is found,</p></li>
+<li><p>if two hashes match, <em>and</em> the two objects are really identical, the corresponding dictionary item is returned.</p></li>
 </ul>
-<p>Looking up numbers instead of strings or tuples is considerably faster, but
-since two different strings can have the same hash, their content has to be
-compared as well to really tell whether they are equal. If two hashes are
-different on the other hand we are sure that the objects are different as well.</p>
-</div>
-</div>
+<p>Looking up numbers instead of strings or tuples is considerably faster, but since two different strings can have the same hash, their content has to be compared as well to really tell whether they are equal. If two hashes are different on the other hand we are sure that the objects are different as well.</p>
 <p>Iteration over dictionaries is over their keys.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span> <span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-<span class="gp">...</span>
-<span class="go">1 : 0.5</span>
-<span class="go">0.1 : 3</span>
-<span class="go">excellent index : &lt;built-in function sin&gt;</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<p>We have already seen how to iterate over values (using <code class="docutils literal notranslate"><span class="pre">d.values()</span></code>) or keys
-and values simultaneously (using <code class="docutils literal notranslate"><span class="pre">d.items()</span></code>).</p>
-<div class="panel panel-callout docutils container">
-<div class="panel-header open docutils container">
-<p id="on-the-efficiency-of-items()"><i class="fa fa-info-circle"></i> On the efficiency of items()</p>
-</div>
-<div class="panel-body docutils container">
-<p>In Python 2, using items copies the keys and values of a dictionary, and gives
-you back those copies. This can be problematic for large dictionaries as the
-amount of memory your program uses can double. Python 3 uses a much more
-memory-efficient way of implementing items so that you don’t have to worry.</p>
-<p>If you’re having memory problems with using items in Python 2, you can use
-<code class="docutils literal notranslate"><span class="pre">viewitems()</span></code> instead, which behaves the same way as items does in Python 3.</p>
-<p>Note that there are also similar methods for keys and values, called
-<code class="docutils literal notranslate"><span class="pre">viewkeys()</span></code> and <code class="docutils literal notranslate"><span class="pre">viewvalues()</span></code>, and that all of these view methods are only
-available from
-Python 2.7.</p>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+</pre></div>
 </div>
 </div>
-<div class="panel panel-challenge docutils container">
-<div class="panel-header open docutils container">
-<p id="alphabet-mapping"><i class="fa fa-square-o"></i> Alphabet mapping</p>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
 </div>
-<div class="panel-body docutils container">
-<p>Map each letter of the alphabet to a number with a dictionary comprehension,
-starting with <code class="docutils literal notranslate"><span class="pre">0</span></code> for <code class="docutils literal notranslate"><span class="pre">a</span></code> and ending with <code class="docutils literal notranslate"><span class="pre">25</span></code> for <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1 : 0.5
+excellent index : &lt;built-in function sin&gt;
+0.1 : 3
+</pre></div></div>
+</div>
+<p>We have already seen how to iterate over values (using <code class="docutils literal notranslate"><span class="pre">d.values()</span></code>) or keys and values simultaneously (using <code class="docutils literal notranslate"><span class="pre">d.items()</span></code>).</p>
+<p><strong>Exercise</strong> Alphabet mapping</p>
+<p>Map each letter of the alphabet to a number with a dictionary comprehension, starting with <code class="docutils literal notranslate"><span class="pre">0</span></code> for <code class="docutils literal notranslate"><span class="pre">a</span></code> and ending with <code class="docutils literal notranslate"><span class="pre">25</span></code> for <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
 <p>You can get a string containing the letters of the alphabet like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">string</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span>
-<span class="go">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">string</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;abcdefghijklmnopqrstuvwxyz&#39;
+</pre></div></div>
 </div>
 <p>You can iterate over a string exactly like a list.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span> <span class="n">character</span>
-<span class="gp">...</span>
-<span class="go">a</span>
-<span class="go">b</span>
-<span class="go">...</span>
-<span class="go">z</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<p>Then, create the “reverse” dictionary, again with a comprehension, mapping
-letters to numbers.</p>
-<div class="panel panel-solution docutils container">
-<div class="panel-header docutils container">
-<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
-</div>
-<div class="panel-body docutils container">
-<p>You need to have a list containing one number per letter, and to loop over that
-list along with the characters in the string. This is exactly the same as
-looping over items in a list alongside the index, so we can use <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alphabet_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">c</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">)}</span>
-</pre></div>
-</div>
-<p>We can create the inverse map by swapping the key and value in the
-comprehension.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">reverse_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">alphabet_map</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">character</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
 </div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+</pre></div></div>
+</div>
+<p>Then, create the “reverse” dictionary, again with a comprehension, mapping letters to numbers.</p>
+<p><strong>Solution</strong> You need to have a list containing one number per letter, and to loop over that list along with the characters in the string. This is exactly the same as looping over items in a list alongside the index, so we can use <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alphabet_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">c</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">)}</span>
+</pre></div>
+</div>
+</div>
+<p>We can create the inverse map by swapping the key and value in the comprehension.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reverse_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">alphabet_map</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</pre></div>
 </div>
 </div>
 </section>

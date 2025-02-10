@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,26 +7,23 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Modules &mdash; Analysis essentials  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
-        <script src="../_static/panels.js?v=0f4bdeea"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
+      <script src="../_static/panels.js?v=0f4bdeea"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -81,26 +80,30 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings.html">Strings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="strings.html#formatting">Formatting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strings.html#Formatting">Formatting</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="lists.html">Lists and looping</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="lists.html#looping">Looping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lists.html#list-comprehension">List comprehension</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lists.html#tuples">Tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#Looping">Looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lists.html#Indentation">Indentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#List-comprehension-(Sugar,-can-be-skipped-on-first-read)">List comprehension (Sugar, can be skipped on first read)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#Tuples">Tuples</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries.html">Dictionaries</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="conditions.html">Conditions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="conditions.html#truthiness">Truthiness</a></li>
-<li class="toctree-l3"><a class="reference internal" href="conditions.html#conditions-in-loops">Conditions in loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditions.html#Truthiness">Truthiness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditions.html#Conditions-in-loops">Conditions in loops</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="methods.html">Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="methods.html#inline-methods">Inline methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="methods.html#Inline-methods">Inline methods</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scripting.html">Scripting</a><ul>
@@ -108,13 +111,15 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#using-modules-into-your-code-import">Using modules into your code: import</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-standard-library">The standard library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#modules-from-pypi">Modules from PyPi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#write-your-first-python-module">Write your first Python module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#write-a-structured-module">Write a structured module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-a-module">Run a module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Using-modules-into-your-code:-import">Using modules into your code: import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#The-standard-library">The standard library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Modules-from-PyPi">Modules from PyPi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#(Advanced)-Write-your-first-Python-module">(Advanced) Write your first Python module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Module-name-restrictions">Module name restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Run-a-module">Run a module</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a><ul>
@@ -226,10 +231,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html">Model tuning setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html#Cross-validation">Cross-validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html#k-folding-&amp;-early-stopping"><span class="math notranslate nohighlight">\(k\)</span>-folding &amp; early stopping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html#Hyperameter-optimisation">Hyperameter optimisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/40Histograms.html">6: Histograms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Axes">Axes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Regular">Regular</a></li>
@@ -279,8 +280,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html">8: Likelihood inference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Scope-of-this-tutorial">Scope of this tutorial</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Getting-started">Getting started</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Difference-of-the-two-spaces">Difference of the two spaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Plotting">Plotting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Creating-the-model">Creating the model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Plotting">Plotting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#A-quick-plot">A quick plot</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Loss">Loss</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Fixing-parameters">Fixing parameters</a></li>
 </ul>
@@ -468,7 +472,7 @@
           <li class="breadcrumb-item"><a href="README.html">An introduction to Python</a></li>
       <li class="breadcrumb-item active">Modules</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/python/modules.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/python/modules.ipynb" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -476,131 +480,311 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="modules">
-<h1>Modules<a class="headerlink" href="#modules" title="Link to this heading"></a></h1>
-<p>Python comes with lots of useful stuff, which is provided with modules
-(and submodules, see later).
-We have already met the maths module, but did not talk about how we started using it.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span>
-<span class="go">&lt;module &#39;math&#39; from &#39;/usr/lib/python2.7/lib-dynload/math.so&#39;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
-<span class="go">3.141592653589793</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="go">0.8414709848078965</span>
+  <section id="Modules">
+<h1>Modules<a class="headerlink" href="#Modules" title="Link to this heading"></a></h1>
+<p>Python comes with lots of useful stuff, which is provided with modules (and submodules, see later). We have already met the maths module, but did not talk about how we started using it.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;module &#39;math&#39; from &#39;/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/lib-dynload/math.cpython-311-x86_64-linux-gnu.so&#39;&gt;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+3.141592653589793
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.8414709848078965
+</pre></div></div>
 </div>
 <p>The path after <code class="docutils literal notranslate"><span class="pre">from</span></code> might look different on your computer.</p>
-<p>So, <code class="docutils literal notranslate"><span class="pre">math</span></code> is a <em>module</em>, and this seems to behave a lot like other objects we
-have met: it is a container with properties and methods attached that we can
-access with the dot operator <code class="docutils literal notranslate"><span class="pre">.</span></code>. Actually, that is pretty much all there is to
-them.</p>
-<section id="using-modules-into-your-code-import">
-<h2>Using modules into your code: import<a class="headerlink" href="#using-modules-into-your-code-import" title="Link to this heading"></a></h2>
-<p>The keyword <code class="docutils literal notranslate"><span class="pre">import</span></code>, usually specified at the beginning of your source code, is
-used to tell Python what modules you want to make available to your current
-code.</p>
-<p>There are different ways of specifying an import. The one we have seen already
-simply makes the module available to you:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">random</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="go">0.5877109428927353</span>
+<p>So, <code class="docutils literal notranslate"><span class="pre">math</span></code> is a <em>module</em>, and this seems to behave a lot like other objects we have met: it is a container with properties and methods attached that we can access with the dot operator <code class="docutils literal notranslate"><span class="pre">.</span></code>. Actually, that is pretty much all there is to them.</p>
+<section id="Using-modules-into-your-code:-import">
+<h2>Using modules into your code: import<a class="headerlink" href="#Using-modules-into-your-code:-import" title="Link to this heading"></a></h2>
+<p>The keyword <code class="docutils literal notranslate"><span class="pre">import</span></code>, usually specified at the beginning of your source code, is used to tell Python what modules you want to make available to your current code.</p>
+<p>There are different ways of specifying an import. The one we have seen already simply makes the module available to you:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<p>The module <code class="docutils literal notranslate"><span class="pre">random</span></code> contains functions useful for random number generation: with
-the <code class="docutils literal notranslate"><span class="pre">import</span></code> above, we have made the <code class="docutils literal notranslate"><span class="pre">random</span></code> module accessible, and everything
-within that module is accessible via the syntax <code class="docutils literal notranslate"><span class="pre">random.&lt;name&gt;</span></code>. For the record,
-the <code class="docutils literal notranslate"><span class="pre">uniform(x,y)</span></code> method returns a pseudo-random number within the range
-<span class="math notranslate nohighlight">\(` [x,y] `\)</span>.</p>
-<p>Sometimes you want to make only one or more things from a given module
-accessible: Python gives you the ability to import just those:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">uniform</span><span class="p">,</span> <span class="n">choice</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="go">0.4059007502204043</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">choice</span><span class="p">([</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">])</span>
-<span class="go">42</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 </pre></div>
 </div>
-<p>In this case the <code class="docutils literal notranslate"><span class="pre">uniform</span></code> and <code class="docutils literal notranslate"><span class="pre">choice</span></code> names are available <em>directly</em>, <em>i.e.</em>
-without using the <code class="docutils literal notranslate"><span class="pre">random</span></code> prefix. All other functions in the <code class="docutils literal notranslate"><span class="pre">random</span></code> module
-are not available in this case. For the record, the <code class="docutils literal notranslate"><span class="pre">choice</span></code> function returns a
-random element from a given collection.</p>
-<p>Another option is to import <em>all</em> functions of a certain module and make them
-available without a prefix:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">gauss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="go">-1.639334770284028</span>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<p>This is not that recommended as you generally do not know what is the extent
-of what you are importing and you might end up with name clashes between your
-current code and the imported module, as it will all be in the same namespace,
-meaning directly available with no need for a <code class="docutils literal notranslate"><span class="pre">.&lt;name&gt;</span></code> syntax.</p>
-<p>Lastly, it is possible to import modules, or specific names from a module,
-under an alias.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">uniform</span> <span class="k">as</span> <span class="n">uni</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">uni</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="go">0.7288973406605329</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="go">np.arccos(1)</span>
-<span class="go">0.0</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This option is useful when you need to assign shorter aliases to names you will
-use frequently. In particular, the alias <code class="docutils literal notranslate"><span class="pre">np</span></code> for the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> module will be
-encountered a lot.</p>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.11038740803502767
+</pre></div></div>
+</div>
+<p>The module <code class="docutils literal notranslate"><span class="pre">random</span></code> contains functions useful for random number generation: with the <code class="docutils literal notranslate"><span class="pre">import</span></code> above, we have made the <code class="docutils literal notranslate"><span class="pre">random</span></code> module accessible, and everything within that module is accessible via the syntax <code class="docutils literal notranslate"><span class="pre">random.&lt;name&gt;</span></code>. For the record, the <code class="docutils literal notranslate"><span class="pre">uniform(x,y)</span></code> method returns a pseudo-random number within the range <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">[x,y]</span> <span class="pre">$</span></code>.</p>
+<p>Sometimes you want to make only one or more things from a given module accessible: Python gives you the ability to import just those:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">choice</span><span class="p">,</span> <span class="n">uniform</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.6475729452603373
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">choice</span><span class="p">([</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+42
+</pre></div></div>
+</div>
+<p>In this case the <code class="docutils literal notranslate"><span class="pre">uniform</span></code> and <code class="docutils literal notranslate"><span class="pre">choice</span></code> names are available <em>directly</em>, <em>i.e.</em> without using the <code class="docutils literal notranslate"><span class="pre">random</span></code> prefix. All other functions in the <code class="docutils literal notranslate"><span class="pre">random</span></code> module are not available in this case. For the record, the <code class="docutils literal notranslate"><span class="pre">choice</span></code> function returns a random element from a given collection.</p>
+<p>Another option is to import <em>all</em> functions of a certain module and make them available without a prefix, which you should <em>never</em> do (except in very special cases if you’re writing a library)</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from random import *  # don&#39;t run this :) never</span>
+</pre></div>
+</div>
+</div>
+<p>This is not that recommended as you generally do not know what is the extent of what you are importing and you might end up with name clashes between your current code and the imported module, as it will all be in the same namespace, meaning directly available with no need for a <code class="docutils literal notranslate"><span class="pre">.&lt;name&gt;</span></code> syntax.</p>
+<p>Lastly, it is possible to import modules, or specific names from a module, under an alias.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">uniform</span> <span class="k">as</span> <span class="n">uni</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uni</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.5068396573087495
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+np.float64(0.0)
+</pre></div></div>
+</div>
+<p>This option is useful when you need to assign shorter aliases to names you will use frequently. In particular, the alias <code class="docutils literal notranslate"><span class="pre">np</span></code> for the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> module will be encountered a lot.</p>
 <p>Note that modules can have submodules, specified with extra dots <code class="docutils literal notranslate"><span class="pre">.</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">abspath</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">)</span>
-<span class="go">&#39;/afs/cern.ch/user/d&#39;</span>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<p>When importing a module, its <strong>submodules are not available by default and you
-must import them explicitly</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-<span class="go">&#39;/afs/cern.ch/user/d/dberzano&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os.path</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
-<span class="go">&#39;dberzano&#39;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 </pre></div>
 </div>
-<p>Note that due to the current Python implementation of the <code class="docutils literal notranslate"><span class="pre">os</span></code> module, <code class="docutils literal notranslate"><span class="pre">os.path</span></code>
-functions are <em>actually</em> available <em>even without importing <code class="docutils literal notranslate"><span class="pre">os.path</span></code>. But just
-<code class="docutils literal notranslate"><span class="pre">os</span></code></em>. You cannot and should not rely on this implementation, which represents an exception
-and might change in the future. Always import submodules explicitly!</p>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+PosixPath(&#39;/home/runner/work/analysis-essentials/analysis-essentials/python/..&#39;)
+</pre></div></div>
+</div>
+<p>When importing a module, its <strong>submodules are not available by default and you must import them explicitly</strong>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;/home/runner/work/analysis-essentials/analysis-essentials/python&#39;
+</pre></div></div>
+</div>
 <p>It is also possible to import several modules with a single import command:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">math</span>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<p>but this is <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#imports">not recommended by the Python style guide</a>, which
-suggests to use several import statements, one per module, as it improves
-readability:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 </pre></div>
 </div>
-<p>If you need to import several names from a single module, you can split an import
-function over multiple lines:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="gp">... </span>    <span class="n">exp</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="n">log</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="n">e</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="n">floor</span>
-<span class="gp">... </span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">floor</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
-<span class="go">2.0</span>
+</div>
+<p>but this is [not recommended by the Python style guide][<a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#imports">https://www.python.org/dev/peps/pep-0008/#imports</a>], which suggests to use several import statements, one per module, as it improves readability:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+</pre></div>
+</div>
+</div>
+<p>If you need to import several names from a single module, you can split an import function over multiple lines:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">e</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">floor</span><span class="p">,</span> <span class="n">log</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">floor</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+2
+</pre></div></div>
+</div>
+<p>However, while these are possibilities, importing the modules is the usual way to go. If you’re unsure, just look around for good examples; remember, consistency is the key!</p>
 </section>
-<section id="the-standard-library">
-<h2>The standard library<a class="headerlink" href="#the-standard-library" title="Link to this heading"></a></h2>
-<p>The set of things that Python comes with, from all of the types of objects to
-all of the different modules, is called the <a class="reference external" href="https://docs.python.org/2/library/index.html">standard library</a>. It is
-recommended to browse through the standard library documentation to see what is
-available: Python is rich of standard modules, and you should reuse them as much
-as possible instead of rewriting code on your own.</p>
+<section id="The-standard-library">
+<h2>The standard library<a class="headerlink" href="#The-standard-library" title="Link to this heading"></a></h2>
+<p>The set of things that Python comes with, from all of the types of objects to all of the different modules, is called the [standard library][stl]. It is recommended to browse through the standard library documentation to see what is available: Python is rich of standard modules, and you should reuse them as much as possible instead of rewriting code on your own.</p>
 <p>Some of the categories for which standard modules are available are:</p>
 <ul class="simple">
 <li><p>processing paths</p></li>
@@ -610,137 +794,101 @@ as possible instead of rewriting code on your own.</p>
 <li><p>support for multiple processes and threads</p></li>
 <li><p>…</p></li>
 </ul>
-<p>Use standard Python library modules with confidence: being part of any standard
-Python distribution, your code will be easily portable.</p>
+<p>Use standard Python library modules with confidence: being part of any standard Python distribution, your code will be easily portable.</p>
 </section>
-<section id="modules-from-pypi">
-<h2>Modules from PyPi<a class="headerlink" href="#modules-from-pypi" title="Link to this heading"></a></h2>
-<p>Many external modules can be found on <a class="reference external" href="https://pypi.org/">PyPi</a>, the Python Package Index repository.
-Some of those modules are
-already part of some Python distributions (such as <a class="reference external" href="https://www.anaconda.com/distribution/">Anaconda</a>, which
-comes with more than a thousand science-oriented modules preinstalled).</p>
-<p>If a certain module you need is not available on your distribution you can
-easily install it with the <code class="docutils literal notranslate"><span class="pre">pip</span></code> shell command. Since you typically do not have write
-access to the standard Python installation’s directories, <code class="docutils literal notranslate"><span class="pre">pip</span></code> allows you to
-install modules only for yourself, under your current user’s home directory.
-It is recommended to set up in your shell startup script (such as <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>)
-the following two lines telling once and for all where to install and search for
-Python user modules:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONUSERBASE</span><span class="o">=</span><span class="nv">$HOME</span>/.local
-<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PYTHONUSERBASE</span>/bin:<span class="nv">$PATH</span>
-</pre></div>
-</div>
-<p>Once you have done that, close your current terminal window and open a new one,
-and you will be ready to use <code class="docutils literal notranslate"><span class="pre">pip</span></code>. We will see in a later lesson how to install
-the <code class="docutils literal notranslate"><span class="pre">root_pandas</span></code> module with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>root_pandas
-</pre></div>
-</div>
+<section id="Modules-from-PyPi">
+<h2>Modules from PyPi<a class="headerlink" href="#Modules-from-PyPi" title="Link to this heading"></a></h2>
+<p>Many external modules can be found on [PyPi][pypi], the Python Package Index repository.</p>
+<p>If a certain module you need is not available on your distribution you can easily install it with the <code class="docutils literal notranslate"><span class="pre">pip</span></code> shell command as seen in the previous lectures.</p>
 </section>
-<section id="modules-inside-a-virtual-environment">
-<h2>Modules inside a virtual environment<a class="headerlink" href="#modules-inside-a-virtual-environment" title="Link to this heading"></a></h2>
-<p>It is however usually preferable and safer to do everything inside a virtual environement.
-The latter is like a copy of your current environement. Thus you can modify your virtual
-environement (including installing/deleting/updating modules) without affecting your default
-environement. If at some point you realize you have broken everything, you can always exit
-the virtual environement and go back to the default lxplus one.</p>
-<p>To build a virtual environement based on LCG views, you can use <a class="reference external" href="https://gitlab.cern.ch/cburr/lcg_virtualenv/">LCG_virtualenv</a>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://gitlab.cern.ch/cburr/lcg_virtualenv.git
-./lcg_virtualenv/create_lcg_virtualenv<span class="w"> </span>myVenv
-</pre></div>
-</div>
-<p>To activate the virtual environement do:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>myVenv/bin/activate
-</pre></div>
-</div>
-<p>You can then install stuff with <code class="docutils literal notranslate"><span class="pre">pip</span></code>, like for instance <code class="docutils literal notranslate"><span class="pre">root_pandas</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>root_pandas<span class="w"> </span>matplotlib
-python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import pandas; print(f&quot;Got pandas from {pandas.__file__}&quot;)&#39;</span>
-python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import root_pandas; print(f&quot;Got root_pandas from {root_pandas.__file__}&quot;)&#39;</span>
-python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import matplotlib; print(f&quot;Got matplotlib from {matplotlib.__file__}&quot;)&#39;</span>
-</pre></div>
-</div>
-<p>You can go back to the default environement using the <code class="docutils literal notranslate"><span class="pre">deactivate</span></code> command.</p>
-</section>
-<section id="write-your-first-python-module">
-<h2>Write your first Python module<a class="headerlink" href="#write-your-first-python-module" title="Link to this heading"></a></h2>
-<p>The simplest Python module you can write is just a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with some
-functions inside:</p>
+<section id="(Advanced)-Write-your-first-Python-module">
+<h2>(Advanced) Write your first Python module<a class="headerlink" href="#(Advanced)-Write-your-first-Python-module" title="Link to this heading"></a></h2>
+<p>The simplest Python module you can write is just a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file with some functions inside:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># myfirstmodule.py</span>
 
-<span class="k">def</span> <span class="nf">one</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">one</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is my first function&#39;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">two</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">two</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is my second function&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can now fire an <code class="docutils literal notranslate"><span class="pre">ipython</span></code> shell and use those functions right away:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">myfirstmodule</span>
+<p>You can now fire an <code class="docutils literal notranslate"><span class="pre">ipython</span></code> shell and use those functions right away (because it automatically picks up modules aka <code class="docutils literal notranslate"><span class="pre">.py</span></code> files inside the working directory)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">myfirstmodule</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myfirstmodule</span><span class="o">.</span><span class="n">one</span><span class="p">()</span>
 <span class="go">this is my first function</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myfirstmodule</span><span class="o">.</span><span class="n">two</span><span class="p">()</span>
 <span class="go">this is my second function</span>
 </pre></div>
 </div>
-<p>By simply calling the file <code class="docutils literal notranslate"><span class="pre">myfirstmodule.py</span></code> we have made it available as a
-module named <code class="docutils literal notranslate"><span class="pre">myfirstmodule</span></code> - given that the file is in the same directory
-where we have launched the Python interpreter.</p>
-<div class="panel panel-callout docutils container">
-<div class="panel-header open docutils container">
-<p id="module-name-restrictions"><i class="fa fa-info-circle"></i> Module name restrictions</p>
-</div>
-<div class="panel-body docutils container">
-<p>Note that you cannot pick any name you want for a module! From the
-<a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#package-and-module-names">Python style guide</a>, we gather that we should use “short,
-all-lowercase names”. As a matter of fact, if we used dashes in the file name,
-we would have ended up with a syntax error while trying to load it:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">my</span><span class="o">-</span><span class="n">first</span><span class="o">-</span><span class="n">module</span>
+<p>By simply calling the file <code class="docutils literal notranslate"><span class="pre">myfirstmodule.py</span></code> we have made it available as a module named <code class="docutils literal notranslate"><span class="pre">myfirstmodule</span></code> - given that the file is in the same directory where we have launched the Python interpreter.</p>
+<section id="Module-name-restrictions">
+<h3>Module name restrictions<a class="headerlink" href="#Module-name-restrictions" title="Link to this heading"></a></h3>
+<p>Note that you cannot pick any name you want for a module! From the [Python style guide][<a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#package-and-module-names">https://www.python.org/dev/peps/pep-0008/#package-and-module-names</a>], we gather that we should use “short, all-lowercase names”. As a matter of fact, if we used dashes in the file name, we would have ended up with a syntax error while trying to load it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">my</span><span class="o">-</span><span class="n">first</span><span class="o">-</span><span class="n">module</span>
   File <span class="nb">&quot;&lt;ipython-input-1-ef292d9e19fe&gt;&quot;</span>, line <span class="m">1</span>
-<span class="w">    </span><span class="kn">import</span> <span class="nn">my</span><span class="o">-</span><span class="n">first</span><span class="o">-</span><span class="n">module</span>
+<span class="w">    </span><span class="kn">import</span><span class="w"> </span><span class="nn">my</span><span class="o">-</span><span class="n">first</span><span class="o">-</span><span class="n">module</span>
 <span class="w">             </span><span class="pm">^</span>
 <span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
 </pre></div>
 </div>
 <p>Python treats <code class="docutils literal notranslate"><span class="pre">-</span></code> as a minus and does not understand your intentions.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
 </div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<p>{% endcallout %}</p>
 </section>
-<section id="write-a-structured-module">
-<h2>Write a structured module<a class="headerlink" href="#write-a-structured-module" title="Link to this heading"></a></h2>
-<p>Let’s now create a more structured module, with submodules and different files.
-We can start from the <code class="docutils literal notranslate"><span class="pre">myfirstmodule.py</span></code> file and create a directory structure:</p>
+</section>
+<section id="Write-a-structured-module">
+<h2>Write a structured module<a class="headerlink" href="#Write-a-structured-module" title="Link to this heading"></a></h2>
+<p>Let’s now create a more structured module, with submodules and different files. We can start from the <code class="docutils literal notranslate"><span class="pre">myfirstmodule.py</span></code> file and create a directory structure:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>yabba
 $<span class="w"> </span>cp<span class="w"> </span>myfirstmodule.py<span class="w"> </span>yabba/__init__.py
 </pre></div>
 </div>
-<p>We have reused the same file created before, copied it into a directory called
-<code class="docutils literal notranslate"><span class="pre">yabba</span></code> and renamed it to <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>. The double underscore should ring a
-bell: this is a Python special name, and it represents the “main file” within
-a module, whereas the directory name now represents the module name.</p>
-<p>This means that our module is called <code class="docutils literal notranslate"><span class="pre">yabba</span></code>, and if we import it, functions
-from <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> will be available:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">yabba</span>
+<p>We have reused the same file created before, copied it into a directory called <code class="docutils literal notranslate"><span class="pre">yabba</span></code> and renamed it to <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>. The double underscore should ring a bell: this is a Python special name, and it represents the “main file” within a module, whereas the directory name now represents the module name.</p>
+<p>This means that our module is called <code class="docutils literal notranslate"><span class="pre">yabba</span></code>, and if we import it, functions from <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> will be available:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">yabba</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">yabba</span><span class="o">.</span><span class="n">one</span><span class="p">()</span>
 <span class="go">this is my first function</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">yabba</span><span class="o">.</span><span class="n">two</span><span class="p">()</span>
 <span class="go">this is my second function</span>
 </pre></div>
 </div>
-<p>We can create an additional file inside the <code class="docutils literal notranslate"><span class="pre">yabba</span></code> directory, say
-<code class="docutils literal notranslate"><span class="pre">yabba/extra.py</span></code> and have more functions there:</p>
+<p>We can create an additional file inside the <code class="docutils literal notranslate"><span class="pre">yabba</span></code> directory, say <code class="docutils literal notranslate"><span class="pre">yabba/extra.py</span></code> and have more functions there:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># yabba/extra.py</span>
 
-<span class="k">def</span> <span class="nf">three</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">three</span><span class="p">():</span>
   <span class="nb">print</span> <span class="s1">&#39;this function will return the number three&#39;</span>
   <span class="k">return</span> <span class="mi">3</span>
 </pre></div>
 </div>
 <p>We have effectively made <code class="docutils literal notranslate"><span class="pre">extra</span></code> a submodule of <code class="docutils literal notranslate"><span class="pre">yabba</span></code>. Let’s try:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">yabba</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">yabba</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="ow">not</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;__&#39;</span><span class="p">),</span> <span class="nb">dir</span><span class="p">(</span><span class="n">yabba</span><span class="p">))</span>
 <span class="go">[&#39;one&#39;, &#39;two&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">yabba.extra</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">yabba.extra</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">yabba</span><span class="o">.</span><span class="n">extra</span><span class="o">.</span><span class="n">three</span><span class="p">()</span>
 <span class="go">yabba.extra.three()</span>
 <span class="go">this function will return the number three</span>
@@ -752,40 +900,31 @@ from <code class="docutils literal notranslate"><span class="pre">__init__.py</s
 <p id="what-have-i-done-with-the-filter-function?"><i class="fa fa-square-o"></i> What have I done with the filter function?</p>
 </div>
 <div class="panel-body docutils container">
-<p>We have used the filter function above to list the functions we have defined
-in our module. Can you describe in detail what the commands above do?
-{% solution “Solution” %}</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">dir(module)</span></code> command lists all <em>names</em> (not necessarily functions, not
-necessarily defined by us) contained in a given imported module. We have used the
-<code class="docutils literal notranslate"><span class="pre">filter()</span></code> command to filter out all names starting with two underscores. Every
-item returned by <code class="docutils literal notranslate"><span class="pre">dir()</span></code> is passed as <code class="docutils literal notranslate"><span class="pre">x</span></code> to the lambda function which returns
-<code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, determining whether the <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function should keep or
-discard the current element.</p>
+<p>We have used the filter function above to list the functions we have defined in our module. Can you describe in detail what the commands above do? {% solution “Solution” %}</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">dir(module)</span></code> command lists all <em>names</em> (not necessarily functions, not necessarily defined by us) contained in a given imported module. We have used the <code class="docutils literal notranslate"><span class="pre">filter()</span></code> command to filter out all names starting with two underscores. Every item returned by <code class="docutils literal notranslate"><span class="pre">dir()</span></code> is passed as <code class="docutils literal notranslate"><span class="pre">x</span></code> to the lambda function which returns <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, determining whether the <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function should keep or discard the current element.</p>
 <p>{% endsolution %}</p>
 </div>
 </div>
 </section>
-<section id="run-a-module">
-<h2>Run a module<a class="headerlink" href="#run-a-module" title="Link to this heading"></a></h2>
-<p>We can make a Python module that can be easily imported by other Python
-programs, but we can also make it in a way that it can be run directly as a
-Python script.</p>
+<section id="Run-a-module">
+<h2>Run a module<a class="headerlink" href="#Run-a-module" title="Link to this heading"></a></h2>
+<p>We can make a Python module that can be easily imported by other Python programs, but we can also make it in a way that it can be run directly as a Python script.</p>
 <p>Let’s write this special module and call it <code class="docutils literal notranslate"><span class="pre">runnable.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
 <span class="n">long_format</span> <span class="o">=</span> <span class="kc">False</span>
 
-<span class="k">def</span> <span class="nf">print_label</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">print_label</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">long_format</span><span class="p">:</span>
         <span class="n">out</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">: </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">label</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">out</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">-</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">label</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="p">))</span>
     <span class="nb">print</span> <span class="n">out</span>
 
-<span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
     <span class="n">print_label</span><span class="p">(</span><span class="s1">&#39;debug&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
     <span class="n">print_label</span><span class="p">(</span><span class="s1">&#39;warning&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -808,28 +947,17 @@ D-This is a debug message
 WARNING: This is a warning message with a long label
 </pre></div>
 </div>
-<p>There are two outstanding notions here. First off, the first line is a
-“shebang”: it really has to be the <em>first</em> line in a file (it cannot be the
-second, or “one of the first”, or the first non-empty) and it basically tells
-your shell that your executable text file has to be interpreted by the current
-Python interpreter. Just use this line as it is.</p>
-<p>Secondly, we notice we have a peculiar <code class="docutils literal notranslate"><span class="pre">if</span></code> condition with a block that gets
-executed when we run the file. <code class="docutils literal notranslate"><span class="pre">__name__</span></code> is a special internal Python variable
-which is set to the module name in case the module is imported. When the module
-is ran, it is set to the special value <code class="docutils literal notranslate"><span class="pre">&quot;__main__&quot;</span></code>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">else:</span></code> condition we have added is just to show what happens when you import
-the module instead:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">runnable</span>
+<p>There are two outstanding notions here. First off, the first line is a “shebang”: it really has to be the <em>first</em> line in a file (it cannot be the second, or “one of the first”, or the first non-empty) and it basically tells your shell that your executable text file has to be interpreted by the current Python interpreter. Just use this line as it is.</p>
+<p>Secondly, we notice we have a peculiar <code class="docutils literal notranslate"><span class="pre">if</span></code> condition with a block that gets executed when we run the file. <code class="docutils literal notranslate"><span class="pre">__name__</span></code> is a special internal Python variable which is set to the module name in case the module is imported. When the module is ran, it is set to the special value <code class="docutils literal notranslate"><span class="pre">&quot;__main__&quot;</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">else:</span></code> condition we have added is just to show what happens when you import the module instead:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">runnable</span>
 <span class="go">Module runnable is being imported</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">runnable</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;hey I can use it from here too&#39;</span><span class="p">)</span>
 <span class="go">W-hey I can use it from here too</span>
 </pre></div>
 </div>
-<p>Now, the <code class="docutils literal notranslate"><span class="pre">if</span></code> condition is not necessary when you want to run the module - those
-lines in the <code class="docutils literal notranslate"><span class="pre">if</span></code> block will be executed anyway. It is however used to <em>prevent</em>
-some lines from being executed when you import the file as a module.</p>
-<p>Please also note that module imports are typically <em>silent</em>, so the <code class="docutils literal notranslate"><span class="pre">else:</span></code>
-condition with a printout would not exist in real life.</p>
+<p>Now, the <code class="docutils literal notranslate"><span class="pre">if</span></code> condition is not necessary when you want to run the module - those lines in the <code class="docutils literal notranslate"><span class="pre">if</span></code> block will be executed anyway. It is however used to <em>prevent</em> some lines from being executed when you import the file as a module.</p>
+<p>Please also note that module imports are typically <em>silent</em>, so the <code class="docutils literal notranslate"><span class="pre">else:</span></code> condition with a printout would not exist in real life.</p>
 </section>
 </section>
 

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,27 +7,23 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>4: Extension on Classification &mdash; Analysis essentials  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
-        <script src="../_static/panels.js?v=0f4bdeea"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
+      <script src="../_static/panels.js?v=0f4bdeea"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -82,26 +80,30 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python/strings.html">Strings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/strings.html#formatting">Formatting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/strings.html#Formatting">Formatting</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/lists.html">Lists and looping</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#looping">Looping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#list-comprehension">List comprehension</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#tuples">Tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#Looping">Looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#Indentation">Indentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#List-comprehension-(Sugar,-can-be-skipped-on-first-read)">List comprehension (Sugar, can be skipped on first read)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#Tuples">Tuples</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/dictionaries.html">Dictionaries</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#truthiness">Truthiness</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#conditions-in-loops">Conditions in loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#inline-methods">Inline methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
@@ -109,13 +111,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#the-standard-library">The standard library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#modules-from-pypi">Modules from PyPi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-your-first-python-module">Write your first Python module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-a-structured-module">Write a structured module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#run-a-module">Run a module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Using-modules-into-your-code:-import">Using modules into your code: import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#The-standard-library">The standard library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Modules-from-PyPi">Modules from PyPi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#(Advanced)-Write-your-first-Python-module">(Advanced) Write your first Python module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#Module-name-restrictions">Module name restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Run-a-module">Run a module</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/classes.html">Classes</a><ul>
@@ -227,10 +231,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html">Model tuning setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#Cross-validation">Cross-validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#k-folding-&amp;-early-stopping"><span class="math notranslate nohighlight">\(k\)</span>-folding &amp; early stopping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#Hyperameter-optimisation">Hyperameter optimisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="40Histograms.html">6: Histograms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Axes">Axes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="40Histograms.html#Regular">Regular</a></li>
@@ -280,8 +280,11 @@
 <li class="toctree-l2"><a class="reference internal" href="50LikelihoodInference.html">8: Likelihood inference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Scope-of-this-tutorial">Scope of this tutorial</a></li>
 <li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Getting-started">Getting started</a></li>
-<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Difference-of-the-two-spaces">Difference of the two spaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Plotting">Plotting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Creating-the-model">Creating the model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Plotting">Plotting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#A-quick-plot">A quick plot</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Loss">Loss</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Fixing-parameters">Fixing parameters</a></li>
 </ul>
@@ -501,12 +504,12 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mplhep</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">AdaBoostClassifier</span><span class="p">,</span> <span class="n">GradientBoostingClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">auc</span><span class="p">,</span> <span class="n">roc_curve</span>
-<span class="kn">from</span> <span class="nn">xgboost</span> <span class="kn">import</span> <span class="n">XGBClassifier</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">mplhep</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">AdaBoostClassifier</span><span class="p">,</span> <span class="n">GradientBoostingClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">auc</span><span class="p">,</span> <span class="n">roc_curve</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xgboost</span><span class="w"> </span><span class="kn">import</span> <span class="n">XGBClassifier</span>
 </pre></div>
 </div>
 </div>
@@ -514,7 +517,7 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_comparision</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_comparision</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">):</span>
     <span class="c1"># create histograms</span>
     <span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -526,7 +529,7 @@
     <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">plot_significance</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_significance</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">y_score</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
     <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">],</span> <span class="n">y_score</span><span class="p">)</span>
 
@@ -545,7 +548,7 @@
     <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">optimal_cut</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">plot_roc</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_roc</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">y_score</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
     <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">],</span> <span class="n">y_score</span><span class="p">)</span>
     <span class="n">area</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
@@ -577,7 +580,7 @@
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
@@ -588,15 +591,6 @@
     <span class="n">df</span><span class="p">[</span><span class="s1">&#39;BDT_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt_2</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/sklearn/ensemble/_weight_boosting.py:519: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
-  warnings.warn(
-</pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
@@ -636,20 +630,20 @@
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_3718/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_4434/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
+  metric = S / np.sqrt(S + B)
+/tmp/ipykernel_4434/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
+  metric = S / np.sqrt(S + B)
+/tmp/ipykernel_4434/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
   metric = S / np.sqrt(S + B)
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/tmp/ipykernel_3718/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
-  metric = S / np.sqrt(S + B)
-/tmp/ipykernel_3718/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
-  metric = S / np.sqrt(S + B)
-</pre></div></div>
+<div class="output_area docutils container">
+<img alt="../_images/advanced-python_31ClassificationExtension_8_1.png" src="../_images/advanced-python_31ClassificationExtension_8_1.png" />
+</div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
@@ -672,18 +666,11 @@
 <img alt="../_images/advanced-python_31ClassificationExtension_8_4.png" src="../_images/advanced-python_31ClassificationExtension_8_4.png" />
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/advanced-python_31ClassificationExtension_8_5.png" src="../_images/advanced-python_31ClassificationExtension_8_5.png" />
-</div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_31ClassificationExtension_8_6.png" src="../_images/advanced-python_31ClassificationExtension_8_6.png" />
+<img alt="../_images/advanced-python_31ClassificationExtension_8_5.png" src="../_images/advanced-python_31ClassificationExtension_8_5.png" />
 </div>
 </div>
 <p>Comments:</p>
@@ -691,7 +678,11 @@
 <li><p>While <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> is always defined to be between 0 and 1, the actualy value is generally not very meaningful. In this case we see that the range of the AdaBoost classifier is different. More generally, the output of a classifier is <em>not</em> a probability but something that is probability-like: there exists a bijective transformation for the output to transform it to a probability for each classifier. This however is not known in general and can be hard to find. In short: the <em>ranking</em>
 matters, not the absolute value.</p></li>
 </ul>
-<p><strong>Exercise:</strong> What happens if you put mass into the BDT? - Avoid variables which correlated with mass - Variables with a little correlation is okay, such as momentum. (Assuming your resolution is good)</p>
+<p><strong>Exercise:</strong> What happens if you put mass into the BDT?</p>
+<ul class="simple">
+<li><p>Avoid variables which correlated with mass</p></li>
+<li><p>Variables with a little correlation is okay, such as momentum. (Assuming your resolution is good)</p></li>
+</ul>
 <p><strong>Question:</strong> What happens if real and simulated data are different?</p>
 </section>
 <section id="Feature-engineering">
@@ -798,11 +789,11 @@ matters, not the absolute value.</p></li>
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_3718/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_4434/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
   metric = S / np.sqrt(S + B)
-/tmp/ipykernel_3718/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_4434/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
   metric = S / np.sqrt(S + B)
-/tmp/ipykernel_3718/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_4434/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
   metric = S / np.sqrt(S + B)
 </pre></div></div>
 </div>
@@ -812,7 +803,7 @@ matters, not the absolute value.</p></li>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fd4d3e27d10&gt;
+&lt;matplotlib.legend.Legend at 0x7f0d3b52c890&gt;
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -862,7 +853,7 @@ matters, not the absolute value.</p></li>
 <li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html">https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html</a></p></li>
 </ul>
 <p>Look at the example section:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">KFold</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">KFold</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">kf</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>

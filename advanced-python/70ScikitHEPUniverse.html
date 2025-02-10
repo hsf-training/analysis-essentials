@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,27 +7,23 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>10: Scikit-HEP &mdash; Analysis essentials  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
-      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
-        <script src="../_static/panels.js?v=0f4bdeea"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
+      <script src="../_static/panels.js?v=0f4bdeea"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -82,26 +80,30 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python/strings.html">Strings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/strings.html#formatting">Formatting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/strings.html#Formatting">Formatting</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/lists.html">Lists and looping</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#looping">Looping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#list-comprehension">List comprehension</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#tuples">Tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#Looping">Looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#Indentation">Indentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#List-comprehension-(Sugar,-can-be-skipped-on-first-read)">List comprehension (Sugar, can be skipped on first read)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#Tuples">Tuples</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/dictionaries.html">Dictionaries</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#truthiness">Truthiness</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#conditions-in-loops">Conditions in loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#inline-methods">Inline methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
@@ -109,13 +111,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#the-standard-library">The standard library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#modules-from-pypi">Modules from PyPi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-your-first-python-module">Write your first Python module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#write-a-structured-module">Write a structured module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#run-a-module">Run a module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Using-modules-into-your-code:-import">Using modules into your code: import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#The-standard-library">The standard library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Modules-from-PyPi">Modules from PyPi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#(Advanced)-Write-your-first-Python-module">(Advanced) Write your first Python module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#Module-name-restrictions">Module name restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Run-a-module">Run a module</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/classes.html">Classes</a><ul>
@@ -227,10 +231,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html">Model tuning setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#Cross-validation">Cross-validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#k-folding-&amp;-early-stopping"><span class="math notranslate nohighlight">\(k\)</span>-folding &amp; early stopping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="33ModelTuning.html#Hyperameter-optimisation">Hyperameter optimisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="40Histograms.html">6: Histograms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Axes">Axes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="40Histograms.html#Regular">Regular</a></li>
@@ -280,8 +280,11 @@
 <li class="toctree-l2"><a class="reference internal" href="50LikelihoodInference.html">8: Likelihood inference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Scope-of-this-tutorial">Scope of this tutorial</a></li>
 <li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Getting-started">Getting started</a></li>
-<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Difference-of-the-two-spaces">Difference of the two spaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Plotting">Plotting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Creating-the-model">Creating the model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Plotting">Plotting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#A-quick-plot">A quick plot</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="50LikelihoodInference.html#Loss">Loss</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="50LikelihoodInference.html#Fixing-parameters">Fixing parameters</a></li>
 </ul>
@@ -481,6 +484,7 @@
 <h1>10: Scikit-HEP<a class="headerlink" href="#10:-Scikit-HEP" title="Link to this heading"></a></h1>
 <p>The <a class="reference external" href="https://scikit-hep.org/">Scikit-HEP project</a> is a well maintained collection of HEP packages in Python that are useful for analysis. It contains tools ranging from plotting helpers, PDG lookup, DecayLanguage converters over high-performance histogramming libraries and ROOT I/O up to likelihood fitting and statistics libraries.</p>
 <p>This is a minimal overview over the packages that are available and have not yet been used in the other tutorials.</p>
+<p>**If you are interested to become pa</p>
 <section id="formulate---converting-expressions">
 <h2>formulate - converting expressions<a class="headerlink" href="#formulate---converting-expressions" title="Link to this heading"></a></h2>
 <p>The package <a class="reference external" href="https://github.com/scikit-hep/formulate">formulate</a> converts between different style of expressions, notably between <a class="reference external" href="https://root.cern.ch/doc/master/classTFormula.html">ROOT</a> and <a class="reference external" href="https://numexpr.readthedocs.io/en/latest/user_guide.html">numexpr</a>. The former was used in the previous notebooks to apply cuts and create new variables with Pandas DataFrames <code class="docutils literal notranslate"><span class="pre">query</span></code> and <code class="docutils literal notranslate"><span class="pre">eval</span></code> methods.</p>
@@ -489,7 +493,7 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">formulate</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">formulate</span>
 
 <span class="n">momentum</span> <span class="o">=</span> <span class="n">formulate</span><span class="o">.</span><span class="n">from_root</span><span class="p">(</span><span class="s1">&#39;TMath::Sqrt(X_PX**2 + X_PY**2 + X_PZ**2)&#39;</span><span class="p">)</span>
 <span class="n">momentum</span>
@@ -549,7 +553,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Particle</span>
 
-<span class="kn">from</span> <span class="nn">particle</span> <span class="kn">import</span> <span class="n">Particle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">particle</span><span class="w"> </span><span class="kn">import</span> <span class="n">Particle</span>
 
 <span class="n">piplus</span> <span class="o">=</span> <span class="n">Particle</span><span class="o">.</span><span class="n">from_pdgid</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
 </pre></div>
@@ -639,18 +643,18 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[&lt;Particle: name=&#34;B0&#34;, pdgid=511, mass=5279.66 ± 0.12 MeV&gt;,
- &lt;Particle: name=&#34;B~0&#34;, pdgid=-511, mass=5279.66 ± 0.12 MeV&gt;,
- &lt;Particle: name=&#34;B*0&#34;, pdgid=513, mass=5324.71 ± 0.21 MeV&gt;,
- &lt;Particle: name=&#34;B*~0&#34;, pdgid=-513, mass=5324.71 ± 0.21 MeV&gt;,
- &lt;Particle: name=&#34;B(2)*(5747)0&#34;, pdgid=515, mass=5739.5 ± 0.7 MeV&gt;,
- &lt;Particle: name=&#34;B(2)*(5747)~0&#34;, pdgid=-515, mass=5739.5 ± 0.7 MeV&gt;,
- &lt;Particle: name=&#34;B(s)0&#34;, pdgid=531, mass=5366.92 ± 0.10 MeV&gt;,
- &lt;Particle: name=&#34;B(s)~0&#34;, pdgid=-531, mass=5366.92 ± 0.10 MeV&gt;,
- &lt;Particle: name=&#34;B(s)*0&#34;, pdgid=533, mass=5415.4 + 1.8 - 1.5 MeV&gt;,
- &lt;Particle: name=&#34;B(s)*~0&#34;, pdgid=-533, mass=5415.4 + 1.8 - 1.5 MeV&gt;,
- &lt;Particle: name=&#34;B(s2)*(5840)0&#34;, pdgid=535, mass=5839.86 ± 0.12 MeV&gt;,
- &lt;Particle: name=&#34;B(s2)*(5840)~0&#34;, pdgid=-535, mass=5839.86 ± 0.12 MeV&gt;,
+[&lt;Particle: name=&#34;B0&#34;, pdgid=511, mass=5279.72 ± 0.08 MeV&gt;,
+ &lt;Particle: name=&#34;B~0&#34;, pdgid=-511, mass=5279.72 ± 0.08 MeV&gt;,
+ &lt;Particle: name=&#34;B*0&#34;, pdgid=513, mass=5324.75 ± 0.20 MeV&gt;,
+ &lt;Particle: name=&#34;B*~0&#34;, pdgid=-513, mass=5324.75 ± 0.20 MeV&gt;,
+ &lt;Particle: name=&#34;B(2)*(5747)0&#34;, pdgid=515, mass=5739.6 ± 0.7 MeV&gt;,
+ &lt;Particle: name=&#34;B(2)*(5747)~0&#34;, pdgid=-515, mass=5739.6 ± 0.7 MeV&gt;,
+ &lt;Particle: name=&#34;B(s)0&#34;, pdgid=531, mass=5366.93 ± 0.10 MeV&gt;,
+ &lt;Particle: name=&#34;B(s)~0&#34;, pdgid=-531, mass=5366.93 ± 0.10 MeV&gt;,
+ &lt;Particle: name=&#34;B(s)*0&#34;, pdgid=533, mass=5415.4 ± 1.4 MeV&gt;,
+ &lt;Particle: name=&#34;B(s)*~0&#34;, pdgid=-533, mass=5415.4 ± 1.4 MeV&gt;,
+ &lt;Particle: name=&#34;B(s2)*(5840)0&#34;, pdgid=535, mass=5839.88 ± 0.12 MeV&gt;,
+ &lt;Particle: name=&#34;B(s2)*(5840)~0&#34;, pdgid=-535, mass=5839.88 ± 0.12 MeV&gt;,
  &lt;Particle: name=&#34;eta(b)(1S)&#34;, pdgid=551, mass=9398.7 ± 2.0 MeV&gt;,
  &lt;Particle: name=&#34;Upsilon(1S)&#34;, pdgid=553, mass=9460.40 ± 0.10 MeV&gt;,
  &lt;Particle: name=&#34;chi(b2)(1P)&#34;, pdgid=555, mass=9912.2 ± 0.4 MeV&gt;,
@@ -684,7 +688,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hepunits.constants</span> <span class="kn">import</span> <span class="n">c_light</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">hepunits.constants</span><span class="w"> </span><span class="kn">import</span> <span class="n">c_light</span>
 
 <span class="n">c_light</span>
 </pre></div>
@@ -703,7 +707,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hepunits</span> <span class="k">as</span> <span class="nn">u</span>  <span class="c1"># u for units</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">hepunits</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">u</span>  <span class="c1"># u for units</span>
 </pre></div>
 </div>
 </div>
@@ -732,7 +736,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">vector</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vector</span>
 </pre></div>
 </div>
 </div>
@@ -794,7 +798,7 @@ MomentumNumpy4D([(1.1, 2.1, 3.1, 4.1), (1.2, 2.2, 3.2, 4.2), (1.3, 2.3, 3.3, 4.3
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-1.1035868415601453
+np.float64(1.1035868415601453)
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">

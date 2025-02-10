@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,24 +7,23 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conditions &mdash; Analysis essentials  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
-        <script src="../_static/panels.js?v=0f4bdeea"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
+      <script src="../_static/panels.js?v=0f4bdeea"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -79,26 +80,30 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strings.html">Strings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="strings.html#formatting">Formatting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strings.html#Formatting">Formatting</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="lists.html">Lists and looping</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="lists.html#looping">Looping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lists.html#list-comprehension">List comprehension</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lists.html#tuples">Tuples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#Looping">Looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lists.html#Indentation">Indentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#List-comprehension-(Sugar,-can-be-skipped-on-first-read)">List comprehension (Sugar, can be skipped on first read)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html#Tuples">Tuples</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="dictionaries.html">Dictionaries</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dictionaries.html#dictionary-keys">Dictionary keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Conditions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#truthiness">Truthiness</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#conditions-in-loops">Conditions in loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Truthiness">Truthiness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Conditions-in-loops">Conditions in loops</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="methods.html">Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="methods.html#inline-methods">Inline methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="methods.html#Inline-methods">Inline methods</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scripting.html">Scripting</a><ul>
@@ -106,13 +111,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="modules.html">Modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#using-modules-into-your-code-import">Using modules into your code: import</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#the-standard-library">The standard library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#modules-from-pypi">Modules from PyPi</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#modules-inside-a-virtual-environment">Modules inside a virtual environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#write-your-first-python-module">Write your first Python module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#write-a-structured-module">Write a structured module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#run-a-module">Run a module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#Using-modules-into-your-code:-import">Using modules into your code: import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#The-standard-library">The standard library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#Modules-from-PyPi">Modules from PyPi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#(Advanced)-Write-your-first-Python-module">(Advanced) Write your first Python module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#Module-name-restrictions">Module name restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#Write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#Run-a-module">Run a module</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html">Classes</a><ul>
@@ -224,10 +231,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html">Model tuning setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html#Cross-validation">Cross-validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html#k-folding-&amp;-early-stopping"><span class="math notranslate nohighlight">\(k\)</span>-folding &amp; early stopping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced-python/33ModelTuning.html#Hyperameter-optimisation">Hyperameter optimisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/40Histograms.html">6: Histograms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Axes">Axes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Regular">Regular</a></li>
@@ -277,8 +280,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html">8: Likelihood inference</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Scope-of-this-tutorial">Scope of this tutorial</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Getting-started">Getting started</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Difference-of-the-two-spaces">Difference of the two spaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Plotting">Plotting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Creating-the-model">Creating the model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Plotting">Plotting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#A-quick-plot">A quick plot</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Loss">Loss</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Fixing-parameters">Fixing parameters</a></li>
 </ul>
@@ -466,7 +472,7 @@
           <li class="breadcrumb-item"><a href="README.html">An introduction to Python</a></li>
       <li class="breadcrumb-item active">Conditions</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/python/conditions.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/python/conditions.ipynb" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -474,284 +480,768 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="conditions">
-<h1>Conditions<a class="headerlink" href="#conditions" title="Link to this heading"></a></h1>
-<p>Sometimes, often while looping, you only want to do things depending on
-something’s value. Specifying <em>conditions</em> like this is pretty simple in Python.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pizzas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Pineapple&#39;</span><span class="p">,</span> <span class="s1">&#39;Cheese&#39;</span><span class="p">,</span> <span class="s1">&#39;Pepperoni&#39;</span><span class="p">,</span> <span class="s1">&#39;Hot dog&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="s1">&#39;Cheese&#39;</span><span class="p">:</span>
-<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nice pizza!&#39;</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="k">elif</span> <span class="n">p</span> <span class="o">==</span> <span class="s1">&#39;Pepperoni&#39;</span><span class="p">:</span>
-<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Amazing pizza!&#39;</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="k">else</span><span class="p">:</span>
-<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Weird pizza.&#39;</span><span class="p">)</span>
-<span class="gp">...</span>
-<span class="go">Weird pizza.</span>
-<span class="go">Nice pizza!</span>
-<span class="go">Amazing pizza!</span>
-<span class="go">Weird pizza.</span>
+  <section id="Conditions">
+<h1>Conditions<a class="headerlink" href="#Conditions" title="Link to this heading"></a></h1>
+<p>Sometimes, often while looping, you only want to do things depending on something’s value. Specifying <em>conditions</em> like this is pretty simple in Python.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<p>Like the “body” of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, called a <em>block</em>, the block in the <code class="docutils literal notranslate"><span class="pre">if</span></code>,
-<code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements must be indented. The convention we adopt is to
-use four spaces for indentation.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement starts with <code class="docutils literal notranslate"><span class="pre">if</span></code> (duh!) and what follows is a <em>condition</em>.
-If this condition isn’t met, the next <code class="docutils literal notranslate"><span class="pre">elif</span></code> (for “else-if”) condition is
-evaluated. If this also isn’t met, the <code class="docutils literal notranslate"><span class="pre">else</span></code> block is run. You can use as many
-<code class="docutils literal notranslate"><span class="pre">elif</span></code> conditions as you like, or none at all, and the <code class="docutils literal notranslate"><span class="pre">else</span></code> block is optional.</p>
-<div class="panel panel-callout docutils container">
-<div class="panel-header open docutils container">
-<p id="ternary-conditional-operator"><i class="fa fa-info-circle"></i> Ternary conditional operator</p>
-</div>
-<div class="panel-body docutils container">
-<p>You can use a succinct one-line syntax for conditional assignments like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;ok&#39;</span> <span class="k">if</span> <span class="n">pizzas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Cheese&#39;</span> <span class="k">else</span> <span class="s1">&#39;not ok&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
-<span class="go">&#39;not ok&#39;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizzas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Pineapple&quot;</span><span class="p">,</span> <span class="s2">&quot;Cheese&quot;</span><span class="p">,</span> <span class="s2">&quot;Pepperoni&quot;</span><span class="p">,</span> <span class="s2">&quot;Hot dog&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="s2">&quot;Cheese&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nice pizza!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">p</span> <span class="o">==</span> <span class="s2">&quot;Pepperoni&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Amazing pizza!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Weird pizza.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Make sure your line does not get too long in order not to impair its
-readability!</p>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
 </div>
-<p>Python evaluates a condition and sees whether it is truth-like or not. If it is
-truth-like, the code in the block is run.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">pizzas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Cheese&#39;</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;It is cheese, my dudes.&#39;</span><span class="p">)</span>
-<span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pizzas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Cheese&#39;</span>
-<span class="go">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pizzas</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Cheese&#39;</span>
-<span class="go">True</span>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Weird pizza.
+Nice pizza!
+Amazing pizza!
+Weird pizza.
+</pre></div></div>
+</div>
+<p>Like the “body” of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, called a <em>block</em>, the block in the <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements must be indented. The convention we adopt is to use four spaces for indentation.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement starts with <code class="docutils literal notranslate"><span class="pre">if</span></code> (duh!) and what follows is a <em>condition</em>. If this condition isn’t met, the next <code class="docutils literal notranslate"><span class="pre">elif</span></code> (for “else-if”) condition is evaluated. If this also isn’t met, the <code class="docutils literal notranslate"><span class="pre">else</span></code> block is run. You can use as many <code class="docutils literal notranslate"><span class="pre">elif</span></code> conditions as you like, or none at all, and the <code class="docutils literal notranslate"><span class="pre">else</span></code> block is optional.</p>
+<p>Python evaluates a condition and sees whether it is truth-like or not. If it is truth-like, the code in the block is run.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">False</span></code> and <code class="docutils literal notranslate"><span class="pre">True</span></code> are variables and they can actually be reassigned to some
-other value (though it is quite pointless and dangerous to do that!) They
-correspond to the possible values a boolean variable can have. Here is why you
-should never touch those variables:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kc">True</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kc">True</span>
-<span class="go">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kc">True</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kc">True</span> <span class="o">==</span> <span class="kc">False</span>
-<span class="go">True</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">pizzas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Cheese&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is cheese, my dudes.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The result of a comparison is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, and we can perform comparisons
-using several operators, like <code class="docutils literal notranslate"><span class="pre">==</span></code> for equality, <code class="docutils literal notranslate"><span class="pre">!=</span></code> for inequality, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> and
-<code class="docutils literal notranslate"><span class="pre">&lt;</span></code> for relative magnitude, and so on.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span>
-<span class="go">(True, False)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kc">False</span>
-<span class="go">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kc">True</span> <span class="o">==</span> <span class="kc">False</span>
-<span class="go">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kc">True</span> <span class="o">!=</span> <span class="kc">False</span>
-<span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span>
-<span class="go">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
-<span class="go">True</span>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<p>This shows that we can combine comparison operators, just like with <code class="docutils literal notranslate"><span class="pre">+</span></code> and
-friends. We can also use <code class="docutils literal notranslate"><span class="pre">and</span></code> to require multiple conditions, <code class="docutils literal notranslate"><span class="pre">or</span></code> to require
-at least one, and <code class="docutils literal notranslate"><span class="pre">not</span></code> to negate a result.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="ow">or</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">x</span>
-<span class="kc">True</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="ow">not</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">x</span>
-<span class="kc">False</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizzas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Cheese&quot;</span>
 </pre></div>
 </div>
-<p>Note that <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span></code> have lower precedence than <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">==</span></code>, but
-you can use parentheses to be more explicit.</p>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizzas</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Cheese&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">False</span></code> and <code class="docutils literal notranslate"><span class="pre">True</span></code> are variables. They correspond to the possible values a boolean variable can have.</p>
+<p>The result of a comparison is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, and we can perform comparisons using several operators, like <code class="docutils literal notranslate"><span class="pre">==</span></code> for equality, <code class="docutils literal notranslate"><span class="pre">!=</span></code> for inequality, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> for relative magnitude, and so on.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">is</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<p>This shows that we can combine comparison operators, just like with <code class="docutils literal notranslate"><span class="pre">+</span></code> and friends. We can also use <code class="docutils literal notranslate"><span class="pre">and</span></code> to require multiple conditions, <code class="docutils literal notranslate"><span class="pre">or</span></code> to require at least one, and <code class="docutils literal notranslate"><span class="pre">not</span></code> to negate a result.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="ow">or</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span></code> have lower precedence than <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">==</span></code>, but you can (and in general should) use parentheses to be more explicit.</p>
+<p><strong>Exercise</strong></p>
+<p>Play around with the booleans and try to answer the following! Can you do</p>
+<ul class="simple">
+<li><p>double negotiations</p></li>
+<li><p>convert a boolean to an integer</p></li>
+<li><p>use parentheses to create a more complicated expression</p></li>
+</ul>
 <p>Of course, we can compare everything we have played around with so far.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;hero&#39;</span><span class="p">:</span> <span class="s1">&#39;thor&#39;</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
-<span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">==</span> <span class="n">z</span>
-<span class="go">False</span>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<p>For collection objects like lists, tuples, and dictionaries, we can easily ask
-them if they contain something in particular using the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="ow">in</span> <span class="n">x</span>
-<span class="go">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="ow">in</span> <span class="n">y</span>
-<span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;thor&#39;</span> <span class="ow">in</span> <span class="n">z</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-<p>The last statement is <code class="docutils literal notranslate"><span class="pre">False</span></code> because <code class="docutils literal notranslate"><span class="pre">in</span></code> queries a dictionaries <em>keys</em>, not
-its values. This is useful if you want to access a key in a dictionary that
-might not exist:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="p">[</span><span class="s1">&#39;pizza&#39;</span><span class="p">]</span>
-<span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-<span class="gr">NameError</span>: <span class="n">name &#39;z&#39; is not defined</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="s1">&#39;pizza&#39;</span> <span class="ow">in</span> <span class="n">z</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;We have pizza&#39;</span><span class="p">,</span> <span class="n">z</span><span class="p">[</span><span class="s1">&#39;pizza&#39;</span><span class="p">])</span>
-<span class="gp">... </span><span class="k">else</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No pizza :(&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Note that <code class="docutils literal notranslate"><span class="pre">in</span></code> doesn’t dive into nested collections, but only looks at the top
-level.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="ow">in</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
-<span class="go">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="panel panel-challenge docutils container">
-<div class="panel-header open docutils container">
-<p id="the-in-operator"><i class="fa fa-square-o"></i> The in operator</p>
-</div>
-<div class="panel-body docutils container">
-<p>Find the double-underscore method on lists and dictionaries that corresponds to
-the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator, and check that it does the same thing as the operator.</p>
-<div class="panel panel-solution docutils container">
-<div class="panel-header docutils container">
-<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
-</div>
-<div class="panel-body docutils container">
-<p>Taking lists as an example, the <code class="docutils literal notranslate"><span class="pre">dir</span></code> method can tell us what methods are
-available. The <code class="docutils literal notranslate"><span class="pre">__contains__</span></code> method sounds promising.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="fm">__contains__</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="fm">__contains__</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="go">False</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">z</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;hero&quot;</span><span class="p">:</span> <span class="s2">&quot;thor&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<p>Strings work a lot like lists, which makes sense because they are effectively
-collections of single characters. This means we can also query string contents
-with <code class="docutils literal notranslate"><span class="pre">in</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fact</span> <span class="o">=</span> <span class="s1">&#39;The best hero is Thor.&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;Thor&#39;</span> <span class="ow">in</span> <span class="n">fact</span>
-<span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;Iron Man&#39;</span> <span class="ow">in</span> <span class="n">fact</span>
-<span class="go">False</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<section id="truthiness">
-<h2>Truthiness<a class="headerlink" href="#truthiness" title="Link to this heading"></a></h2>
-<p>It’s conventional not to explicitly compare a condition to <code class="docutils literal notranslate"><span class="pre">True</span></code>, because the
-<code class="docutils literal notranslate"><span class="pre">if</span></code> statement already does that for us.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="p">(</span><span class="s1">&#39;Pineapple&#39;</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Weird.&#39;</span><span class="p">)</span>
-<span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="s1">&#39;Pineapple&#39;</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Not weird.&#39;</span><span class="p">)</span>
-<span class="gp">...</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
 </pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">==</span> <span class="n">z</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<p>For collection objects like lists, tuples, and dictionaries, we can easily ask them if they contain something in particular using the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="ow">in</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="ow">in</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;thor&quot;</span> <span class="ow">in</span> <span class="n">z</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<p>The last statement is <code class="docutils literal notranslate"><span class="pre">False</span></code> because <code class="docutils literal notranslate"><span class="pre">in</span></code> queries a dictionaries <em>keys</em>, not its values. This is useful if you want to access a key in a dictionary that might not exist:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="p">[</span><span class="s2">&quot;pizza&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[19], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">z</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">pizza</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">]</span>
+
+<span class="ansi-red-fg">KeyError</span>: &#39;pizza&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;pizza&quot;</span> <span class="ow">in</span> <span class="n">z</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We have pizza&quot;</span><span class="p">,</span> <span class="n">z</span><span class="p">[</span><span class="s2">&quot;pizza&quot;</span><span class="p">])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No pizza :(&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+No pizza :(
+</pre></div></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">in</span></code> doesn’t dive into nested collections, but only looks at the top level.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="ow">in</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>  <span class="c1"># the elements are two lists</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<p><strong>Advanced (skip on first read)</strong></p>
+<p>Find the double-underscore method on lists and dictionaries that corresponds to the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator, and check that it does the same thing as the operator.</p>
+<p><strong>Solutions</strong></p>
+<p>Taking lists as an example, the <code class="docutils literal notranslate"><span class="pre">dir</span></code> method can tell us what methods are available. The <code class="docutils literal notranslate"><span class="pre">__contains__</span></code> method sounds promising.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="fm">__contains__</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="fm">__contains__</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<p>Strings work a lot like lists, which makes sense because they are effectively collections of single characters. This means we can also query string contents with <code class="docutils literal notranslate"><span class="pre">in</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fact</span> <span class="o">=</span> <span class="s2">&quot;The best hero is Thor.&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Thor&quot;</span> <span class="ow">in</span> <span class="n">fact</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Iron Man&quot;</span> <span class="ow">in</span> <span class="n">fact</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<section id="Truthiness">
+<h2>Truthiness<a class="headerlink" href="#Truthiness" title="Link to this heading"></a></h2>
+<p>It’s conventional not to explicitly compare a condition to <code class="docutils literal notranslate"><span class="pre">True</span></code>, because the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement already does that for us.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="s2">&quot;Pineapple&quot;</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Weird.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Weird.
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;Pineapple&quot;</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not weird.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Not weird.
+</pre></div></div>
 </div>
 <p>Likewise, rather than comparing for False, we just use <code class="docutils literal notranslate"><span class="pre">not</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="p">(</span><span class="s1">&#39;Pineapple&#39;</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Weird.&#39;</span><span class="p">)</span>
-<span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;Pineapple&#39;</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Not weird.&#39;</span><span class="p">)</span>
-<span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="ow">not</span> <span class="s1">&#39;Pineapple&#39;</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;Pineapple&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
-<p>The last two lines show that we can use <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> for checking that something
-<em>is not</em> in a collection. This reads more naturally.</p>
-<p>All Python objects are truth-like unless they are the value <code class="docutils literal notranslate"><span class="pre">False</span></code>, the value
-<code class="docutils literal notranslate"><span class="pre">None</span></code>, or are empty collections (such as <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">[]</span></code>, <code class="docutils literal notranslate"><span class="pre">()</span></code>, <code class="docutils literal notranslate"><span class="pre">{}</span></code>).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="nb">list</span><span class="p">()</span> <span class="ow">or</span> <span class="nb">dict</span><span class="p">()</span> <span class="ow">or</span> <span class="nb">tuple</span><span class="p">()</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">():</span>
-<span class="gp">... </span>    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;You won’t see me!&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="s2">&quot;Pineapple&quot;</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Weird.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The value <code class="docutils literal notranslate"><span class="pre">None</span></code>, which is available as the variable named <code class="docutils literal notranslate"><span class="pre">None</span></code>, is often
-used as placeholder for an empty value.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">favourite</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="k">if</span> <span class="s1">&#39;Olives&#39;</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>
-<span class="gp">... </span>        <span class="n">favourite</span> <span class="o">=</span> <span class="n">p</span>
-<span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">favourite</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Found favourite: </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">favourite</span><span class="p">))</span>
-<span class="gp">... </span><span class="k">else</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;No favourite :(&#39;</span><span class="p">)</span>
-<span class="go">No favourite :(</span>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;Pineapple&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not weird.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Pineapple&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">pizzas</span>  <span class="c1"># not (&#39;Pineapple&#39; in pizzas)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Pineapple&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">pizzas</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<p>The last two lines show that we can use <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> for checking that something <em>is not</em> in a collection. This reads more naturally.</p>
+<p>All Python objects are truth-like unless they are the value <code class="docutils literal notranslate"><span class="pre">False</span></code>, the value <code class="docutils literal notranslate"><span class="pre">None</span></code>, or are empty collections (such as <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">[]</span></code>, <code class="docutils literal notranslate"><span class="pre">()</span></code>, <code class="docutils literal notranslate"><span class="pre">{}</span></code>).</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">list</span><span class="p">()</span> <span class="ow">or</span> <span class="nb">dict</span><span class="p">()</span> <span class="ow">or</span> <span class="nb">tuple</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You won’t see me!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The value <code class="docutils literal notranslate"><span class="pre">None</span></code>, which is available as the variable named <code class="docutils literal notranslate"><span class="pre">None</span></code>, is often used as placeholder for an empty value.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">favourite</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s2">&quot;Olives&quot;</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>
+        <span class="n">favourite</span> <span class="o">=</span> <span class="n">p</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">favourite</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found favourite: </span><span class="si">{</span><span class="n">favourite</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No favourite :(&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+No favourite :(
+</pre></div></div>
 </div>
 <p>It behaves as false-y value in conditions.</p>
 </section>
-<section id="conditions-in-loops">
-<h2>Conditions in loops<a class="headerlink" href="#conditions-in-loops" title="Link to this heading"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops and comprehensions are the most common ways of iterating in Python.
-We’ve already seen that using conditions in these can be useful.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">not_cheesy</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pizzas</span> <span class="k">if</span> <span class="s1">&#39;cheese&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">not_cheesy</span>
-<span class="go">[&#39;Pineapple&#39;, &#39;Pepperoni&#39;, &#39;Hot dog&#39;]</span>
+<section id="Conditions-in-loops">
+<h2>Conditions in loops<a class="headerlink" href="#Conditions-in-loops" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops and comprehensions are the most common ways of iterating in Python. We’ve already seen that using conditions in these can be useful.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">not_cheesy</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pizzas</span> <span class="k">if</span> <span class="s2">&quot;cheese&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+<span class="n">not_cheesy</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;Pineapple&#39;, &#39;Pepperoni&#39;, &#39;Hot dog&#39;]
+</pre></div></div>
 </div>
 <p>Another way of iterating is with <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span> <span class="s1">&#39;T-minus </span><span class="si">{0}</span><span class="s1"> seconds&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="c1"># Equivalent to `i = i - 1`</span>
-<span class="gp">... </span>    <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
-<span class="gp">... </span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Blast off!&#39;</span><span class="p">)</span>
-<span class="go">T-minus 5 seconds</span>
-<span class="go">T-minus 4 seconds</span>
-<span class="go">T-minus 3 seconds</span>
-<span class="go">T-minus 2 seconds</span>
-<span class="go">T-minus 1 seconds</span>
-<span class="go">Blast off!</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop checks the condition, runs the block, and then re-checks the
-condition. If we don’t do something in the loop to change the result of the
-condition, we will end up looping forever!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;All work and no play makes Jack a dull boy&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;T-minus </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+    <span class="c1"># Equivalent to `i = i - 1`</span>
+    <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Blast off!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Because we do not change the value of <code class="docutils literal notranslate"><span class="pre">i</span></code> in the loop, the condition always
-evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>, so we’re stuck. You can stop Python running the code by
-typing the <code class="docutils literal notranslate"><span class="pre">Ctrl-c</span></code> key combination.</p>
-<p>Sometimes you want to stop iterating when some condition is met. You could
-achieve this with a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ok</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="ow">not</span> <span class="n">ok</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="n">ok</span> <span class="o">=</span>  <span class="s1">&#39;cheese&#39;</span> <span class="ow">in</span> <span class="n">pizza</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-<span class="gp">... </span>    <span class="c1"># Equivalent to `i = i + 1`</span>
-<span class="gp">... </span>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span>
-<span class="go">2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pizza</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-<span class="go">&#39;Cheese&#39;</span>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+T-minus 5 seconds
+T-minus 4 seconds
+T-minus 3 seconds
+T-minus 2 seconds
+T-minus 1 seconds
+Blast off!
+</pre></div></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop checks the condition, runs the block, and then re-checks the condition. If we don’t do something in the loop to change the result of the condition, we will end up looping forever!</p>
+<p>You can uncomment and run the below, you may need to stop the kernel manually with the stop button.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
 </pre></div>
 </div>
-<p>It is not nice to have to keep track of these <code class="docutils literal notranslate"><span class="pre">ok</span></code> and <code class="docutils literal notranslate"><span class="pre">i</span></code> variables. Instead,
-we can use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, which feels much more natural when iterating over a
-collection, and <code class="docutils literal notranslate"><span class="pre">break</span></code> to stop looping.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">pizza</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="k">if</span> <span class="s1">&#39;cheese&#39;</span> <span class="ow">in</span> <span class="n">pizza</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
-<span class="gp">... </span>        <span class="n">yum</span> <span class="o">=</span> <span class="n">pizza</span>
-<span class="gp">... </span>        <span class="k">break</span>
-<span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">yum</span>
-<span class="go">&#39;Cheese&#39;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># i = 5</span>
+<span class="c1"># while i &gt; 0:</span>
+<span class="c1"># print(&#39;All work and no play makes Jack a dull boy&#39;)</span>
 </pre></div>
+</div>
+</div>
+<p>Because we do not change the value of <code class="docutils literal notranslate"><span class="pre">i</span></code> in the loop, the condition always evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>, so we’re stuck. You can stop Python running the code by typing the <code class="docutils literal notranslate"><span class="pre">Ctrl-c</span></code> key combination.</p>
+<p>Sometimes you want to stop iterating when some condition is met. You could achieve this with a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">ok</span><span class="p">:</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="s2">&quot;cheese&quot;</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="c1"># Equivalent to `i = i + 1`</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+2
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizzas</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Cheese&#39;
+</pre></div></div>
+</div>
+<p>It is not nice to have to keep track of these <code class="docutils literal notranslate"><span class="pre">ok</span></code> and <code class="docutils literal notranslate"><span class="pre">i</span></code> variables. Instead, we can use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, which feels much more natural when iterating over a collection, and <code class="docutils literal notranslate"><span class="pre">break</span></code> to stop looping (we can also use a break with a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop).</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pizza</span> <span class="ow">in</span> <span class="n">pizzas</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s2">&quot;cheese&quot;</span> <span class="ow">in</span> <span class="n">pizza</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="n">yum</span> <span class="o">=</span> <span class="n">pizza</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Cheese&#39;
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </section>
 </section>
