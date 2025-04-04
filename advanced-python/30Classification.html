@@ -535,7 +535,7 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fb877554290&gt;
+&lt;matplotlib.legend.Legend at 0x7f480297ec90&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1056,23 +1056,23 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
               colsample_bylevel=None, colsample_bynode=None,
               colsample_bytree=None, device=None, early_stopping_rounds=None,
               enable_categorical=False, eval_metric=None, feature_types=None,
-              gamma=None, grow_policy=None, importance_type=None,
-              interaction_constraints=None, learning_rate=None, max_bin=None,
-              max_cat_threshold=None, max_cat_to_onehot=None,
-              max_delta_step=None, max_depth=None, max_leaves=None,
-              min_child_weight=None, missing=nan, monotone_constraints=None,
-              multi_strategy=None, n_estimators=20, n_jobs=None,
-              num_parallel_tree=None, random_state=None, ...)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>XGBClassifier</div></div><div><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>XGBClassifier(base_score=None, booster=None, callbacks=None,
+              feature_weights=None, gamma=None, grow_policy=None,
+              importance_type=None, interaction_constraints=None,
+              learning_rate=None, max_bin=None, max_cat_threshold=None,
+              max_cat_to_onehot=None, max_delta_step=None, max_depth=None,
+              max_leaves=None, min_child_weight=None, missing=nan,
+              monotone_constraints=None, multi_strategy=None, n_estimators=20,
+              n_jobs=None, num_parallel_tree=None, ...)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>XGBClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.0.0/python/python_api.html#xgboost.XGBClassifier">?<span>Documentation for XGBClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>XGBClassifier(base_score=None, booster=None, callbacks=None,
               colsample_bylevel=None, colsample_bynode=None,
               colsample_bytree=None, device=None, early_stopping_rounds=None,
               enable_categorical=False, eval_metric=None, feature_types=None,
-              gamma=None, grow_policy=None, importance_type=None,
-              interaction_constraints=None, learning_rate=None, max_bin=None,
-              max_cat_threshold=None, max_cat_to_onehot=None,
-              max_delta_step=None, max_depth=None, max_leaves=None,
-              min_child_weight=None, missing=nan, monotone_constraints=None,
-              multi_strategy=None, n_estimators=20, n_jobs=None,
-              num_parallel_tree=None, random_state=None, ...)</pre></div> </div></div></div></div></div>
+              feature_weights=None, gamma=None, grow_policy=None,
+              importance_type=None, interaction_constraints=None,
+              learning_rate=None, max_bin=None, max_cat_threshold=None,
+              max_cat_to_onehot=None, max_delta_step=None, max_depth=None,
+              max_leaves=None, min_child_weight=None, missing=nan,
+              monotone_constraints=None, multi_strategy=None, n_estimators=20,
+              n_jobs=None, num_parallel_tree=None, ...)</pre></div> </div></div></div></div></div>
 </div>
 <p>Once a classifier has been trained we can apply it to a dataset to get a variable tells us how signal or background like each candidate is. There are a few different functions to do this, but in this case we will use <code class="docutils literal notranslate"><span class="pre">bdt.predict_proba</span></code>.</p>
 <div class="nbinput docutils container">
@@ -1208,7 +1208,7 @@ array([0.9048003 , 0.77470464, 0.3681014 , ..., 0.367871  , 0.22820437,
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fb876edf090&gt;
+&lt;matplotlib.legend.Legend at 0x7f47e829e3d0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1362,7 +1362,7 @@ the peak.</p>
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4204/4020814425.py:3: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_4213/4020814425.py:3: RuntimeWarning: invalid value encountered in divide
   metric = S/np.sqrt(S+B)
 </pre></div></div>
 </div>
@@ -1432,15 +1432,15 @@ The optimal cut value is inf with and S/sqrt(S+B) of nan
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:481: RuntimeWarning: All sumw are zero!  Cannot compute meaningful error bars
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:486: RuntimeWarning: All sumw are zero!  Cannot compute meaningful error bars
   return np.abs(method_fcn(self.values, variances) - self.values)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:555: RuntimeWarning: divide by zero encountered in scalar divide
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:560: RuntimeWarning: divide by zero encountered in scalar divide
   self.flat_scale(1 / np.sum(np.diff(self.edges) * self.values))
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:526: RuntimeWarning: invalid value encountered in multiply
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:531: RuntimeWarning: invalid value encountered in multiply
   self.values *= scale
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:527: RuntimeWarning: invalid value encountered in multiply
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:532: RuntimeWarning: invalid value encountered in multiply
   self.yerr_lo *= scale
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:528: RuntimeWarning: invalid value encountered in multiply
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:533: RuntimeWarning: invalid value encountered in multiply
   self.yerr_hi *= scale
 </pre></div></div>
 </div>
@@ -1450,7 +1450,7 @@ The optimal cut value is inf with and S/sqrt(S+B) of nan
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fb860ec1450&gt;
+&lt;matplotlib.legend.Legend at 0x7f47e8390190&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1473,9 +1473,9 @@ The optimal cut value is inf with and S/sqrt(S+B) of nan
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:481: RuntimeWarning: All sumw are zero!  Cannot compute meaningful error bars
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:486: RuntimeWarning: All sumw are zero!  Cannot compute meaningful error bars
   return np.abs(method_fcn(self.values, variances) - self.values)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:481: RuntimeWarning: All sumw are zero!  Cannot compute meaningful error bars
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:486: RuntimeWarning: All sumw are zero!  Cannot compute meaningful error bars
   return np.abs(method_fcn(self.values, variances) - self.values)
 </pre></div></div>
 </div>
@@ -1597,7 +1597,7 @@ Data succesfully loaded
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4204/4278176416.py:9: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_4213/4278176416.py:9: RuntimeWarning: invalid value encountered in divide
   metric = S/np.sqrt(S+B)
 </pre></div></div>
 </div>

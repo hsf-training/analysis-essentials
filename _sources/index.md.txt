@@ -5,7 +5,7 @@ This is the source material for the [analysis essentials website][website], a
 series of lessons for helping high-energy physics analysts become more
 comfortable working with the shell, version control, and programming.
 
-The lessons introduce the basics of the bash shell, the git version control
+The lessons introduce the basics of the bash shell, the Git version control
 system, and the Python programming language. They are developed for and taught
 during the [Starterkit][starterkit], and aim to teach students enough to be
 able to follow the experiment-specific lessons that are taught afterwards.
@@ -23,13 +23,14 @@ as they enter the field, and in parallel, instill best practices for writing sof
 
 ## Prerequisites
 
-There are two options for running these lessons. Running locally should be prefered on Linux and macOS as it is faster and makes it easier to save you work. On Windows it is likely easier to use Binder however care is needed to prevent notebooks being lost when the server is shut down.
+There are two options for running these lessons. Running locally should be prefered on Linux and macOS as it is faster and makes it easier to save you work.
+On Windows it is likely easier to use Binder; however, care is needed to prevent notebooks from being lost when the server is shut down.
 
 ### Local
 
 This tutorial uses `Python 3.11` and requires some packages.
 It is recommended to use [mambaforge](https://github.com/conda-forge/miniforge#mambaforge) to install the correct packages.
-**Note:** `mamba` is like `conda` and can be used interchangeably. "forge" in the name refers to the [conda-forge](https://conda-forge.org/) channel, _the_ open-source maintained channel which contains a lot of packages.
+**Note:** `mamba` is like `conda` and can be used interchangeably. "forge" in the name refers to the [conda-forge](https://conda-forge.org/) channel, _the_ open-source maintained channel that contains a lot of packages.
 
 To install `Conda`/`mamba` you will need to do the following:
 
@@ -59,7 +60,7 @@ mamba create -n analysis-essentials python=3.11 jupyterlab ipython matplotlib up
 
 
 You will also need [Jupyter](https://jupyterlab.readthedocs.io/) to run the examples in this tutorial.
-Jupyter was already installed in the previous command and can be ran by following the instructions [here](https://jupyterlab.readthedocs.io/en/stable/getting_started/starting.html).
+Jupyter was already installed in the previous command and can be run by following the instructions [here](https://jupyterlab.readthedocs.io/en/stable/getting_started/starting.html).
 Note: You **will** need Python.
 
 ### Binder
@@ -69,11 +70,11 @@ Click this button: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybi
 ## Usage
 
 You should now be able to use the tutorial.
- - First clone with git:
+ - First clone with Git:
 ```bash
 git clone https://github.com/hsf-training/analysis-essentials.git
 ```
- - For more information on getting started with git please see the [Analysis Essentials course](https://hsf-training.github.io/analysis-essentials/index.html)
+ - For more information on getting started with Git please see the [Analysis Essentials course](https://hsf-training.github.io/analysis-essentials/index.html)
 ```bash
 cd analysis-essentials
 jupyter lab
