@@ -46,14 +46,13 @@ Sounds good? Then let’s get going!
     running.md
     00scripts.ipynb
     01basics.ipynb
-    operators.md
     numbers.ipynb
     strings.ipynb
     lists.ipynb
     dictionaries.ipynb
+    operators.md
     conditions.ipynb
     methods.md
-    scripting.md
     modules.md
     classes.ipynb
     learning.md
