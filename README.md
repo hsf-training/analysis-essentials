@@ -28,7 +28,7 @@ On Windows it is likely easier to use Binder; however, care is needed to prevent
 
 ### Local
 
-This tutorial uses `Python 3.11` and requires some packages.
+This tutorial uses `Python 3.12` and requires some packages.
 It is recommended to use [mambaforge](https://github.com/conda-forge/miniforge#mambaforge) to install the correct packages.
 **Note:** `mamba` is like `conda` and can be used interchangeably. "forge" in the name refers to the [conda-forge](https://conda-forge.org/) channel, _the_ open-source maintained channel that contains a lot of packages.
 
@@ -38,10 +38,6 @@ To install `Conda`/`mamba` you will need to do the following:
  - To add `mamba`/`conda` to your shell, follow the instructions after the installation and execute
 ```bash
 mamba init
-```
- - In order no not use the base environment (which you almost never should), do
-```bash
-conda config --set auto_activate_base false
 ```
 
 
@@ -53,7 +49,7 @@ mamba env create -f environment.yml
 ```
  - Alternatively, you could create an environment with some packages already in this way
 ```bash
-mamba create -n analysis-essentials python=3.11 jupyterlab ipython matplotlib uproot numpy pandas scikit-learn scipy tensorflow xgboost hep_ml wget
+mamba create -n analysis-essentials python=3.12 jupyterlab ipython matplotlib uproot numpy pandas scikit-learn scipy tensorflow xgboost hep_ml wget
 ```
  - Activate your environment by doing: `mamba activate analysis-essentials`
  - You can install additional packages by doing: `mamba install package_name`
