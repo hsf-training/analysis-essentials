@@ -6,6 +6,7 @@
 - Create, list and switch between branches.
 - Merge a branch back into `main`.
 - Tell the difference between a fast-forward merge and a merge commit.
+- Mark important versions with tags.
 
 {% endobjectives %}
 
@@ -127,6 +128,65 @@ over to the other branch, which can be confusing. Running `git status` before
 `git switch` is a good habit.
 
 {% endcallout %}
+
+{% discussion "Not ready to commit? Put your changes aside with git stash" %}
+
+Sometimes you are halfway through a change when you need to switch branch, and
+the work isn't ready to be committed yet. If the other branch has its own
+version of a file you have changed, switching would overwrite your changes, so
+Git refuses:
+
+```bash
+$ git switch experiment
+```
+```
+error: Your local changes to the following files would be overwritten by checkout:
+	mars.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+```
+
+As the message suggests, `git stash` puts your uncommitted changes aside, leaving
+you with a clean working directory:
+
+```bash
+$ git stash
+```
+```
+Saved working directory and index state WIP on main: 35e8622 Add the ignore file
+```
+
+```bash
+$ git status
+```
+```
+On branch main
+nothing to commit, working tree clean
+```
+
+You can now switch to the other branch, do what you need to do there, and come
+back. `git stash list` shows what you have put aside, and `git stash pop` brings
+the most recent changes back (and removes them from the stash):
+
+```bash
+$ git switch main
+$ git stash pop
+```
+```
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   mars.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (eda7444b23f062e7df3b9509cd4e67e29e52ff4a)
+```
+
+The stash is meant for short interruptions: it is easy to forget what you have
+put there, so for anything longer, commit your work on a branch instead.
+
+{% enddiscussion %}
 
 ## Merging a branch
 
@@ -265,6 +325,52 @@ $ git branch -d jupiter
 ```
 Deleted branch jupiter (was 11b9567).
 ```
+
+## Tags: labels that stay put
+
+A branch is a label that moves forward with every new commit. Sometimes we want
+the opposite: a label that marks one particular commit forever, such as the
+version of the code used for a paper, or version `1.0` of a tool. Git calls
+these **tags**.
+
+Dracula's notes have reached a state he is happy with, so he tags it:
+
+```bash
+$ git tag -a v1.0 -m "First complete set of planet notes"
+```
+
+The `-a` option creates an *annotated* tag, which records who made it, when,
+and a message (given with `-m`), much like a commit. `git tag` lists the tags,
+and `git log` shows them next to the commit they point to:
+
+```bash
+$ git tag
+```
+```
+v1.0
+```
+
+```bash
+$ git log --oneline -1
+```
+```
+604e156 (HEAD -> main, tag: v1.0) Merge branch 'jupiter'
+```
+
+From now on, `v1.0` can be used anywhere a commit identifier is expected, for
+example `git diff v1.0 mars.txt` or `git switch --detach v1.0`, and it will
+always mean this commit, however many commits are added later.
+
+{% callout "Tags and releases" %}
+
+Tags are not sent to a remote repository by `git push` unless you ask for them,
+with `git push origin v1.0` for one tag, or `git push origin --tags` for all
+of them. Hosting platforms such as GitLab and GitHub then list your tags, and
+let you turn a tag into a *release* with a description and downloadable files.
+Releases are also what services like Zenodo archive to give your software a
+citable DOI, as we will see in the lesson on [citation](16-citation.md).
+
+{% endcallout %}
 
 {% callout "What if both branches change the same lines?" %}
 
@@ -423,6 +529,8 @@ capital `D`) forces the deletion.
 - `git merge <name>` brings the work from another branch into the current one.
 - If the current branch has not moved on, the merge is a fast-forward; otherwise Git creates a merge commit.
 - `git branch -d <name>` deletes a branch once it has been merged.
+- `git stash` puts uncommitted changes aside, and `git stash pop` brings them back.
+- A tag (`git tag -a v1.0 -m "..."`) is a label that permanently marks one commit, such as a released version.
 
 {% endkeypoints %}
 

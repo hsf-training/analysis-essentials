@@ -61,7 +61,7 @@ website creates one for you from a simple form.
 
 A citation is most useful when it points to a specific, permanent version of
 your work. The common way to get one is to archive a release of your repository
-on [Zenodo](https://zenodo.org), which gives it a
+(a [tagged](07-branches.md) version) on [Zenodo](https://zenodo.org), which gives it a
 [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier). For
 repositories on GitHub this can happen automatically for every release; see
 [GitHub's guide](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content).
