@@ -165,18 +165,40 @@ shows all the commits and changes between them.
 The Collaborator has some questions about one line change made by the Owner and
 has some suggestions to propose.
 
-With GitLab, it is possible to comment the diff of a commit. Over the line of
-code to comment, a blue comment icon appears to open a comment window.
+With GitLab, it is possible to comment on the changes made in a commit: open
+the commit, and hover over the line you want to comment on; a comment icon
+appears next to it that opens a comment window.
 
-The Collaborator posts its comments and suggestions using GitLab interface.
+The Collaborator posts their comments and suggestions using the GitLab interface.
 
 {% endchallenge %}
 
 {% challenge "Version History, Backup, and Version Control" %}
 
-Some backup software can keep a history of the versions of your files. They also
-allows you to recover specific versions. How is this functionality different from version control?
-What are some of the benifits of using version control, Git and GitLab?
+Some backup software can keep a history of the versions of your files, and
+also allows you to recover specific versions. How is this functionality different from version control?
+What are some of the benefits of using version control, Git and GitLab?
+
+{% solution "Solution" %}
+
+There is no single right answer, but some of the main differences are:
+
+* Backups save versions *automatically*, at fixed times. With version control,
+  *you* decide when a version is worth recording, and each commit comes with a
+  message explaining what changed and why.
+* Version control records *who* made each change, and lets several people work
+  on the same files in parallel and merge their work, rather than overwriting
+  each other's copies.
+* You can compare any two versions, work on branches, and undo one specific
+  change without losing the work done since.
+* With Git, every clone contains the complete history, and a platform such as
+  GitLab adds a place to share it, review each other's changes and discuss
+  them.
+
+Version control does not replace backups, though: it is best at tracking text
+files such as code and documents, and is not meant for large data files.
+
+{% endsolution %}
 
 {% endchallenge %}
 

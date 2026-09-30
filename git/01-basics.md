@@ -50,7 +50,7 @@ complete history of commits for a particular project and their metadata make up
 a repository. Repositories can be kept in sync
 across different computers facilitating collaboration among different people.
 
-{% callout "The Long History of Version Control Systems" %}
+{% discussion "The Long History of Version Control Systems" %}
 
 
 Automated version control systems are nothing new.
@@ -61,7 +61,7 @@ are *distributed*, meaning that they do not need a centralized server to host th
 These modern systems also include powerful merging tools that make it possible for multiple authors to work within
 the same files concurrently.
 
-{% endcallout %}
+{% enddiscussion %}
 
 {% challenge "Paper Writing" %}
 

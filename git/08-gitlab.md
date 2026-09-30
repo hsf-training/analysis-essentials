@@ -70,13 +70,23 @@ information on how to configure your local repository:
 
 ![Creating a Repository on CERN GitLab (Step 3)](fig/gitlab-create-repo-03.png)
 
-This is roughly equivalent to perform the following on CERN's servers:
+{% discussion "What happened on the server?" %}
+
+Creating the project is roughly equivalent to running the following on CERN's
+servers:
 
 ```bash
 $ mkdir planets
 $ cd planets
 $ git init --bare
 ```
+
+A *bare* repository contains only the history (what would normally be inside
+the `.git` directory), without a working directory of files that someone
+could edit. That is all a shared repository needs: nobody works in it
+directly, people only push to it and pull from it.
+
+{% enddiscussion %}
 
 Our local repository still contains our earlier work on `mars.txt`, but the
 remote repository on CERN GitLab doesn't contain any files yet:

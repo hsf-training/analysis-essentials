@@ -12,8 +12,9 @@ we need to configure a few things. Below are a few examples
 of configurations we will set as we get started with Git:
 
 *   our name and email address,
-*   to colorize our output,
+*   the name of the first branch in new repositories,
 *   what our preferred text editor is,
+*   how Git should combine our work with other people's when we pull,
 *   and that we want to use these settings globally (i.e. for every project)
 
 On a command line, Git commands are written as `git verb`,
@@ -23,7 +24,6 @@ Dracula sets up his new laptop:
 ```bash
 $ git config --global user.name "Vlad Dracula"
 $ git config --global user.email "vlad@tran.sylvan.ia"
-$ git config --global color.ui "auto"
 ```
 
 Please use your own name and CERN/institutional email address instead of Dracula's. This user name and email will be associated with your subsequent Git activity,
@@ -63,6 +63,15 @@ projects, GitHub gives you a private "noreply" address to use instead; see
 
 {% enddiscussion %}
 
+{% discussion "What about color.ui?" %}
+
+Older tutorials (including earlier versions of this one) also run
+`git config --global color.ui "auto"` so that Git uses colours in its output.
+Colours have been switched on by default since Git 1.8.4 (2013), so you no
+longer need this setting.
+
+{% enddiscussion %}
+
 Dracula also tells Git to call the first *branch* of every new repository
 `main` (we will learn what branches are in the lesson on
 [branching and merging](07-branches.md)):
@@ -89,7 +98,7 @@ own repository with `git branch -m master main`.
 
 {% enddiscussion %}
 
-{% callout "Line Endings" %}
+{% discussion "Line endings (worth reading if you use Windows)" %}
 
 
 As with other keys, when you hit the 'return' key on your keyboard,
@@ -119,9 +128,11 @@ $ git config --global core.autocrlf true
 You can read more about this issue
 [on this GitHub page](https://docs.github.com/en/get-started/git-basics/configuring-git-to-handle-line-endings).
 
-{% endcallout %}
+{% enddiscussion %}
 
-Dracula also has to set his favorite text editor, following this table:
+Dracula also has to set his favourite text editor, which Git opens whenever it
+needs him to write something longer, such as a commit message. Pick the line
+for your editor:
 
 | Editor             | Configuration command                            |
 |:-------------------|:-------------------------------------------------|
@@ -129,12 +140,19 @@ Dracula also has to set his favorite text editor, following this table:
 | Visual Studio Code | `$ git config --global core.editor "code --wait"` |
 | vim                | `$ git config --global core.editor "vim"`   |
 | emacs              | `$ git config --global core.editor "emacs"`   |
+
+{% discussion "Other editors" %}
+
+| Editor             | Configuration command                            |
+|:-------------------|:-------------------------------------------------|
 | BBEdit (Mac, with command line tools) | `$ git config --global core.editor "edit -w"`    |
 | Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
 | Sublime Text (Win) | `$ git config --global core.editor "'c:/program files/sublime text/sublime_text.exe' -w"` |
 | Notepad++ (Win)    | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
 | Kate (Linux)       | `$ git config --global core.editor "kate"`       |
 | Gedit (Linux)      | `$ git config --global core.editor "gedit --wait --new-window"`   |
+
+{% enddiscussion %}
 
 It is possible to reconfigure the text editor for Git whenever you want to change it.
 

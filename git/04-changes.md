@@ -424,15 +424,15 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
     Start notes on Mars as a base
 ```
 
-{% callout "Word-based diffing" %}
+{% discussion "Word-based diffing" %}
 
 
-Sometimes, e.g. in the case of the text documments a line-wise
+Sometimes, e.g. in the case of text documents, a line-wise
 diff is too coarse. That is where the `--color-words` option of
 `git diff` comes in very useful as it highlights the changed
 words using colors.
 
-{% endcallout %}
+{% enddiscussion %}
 
 {% callout "Paging the Log" %}
 
@@ -449,7 +449,7 @@ screen is a `:`, instead of your usual prompt.
 
 {% endcallout %}
 
-{% callout "Limit Log Size" %}
+{% discussion "Limit Log Size" %}
 
 
 To avoid having `git log` cover your entire terminal screen, you can limit the
@@ -492,9 +492,9 @@ $ git log --oneline --graph --all --decorate
 * f22b25e Start notes on Mars as a base
 ```
 
-{% endcallout %}
+{% enddiscussion %}
 
-{% callout "Directories" %}
+{% discussion "Directories and .gitkeep files" %}
 
 
 Two important facts you should know about directories in Git.
@@ -524,7 +524,7 @@ git add <directory-with-files>
 ```
 
 
-{% endcallout %}
+{% enddiscussion %}
 
 To recap, when we want to add changes to our repository,
 we first need to add the changed files to the staging area
@@ -636,7 +636,7 @@ $ git commit -m "Write plans to start a base on Venus"
 
 {% endchallenge %}
 
-{% challenge "Author and Committer" %}
+{% hiddenchallenge "Author and Committer" %}
 
 
 For each of the commits you have done, Git stored your name twice.
@@ -648,7 +648,7 @@ commits:
 $ git log --format=full
 ```
 
-When commiting you can name someone else as the author:
+When committing you can name someone else as the author:
 
 ```bash
 $ git commit --author="Vlad Dracula <vlad@tran.sylvan.ia>"
@@ -691,7 +691,7 @@ Commit: Vlad Dracula <vlad@tran.sylvan.ia>
 
 {% endsolution %}
 
-{% endchallenge %}
+{% endhiddenchallenge %}
 
 [commit-messages]: https://chris.beams.io/posts/git-commit/
 

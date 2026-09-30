@@ -370,6 +370,26 @@ let her recover the last committed version of her Python script called
 
 5. Both 2 and 4
 
+{% solution "Solution" %}
+
+The answer is (5): both 2 and 4.
+
+1. `git restore` expects file names, so Git complains that there is no file
+   called `HEAD`: `error: pathspec 'HEAD' did not match any file(s) known to git`.
+2. `git restore data_cruncher.py` replaces the file with the version in the
+   staging area. As long as Jennifer has not staged her broken changes with
+   `git add`, this is the same as the last committed version.
+3. `--source=HEAD~1` recovers the version from the commit *before* the last
+   one, so she would lose the work she committed most recently.
+4. Using the ID of the last commit as `--source` gives exactly the last
+   committed version.
+
+If Jennifer *had* already staged her broken changes, option 2 would not help;
+`git restore --source=HEAD --staged --worktree data_cruncher.py` would restore
+both the staging area and the file from the last commit.
+
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Reverting a Commit" %}
@@ -394,6 +414,14 @@ Jennifer to use `git revert`, what is the missing command?
 4. Type in the new commit message.
 
 5. Save and close
+
+{% solution "Solution" %}
+
+The missing command is `git log`, which lists the commits with their
+identifiers. `git log --oneline` makes the list shorter and the identifiers
+easier to copy.
+
+{% endsolution %}
 
 {% endchallenge %}
 
@@ -480,7 +508,7 @@ If we print venus.txt we will get answer 2.
 
 {% endchallenge %}
 
-{% challenge "Checking Understanding of `git diff`" %}
+{% challenge "Checking Understanding of git diff" %}
 
 
 Consider this command: `git diff HEAD~3 mars.txt`. What do you predict this command
@@ -489,6 +517,23 @@ will do if you execute it? What happens when you do execute it? Why?
 Try another command, `git diff [ID] mars.txt`, where [ID] is replaced with
 the unique identifier for your most recent commit. What do you think will happen,
 and what does happen?
+
+{% solution "Solution" %}
+
+`git diff HEAD~3 mars.txt` shows the changes to `mars.txt` between the commit
+three before `HEAD` and the current state of the file. If the repository has
+fewer than four commits, there is no such commit and Git stops with an error:
+
+```
+fatal: ambiguous argument 'HEAD~3': unknown revision or path not in the working tree.
+```
+
+`git diff [ID] mars.txt` with the ID of the most recent commit compares that
+commit with the current state of the file, which is the same as
+`git diff HEAD mars.txt`. If you have not changed `mars.txt` since your last
+commit, it prints nothing at all.
+
+{% endsolution %}
 
 {% endchallenge %}
 
@@ -501,6 +546,28 @@ Make a change to `mars.txt`, add that change, and use `git restore mars.txt` to 
 you can remove your change. If not, read the hints printed by `git status`
 to find out how to get rid of it.
 
+{% solution "Solution" %}
+
+`git restore mars.txt` appears to do nothing: it restores the file from the
+staging area, and the staging area already contains our change. `git status`
+suggests the way out:
+
+```
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   mars.txt
+```
+
+`git restore --staged mars.txt` removes the change from the staging area but
+keeps it in the file, and a second `git restore mars.txt` then discards it from
+the file too. Both steps can be done at once with:
+
+```bash
+$ git restore --staged --worktree mars.txt
+```
+
+{% endsolution %}
+
 {% endchallenge %}
 
 {% challenge "Explore and Summarize Histories" %}
@@ -510,12 +577,12 @@ Exploring history is an important part of git, often it is a challenge to find
 the right commit ID, especially if the commit is from several months ago.
 
 Imagine the `planets` project has more than 50 files.
-You would like to find a commit with specific text in `mars.txt` is modified.
-When you type `git log`, a very long list appeared,
+You would like to find the commit in which some specific text in `mars.txt`
+was modified. When you type `git log`, a very long list appears.
 How can you narrow down the search?
 
-Recorded that the `git diff` command allow us to explore one specific file,
-e.g. `git diff mars.txt`. We can apply the similar idea here.
+Remember that the `git diff` command allows us to explore one specific file,
+e.g. `git diff mars.txt`. We can apply a similar idea here.
 
 ```bash
 $ git log mars.txt
@@ -538,6 +605,16 @@ Question: What does the following command do?
 ```bash
 $ git log --patch HEAD~3 *.txt
 ```
+
+{% solution "Solution" %}
+
+It shows the history starting from `HEAD~3` (three commits before the most
+recent one) and going back in time, including only commits that changed one of
+the `.txt` files, together with the changes each of them made. Note that the
+shell expands `*.txt` into the names of the `.txt` files in the current
+directory before Git sees the command.
+
+{% endsolution %}
 
 {% endchallenge %}
 
