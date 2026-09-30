@@ -26,11 +26,11 @@ $ git status
 On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-
 	a.dat
 	b.dat
 	c.dat
 	results/
+
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
@@ -65,8 +65,8 @@ $ git status
 On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-
 	.gitignore
+
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
@@ -82,8 +82,8 @@ $ git commit -m "Add the ignore file"
 $ git status
 ```
 ```
-# On branch main
-nothing to commit, working directory clean
+On branch main
+nothing to commit, working tree clean
 ```
 
 As a bonus, using `.gitignore` helps us avoid accidentally adding to the
@@ -95,7 +95,9 @@ $ git add a.dat
 ```
 The following paths are ignored by one of your .gitignore files:
 a.dat
-Use -f if you really want to add them.
+hint: Use -f if you really want to add them.
+hint: Turn this message off by running
+hint: "git config advice.addIgnoredFile false"
 ```
 
 If we really want to override our ignore settings,
@@ -109,14 +111,13 @@ $ git status --ignored
 ```
 On branch main
 Ignored files:
- (use "git add -f <file>..." to include in what will be committed)
+  (use "git add -f <file>..." to include in what will be committed)
+	a.dat
+	b.dat
+	c.dat
+	results/
 
-        a.dat
-        b.dat
-        c.dat
-        results/
-
-nothing to commit, working directory clean
+nothing to commit, working tree clean
 ```
 
 {% challenge "Ignoring Nested Files" %}

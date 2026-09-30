@@ -62,12 +62,12 @@ $ git status
 ```
 On branch main
 
-Initial commit
+No commits yet
 
 Untracked files:
-   (use "git add <file>..." to include in what will be committed)
-
+  (use "git add <file>..." to include in what will be committed)
 	mars.txt
+
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
@@ -87,11 +87,10 @@ $ git status
 ```
 On branch main
 
-Initial commit
+No commits yet
 
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
-
 	new file:   mars.txt
 
 ```
@@ -134,7 +133,7 @@ $ git status
 ```
 ```
 On branch main
-nothing to commit, working directory clean
+nothing to commit, working tree clean
 ```
 
 it tells us everything is up to date.
@@ -145,7 +144,7 @@ we can ask Git to show us the project's history using `git log`:
 $ git log
 ```
 ```
-commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
+commit f22b25e3233b4645dabd0d81e651fe074bd8e73b (HEAD -> main)
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
@@ -199,7 +198,6 @@ On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-
 	modified:   mars.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
@@ -256,7 +254,6 @@ On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-
 	modified:   mars.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
@@ -399,7 +396,7 @@ $ git status
 ```
 ```
 On branch main
-nothing to commit, working directory clean
+nothing to commit, working tree clean
 ```
 
 and look at the history of what we've done so far:
@@ -408,7 +405,7 @@ and look at the history of what we've done so far:
 $ git log
 ```
 ```
-commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
+commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
@@ -464,11 +461,11 @@ the last commit you can use:
 $ git log -1
 ```
 ```
-commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
+commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-   Discuss concerns about Mars' climate for Mummy
+    Discuss concerns about Mars' climate for Mummy
 ```
 
 You can also reduce the quantity of information using the
@@ -630,8 +627,7 @@ Now the files are ready to commit. You can check that using `git status`. If you
 $ git commit -m "Write plans to start a base on Venus"
 ```
 ```
-[main cc127c2]
- Write plans to start a base on Venus
+[main cc127c2] Write plans to start a base on Venus
  2 files changed, 2 insertions(+)
  create mode 100644 venus.txt
 ```
@@ -668,25 +664,29 @@ how that can allow you to collaborate with your colleagues.
 
 ```bash
 $ git add me.txt
-$ git commit -m "Update Vlad's bio." --author="Frank N. Stein <franky@monster.com>"
+$ git commit -m "Update Vlad's bio." --author="Frank N. Stein <franky@monster.example>"
 ```
 ```
 [main 4162a51] Update Vlad's bio.
-Author: Frank N. Stein <franky@monster.com>
-1 file changed, 2 insertions(+), 2 deletions(-)
+ Author: Frank N. Stein <franky@monster.example>
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+```
 
+```bash
 $ git log --format=full
-commit 4162a51b273ba799a9d395dd70c45d96dba4e2ff
-Author: Frank N. Stein <franky@monster.com>
+```
+```
+commit 4162a51b273ba799a9d395dd70c45d96dba4e2ff (HEAD -> main)
+Author: Frank N. Stein <franky@monster.example>
 Commit: Vlad Dracula <vlad@tran.sylvan.ia>
 
-Update Vlad's bio.
+    Update Vlad's bio.
 
 commit aaa3271e5e26f75f11892718e83a3e2743fab8ea
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Commit: Vlad Dracula <vlad@tran.sylvan.ia>
 
-Vlad's initial bio.
+    Vlad's initial bio.
 ```
 
 {% endsolution %}

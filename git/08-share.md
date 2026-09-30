@@ -72,11 +72,12 @@ Then push the change to the *Owner's repository* on GitLab:
 $ git push origin main
 ```
 ```
-Counting objects: 4, done.
-Delta compression using up to 4 threads.
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
 Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 306 bytes, done.
-Total 3 (delta 0), reused 0 (delta 0)
+Writing objects: 100% (3/3), 306 bytes | 306.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 To ssh://gitlab.cern.ch:7999/vlad/planets.git
    9272da5..29aba7c  main -> main
 ```
@@ -95,12 +96,14 @@ To download the Collaborator's changes from GitLab, the Owner now enters:
 $ git pull origin main
 ```
 ```
-remote: Counting objects: 4, done.
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
 remote: Compressing objects: 100% (2/2), done.
-remote: Total 3 (delta 0), reused 3 (delta 0)
-Unpacking objects: 100% (3/3), done.
-From ssh://gitlab.cern.ch:7999/vlad/planets.git
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 306 bytes | 306.00 KiB/s, done.
+From ssh://gitlab.cern.ch:7999/vlad/planets
  * branch            main       -> FETCH_HEAD
+   9272da5..29aba7c  main       -> origin/main
 Updating 9272da5..29aba7c
 Fast-forward
  pluto.txt | 1 +

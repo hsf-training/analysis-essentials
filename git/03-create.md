@@ -46,10 +46,12 @@ by asking Git to tell us the status of our project:
 
 ```bash
 $ git status
-# On branch main
-#
-# Initial commit
-#
+```
+```
+On branch main
+
+No commits yet
+
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
@@ -88,7 +90,7 @@ above:
 $ git status
 ```
 ```
-fatal: Not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
 ```
 
 Note that we can track files in directories within a Git:

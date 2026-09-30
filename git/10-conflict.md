@@ -55,11 +55,12 @@ $ git commit -m "Add a line in our home copy"
 $ git push origin main
 ```
 ```
-Counting objects: 5, done.
-Delta compression using up to 4 threads.
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
 Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 352 bytes, done.
-Total 3 (delta 1), reused 0 (delta 0)
+Writing objects: 100% (3/3), 352 bytes | 352.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
 To ssh://gitlab.cern.ch:7999/vlad/planets.git
    29aba7c..dabb4c8  main -> main
 ```
@@ -97,11 +98,12 @@ $ git push origin main
 ```
 ```
 To ssh://gitlab.cern.ch:7999/vlad/planets.git
- ! [rejected]        main -> main (non-fast-forward)
+ ! [rejected]        main -> main (fetch first)
 error: failed to push some refs to 'ssh://gitlab.cern.ch:7999/vlad/planets.git'
-hint: Updates were rejected because the tip of your current branch is behind
-hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
-hint: before pushing again.
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
@@ -118,12 +120,14 @@ Let's start by pulling:
 $ git pull origin main
 ```
 ```
-remote: Counting objects: 5, done.
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
 remote: Compressing objects: 100% (2/2), done.
-remote: Total 3 (delta 1), reused 3 (delta 1)
-Unpacking objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 352 bytes | 352.00 KiB/s, done.
 From ssh://gitlab.cern.ch:7999/vlad/planets
  * branch            main       -> FETCH_HEAD
+   29aba7c..dabb4c8  main       -> origin/main
 Auto-merging mars.txt
 CONFLICT (content): Merge conflict in mars.txt
 Automatic merge failed; fix conflicts and then commit the result.
@@ -179,11 +183,14 @@ $ git status
 ```
 ```
 On branch main
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
 All conflicts fixed but you are still merging.
   (use "git commit" to conclude merge)
 
 Changes to be committed:
-
 	modified:   mars.txt
 
 ```
@@ -201,11 +208,12 @@ Now we can push our changes to GitLab:
 $ git push origin main
 ```
 ```
-Counting objects: 10, done.
-Delta compression using up to 4 threads.
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
 Compressing objects: 100% (6/6), done.
-Writing objects: 100% (6/6), 697 bytes, done.
-Total 6 (delta 2), reused 0 (delta 0)
+Writing objects: 100% (6/6), 697 bytes | 697.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
 To ssh://gitlab.cern.ch:7999/vlad/planets.git
    dabb4c8..2abf2b1  main -> main
 ```
@@ -218,12 +226,14 @@ when the collaborator who made the first change pulls again:
 $ git pull origin main
 ```
 ```
-remote: Counting objects: 10, done.
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
 remote: Compressing objects: 100% (4/4), done.
-remote: Total 6 (delta 2), reused 6 (delta 2)
-Unpacking objects: 100% (6/6), done.
+remote: Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 697 bytes | 697.00 KiB/s, done.
 From ssh://gitlab.cern.ch:7999/vlad/planets
  * branch            main       -> FETCH_HEAD
+   dabb4c8..2abf2b1  main       -> origin/main
 Updating dabb4c8..2abf2b1
 Fast-forward
  mars.txt | 2 +-
@@ -325,10 +335,10 @@ $ git push origin main
 To ssh://gitlab.cern.ch:7999/vlad/planets.git
  ! [rejected]        main -> main (fetch first)
 error: failed to push some refs to 'ssh://gitlab.cern.ch:7999/vlad/planets.git'
-hint: Updates were rejected because the remote contains work that you do
-hint: not have locally. This is usually caused by another repository pushing
-hint: to the same ref. You may want to first integrate the remote changes
-hint: (e.g., 'git pull ...') before pushing again.
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
@@ -345,11 +355,12 @@ a message like this:
 $ git pull origin main
 ```
 ```
-remote: Counting objects: 3, done.
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
 remote: Compressing objects: 100% (3/3), done.
-remote: Total 3 (delta 0), reused 0 (delta 0)
-Unpacking objects: 100% (3/3), done.
-From ssh://gitlab.cern.ch:7999/vlad/planets.git
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 1.26 KiB | 1.26 MiB/s, done.
+From ssh://gitlab.cern.ch:7999/vlad/planets
  * branch            main       -> FETCH_HEAD
    6a67967..439dc8c  main       -> origin/main
 warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
