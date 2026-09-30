@@ -3,20 +3,190 @@
 {% objectives "Learning Objectives" %}
 
 - Explain what conflicts are and when they can occur.
-- Resolve conflicts resulting from a merge.
+- Resolve conflicts resulting from merging two branches.
+- Resolve conflicts resulting from pulling changes from a remote repository.
 
 {% endobjectives %}
 
 As soon as people can work in parallel, it's likely someone's going to step on someone
 else's toes.  This will even happen with a single person: if we are working on
-a piece of software on both our laptop and a server in the lab, we could make
-different changes to each copy.  Version control helps us manage these
-conflicts by giving us tools to
+a piece of software on both our laptop and a server in the lab, or on two
+branches of the same repository, we could make different changes to each copy.
+Version control helps us manage these conflicts by giving us tools to
 resolve overlapping changes.
 
-To see how we can resolve conflicts, we must first create one.  The file
-`mars.txt` currently looks like this in both partners' copies of our `planets`
-repository:
+## Conflicts between branches
+
+In the lesson on [branching and merging](07-branches.md), Git could combine
+our branches automatically because they had changed different files. Let's see
+what happens when two branches change the *same line*.
+
+Dracula starts a branch to add another of Jupiter's moons to his notes on
+Jupiter:
+
+```bash
+$ git switch -c ganymede
+$ nano jupiter.txt
+$ cat jupiter.txt
+```
+```
+Too much radiation, but Europa and Ganymede might be worth a visit
+```
+
+```bash
+$ git add jupiter.txt
+$ git commit -m "Add Ganymede to the notes on Jupiter"
+```
+
+Meanwhile, back on `main`, he edits the same line in a different way:
+
+```bash
+$ git switch main
+$ nano jupiter.txt
+$ cat jupiter.txt
+```
+```
+Far too much radiation, but Europa might be worth a visit
+```
+
+```bash
+$ git add jupiter.txt
+$ git commit -m "Stress the radiation around Jupiter"
+```
+
+Now he tries to merge the `ganymede` branch into `main`:
+
+```bash
+$ git merge ganymede
+```
+```
+Auto-merging jupiter.txt
+CONFLICT (content): Merge conflict in jupiter.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+Git cannot know which version of the line is the right one, so it stops
+halfway through the merge and asks us to decide. `git status` tells us which
+files need our attention:
+
+```bash
+$ git status
+```
+```
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   jupiter.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+Git has marked the conflict inside the file itself:
+
+```bash
+$ cat jupiter.txt
+```
+```
+<<<<<<< HEAD
+Far too much radiation, but Europa might be worth a visit
+=======
+Too much radiation, but Europa and Ganymede might be worth a visit
+>>>>>>> ganymede
+```
+
+The part between `<<<<<<< HEAD` and `=======` is the version on the branch we
+are on (`main`), and the part between `=======` and `>>>>>>> ganymede` is
+the version on the branch we are merging in. In a longer file, any lines that
+the two branches agree on are left untouched, outside the markers.
+
+To resolve the conflict, we edit the file so that it contains what we actually
+want, and remove the markers. We can keep either version, or, as Dracula does
+here, write something that combines them:
+
+```bash
+$ nano jupiter.txt
+$ cat jupiter.txt
+```
+```
+Far too much radiation, but Europa and Ganymede might be worth a visit
+```
+
+Then we tell Git that the conflict is resolved by adding the file, and finish
+the merge with a commit. Git suggests the message `Merge branch 'ganymede'`,
+which we can accept by saving and closing the editor:
+
+```bash
+$ git add jupiter.txt
+$ git commit
+```
+```
+[main 188ab73] Merge branch 'ganymede'
+```
+
+```bash
+$ git log --oneline --graph -4
+```
+```
+*   188ab73 Merge branch 'ganymede'
+|\
+| * 73c1b4c Add Ganymede to the notes on Jupiter
+* | b7f8c6e Stress the radiation around Jupiter
+|/
+* 604e156 Merge branch 'jupiter'
+```
+
+The `ganymede` branch has been merged and can now be deleted with
+`git branch -d ganymede`.
+
+{% callout "Changed your mind? Abort the merge" %}
+
+If a merge produces conflicts that you are not ready to deal with, you can
+always go back to where you were before starting it:
+
+```bash
+$ git merge --abort
+```
+
+Your files and branches are restored exactly as they were before `git merge`,
+and you can try again later.
+
+{% endcallout %}
+
+{% discussion "Tools that help with conflicts" %}
+
+Editing conflict markers in a plain text editor works everywhere, but many
+editors can make it easier. [Visual Studio Code](https://code.visualstudio.com/docs/sourcecontrol/overview),
+for example, highlights conflicts and offers buttons to "Accept Current Change",
+"Accept Incoming Change" or "Accept Both Changes". `git mergetool` launches a
+dedicated merge tool, if you have one configured.
+
+Git can also show a little more context in the markers: with
+
+```bash
+$ git config --global merge.conflictStyle zdiff3
+```
+
+each conflict additionally shows the original version of the lines, before
+either side changed them, which often makes it easier to understand what each
+side intended.
+
+{% enddiscussion %}
+
+## Conflicts with a remote
+
+Exactly the same thing can happen when collaborating through a remote
+repository. `git pull` is really two steps: `git fetch`, which downloads the
+new commits from the remote, followed by `git merge`, which merges them into
+our current branch. If someone else has changed the same lines as us, that
+merge produces a conflict.
+
+To see this, we need two copies of our `planets` repository, one for each
+partner, as in the lesson on [sharing a repository](09-share.md). The file
+`mars.txt` currently looks like this in both partners' copies:
 
 ```bash
 $ cat mars.txt
@@ -25,6 +195,7 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
+Dust storms can last for months
 ```
 
 Let's add a line to one partner's copy only:
@@ -37,6 +208,7 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
+Dust storms can last for months
 This line added to Wolfman's copy
 ```
 
@@ -77,6 +249,7 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
+Dust storms can last for months
 We added a different line in the other copy
 ```
 
@@ -143,6 +316,7 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
+Dust storms can last for months
 <<<<<<< HEAD
 We added a different line in the other copy
 =======
@@ -170,6 +344,7 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
+Dust storms can last for months
 We removed the conflict on this line
 ```
 
@@ -249,6 +424,7 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
+Dust storms can last for months
 We removed the conflict on this line
 ```
 
@@ -272,8 +448,9 @@ Conflicts can also be minimized with project management strategies:
 - Discuss what order tasks should be carried out in with your collaborators so
   that tasks expected to change the same lines won't be worked on simultaneously
 - If the conflicts are stylistic churn (e.g. tabs vs. spaces), establish a
-  project convention that is governing and use code style tools (e.g.
-  `htmltidy`, `perltidy`, `rubocop`, etc.) to enforce, if necessary
+  project convention and use automatic code formatters to enforce it (e.g.
+  `ruff format` or `black` for Python, `clang-format` for C++), for example
+  by running them automatically with [pre-commit](https://pre-commit.com/)
 
 {% challenge "Solving Conflicts that You Create" %}
 
@@ -282,8 +459,13 @@ Clone the repository created by your instructor.
 Add a new file to it,
 and modify an existing file (your instructor will tell you which one).
 When asked by your instructor,
-pull her changes from the repository to create a conflict,
+pull their changes from the repository to create a conflict,
 then resolve it.
+
+If you are working through this lesson on your own, you can play both roles:
+clone your `planets` repository a second time into another directory, make
+different changes to the same line of a file in each copy, commit them, push
+from one copy and then pull in the other.
 
 {% endchallenge %}
 
@@ -343,14 +525,8 @@ hint: 'git pull' before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-We've learned that we must pull first and resolve any conflicts:
-
-```bash
-$ git pull origin main
-```
-
-When there is a conflict on an image or other binary file, git prints
-a message like this:
+We've learned that we must pull first and resolve any conflicts. When there is
+a conflict on an image or other binary file, Git prints a message like this:
 
 ```bash
 $ git pull origin main
@@ -378,16 +554,16 @@ warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a
 ```
 
 Git cannot automatically insert conflict markers into an image as it does
-for text files. So, instead of editing the image file, we must check out
-the version we want to keep. Then we can add and commit this version.
+for text files. So, instead of editing the image file, we must choose the
+version we want to keep, and then add and commit it.
 
-On the key line above, Git has conveniently given us commit identifiers
-for the two versions of `mars.jpg`. Our version is `HEAD`, and Wolfman's
-version is `439dc8c0...`. If we want to use our version, we can use
-`git checkout`:
+`git restore` can pick one side of a conflict for us: `--ours` is the version
+on our current branch (`HEAD`, Dracula's picture of the surface), and
+`--theirs` is the version we are merging in (Wolfman's picture of the sky).
+If we want to use our version:
 
 ```bash
-$ git checkout HEAD mars.jpg
+$ git restore --ours mars.jpg
 $ git add mars.jpg
 $ git commit -m "Use image of surface instead of sky"
 ```
@@ -395,11 +571,10 @@ $ git commit -m "Use image of surface instead of sky"
 [main 21032c3] Use image of surface instead of sky
 ```
 
-If instead we want to use Wolfman's version, we can use `git checkout` with
-Wolfman's commit identifier, `439dc8c0`:
+If instead we want to use Wolfman's version, we use `--theirs`:
 
 ```bash
-$ git checkout 439dc8c0 mars.jpg
+$ git restore --theirs mars.jpg
 $ git add mars.jpg
 $ git commit -m "Use image of sky instead of surface"
 ```
@@ -408,30 +583,24 @@ $ git commit -m "Use image of sky instead of surface"
 ```
 
 We can also keep *both* images. The catch is that we cannot keep them
-under the same name. But, we can check out each version in succession
-and *rename* it, then add the renamed versions. First, check out each
-image and rename it:
+under the same name. But we can restore each version in turn and *rename* it:
 
 ```bash
-$ git checkout HEAD mars.jpg
-$ git mv mars.jpg mars-surface.jpg
-$ git checkout 439dc8c0 mars.jpg
+$ git restore --ours mars.jpg
+$ mv mars.jpg mars-surface.jpg
+$ git restore --theirs mars.jpg
 $ mv mars.jpg mars-sky.jpg
 ```
 
-Then, remove the old `mars.jpg` and add the two new files:
+Then, remove the conflicting `mars.jpg` and add the two new files:
 
 ```bash
 $ git rm mars.jpg
-$ git add mars-surface.jpg
-$ git add mars-sky.jpg
+$ git add mars-surface.jpg mars-sky.jpg
 $ git commit -m "Use two images: surface and sky"
 ```
 ```
 [main 94ae08c] Use two images: surface and sky
- 2 files changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 mars-sky.jpg
- rename mars.jpg => mars-surface.jpg (100%)
 ```
 
 Now both images of Mars are checked into the repository, and `mars.jpg`
@@ -489,8 +658,11 @@ started.
 
 {% keypoints "Key Points" %}
 
-- Conflicts occur when two or more people change the same file(s) at the same time.
+- Conflicts occur when two branches, or two people, change the same lines of a file in different ways.
 - The version control system does not allow people to overwrite each other's changes blindly, but highlights conflicts so that they can be resolved.
+- To resolve a conflict, edit the file to remove the markers, then `git add` it and `git commit` to finish the merge.
+- `git merge --abort` goes back to the state before the merge.
+- `git pull` is a `git fetch` followed by a `git merge`, so conflicts with a remote are resolved in the same way.
 
 {% endkeypoints %}
 
