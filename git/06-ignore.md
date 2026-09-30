@@ -120,6 +120,106 @@ Ignored files:
 nothing to commit, working tree clean
 ```
 
+{% callout "What to ignore in a physics analysis" %}
+
+A good rule of thumb is to track the files that *produce* your results (code,
+configuration, small inputs, documentation), and to ignore the files that can
+be *regenerated* from them. In a typical analysis, a `.gitignore` might look
+like this:
+
+```
+# Data and large outputs: keep them on EOS, CERNBox, etc. instead
+*.root
+*.h5
+*.parquet
+
+# Plots and logs made by the analysis scripts
+plots/
+*.log
+
+# Compiled code and build directories
+build/
+*.o
+*.so
+
+# Python caches and Jupyter checkpoints
+__pycache__/
+.ipynb_checkpoints/
+```
+
+You don't have to start from scratch: GitHub maintains a
+[collection of `.gitignore` templates](https://github.com/github/gitignore)
+for many languages and tools, and both GitHub and GitLab offer to add one when
+you create a new project.
+
+Remember that `.gitignore` only affects files that are not tracked yet. If you
+have already committed a file that should be ignored, tell Git to stop tracking
+it (the file itself stays on your disk), then commit that change:
+
+```bash
+$ git rm --cached hist.root
+```
+```
+rm 'hist.root'
+```
+
+{% endcallout %}
+
+{% discussion "A global ignore file for your own clutter" %}
+
+Some files have nothing to do with a particular project, but are created by
+your own tools: backup files from your editor (such as `*~` or `*.swp`), the
+`.DS_Store` files that macOS creates, or settings folders like `.vscode/`.
+Rather than adding them to the `.gitignore` of every project (where they would
+only matter to you), you can list them once in a *global* ignore file, which
+Git applies to all your repositories. By default this is the file
+`~/.config/git/ignore`:
+
+```bash
+$ mkdir -p ~/.config/git
+$ nano ~/.config/git/ignore
+$ cat ~/.config/git/ignore
+```
+```
+*~
+*.swp
+.DS_Store
+.vscode/
+```
+
+{% enddiscussion %}
+
+{% discussion "Large files and Git LFS" %}
+
+Git keeps every version of every file forever, and every clone contains the
+whole history. That is perfect for code, but a bad fit for large data files:
+committing a few gigabytes of ROOT files makes the repository slow to clone for
+everyone, and removing them later requires rewriting history. Hosting platforms
+also set limits: GitHub, for example, warns about files larger than 50 MiB and
+refuses files larger than 100 MiB.
+
+So keep large data outside Git, for example on EOS or CERNBox, or publish it on
+a data repository such as [Zenodo](https://zenodo.org), and commit the scripts
+(or the instructions) that fetch it instead.
+
+For moderately large binary files that really belong with the code, such as a
+few reference files for tests, there is [Git LFS](https://git-lfs.com/) (Large
+File Storage). It stores the content of the files you choose on a separate
+server, and keeps only small pointer files in the repository:
+
+```bash
+$ git lfs install
+$ git lfs track "*.root"
+$ git add .gitattributes
+```
+
+After this, `*.root` files are added and committed as usual. Most hosting
+platforms, including GitLab and GitHub, support Git LFS, usually with a storage
+quota. Everyone who clones the repository needs Git LFS installed to get the
+actual files.
+
+{% enddiscussion %}
+
 {% challenge "Ignoring Nested Files" %}
 
 
@@ -261,6 +361,9 @@ You want to keep them but you do not want to track them through `git`.
 {% keypoints "Key Points" %}
 
 - The `.gitignore` file tells Git what files to ignore.
+- Track the files that produce your results, and ignore the ones that can be regenerated, such as data files, plots and build outputs.
+- `git rm --cached <file>` stops tracking a file that was committed by mistake, without deleting it.
+- Keep large data files out of Git; use Git LFS only for moderately large files that belong with the code.
 
 {% endkeypoints %}
 
