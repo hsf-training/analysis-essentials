@@ -88,6 +88,11 @@ know what those commands actually do.
     your work.
 16. [Citation](16-citation.md): making your work easy to cite.
 
+**Reference**
+
+17. [Git Command Reference](17-reference.md): all the commands from this
+    lesson on one page, for quick lookup.
+
 ```eval_rst
 .. toctree::
     :hidden:
@@ -111,4 +116,5 @@ know what those commands actually do.
     14-open.md
     15-licensing.md
     16-citation.md
+    17-reference.md
 ```
