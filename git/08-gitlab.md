@@ -39,11 +39,12 @@ Let's start by sharing the changes we've made to our current project with the
 world.  Log in to [CERN GitLab](https://gitlab.cern.ch/), then use the **New
 project** button (or the **+** menu) and choose to create a *blank project*:
 
-![Creating a Repository on GitLab (Step 1)](fig/gitlab-create-repo-01.png)
+![The "Create new project" page on CERN GitLab, with the "Create blank project" option at the top.](fig/gitlab-create-repo-01.png)
 
-Name your repository "planets" and then click "Create project":
+Name your repository "planets", choose its visibility level, and then click
+**Create project** at the bottom of the form:
 
-![Creating a Repository on CERN GitLab (Step 2)](fig/gitlab-create-repo-02.png)
+![The "Create blank project" form: the project name is planets, the visibility level is Private, and the option "Initialize repository with a README" is not ticked.](fig/gitlab-create-repo-02.png)
 
 {% callout "Start with an empty repository" %}
 
@@ -64,10 +65,11 @@ analysis that is not yet public. (External services such as
 key advantage of CERN GitLab is its integration with CERN accounts and
 services.)
 
-As soon as the repository is created, GitLab displays a page with a URL and some
-information on how to configure your local repository:
+As soon as the repository is created, GitLab displays its page. Our local
+repository still contains our earlier work on `mars.txt`, but the repository on
+CERN GitLab is empty, so GitLab shows instructions on how to fill it:
 
-![Creating a Repository on CERN GitLab (Step 3)](fig/gitlab-create-repo-03.png)
+![The page of the new planets project, with a message that the project was successfully created and a notice that the repository for this project is empty.](fig/gitlab-create-repo-03.png)
 
 {% discussion "What happened on the server?" %}
 
@@ -87,17 +89,12 @@ directly, people only push to it and pull from it.
 
 {% enddiscussion %}
 
-Our local repository still contains our earlier work on `mars.txt`, but the
-remote repository on CERN GitLab doesn't contain any files yet:
-
-![Freshly-Made CERN GitLab Repository](fig/git-freshly-made-gitlab-repo.png)
-
 The next step is to connect the two repositories.  We do this by making the
 GitLab repository a remote for the local repository.
 The home page of the repository on GitLab includes the string we need to
 identify it:
 
-![Where to Find Repository URL on CERN GitLab](fig/gitlab-find-repo-string.png)
+![The Code menu of the planets project, open, showing three URLs: Clone with SSH, Clone with HTTPS and Clone with KRB5.](fig/gitlab-find-repo-string.png)
 
 Click the **Code** button: GitLab offers several URLs for the same repository,
 one for each way of connecting (SSH, HTTPS and, at CERN, KRB5 for Kerberos).

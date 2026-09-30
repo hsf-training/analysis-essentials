@@ -91,6 +91,8 @@ Before creating the issue, he can also use the fields on the right-hand side:
   help to sort issues. Each project defines its own labels.
 * **Milestone** and **Due date**: for planning when things should be done.
 
+![The "New Issue" form on GitLab: the type is Issue, the title is "Add notes on Saturn", the description contains a two-item task list, and the fields on the right show an assignee, labels, milestone and dates.](fig/gitlab-new-issue.png)
+
 Once he clicks **Create issue**, the issue gets its number (here `#1`, as it is
 the first issue of the project) and appears in the list of open issues.
 

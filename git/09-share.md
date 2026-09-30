@@ -27,7 +27,7 @@ your partner's username. Choose the **Maintainer** role: GitLab *protects* the
 `main` branch by default, and only Maintainers can push to it directly, which
 is what we will do in this lesson.
 
-![Adding Collaborators on GitLab](fig/gitlab-add-collaborators.png)
+![The "Invite members" dialog of the planets project, with a colleague's username entered and the role set to Maintainer.](fig/gitlab-add-collaborators.png)
 
 {% callout "Understanding GitLab permissions" %}
 
