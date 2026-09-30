@@ -103,6 +103,8 @@ commit ahead of `main`, and `HEAD -> moons` tells us that `moons` is the branch
 we are on. This is really all a branch is: a *label* pointing at a commit,
 which moves forward every time we commit on that branch.
 
+![Three commits in a row. The main label points at commit 35e8622; the moons label points at the newer commit 1e6da70, and HEAD is attached to moons.](fig/branch-label.svg)
+
 Now let's go back to `main`:
 
 ```bash
@@ -220,6 +222,8 @@ Git calls this a **fast-forward** merge: nothing had happened on `main` since
 `moons` was created, so all Git had to do was move the `main` label forward to
 the same commit as `moons`. No new commit was needed.
 
+![Before the merge, main (with HEAD) points at 35e8622 and moons at the next commit, 1e6da70. After git merge moons, main has moved forward to 1e6da70, the same commit as moons.](fig/branch-fast-forward.svg)
+
 The `moons` branch has done its job, so we can delete it. This only removes the
 label; the commits are safely part of `main` now:
 
@@ -315,6 +319,8 @@ $ git log --oneline --graph --all
 * 35e8622 Add the ignore file
 ...
 ```
+
+![Before the merge, main (with HEAD) and jupiter each have a new commit after 1e6da70, so the history splits in two. After git merge jupiter, a new merge commit 604e156 joins both lines, and main (with HEAD) points at it.](fig/branch-merge-commit.svg)
 
 The graph shows the two lines of work coming back together. `main` now contains
 both the dust storm warning and `jupiter.txt`, so we can delete the branch:
