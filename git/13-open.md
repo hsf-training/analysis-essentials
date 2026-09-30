@@ -20,7 +20,7 @@ Normal practice today looks something like this:
     that is occasionally backed up by her department.
 *   She then writes or modifies a few small programs
     (which also reside on her machine)
-    to analyze that data.
+    to analyse that data.
 *   Once she has some results,
     she writes them up and submits her paper.
     She might include her data—a growing number of journals require this—but
@@ -128,10 +128,10 @@ then try to do it for a result from a lab you work with.
 Surf the internet for a couple of minutes and check out the data repositories
 mentioned above: [Figshare](https://figshare.com/), [Zenodo](https://zenodo.org),
 [Dryad](https://datadryad.org/). Depending on your field of research, you might
-find community-recognized repositories that are well-known in your field.
+find community-recognised repositories that are well-known in your field.
 You might also find useful [these data repositories recommended by Nature](
 https://www.nature.com/sdata/policies/repositories).
-Discuss with your neighbor which data repository you might want to
+Discuss with your neighbour which data repository you might want to
 approach for your current project and explain why.
 
 {% endchallenge %}

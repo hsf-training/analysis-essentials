@@ -291,7 +291,7 @@ does not mistake a file name for a commit or branch name.
 {% enddiscussion %}
 
 The fact that files can be restored one by one
-tends to change the way people organize their work.
+tends to change the way people organise their work.
 If everything is in one large document,
 it's hard (but not impossible) to undo changes to the introduction
 without also undoing changes made later to the conclusion.
@@ -396,7 +396,7 @@ both the staging area and the file from the last commit.
 
 
 Jennifer is collaborating on her Python script with her colleagues and
-realizes her last commit to the group repository is wrong and wants to
+realises her last commit to the group repository is wrong and wants to
 undo it.  Jennifer needs to undo correctly so everyone in the group
 repository gets the correct change.  `git revert [wrong commit ID]`
 will make a new commit that undoes Jennifer's previous wrong
@@ -570,7 +570,7 @@ $ git restore --staged --worktree mars.txt
 
 {% endchallenge %}
 
-{% challenge "Explore and Summarize Histories" %}
+{% challenge "Explore and Summarise Histories" %}
 
 
 Exploring history is an important part of git, often it is a challenge to find
@@ -591,7 +591,7 @@ $ git log mars.txt
 Unfortunately some of these commit messages are very ambiguous e.g. `update files`.
 How can you search through these files?
 
-Both `git diff` and `git log` are very useful and they summarize different part of the history for you.
+Both `git diff` and `git log` are very useful and they summarise different part of the history for you.
 Is that possible to combine both? Let's try the following:
 
 ```bash

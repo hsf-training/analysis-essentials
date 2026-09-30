@@ -312,7 +312,7 @@ and marks that conflict in the affected file:
 ```bash
 $ cat mars.txt
 ```
-```diff
+```
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
@@ -442,7 +442,7 @@ consider these technical approaches to reducing them:
 - Where logically appropriate, break large files into smaller ones so that it is
   less likely that two authors will alter the same file simultaneously
 
-Conflicts can also be minimized with project management strategies:
+Conflicts can also be minimised with project management strategies:
 
 - Clarify who is responsible for what areas with your collaborators
 - Discuss what order tasks should be carried out in with your collaborators so
@@ -619,18 +619,18 @@ actions, but not in this order:
 
 - *Make changes* by appending the number `100` to a text file `numbers.txt`
 - *Update remote* repository to match the local repository
-- *Celebrate* your success with beer(s)
+- *Celebrate* your success
 - *Update local* repository to match the remote repository
 - *Stage changes* to be committed
 - *Commit changes* to the local repository
 
-In what order should you perform these actions to minimize the chances of
+In what order should you perform these actions to minimise the chances of
 conflicts? Put the commands above in order in the *action* column of the table
 below. When you have the order right, see if you can write the corresponding
 commands in the *command* column. A few steps are populated to get you
 started.
 
-|order|action . . . . . . . . . . |command . . . . . . . . . . |
+| Order | Action | Command |
 |-----|---------------------------|----------------------------|
 |1    |                           |                            |
 |2    |                           | `echo 100 >> numbers.txt`  |
@@ -642,7 +642,7 @@ started.
 {% solution "Solution" %}
 
 
-|order|action . . . . . . |command . . . . . . . . . . . . . . . . . . . |
+| Order | Action | Command |
 |-----|-------------------|----------------------------------------------|
 |1    | Update local      | `git pull origin main`                     |
 |2    | Make changes      | `echo 100 >> numbers.txt`                    |

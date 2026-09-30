@@ -245,7 +245,7 @@ You want to keep them but you do not want to track them through `git`.
 
 3. You find that the file `log_01` is very important after all, add it to the tracked files without changing the `.gitignore` again.
 
-4. Discuss with your neighbor what other types of files could reside in your directory that you do not want to track and thus would exclude via `.gitignore`.
+4. Discuss with your neighbour what other types of files could reside in your directory that you do not want to track and thus would exclude via `.gitignore`.
 
 {% solution "Solution" %}
 

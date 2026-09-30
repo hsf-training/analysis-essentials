@@ -130,7 +130,7 @@ command `pwd`.
 
 {% keypoints "Key Points" %}
 
-- `git init` initializes a repository.
+- `git init` initialises a repository.
 
 {% endkeypoints %}
 

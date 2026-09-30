@@ -25,7 +25,7 @@ Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
 We'll use `nano` to edit the file;
 you can use whatever editor you like.
-In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create/) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
+In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out the "Which Editor?" callout in the [shell lesson](../shell/03-create.md).
 
 ```bash
 $ nano mars.txt
@@ -430,7 +430,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 Sometimes, e.g. in the case of text documents, a line-wise
 diff is too coarse. That is where the `--color-words` option of
 `git diff` comes in very useful as it highlights the changed
-words using colors.
+words using colours.
 
 {% enddiscussion %}
 
@@ -693,7 +693,7 @@ Commit: Vlad Dracula <vlad@tran.sylvan.ia>
 
 {% endhiddenchallenge %}
 
-[commit-messages]: https://chris.beams.io/posts/git-commit/
+[commit-messages]: https://chris.beams.io/git-commit
 
 
 {% keypoints "Key Points" %}

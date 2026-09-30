@@ -30,7 +30,7 @@ Please use your own name and CERN/institutional email address instead of Dracula
 which means that any changes pushed to
 [GitHub](https://github.com/),
 [BitBucket](https://bitbucket.org/),
-[GitLab](https://gitlab.com/) or
+[GitLab](https://about.gitlab.com/) or
 another Git host server
 in a later lesson will include this information.
 
@@ -109,7 +109,7 @@ use different character(s) to represent the end of a line.
 Because git uses these characters to compare files,
 it may cause unexpected issues when editing a file on different machines.
 
-You can change the way git recognizes and encodes line endings
+You can change the way git recognises and encodes line endings
 using the 'core.autocrlf' command to 'git config'.
 The following settings are recommended:
 

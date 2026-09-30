@@ -11,7 +11,7 @@
 
 - An SSH key added to your CERN GitLab account, see [here](https://docs.gitlab.com/user/ssh/)
   for instructions.
-- You can test if this is working by runnning `ssh git@gitlab.cern.ch -T -p 7999`.
+- You can test if this is working by running `ssh git@gitlab.cern.ch -T -p 7999`.
   Everything is working correctly if the output of the command is:
 
 ```
@@ -28,13 +28,12 @@ Systems like Git allow us to move work between any two repositories.  In
 practice, though, it's easiest to use one copy as a central hub, and to keep it
 on the web rather than on someone's laptop.  Most programmers use hosting
 services like [GitHub](https://github.com), [BitBucket](https://bitbucket.org) or
-[GitLab](https://gitlab.com/) to hold those central copies. All of these services
-are the same from the perspective of the git command line however each
+[GitLab](https://about.gitlab.com/) to hold those central copies. All of these services
+are the same from the perspective of the Git command line, however each
 provider's website offers slightly different features. In this lesson we will
-use [CERN's instance of GitLab](https://gitlab.cern.ch/). This is the similar to
-the public GitLab instance except it is hosted by CERN and is integrated with
-various CERN services such as [Single Sign On](https://information-technology.web.cern.ch/services/SSO-Service)
-and [JIRA](https://information-technology.web.cern.ch/services/JIRA-service).
+use [CERN's instance of GitLab](https://gitlab.cern.ch/). This is similar to
+the public GitLab instance, except that it is hosted by CERN and integrated with
+other CERN services: for example, you log in with your CERN account.
 
 Let's start by sharing the changes we've made to our current project with the
 world.  Log in to [CERN GitLab](https://gitlab.cern.ch/), then use the **New
@@ -100,8 +99,9 @@ identify it:
 
 ![Where to Find Repository URL on CERN GitLab](fig/gitlab-find-repo-string.png)
 
-Click on the 'SSH' link to change the protocol from
-KRB5 to SSH and then copy that URL from the browser, go into the local `planets`
+Click the **Code** button: GitLab offers several URLs for the same repository,
+one for each way of connecting (SSH, HTTPS and, at CERN, KRB5 for Kerberos).
+Copy the one labelled **Clone with SSH**, go into the local `planets`
 repository, and run this command:
 
 ```bash
@@ -179,16 +179,16 @@ Already up to date.
 ```
 
 Pulling has no effect in this case because the two repositories are already
-synchronized.  If someone else had pushed some changes to the repository on
+synchronised.  If someone else had pushed some changes to the repository on
 GitLab, though, this command would download them to our local repository.
 
 {% challenge "GitLab GUI" %}
 
 
 Browse to your `planets` repository on GitLab.
-Under the "Repository" tab, find and click on the text that says "Commits".
+In the **Code** menu on the left, select **Commits**.
 
-Hover over, and click on, the three buttons to the right of each commit.
+Hover over, and click on, the buttons to the right of each commit.
 What information can you gather/explore from these buttons?
 How would you get that same information in the shell?
 
@@ -205,7 +205,7 @@ particular, ```git diff ID1..ID2``` where ID1 and ID2 are commit identifiers
 (e.g. ```git diff a3bf1e5..041e637```) will show the differences between those
 two commits.
 
-The right-most button ("Browse files") lets you view all of the files in the repository at the
+The "Browse files" button lets you view all of the files in the repository at the
 time of that commit. To do this in the shell, we can switch the whole
 repository to that point in time with `git switch --detach ID`,
 where ID is the identifier of the commit we want to look at (see the

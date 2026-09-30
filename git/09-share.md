@@ -12,7 +12,7 @@ will be the "Collaborator". The goal is that the Collaborator add changes into
 the Owner's repository. We will switch roles at the end, so both persons will
 play Owner and Collaborator.
 
-{% callout "Practicing By Yourself" %}
+{% callout "Practising By Yourself" %}
 
 If you're working through this lesson on your own, you can carry on by opening
 a second terminal window.
@@ -21,8 +21,11 @@ won't need to give anyone access on GitLab, because both 'partners' are you.
 
 {% endcallout %}
 
-The Owner needs to give the Collaborator access.  On GitLab, click the
-"Members" tab at the top, and enter your partner's username.
+The Owner needs to give the Collaborator access. On GitLab, select
+**Manage > Members** in the menu on the left, click **Invite members**, and enter
+your partner's username. Choose the **Maintainer** role: GitLab *protects* the
+`main` branch by default, and only Maintainers can push to it directly, which
+is what we will do in this lesson.
 
 ![Adding Collaborators on GitLab](fig/gitlab-add-collaborators.png)
 
@@ -34,8 +37,8 @@ table](https://docs.gitlab.com/user/permissions/) might come in handy.
 {% endcallout %}
 
 Next, the Collaborator needs to download a copy of the Owner's repository to
-her machine. This is called "cloning a repo". To clone the Owner's repo into
-her `Desktop` folder, the Collaborator enters:
+their machine. This is called "cloning a repo". To clone the Owner's repo into
+their `Desktop` folder, the Collaborator enters:
 
 ```bash
 $ git clone ssh://git@gitlab.cern.ch:7999/vlad/planets.git ~/Desktop/vlad-planets
@@ -45,7 +48,7 @@ Replace `vlad` with the Owner's username.
 
 ![After Creating Clone of Repository](fig/github-collaboration.svg)
 
-The Collaborator can now make a change in her clone of the Owner's repository,
+The Collaborator can now make a change in their clone of the Owner's repository,
 exactly the same way as we've been doing before:
 
 ```bash

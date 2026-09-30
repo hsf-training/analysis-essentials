@@ -24,7 +24,7 @@ seen](09-share.md):
 
 [GitHub](https://github.com) popularised a different model, based on **Pull
 Requests**, which has since been adopted by other hosting platforms such as
-[GitLab](https://gitlab.com), where they are called **Merge Requests**.
+[GitLab](https://about.gitlab.com/), where they are called **Merge Requests**.
 
 
 ## What is a Pull (or Merge) Request
