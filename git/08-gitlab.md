@@ -111,6 +111,45 @@ $ git remote add origin ssh://git@gitlab.cern.ch:7999/vlad/planets.git
 Make sure to use the URL for your repository rather than Vlad's: the only
 difference should be your username instead of `vlad`.
 
+{% discussion "Using HTTPS instead of SSH?" %}
+
+In this lesson we connect to GitLab with SSH, because once your key is set up
+you never need to type a password. Repositories can also be reached over
+HTTPS (the **Clone with HTTPS** URL, such as
+`https://gitlab.cern.ch/vlad/planets.git`), which can be useful where SSH is
+blocked, for example on some networks or computing clusters.
+
+With HTTPS, Git asks for a username and password whenever it talks to the
+server. However, you cannot use your normal account password for this: on
+CERN GitLab, where you log in through CERN's single sign-on, and on GitHub,
+which stopped accepting passwords for Git in
+[2021](https://github.blog/security/application-security/token-authentication-requirements-for-git-operations/),
+you need a **personal access token** instead. A token is a long random string
+that works like a password, but only for the permissions you choose and
+until the date you set:
+
+* On GitLab, create one under your avatar > **Edit profile** > **Access** >
+  **Personal access tokens**, with the `read_repository` and `write_repository`
+  scopes (see the
+  [GitLab documentation](https://docs.gitlab.com/user/profile/personal_access_tokens/)).
+* On GitHub, see the
+  [GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+
+When Git asks for your password, paste the token. Copy it somewhere safe when
+you create it, as the platform shows it only once, and treat it like a
+password: never commit it to a repository. To avoid typing it every time, a
+*credential helper* such as
+[Git Credential Manager](https://github.com/git-ecosystem/git-credential-manager)
+(included with Git for Windows) can store it securely for you.
+
+At CERN there is a third option: on machines where you have a Kerberos ticket,
+such as lxplus, the **Clone with KRB5** URL (of the form
+`https://:@gitlab.cern.ch:8443/vlad/planets.git`) lets Git use your CERN login
+without any password or token. If you don't have a valid ticket (you can
+check with `klist`), get one with `kinit username@CERN.CH` first.
+
+{% enddiscussion %}
+
 We can check that the command has worked by running `git remote -v`:
 
 ```bash
