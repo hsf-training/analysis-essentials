@@ -258,15 +258,17 @@ we must use the commit number that identifies the state of the repository
 *before* the change we're trying to undo.
 A common mistake is to use the number of
 the commit in which we made the change we're trying to get rid of.
-In the example below, we want to retrieve the state from before the most
-recent commit (`HEAD~1`), which is commit `f22b25e`:
+In the example below, we want to go back to the first version of `mars.txt`,
+from before the two most recent commits. That version was recorded in commit
+`f22b25e` (`HEAD~2`), so that is the commit we give to `--source`:
 
-![Git Checkout](fig/git-checkout.svg)
+![The repository holds three commits: f22b25e (HEAD~2), 34961b1 (HEAD~1) and 005937f (HEAD, on main). The command git restore --source=f22b25e mars.txt copies mars.txt as it was in f22b25e into the working directory, where it contains only the first line of notes.](fig/git-restore-source.svg)
 
-So, to put it all together,
-here's how Git works in cartoon form:
+So, to put it all together, here is how changes move between the working
+directory, the staging area and the repository, and which commands take them
+back:
 
-![http://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg)
+![Three areas side by side: the working directory, the staging area and the repository. git add moves changes from the working directory to the staging area, and git commit records them in the repository. Going back, git restore file discards changes in the working directory, git restore --staged file unstages them, and git restore --source=commit file brings back a file from an earlier commit.](fig/git-three-areas.svg)
 
 {% discussion "You will see this in older tutorials: git checkout" %}
 
