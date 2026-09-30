@@ -438,26 +438,26 @@ $ git restore venus.txt
 $ cat venus.txt #this will print the contents of venus.txt to the screen
 ```
 
-1.
+**Option 1:**
 
 ```
 Venus is too hot to be suitable as a base
 ```
 
-2.
+**Option 2:**
 
 ```
 Venus is beautiful and full of love
 ```
 
-3.
+**Option 3:**
 
 ```
 Venus is beautiful and full of love
 Venus is too hot to be suitable as a base
 ```
 
-4.
+**Option 4:**
 
 ```
 Error because you have changed venus.txt without committing the changes
@@ -500,7 +500,7 @@ With `git restore` we discard the changes in the working directory, so that our 
 ```bash
 $ cat venus.txt #this will print the contents of venus.txt to the screen
 ```
-If we print venus.txt we will get answer 2.
+If we print venus.txt we will get option 2.
 
 {% endsolution %}
 
@@ -626,5 +626,4 @@ directory before Git sees the command.
 
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
-{% endright %}
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation

@@ -8,9 +8,8 @@
 
 > The opposite of "open" isn't "closed".
 > The opposite of "open" is "broken".
-
-{% right %} John Wilbanks 
-{% endright %}
+>
+> — John Wilbanks
 
 Free sharing of information might be the ideal in science,
 but the reality is often more complicated.
@@ -156,5 +155,4 @@ that this is only one of many ways to make your code citable; the lesson on
 
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
-{% endright %}
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation

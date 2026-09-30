@@ -273,7 +273,4 @@ can even start.
 
 {% endkeypoints %}
 
-{% right %}
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Original
-content
-{% endright %}
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Original content

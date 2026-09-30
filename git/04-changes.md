@@ -569,7 +569,7 @@ $ git log --oneline --graph --all --decorate
 
 Two important facts you should know about directories in Git.
 
-1. Git does not track directories on their own, only files within them.
+**First**, Git does not track directories on their own, only files within them.
 Try it for yourself:
 
 ```bash
@@ -586,11 +586,11 @@ in otherwise empty directories. Unlike `.gitignore`, these files are not special
 and their sole purpose is to populate a directory so that Git adds it to
 the repository. In fact, you can name such files anything you like.
 
-2. If you create a directory in your Git repository and populate it with files,
-you can add all files in the directory at once by:
+**Second**, if you create a directory in your Git repository and populate it
+with files, you can add all files in the directory at once by:
 
-```
-git add <directory-with-files>
+```bash
+$ git add <directory-with-files>
 ```
 
 
@@ -776,5 +776,4 @@ Commit: Vlad Dracula <vlad@tran.sylvan.ia>
 
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
-{% endright %}
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation

@@ -46,75 +46,75 @@ know what those commands actually do.
 
 {% endprereq %}
 
-## What you will learn
+The lesson is organised in four parts, followed by a reference page:
 
 **Part 1: Using Git on your own**
 
-1. [Automated Version Control](01-basics.md): what version control is and why
-   it is worth using.
-2. [Setting Up Git](02-setup.md): configuring Git the first time you use it.
-3. [Creating a Repository](03-create.md): starting to track a project with Git.
-4. [Tracking Changes](04-changes.md): the modify-add-commit cycle and writing
-   good commit messages.
-5. [Exploring History](05-history.md): comparing versions, restoring old files
-   and undoing commits.
-6. [Ignoring Things](06-ignore.md): telling Git which files not to track.
-7. [Branching and Merging](07-branches.md): working on several things in
-   parallel and combining them.
+- [Automated Version Control](01-basics.md): what version control is and why
+  it is worth using.
+- [Setting Up Git](02-setup.md): configuring Git the first time you use it.
+- [Creating a Repository](03-create.md): starting to track a project with Git.
+- [Tracking Changes](04-changes.md): the modify-add-commit cycle and writing
+  good commit messages.
+- [Exploring History](05-history.md): comparing versions, restoring old files
+  and undoing commits.
+- [Ignoring Things](06-ignore.md): telling Git which files not to track.
+- [Branching and Merging](07-branches.md): working on several things in
+  parallel and combining them.
 
 **Part 2: Collaborating with others**
 
-8. [Remotes in CERN GitLab](08-gitlab.md): putting your repository online and
-   keeping it in sync.
-9. [Sharing a Repository with Others](09-share.md): cloning and working on a
-   shared repository.
-10. [Tracking Work with Issues](10-issues.md): reporting bugs, planning work and
-    discussing it next to the code.
-11. [Collaborating with Pull Requests](11-pullrequests.md): proposing changes
-    through forks, branches and merge requests.
-12. [Conflicts](12-conflict.md): what happens when changes overlap, and how to
-    resolve them.
+- [Remotes in CERN GitLab](08-gitlab.md): putting your repository online and
+  keeping it in sync.
+- [Sharing a Repository with Others](09-share.md): cloning and working on a
+  shared repository.
+- [Tracking Work with Issues](10-issues.md): reporting bugs, planning work and
+  discussing it next to the code.
+- [Collaborating with Pull Requests](11-pullrequests.md): proposing changes
+  through forks, branches and merge requests.
+- [Conflicts](12-conflict.md): what happens when changes overlap, and how to
+  resolve them.
 
 **Part 3: Automation**
 
-13. [Continuous Integration](13-ci.md): running tests and other tasks
-    automatically every time you push, with GitLab CI.
+- [Continuous Integration](13-ci.md): running tests and other tasks
+  automatically every time you push, with GitLab CI.
 
 **Part 4: Sharing your research**
 
-14. [Open Science](14-open.md): how version control supports open and
-    reproducible research.
-15. [Licensing](15-licensing.md): choosing a licence so that others can reuse
-    your work.
-16. [Citation](16-citation.md): making your work easy to cite.
+- [Open Science](14-open.md): how version control supports open and
+  reproducible research.
+- [Licensing](15-licensing.md): choosing a licence so that others can reuse
+  your work.
+- [Citation](16-citation.md): making your work easy to cite.
 
 **Reference**
 
-17. [Git Command Reference](17-reference.md): all the commands from this
-    lesson on one page, for quick lookup.
+- [Git Command Reference](17-reference.md): all the commands from this
+  lesson on one page, for quick lookup.
 
 ```eval_rst
 .. toctree::
     :hidden:
-    :maxdepth: 3
-    :includehidden:
-    :caption: Contents:
+  :maxdepth: 3
+  :includehidden:
+  :caption: Contents:
 
     01-basics.md
-    02-setup.md
-    03-create.md
-    04-changes.md
-    05-history.md
-    06-ignore.md
-    07-branches.md
-    08-gitlab.md
-    09-share.md
-    10-issues.md
-    11-pullrequests.md
-    12-conflict.md
-    13-ci.md
-    14-open.md
-    15-licensing.md
-    16-citation.md
-    17-reference.md
+  02-setup.md
+  03-create.md
+  04-changes.md
+  05-history.md
+  06-ignore.md
+  07-branches.md
+  08-gitlab.md
+  09-share.md
+  10-issues.md
+  11-pullrequests.md
+  12-conflict.md
+  13-ci.md
+  14-open.md
+  15-licensing.md
+  16-citation.md
+  17-reference.md
 ```

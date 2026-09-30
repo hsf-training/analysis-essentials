@@ -121,7 +121,4 @@ See [Conflicts](12-conflict.md).
 * The [Pro Git book](https://git-scm.com/book/en/v2), free online, covers
   everything in this lesson and much more.
 
-{% right %}
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Original
-content
-{% endright %}
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Original content
