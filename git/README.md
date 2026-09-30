@@ -35,12 +35,13 @@ only way_ to version anything from your diary to your future company's software.
     04-changes.md
     05-history.md
     06-ignore.md
-    07-gitlab.md
-    08-share.md
-    09-pullrequests.md
-    10-conflict.md
-    11-ci.md
-    12-open.md
-    13-licensing.md
-    14-citation.md
+    07-branches.md
+    08-gitlab.md
+    09-share.md
+    10-pullrequests.md
+    11-conflict.md
+    12-ci.md
+    13-open.md
+    14-licensing.md
+    15-citation.md
 ```

@@ -64,7 +64,8 @@ projects, GitHub gives you a private "noreply" address to use instead; see
 {% enddiscussion %}
 
 Dracula also tells Git to call the first *branch* of every new repository
-`main` (we will learn what branches are later on):
+`main` (we will learn what branches are in the lesson on
+[branching and merging](07-branches.md)):
 
 ```bash
 $ git config --global init.defaultBranch main
@@ -146,7 +147,7 @@ Note that `vim` is the default editor for many programs. If you haven't used `vi
 
 Finally, Dracula tells Git what to do when `git pull` finds that his copy and
 the shared copy of a project have both changed. We will meet this situation in
-the lesson on [conflicts](10-conflict.md); for now it is enough to know that
+the lesson on [conflicts](11-conflict.md); for now it is enough to know that
 this setting makes Git combine the two histories with a *merge*, which is the
 behaviour this lesson assumes:
 

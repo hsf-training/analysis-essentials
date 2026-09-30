@@ -260,7 +260,8 @@ correctly. If you find yourself resolving a lot of conflicts in a project,
 consider these technical approaches to reducing them:
 
 - Pull from upstream more frequently, especially before starting new work
-- Use topic branches to segregate work, merging to main when complete
+- Use [branches](07-branches.md) to keep separate pieces of work apart, merging
+  them into `main` when complete
 - Make smaller more atomic commits
 - Where logically appropriate, break large files into smaller ones so that it is
   less likely that two authors will alter the same file simultaneously

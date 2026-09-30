@@ -15,7 +15,7 @@ out to be useful even when working on small projects with only three or four
 contributors.
 
 The most naive approach to Git collaboration is what we have [previously
-seen](08-share.md):
+seen](09-share.md):
 
 * We have a **single remote repository**
 * This repository has one or more **owners** who decide who can contribute
@@ -44,7 +44,7 @@ The general idea behind Pull Requests is:
 
 {% callout "Why are they called Pull Requests?" %}
 
-We have seen in a [previous lesson](07-gitlab.md) that the act of
+We have seen in a [previous lesson](08-gitlab.md) that the act of
 incorporating remote changes into a repository is called "pulling" and it is
 achieved by variations of the command `git pull`.
 
@@ -103,7 +103,7 @@ original repository and any forks made by other users.
 ## Clone a remote project and its fork
 
 Now it is time to open your terminal and clone the remote project. [As we have
-already seen](07-gitlab.md) we can use the SSH URL for cloning the project:
+already seen](08-gitlab.md) we can use the SSH URL for cloning the project:
 
 ```bash
 $ mkdir test_merge_requests/
@@ -118,7 +118,7 @@ remote: Total 3 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (3/3), done.
 ```
 
-Now putting into practice [what we have already learnt](07-gitlab.md) let's add
+Now putting into practice [what we have already learnt](08-gitlab.md) let's add
 our fork as a remote, it will have the same URL as the main repository except
 `starter-kit-scratch` is replaced with your CERN username:
 
@@ -207,7 +207,7 @@ file named after your CERN username:
 echo "My name is Firstname Lastname" > YOUR_CERN_USERNAME.txt
 ```
 
-Replace `YOUR_CERN_USERNAME` with your CERN username to avoid [conflicts](10-conflict.md).
+Replace `YOUR_CERN_USERNAME` with your CERN username to avoid [conflicts](11-conflict.md).
 
 You can now commit the changes:
 
@@ -490,7 +490,7 @@ as in real life - try not to go on a rampage, at least not too quickly!
 Merge requests can be configured to prevent changes from being merged into the
 main branch of a repository if any of the project's builds or tests fail to run
 correctly. This is useful to try and ensure that the `master` branch always
-contains a "good" version of the project. See the [continuous integration](11-ci.md)
+contains a "good" version of the project. See the [continuous integration](12-ci.md)
 lesson for details on how to set this up with GitLab, along with a list of
 services that can be used with other git hosts.
 

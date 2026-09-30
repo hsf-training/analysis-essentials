@@ -240,7 +240,7 @@ every new commit you make moves `main` forward. `git switch --detach` moves
 exactly as they were at `f22b25e` while `main` itself stays where it was.
 (`git switch` needs the `--detach` flag to confirm that this is really what
 you want; without it, it only switches between branches, which we will meet
-later.)
+in the lesson on [branching and merging](07-branches.md).)
 
 Git will tell you that you are now in a "detached HEAD" state. This is a
 perfectly safe way to look around and run things, but don't make new commits

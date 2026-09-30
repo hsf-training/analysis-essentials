@@ -34,6 +34,19 @@ linkcheck_ignore += [
 for folder in ['advanced-python', 'git', 'python', 'shell-extras', 'shell']:
     starterkit_ci_redirects[f'{folder}/index.html'] = f'https://hsf-training.github.io/analysis-essentials/{folder}/README.html'
 
+# Git lessons were renumbered when the branching lesson was added as 07
+for old, new in [
+    ('07-gitlab', '08-gitlab'),
+    ('08-share', '09-share'),
+    ('09-pullrequests', '10-pullrequests'),
+    ('10-conflict', '11-conflict'),
+    ('11-ci', '12-ci'),
+    ('12-open', '13-open'),
+    ('13-licensing', '14-licensing'),
+    ('14-citation', '15-citation'),
+]:
+    starterkit_ci_redirects[f'git/{old}.html'] = f'https://hsf-training.github.io/analysis-essentials/git/{new}.html'
+
 
 def hsf_ci_setup(app):
     app.add_css_file('hsf.css')
