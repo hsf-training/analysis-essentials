@@ -47,12 +47,12 @@ $ git add mars.txt
 $ git commit -m "Add a line in our home copy"
 ```
 ```
-[master 5ae9631] Add a line in our home copy
+[main 5ae9631] Add a line in our home copy
  1 file changed, 1 insertion(+)
 ```
 
 ```bash
-$ git push origin master
+$ git push origin main
 ```
 ```
 Counting objects: 5, done.
@@ -61,7 +61,7 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 352 bytes, done.
 Total 3 (delta 1), reused 0 (delta 0)
 To ssh://gitlab.cern.ch:7999/vlad/planets.git
-   29aba7c..dabb4c8  master -> master
+   29aba7c..dabb4c8  main -> main
 ```
 
 Now let's have the other partner
@@ -86,18 +86,18 @@ $ git add mars.txt
 $ git commit -m "Add a line in my copy"
 ```
 ```
-[master 07ebc69] Add a line in my copy
+[main 07ebc69] Add a line in my copy
  1 file changed, 1 insertion(+)
 ```
 
 but Git won't let us push it to GitLab:
 
 ```bash
-$ git push origin master
+$ git push origin main
 ```
 ```
 To ssh://gitlab.cern.ch:7999/vlad/planets.git
- ! [rejected]        master -> master (non-fast-forward)
+ ! [rejected]        main -> main (non-fast-forward)
 error: failed to push some refs to 'ssh://gitlab.cern.ch:7999/vlad/planets.git'
 hint: Updates were rejected because the tip of your current branch is behind
 hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
@@ -115,7 +115,7 @@ and then push that.
 Let's start by pulling:
 
 ```bash
-$ git pull origin master
+$ git pull origin main
 ```
 ```
 remote: Counting objects: 5, done.
@@ -123,7 +123,7 @@ remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 3 (delta 1)
 Unpacking objects: 100% (3/3), done.
 From ssh://gitlab.cern.ch:7999/vlad/planets
- * branch            master     -> FETCH_HEAD
+ * branch            main       -> FETCH_HEAD
 Auto-merging mars.txt
 CONFLICT (content): Merge conflict in mars.txt
 Automatic merge failed; fix conflicts and then commit the result.
@@ -178,7 +178,7 @@ $ git add mars.txt
 $ git status
 ```
 ```
-On branch master
+On branch main
 All conflicts fixed but you are still merging.
   (use "git commit" to conclude merge)
 
@@ -192,13 +192,13 @@ Changes to be committed:
 $ git commit -m "Merge changes from GitLab"
 ```
 ```
-[master 2abf2b1] Merge changes from GitLab
+[main 2abf2b1] Merge changes from GitLab
 ```
 
 Now we can push our changes to GitLab:
 
 ```bash
-$ git push origin master
+$ git push origin main
 ```
 ```
 Counting objects: 10, done.
@@ -207,7 +207,7 @@ Compressing objects: 100% (6/6), done.
 Writing objects: 100% (6/6), 697 bytes, done.
 Total 6 (delta 2), reused 0 (delta 0)
 To ssh://gitlab.cern.ch:7999/vlad/planets.git
-   dabb4c8..2abf2b1  master -> master
+   dabb4c8..2abf2b1  main -> main
 ```
 
 Git keeps track of what we've merged with what,
@@ -215,7 +215,7 @@ so we don't have to fix things by hand again
 when the collaborator who made the first change pulls again:
 
 ```bash
-$ git pull origin master
+$ git pull origin main
 ```
 ```
 remote: Counting objects: 10, done.
@@ -223,7 +223,7 @@ remote: Compressing objects: 100% (4/4), done.
 remote: Total 6 (delta 2), reused 6 (delta 2)
 Unpacking objects: 100% (6/6), done.
 From ssh://gitlab.cern.ch:7999/vlad/planets
- * branch            master     -> FETCH_HEAD
+ * branch            main       -> FETCH_HEAD
 Updating dabb4c8..2abf2b1
 Fast-forward
  mars.txt | 2 +-
@@ -250,7 +250,7 @@ correctly. If you find yourself resolving a lot of conflicts in a project,
 consider these technical approaches to reducing them:
 
 - Pull from upstream more frequently, especially before starting new work
-- Use topic branches to segregate work, merging to master when complete
+- Use topic branches to segregate work, merging to main when complete
 - Make smaller more atomic commits
 - Where logically appropriate, break large files into smaller ones so that it is
   less likely that two authors will alter the same file simultaneously
@@ -309,7 +309,7 @@ $ git add mars.jpg
 $ git commit -m "Add picture of Martian surface"
 ```
 ```
-[master 8e4115c] Add picture of Martian surface
+[main 8e4115c] Add picture of Martian surface
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 mars.jpg
 ```
@@ -319,11 +319,11 @@ His is a picture of the Martian sky, but it is *also* called `mars.jpg`.
 When Dracula tries to push, he gets a familiar message:
 
 ```bash
-$ git push origin master
+$ git push origin main
 ```
 ```
 To ssh://gitlab.cern.ch:7999/vlad/planets.git
- ! [rejected]        master -> master (fetch first)
+ ! [rejected]        main -> main (fetch first)
 error: failed to push some refs to 'ssh://gitlab.cern.ch:7999/vlad/planets.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
@@ -335,14 +335,14 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 We've learned that we must pull first and resolve any conflicts:
 
 ```bash
-$ git pull origin master
+$ git pull origin main
 ```
 
 When there is a conflict on an image or other binary file, git prints
 a message like this:
 
 ```bash
-$ git pull origin master
+$ git pull origin main
 ```
 ```
 remote: Counting objects: 3, done.
@@ -350,8 +350,8 @@ remote: Compressing objects: 100% (3/3), done.
 remote: Total 3 (delta 0), reused 0 (delta 0)
 Unpacking objects: 100% (3/3), done.
 From ssh://gitlab.cern.ch:7999/vlad/planets.git
- * branch            master     -> FETCH_HEAD
-   6a67967..439dc8c  master     -> origin/master
+ * branch            main       -> FETCH_HEAD
+   6a67967..439dc8c  main       -> origin/main
 warning: Cannot merge binary files: mars.jpg (HEAD vs. 439dc8c08869c342438f6dc4a2b615b05b93c76e)
 Auto-merging mars.jpg
 CONFLICT (add/add): Merge conflict in mars.jpg
@@ -380,7 +380,7 @@ $ git add mars.jpg
 $ git commit -m "Use image of surface instead of sky"
 ```
 ```
-[master 21032c3] Use image of surface instead of sky
+[main 21032c3] Use image of surface instead of sky
 ```
 
 If instead we want to use Wolfman's version, we can use `git checkout` with
@@ -392,7 +392,7 @@ $ git add mars.jpg
 $ git commit -m "Use image of sky instead of surface"
 ```
 ```
-[master da21b34] Use image of sky instead of surface
+[main da21b34] Use image of sky instead of surface
 ```
 
 We can also keep *both* images. The catch is that we cannot keep them
@@ -416,7 +416,7 @@ $ git add mars-sky.jpg
 $ git commit -m "Use two images: surface and sky"
 ```
 ```
-[master 94ae08c] Use two images: surface and sky
+[main 94ae08c] Use two images: surface and sky
  2 files changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 mars-sky.jpg
  rename mars.jpg => mars-surface.jpg (100%)
@@ -463,11 +463,11 @@ started.
 
 |order|action . . . . . . |command . . . . . . . . . . . . . . . . . . . |
 |-----|-------------------|----------------------------------------------|
-|1    | Update local      | `git pull origin master`                     |
+|1    | Update local      | `git pull origin main`                     |
 |2    | Make changes      | `echo 100 >> numbers.txt`                    |
 |3    | Stage changes     | `git add numbers.txt`                        |
 |4    | Commit changes    | `git commit -m "Add 100 to numbers.txt"`     |
-|5    | Update remote     | `git push origin master`                     |
+|5    | Update remote     | `git push origin main`                     |
 |6    | Celebrate!        | `AFK`                                        |
 
 {% endsolution %}

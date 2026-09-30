@@ -34,6 +34,60 @@ which means that any changes pushed to
 another Git host server
 in a later lesson will include this information.
 
+{% discussion "Which email address should I use?" %}
+
+`user.email` is not a login: it is just a label that Git writes into every
+commit you make, and you can push your work whatever it says. Hosting
+platforms use it to link each commit to an account, so that it shows your
+name and profile picture. This only works if the email in the commit is one
+of the addresses registered on your account there.
+
+So use the email of the account where most of your work ends up, for example
+your CERN email for CERN GitLab. If you also use a platform where your account
+has a different address (say, a GitHub account with a personal email), you
+can either:
+
+* add your other email address to that account as well (GitHub and GitLab both
+  allow several addresses per account), or
+* use a different email for just one repository, by running the same command
+  *without* `--global` inside it:
+
+```bash
+$ git config user.email "vlad@personal.example"
+```
+
+Also keep in mind that the email in a commit is visible to anyone who can see
+the repository. If you would rather not publish your address in public
+projects, GitHub gives you a private "noreply" address to use instead; see
+[GitHub's documentation][git-privacy].
+
+{% enddiscussion %}
+
+Dracula also tells Git to call the first *branch* of every new repository
+`main` (we will learn what branches are later on):
+
+```bash
+$ git config --global init.defaultBranch main
+```
+
+{% discussion "Why main and not master?" %}
+
+For most of Git's history, the first branch of a new repository was always
+called `master`. In 2020, many projects and companies decided to move away from
+this name, mainly because of its association with "master/slave" terminology,
+and because `main` simply describes the branch better: it is the main line of
+work in the project. Git 2.28 (2020) added the `init.defaultBranch` setting so
+that you can choose the name yourself, and GitHub (2020) and GitLab (2021) now
+call the first branch of new repositories `main`.
+
+You will still come across plenty of repositories, tutorials and Stack Overflow
+answers that use `master`. Nothing else is different: wherever you see
+`master`, the same commands work with that name instead of `main`. You can
+check which branch you are on with `git status`, and rename a branch in your
+own repository with `git branch -m master main`.
+
+{% enddiscussion %}
+
 {% callout "Line Endings" %}
 
 
@@ -129,7 +183,7 @@ $ git config --help
 
 {% endcallout %}
 
-[git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/
+[git-privacy]: https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address
 
 
 {% keypoints "Key Points" %}

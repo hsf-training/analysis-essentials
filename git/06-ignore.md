@@ -23,7 +23,7 @@ and see what Git says:
 $ git status
 ```
 ```
-On branch master
+On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
@@ -62,7 +62,7 @@ the output of `git status` is much cleaner:
 $ git status
 ```
 ```
-On branch master
+On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
@@ -82,7 +82,7 @@ $ git commit -m "Add the ignore file"
 $ git status
 ```
 ```
-# On branch master
+# On branch main
 nothing to commit, working directory clean
 ```
 
@@ -107,7 +107,7 @@ We can also always see the status of ignored files if we want:
 $ git status --ignored
 ```
 ```
-On branch master
+On branch main
 Ignored files:
  (use "git add -f <file>..." to include in what will be committed)
 

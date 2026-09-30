@@ -69,7 +69,7 @@ $ git commit -m "Add notes about Pluto"
 Then push the change to the *Owner's repository* on GitLab:
 
 ```bash
-$ git push origin master
+$ git push origin main
 ```
 ```
 Counting objects: 4, done.
@@ -78,7 +78,7 @@ Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To ssh://gitlab.cern.ch:7999/vlad/planets.git
-   9272da5..29aba7c  master -> master
+   9272da5..29aba7c  main -> main
 ```
 
 Note that we didn't have to create a remote called `origin`: Git uses this name
@@ -92,7 +92,7 @@ Collaborator.
 To download the Collaborator's changes from GitLab, the Owner now enters:
 
 ```bash
-$ git pull origin master
+$ git pull origin main
 ```
 ```
 remote: Counting objects: 4, done.
@@ -100,7 +100,7 @@ remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0)
 Unpacking objects: 100% (3/3), done.
 From ssh://gitlab.cern.ch:7999/vlad/planets.git
- * branch            master     -> FETCH_HEAD
+ * branch            main       -> FETCH_HEAD
 Updating 9272da5..29aba7c
 Fast-forward
  pluto.txt | 1 +
@@ -117,10 +117,10 @@ In practice, it is good to be sure that you have an updated version of the
 repository you are collaborating on, so you should `git pull` before making
 our changes. The basic collaborative workflow would be:
 
-* update your local repo with `git pull origin master`,
+* update your local repo with `git pull origin main`,
 * make your changes and stage them with `git add`,
 * commit your changes with `git commit -m`, and
-* upload the changes to GitLab with `git push origin master`
+* upload the changes to GitLab with `git push origin main`
 
 It is better to make many commits with smaller changes rather than
 of one commit with massive changes: small commits are easier to
@@ -144,8 +144,8 @@ command line? And on GitLab?
 
 On the command line, the Collaborator can use `git fetch origin`
 to download the remote changes into the local repository, but without merging
-them into their own work. Then `git log master..origin/master` lists the new
-commits, and `git diff master origin/master` shows the changes themselves.
+them into their own work. Then `git log main..origin/main` lists the new
+commits, and `git diff main origin/main` shows the changes themselves.
 
 On GitLab, the Collaborator can open the project's list of commits (in the
 **Code** menu on the left, select **Commits**) and click on any commit to see

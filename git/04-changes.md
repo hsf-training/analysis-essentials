@@ -60,7 +60,7 @@ Git tells us that it's noticed the new file:
 $ git status
 ```
 ```
-On branch master
+On branch main
 
 Initial commit
 
@@ -85,7 +85,7 @@ and then check that the right thing happened:
 $ git status
 ```
 ```
-On branch master
+On branch main
 
 Initial commit
 
@@ -105,7 +105,7 @@ we need to run one more command:
 $ git commit -m "Start notes on Mars as a base"
 ```
 ```
-[master (root-commit) f22b25e] Start notes on Mars as a base
+[main (root-commit) f22b25e] Start notes on Mars as a base
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt
 ```
@@ -133,7 +133,7 @@ If we run `git status` now:
 $ git status
 ```
 ```
-On branch master
+On branch main
 nothing to commit, working directory clean
 ```
 
@@ -195,10 +195,10 @@ it tells us that a file it already knows about has been modified:
 $ git status
 ```
 ```
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git restore <file>..." to discard changes in working directory)
 
 	modified:   mars.txt
 
@@ -252,10 +252,10 @@ $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 $ git status
 ```
 ```
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git restore <file>..." to discard changes in working directory)
 
 	modified:   mars.txt
 
@@ -271,7 +271,7 @@ $ git add mars.txt
 $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 ```
 ```
-[master 34961b1] Add concerns about effects of Mars' moons on Wolfman
+[main 34961b1] Add concerns about effects of Mars' moons on Wolfman
  1 file changed, 1 insertion(+)
 ```
 
@@ -388,7 +388,7 @@ Let's save our changes:
 $ git commit -m "Discuss concerns about Mars' climate for Mummy"
 ```
 ```
-[master 005937f] Discuss concerns about Mars' climate for Mummy
+[main 005937f] Discuss concerns about Mars' climate for Mummy
  1 file changed, 1 insertion(+)
 ```
 
@@ -398,7 +398,7 @@ check our status:
 $ git status
 ```
 ```
-On branch master
+On branch main
 nothing to commit, working directory clean
 ```
 
@@ -490,7 +490,7 @@ combination is:
 $ git log --oneline --graph --all --decorate
 ```
 ```
-* 005937f (HEAD -> master) Discuss concerns about Mars' climate for Mummy
+* 005937f (HEAD -> main) Discuss concerns about Mars' climate for Mummy
 * 34961b1 Add concerns about effects of Mars' moons on Wolfman
 * f22b25e Start notes on Mars as a base
 ```
@@ -630,7 +630,7 @@ Now the files are ready to commit. You can check that using `git status`. If you
 $ git commit -m "Write plans to start a base on Venus"
 ```
 ```
-[master cc127c2]
+[main cc127c2]
  Write plans to start a base on Venus
  2 files changed, 2 insertions(+)
  create mode 100644 venus.txt
@@ -671,7 +671,7 @@ $ git add me.txt
 $ git commit -m "Update Vlad's bio." --author="Frank N. Stein <franky@monster.com>"
 ```
 ```
-[master 4162a51] Update Vlad's bio.
+[main 4162a51] Update Vlad's bio.
 Author: Frank N. Stein <franky@monster.com>
 1 file changed, 2 insertions(+), 2 deletions(-)
 

@@ -46,7 +46,7 @@ by asking Git to tell us the status of our project:
 
 ```bash
 $ git status
-# On branch master
+# On branch main
 #
 # Initial commit
 #

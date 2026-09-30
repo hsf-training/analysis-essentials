@@ -28,7 +28,7 @@ Systems like Git allow us to move work between any two repositories.  In
 practice, though, it's easiest to use one copy as a central hub, and to keep it
 on the web rather than on someone's laptop.  Most programmers use hosting
 services like [GitHub](https://github.com), [BitBucket](https://bitbucket.org) or
-[GitLab](https://gitlab.com/) to hold those master copies. All of these services
+[GitLab](https://gitlab.com/) to hold those central copies. All of these services
 are the same from the perspective of the git command line however each
 provider's website offers slightly different features. In this lesson we will
 use [CERN's instance of GitLab](https://gitlab.cern.ch/). This is the similar to
@@ -37,14 +37,24 @@ various CERN services such as [Single Sign On](https://information-technology.we
 and [JIRA](https://information-technology.web.cern.ch/services/JIRA-service).
 
 Let's start by sharing the changes we've made to our current project with the
-world.  Log in to [CERN GitLab](https://gitlab.cern.ch/), then click on the +
-icon in the top right and create a new project called `planets`:
+world.  Log in to [CERN GitLab](https://gitlab.cern.ch/), then use the **New
+project** button (or the **+** menu) and choose to create a *blank project*:
 
 ![Creating a Repository on GitLab (Step 1)](fig/gitlab-create-repo-01.png)
 
 Name your repository "planets" and then click "Create project":
 
 ![Creating a Repository on CERN GitLab (Step 2)](fig/gitlab-create-repo-02.png)
+
+{% callout "Start with an empty repository" %}
+
+Make sure the option **Initialize repository with a README** is *not* ticked.
+We already have a repository with some history on our own computer, so we want
+the one on GitLab to be completely empty. If GitLab creates a README file for
+us, the remote will contain a commit that our local repository does not have,
+and our first push will be rejected.
+
+{% endcallout %}
 
 Note the *visibility level* of the project. Every CERN user can create a
 *private* repository, meaning its access can be restricted to the people you
@@ -105,46 +115,57 @@ The name `origin` is a local nickname for your remote repository. We could use
 something else if we wanted to, but `origin` is by far the most common choice.
 
 Once the nickname `origin` is set up, this command will push the changes from
-our local repository to the repository on GitLab:
+our local `main` branch to the repository on GitLab:
 
 ```bash
-$ git push origin master
+$ git push -u origin main
 ```
 ```
-Counting objects: 9, done.
-Delta compression using up to 4 threads.
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
 Compressing objects: 100% (6/6), done.
-Writing objects: 100% (9/9), 821 bytes, done.
-Total 9 (delta 2), reused 0 (delta 0)
+Writing objects: 100% (9/9), 821 bytes | 821.00 KiB/s, done.
+Total 9 (delta 2), reused 0 (delta 0), pack-reused 0
 To ssh://gitlab.cern.ch:7999/vlad/planets.git
- * [new branch]      master -> master
-Branch master set up to track remote branch master from origin.
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
 ```
 
 Our local and remote repositories are now in this state:
 
 ![GitLab Repository After First Push](fig/github-repo-after-first-push.svg)
 
-{% callout "The '-u' Flag" %}
+{% callout "What is the -u for?" %}
 
+`-u` (short for `--set-upstream`) links our local `main` branch to the `main`
+branch on `origin`, so that Git remembers where this branch is pushed to and
+pulled from. The last line of the output confirms it:
+`branch 'main' set up to track 'origin/main'`.
 
-You may see a `-u` option used with `git push` in some documentation.  This
-option is synonymous with the `--set-upstream-to` option for the `git branch`
-command, and is used to associate the current branch with a remote branch so
-that the `git pull` command can be used without any arguments. To do this,
-simply use `git push -u origin master` once the remote has been set up.
+We only need `-u` the **first time** we push a branch. After that:
+
+* `git push` and `git pull` work without any arguments, because Git already
+  knows which remote and branch to use;
+* `git status` tells us how our branch compares with the one on GitLab, for
+  example `Your branch is ahead of 'origin/main' by 1 commit`, which is a
+  reminder that we have commits we haven't pushed yet.
+
+In the rest of this lesson we sometimes still write `git push origin main` in
+full. This does exactly the same as `git push`, it just spells out where the
+changes are going.
 
 {% endcallout %}
 
 We can pull changes from the remote repository to the local one as well:
 
 ```bash
-$ git pull origin master
+$ git pull origin main
 ```
 ```
-From https://gitlab.cern.ch/vlad/planets
- * branch            master     -> FETCH_HEAD
-Already up-to-date.
+From ssh://gitlab.cern.ch:7999/vlad/planets
+ * branch            main       -> FETCH_HEAD
+Already up to date.
 ```
 
 Pulling has no effect in this case because the two repositories are already
@@ -175,10 +196,12 @@ particular, ```git diff ID1..ID2``` where ID1 and ID2 are commit identifiers
 two commits.
 
 The right-most button ("Browse files") lets you view all of the files in the repository at the
-time of that commit. To do this in the shell, we'd need to checkout the
-repository at that particular time. We can do this with ```git checkout ID```
-where ID is the identifier of the commit we want to look at. If we do this, we
-need to remember to put the repository back to the right state afterwards!
+time of that commit. To do this in the shell, we can switch the whole
+repository to that point in time with `git switch --detach ID`,
+where ID is the identifier of the commit we want to look at (see the
+"detached HEAD" panel in [Exploring History](05-history.md) for what this
+does). If we do this, we need to remember to go back to the latest version
+afterwards with `git switch main`!
 
 {% endsolution %}
 
