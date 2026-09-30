@@ -96,25 +96,25 @@ The lesson is organised in four parts, followed by a reference page:
 ```eval_rst
 .. toctree::
     :hidden:
-  :maxdepth: 3
-  :includehidden:
-  :caption: Contents:
+    :maxdepth: 3
+    :includehidden:
+    :caption: Contents:
 
     01-basics.md
-  02-setup.md
-  03-create.md
-  04-changes.md
-  05-history.md
-  06-ignore.md
-  07-branches.md
-  08-gitlab.md
-  09-share.md
-  10-issues.md
-  11-pullrequests.md
-  12-conflict.md
-  13-ci.md
-  14-open.md
-  15-licensing.md
-  16-citation.md
-  17-reference.md
+    02-setup.md
+    03-create.md
+    04-changes.md
+    05-history.md
+    06-ignore.md
+    07-branches.md
+    08-gitlab.md
+    09-share.md
+    10-issues.md
+    11-pullrequests.md
+    12-conflict.md
+    13-ci.md
+    14-open.md
+    15-licensing.md
+    16-citation.md
+    17-reference.md
 ```
