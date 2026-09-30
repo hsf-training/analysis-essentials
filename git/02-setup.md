@@ -134,23 +134,19 @@ Dracula also has to set his favourite text editor, which Git opens whenever it
 needs him to write something longer, such as a commit message. Pick the line
 for your editor:
 
-| Editor             | Configuration command                            |
-|:-------------------|:-------------------------------------------------|
-| nano               | `$ git config --global core.editor "nano -w"`    |
-| Visual Studio Code | `$ git config --global core.editor "code --wait"` |
-| vim                | `$ git config --global core.editor "vim"`   |
-| emacs              | `$ git config --global core.editor "emacs"`   |
+* nano: `$ git config --global core.editor "nano -w"`
+* Visual Studio Code: `$ git config --global core.editor "code --wait"`
+* vim: `$ git config --global core.editor "vim"`
+* emacs: `$ git config --global core.editor "emacs"`
 
 {% discussion "Other editors" %}
 
-| Editor             | Configuration command                            |
-|:-------------------|:-------------------------------------------------|
-| BBEdit (Mac, with command line tools) | `$ git config --global core.editor "edit -w"`    |
-| Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
-| Sublime Text (Win) | `$ git config --global core.editor "'c:/program files/sublime text/sublime_text.exe' -w"` |
-| Notepad++ (Win)    | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
-| Kate (Linux)       | `$ git config --global core.editor "kate"`       |
-| Gedit (Linux)      | `$ git config --global core.editor "gedit --wait --new-window"`   |
+* BBEdit (Mac, with command line tools): `$ git config --global core.editor "edit -w"`
+* Sublime Text (Mac): `$ git config --global core.editor "subl -n -w"`
+* Sublime Text (Win): `$ git config --global core.editor "'c:/program files/sublime text/sublime_text.exe' -w"`
+* Notepad++ (Win): `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`
+* Kate (Linux): `$ git config --global core.editor "kate"`
+* Gedit (Linux): `$ git config --global core.editor "gedit --wait --new-window"`
 
 {% enddiscussion %}
 
@@ -165,7 +161,7 @@ Note that `vim` is the default editor for many programs. If you haven't used `vi
 
 Finally, Dracula tells Git what to do when `git pull` finds that his copy and
 the shared copy of a project have both changed. We will meet this situation in
-the lesson on [conflicts](11-conflict.md); for now it is enough to know that
+the lesson on [conflicts](12-conflict.md); for now it is enough to know that
 this setting makes Git combine the two histories with a *merge*, which is the
 behaviour this lesson assumes:
 
@@ -207,7 +203,7 @@ $ git config --help
 
 {% keypoints "Key Points" %}
 
--   "Use `git config` to configure a user name, email address, editor, and other preferences once per machine."
+-   Use `git config --global` to configure a user name, email address, editor, and other preferences once per machine.
 
 {% endkeypoints %}
 

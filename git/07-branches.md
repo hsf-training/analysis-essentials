@@ -272,7 +272,7 @@ Here Git could combine the two branches automatically, because they changed
 different files. If both branches change the *same lines* of the same file, Git
 can't know which version is right, and asks us to decide. This is called a
 *conflict*, and we will learn how to resolve one in the lesson on
-[conflicts](11-conflict.md).
+[conflicts](12-conflict.md).
 
 {% endcallout %}
 
@@ -289,7 +289,7 @@ A few habits that make branches easy to live with:
 This is also how most collaboration works on platforms such as GitLab and
 GitHub: each contribution is developed on its own branch and then proposed for
 merging, as we will see in the lesson on
-[pull requests](10-pullrequests.md).
+[pull requests](11-pullrequests.md).
 
 {% endcallout %}
 
@@ -315,10 +315,8 @@ $ git switch -c my-experiment
 Before `git switch` was added in Git 2.23 (2019), branches were created and
 changed with `git checkout`, which still works:
 
-| Older command | Modern equivalent |
-|:--------------|:------------------|
-| `git checkout moons` | `git switch moons` |
-| `git checkout -b moons` | `git switch -c moons` |
+* `git checkout moons` → `git switch moons`
+* `git checkout -b moons` → `git switch -c moons`
 
 {% enddiscussion %}
 

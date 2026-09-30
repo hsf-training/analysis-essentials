@@ -33,7 +33,7 @@ url: "https://gitlab.cern.ch/vlad/planets"
 ```
 
 The file is written in YAML, like the CI configuration in the
-[previous lessons](12-ci.md). Besides the required fields (`cff-version`,
+[previous lessons](13-ci.md). Besides the required fields (`cff-version`,
 `message`, `title` and `authors`), you can add many others, for example the
 `doi` of a published version (see below) or the `license` of your code.
 Including an [ORCID](https://orcid.org/) identifier for each author makes sure
@@ -48,7 +48,7 @@ Because the format is standard, tools can read it:
   for details.
 * [Zenodo](https://zenodo.org) can use it to fill in the metadata of your
   software when it archives a release and gives it a DOI (see the
-  [open science](13-open.md) lesson).
+  [open science](14-open.md) lesson).
 * Other tools can convert it into BibTeX and other formats, such as
   [cffconvert](https://github.com/citation-file-format/cffconvert), which can
   also check that your file is valid.

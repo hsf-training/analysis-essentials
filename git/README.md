@@ -68,23 +68,25 @@ know what those commands actually do.
    keeping it in sync.
 9. [Sharing a Repository with Others](09-share.md): cloning and working on a
    shared repository.
-10. [Collaborating with Pull Requests](10-pullrequests.md): proposing changes
+10. [Tracking Work with Issues](10-issues.md): reporting bugs, planning work and
+    discussing it next to the code.
+11. [Collaborating with Pull Requests](11-pullrequests.md): proposing changes
     through forks, branches and merge requests.
-11. [Conflicts](11-conflict.md): what happens when changes overlap, and how to
+12. [Conflicts](12-conflict.md): what happens when changes overlap, and how to
     resolve them.
 
 **Part 3: Automation**
 
-12. [Continuous Integration](12-ci.md): running tests and other tasks
+13. [Continuous Integration](13-ci.md): running tests and other tasks
     automatically every time you push, with GitLab CI.
 
 **Part 4: Sharing your research**
 
-13. [Open Science](13-open.md): how version control supports open and
+14. [Open Science](14-open.md): how version control supports open and
     reproducible research.
-14. [Licensing](14-licensing.md): choosing a licence so that others can reuse
+15. [Licensing](15-licensing.md): choosing a licence so that others can reuse
     your work.
-15. [Citation](15-citation.md): making your work easy to cite.
+16. [Citation](16-citation.md): making your work easy to cite.
 
 ```eval_rst
 .. toctree::
@@ -102,10 +104,11 @@ know what those commands actually do.
     07-branches.md
     08-gitlab.md
     09-share.md
-    10-pullrequests.md
-    11-conflict.md
-    12-ci.md
-    13-open.md
-    14-licensing.md
-    15-citation.md
+    10-issues.md
+    11-pullrequests.md
+    12-conflict.md
+    13-ci.md
+    14-open.md
+    15-licensing.md
+    16-citation.md
 ```

@@ -227,7 +227,7 @@ file named after your CERN username:
 $ echo "My name is Firstname Lastname" > YOUR_CERN_USERNAME.txt
 ```
 
-Replace `YOUR_CERN_USERNAME` with your CERN username to avoid [conflicts](11-conflict.md).
+Replace `YOUR_CERN_USERNAME` with your CERN username to avoid [conflicts](12-conflict.md).
 
 You can now commit the changes:
 
@@ -406,12 +406,10 @@ Now, sit back and relax!
   using the "Mark as draft" option) tells reviewers that you are still working
   on it, and prevents it from being merged by accident. It is a good way to ask
   for early feedback.
-* **Link related issues.** Most hosting platforms, including GitLab and GitHub,
-  let people open *issues* on a project: numbered pages for reporting a bug,
-  asking a question or suggesting an improvement, where it can be discussed.
-  If your Merge Request solves one, writing `Closes #12` in the description
-  links it to issue number 12, and closes the issue automatically when the
-  Merge Request is merged.
+* **Link related issues.** If your Merge Request solves an
+  [issue](10-issues.md), writing `Closes #12` in the description links it to
+  issue number 12, and closes the issue automatically when the Merge Request is
+  merged.
 * **Ask for a review.** You can assign one or more *reviewers*, who will be
   notified and can approve the changes. Reviewers can also *suggest* changes to
   specific lines, which you can accept with a single click.
@@ -576,7 +574,7 @@ as in real life - try not to go on a rampage, at least not too quickly!
 Merge requests can be configured to prevent changes from being merged into the
 main branch of a repository if any of the project's builds or tests fail to run
 correctly. This is useful to try and ensure that the `main` branch always
-contains a "good" version of the project. See the [continuous integration](12-ci.md)
+contains a "good" version of the project. See the [continuous integration](13-ci.md)
 lesson for details on how to set this up with GitLab, along with a list of
 services that can be used with other git hosts.
 

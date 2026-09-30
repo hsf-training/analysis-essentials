@@ -108,7 +108,7 @@ infrastructure mentioned above was built or is run by the HEP community:
     LHC experiments available to everyone, together with the software needed
     to analyse it.
 
-To make your own code citable, see the lesson on [citation](15-citation.md).
+To make your own code citable, see the lesson on [citation](16-citation.md).
 
 {% endcallout %}
 
@@ -145,7 +145,7 @@ https://docs.github.com/en/repositories/archiving-a-github-repository/referencin
 Basically it's a combination of GitHub (where the code is) and Zenodo (the
 repository creating the DOI). Read through this page while being aware
 that this is only one of many ways to make your code citable; the lesson on
-[citation](15-citation.md) describes how to tell people how to cite it.
+[citation](16-citation.md) describes how to tell people how to cite it.
 
 {% endchallenge %}
 

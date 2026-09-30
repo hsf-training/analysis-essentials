@@ -274,12 +274,10 @@ here's how Git works in cartoon form:
 a single command, `git checkout`, did both jobs, and you will still see it in
 many tutorials, scripts and Stack Overflow answers. It still works:
 
-| Older command | Modern equivalent |
-|:--------------|:------------------|
-| `git checkout -- mars.txt` | `git restore mars.txt` |
-| `git checkout f22b25e mars.txt` | `git restore --source=f22b25e --staged --worktree mars.txt` |
-| `git checkout main` | `git switch main` |
-| `git checkout f22b25e` | `git switch --detach f22b25e` |
+* `git checkout -- mars.txt` → `git restore mars.txt`
+* `git checkout f22b25e mars.txt` → `git restore --source=f22b25e --staged --worktree mars.txt`
+* `git checkout main` → `git switch main`
+* `git checkout f22b25e` → `git switch --detach f22b25e`
 
 Note two differences. First, `git checkout <commit> <file>` also puts the old
 version in the staging area, while `git restore --source=<commit> <file>`
@@ -314,13 +312,13 @@ and close it to create the new commit.
 
 To summarise the ways of going back that we have seen:
 
-| I want to... | Command |
-|:-------------|:--------|
-| discard changes to a file that I haven't staged | `git restore <file>` |
-| unstage a file, but keep my changes | `git restore --staged <file>` |
-| get a file back as it was in an older commit | `git restore --source=<commit> <file>` |
-| undo a commit, keeping the history | `git revert <commit>` |
-| look at the whole project at an older commit | `git switch --detach <commit>`, then `git switch main` |
+* **Discard changes to a file that I haven't staged:** `git restore <file>`
+* **Unstage a file, but keep my changes:** `git restore --staged <file>`
+* **Get a file back as it was in an older commit:**
+  `git restore --source=<commit> <file>`
+* **Undo a commit, keeping the history:** `git revert <commit>`
+* **Look at the whole project at an older commit:**
+  `git switch --detach <commit>`, then `git switch main`
 
 {% discussion "Rewriting history: git reset and git reflog" %}
 
