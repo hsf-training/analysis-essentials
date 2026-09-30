@@ -139,6 +139,10 @@ $ git log --oneline --graph -4
 * 604e156 Merge branch 'jupiter'
 ```
 
+Here is the whole sequence again, as it looks in a terminal:
+
+![An animated terminal session: git merge ganymede reports a conflict in jupiter.txt; cat jupiter.txt shows the conflict markers; in the nano editor, the marker lines and the other version are removed one by one and " and Ganymede" is typed into the remaining line; then git add jupiter.txt, git commit, and git log --oneline --graph shows the new merge commit joining the two branches.](fig/conflict-resolution.gif)
+
 The `ganymede` branch has been merged and can now be deleted with
 `git branch -d ganymede`.
 

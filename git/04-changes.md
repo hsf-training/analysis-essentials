@@ -461,6 +461,8 @@ answered `s` to *split* it, then `y` (yes) to stage the first change and `n`
 answers. `git diff --staged` confirms that only the first change will be
 committed.
 
+![An animated terminal session of git add -p mars.txt: Git shows both changes as one hunk; the answer s splits it into two; y stages the change to the first line and n skips the new last line; git diff --staged then shows only the first change.](fig/add-patch.gif)
+
 {% enddiscussion %}
 
 {% discussion "Fixing the last commit: git commit --amend" %}
