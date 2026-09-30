@@ -4,6 +4,7 @@ This page collects the Git commands used in this lesson, grouped by task, as a
 quick reminder once you have worked through the lessons. Each group links to
 the lesson where the commands are explained. For the full details of any
 command, run `git <command> --help`, or `git <command> -h` for a short summary.
+At the end, a [glossary](#glossary) explains the terms that are easy to mix up.
 
 ## Setting up
 
@@ -113,6 +114,83 @@ See [Conflicts](12-conflict.md).
 * `git merge --abort`: give up on a merge and go back to how things were.
 * `git restore --ours <file>` or `git restore --theirs <file>`: keep one side of
   a conflict, for example for a binary file.
+
+## Glossary
+
+* **Artefact**: a file produced by a CI job and kept after the job has
+  finished, so that it can be downloaded or used by later jobs.
+  ([Continuous Integration](13-ci.md))
+* **Branch**: an independent line of development. Technically, a label that
+  points at a commit and moves forward with every new commit made on it.
+  ([Branching and Merging](07-branches.md))
+* **CI (continuous integration)**: running tasks such as tests automatically
+  every time commits are pushed. On GitLab, the tasks are *jobs*, grouped in a
+  *pipeline* and run on machines called *runners*.
+  ([Continuous Integration](13-ci.md))
+* **Clone**: a complete copy of a repository, including its whole history,
+  usually on your own computer; made with `git clone`.
+  ([Sharing a Repository with Others](09-share.md))
+* **Commit**: a snapshot of the project recorded in its history, together
+  with a message, the author, the date and a unique identifier.
+  ([Tracking Changes](04-changes.md))
+* **Commit identifier** (or *hash*): the unique 40-character code of a
+  commit, such as `f22b25e3233b4645dabd0d81e651fe074bd8e73b`. The first 7
+  characters are usually enough to refer to it.
+  ([Exploring History](05-history.md))
+* **Conflict**: what happens when two changes to the same lines cannot be
+  combined automatically, and Git asks you to decide what the result should be.
+  ([Conflicts](12-conflict.md))
+* **Detached HEAD**: the state in which `HEAD` points directly at a commit
+  rather than at a branch, for example after `git switch --detach`.
+  ([Exploring History](05-history.md))
+* **Fast-forward**: a merge in which Git only needs to move the branch label
+  forward, without creating a new commit. ([Branching and Merging](07-branches.md))
+* **Fetch**: downloading new commits from a remote without merging them into
+  your own work; done with `git fetch`.
+  ([Sharing a Repository with Others](09-share.md))
+* **Fork**: your own copy of someone else's project on the hosting platform,
+  which you can push to. ([Collaborating with Pull Requests](11-pullrequests.md))
+* **HEAD**: where you currently are, normally the latest commit of the current
+  branch. `HEAD~1` is the commit before it, `HEAD~2` the one before that, and
+  so on. ([Exploring History](05-history.md))
+* **Hosting platform**: a website, such as GitLab or GitHub, that stores
+  repositories online and adds collaboration tools such as merge requests and
+  issues. ([Remotes in CERN GitLab](08-gitlab.md))
+* **Issue**: a numbered page on a hosting platform where a bug, an idea, a
+  question or a task is described and discussed.
+  ([Tracking Work with Issues](10-issues.md))
+* **main**: the usual name of the default branch of a repository. Older
+  repositories often call it `master`. ([Setting Up Git](02-setup.md))
+* **Merge**: bringing the changes of one branch into another, with
+  `git merge`. ([Branching and Merging](07-branches.md))
+* **Merge commit**: a commit with two parents, created when a merge joins two
+  lines of work that have both moved on. ([Branching and Merging](07-branches.md))
+* **Merge request / pull request**: a proposal, made on the hosting platform,
+  to merge the changes of a branch into a project, where they can be reviewed
+  and discussed first. GitLab calls it a merge request, GitHub a pull request.
+  ([Collaborating with Pull Requests](11-pullrequests.md))
+* **origin**: the usual short name of the remote that a repository was cloned
+  from, or first pushed to. ([Remotes in CERN GitLab](08-gitlab.md))
+* **Pull**: downloading new commits from a remote and merging them into the
+  current branch, with `git pull`. ([Remotes in CERN GitLab](08-gitlab.md))
+* **Push**: sending your new commits to a remote, with `git push`.
+  ([Remotes in CERN GitLab](08-gitlab.md))
+* **Remote**: another copy of the repository, usually on a hosting platform,
+  that you can push to and pull from. Each remote has a short name, such as
+  `origin`. ([Remotes in CERN GitLab](08-gitlab.md))
+* **Repository**: a project tracked by Git: its files together with their
+  complete history, which Git stores in the hidden `.git` directory.
+  ([Creating a Repository](03-create.md))
+* **Staging area** (also called the *index*): where you gather, with
+  `git add`, the changes that will go into the next commit.
+  ([Tracking Changes](04-changes.md))
+* **Tag**: a label that permanently marks one commit, such as a released
+  version. ([Branching and Merging](07-branches.md))
+* **Upstream**: the original repository that a fork was made from. For a
+  branch, also the remote branch it is linked to, as set up by `git push -u`.
+  ([Collaborating with Pull Requests](11-pullrequests.md))
+* **Working directory** (also called the *working tree*): the files of the
+  project as you see and edit them. ([Tracking Changes](04-changes.md))
 
 ## Getting help
 

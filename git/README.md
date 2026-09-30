@@ -91,7 +91,7 @@ The lesson is organised in four parts, followed by a reference page:
 **Reference**
 
 - [Git Command Reference](17-reference.md): all the commands from this
-  lesson on one page, for quick lookup.
+  lesson on one page, for quick lookup, and a glossary of Git terms.
 
 ```eval_rst
 .. toctree::

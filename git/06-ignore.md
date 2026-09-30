@@ -165,6 +165,28 @@ rm 'hist.root'
 
 {% endcallout %}
 
+{% callout "Never commit secrets" %}
+
+Passwords, access tokens, private SSH keys and grid certificates (such as the
+`usercert.pem` and `userkey.pem` files in `~/.globus/`) must never go into a
+repository. Everything you commit stays in the history, and once it is pushed,
+anyone who can see the repository, or who has already cloned it, can read it.
+
+* Keep secrets outside your project, for example in your home directory or in
+  environment variables, and have your code read them from there.
+* If a tool expects a file with credentials inside the project (a common name
+  is `.env`), add that file to `.gitignore` *before* creating it.
+* Before committing, check what you are about to commit with `git status` and
+  `git diff --staged`.
+
+If a secret does get pushed, **revoke it immediately**: delete the access
+token on GitLab or GitHub, remove the SSH key from your account, or contact the
+issuer of your certificate. Deleting the file, or even rewriting the history to
+remove the commit, is not enough, because the secret may already have been
+copied.
+
+{% endcallout %}
+
 {% discussion "A global ignore file for your own clutter" %}
 
 Some files have nothing to do with a particular project, but are created by
@@ -364,6 +386,7 @@ You want to keep them but you do not want to track them through `git`.
 - Track the files that produce your results, and ignore the ones that can be regenerated, such as data files, plots and build outputs.
 - `git rm --cached <file>` stops tracking a file that was committed by mistake, without deleting it.
 - Keep large data files out of Git; use Git LFS only for moderately large files that belong with the code.
+- Never commit passwords, tokens or private keys; if one is pushed by mistake, revoke it immediately.
 
 {% endkeypoints %}
 
