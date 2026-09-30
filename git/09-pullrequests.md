@@ -21,9 +21,9 @@ seen](08-share.md):
 * This repository has one or more **owners** who decide who can contribute
 * **Contributors** can push their changes directly on the repository
 
-[GitHub](https://github.com) has introduced the concept of **Pull Requests**,
-which has been subsequently adopted by its most famous clone,
-[GitLab](https://gitlab.com).
+[GitHub](https://github.com) popularised a different model, based on **Pull
+Requests**, which has since been adopted by other hosting platforms such as
+[GitLab](https://gitlab.com), where they are called **Merge Requests**.
 
 
 ## What is a Pull (or Merge) Request
@@ -497,8 +497,8 @@ services that can be used with other git hosts.
 
 {% keypoints "Key Points" %}
 
-* "Forking" means to create your private editable copy of a remote project on
-  the servers
+* "Forking" means to create your own editable copy of a remote project on
+  the hosting platform
 * "Cloning" means to download locally a remote repository and/or its fork
 * "Pull/Merge Requests" allow for discussing code and content before including
   it

@@ -60,7 +60,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 352 bytes, done.
 Total 3 (delta 1), reused 0 (delta 0)
-To https://github.com/vlad/planets
+To ssh://gitlab.cern.ch:7999/vlad/planets.git
    29aba7c..dabb4c8  master -> master
 ```
 
@@ -122,7 +122,7 @@ remote: Counting objects: 5, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 3 (delta 1)
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From ssh://gitlab.cern.ch:7999/vlad/planets
  * branch            master     -> FETCH_HEAD
 Auto-merging mars.txt
 CONFLICT (content): Merge conflict in mars.txt
@@ -148,7 +148,7 @@ This line added to Wolfman's copy
 
 Our change—the one in `HEAD`—is preceded by `<<<<<<<`.
 Git has then inserted `=======` as a separator between the conflicting changes
-and marked the end of the content downloaded from GitHub with `>>>>>>>`.
+and marked the end of the content downloaded from GitLab with `>>>>>>>`.
 (The string of letters and digits after that marker
 identifies the commit we've just downloaded.)
 
@@ -189,13 +189,13 @@ Changes to be committed:
 ```
 
 ```bash
-$ git commit -m "Merge changes from GitHub"
+$ git commit -m "Merge changes from GitLab"
 ```
 ```
-[master 2abf2b1] Merge changes from GitHub
+[master 2abf2b1] Merge changes from GitLab
 ```
 
-Now we can push our changes to GitHub:
+Now we can push our changes to GitLab:
 
 ```bash
 $ git push origin master
@@ -222,7 +222,7 @@ remote: Counting objects: 10, done.
 remote: Compressing objects: 100% (4/4), done.
 remote: Total 6 (delta 2), reused 6 (delta 2)
 Unpacking objects: 100% (6/6), done.
-From https://github.com/vlad/planets
+From ssh://gitlab.cern.ch:7999/vlad/planets
  * branch            master     -> FETCH_HEAD
 Updating dabb4c8..2abf2b1
 Fast-forward

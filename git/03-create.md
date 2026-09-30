@@ -111,7 +111,7 @@ moons
 ```
 
 To recover from this little mistake, Dracula can just remove the `.git`
-folder in the moons subdirectory. To do so he can run the following command from inside the 'moons' directory:
+folder in the moons subdirectory. To do so he can run the following command from inside the `planets` directory:
 
 ```bash
 $ rm -rf moons/.git

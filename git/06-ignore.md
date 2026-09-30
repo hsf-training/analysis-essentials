@@ -148,8 +148,8 @@ and create an exception for the `results/data/` folder.
 The next challenge will cover this type of solution.
 
 Sometimes the `**` pattern comes in handy, too, which matches
-multiple directory levels. E.g. `**/results/plots/*` would make git ignore
-the `results/plots` directory in any root directory.
+any number of directory levels. For example, `**/results/plots/` would make Git ignore
+a `results/plots` directory wherever it appears in the repository, at any depth.
 
 {% endsolution %}
 
@@ -168,11 +168,15 @@ Hint: Find out what `!` (the exclamation point operator) does
 You would add the following two lines to your .gitignore:
 
 ```
-*.data           # ignore all data files
-!final.data      # except final.data
+# ignore all data files...
+*.data
+# ...except final.data
+!final.data
 ```
 
 The exclamation point operator will include a previously excluded entry.
+Note that comments in a `.gitignore` file must be on their own line, starting
+with `#`: a `#` placed after a pattern is treated as part of the pattern.
 
 {% endsolution %}
 

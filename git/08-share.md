@@ -29,7 +29,7 @@ The Owner needs to give the Collaborator access.  On GitLab, click the
 {% callout "Understanding GitLab permissions" %}
 
 GitLab permission levels might be complicated to understand. [This
-table](https://docs.gitlab.com/ee/user/permissions.html) might come in handy.
+table](https://docs.gitlab.com/user/permissions/) might come in handy.
 
 {% endcallout %}
 
@@ -142,19 +142,16 @@ command line? And on GitLab?
 
 {% solution "Solution" %}
 
-On the command line, the Collaborator can use ```git fetch origin master```
-to get the remote changes into the local repository, but without merging
-them. Then by running ```git diff master origin/master``` the Collaborator
-will see the changes output in the terminal.
+On the command line, the Collaborator can use `git fetch origin`
+to download the remote changes into the local repository, but without merging
+them into their own work. Then `git log master..origin/master` lists the new
+commits, and `git diff master origin/master` shows the changes themselves.
 
-On GitLab, the Collaborator can go to their own fork of the repository and
-look right above the light blue latest commit bar for a gray bar saying
-"This branch is 1 commit behind Our-Respository:master." On the far right of
-that gray bar is a Compare icon and link. On the Compare page the
-Collaborator should change the base fork to their own repository, then click
-the link in the paragraph above to "compare across forks", and finally
-change the head fork to the main repository. This will show all the commits
-that are different.
+On GitLab, the Collaborator can open the project's list of commits (in the
+**Code** menu on the left, select **Commits**) and click on any commit to see
+its changes. To see everything that differs between two points in history, the
+**Code > Compare revisions** page lets you pick two commits or branches and
+shows all the commits and changes between them.
 
 {% endsolution %}
 

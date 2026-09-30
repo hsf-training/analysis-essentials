@@ -42,7 +42,7 @@ index b36abfd..0848c8d 100644
  Cold and dry, but everything is my favorite color
  The two moons may be a problem for Wolfman
  But the Mummy will appreciate the lack of humidity
-+An ill-considered change.
++An ill-considered change
 ```
 
 which is the same as what you would get if you leave out `HEAD` (try it).  The
@@ -209,24 +209,21 @@ Cold and dry, but everything is my favorite color
 $ git status
 ```
 ```
-# On branch master
+On branch master
 Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-# Changes not staged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
-#
-#	modified:   mars.txt
-#
-no changes added to commit (use "git add" and/or "git commit -a")
+  (use "git restore --staged <file>..." to unstage)
+	modified:   mars.txt
+
 ```
 
-Notice that the changes are on the staged area.
+Notice that the old version has been placed in the staging area as well as in
+our working directory.
 Again, we can put things back the way they were
-by using `git checkout`:
+by using `git checkout`, which restores both the staging area and the file
+from `HEAD`:
 
 ```bash
-$ git checkout -f master mars.txt
+$ git checkout HEAD mars.txt
 ```
 
 {% callout "Don't Lose Your HEAD" %}

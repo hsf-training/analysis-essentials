@@ -93,7 +93,7 @@ by acting as a shareable electronic lab notebook for computational work:
 {% callout "Making Code Citable" %}
 
 
-[This short guide](https://guides.github.com/activities/citable-code/) from GitHub
+[This short guide](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content) from GitHub
 explains how to create a Digital Object Identifier (DOI) for your code,
 your papers,
 or anything else hosted in a version control repository.
@@ -129,7 +129,7 @@ approach for your current project and explain why.
 
 There are many new ways to publish code and to make it citable. One
 way is described [on the homepage of GitHub itself](
-https://guides.github.com/activities/citable-code/).
+https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content).
 Basically it's a combination of GitHub (where the code is) and Zenodo (the
 repository creating the DOI). Read through this page while being aware
 that this is only one of many ways to making your code citable.

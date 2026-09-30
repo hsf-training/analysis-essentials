@@ -9,7 +9,7 @@
 
 {% prereq "Prerequisites" %}
 
-- A SSH Key added to your CERN GitLab account, see [here](https://docs.gitlab.com/ce/ssh/README.html)
+- An SSH key added to your CERN GitLab account, see [here](https://docs.gitlab.com/user/ssh/)
   for instructions.
 - You can test if this is working by runnning `ssh git@gitlab.cern.ch -T -p 7999`.
   Everything is working correctly if the output of the command is:
@@ -46,12 +46,14 @@ Name your repository "planets" and then click "Create project":
 
 ![Creating a Repository on CERN GitLab (Step 2)](fig/gitlab-create-repo-02.png)
 
-Here we can see one of the main reasons why you might want to use GitLab at CERN
-instead of an external service: every CERN user can create a *private*
-repository, meaning its access can be restricted to the persons you want.
-External services such as [GitHub](https://github.com) only allow you to create
-*public repositories* [unless you pay for it](https://github.com/pricing). Note
-that private repositories are very useful when collaborating for a paper.
+Note the *visibility level* of the project. Every CERN user can create a
+*private* repository, meaning its access can be restricted to the people you
+choose; you can also make it visible to all CERN users, or public to the whole
+world. Private repositories are very useful when collaborating on a paper or an
+analysis that is not yet public. (External services such as
+[GitHub](https://github.com) also offer free private repositories nowadays; a
+key advantage of CERN GitLab is its integration with CERN accounts and
+services.)
 
 As soon as the repository is created, GitLab displays a page with a URL and some
 information on how to configure your local repository:

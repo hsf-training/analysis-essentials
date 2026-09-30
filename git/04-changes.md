@@ -478,9 +478,9 @@ You can also reduce the quantity of information using the
 $ git log --oneline
 ```
 ```
-* 005937f Discuss concerns about Mars' climate for Mummy
-* 34961b1 Add concerns about effects of Mars' moons on Wolfman
-* f22b25e Start notes on Mars as a base
+005937f Discuss concerns about Mars' climate for Mummy
+34961b1 Add concerns about effects of Mars' moons on Wolfman
+f22b25e Start notes on Mars as a base
 ```
 
 You can also combine the `--oneline` options with others. One useful
@@ -490,7 +490,7 @@ combination is:
 $ git log --oneline --graph --all --decorate
 ```
 ```
-* 005937f Discuss concerns about Mars' climate for Mummy (HEAD, master)
+* 005937f (HEAD -> master) Discuss concerns about Mars' climate for Mummy
 * 34961b1 Add concerns about effects of Mars' moons on Wolfman
 * f22b25e Start notes on Mars as a base
 ```
@@ -519,7 +519,6 @@ in otherwise empty directories. Unlike `.gitignore`, these files are not special
 and their sole purpose is to populate a directory so that Git adds it to
 the repository. In fact, you can name such files anything you like.
 
-{:start="2"}
 2. If you create a directory in your Git repository and populate it with files,
 you can add all files in the directory at once by:
 

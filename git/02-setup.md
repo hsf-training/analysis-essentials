@@ -26,7 +26,7 @@ $ git config --global user.email "vlad@tran.sylvan.ia"
 $ git config --global color.ui "auto"
 ```
 
-Please use your own name and CERN email address instead of Dracula's. This user name and email will be associated with your subsequent Git activity,
+Please use your own name and CERN/institutional email address instead of Dracula's. This user name and email will be associated with your subsequent Git activity,
 which means that any changes pushed to
 [GitHub](https://github.com/),
 [BitBucket](https://bitbucket.org/),
@@ -49,7 +49,7 @@ You can change the way git recognizes and encodes line endings
 using the 'core.autocrlf' command to 'git config'.
 The following settings are recommended:
 
-On OS X and Linux:
+On macOS and Linux:
 
 ```bash
 $ git config --global core.autocrlf input
@@ -62,7 +62,7 @@ $ git config --global core.autocrlf true
 ```
 
 You can read more about this issue
-[on this GitHub page](https://help.github.com/en/articles/configuring-git-to-handle-line-endings).
+[on this GitHub page](https://docs.github.com/en/get-started/git-basics/configuring-git-to-handle-line-endings).
 
 {% endcallout %}
 
@@ -70,19 +70,16 @@ Dracula also has to set his favorite text editor, following this table:
 
 | Editor             | Configuration command                            |
 |:-------------------|:-------------------------------------------------|
-| Atom | `$ git config --global core.editor "atom --wait"`|
 | nano               | `$ git config --global core.editor "nano -w"`    |
+| Visual Studio Code | `$ git config --global core.editor "code --wait"` |
+| vim                | `$ git config --global core.editor "vim"`   |
+| emacs              | `$ git config --global core.editor "emacs"`   |
 | BBEdit (Mac, with command line tools) | `$ git config --global core.editor "edit -w"`    |
 | Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
-| Sublime Text (Win, 32-bit install) | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"` |
-| Sublime Text (Win, 64-bit install) | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"` |
-| Notepad++ (Win, 32-bit install)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
-| Notepad++ (Win, 64-bit install)    | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
+| Sublime Text (Win) | `$ git config --global core.editor "'c:/program files/sublime text/sublime_text.exe' -w"` |
+| Notepad++ (Win)    | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
 | Kate (Linux)       | `$ git config --global core.editor "kate"`       |
 | Gedit (Linux)      | `$ git config --global core.editor "gedit --wait --new-window"`   |
-| Scratch (Linux)       | `$ git config --global core.editor "scratch-text-editor"`  |
-| emacs              | `$ git config --global core.editor "emacs"`   |
-| vim                | `$ git config --global core.editor "vim"`   |
 
 It is possible to reconfigure the text editor for Git whenever you want to change it.
 
@@ -93,7 +90,22 @@ Note that `vim` is the default editor for many programs. If you haven't used `vi
 
 {% endcallout %}
 
-The four commands we just ran above only need to be run once: the flag `--global` tells Git
+Finally, Dracula tells Git what to do when `git pull` finds that his copy and
+the shared copy of a project have both changed. We will meet this situation in
+the lesson on [conflicts](10-conflict.md); for now it is enough to know that
+this setting makes Git combine the two histories with a *merge*, which is the
+behaviour this lesson assumes:
+
+```bash
+$ git config --global pull.rebase false
+```
+
+Without this setting, recent versions of Git stop with the error
+`fatal: Need to specify how to reconcile divergent branches.` instead.
+(Git for Windows already sets this by default; running the command anyway does
+no harm.)
+
+The `git config` commands we just ran only need to be run once: the flag `--global` tells Git
 to use the settings for every project, in your user account, on this computer.
 
 You can check your settings at any time:
