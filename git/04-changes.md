@@ -294,21 +294,15 @@ but not yet committed.
 
 
 If you think of Git as taking snapshots of changes over the life of a project,
-`git add` specifies *what* will go in a snapshot
-(putting things in the staging area),
-and `git commit` then *actually takes* the snapshot, and
-makes a permanent record of it (as a commit).
-If you don't have anything staged when you type `git commit`,
-Git will prompt you to use `git commit -a` or `git commit --all`,
-which is kind of like gathering *everyone* for the picture!
-However, it's almost always better to
-explicitly add things to the staging area, because you might
-commit changes you forgot you made. (Going back to snapshots,
-you might get the extra with incomplete makeup walking on
-the stage for the snapshot because you used `-a`!)
-Try to stage things manually,
-or you might find yourself searching for "git undo commit" more
-than you would like!
+`git add` chooses *what* goes into the next snapshot (by putting it in the
+staging area), and `git commit` *takes* the snapshot, making a permanent record
+of it as a commit.
+
+You may come across `git commit -a` (or `--all`), which stages every change to
+the files Git already tracks and commits them in one go, like gathering
+*everyone* for the picture. It is almost always better to add files
+explicitly: otherwise you can easily commit changes you forgot you had made,
+and find yourself searching for "git undo commit"!
 
 {% endcallout %}
 
@@ -423,6 +417,82 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 
     Start notes on Mars as a base
 ```
+
+{% discussion "Staging only part of a file: git add -p" %}
+
+Sometimes a single file contains two unrelated changes, and we would like to
+commit them separately. `git add -p` (for *patch*) goes through the changes
+piece by piece, and asks us for each piece (or *hunk*) whether to stage it.
+Suppose we have changed the first line of `mars.txt` and also added a line at
+the end:
+
+```bash
+$ git add -p mars.txt
+```
+```
+diff --git a/mars.txt b/mars.txt
+index b36abfd..e93e1fb 100644
+--- a/mars.txt
++++ b/mars.txt
+@@ -1,3 +1,4 @@
+-Cold and dry, but everything is my favorite color
++Cold and very dry, but everything is my favorite color
+ The two moons may be a problem for Wolfman
+ But the Mummy will appreciate the lack of humidity
++Phobos and Deimos could be useful for mining
+(1/1) Stage this hunk [y,n,q,a,d,s,e,?]? s
+Split into 2 hunks.
+@@ -1,3 +1,3 @@
+-Cold and dry, but everything is my favorite color
++Cold and very dry, but everything is my favorite color
+ The two moons may be a problem for Wolfman
+ But the Mummy will appreciate the lack of humidity
+(1/2) Stage this hunk [y,n,q,a,d,j,J,g,/,e,?]? y
+@@ -2,2 +2,3 @@
+ The two moons may be a problem for Wolfman
+ But the Mummy will appreciate the lack of humidity
++Phobos and Deimos could be useful for mining
+(2/2) Stage this hunk [y,n,q,a,d,K,g,/,e,?]? n
+```
+
+The two changes were close together, so Git first showed them as one hunk; we
+answered `s` to *split* it, then `y` (yes) to stage the first change and `n`
+(no) to leave the second one for later. Typing `?` lists all the possible
+answers. `git diff --staged` confirms that only the first change will be
+committed.
+
+{% enddiscussion %}
+
+{% discussion "Fixing the last commit: git commit --amend" %}
+
+If you spot a typo in the message of the commit you have just made, or realise
+that you forgot to add a file to it, you don't need a new commit to fix it.
+`git commit --amend` replaces the last commit with a corrected one:
+
+```bash
+$ git commit --amend -m "Stress how dry Mars is"
+```
+```
+[main eabf8d1] Stress how dry Mars is
+ Date: Wed Sep 30 14:51:08 2026 +0100
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
+To add a forgotten file to the last commit, stage it and amend without changing
+the message:
+
+```bash
+$ git add forgotten-file.txt
+$ git commit --amend --no-edit
+```
+
+Amending *rewrites* the last commit: it gets a new identifier, and the old
+one disappears from the history. So, as with `git reset` (see
+[Exploring History](05-history.md)), only amend commits that you have **not
+pushed yet**; if others already have the original commit, make a new commit
+instead.
+
+{% enddiscussion %}
 
 {% discussion "Word-based diffing" %}
 
