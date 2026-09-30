@@ -204,7 +204,7 @@ branch 'main' set up to track 'origin/main'.
 
 Our local and remote repositories are now in this state:
 
-![GitLab Repository After First Push](fig/github-repo-after-first-push.svg)
+![After git push -u origin main, the repository on your computer (~/planets) and the repository on CERN GitLab (vlad/planets) contain the same three commits and main branch. In the local repository, origin stands for ssh://git@gitlab.cern.ch:7999/vlad/planets.git.](fig/gitlab-repo-after-first-push.svg)
 
 {% callout "What is the -u for?" %}
 

@@ -46,7 +46,7 @@ $ git clone ssh://git@gitlab.cern.ch:7999/vlad/planets.git ~/Desktop/vlad-planet
 
 Replace `vlad` with the Owner's username.
 
-![After Creating Clone of Repository](fig/github-collaboration.svg)
+![Three copies of the repository with the same commits: on the Owner's computer (~/planets), which pushed them to the shared repository vlad/planets on CERN GitLab, and on the Collaborator's computer (~/Desktop/vlad-planets), which got its copy with git clone.](fig/gitlab-collaboration.svg)
 
 The Collaborator can now make a change in their clone of the Owner's repository,
 exactly the same way as we've been doing before:
