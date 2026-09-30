@@ -1,4 +1,4 @@
-# Sharing a repository with others
+# Sharing a Repository with Others
 
 {% objectives "Learning Objectives" %}
 
