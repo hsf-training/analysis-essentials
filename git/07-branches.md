@@ -224,6 +224,13 @@ the same commit as `moons`. No new commit was needed.
 
 ![Before the merge, main (with HEAD) points at 35e8622 and moons at the next commit, 1e6da70. After git merge moons, main has moved forward to 1e6da70, the same commit as moons.](fig/branch-fast-forward.svg)
 
+The animation below replays the whole story so far: creating the branch,
+committing on it, switching back to `main` and merging with a fast-forward.
+Watch how the commits stay where they are, while the `main` and `moons` labels,
+and `HEAD`, move between them:
+
+![An animation in five steps. First, main has two commits and HEAD is attached to main. git switch -c moons creates a moons label on the same commit and HEAD moves to it. git commit adds commit 1e6da70 and moons moves onto it, taking HEAD along. git switch main moves HEAD back to main. git merge moons moves the main label forward to 1e6da70, the same commit as moons: a fast-forward.](fig/branch-animation.svg)
+
 The `moons` branch has done its job, so we can delete it. This only removes the
 label; the commits are safely part of `main` now:
 
