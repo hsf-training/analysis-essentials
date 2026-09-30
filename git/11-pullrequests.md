@@ -216,6 +216,34 @@ stays identical to the original repository, so it is easy to keep up to date,
 and that you can work on several Merge Requests at the same time, one per
 branch.
 
+{% callout "Fork, clone or branch?" %}
+
+These three words are easy to mix up, so here is how they differ:
+
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * - 
+     - What it is
+     - Where it lives
+     - How you make one
+   * - Fork
+     - your own copy of someone else's project, which you can push to
+     - on the hosting platform (GitLab, GitHub)
+     - the **Fork** button on the project page
+   * - Clone
+     - a full copy of a repository, with its whole history
+     - on your computer
+     - ``git clone <url>``
+   * - Branch
+     - an independent line of development inside a repository
+     - in a repository, both local and remote
+     - ``git switch -c <name>``
+```
+
+{% endcallout %}
+
 
 ## Implement your new feature
 

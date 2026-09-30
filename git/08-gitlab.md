@@ -148,6 +148,30 @@ such as lxplus, the **Clone with KRB5** URL (of the form
 without any password or token. If you don't have a valid ticket (you can
 check with `klist`), get one with `kinit username@CERN.CH` first.
 
+In short:
+
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * - Method
+     - URL starts with
+     - What you need
+     - Best for
+   * - SSH
+     - ``ssh://git@gitlab.cern.ch:7999/``
+     - an SSH key added to your account
+     - your own computers (used in this lesson)
+   * - HTTPS
+     - ``https://gitlab.cern.ch/``
+     - a personal access token
+     - networks where SSH is blocked
+   * - KRB5
+     - ``https://:@gitlab.cern.ch:8443/``
+     - a Kerberos ticket (from ``kinit``)
+     - lxplus and other CERN machines
+```
+
 {% enddiscussion %}
 
 We can check that the command has worked by running `git remote -v`:

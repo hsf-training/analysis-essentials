@@ -52,6 +52,34 @@ Most open licences fall into a few families:
   works (ND). This lesson itself, for example, is available under
   [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
+In short:
+
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * - Family
+     - Examples
+     - Can it be used in closed-source software?
+     - Must changes be shared?
+     - Meant for
+   * - Permissive
+     - MIT, BSD, Apache 2.0
+     - Yes
+     - No, only the copyright notice must be kept
+     - code
+   * - Copyleft
+     - GPL; LGPL for libraries
+     - Not with the GPL; with the LGPL, as a library
+     - Yes, under the same licence
+     - code
+   * - Creative Commons
+     - CC BY, CC BY-SA, CC BY-NC, ...
+     - Depends on the conditions chosen
+     - Only with SA (share alike)
+     - documents, figures, data
+```
+
 Choosing a licence that is in common use makes life easier for
 contributors and users, because they are more likely to already be
 familiar with the licence and don't have to wade through a bunch of

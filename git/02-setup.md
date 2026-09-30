@@ -131,22 +131,46 @@ You can read more about this issue
 {% enddiscussion %}
 
 Dracula also has to set his favourite text editor, which Git opens whenever it
-needs him to write something longer, such as a commit message. Pick the line
+needs him to write something longer, such as a commit message. Pick the row
 for your editor:
 
-* nano: `$ git config --global core.editor "nano -w"`
-* Visual Studio Code: `$ git config --global core.editor "code --wait"`
-* vim: `$ git config --global core.editor "vim"`
-* emacs: `$ git config --global core.editor "emacs"`
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * - Editor
+     - Configuration command
+   * - nano
+     - ``$ git config --global core.editor "nano -w"``
+   * - Visual Studio Code
+     - ``$ git config --global core.editor "code --wait"``
+   * - vim
+     - ``$ git config --global core.editor "vim"``
+   * - emacs
+     - ``$ git config --global core.editor "emacs"``
+```
 
 {% discussion "Other editors" %}
 
-* BBEdit (Mac, with command line tools): `$ git config --global core.editor "edit -w"`
-* Sublime Text (Mac): `$ git config --global core.editor "subl -n -w"`
-* Sublime Text (Win): `$ git config --global core.editor "'c:/program files/sublime text/sublime_text.exe' -w"`
-* Notepad++ (Win): `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`
-* Kate (Linux): `$ git config --global core.editor "kate"`
-* Gedit (Linux): `$ git config --global core.editor "gedit --wait --new-window"`
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * - Editor
+     - Configuration command
+   * - BBEdit (Mac, with command line tools)
+     - ``$ git config --global core.editor "edit -w"``
+   * - Sublime Text (Mac)
+     - ``$ git config --global core.editor "subl -n -w"``
+   * - Sublime Text (Win)
+     - ``$ git config --global core.editor "'c:/program files/sublime text/sublime_text.exe' -w"``
+   * - Notepad++ (Win)
+     - ``$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"``
+   * - Kate (Linux)
+     - ``$ git config --global core.editor "kate"``
+   * - Gedit (Linux)
+     - ``$ git config --global core.editor "gedit --wait --new-window"``
+```
 
 {% enddiscussion %}
 

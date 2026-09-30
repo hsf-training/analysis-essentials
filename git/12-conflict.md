@@ -625,25 +625,66 @@ actions, but not in this order:
 - *Commit changes* to the local repository
 
 In what order should you perform these actions to minimise the chances of
-conflicts? Fill in the list below with the actions in the right order. When
-you have the order right, see if you can also write the command that goes with
-each action. A few steps are filled in to get you started.
+conflicts? Put the actions in the right order in the *Action* column of the
+table below. When you have the order right, see if you can also write the
+corresponding commands in the *Command* column. A few steps are filled in to
+get you started.
 
-1. ? : ?
-2. ? : `echo 100 >> numbers.txt`
-3. ? : ?
-4. ? : ?
-5. ? : ?
-6. Celebrate! : `AFK`
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * - Order
+     - Action
+     - Command
+   * - 1
+     - ?
+     - ?
+   * - 2
+     - ?
+     - ``echo 100 >> numbers.txt``
+   * - 3
+     - ?
+     - ?
+   * - 4
+     - ?
+     - ?
+   * - 5
+     - ?
+     - ?
+   * - 6
+     - Celebrate!
+     - ``AFK``
+```
 
 {% solution "Solution" %}
 
-1. Update local: `git pull origin main`
-2. Make changes: `echo 100 >> numbers.txt`
-3. Stage changes: `git add numbers.txt`
-4. Commit changes: `git commit -m "Add 100 to numbers.txt"`
-5. Update remote: `git push origin main`
-6. Celebrate! `AFK`
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * - Order
+     - Action
+     - Command
+   * - 1
+     - Update local
+     - ``git pull origin main``
+   * - 2
+     - Make changes
+     - ``echo 100 >> numbers.txt``
+   * - 3
+     - Stage changes
+     - ``git add numbers.txt``
+   * - 4
+     - Commit changes
+     - ``git commit -m "Add 100 to numbers.txt"``
+   * - 5
+     - Update remote
+     - ``git push origin main``
+   * - 6
+     - Celebrate!
+     - ``AFK``
+```
 
 {% endsolution %}
 

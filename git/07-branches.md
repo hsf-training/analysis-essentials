@@ -421,8 +421,17 @@ $ git switch -c my-experiment
 Before `git switch` was added in Git 2.23 (2019), branches were created and
 changed with `git checkout`, which still works:
 
-* `git checkout moons` → `git switch moons`
-* `git checkout -b moons` → `git switch -c moons`
+```eval_rst
+.. list-table::
+   :header-rows: 1
+
+   * - Older command
+     - Modern equivalent
+   * - ``git checkout moons``
+     - ``git switch moons``
+   * - ``git checkout -b moons``
+     - ``git switch -c moons``
+```
 
 {% enddiscussion %}
 
