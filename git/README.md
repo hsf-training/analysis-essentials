@@ -75,8 +75,8 @@ know what those commands actually do.
 
 **Part 3: Automation**
 
-12. [GitLab CI](12-ci.md): running tests and other tasks automatically every
-    time you push.
+12. [Continuous Integration](12-ci.md): running tests and other tasks
+    automatically every time you push, with GitLab CI.
 
 **Part 4: Sharing your research**
 
