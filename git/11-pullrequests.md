@@ -62,6 +62,13 @@ part of the `git` tool itself: it depends on the hosting platform you use.
 
 {% endcallout %}
 
+In this lesson we will work with three copies of the same repository: the
+original project and your own fork, both on GitLab, and a clone on your
+computer. This picture shows how they are connected, and the steps we are going
+to follow:
+
+![Three copies of the repository. On CERN GitLab: the original repository (starter-kit-scratch/starter-kit-example) and your fork (YOUR_CERN_USERNAME/starter-kit-example). On your computer: a local clone on the branch add-YOUR_CERN_USERNAME. Step 1: fork the original repository. Step 2: git clone the original repository (the remote origin); later, git pull from it. Step 3: git push your branch to your fork (the remote YOUR_CERN_USERNAME). Step 4: open a merge request from your fork back to the original repository.](fig/fork-clone-push.svg)
+
 
 ## Fork the original project repository
 
