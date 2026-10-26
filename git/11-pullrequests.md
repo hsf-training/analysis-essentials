@@ -91,13 +91,13 @@ Connect to our example repository using a Web browser:
 
 and click on the "Fork" button:
 
-![Fork a GitLab repository](fig/gitlab-pr-fork.png)
+![The project page of starter-kit-example on CERN GitLab, with the Fork button at the top right.](fig/gitlab-pr-fork.png)
 
 GitLab asks where the fork should be created. If you have played already with
 GitLab groups you might have several possible destinations; if so, just select
 your user:
 
-![Select fork destination](fig/gitlab-pr-wheretofork.png)
+![The Fork project form, with the project name, a namespace selector for the project URL, and the branches and visibility options.](fig/gitlab-pr-wheretofork.png)
 
 Your GitLab account will now contain a repository with the same name as the
 original, `starter-kit-example`.
@@ -131,11 +131,10 @@ $ git clone ssh://git@gitlab.cern.ch:7999/starter-kit-scratch/starter-kit-exampl
 ```
 ```
 Cloning into 'starter-kit-example'...
-remote: Enumerating objects: 3, done.
-remote: Counting objects: 100% (3/3), done.
-remote: Compressing objects: 100% (2/2), done.
-remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-Receiving objects: 100% (3/3), done.
+remote: Enumerating objects: 10, done.
+remote: Total 10 (delta 0), reused 0 (delta 0), pack-reused 10 (from 1)
+Receiving objects: 100% (10/10), done.
+Resolving deltas: 100% (2/2), done.
 ```
 
 Now putting into practice [what we have already learnt](08-gitlab.md) let's add
@@ -321,7 +320,7 @@ different):
 remote:
 remote: ========================================================================
 remote:
-remote: ERROR: You are not allowed to push code to this project.
+remote: You are not allowed to push code to this project.
 remote:
 remote: ========================================================================
 remote:
@@ -355,7 +354,7 @@ remote:   https://gitlab.cern.ch/vlad/starter-kit-example/-/merge_requests/new?m
 remote:
 To ssh://gitlab.cern.ch:7999/vlad/starter-kit-example.git
  * [new branch]      add-vlad -> add-vlad
-branch 'add-vlad' set up to track 'vlad/add-vlad'.
+Branch 'add-vlad' set up to track remote branch 'add-vlad' from 'vlad'.
 ```
 
 Your changes are now pushed to your fork, on a new branch. Notice that GitLab
@@ -379,8 +378,12 @@ $ git log -10 --oneline --graph --all --decorate
 This is the output (most recent commits are on top):
 
 ```
-* 256c9b6 (HEAD -> add-vlad, vlad/add-vlad) Add user info for vlad
-* 764051d (origin/master, origin/HEAD, master) Add initial README
+* 3914519 (HEAD -> add-vlad, vlad/add-vlad) Add user info for vlad
+*   ecb7f78 (origin/master, origin/HEAD, master) Merge branch 'master' into 'master'
+|| * d09c134 Add information certification
+| * 256c9b6 Add user info for dberzano
+|/
+* 764051d Add initial README
 ```
 
 So you will see that:
@@ -390,6 +393,10 @@ So you will see that:
 * your local branch (`add-vlad`) and the same branch on your fork
   (`vlad/add-vlad`) are in sync and contain the commit you've just
   authored.
+
+The older commits below the original repository's latest one are earlier
+contributions that were already merged, so your own history may look a little
+different.
 
 {% endsolution %}
 
@@ -406,24 +413,19 @@ your Web browser to your fork:
 > https://gitlab.cern.ch/YOUR_CERN_USERNAME/starter-kit-example
 
 Then select **Merge requests** in the menu on the left hand side of the screen
-and click **New merge request**:
-
-![New merge request](fig/gitlab-pr-newmergerequest.png)
+and click **New merge request**. (Right after a push, GitLab also shows a banner on
+your project with a **Create merge request** button, which does the same.)
 
 On the next screen, select your branch `add-YOUR_CERN_USERNAME` as the **Source
 branch**, and `starter-kit-scratch/starter-kit-example` with its `master` branch
 as the **Target branch**:
 
-![Select branch](fig/gitlab-pr-selectbranch.png)
+![The New merge request page: the source branch add-YOUR_CERN_USERNAME on your fork, the target branch master of starter-kit-scratch/starter-kit-example, and the Compare branches and continue button.](fig/gitlab-pr-selectbranch.png)
 
-then click the **Compare branches and continue** button. The next screen
-allows you to review the changes graphically (you need to go at the bottom of
-the page and click the **Changes** tab):
-
-![Review changes](fig/gitlab-pr-diff.png)
-
-If the changes look good to you, assign a title to your Merge Request, and an
-extended description. You should follow the same policies you use for writing
+then click the **Compare branches and continue** button. The next screen is
+where you describe your Merge Request: give it a title, and an extended
+description. (Once it is created, the **Changes** tab of the Merge Request
+shows the changes graphically, so you can review them yourself first.) You should follow the same policies you use for writing
 commit messages:
 
 * keep the **Title** below 50 characters (well, you don't need to count, but do
@@ -432,12 +434,13 @@ commit messages:
 
 {% callout "Automatic Pull Request title and description" %}
 
-If your Pull Request has only one commit, the **Title** and **Description**
-fields will be automatically filled for you.
+If your Pull Request has only one commit, the **Title** is automatically filled
+with the message of that commit (and the **Description** with the rest of its
+message, if it has one).
 
 {% endcallout %}
 
-![Title and description](fig/gitlab-pr-title.png)
+![The merge request form, with the title Add user info for YOUR_CERN_USERNAME filled in from the commit message, a Mark as draft checkbox and an empty Description box.](fig/gitlab-pr-title.png)
 
 When you are ready to proceed, click on the **Create merge request** button.
 
@@ -475,7 +478,7 @@ on the example repository can be found at:
 
 This is how a comment appears, and how you can reply to it:
 
-![Discussion](fig/gitlab-pr-discussion.png)
+![The Overview tab of a merge request, with a comment saying Could you add your affiliation too?, a box to write a reply, and the Comment and Close merge request buttons.](fig/gitlab-pr-discussion.png)
 
 When you are ready just click on the **Comment** button.
 
@@ -498,7 +501,7 @@ $ git add YOUR_CERN_USERNAME.txt
 $ git commit -m 'Add information certification'
 ```
 ```
-[add-vlad d09c134] Add information certification
+[add-vlad 95cc60a] Add information certification
  1 file changed, 1 insertion(+)
 ```
 
@@ -520,7 +523,7 @@ remote: View merge request for add-vlad:
 remote:   https://gitlab.cern.ch/starter-kit-scratch/starter-kit-example/-/merge_requests/1
 remote:
 To ssh://gitlab.cern.ch:7999/vlad/starter-kit-example.git
-   256c9b6..d09c134  add-vlad -> add-vlad
+   3914519..95cc60a  add-vlad -> add-vlad
 ```
 
 Voilà, it's done: you have just added more commits to your Merge Request! Let's
@@ -529,7 +532,7 @@ and click on the **Commits** tab, here is a direct link for the example:
 
 > https://gitlab.cern.ch/starter-kit-scratch/starter-kit-example/-/merge_requests/1/commits
 
-![Commits](fig/gitlab-pr-commits.png)
+![The Commits tab of a merge request, listing the two commits Add information certification and Add user info.](fig/gitlab-pr-commits.png)
 
 {% callout "How come has this worked?" %}
 
@@ -548,17 +551,13 @@ go.
 
 If you or the maintainers of the project are not happy with a Pull Request it
 can be retired by clicking on the **Close merge request** button on top
-of the page:
-
-![Close](fig/gitlab-pr-close.png)
+of the page.
 
 
 ## Accepting a Pull Request
 
 When a Merge Request looks good, the repository owners will click on the
-**Merge** button:
-
-![Merge](fig/gitlab-pr-merge.png)
+**Merge** button.
 
 Your code is then finally included upstream, in the `master` branch of the
 original repository. To continue working, bring your local `master` up to date
