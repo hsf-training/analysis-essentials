@@ -15,6 +15,16 @@ handy when working on larger projects. We will also see how this approach turns
 out to be useful even when working on small projects with only three or four
 contributors.
 
+{% callout "master or main?" %}
+
+The example repository used in this lesson,
+`starter-kit-scratch/starter-kit-example`, still calls its default branch
+`master`, so that is the name you will see in the commands below. Your own
+repositories will use `main` if you followed the [setup lesson](02-setup.md).
+Everything works the same way whatever the branch is called.
+
+{% endcallout %}
+
 The most naive approach to Git collaboration is what we have [previously
 seen](09-share.md):
 
@@ -173,18 +183,18 @@ example) and you have created it explicitly with `git remote add`.
 
 ## Sync your local repository with remote changes
 
-Before starting any new piece of work, make sure your local `main` branch is
+Before starting any new piece of work, make sure your local `master` branch is
 up to date with the original (`origin`) repository. If you don't have any
 pending local change, you can do:
 
 ```bash
-$ git switch main
+$ git switch master
 $ git pull
 ```
 
-Since your `main` branch "tracks" the `main` branch of `origin` (this was set up
+Since your `master` branch "tracks" the `master` branch of `origin` (this was set up
 automatically when you cloned), `git pull` without any arguments does the right
-thing. It is equivalent to `git pull origin main`.
+thing. It is equivalent to `git pull origin master`.
 
 {% discussion "Syncing using the nuclear option" %}
 
@@ -195,7 +205,7 @@ working directory by **ignoring any local modification and destroying it**:
 
 ```bash
 $ git fetch --all  # make local git aware of what changed remotely
-$ git reset --hard origin/main  # lose any local modification
+$ git reset --hard origin/master  # lose any local modification
 $ git clean -fxd  # get rid of any extra files not under version control
 ```
 
@@ -218,7 +228,7 @@ $ git switch -c add-YOUR_CERN_USERNAME
 Switched to a new branch 'add-YOUR_CERN_USERNAME'
 ```
 
-Working on a branch rather than directly on `main` means that your `main` always
+Working on a branch rather than directly on `master` means that your `master` always
 stays identical to the original repository, so it is easy to keep up to date,
 and that you can work on several Merge Requests at the same time, one per
 branch.
@@ -370,12 +380,12 @@ This is the output (most recent commits are on top):
 
 ```
 * 256c9b6 (HEAD -> add-vlad, vlad/add-vlad) Add user info for vlad
-* 764051d (origin/main, origin/HEAD, main) Add initial README
+* 764051d (origin/master, origin/HEAD, master) Add initial README
 ```
 
 So you will see that:
 
-* the original repository (`origin/main`) and your local `main` do not contain
+* the original repository (`origin/master`) and your local `master` do not contain
   your new commit yet;
 * your local branch (`add-vlad`) and the same branch on your fork
   (`vlad/add-vlad`) are in sync and contain the commit you've just
@@ -401,7 +411,7 @@ and click **New merge request**:
 ![New merge request](fig/gitlab-pr-newmergerequest.png)
 
 On the next screen, select your branch `add-YOUR_CERN_USERNAME` as the **Source
-branch**, and `starter-kit-scratch/starter-kit-example` with its `main` branch
+branch**, and `starter-kit-scratch/starter-kit-example` with its `master` branch
 as the **Target branch**:
 
 ![Select branch](fig/gitlab-pr-selectbranch.png)
@@ -550,29 +560,29 @@ When a Merge Request looks good, the repository owners will click on the
 
 ![Merge](fig/gitlab-pr-merge.png)
 
-Your code is then finally included upstream, in the `main` branch of the
-original repository. To continue working, bring your local `main` up to date
+Your code is then finally included upstream, in the `master` branch of the
+original repository. To continue working, bring your local `master` up to date
 and delete the branch you no longer need:
 
 ```bash
-$ git switch main
+$ git switch master
 $ git pull
 $ git branch -d add-YOUR_CERN_USERNAME
 ```
 
-For your next contribution, start again from an up-to-date `main` with a new
+For your next contribution, start again from an up-to-date `master` with a new
 branch, as [explained earlier](#sync-your-local-repository-with-remote-changes).
 
 {% discussion "Do I need to update my fork?" %}
 
 Not really. Your fork is only a place to push your branches to, so that you
 can open Merge Requests from them. As long as you create each new branch from
-an up-to-date local `main` (which you get with `git pull` from `origin`), your
+an up-to-date local `master` (which you get with `git pull` from `origin`), your
 work starts from the latest version of the original project, and it does not
-matter that the `main` branch on your fork is out of date.
+matter that the `master` branch on your fork is out of date.
 
-If you would like your fork's `main` to be up to date anyway, you can push your
-updated local `main` to it with `git push YOUR_CERN_USERNAME main`.
+If you would like your fork's `master` to be up to date anyway, you can push your
+updated local `master` to it with `git push YOUR_CERN_USERNAME master`.
 
 {% enddiscussion %}
 
