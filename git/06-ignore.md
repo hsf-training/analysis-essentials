@@ -235,10 +235,12 @@ $ git lfs track "*.root"
 $ git add .gitattributes
 ```
 
-After this, `*.root` files are added and committed as usual. Most hosting
-platforms, including GitLab and GitHub, support Git LFS, usually with a storage
-quota. Everyone who clones the repository needs Git LFS installed to get the
-actual files.
+Before adding these files, remove any matching patterns (such as `*.root`)
+from `.gitignore`, or add exceptions for the files you want to track with LFS.
+Git LFS does not override Git's ignore rules. You can then add and commit the
+files as usual. Most hosting platforms, including GitLab and GitHub, support
+Git LFS, usually with a storage quota. Everyone who clones the repository needs
+Git LFS installed to get the actual files.
 
 {% enddiscussion %}
 
