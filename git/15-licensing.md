@@ -36,9 +36,11 @@ Most open licences fall into a few families:
 * **Permissive licences**, such as [MIT](https://choosealicense.com/licenses/mit/),
   [BSD](https://choosealicense.com/licenses/bsd-3-clause/) and
   [Apache 2.0](https://choosealicense.com/licenses/apache-2.0/), let anyone
-  reuse the code for any purpose, including in closed-source software, as long
-  as they keep the copyright notice. Apache 2.0 also explicitly deals with
-  patent rights.
+  reuse the code for any purpose, including in closed-source software. You do
+  not have to share your own source code, but you must keep the copyright
+  notice and the licence text (and any other notices the licence requires) when
+  you redistribute the code. Apache 2.0 also explicitly deals with patent
+  rights.
 * **Copyleft licences**, such as the
   [GPL](https://choosealicense.com/licenses/gpl-3.0/), require that anyone who
   distributes software built on your code makes their own source code available
@@ -66,7 +68,7 @@ In short:
    * - Permissive
      - MIT, BSD, Apache 2.0
      - Yes
-     - No, only the copyright notice must be kept
+     - No source disclosure is required, but the licence text and notices must be kept
      - code
    * - Copyleft
      - GPL; LGPL for libraries
