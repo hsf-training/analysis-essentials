@@ -171,12 +171,14 @@ dedicated merge tool, if you have one configured.
 Git can also show a little more context in the markers: with
 
 ```bash
-$ git config --global merge.conflictStyle zdiff3
+$ git config --global merge.conflictStyle diff3
 ```
 
 each conflict additionally shows the original version of the lines, before
 either side changed them, which often makes it easier to understand what each
-side intended.
+side intended. If you have Git 2.35 or newer (check with `git --version`), you
+can use the tidier `zdiff3` instead of `diff3`; older versions do not
+recognise it and may refuse to merge while it is set.
 
 {% enddiscussion %}
 
