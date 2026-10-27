@@ -10,10 +10,7 @@
 ## Documentation and environments
 
 You can find full documentation for Snakemake
-[here](https://snakemake.readthedocs.io/en/stable/index.html);
-you can also ask any questions you have on the
-[~reproducible](https://mattermost.web.cern.ch/lhcb/channels/reproducible)
-channel on mattermost.
+[here](https://snakemake.readthedocs.io/en/stable/index.html).
 Web searches and [Stack Overflow](https://stackoverflow.com/questions/tagged/snakemake)
 are also your friends.
 
@@ -46,6 +43,10 @@ which will run the `foo` command in the environment and then exit.
 If you want, you can include your `.bashrc` file in the created environment
 by running `lb-conda default bash -c 'bash --rcfile ~/.bashrc'`.
 Be careful if you do this--it can lead to conflicts in the environment.
+
+You can also ask any questions you have on LHCb's
+[~reproducible](https://mattermost.web.cern.ch/lhcb/channels/reproducible)
+channel on mattermost.
 
 {% endcallout %}
 
