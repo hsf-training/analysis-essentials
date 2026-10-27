@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>7: Demonstration of distribution reweighting &mdash; Analysis essentials  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -17,13 +17,13 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
       <script src="../_static/panels.js?v=0f4bdeea"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -59,8 +59,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
@@ -72,10 +72,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
@@ -96,6 +92,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
@@ -104,10 +104,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
@@ -180,6 +176,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Decorators">Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#&#64;classmethod">&#64;classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#&#64;staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#&#64;property">&#64;property</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Dunder">Dunder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#len">len</a></li>
 <li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#str">str</a></li>
@@ -188,6 +190,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Naming-conventions">Naming conventions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
 </ul>
 </li>
@@ -516,16 +519,16 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hSPD&#39;</span><span class="p">,</span> <span class="s1">&#39;pt_b&#39;</span><span class="p">,</span> <span class="s1">&#39;pt_phi&#39;</span><span class="p">,</span> <span class="s1">&#39;vchi2_b&#39;</span><span class="p">,</span> <span class="s1">&#39;mu_pt_sum&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'hSPD'</span><span class="p">,</span> <span class="s1">'pt_b'</span><span class="p">,</span> <span class="s1">'pt_phi'</span><span class="p">,</span> <span class="s1">'vchi2_b'</span><span class="p">,</span> <span class="s1">'mu_pt_sum'</span><span class="p">]</span>
 
-<span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://starterkit.web.cern.ch/starterkit/data/advanced-python-2019/MC_distribution.root&#39;</span><span class="p">,</span>
+<span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'https://starterkit.web.cern.ch/starterkit/data/advanced-python-2019/MC_distribution.root'</span><span class="p">,</span>
                             <span class="p">)</span> <span class="k">as</span> <span class="n">original_file</span><span class="p">:</span>
-    <span class="n">original_tree</span> <span class="o">=</span> <span class="n">original_file</span><span class="p">[</span><span class="s1">&#39;tree&#39;</span><span class="p">]</span>
-    <span class="n">original</span> <span class="o">=</span> <span class="n">original_tree</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">&#39;pd&#39;</span><span class="p">)</span>
-<span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://starterkit.web.cern.ch/starterkit/data/advanced-python-2019/RD_distribution.root&#39;</span><span class="p">,</span>
+    <span class="n">original_tree</span> <span class="o">=</span> <span class="n">original_file</span><span class="p">[</span><span class="s1">'tree'</span><span class="p">]</span>
+    <span class="n">original</span> <span class="o">=</span> <span class="n">original_tree</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">'pd'</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'https://starterkit.web.cern.ch/starterkit/data/advanced-python-2019/RD_distribution.root'</span><span class="p">,</span>
                           <span class="p">)</span> <span class="k">as</span> <span class="n">target_file</span><span class="p">:</span>
-    <span class="n">target_tree</span> <span class="o">=</span> <span class="n">target_file</span><span class="p">[</span><span class="s1">&#39;tree&#39;</span><span class="p">]</span>
-    <span class="n">target</span> <span class="o">=</span> <span class="n">target_tree</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">&#39;pd&#39;</span><span class="p">)</span>
+    <span class="n">target_tree</span> <span class="o">=</span> <span class="n">target_file</span><span class="p">[</span><span class="s1">'tree'</span><span class="p">]</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="n">target_tree</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">'pd'</span><span class="p">)</span>
 <span class="n">original_weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">original</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -564,7 +567,7 @@
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">hep_ml.metrics_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">ks_2samp_weighted</span>
 
-<span class="n">hist_settings</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;bins&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;density&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">}</span>
+<span class="n">hist_settings</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'bins'</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'density'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">'alpha'</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">}</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">draw_distributions</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">new_original_weights</span><span class="p">):</span>
@@ -575,7 +578,7 @@
         <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">original</span><span class="p">[</span><span class="n">column</span><span class="p">],</span> <span class="n">weights</span><span class="o">=</span><span class="n">new_original_weights</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="o">**</span><span class="n">hist_settings</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="n">column</span><span class="p">],</span> <span class="nb">range</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="o">**</span><span class="n">hist_settings</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">column</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;KS over &#39;</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="s1">&#39; = &#39;</span><span class="p">,</span> <span class="n">ks_2samp_weighted</span><span class="p">(</span><span class="n">original</span><span class="p">[</span><span class="n">column</span><span class="p">],</span> <span class="n">target</span><span class="p">[</span><span class="n">column</span><span class="p">],</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'KS over '</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="s1">' = '</span><span class="p">,</span> <span class="n">ks_2samp_weighted</span><span class="p">(</span><span class="n">original</span><span class="p">[</span><span class="n">column</span><span class="p">],</span> <span class="n">target</span><span class="p">[</span><span class="n">column</span><span class="p">],</span>
                                          <span class="n">weights1</span><span class="o">=</span><span class="n">new_original_weights</span><span class="p">,</span> <span class="n">weights2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">target</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)))</span>
 </pre></div>
 </div>
@@ -645,11 +648,11 @@ KS over  mu_pt_sum  =  0.21639364439970188
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.5260418805970046
-KS over  pt_b  =  0.2190009054713981
-KS over  pt_phi  =  0.4005532238807191
-KS over  vchi2_b  =  0.40391358208323225
-KS over  mu_pt_sum  =  0.2190009054713981
+KS over  hSPD  =  0.519648169154219
+KS over  pt_b  =  0.21693853731217377
+KS over  pt_phi  =  0.4013625373135543
+KS over  vchi2_b  =  0.4040158905412468
+KS over  mu_pt_sum  =  0.21693853731217377
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -675,11 +678,11 @@ KS over  mu_pt_sum  =  0.2190009054713981
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.5064103074053462
-KS over  pt_b  =  0.21115031038953475
-KS over  pt_phi  =  0.4069045838461766
-KS over  vchi2_b  =  0.40872052863349506
-KS over  mu_pt_sum  =  0.21115031038953475
+KS over  hSPD  =  0.5231759298638414
+KS over  pt_b  =  0.21581468420039124
+KS over  pt_phi  =  0.40451232493925526
+KS over  vchi2_b  =  0.41127702033285574
+KS over  mu_pt_sum  =  0.21581468420039124
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -720,11 +723,11 @@ KS over  mu_pt_sum  =  0.21115031038953475
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.40220194349142135
-KS over  pt_b  =  0.11436596116021447
-KS over  pt_phi  =  0.2858828314017112
-KS over  vchi2_b  =  0.34873746771714065
-KS over  mu_pt_sum  =  0.11436596116021447
+KS over  hSPD  =  0.41782106691883847
+KS over  pt_b  =  0.12133514310358995
+KS over  pt_phi  =  0.28201798813344525
+KS over  vchi2_b  =  0.3528325769838495
+KS over  mu_pt_sum  =  0.12133514310358995
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -745,7 +748,7 @@ KS over  mu_pt_sum  =  0.11436596116021447
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reweighter</span> <span class="o">=</span> <span class="n">reweight</span><span class="o">.</span><span class="n">GBReweighter</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">min_samples_leaf</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-                                   <span class="n">gb_args</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;subsample&#39;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">})</span>
+                                   <span class="n">gb_args</span><span class="o">=</span><span class="p">{</span><span class="s1">'subsample'</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">})</span>
 <span class="n">reweighter</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">original_train</span><span class="p">,</span> <span class="n">target_train</span><span class="p">)</span>
 
 <span class="n">gb_weights_test</span> <span class="o">=</span> <span class="n">reweighter</span><span class="o">.</span><span class="n">predict_weights</span><span class="p">(</span><span class="n">original_test</span><span class="p">)</span>
@@ -759,11 +762,11 @@ KS over  mu_pt_sum  =  0.11436596116021447
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.033164189316626125
-KS over  pt_b  =  0.02903464575744763
-KS over  pt_phi  =  0.029009852859612772
-KS over  vchi2_b  =  0.05908893529007331
-KS over  mu_pt_sum  =  0.02903464575744763
+KS over  hSPD  =  0.04076897739829066
+KS over  pt_b  =  0.053866182648563576
+KS over  pt_phi  =  0.01990144875993305
+KS over  vchi2_b  =  0.03235359190408266
+KS over  mu_pt_sum  =  0.053866182648563576
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -781,14 +784,14 @@ KS over  mu_pt_sum  =  0.02903464575744763
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">check_ks_of_expression</span><span class="p">(</span><span class="n">expression</span><span class="p">):</span>
-    <span class="n">col_original</span> <span class="o">=</span> <span class="n">original_test</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">expression</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;python&#39;</span><span class="p">)</span>
-    <span class="n">col_target</span> <span class="o">=</span> <span class="n">target_test</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">expression</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;python&#39;</span><span class="p">)</span>
-    <span class="n">w_target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">col_target</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No reweight   KS:&#39;</span><span class="p">,</span> <span class="n">ks_2samp_weighted</span><span class="p">(</span><span class="n">col_original</span><span class="p">,</span> <span class="n">col_target</span><span class="p">,</span>
+    <span class="n">col_original</span> <span class="o">=</span> <span class="n">original_test</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">expression</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">'python'</span><span class="p">)</span>
+    <span class="n">col_target</span> <span class="o">=</span> <span class="n">target_test</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">expression</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">'python'</span><span class="p">)</span>
+    <span class="n">w_target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">col_target</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'float'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'No reweight   KS:'</span><span class="p">,</span> <span class="n">ks_2samp_weighted</span><span class="p">(</span><span class="n">col_original</span><span class="p">,</span> <span class="n">col_target</span><span class="p">,</span>
                                                  <span class="n">weights1</span><span class="o">=</span><span class="n">original_weights_test</span><span class="p">,</span> <span class="n">weights2</span><span class="o">=</span><span class="n">w_target</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bins reweight KS:&#39;</span><span class="p">,</span> <span class="n">ks_2samp_weighted</span><span class="p">(</span><span class="n">col_original</span><span class="p">,</span> <span class="n">col_target</span><span class="p">,</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Bins reweight KS:'</span><span class="p">,</span> <span class="n">ks_2samp_weighted</span><span class="p">(</span><span class="n">col_original</span><span class="p">,</span> <span class="n">col_target</span><span class="p">,</span>
                                                  <span class="n">weights1</span><span class="o">=</span><span class="n">bins_weights_test</span><span class="p">,</span> <span class="n">weights2</span><span class="o">=</span><span class="n">w_target</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GB Reweight   KS:&#39;</span><span class="p">,</span> <span class="n">ks_2samp_weighted</span><span class="p">(</span><span class="n">col_original</span><span class="p">,</span> <span class="n">col_target</span><span class="p">,</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'GB Reweight   KS:'</span><span class="p">,</span> <span class="n">ks_2samp_weighted</span><span class="p">(</span><span class="n">col_original</span><span class="p">,</span> <span class="n">col_target</span><span class="p">,</span>
                                                  <span class="n">weights1</span><span class="o">=</span><span class="n">gb_weights_test</span><span class="p">,</span> <span class="n">weights2</span><span class="o">=</span><span class="n">w_target</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -797,7 +800,7 @@ KS over  mu_pt_sum  =  0.02903464575744763
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_ks_of_expression</span><span class="p">(</span><span class="s1">&#39;hSPD&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_ks_of_expression</span><span class="p">(</span><span class="s1">'hSPD'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -806,16 +809,16 @@ KS over  mu_pt_sum  =  0.02903464575744763
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.5064103074053462
-Bins reweight KS: 0.40220194349142135
-GB Reweight   KS: 0.033164189316626125
+No reweight   KS: 0.5231759298638414
+Bins reweight KS: 0.41782106691883847
+GB Reweight   KS: 0.04076897739829066
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_ks_of_expression</span><span class="p">(</span><span class="s1">&#39;hSPD * pt_phi&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_ks_of_expression</span><span class="p">(</span><span class="s1">'hSPD * pt_phi'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -824,16 +827,16 @@ GB Reweight   KS: 0.033164189316626125
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.08513205260229018
-Bins reweight KS: 0.11115639969557542
-GB Reweight   KS: 0.021195130553905428
+No reweight   KS: 0.09123478865903989
+Bins reweight KS: 0.1169146876684177
+GB Reweight   KS: 0.022890658217960103
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_ks_of_expression</span><span class="p">(</span><span class="s1">&#39;hSPD * pt_phi * vchi2_b&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_ks_of_expression</span><span class="p">(</span><span class="s1">'hSPD * pt_phi * vchi2_b'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -842,16 +845,16 @@ GB Reweight   KS: 0.021195130553905428
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.36619022458566386
-Bins reweight KS: 0.3333271483938009
-GB Reweight   KS: 0.06834167572056049
+No reweight   KS: 0.3731075191202642
+Bins reweight KS: 0.3403804518513477
+GB Reweight   KS: 0.03671143503514668
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_ks_of_expression</span><span class="p">(</span><span class="s1">&#39;pt_b * pt_phi / hSPD &#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_ks_of_expression</span><span class="p">(</span><span class="s1">'pt_b * pt_phi / hSPD '</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -860,16 +863,16 @@ GB Reweight   KS: 0.06834167572056049
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.46917148554361465
-Bins reweight KS: 0.3742478736893725
-GB Reweight   KS: 0.04486889975310382
+No reweight   KS: 0.47545116993087544
+Bins reweight KS: 0.38325292209560147
+GB Reweight   KS: 0.06790232813381719
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_ks_of_expression</span><span class="p">(</span><span class="s1">&#39;hSPD * pt_b * vchi2_b / pt_phi&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_ks_of_expression</span><span class="p">(</span><span class="s1">'hSPD * pt_b * vchi2_b / pt_phi'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -878,9 +881,9 @@ GB Reweight   KS: 0.04486889975310382
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.498435370640539
-Bins reweight KS: 0.4063515556745043
-GB Reweight   KS: 0.06407035437469383
+No reweight   KS: 0.49481419250216174
+Bins reweight KS: 0.40975817160767086
+GB Reweight   KS: 0.02479001082840826
 </pre></div></div>
 </div>
 </section>
@@ -902,9 +905,9 @@ GB Reweight   KS: 0.06407035437469383
 <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">original_test</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">target_test</span><span class="p">))</span>
 
 <span class="n">weights</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">weights</span><span class="p">[</span><span class="s1">&#39;original&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">original_weights_test</span>
-<span class="n">weights</span><span class="p">[</span><span class="s1">&#39;bins&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bins_weights_test</span>
-<span class="n">weights</span><span class="p">[</span><span class="s1">&#39;gb_weights&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gb_weights_test</span>
+<span class="n">weights</span><span class="p">[</span><span class="s1">'original'</span><span class="p">]</span> <span class="o">=</span> <span class="n">original_weights_test</span>
+<span class="n">weights</span><span class="p">[</span><span class="s1">'bins'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bins_weights_test</span>
+<span class="n">weights</span><span class="p">[</span><span class="s1">'gb_weights'</span><span class="p">]</span> <span class="o">=</span> <span class="n">gb_weights_test</span>
 
 
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">new_weights</span> <span class="ow">in</span> <span class="n">weights</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -921,9 +924,9 @@ GB Reweight   KS: 0.06407035437469383
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-original 0.9254028623600775
-bins 0.8986668467440414
-gb_weights 0.5678748722490807
+original 0.926316416299169
+bins 0.9047087750960606
+gb_weights 0.5729050909333633
 </pre></div></div>
 </div>
 <section id="Great!">
@@ -941,9 +944,9 @@ gb_weights 0.5678748722490807
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="s1">&#39;gb_weights&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;predicted weights&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="s1">'gb_weights'</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'predicted weights'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -967,7 +970,7 @@ Text(0.5, 1.0, &#39;predicted weights&#39;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="s1">&#39;gb_weights&#39;</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="s1">&#39;gb_weights&#39;</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="s1">'gb_weights'</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="s1">'gb_weights'</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -977,7 +980,7 @@ Text(0.5, 1.0, &#39;predicted weights&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(np.float64(682.0773551690282), np.float64(68408.55687929984))
+(np.float64(507.0676246443536), np.float64(69812.58103933412))
 </pre></div></div>
 </div>
 <p>With such a high weight for a single event, this does not look desireable. And be aware of ad-hoc solutions: just clipping or removing weights is completely <strong>wrong</strong> as this would disturb the distribution completely.</p>
@@ -1001,7 +1004,7 @@ Text(0.5, 1.0, &#39;predicted weights&#39;)
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define base reweighter</span>
 <span class="n">reweighter_base</span> <span class="o">=</span> <span class="n">reweight</span><span class="o">.</span><span class="n">GBReweighter</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
                                         <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">min_samples_leaf</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-                                        <span class="n">gb_args</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;subsample&#39;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">})</span>
+                                        <span class="n">gb_args</span><span class="o">=</span><span class="p">{</span><span class="s1">'subsample'</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">})</span>
 <span class="n">reweighter</span> <span class="o">=</span> <span class="n">reweight</span><span class="o">.</span><span class="n">FoldingReweighter</span><span class="p">(</span><span class="n">reweighter_base</span><span class="p">,</span> <span class="n">n_folds</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="c1"># it is not needed divide data into train/test parts; reweighter can be train on the whole samples</span>
 <span class="n">reweighter</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
@@ -1021,11 +1024,11 @@ Text(0.5, 1.0, &#39;predicted weights&#39;)
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 KFold prediction using folds column
-KS over  hSPD  =  0.3064090606205577
-KS over  pt_b  =  0.18039052436075925
-KS over  pt_phi  =  0.30777785918417755
-KS over  vchi2_b  =  0.29748251583601615
-KS over  mu_pt_sum  =  0.18039052436075925
+KS over  hSPD  =  0.30729024209065303
+KS over  pt_b  =  0.18039075619721323
+KS over  pt_phi  =  0.3077499808731571
+KS over  vchi2_b  =  0.2981115029917687
+KS over  mu_pt_sum  =  0.18039075619721323
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1046,8 +1049,8 @@ KS over  mu_pt_sum  =  0.18039052436075925
 <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">original</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">target</span><span class="p">))</span>
 
 <span class="n">weights</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">weights</span><span class="p">[</span><span class="s1">&#39;original&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">original_weights</span>
-<span class="n">weights</span><span class="p">[</span><span class="s1">&#39;2-folding&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">folding_weights</span>
+<span class="n">weights</span><span class="p">[</span><span class="s1">'original'</span><span class="p">]</span> <span class="o">=</span> <span class="n">original_weights</span>
+<span class="n">weights</span><span class="p">[</span><span class="s1">'2-folding'</span><span class="p">]</span> <span class="o">=</span> <span class="n">folding_weights</span>
 
 
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">new_weights</span> <span class="ow">in</span> <span class="n">weights</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -1064,17 +1067,17 @@ KS over  mu_pt_sum  =  0.18039052436075925
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-original 0.9351539768528147
-2-folding 0.8271247564689598
+original 0.9358950292314191
+2-folding 0.8268135701382777
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="s1">&#39;2-folding&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;predicted weights&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="s1">'2-folding'</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'predicted weights'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

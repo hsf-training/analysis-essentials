@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2: First look at data &mdash; Analysis essentials  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -17,13 +17,13 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
       <script src="../_static/panels.js?v=0f4bdeea"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -59,8 +59,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
@@ -72,10 +72,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
@@ -96,6 +92,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
@@ -104,10 +104,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
@@ -180,6 +176,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Decorators">Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#&#64;classmethod">&#64;classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#&#64;staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#&#64;property">&#64;property</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Dunder">Dunder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#len">len</a></li>
 <li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#str">str</a></li>
@@ -188,6 +190,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Naming-conventions">Naming conventions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
 </ul>
 </li>
@@ -535,11 +538,11 @@ matplotlib (but more cumbersome). Another example is uproot that we will use to 
 </ul>
 <p>First let’s load the data using <code class="docutils literal notranslate"><span class="pre">uproot</span></code>.</p>
 <p>Often it is convenient to access data stored on the <em>grid</em> at CERN, so you don’t have to keep it locally. This can be done using the <em>XRootD</em> protocol:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_file</span> <span class="o">=</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;root://eosuser.cern.ch//eos/user/l/lhcbsk/advanced-python/data/real_data.root&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_file</span> <span class="o">=</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'root://eosuser.cern.ch//eos/user/l/lhcbsk/advanced-python/data/real_data.root'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or even better</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;root://eosuser.cern.ch//eos/user/l/lhcbsk/advanced-python/data/real_data.root&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">my_file</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'root://eosuser.cern.ch//eos/user/l/lhcbsk/advanced-python/data/real_data.root'</span><span class="p">)</span> <span class="k">as</span> <span class="n">my_file</span><span class="p">:</span>
    <span class="o">...</span>  <span class="c1"># do something here with my_file</span>
 </pre></div>
 </div>
@@ -554,7 +557,7 @@ matplotlib (but more cumbersome). Another example is uproot that we will use to 
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_file</span> <span class="o">=</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
-    <span class="s2">&quot;https://cern.ch/starterkit/data/advanced-python-2018/real_data.root&quot;</span>
+    <span class="s2">"https://cern.ch/starterkit/data/advanced-python-2018/real_data.root"</span>
 <span class="p">)</span>
 
 <span class="n">my_file</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -575,9 +578,9 @@ matplotlib (but more cumbersome). Another example is uproot that we will use to 
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span> <span class="o">=</span> <span class="n">my_file</span><span class="p">[</span><span class="s2">&quot;DecayTree&quot;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span> <span class="o">=</span> <span class="n">my_file</span><span class="p">[</span><span class="s2">"DecayTree"</span><span class="p">]</span>
 <span class="c1"># Get a numpy array containing the J/Ψ mass</span>
-<span class="n">tree</span><span class="p">[</span><span class="s2">&quot;Jpsi_M&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s2">&quot;np&quot;</span><span class="p">)</span>
+<span class="n">tree</span><span class="p">[</span><span class="s2">"Jpsi_M"</span><span class="p">]</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s2">"np"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -588,7 +591,7 @@ matplotlib (but more cumbersome). Another example is uproot that we will use to 
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 array([3.101106  , 3.1071159 , 3.08600438, ..., 3.00478927, 2.77311478,
-       2.7698744 ])
+       2.7698744 ], shape=(168385,))
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -596,8 +599,8 @@ array([3.101106  , 3.1071159 , 3.08600438, ..., 3.00478927, 2.77311478,
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data as a pandas DataFrame</span>
-<span class="n">data_df</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s2">&quot;pd&quot;</span><span class="p">)</span>
-<span class="n">my_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># usually, it&#39;s better to open the file with a &quot;with&quot; statement -&gt; closes automatically if outside block</span>
+<span class="n">data_df</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s2">"pd"</span><span class="p">)</span>
+<span class="n">my_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># usually, it's better to open the file with a "with" statement -&gt; closes automatically if outside block</span>
 
 <span class="c1"># Show the first 5 lines of the DataFrame</span>
 <span class="n">data_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -795,7 +798,7 @@ Index([&#39;Jpsi_PE&#39;, &#39;Jpsi_PX&#39;, &#39;Jpsi_PY&#39;, &#39;Jpsi_PZ&#39
        &#39;mum_M&#39;, &#39;mum_PE&#39;, &#39;mup_PT&#39;, &#39;mup_PX&#39;, &#39;mup_PY&#39;, &#39;mup_PZ&#39;, &#39;mup_IP&#39;,
        &#39;mup_eta&#39;, &#39;mup_M&#39;, &#39;mup_PE&#39;, &#39;nTracks&#39;, &#39;mum_ProbNNmu&#39;, &#39;mum_ProbNNpi&#39;,
        &#39;mup_ProbNNmu&#39;, &#39;mup_ProbNNpi&#39;],
-      dtype=&#39;object&#39;)
+      dtype=&#39;str&#39;)
 </pre></div></div>
 </div>
 <section id="6.-Plotting-a-simple-histogram">
@@ -805,8 +808,8 @@ Index([&#39;Jpsi_PE&#39;, &#39;Jpsi_PX&#39;, &#39;Jpsi_PY&#39;, &#39;Jpsi_PZ&#39
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start with a basic histogram</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s2">&quot;Jpsi_M&quot;</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Jpsi mass&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s2">"Jpsi_M"</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Jpsi mass"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -855,8 +858,8 @@ Text(0.5, 0, &#39;Jpsi mass&#39;)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plotting again</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s2">&quot;Jpsi_M&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Jpsi mass&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s2">"Jpsi_M"</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Jpsi mass"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -881,8 +884,8 @@ Text(1, 0, &#39;Jpsi mass&#39;)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># And similar with mplhep</span>
-<span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s2">&quot;Jpsi_M&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Jpsi mass&quot;</span><span class="p">)</span>
+<span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s2">"Jpsi_M"</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Jpsi mass"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -909,13 +912,13 @@ Text(1, 0, &#39;Jpsi mass&#39;)
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ... except that it can do a lot more!</span>
 
 <span class="c1"># we need to histogram only once!</span>
-<span class="n">h</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s2">&quot;Jpsi_M&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># TRY OUT: change the binning</span>
+<span class="n">h</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s2">"Jpsi_M"</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># TRY OUT: change the binning</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># error can also be array</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">half_binwidths</span> <span class="o">=</span> <span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
-<span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;errorbar&quot;</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xerr</span><span class="o">=</span><span class="n">half_binwidths</span><span class="p">)</span>
+<span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s2">"errorbar"</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xerr</span><span class="o">=</span><span class="n">half_binwidths</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -940,10 +943,10 @@ Text(1, 0, &#39;Jpsi mass&#39;)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_mass</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="n">h</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Jpsi_M&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">])</span>
+    <span class="n">h</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"Jpsi_M"</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">])</span>
     <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># feel free to adjust</span>
     <span class="c1"># You can also use LaTeX in the axis label</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$J/</span><span class="se">\\</span><span class="s2">psi$ mass [GeV]&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"$J/</span><span class="se">\\</span><span class="s2">psi$ mass [GeV]"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
 
@@ -967,10 +970,20 @@ Text(1, 0, &#39;Jpsi mass&#39;)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># When making the ROOT file we forgot to add some variables, no bother lets add them now!</span>
-<span class="n">data_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">&quot;Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">data_df</span><span class="o">.</span><span class="n">head</span><span class="p">()[</span><span class="s2">&quot;Jpsi_eta&quot;</span><span class="p">]</span>
+<span class="n">data_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">"Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)"</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data_df</span><span class="o">.</span><span class="n">head</span><span class="p">()[</span><span class="s2">"Jpsi_eta"</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/ipykernel_5105/1282284705.py:2: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  data_df.eval(&#34;Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)&#34;, inplace=True)
+</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
@@ -991,12 +1004,25 @@ Name: Jpsi_eta, dtype: float64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">&quot;mup_P = sqrt(mup_PX**2 + mup_PY**2 + mup_PZ**2)&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">data_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">&quot;mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">"mup_P = sqrt(mup_PX**2 + mup_PY**2 + mup_PZ**2)"</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">"mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)"</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="c1"># We can also get multiple columns at the same time</span>
-<span class="n">data_df</span><span class="o">.</span><span class="n">head</span><span class="p">()[[</span><span class="s2">&quot;mum_P&quot;</span><span class="p">,</span> <span class="s2">&quot;mup_P&quot;</span><span class="p">]]</span>
+<span class="n">data_df</span><span class="o">.</span><span class="n">head</span><span class="p">()[[</span><span class="s2">"mum_P"</span><span class="p">,</span> <span class="s2">"mup_P"</span><span class="p">]]</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/ipykernel_5105/4026871582.py:1: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  data_df.eval(&#34;mup_P = sqrt(mup_PX**2 + mup_PY**2 + mup_PZ**2)&#34;, inplace=True)
+/tmp/ipykernel_5105/4026871582.py:2: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  data_df.eval(&#34;mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#34;, inplace=True)
+</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -1067,7 +1093,7 @@ Name: Jpsi_eta, dtype: float64
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">)</span>
-<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Jpsi_PT &gt; 4&quot;</span><span class="p">)</span>
+<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"Jpsi_PT &gt; 4"</span><span class="p">)</span>
 <span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1084,11 +1110,11 @@ Name: Jpsi_eta, dtype: float64
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">)</span>
-<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Jpsi_PT &gt; 4&quot;</span><span class="p">)</span>
+<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"Jpsi_PT &gt; 4"</span><span class="p">)</span>
 <span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">)</span>
 <span class="c1"># Lets add some PID cuts as well</span>
 <span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
-    <span class="s2">&quot;(Jpsi_PT &gt; 4) &amp; ((mum_ProbNNmu &gt; 0.9) &amp; (mup_ProbNNmu &gt; 0.9))&quot;</span>
+    <span class="s2">"(Jpsi_PT &gt; 4) &amp; ((mum_ProbNNmu &gt; 0.9) &amp; (mup_ProbNNmu &gt; 0.9))"</span>
 <span class="p">)</span>
 <span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">)</span>
 </pre></div>
@@ -1107,21 +1133,21 @@ Name: Jpsi_eta, dtype: float64
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_mass</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="n">h</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Jpsi_M&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">])</span>
+    <span class="n">h</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"Jpsi_M"</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">])</span>
     <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># feel free to adjust</span>
     <span class="c1"># You can also use LaTeX in the axis label</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$J/</span><span class="se">\\</span><span class="s2">psi$ mass [GeV]&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"$J/</span><span class="se">\\</span><span class="s2">psi$ mass [GeV]"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
 
-<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;No cuts&quot;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Jpsi_PT &gt; 4&quot;</span><span class="p">)</span>
-<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$J/</span><span class="se">\\</span><span class="s2">psi$ p$_T$ only&quot;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"No cuts"</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"Jpsi_PT &gt; 4"</span><span class="p">)</span>
+<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"$J/</span><span class="se">\\</span><span class="s2">psi$ p$_T$ only"</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
-    <span class="s2">&quot;(Jpsi_PT &gt; 4) &amp; ((mum_ProbNNmu &gt; 0.9) &amp; (mup_ProbNNmu &gt; 0.9))&quot;</span>
+    <span class="s2">"(Jpsi_PT &gt; 4) &amp; ((mum_ProbNNmu &gt; 0.9) &amp; (mup_ProbNNmu &gt; 0.9))"</span>
 <span class="p">)</span>
-<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$J/</span><span class="se">\\</span><span class="s2">psi$ p$_T$ and muon PID&quot;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"$J/</span><span class="se">\\</span><span class="s2">psi$ p$_T$ and muon PID"</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"best"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1131,7 +1157,7 @@ Name: Jpsi_eta, dtype: float64
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f0bab9df9d0&gt;
+&lt;matplotlib.legend.Legend at 0x7fd562316cf0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1161,7 +1187,7 @@ Index([&#39;Jpsi_PE&#39;, &#39;Jpsi_PX&#39;, &#39;Jpsi_PY&#39;, &#39;Jpsi_PZ&#39
        &#39;mum_M&#39;, &#39;mum_PE&#39;, &#39;mup_PT&#39;, &#39;mup_PX&#39;, &#39;mup_PY&#39;, &#39;mup_PZ&#39;, &#39;mup_IP&#39;,
        &#39;mup_eta&#39;, &#39;mup_M&#39;, &#39;mup_PE&#39;, &#39;nTracks&#39;, &#39;mum_ProbNNmu&#39;, &#39;mum_ProbNNpi&#39;,
        &#39;mup_ProbNNmu&#39;, &#39;mup_ProbNNpi&#39;, &#39;Jpsi_eta&#39;, &#39;mup_P&#39;, &#39;mum_P&#39;],
-      dtype=&#39;object&#39;)
+      dtype=&#39;str&#39;)
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1170,15 +1196,15 @@ Index([&#39;Jpsi_PE&#39;, &#39;Jpsi_PX&#39;, &#39;Jpsi_PY&#39;, &#39;Jpsi_PZ&#39
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">python_lesson</span><span class="w"> </span><span class="kn">import</span> <span class="n">check_truth</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Originally the significance is&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Originally the significance is"</span><span class="p">)</span>
 <span class="n">check_truth</span><span class="p">(</span><span class="n">data_df</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Cutting on pT gives us&quot;</span><span class="p">)</span>
-<span class="n">check_truth</span><span class="p">(</span><span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Jpsi_PT &gt; 4&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Cutting on pT gives us"</span><span class="p">)</span>
+<span class="n">check_truth</span><span class="p">(</span><span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"Jpsi_PT &gt; 4"</span><span class="p">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Cutting on pT and ProbNNmu gives us&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Cutting on pT and ProbNNmu gives us"</span><span class="p">)</span>
 <span class="n">check_truth</span><span class="p">(</span>
-    <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;(Jpsi_PT &gt; 4) &amp; ((mum_ProbNNmu &gt; 0.9) &amp; (mup_ProbNNmu &gt; 0.9))&quot;</span><span class="p">)</span>
+    <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"(Jpsi_PT &gt; 4) &amp; ((mum_ProbNNmu &gt; 0.9) &amp; (mup_ProbNNmu &gt; 0.9))"</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1212,22 +1238,38 @@ Significance metric is 4.31
 <p>Before we just used the cuts that were told to you but how do we pick them?</p>
 <p>One way is to get a sample of simulated data, we have a file in <code class="docutils literal notranslate"><span class="pre">data/simulated_data.root</span></code>.</p>
 <p><strong>Exercise:</strong> Load it into a pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> called <code class="docutils literal notranslate"><span class="pre">mc_df</span></code>. Don’t forget to add the <code class="docutils literal notranslate"><span class="pre">Jpsi_eta</span></code>, <code class="docutils literal notranslate"><span class="pre">mup_P</span></code> and <code class="docutils literal notranslate"><span class="pre">mum_P</span></code> columns!</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
-    <span class="s2">&quot;https://starterkit.web.cern.ch/starterkit/data/advanced-python-2018/simulated_data.root&quot;</span>
+    <span class="s2">"https://starterkit.web.cern.ch/starterkit/data/advanced-python-2018/simulated_data.root"</span>
 <span class="p">)</span> <span class="k">as</span> <span class="n">mc_file</span><span class="p">:</span>
-    <span class="n">mc_df</span> <span class="o">=</span> <span class="n">mc_file</span><span class="p">[</span><span class="s2">&quot;DecayTree&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s2">&quot;pd&quot;</span><span class="p">)</span>
+    <span class="n">mc_df</span> <span class="o">=</span> <span class="n">mc_file</span><span class="p">[</span><span class="s2">"DecayTree"</span><span class="p">]</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s2">"pd"</span><span class="p">)</span>
 
-<span class="c1"># mc_file = uproot.open(&#39;https://starterkit.web.cern.ch/starterkit/data/advanced-python-2018/simulated_data.root&#39;)</span>
-<span class="c1"># mc_df = mc_file[&#39;DecayTree&#39;].arrays(library=&#39;pd&#39;)</span>
-<span class="n">mc_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">&quot;Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">mc_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">&quot;mup_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">mc_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">&quot;mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># mc_file = uproot.open('https://starterkit.web.cern.ch/starterkit/data/advanced-python-2018/simulated_data.root')</span>
+<span class="c1"># mc_df = mc_file['DecayTree'].arrays(library='pd')</span>
+<span class="n">mc_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">"Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)"</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mc_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">"mup_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)"</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mc_df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">"mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)"</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/ipykernel_5105/2351203036.py:8: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  mc_df.eval(&#34;Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)&#34;, inplace=True)
+/tmp/ipykernel_5105/2351203036.py:9: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  mc_df.eval(&#34;mup_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#34;, inplace=True)
+/tmp/ipykernel_5105/2351203036.py:10: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  mc_df.eval(&#34;mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#34;, inplace=True)
+</pre></div></div>
 </div>
 <p><strong>QUESTION:</strong> What can we to get a background sample?</p>
 <p>Sidebands, we know the peak is only present in <span class="math notranslate nohighlight">\(3.0~\text{GeV} &lt; M(J/\psi) &lt; 3.2~\text{GeV}\)</span>. If we select events outside the region we know it’s a pure background sample.</p>
@@ -1236,7 +1278,7 @@ Significance metric is 4.31
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bkg_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;~(3.0 &lt; Jpsi_M &lt; 3.2)&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bkg_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"~(3.0 &lt; Jpsi_M &lt; 3.2)"</span><span class="p">)</span>
 <span class="n">plot_mass</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1255,16 +1297,16 @@ Significance metric is 4.31
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="s2">&quot;Jpsi_PT&quot;</span>
-<span class="c1"># let&#39;s first create the histograms</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="s2">"Jpsi_PT"</span>
+<span class="c1"># let's first create the histograms</span>
 <span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
 <span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">)</span>  <span class="c1"># using the same bins here</span>
 <span class="c1"># then plot them</span>
-<span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">((</span><span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MC Signal&quot;</span><span class="p">)</span>
-<span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Data Bkg&quot;</span><span class="p">)</span>
+<span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">((</span><span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">"MC Signal"</span><span class="p">)</span>
+<span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Data Bkg"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"best"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1274,7 +1316,7 @@ Significance metric is 4.31
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f0bab4d8a90&gt;
+&lt;matplotlib.legend.Legend at 0x7fd562380da0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1291,11 +1333,11 @@ Significance metric is 4.31
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Those are hard to compare!</span>
 <span class="c1"># We can add the density keyword argument to normalise the distributions</span>
 
-<span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MC Signal&quot;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Data Bkg&quot;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"MC Signal"</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Data Bkg"</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"best"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1305,7 +1347,7 @@ Significance metric is 4.31
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f0bab469f90&gt;
+&lt;matplotlib.legend.Legend at 0x7fd5622a6ea0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1327,12 +1369,12 @@ Significance metric is 4.31
 
     <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
         <span class="p">(</span><span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span><span class="p">),</span>
-        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MC Signal&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">"MC Signal"</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Data Bkg&quot;</span><span class="p">)</span>
+    <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Data Bkg"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"best"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1360,7 +1402,7 @@ Significance metric is 4.31
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_3929/3447827755.py:2: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+/tmp/ipykernel_5105/3447827755.py:2: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
   plt.figure()  # creates a new figure
 </pre></div></div>
 </div>

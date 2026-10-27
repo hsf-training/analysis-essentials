@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>4: Extension on Classification &mdash; Analysis essentials  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -17,13 +17,13 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
       <script src="../_static/panels.js?v=0f4bdeea"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -59,8 +59,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
@@ -72,10 +72,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
@@ -96,6 +92,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
@@ -104,10 +104,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
@@ -180,6 +176,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Decorators">Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#&#64;classmethod">&#64;classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#&#64;staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#&#64;property">&#64;property</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Dunder">Dunder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#len">len</a></li>
 <li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#str">str</a></li>
@@ -188,6 +190,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Naming-conventions">Naming conventions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
 </ul>
 </li>
@@ -524,16 +527,16 @@
     <span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-    <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">((</span><span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MC Signal&#39;</span><span class="p">,</span> <span class="p">)</span>
-    <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data Bkg&#39;</span><span class="p">)</span>
+    <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">((</span><span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">'MC Signal'</span><span class="p">,</span> <span class="p">)</span>
+    <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Data Bkg'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">plot_significance</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">y_score</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
-    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">],</span> <span class="n">y_score</span><span class="p">)</span>
+    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">],</span> <span class="n">y_score</span><span class="p">)</span>
 
     <span class="n">n_sig</span> <span class="o">=</span> <span class="mi">1200</span>
     <span class="n">n_bkg</span> <span class="o">=</span> <span class="mi">23000</span>
@@ -542,31 +545,31 @@
     <span class="n">metric</span> <span class="o">=</span> <span class="n">S</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">S</span> <span class="o">+</span> <span class="n">B</span><span class="p">)</span>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thresholds</span><span class="p">,</span> <span class="n">metric</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;BDT cut value&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">frac</span><span class="si">{S}</span><span class="s1">{</span><span class="se">\\</span><span class="s1">sqrt{S+B}}$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'BDT cut value'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'$</span><span class="se">\\</span><span class="s1">frac</span><span class="si">{S}</span><span class="s1">{</span><span class="se">\\</span><span class="s1">sqrt{S+B}}$'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 
     <span class="n">optimal_cut</span> <span class="o">=</span> <span class="n">thresholds</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">metric</span><span class="p">)]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">optimal_cut</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">optimal_cut</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">plot_roc</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">y_score</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
-    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">],</span> <span class="n">y_score</span><span class="p">)</span>
+    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">],</span> <span class="n">y_score</span><span class="p">)</span>
     <span class="n">area</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'grey'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">label</span><span class="p">:</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s1"> (area = </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s1"> (area = </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)'</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;ROC curve (area = </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'ROC curve (area = </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'False Positive Rate'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'True Positive Rate'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'lower right'</span><span class="p">)</span>
     <span class="c1"># We can make the plot look nicer by forcing the grid to be square</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">'box'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -576,9 +579,9 @@
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Train the Gradient Booster</span>
 <span class="n">bdt_1</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>  <span class="c1"># less estimator is faster, for demonstration, but 100-300 is usually better</span>
-<span class="n">bdt_1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">])</span>
+<span class="n">bdt_1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">])</span>
 <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span><span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">,</span> <span class="n">data_df</span><span class="p">,</span> <span class="n">training_data</span><span class="p">]:</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt_1</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'BDT'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt_1</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -588,9 +591,9 @@
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Train the Adaptive Booster</span>
 <span class="n">bdt_2</span> <span class="o">=</span> <span class="n">AdaBoostClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>  <span class="c1"># less estimator is faster, for demonstration, but 100-300 is usually better</span>
-<span class="n">bdt_2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">])</span>
+<span class="n">bdt_2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">])</span>
 <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span><span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">,</span> <span class="n">data_df</span><span class="p">,</span> <span class="n">training_data</span><span class="p">]:</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;BDT_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt_2</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'BDT_2'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt_2</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -600,9 +603,9 @@
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Train XGBoost Classifier</span>
 <span class="n">xgboost_bdt</span> <span class="o">=</span> <span class="n">XGBClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>  <span class="c1"># less estimator is faster, for demonstration, but 100-300 is usually better</span>
-<span class="n">xgboost_bdt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">])</span>
+<span class="n">xgboost_bdt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">])</span>
 <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span><span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">,</span> <span class="n">data_df</span><span class="p">,</span> <span class="n">training_data</span><span class="p">]:</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;XGBoost_BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xgboost_bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'XGBoost_BDT'</span><span class="p">]</span> <span class="o">=</span> <span class="n">xgboost_bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -611,11 +614,11 @@
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;BDT&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">'BDT'</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;BDT_2&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">'BDT_2'</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;XGBoost_BDT&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">'XGBoost_BDT'</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">bdt</span> <span class="ow">in</span> <span class="p">[</span><span class="n">bdt_1</span><span class="p">,</span> <span class="n">bdt_2</span><span class="p">,</span> <span class="n">xgboost_bdt</span><span class="p">]:</span>
@@ -632,11 +635,11 @@
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4500/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_5639/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
   metric = S / np.sqrt(S + B)
-/tmp/ipykernel_4500/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_5639/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
   metric = S / np.sqrt(S + B)
-/tmp/ipykernel_4500/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_5639/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
   metric = S / np.sqrt(S + B)
 </pre></div></div>
 </div>
@@ -694,22 +697,22 @@ matters, not the absolute value.</p></li>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span><span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">,</span> <span class="n">data_df</span><span class="p">,</span> <span class="n">training_data</span><span class="p">]:</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;IPmin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">([</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mum_PT&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mup_PT&#39;</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'IPmin'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">([</span><span class="n">df</span><span class="p">[</span><span class="s1">'mum_PT'</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">'mup_PT'</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span><span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">,</span> <span class="n">data_df</span><span class="p">,</span> <span class="n">training_data</span><span class="p">]:</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;IPdiff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mum_PT&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mup_PT&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'IPdiff'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'mum_PT'</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">'mup_PT'</span><span class="p">])</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;mum_IP&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">'mum_IP'</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;mup_IP&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">'mup_IP'</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;IPmin&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">'IPmin'</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;IPdiff&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">'IPdiff'</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -749,39 +752,39 @@ matters, not the absolute value.</p></li>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bdtclass = GradientBoostingClassifier()</span>
 <span class="n">bdtclass</span> <span class="o">=</span> <span class="n">XGBClassifier</span>  <span class="c1"># we could also use this one</span>
 <span class="n">bdt_1</span> <span class="o">=</span> <span class="n">bdtclass</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>  <span class="c1"># less estimator is faster, for demonstration, but 100-300 is usually better</span>
-<span class="n">bdt_1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">])</span>
+<span class="n">bdt_1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">])</span>
 <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span><span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">,</span> <span class="n">data_df</span><span class="p">,</span> <span class="n">training_data</span><span class="p">]:</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt_1</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'BDT'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt_1</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
 
 <span class="n">bdt_2</span> <span class="o">=</span> <span class="n">bdtclass</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>  <span class="c1"># less estimator is faster, for demonstration, but 100-300 is usually better</span>
-<span class="n">training_columns_2</span> <span class="o">=</span> <span class="n">training_columns</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;IPmin&#39;</span><span class="p">]</span>
-<span class="n">bdt_2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns_2</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">])</span>
+<span class="n">training_columns_2</span> <span class="o">=</span> <span class="n">training_columns</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'IPmin'</span><span class="p">]</span>
+<span class="n">bdt_2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns_2</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">])</span>
 <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span><span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">,</span> <span class="n">data_df</span><span class="p">,</span> <span class="n">training_data</span><span class="p">]:</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;BDT_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt_2</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns_2</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'BDT_2'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt_2</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns_2</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
 
 <span class="n">bdt_3</span> <span class="o">=</span> <span class="n">bdtclass</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>  <span class="c1"># less estimator is faster, for demonstration, but 100-300 is usually better</span>
-<span class="n">training_columns_3</span> <span class="o">=</span> <span class="n">training_columns</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;IPdiff&#39;</span><span class="p">]</span>
-<span class="n">bdt_3</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns_3</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">])</span>
+<span class="n">training_columns_3</span> <span class="o">=</span> <span class="n">training_columns</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'IPdiff'</span><span class="p">]</span>
+<span class="n">bdt_3</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns_3</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">])</span>
 <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span><span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">,</span> <span class="n">data_df</span><span class="p">,</span> <span class="n">training_data</span><span class="p">]:</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;BDT_3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt_3</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns_3</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'BDT_3'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt_3</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns_3</span><span class="p">])[:,</span> <span class="mi">1</span><span class="p">]</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;BDT&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">'BDT'</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;BDT_2&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">'BDT_2'</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;BDT_3&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">'BDT_3'</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plot_significance</span><span class="p">(</span><span class="n">bdt_1</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
-<span class="n">plot_significance</span><span class="p">(</span><span class="n">bdt_2</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns_2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;IPmin&#39;</span><span class="p">)</span>
-<span class="n">plot_significance</span><span class="p">(</span><span class="n">bdt_3</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns_3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;IPdiff&#39;</span><span class="p">)</span>
+<span class="n">plot_significance</span><span class="p">(</span><span class="n">bdt_1</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Original'</span><span class="p">)</span>
+<span class="n">plot_significance</span><span class="p">(</span><span class="n">bdt_2</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns_2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'IPmin'</span><span class="p">)</span>
+<span class="n">plot_significance</span><span class="p">(</span><span class="n">bdt_3</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns_3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'IPdiff'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plot_roc</span><span class="p">(</span><span class="n">bdt_1</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
-<span class="n">plot_roc</span><span class="p">(</span><span class="n">bdt_2</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns_2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;IPmin&#39;</span><span class="p">)</span>
-<span class="n">plot_roc</span><span class="p">(</span><span class="n">bdt_3</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns_3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;IPdiff&#39;</span><span class="p">)</span>
+<span class="n">plot_roc</span><span class="p">(</span><span class="n">bdt_1</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Original'</span><span class="p">)</span>
+<span class="n">plot_roc</span><span class="p">(</span><span class="n">bdt_2</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns_2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'IPmin'</span><span class="p">)</span>
+<span class="n">plot_roc</span><span class="p">(</span><span class="n">bdt_3</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns_3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'IPdiff'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -791,11 +794,11 @@ matters, not the absolute value.</p></li>
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4500/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_5639/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
   metric = S / np.sqrt(S + B)
-/tmp/ipykernel_4500/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_5639/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
   metric = S / np.sqrt(S + B)
-/tmp/ipykernel_4500/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_5639/2193470804.py:21: RuntimeWarning: invalid value encountered in divide
   metric = S / np.sqrt(S + B)
 </pre></div></div>
 </div>
@@ -805,7 +808,7 @@ matters, not the absolute value.</p></li>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f27aef51f50&gt;
+&lt;matplotlib.legend.Legend at 0x7f19e4e523c0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -864,7 +867,7 @@ matters, not the absolute value.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">kf</span><span class="p">)</span>
 <span class="go">KFold(n_splits=2, random_state=None, shuffle=False)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">train_index</span><span class="p">,</span> <span class="n">test_index</span> <span class="ow">in</span> <span class="n">kf</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
-<span class="gp">... </span>   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TRAIN:&quot;</span><span class="p">,</span> <span class="n">train_index</span><span class="p">,</span> <span class="s2">&quot;TEST:&quot;</span><span class="p">,</span> <span class="n">test_index</span><span class="p">)</span>
+<span class="gp">... </span>   <span class="nb">print</span><span class="p">(</span><span class="s2">"TRAIN:"</span><span class="p">,</span> <span class="n">train_index</span><span class="p">,</span> <span class="s2">"TEST:"</span><span class="p">,</span> <span class="n">test_index</span><span class="p">)</span>
 <span class="gp">... </span>   <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">train_index</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
 <span class="gp">... </span>   <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">train_index</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
 <span class="go">TRAIN: [2 3] TEST: [0 1]</span>

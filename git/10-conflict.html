@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conflicts &mdash; Analysis essentials  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
 
@@ -16,8 +16,8 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
       <script src="../_static/panels.js?v=0f4bdeea"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -56,8 +56,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
@@ -69,10 +69,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
@@ -93,6 +89,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
@@ -101,10 +101,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
@@ -177,6 +173,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Decorators">Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;classmethod">&#64;classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;property">&#64;property</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Dunder">Dunder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#len">len</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#str">str</a></li>
@@ -185,6 +187,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Naming-conventions">Naming conventions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
 </ul>
 </li>
@@ -517,12 +520,12 @@ $<span class="w"> </span>cat<span class="w"> </span>mars.txt
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-This line added to Wolfman&#39;s copy
+This line added to Wolfman's copy
 </pre></div>
 </div>
 <p>and then push the change to GitLab:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>mars.txt
-$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add a line in our home copy&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add a line in our home copy"</span>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[master 5ae9631] Add a line in our home copy
@@ -556,7 +559,7 @@ We added a different line in the other copy
 </div>
 <p>We can commit the change locally:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>mars.txt
-$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add a line in my copy&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add a line in my copy"</span>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[master 07ebc69] Add a line in my copy
@@ -569,11 +572,11 @@ $<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </spa
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>To ssh://gitlab.cern.ch:7999/vlad/planets.git
  ! [rejected]        master -&gt; master (non-fast-forward)
-error: failed to push some refs to &#39;ssh://gitlab.cern.ch:7999/vlad/planets.git&#39;
+error: failed to push some refs to 'ssh://gitlab.cern.ch:7999/vlad/planets.git'
 hint: Updates were rejected because the tip of your current branch is behind
-hint: its remote counterpart. Merge the remote changes (e.g. &#39;git pull&#39;)
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
 hint: before pushing again.
-hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 </pre></div>
 </div>
 <p><img alt="The Conflicting Changes" src="../_images/conflict.svg" /></p>
@@ -608,7 +611,7 @@ But the Mummy will appreciate the lack of humidity
 &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 We added a different line in the other copy
 <span class="gh">=======</span>
-This line added to Wolfman&#39;s copy
+This line added to Wolfman's copy
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; dabb4c8c450e8475aee9b14b4383acc99f42af1d
 </pre></div>
 </div>
@@ -641,14 +644,14 @@ $<span class="w"> </span>git<span class="w"> </span>status
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>On branch master
 All conflicts fixed but you are still merging.
-  (use &quot;git commit&quot; to conclude merge)
+  (use "git commit" to conclude merge)
 
 Changes to be committed:
 
 	modified:   mars.txt
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Merge changes from GitHub&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Merge changes from GitHub"</span>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[master 2abf2b1] Merge changes from GitHub
@@ -757,7 +760,7 @@ $<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>ma
 random bytes read from the special file, <code class="docutils literal notranslate"><span class="pre">/dev/urandom</span></code>.</p>
 <p>Now, suppose Dracula adds <code class="docutils literal notranslate"><span class="pre">mars.jpg</span></code> to his repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>mars.jpg
-$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add picture of Martian surface&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add picture of Martian surface"</span>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[master 8e4115c] Add picture of Martian surface
@@ -773,12 +776,12 @@ When Dracula tries to push, he gets a familiar message:</p>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>To ssh://gitlab.cern.ch:7999/vlad/planets.git
  ! [rejected]        master -&gt; master (fetch first)
-error: failed to push some refs to &#39;ssh://gitlab.cern.ch:7999/vlad/planets.git&#39;
+error: failed to push some refs to 'ssh://gitlab.cern.ch:7999/vlad/planets.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
-hint: (e.g., &#39;git pull ...&#39;) before pushing again.
-hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 </pre></div>
 </div>
 <p>We’ve learned that we must pull first and resolve any conflicts:</p>
@@ -817,7 +820,7 @@ version is <code class="docutils literal notranslate"><span class="pre">439dc8c0
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>HEAD<span class="w"> </span>mars.jpg
 $<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>mars.jpg
-$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Use image of surface instead of sky&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Use image of surface instead of sky"</span>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[master 21032c3] Use image of surface instead of sky
@@ -827,7 +830,7 @@ $<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </spa
 Wolfman’s commit identifier, <code class="docutils literal notranslate"><span class="pre">439dc8c0</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>439dc8c0<span class="w"> </span>mars.jpg
 $<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>mars.jpg
-$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Use image of sky instead of surface&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Use image of sky instead of surface"</span>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[master da21b34] Use image of sky instead of surface
@@ -847,7 +850,7 @@ $<span class="w"> </span>mv<span class="w"> </span>mars.jpg<span class="w"> </sp
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>rm<span class="w"> </span>mars.jpg
 $<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>mars-surface.jpg
 $<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>mars-sky.jpg
-$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Use two images: surface and sky&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Use two images: surface and sky"</span>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[master 94ae08c] Use two images: surface and sky

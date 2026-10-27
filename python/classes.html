@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Classes &mdash; Analysis essentials  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -17,13 +17,13 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
       <script src="../_static/panels.js?v=0f4bdeea"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -59,8 +59,8 @@
 <li class="toctree-l3"><a class="reference internal" href="00scripts.html#argparse">argparse</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Jupyter">Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#strong-typing">strong typing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Container-types">Container types</a></li>
@@ -72,10 +72,6 @@
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Python-variable-assignement">Python variable assignement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html">Objects and operators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operators.html#objects">Objects</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers</a></li>
@@ -96,6 +92,10 @@
 <li class="toctree-l3"><a class="reference internal" href="dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="operators.html#objects">Objects</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="conditions.html">Conditions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="conditions.html#Truthiness">Truthiness</a></li>
 <li class="toctree-l3"><a class="reference internal" href="conditions.html#Conditions-in-loops">Conditions in loops</a></li>
@@ -104,10 +104,6 @@
 <li class="toctree-l2"><a class="reference internal" href="methods.html">Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="methods.html#Inline-methods">Inline methods</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="scripting.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="scripting.html#argparse">argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="modules.html">Modules</a><ul>
@@ -180,6 +176,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Decorators">Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;classmethod">&#64;classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;property">&#64;property</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Dunder">Dunder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#len">len</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#str">str</a></li>
@@ -188,6 +190,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Naming-conventions">Naming conventions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
 </ul>
 </li>
@@ -500,7 +503,7 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># particle &#39;pi1&#39;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># particle 'pi1'</span>
 <span class="n">pi1_px</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">pi1_py</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">pi1_pz</span> <span class="o">=</span> <span class="mi">30</span>
@@ -534,15 +537,15 @@ np.float64(92.73618495495704)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;px&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-       <span class="s1">&#39;py&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-       <span class="s1">&#39;pz&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-       <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'px'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+       <span class="s1">'py'</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+       <span class="s1">'pz'</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+       <span class="s1">'E'</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">calc_mass</span><span class="p">(</span><span class="n">particle</span><span class="p">):</span>
-    <span class="n">momentum</span> <span class="o">=</span> <span class="n">particle</span><span class="p">[</span><span class="s1">&#39;px&#39;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">particle</span><span class="p">[</span><span class="s1">&#39;py&#39;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">particle</span><span class="p">[</span><span class="s1">&#39;pz&#39;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">particle</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">momentum</span><span class="p">)</span>
+    <span class="n">momentum</span> <span class="o">=</span> <span class="n">particle</span><span class="p">[</span><span class="s1">'px'</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">particle</span><span class="p">[</span><span class="s1">'py'</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">particle</span><span class="p">[</span><span class="s1">'pz'</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">particle</span><span class="p">[</span><span class="s1">'E'</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">momentum</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -570,11 +573,11 @@ np.float64(92.73618495495704)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># trial to connect together</span>
-<span class="n">pi1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;px&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-       <span class="s1">&#39;py&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-       <span class="s1">&#39;pz&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-       <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-       <span class="s1">&#39;mass&#39;</span><span class="p">:</span> <span class="n">calc_mass</span><span class="p">}</span>  <span class="c1"># why not call it mass? it&#39;s the mass of the particle</span>
+<span class="n">pi1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'px'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+       <span class="s1">'py'</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+       <span class="s1">'pz'</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+       <span class="s1">'E'</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+       <span class="s1">'mass'</span><span class="p">:</span> <span class="n">calc_mass</span><span class="p">}</span>  <span class="c1"># why not call it mass? it's the mass of the particle</span>
 </pre></div>
 </div>
 </div>
@@ -582,7 +585,7 @@ np.float64(92.73618495495704)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi1</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">](</span><span class="n">pi1</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi1</span><span class="p">[</span><span class="s1">'mass'</span><span class="p">](</span><span class="n">pi1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -601,11 +604,11 @@ np.float64(92.73618495495704)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_particle</span><span class="p">(</span><span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;px&#39;</span><span class="p">:</span> <span class="n">px</span><span class="p">,</span>
-            <span class="s1">&#39;py&#39;</span><span class="p">:</span> <span class="n">py</span><span class="p">,</span>
-            <span class="s1">&#39;pz&#39;</span><span class="p">:</span> <span class="n">pz</span><span class="p">,</span>
-            <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="n">E</span><span class="p">,</span>
-            <span class="s1">&#39;mass&#39;</span><span class="p">:</span> <span class="n">calc_mass</span><span class="p">}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">'px'</span><span class="p">:</span> <span class="n">px</span><span class="p">,</span>
+            <span class="s1">'py'</span><span class="p">:</span> <span class="n">py</span><span class="p">,</span>
+            <span class="s1">'pz'</span><span class="p">:</span> <span class="n">pz</span><span class="p">,</span>
+            <span class="s1">'E'</span><span class="p">:</span> <span class="n">E</span><span class="p">,</span>
+            <span class="s1">'mass'</span><span class="p">:</span> <span class="n">calc_mass</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -614,9 +617,18 @@ np.float64(92.73618495495704)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e1</span> <span class="o">=</span> <span class="n">make_particle</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="mf">41.234227</span><span class="p">)</span>
-<span class="n">e1</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">](</span><span class="n">e1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span>
+<span class="n">e1</span><span class="p">[</span><span class="s1">'mass'</span><span class="p">](</span><span class="n">e1</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;px&#39;: 20, &#39;py&#39;: 30, &#39;pz&#39;: 20, &#39;E&#39;: 41.234227, &#39;mass&#39;: &lt;function calc_mass at 0x7f74240598a0&gt;}
+</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -633,22 +645,23 @@ np.float64(0.5113475212892835)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_particle</span><span class="p">():</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;px&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s1">&#39;py&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s1">&#39;pz&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s1">&#39;mass&#39;</span><span class="p">:</span> <span class="n">calc_mass</span><span class="p">}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">'px'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">'py'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">'pz'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">'E'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">'mass'</span><span class="p">:</span> <span class="n">calc_mass</span><span class="p">}</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">initialize_particle</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">):</span>
-    <span class="n">particle</span><span class="p">[</span><span class="s1">&#39;px&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">px</span>
-    <span class="n">particle</span><span class="p">[</span><span class="s1">&#39;py&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">py</span>
-    <span class="n">particle</span><span class="p">[</span><span class="s1">&#39;pz&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pz</span>
-    <span class="n">particle</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">E</span>
+    <span class="n">particle</span><span class="p">[</span><span class="s1">'px'</span><span class="p">]</span> <span class="o">=</span> <span class="n">px</span>
+    <span class="n">particle</span><span class="p">[</span><span class="s1">'py'</span><span class="p">]</span> <span class="o">=</span> <span class="n">py</span>
+    <span class="n">particle</span><span class="p">[</span><span class="s1">'pz'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pz</span>
+    <span class="n">particle</span><span class="p">[</span><span class="s1">'E'</span><span class="p">]</span> <span class="o">=</span> <span class="n">E</span>
     <span class="k">return</span> <span class="n">particle</span>
 
 
-<span class="n">particle1</span> <span class="o">=</span> <span class="n">initialize_particle</span><span class="p">(</span><span class="n">make_particle</span><span class="p">(),</span> <span class="n">px</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">py</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">pz</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">particle</span> <span class="o">=</span> <span class="n">make_particle</span><span class="p">()</span>
+<span class="n">particle1</span> <span class="o">=</span> <span class="n">initialize_particle</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="n">px</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">py</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">pz</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -656,8 +669,8 @@ np.float64(0.5113475212892835)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;magic line&quot;</span>
-<span class="n">particle1</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">](</span><span class="n">particle1</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># "magic line"</span>
+<span class="n">particle1</span><span class="p">[</span><span class="s1">'mass'</span><span class="p">](</span><span class="n">particle1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -693,7 +706,7 @@ np.float64(28.284271247461902)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">SimpleParticle</span><span class="p">:</span>
-    <span class="c1"># what we don&#39;t see: before the __init__, there is a (automatic) make_particle. Normally we don&#39;t need it</span>
+    <span class="c1"># what we don't see: before the __init__, there is a (automatic) make_particle. Normally we don't need it</span>
     <span class="c1"># the initialiser, basically initialize_particle</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">):</span>  <span class="c1"># self is the instance, the future object.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">px</span> <span class="o">=</span> <span class="n">px</span>
@@ -755,6 +768,14 @@ np.float64(59.16079783099616)
 40
 </pre></div></div>
 </div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
 <p>That’s what we want!</p>
 <p>Exercise: override the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method to make two particle addable. Name it <code class="docutils literal notranslate"><span class="pre">Particle</span></code> Hint: you need to construct a new Particle</p>
 <p>STOP SCROLLING, SOLUTION AHEAD!</p>
@@ -766,7 +787,7 @@ np.float64(59.16079783099616)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Particle</span><span class="p">:</span>
-    <span class="c1"># what we don&#39;t see: before the __init__, there is a (automatic) make_particle. Normally we don&#39;t need it.</span>
+    <span class="c1"># what we don't see: before the __init__, there is a (automatic) make_particle. Normally we don't need it.</span>
 
     <span class="c1"># This is the initialiser, basically initialize_particle</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">):</span>  <span class="c1"># self is the instance, the future object.</span>
@@ -784,7 +805,13 @@ np.float64(59.16079783099616)
         <span class="n">new_py</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">py</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">py</span>
         <span class="n">new_pz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pz</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">pz</span>
         <span class="n">new_E</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">E</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">E</span>
-        <span class="k">return</span> <span class="n">Particle</span><span class="p">(</span><span class="n">new_px</span><span class="p">,</span> <span class="n">new_py</span><span class="p">,</span> <span class="n">new_pz</span><span class="p">,</span> <span class="n">new_E</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="n">new_px</span><span class="p">,</span> <span class="n">new_py</span><span class="p">,</span> <span class="n">new_pz</span><span class="p">,</span> <span class="n">new_E</span><span class="p">)</span>
+
+<span class="c1">#     def __str__(self):</span>
+<span class="c1">#         return "Hi there"</span>
+
+    <span class="c1"># def __repr__(self):</span>
+    <span class="c1">#     return "Verbose Particle"</span>
 </pre></div>
 </div>
 </div>
@@ -800,47 +827,109 @@ np.float64(59.16079783099616)
 </pre></div>
 </div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">new_particle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;__main__.Particle object at 0x7f742406ce90&gt;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_particle</span><span class="o">.</span><span class="n">calc_mass</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;bound method Particle.calc_mass of &lt;__main__.Particle object at 0x7f742406ce90&gt;&gt;
+</pre></div></div>
+</div>
 </section>
 <section id="Inheritance:-a-glance">
 <h2>Inheritance: a glance<a class="headerlink" href="#Inheritance:-a-glance" title="Link to this heading"></a></h2>
 <p>Instead of completely rewriting <code class="docutils literal notranslate"><span class="pre">Particle</span></code>, we can also inherit the class from it. This means we “overtake” the parent class and add/replace certain fields.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">VerboseParticle</span><span class="p">(</span><span class="n">Particle</span><span class="p">):</span>  <span class="c1"># This is inheritance</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">momentum_text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;px: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">px</span><span class="si">}</span><span class="s2">, py: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">py</span><span class="si">}</span><span class="s2">, pz: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">pz</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"px: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">px</span><span class="si">}</span><span class="s2">, py: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">py</span><span class="si">}</span><span class="s2">, pz: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">pz</span><span class="si">}</span><span class="s2">"</span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># test it here again</span>
 <span class="n">particle1</span> <span class="o">=</span> <span class="n">VerboseParticle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 <span class="n">particle2</span> <span class="o">=</span> <span class="n">VerboseParticle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">particle1</span><span class="o">.</span><span class="n">display</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">particle1</span><span class="p">))</span>
 <span class="n">new_particle</span> <span class="o">=</span> <span class="n">particle1</span> <span class="o">+</span> <span class="n">particle2</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">new_particle</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">new_particle</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+px: 10, py: 10, pz: 10
+&lt;class &#39;__main__.VerboseParticle&#39;&gt;
+&lt;class &#39;__main__.VerboseParticle&#39;&gt;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">repr</span><span class="p">(</span><span class="n">new_particle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-__main__.Particle
+&#39;&lt;__main__.VerboseParticle object at 0x7f742406cc20&gt;&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">new_particle</span><span class="o">.</span><span class="n">display</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+px: 20, py: 20, pz: 20
 </pre></div></div>
 </div>
 <p>We have one problem now: the particle is again a <code class="docutils literal notranslate"><span class="pre">Particle</span></code>, not a <code class="docutils literal notranslate"><span class="pre">VerboseParticle</span></code>. This is because we “hardcoded” the name into the <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method.</p>
@@ -853,13 +942,88 @@ fledged course on OOP to master these things.</p>
 <p>(Sidenote: be aware of <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> vs <code class="docutils literal notranslate"><span class="pre">type</span></code>, use the former if not explicitly type has to be used.)</p>
 <p>So we can replace the call in <code class="docutils literal notranslate"><span class="pre">__add__</span></code> as follows. Instead of <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">Particle(new_px,</span> <span class="pre">new_py,</span> <span class="pre">new_pz,</span> <span class="pre">new_E)</span></code> we have <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">type(self)(new_px,</span> <span class="pre">new_py,</span> <span class="pre">new_pz,</span> <span class="pre">new_E)</span></code></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">BetterParticle</span><span class="p">(</span><span class="n">Particle</span><span class="p">):</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">superpower</span><span class="o">=</span><span class="mi">42</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">px</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">pz</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">superpower</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">superpower</span> <span class="o">=</span> <span class="n">superpower</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Hi"</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">calc_mass</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Start"</span><span class="p">)</span>
+        <span class="n">mass</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">calc_mass</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Stop"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">mass</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">BetterParticle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Hi
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">calc_mass</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Start
+Stop
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+np.float64(49.85980344927164)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">BetterParticle</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[__main__.BetterParticle, __main__.Particle, object]
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>

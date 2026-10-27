@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shell Scripts &mdash; Analysis essentials  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
 
@@ -16,8 +16,8 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
       <script src="../_static/panels.js?v=0f4bdeea"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -56,8 +56,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
@@ -69,10 +69,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
@@ -93,6 +89,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
@@ -101,10 +101,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
@@ -177,6 +173,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Decorators">Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;classmethod">&#64;classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;property">&#64;property</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Dunder">Dunder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#len">len</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#str">str</a></li>
@@ -185,6 +187,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Naming-conventions">Naming conventions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
 </ul>
 </li>
@@ -560,7 +563,7 @@ Instead, let’s edit <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <p>Now, within “nano”, replace the text <code class="docutils literal notranslate"><span class="pre">octane.pdb</span></code> with the special variable called <code class="docutils literal notranslate"><span class="pre">$1</span></code>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>head -n 15 &quot;$1&quot; | tail -n 5
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>head -n 15 "$1" | tail -n 5
 </pre></div>
 </div>
 <p>Inside a shell script,
@@ -604,7 +607,7 @@ number of lines to be passed to <code class="docutils literal notranslate"><span
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nano<span class="w"> </span>middle.sh
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>head -n &quot;$2&quot; &quot;$1&quot; | tail -n &quot;$3&quot;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>head -n "$2" "$1" | tail -n "$3"
 </pre></div>
 </div>
 <p>We can now run:</p>
@@ -638,7 +641,7 @@ We can improve our script by adding some <strong>comments</strong> at the top:</
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Select lines from the middle of a file.
 # Usage: bash middle.sh filename end_line num_lines
-head -n &quot;$2&quot; &quot;$1&quot; | tail -n &quot;$3&quot;
+head -n "$2" "$1" | tail -n "$3"
 </pre></div>
 </div>
 <p>A comment starts with a <code class="docutils literal notranslate"><span class="pre">#</span></code> character and runs to the end of the line.
@@ -673,7 +676,7 @@ Here’s an example:</p>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Sort filenames by their length.
 # Usage: bash sorted.sh one_or_more_filenames
-wc -l &quot;$@&quot; | sort -n
+wc -l "$@" | sort -n
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bash<span class="w"> </span>sorted.sh<span class="w"> </span>*.pdb<span class="w"> </span>../creatures/*.dat
@@ -723,7 +726,7 @@ we can do this:</p>
 <p>The file <code class="docutils literal notranslate"><span class="pre">redo-figure-3.sh</span></code> now contains:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">297</span><span class="w"> </span>bash<span class="w"> </span>goostats<span class="w"> </span>NENE01729B.txt<span class="w"> </span>stats-NENE01729B.txt
 <span class="m">298</span><span class="w"> </span>bash<span class="w"> </span>goodiff<span class="w"> </span>stats-NENE01729B.txt<span class="w"> </span>/data/validated/01729.txt<span class="w"> </span>&gt;<span class="w"> </span><span class="m">01729</span>-differences.txt
-<span class="m">299</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">2</span>-3<span class="w"> </span><span class="m">01729</span>-differences.txt<span class="w"> </span>&gt;<span class="w"> </span><span class="m">01729</span>-time-series.txt
+<span class="m">299</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">','</span><span class="w"> </span>-f<span class="w"> </span><span class="m">2</span>-3<span class="w"> </span><span class="m">01729</span>-differences.txt<span class="w"> </span>&gt;<span class="w"> </span><span class="m">01729</span>-time-series.txt
 <span class="m">300</span><span class="w"> </span>ygraph<span class="w"> </span>--format<span class="w"> </span>scatter<span class="w"> </span>--color<span class="w"> </span>bw<span class="w"> </span>--borders<span class="w"> </span>none<span class="w"> </span><span class="m">01729</span>-time-series.txt<span class="w"> </span>figure-3.png
 <span class="m">301</span><span class="w"> </span><span class="nb">history</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>&gt;<span class="w"> </span>redo-figure-3.sh
 </pre></div>
@@ -748,7 +751,7 @@ and save it as a shell script.</p>
 <p>Nelle’s supervisor insisted that all her analytics must be reproducible. The easiest way to capture all the steps is in a script.
 She runs the editor and writes the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate stats for data files.</span>
-<span class="k">for</span><span class="w"> </span>datafile<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+<span class="k">for</span><span class="w"> </span>datafile<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
 <span class="k">do</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$datafile</span>
 <span class="w">    </span>bash<span class="w"> </span>goostats<span class="w"> </span><span class="nv">$datafile</span><span class="w"> </span>stats-<span class="nv">$datafile</span>
@@ -757,11 +760,11 @@ She runs the editor and writes the following:</p>
 </div>
 <p>She saves this in a file called <code class="docutils literal notranslate"><span class="pre">do-stats.sh</span></code>
 so that she can now re-do the first stage of her analysis by typing:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bash<span class="w"> </span><span class="k">do</span>-stats.sh<span class="w"> </span>*<span class="o">[</span>AB<span class="o">]</span>.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bash<span class="w"> </span>do-stats.sh<span class="w"> </span>*<span class="o">[</span>AB<span class="o">]</span>.txt
 </pre></div>
 </div>
 <p>She can also do this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bash<span class="w"> </span><span class="k">do</span>-stats.sh<span class="w"> </span>*<span class="o">[</span>AB<span class="o">]</span>.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bash<span class="w"> </span>do-stats.sh<span class="w"> </span>*<span class="o">[</span>AB<span class="o">]</span>.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
 </pre></div>
 </div>
 <p>so that the output is just the number of files processed
@@ -799,7 +802,7 @@ tail<span class="w"> </span>-n<span class="w"> </span><span class="nv">$3</span>
 </pre></div>
 </div>
 <p>While you are in the <code class="docutils literal notranslate"><span class="pre">molecules</span></code> directory, you type the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>script.sh<span class="w"> </span><span class="s1">&#39;*.pdb&#39;</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>script.sh<span class="w"> </span><span class="s1">'*.pdb'</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
 <p>Which of the following outputs would you expect to see?</p>
@@ -863,7 +866,7 @@ those files separately.</p>
 <span class="c1"># Loop over all files</span>
 <span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$@</span>
 <span class="k">do</span>
-<span class="w">	</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Unique species in </span><span class="nv">$file</span><span class="s2">:&quot;</span>
+<span class="w">	</span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Unique species in </span><span class="nv">$file</span><span class="s2">:"</span>
 <span class="w">	</span><span class="c1"># Extract species names</span>
 <span class="w">	</span>cut<span class="w"> </span>-d<span class="w"> </span>,<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="nv">$file</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
 <span class="k">done</span>
@@ -979,7 +982,7 @@ cubane.pdb ethane.pdb methane.pdb octane.pdb pentane.pdb propane.pdb.pdb</p>
 <p>Suppose you have saved the following script in a file called <code class="docutils literal notranslate"><span class="pre">do-errors.sh</span></code>
 in Nelle’s <code class="docutils literal notranslate"><span class="pre">north-pacific-gyre/2012-07-03</span></code> directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate stats for data files.</span>
-<span class="k">for</span><span class="w"> </span>datafile<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+<span class="k">for</span><span class="w"> </span>datafile<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
 <span class="k">do</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$datfile</span>
 <span class="w">    </span>bash<span class="w"> </span>goostats<span class="w"> </span><span class="nv">$datafile</span><span class="w"> </span>stats-<span class="nv">$datafile</span>
@@ -987,12 +990,12 @@ in Nelle’s <code class="docutils literal notranslate"><span class="pre">north-
 </pre></div>
 </div>
 <p>When you run it:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bash<span class="w"> </span><span class="k">do</span>-errors.sh<span class="w"> </span>*<span class="o">[</span>AB<span class="o">]</span>.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>bash<span class="w"> </span>do-errors.sh<span class="w"> </span>*<span class="o">[</span>AB<span class="o">]</span>.txt
 </pre></div>
 </div>
 <p>the output is blank.
 To figure out why, re-run the script using the <code class="docutils literal notranslate"><span class="pre">-x</span></code> option:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>-x<span class="w"> </span><span class="k">do</span>-errors.sh<span class="w"> </span>*<span class="o">[</span>AB<span class="o">]</span>.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>-x<span class="w"> </span>do-errors.sh<span class="w"> </span>*<span class="o">[</span>AB<span class="o">]</span>.txt
 </pre></div>
 </div>
 <p>What is the output showing you?

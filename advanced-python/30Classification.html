@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3: Multivariate Analysis &mdash; Analysis essentials  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -17,13 +17,13 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
       <script src="../_static/panels.js?v=0f4bdeea"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -59,8 +59,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
@@ -72,10 +72,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
@@ -96,6 +92,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
@@ -104,10 +104,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
@@ -180,6 +176,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Decorators">Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#&#64;classmethod">&#64;classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#&#64;staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#&#64;property">&#64;property</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Dunder">Dunder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#len">len</a></li>
 <li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#str">str</a></li>
@@ -188,6 +190,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Naming-conventions">Naming conventions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
 </ul>
 </li>
@@ -521,13 +524,24 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;mup_PT&#39;</span><span class="p">],</span> <span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;mum_PT&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="s1">&#39;mup_PT&#39;</span><span class="p">],</span> <span class="n">bkg_df</span><span class="p">[</span><span class="s1">&#39;mum_PT&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Background&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;mup_PT&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;mum_PT&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="s1">'mup_PT'</span><span class="p">],</span> <span class="n">mc_df</span><span class="p">[</span><span class="s1">'mum_PT'</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Signal'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="s1">'mup_PT'</span><span class="p">],</span> <span class="n">bkg_df</span><span class="p">[</span><span class="s1">'mum_PT'</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Background'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'mup_PT'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'mum_PT'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/ipykernel_5375/3035115202.py:1: UserWarning: The pixel maker &#39;,&#39; is not supported on scatter(); using a finite-sized square instead, which is not necessarily 1 pixel in size. Use the square marker &#39;s&#39; instead to suppress this warning.
+  plt.scatter(mc_df[&#39;mup_PT&#39;], mc_df[&#39;mum_PT&#39;], s=1, marker=&#39;,&#39;, label=&#39;Signal&#39;)
+/tmp/ipykernel_5375/3035115202.py:2: UserWarning: The pixel maker &#39;,&#39; is not supported on scatter(); using a finite-sized square instead, which is not necessarily 1 pixel in size. Use the square marker &#39;s&#39; instead to suppress this warning.
+  plt.scatter(bkg_df[&#39;mup_PT&#39;], bkg_df[&#39;mum_PT&#39;], s=1, marker=&#39;,&#39;, label=&#39;Background&#39;)
+</pre></div></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -535,14 +549,14 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f480297ec90&gt;
+&lt;matplotlib.legend.Legend at 0x7fbc4b53be60&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_30Classification_6_1.png" src="../_images/advanced-python_30Classification_6_1.png" />
+<img alt="../_images/advanced-python_30Classification_6_2.png" src="../_images/advanced-python_30Classification_6_2.png" />
 </div>
 </div>
 <p>We can see that there if we cut out 2 (or more) dimensional regions we can remove background more effectively. This is the idea behind decision trees.</p>
@@ -563,9 +577,9 @@
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">training_columns</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;Jpsi_PT&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;mup_PT&#39;</span><span class="p">,</span> <span class="s1">&#39;mup_eta&#39;</span><span class="p">,</span> <span class="s1">&#39;mup_ProbNNmu&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;mum_PT&#39;</span><span class="p">,</span> <span class="s1">&#39;mum_eta&#39;</span><span class="p">,</span> <span class="s1">&#39;mum_ProbNNmu&#39;</span><span class="p">,</span>
+    <span class="s1">'Jpsi_PT'</span><span class="p">,</span>
+    <span class="s1">'mup_PT'</span><span class="p">,</span> <span class="s1">'mup_eta'</span><span class="p">,</span> <span class="s1">'mup_ProbNNmu'</span><span class="p">,</span>
+    <span class="s1">'mum_PT'</span><span class="p">,</span> <span class="s1">'mum_eta'</span><span class="p">,</span> <span class="s1">'mum_ProbNNmu'</span><span class="p">,</span>
 <span class="p">]</span>
 <span class="c1"># Store training_columns</span>
 <span class="o">%</span><span class="k">store</span> training_columns
@@ -599,8 +613,8 @@ Stored &#39;training_columns&#39; (list)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bkg_df</span> <span class="o">=</span> <span class="n">bkg_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">bkg_df</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Use 0 for background</span>
-<span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Use 1 for signal</span>
+<span class="n">bkg_df</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Use 0 for background</span>
+<span class="n">mc_df</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Use 1 for signal</span>
 </pre></div>
 </div>
 </div>
@@ -615,6 +629,15 @@ Stored &#39;training_columns&#39; (list)
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/ipykernel_5375/2646278291.py:2: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  training_data = pd.concat([bkg_df, mc_df], copy=True, ignore_index=True)
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
@@ -628,7 +651,7 @@ Stored &#39;training_data&#39; (DataFrame)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can now fit the BDT</span>
-<span class="n">bdt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">])</span>
+<span class="n">bdt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -637,7 +660,7 @@ Stored &#39;training_data&#39; (DataFrame)
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<style>#sk-container-id-1 {
+<style>.sk-global {
   /* Definition of color scheme common for light and dark mode */
   --sklearn-color-text: #000;
   --sklearn-color-text-muted: #666;
@@ -652,34 +675,34 @@ Stored &#39;training_data&#39; (DataFrame)
   --sklearn-color-fitted-level-1: #d4ebff;
   --sklearn-color-fitted-level-2: #b3dbfd;
   --sklearn-color-fitted-level-3: cornflowerblue;
-
-  /* Specific color for light theme */
-  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
-  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-icon: #696969;
-
-  @media (prefers-color-scheme: dark) {
-    /* Redefinition of color scheme for dark theme */
-    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
-    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-icon: #878787;
-  }
 }
 
-#sk-container-id-1 {
+.sk-global.light {
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: black;
+  --sklearn-color-background: white;
+  --sklearn-color-border-box: black;
+  --sklearn-color-icon: #696969;
+}
+
+.sk-global.dark {
+  --sklearn-color-text-on-default-background: white;
+  --sklearn-color-background: #111;
+  --sklearn-color-border-box: white;
+  --sklearn-color-icon: #878787;
+}
+
+.sk-global {
   color: var(--sklearn-color-text);
 }
 
-#sk-container-id-1 pre {
+.sk-global pre {
   padding: 0;
 }
 
-#sk-container-id-1 input.sk-hidden--visually {
+.sk-global input.sk-hidden--visually {
   border: 0;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(100%);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -688,7 +711,7 @@ Stored &#39;training_data&#39; (DataFrame)
   width: 1px;
 }
 
-#sk-container-id-1 div.sk-dashed-wrapped {
+.sk-global div.sk-dashed-wrapped {
   border: 1px dashed var(--sklearn-color-line);
   margin: 0 0.4em 0.5em 0.4em;
   box-sizing: border-box;
@@ -696,7 +719,7 @@ Stored &#39;training_data&#39; (DataFrame)
   background-color: var(--sklearn-color-background);
 }
 
-#sk-container-id-1 div.sk-container {
+.sk-global div.sk-container {
   /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
      but bootstrap.min.css set `[hidden] { display: none !important; }`
      so we also need the `!important` here to be able to override the
@@ -706,7 +729,7 @@ Stored &#39;training_data&#39; (DataFrame)
   position: relative;
 }
 
-#sk-container-id-1 div.sk-text-repr-fallback {
+.sk-global div.sk-text-repr-fallback {
   display: none;
 }
 
@@ -722,14 +745,14 @@ div.sk-item {
 
 /* Parallel-specific style estimator block */
 
-#sk-container-id-1 div.sk-parallel-item::after {
+.sk-global div.sk-parallel-item::after {
   content: "";
   width: 100%;
   border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
   flex-grow: 1;
 }
 
-#sk-container-id-1 div.sk-parallel {
+.sk-global div.sk-parallel {
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -737,28 +760,28 @@ div.sk-item {
   position: relative;
 }
 
-#sk-container-id-1 div.sk-parallel-item {
+.sk-global div.sk-parallel-item {
   display: flex;
   flex-direction: column;
 }
 
-#sk-container-id-1 div.sk-parallel-item:first-child::after {
+.sk-global div.sk-parallel-item:first-child::after {
   align-self: flex-end;
   width: 50%;
 }
 
-#sk-container-id-1 div.sk-parallel-item:last-child::after {
+.sk-global div.sk-parallel-item:last-child::after {
   align-self: flex-start;
   width: 50%;
 }
 
-#sk-container-id-1 div.sk-parallel-item:only-child::after {
+.sk-global div.sk-parallel-item:only-child::after {
   width: 0;
 }
 
 /* Serial-specific style estimator block */
 
-#sk-container-id-1 div.sk-serial {
+.sk-global div.sk-serial {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -776,14 +799,14 @@ clickable and can be expanded/collapsed.
 
 /* Pipeline and ColumnTransformer style (default) */
 
-#sk-container-id-1 div.sk-toggleable {
+.sk-global div.sk-toggleable {
   /* Default theme specific background. It is overwritten whether we have a
   specific estimator or a Pipeline/ColumnTransformer */
   background-color: var(--sklearn-color-background);
 }
 
 /* Toggleable label */
-#sk-container-id-1 label.sk-toggleable__label {
+.sk-global label.sk-toggleable__label {
   cursor: pointer;
   display: flex;
   width: 100%;
@@ -791,18 +814,18 @@ clickable and can be expanded/collapsed.
   padding: 0.5em;
   box-sizing: border-box;
   text-align: center;
-  align-items: start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   gap: 0.5em;
 }
 
-#sk-container-id-1 label.sk-toggleable__label .caption {
+.sk-global label.sk-toggleable__label .caption {
   font-size: 0.6rem;
   font-weight: lighter;
   color: var(--sklearn-color-text-muted);
 }
 
-#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+.sk-global label.sk-toggleable__label-arrow:before {
   /* Arrow on the left of the label */
   content: "▸";
   float: left;
@@ -810,27 +833,25 @@ clickable and can be expanded/collapsed.
   color: var(--sklearn-color-icon);
 }
 
-#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+.sk-global label.sk-toggleable__label-arrow:hover:before {
   color: var(--sklearn-color-text);
 }
 
 /* Toggleable content - dropdown */
 
-#sk-container-id-1 div.sk-toggleable__content {
-  max-height: 0;
-  max-width: 0;
-  overflow: hidden;
+.sk-global div.sk-toggleable__content {
+  display: none;
   text-align: left;
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-1 div.sk-toggleable__content.fitted {
+.sk-global div.sk-toggleable__content.fitted {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
-#sk-container-id-1 div.sk-toggleable__content pre {
+.sk-global div.sk-toggleable__content pre {
   margin: 0.2em;
   border-radius: 0.25em;
   color: var(--sklearn-color-text);
@@ -838,79 +859,78 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+.sk-global div.sk-toggleable__content.fitted pre {
   /* unfitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
-#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+.sk-global input.sk-toggleable__control:checked~div.sk-toggleable__content {
   /* Expand drop-down */
-  max-height: 200px;
-  max-width: 100%;
-  overflow: auto;
+  display: block;
+  width: 100%;
+  overflow: visible;
 }
 
-#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+.sk-global input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
   content: "▾";
 }
 
 /* Pipeline/ColumnTransformer-specific style */
 
-#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+.sk-global div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+.sk-global div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
 /* Estimator-specific style */
 
 /* Colorize estimator box */
-#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+.sk-global div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+.sk-global div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
-#sk-container-id-1 div.sk-label label.sk-toggleable__label,
-#sk-container-id-1 div.sk-label label {
+.sk-global div.sk-label label.sk-toggleable__label,
+.sk-global div.sk-label label {
   /* The background is the default theme color */
   color: var(--sklearn-color-text-on-default-background);
 }
 
 /* On hover, darken the color of the background */
-#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+.sk-global div.sk-label:hover label.sk-toggleable__label {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
 /* Label box, darken color on hover, fitted */
-#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+.sk-global div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
   color: var(--sklearn-color-text);
   background-color: var(--sklearn-color-fitted-level-2);
 }
 
 /* Estimator label */
 
-#sk-container-id-1 div.sk-label label {
+.sk-global div.sk-label label {
   font-family: monospace;
   font-weight: bold;
-  display: inline-block;
   line-height: 1.2em;
 }
 
-#sk-container-id-1 div.sk-label-container {
+.sk-global div.sk-label-container {
   text-align: center;
 }
 
 /* Estimator-specific */
-#sk-container-id-1 div.sk-estimator {
+.sk-global div.sk-estimator {
   font-family: monospace;
   border: 1px dotted var(--sklearn-color-border-box);
   border-radius: 0.25em;
@@ -920,18 +940,18 @@ clickable and can be expanded/collapsed.
   background-color: var(--sklearn-color-unfitted-level-0);
 }
 
-#sk-container-id-1 div.sk-estimator.fitted {
+.sk-global div.sk-estimator.fitted {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-0);
 }
 
 /* on hover */
-#sk-container-id-1 div.sk-estimator:hover {
+.sk-global div.sk-estimator:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-2);
 }
 
-#sk-container-id-1 div.sk-estimator.fitted:hover {
+.sk-global div.sk-estimator.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-2);
 }
@@ -947,7 +967,7 @@ a:visited.sk-estimator-doc-link {
   font-size: smaller;
   line-height: 1em;
   font-family: monospace;
-  background-color: var(--sklearn-color-background);
+  background-color: var(--sklearn-color-unfitted-level-0);
   border-radius: 1em;
   height: 1em;
   width: 1em;
@@ -955,16 +975,17 @@ a:visited.sk-estimator-doc-link {
   margin-left: 0.5em;
   text-align: center;
   /* unfitted */
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-3) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-3);
 }
 
 .sk-estimator-doc-link.fitted,
 a:link.sk-estimator-doc-link.fitted,
 a:visited.sk-estimator-doc-link.fitted {
   /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
+  background-color: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3) 1pt solid;
+  color: var(--sklearn-color-fitted-level-3);
 }
 
 /* On hover */
@@ -974,7 +995,8 @@ div.sk-label-container:hover .sk-estimator-doc-link:hover,
 .sk-estimator-doc-link:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-0);
   text-decoration: none;
 }
 
@@ -984,7 +1006,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 .sk-estimator-doc-link.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-3);
-  color: var(--sklearn-color-background);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-fitted-level-0);
   text-decoration: none;
 }
 
@@ -1019,12 +1042,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 
 /* "?"-specific style due to the `<a>` HTML tag */
 
-#sk-container-id-1 a.estimator_doc_link {
+.sk-global a.estimator_doc_link {
   float: right;
   font-size: 1rem;
   line-height: 1em;
   font-family: monospace;
-  background-color: var(--sklearn-color-background);
+  background-color: var(--sklearn-color-unfitted-level-0);
   border-radius: 1rem;
   height: 1rem;
   width: 1rem;
@@ -1034,45 +1057,1347 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   border: var(--sklearn-color-unfitted-level-1) 1pt solid;
 }
 
-#sk-container-id-1 a.estimator_doc_link.fitted {
+.sk-global a.estimator_doc_link.fitted {
   /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
   border: var(--sklearn-color-fitted-level-1) 1pt solid;
   color: var(--sklearn-color-fitted-level-1);
 }
 
 /* On hover */
-#sk-container-id-1 a.estimator_doc_link:hover {
+.sk-global a.estimator_doc_link:hover {
   /* unfitted */
   background-color: var(--sklearn-color-unfitted-level-3);
   color: var(--sklearn-color-background);
   text-decoration: none;
 }
 
-#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+.sk-global a.estimator_doc_link.fitted:hover {
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-3);
 }
-</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>XGBClassifier(base_score=None, booster=None, callbacks=None,
+
+.sk-top-container.sk-global {
+  /* pydata-sphinx-theme hides overflow, so scrolling is disabled.
+   We need to set it to !important and add tabindex="0" in the HTML
+   to allow keyboard-only users to navigate the display. */
+  overflow-x: scroll !important;
+  max-width: 100%;
+}
+
+.estimator-table {
+    font-family: monospace;
+}
+
+.estimator-table summary {
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.estimator-table summary::marker {
+    font-size: 0.7rem;
+}
+
+.estimator-table details[open] {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.3rem;
+}
+
+.estimator-table .parameters-table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0;
+}
+
+.estimator-table .parameters-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.estimator-table .parameters-table tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+.estimator-table .parameters-table tr:hover td {
+    background-color: #e0e0e0;
+}
+
+.estimator-table table :is(td, th) {
+    border: 1px solid rgba(106, 105, 104, 0.232);
+}
+
+/*
+    `table td`is set in notebook with right text-align.
+    We need to overwrite it.
+*/
+.estimator-table table td.param {
+    text-align: left;
+    position: relative;
+    padding: 0;
+}
+
+.user-set td {
+    color:rgb(255, 94, 0);
+    text-align: left !important;
+}
+
+.user-set td.value {
+    color:rgb(255, 94, 0);
+    background-color: transparent;
+}
+
+.default td, .estimator-table th {
+    color: black;
+    text-align: left !important;
+}
+
+.user-set td i,
+.default td i {
+    color: black;
+}
+
+td.fitted-att-type {
+    white-space: preserve nowrap;
+}
+
+/*
+    Styles for parameter documentation links
+    We need styling for visited so jupyter doesn't overwrite it
+*/
+a.param-doc-link,
+a.param-doc-link:link,
+a.param-doc-link:visited {
+    text-decoration: underline dashed;
+    text-underline-offset: .3em;
+    color: inherit;
+    display: block;
+    padding: .5em;
+}
+
+@supports(anchor-name: --doc-link) {
+    a.param-doc-link,
+    a.param-doc-link:link,
+    a.param-doc-link:visited {
+    anchor-name: --doc-link;
+    }
+}
+
+/* "hack" to make the entire area of the cell containing the link clickable */
+a.param-doc-link::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+}
+
+.param-doc-description {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    left: 0;
+    padding: .5ex;
+    margin-left: 1.5em;
+    color: var(--sklearn-color-text);
+    box-shadow: .3em .3em .4em #999;
+    width: max-content;
+    text-align: left;
+    max-height: 10em;
+    overflow-y: auto;
+
+    /* unfitted */
+    background: var(--sklearn-color-unfitted-level-0);
+    border: thin solid var(--sklearn-color-unfitted-level-3);
+}
+
+@supports(position-area: center right) {
+    .param-doc-description {
+    position-area: center right;
+    position: fixed;
+    margin-left: 0;
+    }
+}
+
+/* Fitted state for parameter tooltips */
+.fitted .param-doc-description {
+    /* fitted */
+    background: var(--sklearn-color-fitted-level-0);
+    border: thin solid var(--sklearn-color-fitted-level-3);
+}
+
+.param-doc-link:hover .param-doc-description {
+    display: block;
+}
+
+.copy-paste-icon {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+.copy-paste-icon:focus-visible {
+    outline: 1px solid currentColor;
+    outline-offset: 1px;
+}
+
+.features {
+  font-family: monospace;
+  cursor: pointer;
+  background-color: var(--sklearn-color-unfitted-level-0);
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: .20em;
+  margin-bottom: 0.5em;
+  font-size: inherit; /* Needed for jupyter */
+}
+
+.features.fitted {
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+.features summary {
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: .25em;
+}
+
+.features details[open] > summary {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+  border-radius: .20em 0 0 0;
+}
+
+.features.fitted details[open] > summary {
+  background-color: var(--sklearn-color-fitted-level-2);
+  border-radius: .20em 0 0 0;
+}
+
+.features details > summary .arrow::before {
+  content: "▸";
+  color: grey;
+}
+
+.features details[open] > summary .arrow::before {
+  content: "▾";
+}
+
+.features details:hover > summary {
+  margin: 0;
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+.features.fitted details:hover > summary {
+  margin: 0;
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+.features .features-container {
+  max-height: 10em;
+  overflow: auto;
+  scrollbar-width: thin;
+  padding: .25em 0.1rem;
+  background-color: var(--sklearn-color-unfitted-level-0);
+  border-radius: 0 0 .5em .5em;
+}
+
+.features.fitted .features-container {
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+.features .image-container {
+  block-size: 1em;
+  inline-size: 1em;
+  padding: 0;
+  margin: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.features .copy-paste-icon {
+  background-size: 1em 1em;
+  width: 1em;
+  height: 1em;
+  filter: grayscale(100%) opacity(60%);
+}
+
+.features .features-container table {
+  width: 100%;
+  margin: 0.01em;
+}
+
+.features .features-container table tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.features .features-container table tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+.features .features-container table tr:hover {
+  background-color: #e0e0e0;
+}
+
+.features .features-container table {
+  table-layout: inherit;
+}
+
+.features .features-container table td {
+  text-align: left;
+  padding: 0 0.5em;
+  border: 1px solid rgba(106, 105, 104, 0.232);
+  white-space: nowrap;
+  color: var(--sklearn-color-text);
+}
+
+.total_features {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+}
+</style><body><div id="sk-container-id-1" tabindex="0" class="sk-top-container sk-global"><div class="sk-text-repr-fallback"><pre>XGBClassifier(base_score=None, booster=None, callbacks=None,
               colsample_bylevel=None, colsample_bynode=None,
               colsample_bytree=None, device=None, early_stopping_rounds=None,
-              enable_categorical=False, eval_metric=None, feature_types=None,
+              enable_categorical=True, eval_metric=None, feature_types=None,
               feature_weights=None, gamma=None, grow_policy=None,
               importance_type=None, interaction_constraints=None,
               learning_rate=None, max_bin=None, max_cat_threshold=None,
               max_cat_to_onehot=None, max_delta_step=None, max_depth=None,
               max_leaves=None, min_child_weight=None, missing=nan,
               monotone_constraints=None, multi_strategy=None, n_estimators=20,
-              n_jobs=None, num_parallel_tree=None, ...)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>XGBClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.0.0/python/python_api.html#xgboost.XGBClassifier">?<span>Documentation for XGBClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>XGBClassifier(base_score=None, booster=None, callbacks=None,
-              colsample_bylevel=None, colsample_bynode=None,
-              colsample_bytree=None, device=None, early_stopping_rounds=None,
-              enable_categorical=False, eval_metric=None, feature_types=None,
-              feature_weights=None, gamma=None, grow_policy=None,
-              importance_type=None, interaction_constraints=None,
-              learning_rate=None, max_bin=None, max_cat_threshold=None,
-              max_cat_to_onehot=None, max_delta_step=None, max_depth=None,
-              max_leaves=None, min_child_weight=None, missing=nan,
-              monotone_constraints=None, multi_strategy=None, n_estimators=20,
-              n_jobs=None, num_parallel_tree=None, ...)</pre></div> </div></div></div></div></div>
+              n_jobs=None, num_parallel_tree=None, ...)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually sk-global" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>XGBClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier">?<span>Documentation for XGBClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                <table class="parameters-table">
+                  <tbody>
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy base_score to clipboard"
+                 onclick="copyToClipboard('base_score',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-base_score;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=base_score,-typing.Union%5Bfloat%2C%20typing.List%5Bfloat%5D%2C%20NoneType%5D">
+            base_score
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-base_score;">
+            base_score: typing.Union[float, typing.List[float], NoneType]<br><br>The initial prediction score of all instances, global bias.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy booster to clipboard"
+                 onclick="copyToClipboard('booster',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">booster</td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy callbacks to clipboard"
+                 onclick="copyToClipboard('callbacks',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-callbacks;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=callbacks,-typing.Optional%5Btyping.List%5Bxgboost.callback.TrainingCallback%5D%5D">
+            callbacks
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-callbacks;">
+            callbacks: typing.Optional[typing.List[xgboost.callback.TrainingCallback]]<br><br>List of callback functions that are applied at end of each iteration.<br>It is possible to use predefined callbacks by using<br>:ref:`Callback API &lt;callback_api&gt;`.<br><br>.. note::<br><br>   States in callback are not preserved during training, which means callback<br>   objects can not be reused for multiple training sessions without<br>   reinitialization or deepcopy.<br><br>.. code-block:: python<br><br>    for params in parameters_grid:<br>        # be sure to (re)initialize the callbacks before each run<br>        callbacks = [xgb.callback.LearningRateScheduler(custom_rates)]<br>        reg = xgboost.XGBRegressor(**params, callbacks=callbacks)<br>        reg.fit(X, y)</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy colsample_bylevel to clipboard"
+                 onclick="copyToClipboard('colsample_bylevel',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-colsample_bylevel;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=colsample_bylevel,-typing.Optional%5Bfloat%5D">
+            colsample_bylevel
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-colsample_bylevel;">
+            colsample_bylevel: typing.Optional[float]<br><br>Subsample ratio of columns for each level.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy colsample_bynode to clipboard"
+                 onclick="copyToClipboard('colsample_bynode',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-colsample_bynode;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=colsample_bynode,-typing.Optional%5Bfloat%5D">
+            colsample_bynode
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-colsample_bynode;">
+            colsample_bynode: typing.Optional[float]<br><br>Subsample ratio of columns for each split.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy colsample_bytree to clipboard"
+                 onclick="copyToClipboard('colsample_bytree',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-colsample_bytree;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=colsample_bytree,-typing.Optional%5Bfloat%5D">
+            colsample_bytree
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-colsample_bytree;">
+            colsample_bytree: typing.Optional[float]<br><br>Subsample ratio of columns when constructing each tree.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy device to clipboard"
+                 onclick="copyToClipboard('device',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-device;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=device,-typing.Optional%5Bstr%5D">
+            device
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-device;">
+            device: typing.Optional[str]<br><br>.. versionadded:: 2.0.0<br><br>Device ordinal, available options are `cpu`, `cuda`, and `gpu`.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy early_stopping_rounds to clipboard"
+                 onclick="copyToClipboard('early_stopping_rounds',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-early_stopping_rounds;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=early_stopping_rounds,-typing.Optional%5Bint%5D">
+            early_stopping_rounds
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-early_stopping_rounds;">
+            early_stopping_rounds: typing.Optional[int]<br><br>.. versionadded:: 1.6.0<br><br>- Activates early stopping. Validation metric needs to improve at least once in<br>  every **early_stopping_rounds** round(s) to continue training.  Requires at<br>  least one item in **eval_set** in :py:meth:`fit`.<br><br>- If early stopping occurs, the model will have two additional attributes:<br>  :py:attr:`best_score` and :py:attr:`best_iteration`. These are used by the<br>  :py:meth:`predict` and :py:meth:`apply` methods to determine the optimal<br>  number of trees during inference. If users want to access the full model<br>  (including trees built after early stopping), they can specify the<br>  `iteration_range` in these inference methods. In addition, other utilities<br>  like model plotting can also use the entire model.<br><br>- If you prefer to discard the trees after `best_iteration`, consider using the<br>  callback function :py:class:`xgboost.callback.EarlyStopping`.<br><br>- If there&#x27;s more than one item in **eval_set**, the last entry will be used for<br>  early stopping.  If there&#x27;s more than one metric in **eval_metric**, the last<br>  metric will be used for early stopping.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy enable_categorical to clipboard"
+                 onclick="copyToClipboard('enable_categorical',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-enable_categorical;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=enable_categorical,-bool">
+            enable_categorical
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-enable_categorical;">
+            enable_categorical: bool<br><br>See the same parameter of :py:class:`DMatrix` for details.</span>
+        </a>
+    </td>
+            <td class="value">True</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy eval_metric to clipboard"
+                 onclick="copyToClipboard('eval_metric',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-eval_metric;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=eval_metric,-typing.Union%5Bstr%2C%20typing.List%5Btyping.Union%5Bstr%2C%20typing.Callable%5D%5D%2C%20typing.Callable%2C%20NoneType%5D">
+            eval_metric
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-eval_metric;">
+            eval_metric: typing.Union[str, typing.List[typing.Union[str, typing.Callable]], typing.Callable, NoneType]<br><br>.. versionadded:: 1.6.0<br><br>Metric used for monitoring the training result and early stopping.  It can be a<br>string or list of strings as names of predefined metric in XGBoost (See<br>:doc:`/parameter`), one of the metrics in :py:mod:`sklearn.metrics`, or any<br>other user defined metric that looks like `sklearn.metrics`.<br><br>If custom objective is also provided, then custom metric should implement the<br>corresponding reverse link function.<br><br>Unlike the `scoring` parameter commonly used in scikit-learn, when a callable<br>object is provided, it&#x27;s assumed to be a cost function and by default XGBoost<br>will minimize the result during early stopping.<br><br>For advanced usage on Early stopping like directly choosing to maximize instead<br>of minimize, see :py:obj:`xgboost.callback.EarlyStopping`.<br><br>See :doc:`/tutorials/custom_metric_obj` and :ref:`custom-obj-metric` for more<br>information.<br><br>.. code-block:: python<br><br>    from sklearn.datasets import load_diabetes<br>    from sklearn.metrics import mean_absolute_error<br>    X, y = load_diabetes(return_X_y=True)<br>    reg = xgb.XGBRegressor(<br>        tree_method=&quot;hist&quot;,<br>        eval_metric=mean_absolute_error,<br>    )<br>    reg.fit(X, y, eval_set=[(X, y)])</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy feature_types to clipboard"
+                 onclick="copyToClipboard('feature_types',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-feature_types;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=feature_types,-typing.Optional%5Btyping.Sequence%5Bstr%5D%5D">
+            feature_types
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-feature_types;">
+            feature_types: typing.Optional[typing.Sequence[str]]<br><br>.. versionadded:: 1.7.0<br><br>Used for specifying feature types without constructing a dataframe. See<br>the :py:class:`DMatrix` for details.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy feature_weights to clipboard"
+                 onclick="copyToClipboard('feature_weights',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-feature_weights;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=feature_weights,-Optional%5BArrayLike%5D">
+            feature_weights
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-feature_weights;">
+            feature_weights: Optional[ArrayLike]<br><br>Weight for each feature, defines the probability of each feature being selected<br>when colsample is being used.  All values must be greater than 0, otherwise a<br>`ValueError` is thrown.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy gamma to clipboard"
+                 onclick="copyToClipboard('gamma',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-gamma;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=gamma,-typing.Optional%5Bfloat%5D">
+            gamma
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-gamma;">
+            gamma: typing.Optional[float]<br><br>(min_split_loss) Minimum loss reduction required to make a further partition on<br>a leaf node of the tree.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy grow_policy to clipboard"
+                 onclick="copyToClipboard('grow_policy',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-grow_policy;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=grow_policy,-typing.Optional%5Bstr%5D">
+            grow_policy
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-grow_policy;">
+            grow_policy: typing.Optional[str]<br><br>Tree growing policy.<br><br>- depthwise: Favors splitting at nodes closest to the node,<br>- lossguide: Favors splitting at nodes with highest loss change.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy importance_type to clipboard"
+                 onclick="copyToClipboard('importance_type',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">importance_type</td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy interaction_constraints to clipboard"
+                 onclick="copyToClipboard('interaction_constraints',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-interaction_constraints;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=interaction_constraints,-typing.Union%5Bstr%2C%20typing.List%5Btyping.Tuple%5Bstr%5D%5D%2C%20NoneType%5D">
+            interaction_constraints
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-interaction_constraints;">
+            interaction_constraints: typing.Union[str, typing.List[typing.Tuple[str]], NoneType]<br><br>Constraints for interaction representing permitted interactions.  The<br>constraints must be specified in the form of a nested list, e.g. ``[[0, 1], [2,<br>3, 4]]``, where each inner list is a group of indices of features that are<br>allowed to interact with each other.  See :doc:`tutorial<br>&lt;/tutorials/feature_interaction_constraint&gt;` for more information</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy learning_rate to clipboard"
+                 onclick="copyToClipboard('learning_rate',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-learning_rate;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=learning_rate,-typing.Optional%5Bfloat%5D">
+            learning_rate
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-learning_rate;">
+            learning_rate: typing.Optional[float]<br><br>Boosting learning rate (xgb&#x27;s &quot;eta&quot;)</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy max_bin to clipboard"
+                 onclick="copyToClipboard('max_bin',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-max_bin;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=max_bin,-typing.Optional%5Bint%5D">
+            max_bin
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-max_bin;">
+            max_bin: typing.Optional[int]<br><br>If using histogram-based algorithm, maximum number of bins per feature</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy max_cat_threshold to clipboard"
+                 onclick="copyToClipboard('max_cat_threshold',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-max_cat_threshold;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=max_cat_threshold,-typing.Optional%5Bint%5D">
+            max_cat_threshold
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-max_cat_threshold;">
+            max_cat_threshold: typing.Optional[int]<br><br>.. versionadded:: 1.7.0<br><br>.. note:: This parameter is experimental<br><br>Maximum number of categories considered for each split. Used only by<br>partition-based splits for preventing over-fitting. Also, `enable_categorical`<br>needs to be set to have categorical feature support. See :doc:`Categorical Data<br>&lt;/tutorials/categorical&gt;` and :ref:`cat-param` for details.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy max_cat_to_onehot to clipboard"
+                 onclick="copyToClipboard('max_cat_to_onehot',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-max_cat_to_onehot;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=max_cat_to_onehot,-Optional%5Bint%5D">
+            max_cat_to_onehot
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-max_cat_to_onehot;">
+            max_cat_to_onehot: Optional[int]<br><br>.. versionadded:: 1.6.0<br><br>.. note:: This parameter is experimental<br><br>A threshold for deciding whether XGBoost should use one-hot encoding based split<br>for categorical data.  When number of categories is lesser than the threshold<br>then one-hot encoding is chosen, otherwise the categories will be partitioned<br>into children nodes. Also, `enable_categorical` needs to be set to have<br>categorical feature support. See :doc:`Categorical Data<br>&lt;/tutorials/categorical&gt;` and :ref:`cat-param` for details.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy max_delta_step to clipboard"
+                 onclick="copyToClipboard('max_delta_step',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-max_delta_step;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=max_delta_step,-typing.Optional%5Bfloat%5D">
+            max_delta_step
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-max_delta_step;">
+            max_delta_step: typing.Optional[float]<br><br>Maximum delta step we allow each tree&#x27;s weight estimation to be.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy max_depth to clipboard"
+                 onclick="copyToClipboard('max_depth',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-max_depth;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=max_depth,-%20typing.Optional%5Bint%5D">
+            max_depth
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-max_depth;">
+            max_depth:  typing.Optional[int]<br><br>Maximum tree depth for base learners.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy max_leaves to clipboard"
+                 onclick="copyToClipboard('max_leaves',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-max_leaves;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=max_leaves,-typing.Optional%5Bint%5D">
+            max_leaves
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-max_leaves;">
+            max_leaves: typing.Optional[int]<br><br>Maximum number of leaves; 0 indicates no limit.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy min_child_weight to clipboard"
+                 onclick="copyToClipboard('min_child_weight',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-min_child_weight;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=min_child_weight,-typing.Optional%5Bfloat%5D">
+            min_child_weight
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-min_child_weight;">
+            min_child_weight: typing.Optional[float]<br><br>Minimum sum of instance weight(hessian) needed in a child.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy missing to clipboard"
+                 onclick="copyToClipboard('missing',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-missing;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=missing,-float">
+            missing
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-missing;">
+            missing: float<br><br>Value in the data which needs to be present as a missing value. Default to<br>:py:data:`numpy.nan`.</span>
+        </a>
+    </td>
+            <td class="value">nan</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy monotone_constraints to clipboard"
+                 onclick="copyToClipboard('monotone_constraints',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-monotone_constraints;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=monotone_constraints,-typing.Union%5Btyping.Dict%5Bstr%2C%20int%5D%2C%20str%2C%20NoneType%5D">
+            monotone_constraints
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-monotone_constraints;">
+            monotone_constraints: typing.Union[typing.Dict[str, int], str, NoneType]<br><br>Constraint of variable monotonicity.  See :doc:`tutorial &lt;/tutorials/monotonic&gt;`<br>for more information.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy multi_strategy to clipboard"
+                 onclick="copyToClipboard('multi_strategy',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-multi_strategy;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=multi_strategy,-typing.Optional%5Bstr%5D">
+            multi_strategy
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-multi_strategy;">
+            multi_strategy: typing.Optional[str]<br><br>.. versionadded:: 2.0.0<br><br>.. note:: This parameter is working-in-progress.<br><br>The strategy used for training multi-target models, including multi-target<br>regression and multi-class classification. See :doc:`/tutorials/multioutput` for<br>more information.<br><br>- ``one_output_per_tree``: One model for each target.<br>- ``multi_output_tree``:  Use multi-target trees.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy n_estimators to clipboard"
+                 onclick="copyToClipboard('n_estimators',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-n_estimators;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=n_estimators,-Optional%5Bint%5D">
+            n_estimators
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-n_estimators;">
+            n_estimators: Optional[int]<br><br>Number of boosting rounds.</span>
+        </a>
+    </td>
+            <td class="value">20</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy n_jobs to clipboard"
+                 onclick="copyToClipboard('n_jobs',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-n_jobs;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=n_jobs,-typing.Optional%5Bint%5D">
+            n_jobs
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-n_jobs;">
+            n_jobs: typing.Optional[int]<br><br>Number of parallel threads used to run xgboost.  When used with other<br>Scikit-Learn algorithms like grid search, you may choose which algorithm to<br>parallelize and balance the threads.  Creating thread contention will<br>significantly slow down both algorithms.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy num_parallel_tree to clipboard"
+                 onclick="copyToClipboard('num_parallel_tree',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">num_parallel_tree</td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy random_state to clipboard"
+                 onclick="copyToClipboard('random_state',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-random_state;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=random_state,-typing.Union%5Bnumpy.random.mtrand.RandomState%2C%20numpy.random._generator.Generator%2C%20int%2C%20NoneType%5D">
+            random_state
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-random_state;">
+            random_state: typing.Union[numpy.random.mtrand.RandomState, numpy.random._generator.Generator, int, NoneType]<br><br>Random number seed.<br><br>.. note::<br><br>   Using gblinear booster with shotgun updater is nondeterministic as<br>   it uses Hogwild algorithm.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy reg_alpha to clipboard"
+                 onclick="copyToClipboard('reg_alpha',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-reg_alpha;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=reg_alpha,-typing.Optional%5Bfloat%5D">
+            reg_alpha
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-reg_alpha;">
+            reg_alpha: typing.Optional[float]<br><br>L1 regularization term on weights (xgb&#x27;s alpha).</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy reg_lambda to clipboard"
+                 onclick="copyToClipboard('reg_lambda',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-reg_lambda;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=reg_lambda,-typing.Optional%5Bfloat%5D">
+            reg_lambda
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-reg_lambda;">
+            reg_lambda: typing.Optional[float]<br><br>L2 regularization term on weights (xgb&#x27;s lambda).</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy sampling_method to clipboard"
+                 onclick="copyToClipboard('sampling_method',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-sampling_method;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=sampling_method,-typing.Optional%5Bstr%5D">
+            sampling_method
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-sampling_method;">
+            sampling_method: typing.Optional[str]<br><br>Sampling method. Used only by the GPU version of ``hist`` tree method.<br><br>- ``uniform``: Select random training instances uniformly.<br>- ``gradient_based``: Select random training instances with higher probability<br>    when the gradient and hessian are larger. (cf. CatBoost)</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy scale_pos_weight to clipboard"
+                 onclick="copyToClipboard('scale_pos_weight',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-scale_pos_weight;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=scale_pos_weight,-typing.Optional%5Bfloat%5D">
+            scale_pos_weight
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-scale_pos_weight;">
+            scale_pos_weight: typing.Optional[float]<br><br>Balancing of positive and negative weights.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy subsample to clipboard"
+                 onclick="copyToClipboard('subsample',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-subsample;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=subsample,-typing.Optional%5Bfloat%5D">
+            subsample
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-subsample;">
+            subsample: typing.Optional[float]<br><br>Subsample ratio of the training instance.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy tree_method to clipboard"
+                 onclick="copyToClipboard('tree_method',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-tree_method;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=tree_method,-typing.Optional%5Bstr%5D">
+            tree_method
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-tree_method;">
+            tree_method: typing.Optional[str]<br><br>Specify which tree method to use.  Default to auto.  If this parameter is set to<br>default, XGBoost will choose the most conservative option available.  It&#x27;s<br>recommended to study this option from the parameters document :doc:`tree method<br>&lt;/treemethod&gt;`</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy validate_parameters to clipboard"
+                 onclick="copyToClipboard('validate_parameters',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-validate_parameters;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=validate_parameters,-typing.Optional%5Bbool%5D">
+            validate_parameters
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-validate_parameters;">
+            validate_parameters: typing.Optional[bool]<br><br>Give warnings for unknown parameter.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="user-set">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy verbosity to clipboard"
+                 onclick="copyToClipboard('verbosity',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-verbosity;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=verbosity,-typing.Optional%5Bint%5D">
+            verbosity
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-verbosity;">
+            verbosity: typing.Optional[int]<br><br>The degree of verbosity. Valid values are 0 (silent) - 3 (debug).</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+
+
+        <tr class="default">
+            <td><button type="button" class="copy-paste-icon"
+                 aria-label="Copy objective to clipboard"
+                 onclick="copyToClipboard('objective',
+                          this.parentElement.nextElementSibling)"
+            ></button></td>
+            <td class="param">
+        <a class="param-doc-link"
+            style="anchor-name: --doc-link-objective;"
+            rel="noreferrer" target="_blank" href="https://xgboost.readthedocs.io/en/release_3.4.0/python/python_api.html#xgboost.XGBClassifier#:~:text=objective,-typing.Union%5Bstr%2C%20xgboost.objective.Objective%2C%20xgboost.sklearn._SklObjWProto%2C%20typing.Callable%5B%5Btyping.Any%2C%20typing.Any%5D%2C%20typing.Tuple%5Bnumpy.ndarray%2C%20numpy.ndarray%5D%5D%2C%20NoneType%5D">
+            objective
+            <span class="param-doc-description"
+            style="position-anchor: --doc-link-objective;">
+            objective: typing.Union[str, xgboost.objective.Objective, xgboost.sklearn._SklObjWProto, typing.Callable[[typing.Any, typing.Any], typing.Tuple[numpy.ndarray, numpy.ndarray]], NoneType]<br><br>Specify the learning task and the corresponding learning objective or a custom<br>objective to be used.<br><br>For custom objective, see :doc:`/tutorials/custom_metric_obj` and<br>:ref:`custom-obj-metric` for more information, along with the end note for<br>function signatures.</span>
+        </a>
+    </td>
+            <td class="value">&#x27;binary:logistic&#x27;</td>
+        </tr>
+
+                  </tbody>
+                </table>
+            </details>
+        </div>
+
+        <div class="estimator-table">
+            <details>
+                <summary>Fitted attributes</summary>
+                <table class="parameters-table">
+                    <tbody>
+                        <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Value</th>
+                        </tr>
+
+       <tr class="default">
+           <td class="param"><a class="param-doc-link" style="text-decoration:none;">classes_</a></td>
+           <td class="fitted-att-type">ndarray[int64](2,)</td>
+           <td>[0,1]</td>
+
+
+       </tr>
+
+
+       <tr class="default">
+           <td class="param"><a class="param-doc-link" style="text-decoration:none;">feature_importances_</a></td>
+           <td class="fitted-att-type">ndarray[float32](7,)</td>
+           <td>[0.73,0.06,0.07,...,0.05,0.07,0.01]</td>
+
+
+       </tr>
+
+
+       <tr class="default">
+           <td class="param"><a class="param-doc-link" style="text-decoration:none;">feature_names_in_</a></td>
+           <td class="fitted-att-type">ndarray[&lt;U12](7,)</td>
+           <td>[&#x27;Jpsi_PT&#x27;,&#x27;mup_PT&#x27;,&#x27;mup_eta&#x27;,...,&#x27;mum_PT&#x27;,&#x27;mum_eta&#x27;,&#x27;mum_ProbNNmu&#x27;]</td>
+
+
+       </tr>
+
+
+       <tr class="default">
+           <td class="param"><a class="param-doc-link" style="text-decoration:none;">intercept_</a></td>
+           <td class="fitted-att-type">ndarray[float32](1,)</td>
+           <td>[0.5]</td>
+
+
+       </tr>
+
+
+       <tr class="default">
+           <td class="param"><a class="param-doc-link" style="text-decoration:none;">n_classes_</a></td>
+           <td class="fitted-att-type">int</td>
+           <td>2</td>
+
+
+       </tr>
+
+
+       <tr class="default">
+           <td class="param"><a class="param-doc-link" style="text-decoration:none;">n_features_in_</a></td>
+           <td class="fitted-att-type">int</td>
+           <td>7</td>
+
+
+       </tr>
+
+                    </tbody>
+                </table>
+            </details>
+        </div>
+    </div></div></div></div></div><script>/*  Authors: The scikit-learn developers
+ SPDX-License-Identifier: BSD-3-Clause
+*/
+
+function copyToClipboard(text, element) {
+    // Get the parameter prefix from the closest toggleable content
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
+
+    const originalStyle = element.style;
+    const computedStyle = window.getComputedStyle(element);
+    const originalWidth = computedStyle.width;
+    const originalHTML = element.innerHTML.replace('Copied!', '');
+
+    navigator.clipboard.writeText(fullParamName)
+        .then(() => {
+            element.style.width = originalWidth;
+            element.style.color = 'green';
+            element.innerHTML = "Copied!";
+
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy:', err);
+            element.style.color = 'red';
+            element.innerHTML = "Failed!";
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        });
+    return false;
+}
+
+document.querySelectorAll('.copy-paste-icon').forEach(function(element) {
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+
+    const parent = element.parentElement;
+    if (!parent || !parent.nextElementSibling) {
+        console.warn('Expected copy-paste icon is missing from the DOM structure');
+        return;
+    }
+
+    const paramName = element.parentElement.nextElementSibling
+        .textContent.trim().split(' ')[0];
+    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
+
+    element.setAttribute('title', fullParamName);
+});
+
+/**
+ * Copy the list of feature names formatted as a Python list.
+ *
+ * @param {HTMLElement} element - The copy button inside a `.features` block; its siblings
+ *   contain a `details` element and a table containing feature named.
+ * @returns {boolean} Always returns `false` so callers can prevent the default click behavior.
+ */
+function copyFeatureNamesToClipboard(element) {
+    var detailsElem = element.closest('.features').querySelector('details');
+    var wasOpen = detailsElem.open;
+    detailsElem.open = true;
+    var content = element.closest('.features').querySelector('tbody')
+                  .innerText.trim();
+    if (!wasOpen) detailsElem.open = false;
+    const rows = content.split('\n').map(row => `    "${row}"`);
+    const formattedText = `[\n${rows.join(',\n')},\n]`;
+    const originalHTML = element.innerHTML.replace('✔', '');
+    const originalStyle = element.style;
+    const copyMark = document.createElement('span');
+    copyMark.innerHTML = '✔';
+    copyMark.style.color = 'blue';
+    copyMark.style.fontSize = '1em';
+
+    navigator.clipboard.writeText(formattedText)
+        .then(() => {
+            element.style.display = 'none';
+            element.parentElement.appendChild(copyMark);
+
+            setTimeout(() => {
+                copyMark.remove();
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 1000);
+        })
+        .catch(err => {
+            console.error('Failed to copy:', err);
+            element.style.color = 'orange';
+            element.innerHTML = "Failed!";
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 1000);
+        });
+    return false;
+}
+/**
+ * Adapted from Skrub
+ * https://github.com/skrub-data/skrub/blob/403466d1d5d4dc76a7ef569b3f8228db59a31dc3/skrub/_reporting/_data/templates/report.js#L789
+ * @returns "light" or "dark"
+ */
+function detectTheme(element) {
+    const body = document.querySelector('body');
+
+    // Check VSCode theme
+    const themeKindAttr = body.getAttribute('data-vscode-theme-kind');
+    const themeNameAttr = body.getAttribute('data-vscode-theme-name');
+
+    if (themeKindAttr && themeNameAttr) {
+        const themeKind = themeKindAttr.toLowerCase();
+        const themeName = themeNameAttr.toLowerCase();
+
+        if (themeKind.includes("dark") || themeName.includes("dark")) {
+            return "dark";
+        }
+        if (themeKind.includes("light") || themeName.includes("light")) {
+            return "light";
+        }
+    }
+
+    // Check Jupyter theme
+    if (body.getAttribute('data-jp-theme-light') === 'false') {
+        return 'dark';
+    } else if (body.getAttribute('data-jp-theme-light') === 'true') {
+        return 'light';
+    }
+
+    // Guess based on a parent element's color
+    const color = window.getComputedStyle(element.parentNode, null).getPropertyValue('color');
+    const match = color.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)\s*$/i);
+    if (match) {
+        const [r, g, b] = [
+            parseFloat(match[1]),
+            parseFloat(match[2]),
+            parseFloat(match[3])
+        ];
+
+        // https://en.wikipedia.org/wiki/HSL_and_HSV#Lightness
+        const luma = 0.299 * r + 0.587 * g + 0.114 * b;
+
+        if (luma > 180) {
+            // If the text is very bright we have a dark theme
+            return 'dark';
+        }
+        if (luma < 75) {
+            // If the text is very dark we have a light theme
+            return 'light';
+        }
+        // Otherwise fall back to the next heuristic.
+    }
+
+    // Fallback to system preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+
+function forceTheme(elementId) {
+    const estimatorElement = document.querySelector(`#${elementId}`);
+    if (estimatorElement === null) {
+        console.error(`Element with id ${elementId} not found.`);
+    } else {
+        const theme = detectTheme(estimatorElement);
+        estimatorElement.classList.add(theme);
+    }
+}
+
+forceTheme('sk-container-id-1');</script></body></div>
 </div>
 <p>Once a classifier has been trained we can apply it to a dataset to get a variable tells us how signal or background like each candidate is. There are a few different functions to do this, but in this case we will use <code class="docutils literal notranslate"><span class="pre">bdt.predict_proba</span></code>.</p>
 <div class="nbinput docutils container">
@@ -1089,11 +2414,11 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-array([[0.0951997 , 0.9048003 ],
-       [0.22529536, 0.77470464],
-       [0.63189864, 0.3681014 ],
-       [0.6602049 , 0.33979508],
-       [0.36177772, 0.6382223 ]], dtype=float32)
+array([[0.09381169, 0.9061883 ],
+       [0.19719899, 0.802801  ],
+       [0.5873239 , 0.4126761 ],
+       [0.67302185, 0.32697815],
+       [0.371399  , 0.628601  ]], dtype=float32)
 </pre></div></div>
 </div>
 <p>This has returned a <span class="math notranslate nohighlight">\(N_\text{samples}\)</span> by <span class="math notranslate nohighlight">\(N_\text{classes}\)</span> array. The first column is the ‘probability’ that the candiate is catagory 0 (background) and the second column is the probability that the candidate is catagory 1 (signal). These probabilities sum to 1 for each event are only valid under certain assumptions which typically don’t apply in HEP.</p>
@@ -1114,8 +2439,8 @@ array([[0.0951997 , 0.9048003 ],
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-array([0.9048003 , 0.77470464, 0.3681014 , ..., 0.367871  , 0.22820437,
-       0.29143938], dtype=float32)
+array([0.9061883 , 0.802801  , 0.4126761 , ..., 0.37715757, 0.22649612,
+       0.2937255 ], shape=(168385,), dtype=float32)
 </pre></div></div>
 </div>
 <p><strong>CHALLENGE:</strong> Add a new column to each of <code class="docutils literal notranslate"><span class="pre">mc_df</span></code>, <code class="docutils literal notranslate"><span class="pre">bkg_df</span></code>, <code class="docutils literal notranslate"><span class="pre">data_df</span></code> and <code class="docutils literal notranslate"><span class="pre">training_data</span></code> called BDT which contains the signal probability of the classifier.</p>
@@ -1123,10 +2448,10 @@ array([0.9048003 , 0.77470464, 0.3681014 , ..., 0.367871  , 0.22820437,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">bkg_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc_df</span><span class="p">[</span><span class="s1">'BDT'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">bkg_df</span><span class="p">[</span><span class="s1">'BDT'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">data_df</span><span class="p">[</span><span class="s1">'BDT'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">training_data</span><span class="p">[</span><span class="s1">'BDT'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1136,7 +2461,7 @@ array([0.9048003 , 0.77470464, 0.3681014 , ..., 0.367871  , 0.22820437,
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span><span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">,</span> <span class="n">data_df</span><span class="p">,</span> <span class="n">training_data</span><span class="p">]:</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">'BDT'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1151,18 +2476,18 @@ array([0.9048003 , 0.77470464, 0.3681014 , ..., 0.367871  , 0.22820437,
     <span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-    <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">((</span><span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MC Signal&#39;</span><span class="p">,</span> <span class="p">)</span>
-    <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data Bkg&#39;</span><span class="p">)</span>
+    <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">((</span><span class="n">hsig</span><span class="p">,</span> <span class="n">bins</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">'MC Signal'</span><span class="p">,</span> <span class="p">)</span>
+    <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">hbkg</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Data Bkg'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">plot_mass</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="n">h</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Jpsi_M&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">])</span>
+    <span class="n">h</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Jpsi_M'</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">])</span>
     <span class="n">mplhep</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># feel free to adjust</span>
     <span class="c1"># You can also use LaTeX in the axis label</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$J/</span><span class="se">\\</span><span class="s1">psi$ mass [GeV]&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'$J/</span><span class="se">\\</span><span class="s1">psi$ mass [GeV]'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1171,7 +2496,7 @@ array([0.9048003 , 0.77470464, 0.3681014 , ..., 0.367871  , 0.22820437,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;BDT&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_comparision</span><span class="p">(</span><span class="s1">'BDT'</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1187,18 +2512,18 @@ array([0.9048003 , 0.77470464, 0.3681014 , ..., 0.367871  , 0.22820437,
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;No cuts&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'No cuts'</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Jpsi_PT &gt; 4&#39;</span><span class="p">)</span>
-<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$J/</span><span class="se">\\</span><span class="s1">psi$ p$_T$ only&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'Jpsi_PT &gt; 4'</span><span class="p">)</span>
+<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'$J/</span><span class="se">\\</span><span class="s1">psi$ p$_T$ only'</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;(Jpsi_PT &gt; 4) &amp; ((mum_ProbNNmu &gt; 0.9) &amp; (mup_ProbNNmu &gt; 0.9))&#39;</span><span class="p">)</span>
-<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$J/</span><span class="se">\\</span><span class="s1">psi$ p$_T$ and muon PID&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'(Jpsi_PT &gt; 4) &amp; ((mum_ProbNNmu &gt; 0.9) &amp; (mup_ProbNNmu &gt; 0.9))'</span><span class="p">)</span>
+<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'$J/</span><span class="se">\\</span><span class="s1">psi$ p$_T$ and muon PID'</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;BDT &gt; 0.95&#39;</span><span class="p">)</span>
-<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Using BDT only&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'BDT &gt; 0.95'</span><span class="p">)</span>
+<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Using BDT only'</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1208,7 +2533,7 @@ array([0.9048003 , 0.77470464, 0.3681014 , ..., 0.367871  , 0.22820437,
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f47e829e3d0&gt;
+&lt;matplotlib.legend.Legend at 0x7fbc4afb6450&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1226,7 +2551,7 @@ array([0.9048003 , 0.77470464, 0.3681014 , ..., 0.367871  , 0.22820437,
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># That would be too nice to use in analysis</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">python_lesson</span><span class="w"> </span><span class="kn">import</span> <span class="n">check_truth</span>
 
-<span class="n">check_truth</span><span class="p">(</span><span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;BDT &gt; 0.95&#39;</span><span class="p">))</span>
+<span class="n">check_truth</span><span class="p">(</span><span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'BDT &gt; 0.95'</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1236,9 +2561,9 @@ array([0.9048003 , 0.77470464, 0.3681014 , ..., 0.367871  , 0.22820437,
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Loading reference dataset, this will take a moment...
-Data contains 125 signal events
-Data contains 207 background events
-Significance metric is 8.59
+Data contains 122 signal events
+Data contains 226 background events
+Significance metric is 8.58
 </pre></div></div>
 </div>
 <section id="Evaluating-classifier-performance">
@@ -1249,7 +2574,7 @@ Significance metric is 8.59
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;BDT&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_comparision</span><span class="p">(</span><span class="s1">'BDT'</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1268,7 +2593,7 @@ Significance metric is 8.59
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_score</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">],</span> <span class="n">y_score</span><span class="p">)</span>
+<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">],</span> <span class="n">y_score</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1283,15 +2608,15 @@ Significance metric is 8.59
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Randomly guess&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;ROC curve&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'grey'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Randomly guess'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'ROC curve'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'False Positive Rate'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'True Positive Rate'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'lower right'</span><span class="p">)</span>
 <span class="c1"># We can make the plot look nicer by forcing the grid to be square</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">'box'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1315,15 +2640,15 @@ Significance metric is 8.59
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;ROC curve (area = </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'grey'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'ROC curve (area = </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'False Positive Rate'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'True Positive Rate'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'lower right'</span><span class="p">)</span>
 <span class="c1"># We can make the plot look nicer by forcing the grid to be square</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">'box'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1362,7 +2687,7 @@ the peak.</p>
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4213/4020814425.py:3: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_5375/4020814425.py:3: RuntimeWarning: invalid value encountered in divide
   metric = S/np.sqrt(S+B)
 </pre></div></div>
 </div>
@@ -1372,8 +2697,8 @@ the peak.</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thresholds</span><span class="p">,</span> <span class="n">metric</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;BDT cut value&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">frac</span><span class="si">{S}</span><span class="s1">{</span><span class="se">\\</span><span class="s1">sqrt{S+B}}$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'BDT cut value'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'$</span><span class="se">\\</span><span class="s1">frac</span><span class="si">{S}</span><span class="s1">{</span><span class="se">\\</span><span class="s1">sqrt{S+B}}$'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1402,7 +2727,7 @@ the peak.</p>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimal_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">metric</span><span class="p">)</span>
 <span class="n">optimal_metric</span> <span class="o">=</span> <span class="n">metric</span><span class="p">[</span><span class="n">optimal_index</span><span class="p">]</span>
 <span class="n">optimal_cut</span> <span class="o">=</span> <span class="n">thresholds</span><span class="p">[</span><span class="n">optimal_index</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The optimal cut value is </span><span class="si">{</span><span class="n">optimal_cut</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> with and S/sqrt(S+B) of </span><span class="si">{</span><span class="n">optimal_metric</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'The optimal cut value is </span><span class="si">{</span><span class="n">optimal_cut</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> with and S/sqrt(S+B) of </span><span class="si">{</span><span class="n">optimal_metric</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1418,12 +2743,12 @@ The optimal cut value is inf with and S/sqrt(S+B) of nan
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;No cuts&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'No cuts'</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;BDT &gt; </span><span class="si">{</span><span class="n">optimal_cut</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Using BDT only&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data_with_cuts_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s1">'BDT &gt; </span><span class="si">{</span><span class="n">optimal_cut</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Using BDT only'</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1432,15 +2757,13 @@ The optimal cut value is inf with and S/sqrt(S+B) of nan
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:486: RuntimeWarning: All sumw are zero!  Cannot compute meaningful error bars
-  return np.abs(method_fcn(self.values, variances) - self.values)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:560: RuntimeWarning: divide by zero encountered in scalar divide
-  self.flat_scale(1 / np.sum(np.diff(self.edges) * self.values))
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:531: RuntimeWarning: invalid value encountered in multiply
-  self.values *= scale
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:532: RuntimeWarning: invalid value encountered in multiply
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.12/site-packages/mplhep/_utils.py:1104: RuntimeWarning: divide by zero encountered in divide
+  return self.flat_scale(1 / (widths * np.sum(self.values())))
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.12/site-packages/mplhep/_utils.py:1081: RuntimeWarning: invalid value encountered in multiply
+  self._values *= scale
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.12/site-packages/mplhep/_utils.py:1082: RuntimeWarning: invalid value encountered in multiply
   self.yerr_lo *= scale
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:533: RuntimeWarning: invalid value encountered in multiply
+/usr/share/miniconda/envs/analysis-essentials/lib/python3.12/site-packages/mplhep/_utils.py:1083: RuntimeWarning: invalid value encountered in multiply
   self.yerr_hi *= scale
 </pre></div></div>
 </div>
@@ -1450,7 +2773,7 @@ The optimal cut value is inf with and S/sqrt(S+B) of nan
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f47e8390190&gt;
+&lt;matplotlib.legend.Legend at 0x7fbc4afbf350&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1464,26 +2787,15 @@ The optimal cut value is inf with and S/sqrt(S+B) of nan
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Using BDT only&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_mass</span><span class="p">(</span><span class="n">data_with_cuts_df</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Using BDT only'</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:486: RuntimeWarning: All sumw are zero!  Cannot compute meaningful error bars
-  return np.abs(method_fcn(self.values, variances) - self.values)
-/usr/share/miniconda/envs/analysis-essentials/lib/python3.11/site-packages/mplhep/utils.py:486: RuntimeWarning: All sumw are zero!  Cannot compute meaningful error bars
-  return np.abs(method_fcn(self.values, variances) - self.values)
-</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/advanced-python_30Classification_47_1.png" src="../_images/advanced-python_30Classification_47_1.png" />
+<img alt="../_images/advanced-python_30Classification_47_0.png" src="../_images/advanced-python_30Classification_47_0.png" />
 </div>
 </div>
 </section>
@@ -1496,21 +2808,21 @@ The optimal cut value is inf with and S/sqrt(S+B) of nan
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_roc</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">y_score</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">],</span> <span class="n">y_score</span><span class="p">)</span>
+    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">],</span> <span class="n">y_score</span><span class="p">)</span>
     <span class="n">area</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'grey'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">label</span><span class="p">:</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s1"> (area = </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s1"> (area = </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)'</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;ROC curve (area = </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'ROC curve (area = </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'False Positive Rate'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'True Positive Rate'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'lower right'</span><span class="p">)</span>
     <span class="c1"># We can make the plot look nicer by forcing the grid to be square</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">'box'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1520,7 +2832,7 @@ The optimal cut value is inf with and S/sqrt(S+B) of nan
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_significance</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">y_score</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">],</span> <span class="n">y_score</span><span class="p">)</span>
+    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">],</span> <span class="n">y_score</span><span class="p">)</span>
 
     <span class="n">n_sig</span> <span class="o">=</span> <span class="mi">1200</span>
     <span class="n">n_bkg</span> <span class="o">=</span> <span class="mi">23000</span>
@@ -1529,12 +2841,12 @@ The optimal cut value is inf with and S/sqrt(S+B) of nan
     <span class="n">metric</span> <span class="o">=</span> <span class="n">S</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">S</span><span class="o">+</span><span class="n">B</span><span class="p">)</span>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thresholds</span><span class="p">,</span> <span class="n">metric</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;BDT cut value&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">frac</span><span class="si">{S}</span><span class="s1">{</span><span class="se">\\</span><span class="s1">sqrt{S+B}}$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'BDT cut value'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'$</span><span class="se">\\</span><span class="s1">frac</span><span class="si">{S}</span><span class="s1">{</span><span class="se">\\</span><span class="s1">sqrt{S+B}}$'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 
     <span class="n">optimal_cut</span> <span class="o">=</span> <span class="n">thresholds</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">metric</span><span class="p">)]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">optimal_cut</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">optimal_cut</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1542,39 +2854,39 @@ The optimal cut value is inf with and S/sqrt(S+B) of nan
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://cern.ch/starterkit/data/advanced-python-2018/real_data.root&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
-    <span class="n">data_df</span> <span class="o">=</span> <span class="n">datafile</span><span class="p">[</span><span class="s1">&#39;DecayTree&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">&#39;pd&#39;</span><span class="p">)</span>
-<span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://cern.ch/starterkit/data/advanced-python-2018/simulated_data.root&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">mcfile</span><span class="p">:</span>
-    <span class="n">mc_df</span> <span class="o">=</span> <span class="n">mcfile</span><span class="p">[</span><span class="s1">&#39;DecayTree&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">&#39;pd&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'https://cern.ch/starterkit/data/advanced-python-2018/real_data.root'</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
+    <span class="n">data_df</span> <span class="o">=</span> <span class="n">datafile</span><span class="p">[</span><span class="s1">'DecayTree'</span><span class="p">]</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">'pd'</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'https://cern.ch/starterkit/data/advanced-python-2018/simulated_data.root'</span><span class="p">)</span> <span class="k">as</span> <span class="n">mcfile</span><span class="p">:</span>
+    <span class="n">mc_df</span> <span class="o">=</span> <span class="n">mcfile</span><span class="p">[</span><span class="s1">'DecayTree'</span><span class="p">]</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="s1">'pd'</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data succesfully loaded&quot;</span><span class="p">)</span>
-<span class="n">bkg_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;~(3.0 &lt; Jpsi_M &lt; 3.2)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Data succesfully loaded"</span><span class="p">)</span>
+<span class="n">bkg_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'~(3.0 &lt; Jpsi_M &lt; 3.2)'</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span><span class="n">mc_df</span><span class="p">,</span> <span class="n">data_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">]:</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;mup_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">'Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">'mup_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s1">'mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">training_columns</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;Jpsi_PT&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;mup_PT&#39;</span><span class="p">,</span> <span class="s1">&#39;mup_eta&#39;</span><span class="p">,</span> <span class="s1">&#39;mup_ProbNNmu&#39;</span><span class="p">,</span> <span class="s1">&#39;mup_IP&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;mum_PT&#39;</span><span class="p">,</span> <span class="s1">&#39;mum_eta&#39;</span><span class="p">,</span> <span class="s1">&#39;mum_ProbNNmu&#39;</span><span class="p">,</span> <span class="s1">&#39;mum_IP&#39;</span><span class="p">,</span>
+    <span class="s1">'Jpsi_PT'</span><span class="p">,</span>
+    <span class="s1">'mup_PT'</span><span class="p">,</span> <span class="s1">'mup_eta'</span><span class="p">,</span> <span class="s1">'mup_ProbNNmu'</span><span class="p">,</span> <span class="s1">'mup_IP'</span><span class="p">,</span>
+    <span class="s1">'mum_PT'</span><span class="p">,</span> <span class="s1">'mum_eta'</span><span class="p">,</span> <span class="s1">'mum_ProbNNmu'</span><span class="p">,</span> <span class="s1">'mum_IP'</span><span class="p">,</span>
 <span class="p">]</span>
 
-<span class="n">bkg_df</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Use 0 for background</span>
-<span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Use 1 for signal</span>
+<span class="n">bkg_df</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Use 0 for background</span>
+<span class="n">mc_df</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Use 1 for signal</span>
 <span class="n">training_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">bkg_df</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">],</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">bdt</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">()</span>
-<span class="n">bdt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;catagory&#39;</span><span class="p">])</span>
+<span class="n">bdt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">],</span> <span class="n">training_data</span><span class="p">[</span><span class="s1">'catagory'</span><span class="p">])</span>
 
-<span class="n">mc_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">bkg_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">data_df</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">training_data</span><span class="p">[</span><span class="s1">&#39;BDT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">mc_df</span><span class="p">[</span><span class="s1">'BDT'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">mc_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">bkg_df</span><span class="p">[</span><span class="s1">'BDT'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">bkg_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">data_df</span><span class="p">[</span><span class="s1">'BDT'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">training_data</span><span class="p">[</span><span class="s1">'BDT'</span><span class="p">]</span> <span class="o">=</span> <span class="n">bdt</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="n">training_columns</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">&#39;BDT&#39;</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
+<span class="n">plot_comparision</span><span class="p">(</span><span class="s1">'BDT'</span><span class="p">,</span> <span class="n">mc_df</span><span class="p">,</span> <span class="n">bkg_df</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plot_significance</span><span class="p">(</span><span class="n">bdt</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">training_columns</span><span class="p">)</span>
@@ -1597,7 +2909,36 @@ Data succesfully loaded
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_4213/4278176416.py:9: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_5375/2566643064.py:10: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  df.eval(&#39;Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)&#39;, inplace=True)
+/tmp/ipykernel_5375/2566643064.py:11: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  df.eval(&#39;mup_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#39;, inplace=True)
+/tmp/ipykernel_5375/2566643064.py:12: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  df.eval(&#39;mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#39;, inplace=True)
+/tmp/ipykernel_5375/2566643064.py:10: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  df.eval(&#39;Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)&#39;, inplace=True)
+/tmp/ipykernel_5375/2566643064.py:11: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  df.eval(&#39;mup_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#39;, inplace=True)
+/tmp/ipykernel_5375/2566643064.py:12: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  df.eval(&#39;mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#39;, inplace=True)
+/tmp/ipykernel_5375/2566643064.py:10: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  df.eval(&#39;Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)&#39;, inplace=True)
+/tmp/ipykernel_5375/2566643064.py:11: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  df.eval(&#39;mup_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#39;, inplace=True)
+/tmp/ipykernel_5375/2566643064.py:12: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
+  df.eval(&#39;mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#39;, inplace=True)
+/tmp/ipykernel_5375/2566643064.py:22: Pandas4Warning: The copy keyword is deprecated and will be removed in a future version. Copy-on-Write is active in pandas since 3.0 which utilizes a lazy copy mechanism that defers copies until necessary. Use .copy() to make an eager copy if necessary.
+  training_data = pd.concat([bkg_df, mc_df], copy=True, ignore_index=True)
+/tmp/ipykernel_5375/4278176416.py:9: RuntimeWarning: invalid value encountered in divide
   metric = S/np.sqrt(S+B)
 </pre></div></div>
 </div>

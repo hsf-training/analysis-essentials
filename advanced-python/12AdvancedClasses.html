@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Advanced Classes &mdash; Analysis essentials  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -17,13 +17,13 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
       <script src="../_static/panels.js?v=0f4bdeea"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -59,8 +59,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
@@ -72,10 +72,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
@@ -96,6 +92,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
@@ -104,10 +104,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
@@ -180,6 +176,12 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Decorators">Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#&#64;classmethod">&#64;classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#&#64;staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#&#64;property">&#64;property</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#Dunder">Dunder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#len">len</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#str">str</a></li>
@@ -188,6 +190,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Naming-conventions">Naming conventions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Danger-zone">Danger zone</a></li>
 </ul>
 </li>
@@ -484,73 +487,259 @@
              
   <section id="Advanced-Classes">
 <h1>Advanced Classes<a class="headerlink" href="#Advanced-Classes" title="Link to this heading"></a></h1>
-<p>This tutorial focuses on the invocation of dunder methods and demystifies the operators in Python.</p>
+<p>This tutorial focuses on the invocation of decorators, dunder methods and demystifies the operators in Python.</p>
+<section id="Decorators">
+<h2>Decorators<a class="headerlink" href="#Decorators" title="Link to this heading"></a></h2>
+<p>Consider the following modification of our <code class="docutils literal notranslate"><span class="pre">Student</span></code> class:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Stores information about students."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">homework_grades</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exam_grades</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">extra_credit</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">sdict</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Initialize a Student using the given dictionary."""</span>
+        <span class="n">student</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">sdict</span><span class="p">[</span><span class="s1">'name'</span><span class="p">])</span>
+        <span class="k">if</span> <span class="s1">'homework_grades'</span> <span class="ow">in</span> <span class="n">sdict</span><span class="p">:</span>
+            <span class="n">student</span><span class="o">.</span><span class="n">homework_grades</span> <span class="o">=</span> <span class="n">sdict</span><span class="p">[</span><span class="s1">'homework_grades'</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">'exam_grades'</span> <span class="ow">in</span> <span class="n">sdict</span><span class="p">:</span>
+            <span class="n">student</span><span class="o">.</span><span class="n">exam_grades</span> <span class="o">=</span> <span class="n">sdict</span><span class="p">[</span><span class="s1">'exam_grades'</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">'extra_credit'</span> <span class="ow">in</span> <span class="n">sdict</span><span class="p">:</span>
+            <span class="n">student</span><span class="o">.</span><span class="n">extra_credit</span> <span class="o">=</span> <span class="n">sdict</span><span class="p">[</span><span class="s1">'extra_credit'</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">student</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">avg</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">homework_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Average homework grade."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">avg</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">homework_grades</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">exam_avg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Average exam grade."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">avg</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">exam_grades</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">gpa</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""GPA (on a 4.0 scale)."""</span>
+        <span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">homework_avg</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">exam_avg</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">extra_credit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">extra_credit</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">avg</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="o">/</span><span class="mf">100.</span>
+</pre></div>
+</div>
+</div>
+<p>What are all of those things with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> before the function definitions? And why don’t the <code class="docutils literal notranslate"><span class="pre">from_dict</span></code> and <code class="docutils literal notranslate"><span class="pre">avg</span></code> methods not have <code class="docutils literal notranslate"><span class="pre">self</span></code> as their first arguments?!?</p>
+<p>The names beginning with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>, such as <code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span></code>, are called <em>decorators</em>. Essentially, decorators are wrappers around functions that modify the behavior of that function. They can be used on any Python function, but they are most often seen in classes.</p>
+<p>Using and creating decorators is a large topic itself, the details of which we won’t get into here (if you’re interested, see <a class="reference external" href="https://realpython.com/primer-on-python-decorators/">here</a> for an excellent tutorial). However, there are three predefined decorators in the Python <code class="docutils literal notranslate"><span class="pre">builtins</span></code> that often come up in class definitions that I want highlight here: <code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code>, and <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code>.</p>
+<section id="&#64;classmethod">
+<h3>&#64;classmethod<a class="headerlink" href="#@classmethod" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span></code> decorator modifies methods so that instead of taking an <em>instance</em> of a class as the first argument (what we normally call <code class="docutils literal notranslate"><span class="pre">self</span></code>) it takes the <em>class itself</em> (which we normally call <code class="docutils literal notranslate"><span class="pre">cls</span></code>). This is typically used to provide a way to instantiate a class using alternate input arguments than what is defined in <code class="docutils literal notranslate"><span class="pre">__init__</span></code>. For example, say we had a dictionary that specifies all of the information about Susie:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">susie_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">susie_dict</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Susie'</span>
+<span class="n">susie_dict</span><span class="p">[</span><span class="s1">'homework_grades'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">80.</span><span class="p">,</span> <span class="mf">73.</span><span class="p">,</span> <span class="mf">77.</span><span class="p">,</span> <span class="mf">50.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]</span>
+<span class="n">susie_dict</span><span class="p">[</span><span class="s1">'exam_grades'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">70.</span><span class="p">,</span> <span class="mf">63.</span><span class="p">,</span> <span class="mf">50.</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>We can now instantiate a <code class="docutils literal notranslate"><span class="pre">Student</span></code> representation of Susie using the <code class="docutils literal notranslate"><span class="pre">from_dict</span></code> method:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">susie</span> <span class="o">=</span> <span class="n">Student</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">susie_dict</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">susie</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">susie</span><span class="o">.</span><span class="n">homework_grades</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">susie</span><span class="o">.</span><span class="n">exam_grades</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Susie
+[80.0, 73.0, 77.0, 50.0, 0.0]
+[70.0, 63.0, 50.0]
+</pre></div></div>
+</div>
+<p>Notice that when we used <code class="docutils literal notranslate"><span class="pre">from_dict</span></code> we only provided the dictionary, even though the definition of <code class="docutils literal notranslate"><span class="pre">from_dict</span></code> had two arguments, <code class="docutils literal notranslate"><span class="pre">cls</span></code> and <code class="docutils literal notranslate"><span class="pre">sdict</span></code>. As with normal methods, <code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span></code> automatically adds in the class as the first argument.</p>
+</section>
+<section id="&#64;staticmethod">
+<h3>&#64;staticmethod<a class="headerlink" href="#@staticmethod" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code> decorator modifies methods so that the class instance <code class="docutils literal notranslate"><span class="pre">self</span></code> is <em>not</em> automatically added when the method is called. As a result, we do not need to reserve the first argument in the definition of a <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code>. We see that in the above example: <code class="docutils literal notranslate"><span class="pre">avg</span></code> takes a single argument <code class="docutils literal notranslate"><span class="pre">values</span></code>, which is a list of values to calculate an average for.</p>
+<p>Since methods wrapped with <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code> do not do any automatic substitutions, it’s possible to use them without needing to create a class instance. For example:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Student</span><span class="o">.</span><span class="n">avg</span><span class="p">([</span><span class="mf">60.</span><span class="p">,</span> <span class="mf">70.</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+65.0
+</pre></div></div>
+</div>
+<p>In fact, we could have just defined <code class="docutils literal notranslate"><span class="pre">avg</span></code> outside of <code class="docutils literal notranslate"><span class="pre">Student</span></code> in the global namespace. In that case we would of called <code class="docutils literal notranslate"><span class="pre">avg(...)</span></code> instead of <code class="docutils literal notranslate"><span class="pre">self.avg(...)</span></code> inside of <code class="docutils literal notranslate"><span class="pre">Student</span></code>.</p>
+<p>So why use <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code>? Its main purpose is to provide a function that is heavily used by a class, but may have little meaning outside of the class. This can make code a easier to read and understand (”<a class="reference external" href="https://en.wikipedia.org/wiki/Syntactic_sugar">syntactic sugar</a>”). Basically, <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code> is a way of logically organizing functions.</p>
+</section>
+<section id="&#64;property">
+<h3>&#64;property<a class="headerlink" href="#@property" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> decorator is another form of syntactic sugar that modifies how a method is called. Basically, it makes a method look like an attribute.</p>
+<p>For example, in the above <code class="docutils literal notranslate"><span class="pre">homework_avg</span></code>, <code class="docutils literal notranslate"><span class="pre">exam_avg</span></code>, and <code class="docutils literal notranslate"><span class="pre">gpa</span></code> were all methods. Normally you would call them like <code class="docutils literal notranslate"><span class="pre">susie.gpa()</span></code> (as we did in the classes section). However, because we stuck the <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> decorator on each of these methods, we instead do:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">susie</span><span class="o">.</span><span class="n">gpa</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+2.34
+</pre></div></div>
+</div>
+<p>In other words, we no longer include the <code class="docutils literal notranslate"><span class="pre">()</span></code> after the name. Note that <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> <strong>only works with methods that take no arguments.</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> is used when we want to run some additional code under the hood when an attribute is accessed. It is typically paired with a “setter”, which allows us to also run some code when an attribute is set. For example:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Star</span><span class="p">:</span>
+    <span class="n">_mass</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mass</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mass</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"no mass set"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mass</span>
+
+    <span class="nd">@mass</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"mass must be &gt; 0"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mass</span> <span class="o">=</span> <span class="n">value</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">star</span> <span class="o">=</span> <span class="n">Star</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">star</span><span class="o">.</span><span class="n">mass</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[8]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> print(star.mass)
+
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[6]</span><span class="ansi-green-fg">, line 7</span>, in <span class="ansi-cyan-fg">Star.mass</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">      4</span>     @property
+<span class="ansi-green-fg">      5</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> mass(self):
+<span class="ansi-green-fg">      6</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> self._mass <span class="ansi-bold" style="color: rgb(0,135,0)">is</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">7</span>             <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> ValueError(<span class="ansi-yellow-fg">&#34;no mass set&#34;</span>)
+<span class="ansi-green-fg">      8</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> self._mass
+
+<span class="ansi-red-fg">ValueError</span>: no mass set
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">star</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="mf">10.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">star</span><span class="o">.</span><span class="n">mass</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+10.0
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">star2</span> <span class="o">=</span> <span class="n">Star</span><span class="p">()</span>
+<span class="n">star2</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[10]</span><span class="ansi-green-fg">, line 2</span>
+<span class="ansi-green-fg">      1</span> star2 = Star()
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> star2.mass = -<span class="ansi-green-fg">3</span>
+
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[6]</span><span class="ansi-green-fg">, line 13</span>, in <span class="ansi-cyan-fg">Star.mass</span><span class="ansi-blue-fg">(self, value)</span>
+<span class="ansi-green-fg">     10</span>     @mass.setter
+<span class="ansi-green-fg">     11</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> mass(self, value):
+<span class="ansi-green-fg">     12</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> value &lt;= <span class="ansi-green-fg">0</span>:
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">13</span>             <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> ValueError(<span class="ansi-yellow-fg">&#34;mass must be &gt; 0&#34;</span>)
+<span class="ansi-green-fg">     14</span>         self._mass = value
+
+<span class="ansi-red-fg">ValueError</span>: mass must be &gt; 0
+</pre></div></div>
+</div>
+</section>
+</section>
 <section id="Dunder">
 <h2>Dunder<a class="headerlink" href="#Dunder" title="Link to this heading"></a></h2>
 <p>Dunder (<strong>D</strong>ouble <strong>under</strong>score) methods <code class="docutils literal notranslate"><span class="pre">__meth__</span></code> are names which are reserved for Python only and should not be invented by us (implemented; yes). Just to be precise, <code class="docutils literal notranslate"><span class="pre">__meth</span></code> is fine.</p>
 <p>These methods are used to delegate the actual operator call. When we invoke any operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, but also <code class="docutils literal notranslate"><span class="pre">()</span></code> and so on), the object that this is applied on is checked for a corresponding method. For the <code class="docutils literal notranslate"><span class="pre">+</span></code>, the object (on the left) is checked for a <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method. If this is not found or return a <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> either alternatives are tried or an error is raised if all possibilities are tried.</p>
 <p>Alternatives involve in this case to call the <code class="docutils literal notranslate"><span class="pre">__radd__</span></code> (<strong>r</strong>ight <strong>add</strong>) on the <em>object on the right</em> <strong>IF</strong> the objects are of different types.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">NamedValue</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-
-
-<span class="k">class</span><span class="w"> </span><span class="nc">ValueLeft</span><span class="p">(</span><span class="n">NamedValue</span><span class="p">):</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;add called on </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="mi">42</span>
-
-
-<span class="k">class</span><span class="w"> </span><span class="nc">ValueRight</span><span class="p">(</span><span class="n">NamedValue</span><span class="p">):</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;radd called on </span><span class="si">{self.name}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="mi">24</span>
-
-
-<span class="k">class</span><span class="w"> </span><span class="nc">Value</span><span class="p">(</span><span class="n">ValueRight</span><span class="p">,</span> <span class="n">ValueLeft</span><span class="p">):</span>
-    <span class="k">pass</span>
-</pre></div>
-</div>
-</div>
-<p><strong>Exercise</strong>: which one can we add and which raise an error? Think or try it out!</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valleft</span> <span class="o">=</span> <span class="n">ValueLeft</span><span class="p">(</span><span class="s1">&#39;val left&#39;</span><span class="p">)</span>
-<span class="n">valleft2</span> <span class="o">=</span> <span class="n">ValueLeft</span><span class="p">(</span><span class="s1">&#39;val left2&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valleft</span> <span class="o">+</span> <span class="n">valleft2</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-add called on val left
-</pre></div></div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-42
-</pre></div></div>
-</div>
 <section id="len">
 <h3>len<a class="headerlink" href="#len" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">len</span></code> method simply checks if there is a <code class="docutils literal notranslate"><span class="pre">__len__</span></code> implemented.</p>
@@ -560,7 +749,7 @@ add called on val left
 <p>To have a nice, representable, human readable string, <code class="docutils literal notranslate"><span class="pre">__str__</span></code> should be implemented. There is a similar one, which is <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>. This is also a string representation of the object, yet more targeted towards the developers.</p>
 <p>If no <code class="docutils literal notranslate"><span class="pre">__str__</span></code> is provided, it falls back to <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>, which, if not provided, uses a default implementation.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Name</span><span class="p">:</span>
@@ -575,7 +764,7 @@ add called on val left
 
 <span class="k">class</span><span class="w"> </span><span class="nc">NameStr</span><span class="p">(</span><span class="n">Name</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;I am </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">'I am </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">'</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">NameStrRepr</span><span class="p">(</span><span class="n">NameStr</span><span class="p">,</span> <span class="n">NameRepr</span><span class="p">):</span>
@@ -589,12 +778,12 @@ add called on val left
 <h3>Callable<a class="headerlink" href="#Callable" title="Link to this heading"></a></h3>
 <p>In Python, a callable is any object that can be called. Calling an object means to have <code class="docutils literal notranslate"><span class="pre">(...)</span></code> attached behind it. This operator looks for a <code class="docutils literal notranslate"><span class="pre">__call__</span></code> method.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Callable</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;called with args </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2"> and kwargs </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"called with args </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2"> and kwargs </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">NotCallable</span><span class="p">:</span>
@@ -603,7 +792,7 @@ add called on val left
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">call</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">()</span>
@@ -612,7 +801,7 @@ add called on val left
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">call</span><span class="p">()</span>
@@ -628,7 +817,7 @@ called with args () and kwargs {}
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -652,7 +841,7 @@ called with args () and kwargs {}
 <h3>Indexing (iterating)<a class="headerlink" href="#Indexing-(iterating)" title="Link to this heading"></a></h3>
 <p>There are a few methods when it comes down to iteration. However, we won’t go into these details but rather look at the normal indexing. That is controlled via <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> and <code class="docutils literal notranslate"><span class="pre">__setitem__</span></code> and invoked with the <code class="docutils literal notranslate"><span class="pre">[]</span></code> operator.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Storage</span><span class="p">:</span>
@@ -661,25 +850,25 @@ called with args () and kwargs {}
         <span class="bp">self</span><span class="o">.</span><span class="n">container</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>  <span class="c1"># just for demonstration</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;getitem of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> invoked with index </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"getitem of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> invoked with index </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">container</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;setitem of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> invoked with index </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> and item </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"setitem of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> invoked with index </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> and item </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">container</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">storage</span> <span class="o">=</span> <span class="n">Storage</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">storage</span> <span class="o">=</span> <span class="n">Storage</span><span class="p">(</span><span class="s1">'one'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">storage</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
@@ -695,7 +884,7 @@ getitem of one invoked with index 2
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -704,7 +893,7 @@ getitem of one invoked with index 2
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">storage</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
@@ -727,7 +916,7 @@ setitem of one invoked with index 2 and item 3
 <p><em>Read the following well</em> If an instance is create of a class and a method is called on that instance, the <em>first</em> argument to the method is the instance itself. <strong>Fullstop</strong></p>
 <p>What are the consequences of this?</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="p">:</span>
@@ -740,7 +929,7 @@ setitem of one invoked with index 2 and item 3
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -749,7 +938,7 @@ setitem of one invoked with index 2 and item 3
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
@@ -757,7 +946,7 @@ setitem of one invoked with index 2 and item 3
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -766,7 +955,7 @@ setitem of one invoked with index 2 and item 3
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
@@ -774,7 +963,7 @@ setitem of one invoked with index 2 and item 3
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -784,6 +973,128 @@ setitem of one invoked with index 2 and item 3
 </div>
 <p>The latter works as well! Why not? <code class="docutils literal notranslate"><span class="pre">add</span></code> is a method that we call and we give it two arguments. Forgetting about class dynamics, it makes actually complete sense.</p>
 </section>
+<section id="Naming-conventions">
+<h2>Naming conventions<a class="headerlink" href="#Naming-conventions" title="Link to this heading"></a></h2>
+<p>In Python, there are a number of conventions for naming variables, functions, and classes. These are not enforced by the Python interpreter, but are used to make code more readable and understandable.</p>
+<ol class="arabic simple">
+<li><p><strong>Class names</strong> should be in CamelCase (e.g., <code class="docutils literal notranslate"><span class="pre">MyClass</span></code>).</p></li>
+<li><p><strong>Constant names</strong> should be in all caps with underscores separating words (e.g., <code class="docutils literal notranslate"><span class="pre">MY_CONSTANT</span></code>).</p></li>
+<li><p>Everything else should be in snake_case, that is, all lowercase with underscores separating words (e.g., <code class="docutils literal notranslate"><span class="pre">my_function</span></code>).</p></li>
+</ol>
+<p>For more details, see <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a>, the official Python style guide.</p>
+<p>Methods of classes have their own naming conventions, some of which have an actual effect on how the method is treated by Python. There are four types:</p>
+<ul class="simple">
+<li><p><strong>Public methods</strong> are those that are part of the class’s public API. These should be in snake_case, for example, <code class="docutils literal notranslate"><span class="pre">A.my_method()</span></code>.</p></li>
+<li><p><strong>Private methods</strong> are those that are only to be used within the class. These should begin with an underscore, for example, <code class="docutils literal notranslate"><span class="pre">_my_private_method()</span></code>. This is a convention only; Python does not enforce privacy. These methods should not be used as they can be changed without notice. The use-case to <em>actually</em> use them is usually to “hack” something.</p></li>
+<li><p><strong>Double private</strong> are methods that begin and end with double underscores. These are not only private but their name is mangled (with a <code class="docutils literal notranslate"><span class="pre">_class</span></code> prepended, where <code class="docutils literal notranslate"><span class="pre">class</span></code> is the actual class name), which is a way of making it difficult to override a method in a subclass. They can, technically, still be called, but it is made purposefully difficult. For example, <code class="docutils literal notranslate"><span class="pre">__my_double_private_method()</span></code> (calling it from the <em>outside</em> will be <code class="docutils literal notranslate"><span class="pre">_MyClass__my_double_private_method()</span></code>).</p></li>
+<li><p><strong>Dunder or magic methods</strong> are methods that are called by Python in response to certain events. They always begin <em>and</em> end with double underscores. For example, <code class="docutils literal notranslate"><span class="pre">__init__</span></code> is called when an instance of a class is created. Others include <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, <code class="docutils literal notranslate"><span class="pre">__add__</span></code>, <code class="docutils literal notranslate"><span class="pre">__len__</span></code>, etc. For more on these, see <a class="reference external" href="https://rszalski.github.io/magicmethods/">here</a>. They are reserved for Python’s internal use and should not be defined by the user.</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">plus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"plus"</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_plus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"_plus"</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__plus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"__plus"</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"init"</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"HELLO"</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="n">a</span><span class="o">.</span><span class="n">plus</span><span class="p">()</span>
+<span class="n">a</span><span class="o">.</span><span class="n">_plus</span><span class="p">()</span>
+<span class="n">a</span><span class="o">.</span><span class="n">_A__plus</span><span class="p">()</span>  <span class="c1"># notice the mangled name! a.__plus() would not work</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+init
+plus
+_plus
+__plus
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">NamedValue</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ValueLeft</span><span class="p">(</span><span class="n">NamedValue</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"add called on </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">42</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ValueRight</span><span class="p">(</span><span class="n">NamedValue</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"radd called on </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">24</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Value</span><span class="p">(</span><span class="n">ValueRight</span><span class="p">,</span> <span class="n">ValueLeft</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Exercise</strong>: which one can we add and which raise an error? Think or try it out!</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valleft</span> <span class="o">=</span> <span class="n">ValueLeft</span><span class="p">(</span><span class="s1">'val left'</span><span class="p">)</span>
+<span class="n">valleft2</span> <span class="o">=</span> <span class="n">ValueLeft</span><span class="p">(</span><span class="s1">'val left2'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valleft</span> <span class="o">+</span> <span class="n">valleft2</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+add called on val left
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+42
+</pre></div></div>
+</div>
+</section>
 <section id="Danger-zone">
 <h2>Danger zone<a class="headerlink" href="#Danger-zone" title="Link to this heading"></a></h2>
 <p>The following is only for fun and should <em>not</em> be used in real live, except you do <em>really</em> know what you’re doing and at least two independent colleagues agree that this is the right way to go</p>
@@ -791,7 +1102,7 @@ setitem of one invoked with index 2 and item 3
 <p>Solution: the <code class="docutils literal notranslate"><span class="pre">.</span></code> the access operator. Yes, you guessed right. Let’s override it</p>
 <p>First, where are actually all the attributes stored in a class? Answer: in the <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> attribute.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="vm">__dict__</span>
@@ -799,17 +1110,17 @@ setitem of one invoked with index 2 and item 3
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&#39;value&#39;: 4}
+{}
 </pre></div></div>
 </div>
 <p>Next quiz: where are the methods (<em>remark open</em>) stored?</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__dict__</span>
@@ -817,21 +1128,24 @@ setitem of one invoked with index 2 and item 3
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 mappingproxy({&#39;__module__&#39;: &#39;__main__&#39;,
-              &#39;__init__&#39;: &lt;function __main__.A.__init__(self, value)&gt;,
-              &#39;add&#39;: &lt;function __main__.A.add(self, y)&gt;,
+              &#39;plus&#39;: &lt;function __main__.A.plus(self)&gt;,
+              &#39;_plus&#39;: &lt;function __main__.A._plus(self)&gt;,
+              &#39;_A__plus&#39;: &lt;function __main__.A.__plus(self)&gt;,
+              &#39;__init__&#39;: &lt;function __main__.A.__init__(self)&gt;,
+              &#39;__str__&#39;: &lt;function __main__.A.__str__(self)&gt;,
               &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;A&#39; objects&gt;,
               &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;A&#39; objects&gt;,
               &#39;__doc__&#39;: None})
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="vm">__dict__</span>
@@ -839,14 +1153,17 @@ mappingproxy({&#39;__module__&#39;: &#39;__main__&#39;,
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 mappingproxy({&#39;__module__&#39;: &#39;__main__&#39;,
-              &#39;__init__&#39;: &lt;function __main__.A.__init__(self, value)&gt;,
-              &#39;add&#39;: &lt;function __main__.A.add(self, y)&gt;,
+              &#39;plus&#39;: &lt;function __main__.A.plus(self)&gt;,
+              &#39;_plus&#39;: &lt;function __main__.A._plus(self)&gt;,
+              &#39;_A__plus&#39;: &lt;function __main__.A.__plus(self)&gt;,
+              &#39;__init__&#39;: &lt;function __main__.A.__init__(self)&gt;,
+              &#39;__str__&#39;: &lt;function __main__.A.__str__(self)&gt;,
               &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;A&#39; objects&gt;,
               &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;A&#39; objects&gt;,
               &#39;__doc__&#39;: None})
@@ -855,7 +1172,7 @@ mappingproxy({&#39;__module__&#39;: &#39;__main__&#39;,
 <p>To be clear, there is nothing special about a value attribute and a method: the value attribute happened to be set on the <em>instance</em> while the method happened to be set on the class. But we can have class attributes as well as (not really occuring in reality though) instance methods.</p>
 <p><strong>Disclaimer: the following is EXTREMELY BAD CODING practices and should NEVER be seen in ANY real used code</strong></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">GetAndSet</span><span class="p">:</span>
@@ -866,17 +1183,17 @@ mappingproxy({&#39;__module__&#39;: &#39;__main__&#39;,
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="s1">&#39;addition&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'add'</span><span class="p">,</span> <span class="s1">'addition'</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">add</span>
-        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;hello&#39;</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am 42&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">'hello'</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">'I am 42'</span><span class="p">)</span>
 
     <span class="c1"># we omit the __setattr__, but the game is the same</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get</span> <span class="o">=</span> <span class="n">GetAndSet</span><span class="p">()</span>
@@ -884,7 +1201,7 @@ mappingproxy({&#39;__module__&#39;: &#39;__main__&#39;,
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">get</span><span class="p">)</span>
@@ -892,7 +1209,7 @@ mappingproxy({&#39;__module__&#39;: &#39;__main__&#39;,
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -901,7 +1218,7 @@ mappingproxy({&#39;__module__&#39;: &#39;__main__&#39;,
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get</span><span class="o">.</span><span class="n">addition</span><span class="p">(</span><span class="n">get</span><span class="p">)</span>
@@ -909,7 +1226,7 @@ mappingproxy({&#39;__module__&#39;: &#39;__main__&#39;,
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -918,7 +1235,7 @@ mappingproxy({&#39;__module__&#39;: &#39;__main__&#39;,
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get</span><span class="o">.</span><span class="n">hello</span>
@@ -935,10 +1252,10 @@ I am 42
 </div>
 <p>We can also provoke the same behavior by using the function <code class="docutils literal notranslate"><span class="pre">getattr</span></code> (or <code class="docutils literal notranslate"><span class="pre">setattr</span></code> respectively)</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">getattr</span><span class="p">(</span><span class="n">get</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">getattr</span><span class="p">(</span><span class="n">get</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -951,7 +1268,7 @@ I am 42
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get</span><span class="o">.</span><span class="n">hi</span>
@@ -961,7 +1278,7 @@ I am 42
 <p>Quiz: why the above?</p>
 <p>Answer: Because the <code class="docutils literal notranslate"><span class="pre">__getattr__</span></code> that we called returns <code class="docutils literal notranslate"><span class="pre">None</span></code> (as any function/method does without an explicit <code class="docutils literal notranslate"><span class="pre">return</span></code>)</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">this</span>

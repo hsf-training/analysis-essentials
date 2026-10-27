@@ -154,6 +154,7 @@
    "outputs": [],
    "source": [
     "e1 = make_particle(20, 30, 20, E=41.234227)\n",
+    "print(e1)\n",
     "e1['mass'](e1)"
    ]
   },
@@ -186,7 +187,8 @@
     "    return particle\n",
     "\n",
     "\n",
-    "particle1 = initialize_particle(make_particle(), px=20, py=30, pz=20, E=50)"
+    "particle = make_particle()\n",
+    "particle1 = initialize_particle(particle, px=20, py=30, pz=20, E=50)"
    ]
   },
   {
@@ -300,6 +302,13 @@
    ]
   },
   {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
@@ -365,7 +374,13 @@
     "        new_py = self.py + other.py\n",
     "        new_pz = self.pz + other.pz\n",
     "        new_E = self.E + other.E\n",
-    "        return Particle(new_px, new_py, new_pz, new_E)"
+    "        return type(self)(new_px, new_py, new_pz, new_E)\n",
+    "    \n",
+    "#     def __str__(self):\n",
+    "#         return \"Hi there\"\n",
+    "    \n",
+    "    # def __repr__(self):\n",
+    "    #     return \"Verbose Particle\""
    ]
   },
   {
@@ -379,6 +394,24 @@
     "\n",
     "# test it here\n",
     "new_particle = particle1 + particle2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(new_particle)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "new_particle.calc_mass"
    ]
   },
   {
@@ -407,7 +440,7 @@
    "source": [
     "class VerboseParticle(Particle):  # This is inheritance\n",
     "    \n",
-    "    def momentum_text(self):\n",
+    "    def display(self):\n",
     "        return f\"px: {self.px}, py: {self.py}, pz: {self.pz}\"\n",
     "    "
    ]
@@ -421,7 +454,10 @@
     "# test it here again\n",
     "particle1 = VerboseParticle(10, 10, 10, 50)\n",
     "particle2 = VerboseParticle(10, 10, 10, 50)\n",
-    "new_particle = particle1 + particle2"
+    "print(particle1.display())\n",
+    "print(type(particle1))\n",
+    "new_particle = particle1 + particle2\n",
+    "print(type(new_particle))"
    ]
   },
   {
@@ -430,7 +466,16 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "type(new_particle)"
+    "repr(new_particle)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(new_particle.display())"
    ]
   },
   {
@@ -476,11 +521,54 @@
    "outputs": [],
    "source": [
     "class BetterParticle(Particle):\n",
-    "    def __init__(self, px, py, pz, E, superpower=42):\n",
-    "        super().__init__(px, py, pz, E)\n",
+    "    \n",
+    "    def __init__(self, superpower):\n",
+    "        super().__init__(1, 2, 3, 50)\n",
     "        self.superpower = superpower\n",
-    "        "
+    "        print(\"Hi\")\n",
+    "        \n",
+    "    def calc_mass(self):\n",
+    "        print(\"Start\")\n",
+    "        mass = super().calc_mass()\n",
+    "        print(\"Stop\")\n",
+    "        return mass\n",
+    "        \n",
+    "    "
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "p = BetterParticle(5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "p.calc_mass()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "BetterParticle.mro()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
@@ -495,5 +583,5 @@
   }
  },
  "nbformat": 4,
- "nbformat_minor": 2
+ "nbformat_minor": 4
 }

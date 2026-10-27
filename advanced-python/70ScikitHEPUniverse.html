@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>10: Scikit-HEP &mdash; Analysis essentials  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -17,13 +17,13 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
       <script src="../_static/panels.js?v=0f4bdeea"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -59,8 +59,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
@@ -72,10 +72,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
@@ -96,6 +92,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
@@ -104,10 +104,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
@@ -180,6 +176,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Decorators">Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#&#64;classmethod">&#64;classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#&#64;staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#&#64;property">&#64;property</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Dunder">Dunder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#len">len</a></li>
 <li class="toctree-l4"><a class="reference internal" href="12AdvancedClasses.html#str">str</a></li>
@@ -188,6 +190,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Naming-conventions">Naming conventions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
 </ul>
 </li>
@@ -497,7 +500,7 @@
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">formulate</span>
 
-<span class="n">momentum</span> <span class="o">=</span> <span class="n">formulate</span><span class="o">.</span><span class="n">from_root</span><span class="p">(</span><span class="s1">&#39;TMath::Sqrt(X_PX**2 + X_PY**2 + X_PZ**2)&#39;</span><span class="p">)</span>
+<span class="n">momentum</span> <span class="o">=</span> <span class="n">formulate</span><span class="o">.</span><span class="n">from_root</span><span class="p">(</span><span class="s1">'TMath::Sqrt(X_PX**2 + X_PY**2 + X_PZ**2)'</span><span class="p">)</span>
 <span class="n">momentum</span>
 </pre></div>
 </div>
@@ -508,7 +511,7 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX), UnnamedConstant(2)), Expression&lt;POW&gt;(Variable(X_PY), UnnamedConstant(2)), Expression&lt;POW&gt;(Variable(X_PZ), UnnamedConstant(2))))
+Call(function=&#39;sqrt&#39;, arguments=(BinaryOperator(operator=&#39;add&#39;, left=BinaryOperator(operator=&#39;add&#39;, left=BinaryOperator(operator=&#39;pow&#39;, left=Symbol(name=&#39;X_PX&#39;), right=Literal(value=2)), right=BinaryOperator(operator=&#39;pow&#39;, left=Symbol(name=&#39;X_PY&#39;), right=Literal(value=2))), right=BinaryOperator(operator=&#39;pow&#39;, left=Symbol(name=&#39;X_PZ&#39;), right=Literal(value=2))),))
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -525,7 +528,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;sqrt(((X_PX ** 2) + (X_PY ** 2) + (X_PZ ** 2)))&#39;
+&#39;sqrt((((X_PX ** 2) + (X_PY ** 2)) + (X_PZ ** 2)))&#39;
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -542,7 +545,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;TMath::Sqrt(((X_PX ** 2) + (X_PY ** 2) + (X_PZ ** 2)))&#39;
+&#39;TMath::Sqrt((((X_PX ** 2) + (X_PY ** 2)) + (X_PZ ** 2)))&#39;
 </pre></div></div>
 </div>
 </section>
@@ -593,7 +596,7 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-1.0
+Fraction(1, 1)
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -660,10 +663,10 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
  &lt;Particle: name=&#34;eta(b)(1S)&#34;, pdgid=551, mass=9398.7 ± 2.0 MeV&gt;,
  &lt;Particle: name=&#34;Upsilon(1S)&#34;, pdgid=553, mass=9460.40 ± 0.10 MeV&gt;,
  &lt;Particle: name=&#34;chi(b2)(1P)&#34;, pdgid=555, mass=9912.2 ± 0.4 MeV&gt;,
- &lt;Particle: name=&#34;Lambda(b)0&#34;, pdgid=5122, mass=5619.60 ± 0.17 MeV&gt;,
- &lt;Particle: name=&#34;Lambda(b)~0&#34;, pdgid=-5122, mass=5619.60 ± 0.17 MeV&gt;,
- &lt;Particle: name=&#34;Xi(b)0&#34;, pdgid=5232, mass=5791.9 ± 0.5 MeV&gt;,
- &lt;Particle: name=&#34;Xi(b)~0&#34;, pdgid=-5232, mass=5791.9 ± 0.5 MeV&gt;,
+ &lt;Particle: name=&#34;Lambda(b)0&#34;, pdgid=5122, mass=5619.57 ± 0.16 MeV&gt;,
+ &lt;Particle: name=&#34;Lambda(b)~0&#34;, pdgid=-5122, mass=5619.57 ± 0.16 MeV&gt;,
+ &lt;Particle: name=&#34;Xi(b)0&#34;, pdgid=5232, mass=5791.7 ± 0.4 MeV&gt;,
+ &lt;Particle: name=&#34;Xi(b)~0&#34;, pdgid=-5232, mass=5791.7 ± 0.4 MeV&gt;,
  &lt;Particle: name=&#34;chi(b0)(1P)&#34;, pdgid=10551, mass=9859.4 ± 0.5 MeV&gt;,
  &lt;Particle: name=&#34;h(b)(1P)&#34;, pdgid=10553, mass=9899.3 ± 0.8 MeV&gt;,
  &lt;Particle: name=&#34;chi(b1)(1P)&#34;, pdgid=20553, mass=9892.8 ± 0.4 MeV&gt;,
@@ -734,8 +737,26 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 <section id="Vector">
 <h2>Vector<a class="headerlink" href="#Vector" title="Link to this heading"></a></h2>
 <p>Manipulating and calculation vector quantities can be done using the <a class="reference external" href="https://github.com/scikit-hep/vector">vector</a> library. It provides functionality to load, combine and work with vectors.</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>vector
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Requirement already satisfied: vector in /usr/share/miniconda/envs/analysis-essentials/lib/python3.12/site-packages (1.9.0)
+Requirement already satisfied: numpy&gt;=1.19.3 in /usr/share/miniconda/envs/analysis-essentials/lib/python3.12/site-packages (from vector) (2.5.4)
+Requirement already satisfied: packaging&gt;=20 in /usr/share/miniconda/envs/analysis-essentials/lib/python3.12/site-packages (from vector) (26.3)
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vector</span>
@@ -743,36 +764,36 @@ Expression&lt;SQRT&gt;(Expression&lt;ADD&gt;(Expression&lt;POW&gt;(Variable(X_PX
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NumPy-like arguments (literally passed through to NumPy)</span>
 <span class="n">vector</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
     <span class="p">(</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
-<span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)])</span>
+<span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="p">[(</span><span class="s2">"x"</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="p">(</span><span class="s2">"y"</span><span class="p">,</span> <span class="nb">float</span><span class="p">)])</span>
 
 <span class="c1"># Pandas-like arguments (dict from names to column arrays)</span>
-<span class="n">vector</span><span class="o">.</span><span class="n">array</span><span class="p">({</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]})</span>
+<span class="n">vector</span><span class="o">.</span><span class="n">array</span><span class="p">({</span><span class="s2">"x"</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span> <span class="s2">"y"</span><span class="p">:</span> <span class="p">[</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]})</span>
 
 <span class="c1"># As with objects, the coordinate system and dimension is taken from the names of the fields.</span>
 <span class="n">vec1</span> <span class="o">=</span> <span class="n">vector</span><span class="o">.</span><span class="n">array</span><span class="p">({</span>
-    <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span>
-    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span>
-    <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">3.1</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">],</span>
-    <span class="s2">&quot;t&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.1</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">],</span>
+    <span class="s2">"x"</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span>
+    <span class="s2">"y"</span><span class="p">:</span> <span class="p">[</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span>
+    <span class="s2">"z"</span><span class="p">:</span> <span class="p">[</span><span class="mf">3.1</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">],</span>
+    <span class="s2">"t"</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.1</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">],</span>
 <span class="p">})</span>
 
 <span class="n">vector</span><span class="o">.</span><span class="n">array</span><span class="p">({</span>
-    <span class="s2">&quot;pt&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span>
-    <span class="s2">&quot;phi&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span>
-    <span class="s2">&quot;eta&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">3.1</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">],</span>
-    <span class="s2">&quot;M&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.1</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">],</span>
+    <span class="s2">"pt"</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span>
+    <span class="s2">"phi"</span><span class="p">:</span> <span class="p">[</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">],</span>
+    <span class="s2">"eta"</span><span class="p">:</span> <span class="p">[</span><span class="mf">3.1</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">],</span>
+    <span class="s2">"M"</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.1</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">],</span>
 <span class="p">})</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -786,7 +807,7 @@ MomentumNumpy4D([(1.1, 2.1, 3.1, 4.1), (1.2, 2.2, 3.2, 4.2), (1.3, 2.3, 3.3, 4.3
 <h3>Vector properties<a class="headerlink" href="#Vector-properties" title="Link to this heading"></a></h3>
 <p>Vectors can have properties and provide quantities as attributes</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">.</span><span class="n">obj</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">theta</span>
@@ -795,7 +816,7 @@ MomentumNumpy4D([(1.1, 2.1, 3.1, 4.1), (1.2, 2.2, 3.2, 4.2), (1.3, 2.3, 3.3, 4.3
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -804,7 +825,7 @@ np.float64(1.1035868415601453)
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">.</span><span class="n">obj</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># Cartesian 4D vector</span>
@@ -812,7 +833,7 @@ np.float64(1.1035868415601453)
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="output_area docutils container">

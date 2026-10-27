@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Objects and operators &mdash; Analysis essentials  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
 
@@ -16,16 +16,16 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
       <script src="../_static/panels.js?v=0f4bdeea"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Numbers" href="numbers.html" />
-    <link rel="prev" title="1: Basics" href="01basics.html" /> 
+    <link rel="next" title="Conditions" href="conditions.html" />
+    <link rel="prev" title="Dictionaries" href="dictionaries.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -56,8 +56,8 @@
 <li class="toctree-l3"><a class="reference internal" href="00scripts.html#argparse">argparse</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Jupyter">Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#strong-typing">strong typing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Container-types">Container types</a></li>
@@ -69,10 +69,6 @@
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Python-variable-assignement">Python variable assignement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Objects and operators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#objects">Objects</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers</a></li>
@@ -93,6 +89,10 @@
 <li class="toctree-l3"><a class="reference internal" href="dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#objects">Objects</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="conditions.html">Conditions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="conditions.html#Truthiness">Truthiness</a></li>
 <li class="toctree-l3"><a class="reference internal" href="conditions.html#Conditions-in-loops">Conditions in loops</a></li>
@@ -101,10 +101,6 @@
 <li class="toctree-l2"><a class="reference internal" href="methods.html">Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="methods.html#Inline-methods">Inline methods</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="scripting.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="scripting.html#argparse">argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="modules.html">Modules</a><ul>
@@ -177,6 +173,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Decorators">Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;classmethod">&#64;classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;property">&#64;property</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Dunder">Dunder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#len">len</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#str">str</a></li>
@@ -185,6 +187,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Naming-conventions">Naming conventions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
 </ul>
 </li>
@@ -519,7 +522,7 @@ with <code class="docutils literal notranslate"><span class="pre">2</span></code
 <p>When we do <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span></code>, what’s going on behind the scenes is <em>exactly</em> the same as
 when do <code class="docutils literal notranslate"><span class="pre">math.sin</span></code>. Observe!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="fm">__add__</span>
-<span class="go">&lt;method-wrapper &#39;__add__&#39; of int object at 0x7fdc7ea75980&gt;</span>
+<span class="go">&lt;method-wrapper '__add__' of int object at 0x7fdc7ea75980&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="go">3</span>
 </pre></div>
@@ -542,12 +545,12 @@ they compare with using the operator like normal.
 something. In IPython, you can try <code class="docutils literal notranslate"><span class="pre">(1).__&lt;tab&gt;</span></code>, or you can always use the
 <code class="docutils literal notranslate"><span class="pre">dir</span></code> method.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="go">[&#39;__abs__&#39;,</span>
-<span class="go"> &#39;__add__&#39;,</span>
-<span class="go"> &#39;__and__&#39;,</span>
-<span class="go"> &#39;__bool__&#39;,</span>
+<span class="go">['__abs__',</span>
+<span class="go"> '__add__',</span>
+<span class="go"> '__and__',</span>
+<span class="go"> '__bool__',</span>
 <span class="go"> ...</span>
-<span class="go"> &#39;to_bytes&#39;]</span>
+<span class="go"> 'to_bytes']</span>
 </pre></div>
 </div>
 <p>Then it’s just a case of scanning through this list and seeing what names look
@@ -564,13 +567,13 @@ right. The <code class="docutils literal notranslate"><span class="pre">__sub__<
 <p>Of course, there’s also a method for the dot operator! It’s called
 <code class="docutils literal notranslate"><span class="pre">__getattribute__</span></code>, and it takes the name of the thing you want to get.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="fm">__add__</span>
-<span class="go">&lt;method-wrapper &#39;__add__&#39; of int object at 0x7fdc7ea75980&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="s1">&#39;__add__&#39;</span><span class="p">)</span>
-<span class="go">&lt;method-wrapper &#39;__add__&#39; of int object at 0x7fdc7ea75980&gt;</span>
+<span class="go">&lt;method-wrapper '__add__' of int object at 0x7fdc7ea75980&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="s1">'__add__'</span><span class="p">)</span>
+<span class="go">&lt;method-wrapper '__add__' of int object at 0x7fdc7ea75980&gt;</span>
 </pre></div>
 </div>
 <p>So, of course, we can do this horrible one-liner:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="s1">&#39;__add__&#39;</span><span class="p">)(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="s1">'__add__'</span><span class="p">)(</span><span class="mi">3</span><span class="p">)</span>
 <span class="go">4</span>
 </pre></div>
 </div>
@@ -587,7 +590,7 @@ specially-named methods within objects, like using <code class="docutils literal
 because we can retrieve things from them with <code class="docutils literal notranslate"><span class="pre">.</span></code>.  Of course, the object
 <em>itself</em> is interesting because it can represent a value, like the number
 <code class="docutils literal notranslate"><span class="pre">999</span></code>.</p>
-<p>It the next set of lessons, we’ll go through the different types of objects
+<p>In the next set of lessons, we’ll go through the different types of objects
 that come with the Python language.</p>
 </section>
 </section>
@@ -596,8 +599,8 @@ that come with the Python language.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="01basics.html" class="btn btn-neutral float-left" title="1: Basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="numbers.html" class="btn btn-neutral float-right" title="Numbers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dictionaries.html" class="btn btn-neutral float-left" title="Dictionaries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="conditions.html" class="btn btn-neutral float-right" title="Conditions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

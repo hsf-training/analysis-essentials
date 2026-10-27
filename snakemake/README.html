@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Analysis automation with Snakemake &mdash; Analysis essentials  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
 
@@ -16,8 +16,8 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
       <script src="../_static/panels.js?v=0f4bdeea"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -56,8 +56,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
@@ -69,10 +69,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
@@ -93,6 +89,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
@@ -101,10 +101,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
@@ -177,6 +173,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Decorators">Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;classmethod">&#64;classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;property">&#64;property</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Dunder">Dunder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#len">len</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#str">str</a></li>
@@ -185,6 +187,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Naming-conventions">Naming conventions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
 </ul>
 </li>
@@ -494,10 +497,7 @@
 <section id="documentation-and-environments">
 <h2>Documentation and environments<a class="headerlink" href="#documentation-and-environments" title="Link to this heading"></a></h2>
 <p>You can find full documentation for Snakemake
-<a class="reference external" href="https://snakemake.readthedocs.io/en/stable/index.html">here</a>;
-you can also ask any questions you have on the
-<a class="reference external" href="https://mattermost.web.cern.ch/lhcb/channels/reproducible">~reproducible</a>
-channel on mattermost.
+<a class="reference external" href="https://snakemake.readthedocs.io/en/stable/index.html">here</a>.
 Web searches and <a class="reference external" href="https://stackoverflow.com/questions/tagged/snakemake">Stack Overflow</a>
 are also your friends.</p>
 <div class="panel panel-callout docutils container">
@@ -529,6 +529,9 @@ which will run the <code class="docutils literal notranslate"><span class="pre">
 <p>If you want, you can include your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file in the created environment
 by running <code class="docutils literal notranslate"><span class="pre">lb-conda</span> <span class="pre">default</span> <span class="pre">bash</span> <span class="pre">-c</span> <span class="pre">'bash</span> <span class="pre">--rcfile</span> <span class="pre">~/.bashrc'</span></code>.
 Be careful if you do this–it can lead to conflicts in the environment.</p>
+<p>You can also ask any questions you have on LHCb’s
+<a class="reference external" href="https://mattermost.web.cern.ch/lhcb/channels/reproducible">~reproducible</a>
+channel on mattermost.</p>
 </div>
 </div>
 <p>You can check if Snakemake is working by calling <code class="docutils literal notranslate"><span class="pre">snakemake</span> <span class="pre">--help</span></code>
@@ -579,11 +582,11 @@ but since this is such a simple workflow,
 we can easily make the shell do it for us:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>output<span class="w">  </span><span class="c1"># make the directory if needed</span>
 <span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>input/*.in<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">  </span><span class="nv">noext</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="p">%.in</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">  </span><span class="c1"># drop the extension</span>
-<span class="w">  </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">noext</span><span class="p">##input/</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">  </span><span class="c1"># drop the directory</span>
-<span class="w">  </span><span class="nv">ofile</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">.out&quot;</span><span class="w">  </span><span class="c1"># declare output file name</span>
-<span class="w">  </span>cat<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ofile</span><span class="s2">&quot;</span><span class="w">  </span><span class="c1"># create output file with contents of input file</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;My name is </span><span class="nv">$name</span><span class="s2">.&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ofile</span><span class="s2">&quot;</span><span class="w">  </span><span class="c1"># append the required text</span>
+<span class="w">  </span><span class="nv">noext</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">file</span><span class="p">%.in</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1"># drop the extension</span>
+<span class="w">  </span><span class="nv">name</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">noext</span><span class="p">##input/</span><span class="si">}</span><span class="s2">"</span><span class="w">  </span><span class="c1"># drop the directory</span>
+<span class="w">  </span><span class="nv">ofile</span><span class="o">=</span><span class="s2">"output/</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">.out"</span><span class="w">  </span><span class="c1"># declare output file name</span>
+<span class="w">  </span>cat<span class="w"> </span><span class="s2">"</span><span class="nv">$file</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$ofile</span><span class="s2">"</span><span class="w">  </span><span class="c1"># create output file with contents of input file</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"My name is </span><span class="nv">$name</span><span class="s2">."</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$ofile</span><span class="s2">"</span><span class="w">  </span><span class="c1"># append the required text</span>
 <span class="k">done</span>
 </pre></div>
 </div>
@@ -647,9 +650,9 @@ or that are used by a subsequent step as inputs.</p></li>
 </ul>
 <p>The basic rule is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">myname</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;myinput1&quot;</span><span class="p">,</span> <span class="s2">&quot;myinput2&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;myoutput&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;Some command to go from in to out&quot;</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">"myinput1"</span><span class="p">,</span> <span class="s2">"myinput2"</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"myoutput"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"Some command to go from in to out"</span>
 </pre></div>
 </div>
 <p>Let’s give it a try with our simple example above.
@@ -662,9 +665,9 @@ let us first remove all our hard work by running</p>
 In your favorite text editor,
 open a new file called <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> and type</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">name_files</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/a.in&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/a.out&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat input/a.in &gt; output/a.out &amp;&amp; echo &#39;My name is a.&#39; &gt;&gt; output/a.out&quot;</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">"input/a.in"</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/a.out"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"cat input/a.in &gt; output/a.out &amp;&amp; echo 'My name is a.' &gt;&gt; output/a.out"</span>
 </pre></div>
 </div>
 <p>Snakemake now knows how to create <code class="docutils literal notranslate"><span class="pre">output/a.out</span></code>.</p>
@@ -719,9 +722,9 @@ We could create 25 more rules, one for each of the remaining files,
 but Snakemake provides a feature called <code class="docutils literal notranslate"><span class="pre">wildcards</span></code> so we don’t have to.
 We edit our <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> to read</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">name_files</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/</span><span class="si">{name}</span><span class="s2">.in&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">.out&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; echo &#39;My name is </span><span class="si">{wildcards.name}</span><span class="s2">.&#39; &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">"input/</span><span class="si">{name}</span><span class="s2">.in"</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/</span><span class="si">{name}</span><span class="s2">.out"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"cat </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; echo 'My name is </span><span class="si">{wildcards.name}</span><span class="s2">.' &gt;&gt; </span><span class="si">{output}</span><span class="s2">"</span>
 </pre></div>
 </div>
 <p>Take a moment to understand what is happening in this rule declaration.
@@ -779,7 +782,7 @@ so that they can at least log in.</p>
 <p>We can tell Snakemake which files to create from within our Snakefile.
 At the beginning of the file, add</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">name_all</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;output/</span><span class="si">{</span><span class="nb">chr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">.out&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"output/</span><span class="si">{</span><span class="nb">chr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">.out"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">'a'</span><span class="p">),</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">'z'</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
 </pre></div>
 </div>
 <p>We have declared a new rule, <code class="docutils literal notranslate"><span class="pre">name_all</span></code>, at the beginning of the file
@@ -895,8 +898,8 @@ Let’s create a rule to do this for us.</p>
 <div class="panel-body docutils container">
 <p>Add a rule like the following to your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">create_input</span><span class="p">:</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;input/</span><span class="si">{name}</span><span class="s2">.in&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;touch </span><span class="si">{output}</span><span class="s2">&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"input/</span><span class="si">{name}</span><span class="s2">.in"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"touch </span><span class="si">{output}</span><span class="s2">"</span>
 </pre></div>
 </div>
 <p>You can name it anything you like and use any wildcard you want;
@@ -919,8 +922,8 @@ because the rule <code class="docutils literal notranslate"><span class="pre">na
 Modify <code class="docutils literal notranslate"><span class="pre">name_files</span></code> to read</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">name_files</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span> <span class="n">rules</span><span class="o">.</span><span class="n">create_input</span><span class="o">.</span><span class="n">output</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">.out&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; echo &#39;My name is </span><span class="si">{wildcards.name}</span><span class="s2">.&#39; &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/</span><span class="si">{name}</span><span class="s2">.out"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"cat </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; echo 'My name is </span><span class="si">{wildcards.name}</span><span class="s2">.' &gt;&gt; </span><span class="si">{output}</span><span class="s2">"</span>
 </pre></div>
 </div>
 <p>As long as it is declared after rule <code class="docutils literal notranslate"><span class="pre">create_input</span></code>
@@ -962,8 +965,8 @@ for rule <code class="docutils literal notranslate"><span class="pre">name_files
 <p>Modify <code class="docutils literal notranslate"><span class="pre">name_files</span></code> to read:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">name_files</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span> <span class="n">rules</span><span class="o">.</span><span class="n">create_input</span><span class="o">.</span><span class="n">output</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">.</span><span class="si">{ext}</span><span class="s2">&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; echo &#39;My name is </span><span class="si">{wildcards.name}</span><span class="s2">.&#39; &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/</span><span class="si">{name}</span><span class="s2">.</span><span class="si">{ext}</span><span class="s2">"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"cat </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; echo 'My name is </span><span class="si">{wildcards.name}</span><span class="s2">.' &gt;&gt; </span><span class="si">{output}</span><span class="s2">"</span>
 </pre></div>
 </div>
 <p>Notice that this doesn’t affect the <code class="docutils literal notranslate"><span class="pre">input</span></code> file extension,
@@ -1038,19 +1041,19 @@ Hint: the command <code class="docutils literal notranslate"><span class="pre">g
 <div class="panel-body docutils container">
 <p>Your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> could look something like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">Luca_info</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/address.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;input/phone.txt&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/Luca/info.txt&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep Luca </span><span class="si">{input[0]}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; grep Luca </span><span class="si">{input[1]}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">"input/address.txt"</span><span class="p">,</span> <span class="s2">"input/phone.txt"</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/Luca/info.txt"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"grep Luca </span><span class="si">{input[0]}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; grep Luca </span><span class="si">{input[1]}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">"</span>
 </pre></div>
 </div>
 <p>Notice that we specified multiple input files and referred to them by index.
 We could also have named them:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">Luca_info</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;input/address.txt&quot;</span><span class="p">,</span>
-        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;input/phone.txt&quot;</span><span class="p">,</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/Luca/info.txt&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep Luca </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; grep Luca </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">"input/address.txt"</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">"input/phone.txt"</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/Luca/info.txt"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"grep Luca </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; grep Luca </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">"</span>
 </pre></div>
 </div>
 </div>
@@ -1074,22 +1077,22 @@ then merge them into a single output file.</p>
 <p>Your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> could look something like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/Luca/address.txt&quot;</span><span class="p">,</span>
-        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/Luca/phone.txt&quot;</span><span class="p">,</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/Luca/info.txt&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">"output/Luca/address.txt"</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">"output/Luca/phone.txt"</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/Luca/info.txt"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">"</span>
 
 
 <span class="n">rule</span> <span class="n">get_address</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/address.txt&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/Luca/address.txt&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep Luca </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">"input/address.txt"</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/Luca/address.txt"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"grep Luca </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">"</span>
 
 
 <span class="n">rule</span> <span class="n">get_phone</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/phone.txt&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/Luca/phone.txt&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep Luca </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">"input/phone.txt"</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/Luca/phone.txt"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"grep Luca </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">"</span>
 </pre></div>
 </div>
 <p>This is not much better than our original solution,
@@ -1107,22 +1110,22 @@ and we could delete them when we finished.
 Snakemake provides a way to do this for us, using the <code class="docutils literal notranslate"><span class="pre">temp</span></code> utility function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/Luca/address.txt&quot;</span><span class="p">,</span>
-        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/Luca/phone.txt&quot;</span><span class="p">,</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/Luca/info.txt&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">"output/Luca/address.txt"</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">"output/Luca/phone.txt"</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/Luca/info.txt"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">"</span>
 
 
 <span class="n">rule</span> <span class="n">get_address</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/address.txt&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/Luca/address.txt&quot;</span><span class="p">)</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep Luca </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">"input/address.txt"</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">"output/Luca/address.txt"</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"grep Luca </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">"</span>
 
 
 <span class="n">rule</span> <span class="n">get_phone</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/phone.txt&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/Luca/phone.txt&quot;</span><span class="p">)</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep Luca </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">"input/phone.txt"</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">"output/Luca/phone.txt"</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"grep Luca </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">"</span>
 </pre></div>
 </div>
 <p>This tells Snakemake to remove the specified output once all the rules
@@ -1142,27 +1145,27 @@ Tell it to get Luca’s, Fred’s, and Guillaume’s by default.</p>
 <div class="panel-body docutils container">
 <p>Your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> could look something like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">run</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;output/Luca/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Fred/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Guillaume/info.txt&quot;</span><span class="p">]</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">"output/Luca/info.txt"</span><span class="p">,</span> <span class="s2">"output/Fred/info.txt"</span><span class="p">,</span> <span class="s2">"output/Guillaume/info.txt"</span><span class="p">]</span>
 
 
 <span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">,</span>
-        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">,</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/info.txt&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/address.txt"</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/phone.txt"</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/info.txt"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">"</span>
 
 
 <span class="n">rule</span> <span class="n">get_address</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/address.txt&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">)</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">"input/address.txt"</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/address.txt"</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"grep </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">"</span>
 
 
 <span class="n">rule</span> <span class="n">get_phone</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/phone.txt&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">)</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">"input/phone.txt"</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/phone.txt"</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"grep </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">"</span>
 </pre></div>
 </div>
 </div>
@@ -1188,21 +1191,21 @@ it looks more like this:</p>
 <div class="panel-body docutils container">
 <p>Your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> could look something like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">run</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;output/Luca/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Fred/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Guillaume/info.txt&quot;</span><span class="p">]</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">"output/Luca/info.txt"</span><span class="p">,</span> <span class="s2">"output/Fred/info.txt"</span><span class="p">,</span> <span class="s2">"output/Guillaume/info.txt"</span><span class="p">]</span>
 
 
 <span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">,</span>
-        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">,</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/info.txt&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/address.txt"</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/phone.txt"</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/info.txt"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">"</span>
 
 
 <span class="n">rule</span> <span class="n">get_info</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;input/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;grep </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">"input/</span><span class="si">{info}</span><span class="s2">.txt"</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt"</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"grep </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2">"</span>
 </pre></div>
 </div>
 <p>Since the rules <code class="docutils literal notranslate"><span class="pre">get_address</span></code> and <code class="docutils literal notranslate"><span class="pre">get_phone</span></code> were so nearly identical,
@@ -1230,13 +1233,13 @@ and write them in a single output file
 <div class="panel-body docutils container">
 <p>Instead of using shell commands,
 we can write a python file, <code class="docutils literal notranslate"><span class="pre">get_info.py</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Extract information about a person.&quot;&quot;&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">"""Extract information about a person."""</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
-<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;person of interest&quot;</span><span class="p">)</span>
-<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;infile&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;text file with information&quot;</span><span class="p">)</span>
-<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;outfile&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;where to write extracted information&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"person of interest"</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"infile"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"text file with information"</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"outfile"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"where to write extracted information"</span><span class="p">)</span>
 <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 
 <span class="c1"># -- find information</span>
@@ -1248,29 +1251,29 @@ we can write a python file, <code class="docutils literal notranslate"><span cla
             <span class="k">break</span>  <span class="c1"># assume only one line with info</span>
 <span class="n">info</span> <span class="o">=</span> <span class="n">found</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">name</span><span class="p">):]</span>
 <span class="c1"># -- write information</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">outfile</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">outfile</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> could then look something like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">run</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;output/Luca/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Fred/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Guillaume/info.txt&quot;</span><span class="p">]</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">"output/Luca/info.txt"</span><span class="p">,</span> <span class="s2">"output/Fred/info.txt"</span><span class="p">,</span> <span class="s2">"output/Guillaume/info.txt"</span><span class="p">]</span>
 
 
 <span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">,</span>
-        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">,</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/info.txt&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/address.txt"</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/phone.txt"</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/info.txt"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">"</span>
 
 
 <span class="n">rule</span> <span class="n">get_info</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="n">exe</span><span class="o">=</span><span class="s2">&quot;get_info.py&quot;</span><span class="p">,</span>
-        <span class="n">infile</span><span class="o">=</span><span class="s2">&quot;input/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">,</span>
-    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;python </span><span class="si">{input.exe}</span><span class="s2"> </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input.infile}</span><span class="s2"> </span><span class="si">{output}</span><span class="s2">&quot;</span>
+        <span class="n">exe</span><span class="o">=</span><span class="s2">"get_info.py"</span><span class="p">,</span>
+        <span class="n">infile</span><span class="o">=</span><span class="s2">"input/</span><span class="si">{info}</span><span class="s2">.txt"</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt"</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"python </span><span class="si">{input.exe}</span><span class="s2"> </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input.infile}</span><span class="s2"> </span><span class="si">{output}</span><span class="s2">"</span>
 </pre></div>
 </div>
 <p>Notice that we included <code class="docutils literal notranslate"><span class="pre">get_info.py</span></code> as an input.
@@ -1342,21 +1345,21 @@ The other is <code class="docutils literal notranslate"><span class="pre">run</s
 For example,
 the previous solution could be written</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">run</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;output/Luca/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Fred/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Guillaume/info.txt&quot;</span><span class="p">]</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">"output/Luca/info.txt"</span><span class="p">,</span> <span class="s2">"output/Fred/info.txt"</span><span class="p">,</span> <span class="s2">"output/Guillaume/info.txt"</span><span class="p">]</span>
 
 
 <span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">,</span>
-        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">,</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/info.txt&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/address.txt"</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/phone.txt"</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/info.txt"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">"</span>
 
 
 <span class="n">rule</span> <span class="n">get_info</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="n">infile</span><span class="o">=</span><span class="s2">&quot;input/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">,</span>
-    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
+        <span class="n">infile</span><span class="o">=</span><span class="s2">"input/</span><span class="si">{info}</span><span class="s2">.txt"</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt"</span><span class="p">)</span>
     <span class="n">run</span><span class="p">:</span>
         <span class="n">found</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">infile</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -1365,9 +1368,9 @@ the previous solution could be written</p>
                     <span class="n">found</span> <span class="o">=</span> <span class="n">ln</span>
                     <span class="k">break</span>  <span class="c1"># assume only one line with info</span>
         <span class="n">info</span> <span class="o">=</span> <span class="n">found</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">wildcards</span><span class="o">.</span><span class="n">name</span><span class="p">):]</span>  <span class="c1"># assume space follows name</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">output</span><span class="p">),</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">output</span><span class="p">),</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
-            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You can also mix and match by calling
@@ -1400,10 +1403,10 @@ A log file, by contrast, is not deleted.</p>
 and debug when things go wrong.
 To declare a log file, simply add it to your rule declaration:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">myname</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="s2">&quot;myinput1&quot;</span><span class="p">,</span> <span class="s2">&quot;myinput2&quot;</span>
-    <span class="n">log</span><span class="p">:</span> <span class="s2">&quot;mylog&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;myoutput&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;Some command to go from in to out and create log&quot;</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="s2">"myinput1"</span><span class="p">,</span> <span class="s2">"myinput2"</span>
+    <span class="n">log</span><span class="p">:</span> <span class="s2">"mylog"</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"myoutput"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"Some command to go from in to out and create log"</span>
 </pre></div>
 </div>
 <p>Just as with <code class="docutils literal notranslate"><span class="pre">output</span></code>,
@@ -1430,17 +1433,17 @@ the <a class="reference external" href="https://docs.python.org/3/howto/logging.
 </div>
 <div class="panel-body docutils container">
 <p>First, we modify <code class="docutils literal notranslate"><span class="pre">get_info.py</span></code> to print status updates:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Extract information about a person.&quot;&quot;&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">"""Extract information about a person."""</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
-<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;person of interest&quot;</span><span class="p">)</span>
-<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;infile&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;text file with information&quot;</span><span class="p">)</span>
-<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;outfile&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;where to write extracted information&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"person of interest"</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"infile"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"text file with information"</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"outfile"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"where to write extracted information"</span><span class="p">)</span>
 <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 
 <span class="c1"># -- find information</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;extracting information...&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"extracting information..."</span><span class="p">)</span>
 <span class="n">found</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">ln</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
@@ -1448,36 +1451,36 @@ the <a class="reference external" href="https://docs.python.org/3/howto/logging.
             <span class="n">found</span> <span class="o">=</span> <span class="n">ln</span>
             <span class="k">break</span>  <span class="c1"># assume only one line with info</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="si">}</span><span class="s2"> contains no info on &#39;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">infile</span><span class="si">}</span><span class="s2"> contains no info on '</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">'"</span><span class="p">)</span>
 <span class="n">info</span> <span class="o">=</span> <span class="n">found</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">name</span><span class="p">):]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;found information&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"found information"</span><span class="p">)</span>
 <span class="c1"># -- write information</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;writing information...&quot;</span><span class="p">)</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">outfile</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"writing information..."</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">outfile</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"done"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> could then look something like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">run</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;output/Luca/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Fred/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Guillaume/info.txt&quot;</span><span class="p">]</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">"output/Luca/info.txt"</span><span class="p">,</span> <span class="s2">"output/Fred/info.txt"</span><span class="p">,</span> <span class="s2">"output/Guillaume/info.txt"</span><span class="p">]</span>
 
 
 <span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">,</span>
-        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">,</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/info.txt&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/address.txt"</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/phone.txt"</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/info.txt"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">"</span>
 
 
 <span class="n">rule</span> <span class="n">get_info</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="n">exe</span><span class="o">=</span><span class="s2">&quot;get_info.py&quot;</span><span class="p">,</span>
-        <span class="n">infile</span><span class="o">=</span><span class="s2">&quot;input/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">,</span>
-    <span class="n">log</span><span class="p">:</span> <span class="s2">&quot;log/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;python </span><span class="si">{input.exe}</span><span class="s2"> </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input.infile}</span><span class="s2"> </span><span class="si">{output}</span><span class="s2"> &amp;&gt; </span><span class="si">{log}</span><span class="s2">&quot;</span>
+        <span class="n">exe</span><span class="o">=</span><span class="s2">"get_info.py"</span><span class="p">,</span>
+        <span class="n">infile</span><span class="o">=</span><span class="s2">"input/</span><span class="si">{info}</span><span class="s2">.txt"</span><span class="p">,</span>
+    <span class="n">log</span><span class="p">:</span> <span class="s2">"log/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt"</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt"</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"python </span><span class="si">{input.exe}</span><span class="s2"> </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input.infile}</span><span class="s2"> </span><span class="si">{output}</span><span class="s2"> &amp;&gt; </span><span class="si">{log}</span><span class="s2">"</span>
 </pre></div>
 </div>
 <p>Notice that <code class="docutils literal notranslate"><span class="pre">log</span></code> includes all the wildcards used in <code class="docutils literal notranslate"><span class="pre">output</span></code>;
@@ -1496,8 +1499,8 @@ or with different options for your scripts.
 This can be done in snakemake using config files written in <a class="reference external" href="https://learn.getgrav.org/advanced/yaml">yaml</a>.</p>
 <p>For example let’s declare some data files in a cfg.yaml file:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">:</span>
-    <span class="o">-</span> <span class="s1">&#39;data1.root&#39;</span>
-    <span class="o">-</span> <span class="s1">&#39;data2.root&#39;</span>
+    <span class="o">-</span> <span class="s1">'data1.root'</span>
+    <span class="o">-</span> <span class="s1">'data2.root'</span>
 </pre></div>
 </div>
 <p>Now in your Snakefile you can load this config file
@@ -1505,14 +1508,14 @@ and then its content will be available
 to the rules as a dictionary called “config”.
 Yes, it seems black magic, but it works!
 Your Snakefile will look something like this:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">configfile</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/path/to/cfg.yaml&#39;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">configfile</span><span class="p">:</span><span class="w"> </span><span class="s">'/path/to/cfg.yaml'</span>
 
 <span class="nt">rule dosomething</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">input</span><span class="p">:</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">exe=&#39;mycode.py&#39;,</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">data=config[&#39;data&#39;],</span>
-<span class="w">    </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;plot1.pdf&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;plot2.pdf&#39;</span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;python</span><span class="nv"> </span><span class="s">{input.exe}</span><span class="nv"> </span><span class="s">{input.data}</span><span class="nv"> </span><span class="s">{output}&quot;</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">exe='mycode.py',</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">data=config['data'],</span>
+<span class="w">    </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'plot1.pdf'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'plot2.pdf'</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="s">"python</span><span class="nv"> </span><span class="s">{input.exe}</span><span class="nv"> </span><span class="s">{input.data}</span><span class="nv"> </span><span class="s">{output}"</span>
 </pre></div>
 </div>
 <p>The config dictionary can be used anywhere,
@@ -1548,27 +1551,27 @@ the addresses and phone numbers in <code class="docutils literal notranslate"><s
 </pre></div>
 </div>
 <p>Then, modify your <code class="docutils literal notranslate"><span class="pre">Snakefile</span></code> to look something like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configfile</span><span class="p">:</span> <span class="s2">&quot;cfg.yaml&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configfile</span><span class="p">:</span> <span class="s2">"cfg.yaml"</span>
 
 <span class="n">rule</span> <span class="n">run</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;output/Luca/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Fred/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Guillaume/info.txt&quot;</span><span class="p">]</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">"output/Luca/info.txt"</span><span class="p">,</span> <span class="s2">"output/Fred/info.txt"</span><span class="p">,</span> <span class="s2">"output/Guillaume/info.txt"</span><span class="p">]</span>
 
 
 <span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">,</span>
-        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">,</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/info.txt&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/address.txt"</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/phone.txt"</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/info.txt"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">"</span>
 
 
 <span class="n">rule</span> <span class="n">get_info</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="n">exe</span><span class="o">=</span><span class="s2">&quot;get_info.py&quot;</span><span class="p">,</span>
-        <span class="n">infile</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/</span><span class="se">{{</span><span class="s2">info</span><span class="se">}}</span><span class="s2">.txt&quot;</span><span class="p">,</span>
-    <span class="n">log</span><span class="p">:</span> <span class="s2">&quot;log/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;python </span><span class="si">{input.exe}</span><span class="s2"> </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input.infile}</span><span class="s2"> </span><span class="si">{output}</span><span class="s2"> &amp;&gt; </span><span class="si">{log}</span><span class="s2">&quot;</span>
+        <span class="n">exe</span><span class="o">=</span><span class="s2">"get_info.py"</span><span class="p">,</span>
+        <span class="n">infile</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">config</span><span class="p">[</span><span class="s1">'data'</span><span class="p">]</span><span class="si">}</span><span class="s2">/</span><span class="se">{{</span><span class="s2">info</span><span class="se">}}</span><span class="s2">.txt"</span><span class="p">,</span>
+    <span class="n">log</span><span class="p">:</span> <span class="s2">"log/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt"</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt"</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"python </span><span class="si">{input.exe}</span><span class="s2"> </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input.infile}</span><span class="s2"> </span><span class="si">{output}</span><span class="s2"> &amp;&gt; </span><span class="si">{log}</span><span class="s2">"</span>
 </pre></div>
 </div>
 <blockquote>
@@ -1595,8 +1598,8 @@ For this reason it’s possible to split them into more files
 and then include them into the Snakefile.
 For example you might have a <code class="docutils literal notranslate"><span class="pre">fit_rules.snake</span></code> and <code class="docutils literal notranslate"><span class="pre">efficiency_rules.snake</span></code>
 and then your Snakefile will look like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">:</span> <span class="s2">&quot;/path/to/fit_rules.snake&quot;</span>
-<span class="n">include</span><span class="p">:</span> <span class="s2">&quot;/path/to/efficiency_rules.snake&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">:</span> <span class="s2">"/path/to/fit_rules.snake"</span>
+<span class="n">include</span><span class="p">:</span> <span class="s2">"/path/to/efficiency_rules.snake"</span>
 </pre></div>
 </div>
 <div class="panel panel-challenge docutils container">
@@ -1613,29 +1616,29 @@ and then your Snakefile will look like this:</p>
 <p>You could create <code class="docutils literal notranslate"><span class="pre">merge.snake</span></code>,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">merge_data</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="n">address</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/address.txt&quot;</span><span class="p">,</span>
-        <span class="n">phone</span><span class="o">=</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/phone.txt&quot;</span><span class="p">,</span>
-    <span class="n">output</span><span class="p">:</span> <span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/info.txt&quot;</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">&quot;</span>
+        <span class="n">address</span><span class="o">=</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/address.txt"</span><span class="p">,</span>
+        <span class="n">phone</span><span class="o">=</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/phone.txt"</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span> <span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/info.txt"</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"cat </span><span class="si">{input.address}</span><span class="s2"> &gt; </span><span class="si">{output}</span><span class="s2"> &amp;&amp; cat </span><span class="si">{input.phone}</span><span class="s2"> &gt;&gt; </span><span class="si">{output}</span><span class="s2">"</span>
 </pre></div>
 </div>
 <p>and <code class="docutils literal notranslate"><span class="pre">get.snake</span></code>,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="n">get_info</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="n">exe</span><span class="o">=</span><span class="s2">&quot;get_info.py&quot;</span><span class="p">,</span>
-        <span class="n">infile</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/</span><span class="se">{{</span><span class="s2">info</span><span class="se">}}</span><span class="s2">.txt&quot;</span><span class="p">,</span>
-    <span class="n">log</span><span class="p">:</span> <span class="s2">&quot;log/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span>
-    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
-    <span class="n">shell</span><span class="p">:</span> <span class="s2">&quot;python </span><span class="si">{input.exe}</span><span class="s2"> </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input.infile}</span><span class="s2"> </span><span class="si">{output}</span><span class="s2"> &amp;&gt; </span><span class="si">{log}</span><span class="s2">&quot;</span>
+        <span class="n">exe</span><span class="o">=</span><span class="s2">"get_info.py"</span><span class="p">,</span>
+        <span class="n">infile</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">config</span><span class="p">[</span><span class="s1">'data'</span><span class="p">]</span><span class="si">}</span><span class="s2">/</span><span class="se">{{</span><span class="s2">info</span><span class="se">}}</span><span class="s2">.txt"</span><span class="p">,</span>
+    <span class="n">log</span><span class="p">:</span> <span class="s2">"log/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt"</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">temp</span><span class="p">(</span><span class="s2">"output/</span><span class="si">{name}</span><span class="s2">/</span><span class="si">{info}</span><span class="s2">.txt"</span><span class="p">)</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="s2">"python </span><span class="si">{input.exe}</span><span class="s2"> </span><span class="si">{wildcards.name}</span><span class="s2"> </span><span class="si">{input.infile}</span><span class="s2"> </span><span class="si">{output}</span><span class="s2"> &amp;&gt; </span><span class="si">{log}</span><span class="s2">"</span>
 </pre></div>
 </div>
 <p>Your modified Snakefile would then look like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configfile</span><span class="p">:</span> <span class="s2">&quot;cfg.yaml&quot;</span>
-<span class="n">include</span><span class="p">:</span> <span class="s2">&quot;merge.snake&quot;</span>
-<span class="n">include</span><span class="p">:</span> <span class="s2">&quot;get.snake&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configfile</span><span class="p">:</span> <span class="s2">"cfg.yaml"</span>
+<span class="n">include</span><span class="p">:</span> <span class="s2">"merge.snake"</span>
+<span class="n">include</span><span class="p">:</span> <span class="s2">"get.snake"</span>
 
 <span class="n">rule</span> <span class="n">run</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;output/Luca/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Fred/info.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;output/Guillaume/info.txt&quot;</span><span class="p">]</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="p">[</span><span class="s2">"output/Luca/info.txt"</span><span class="p">,</span> <span class="s2">"output/Fred/info.txt"</span><span class="p">,</span> <span class="s2">"output/Guillaume/info.txt"</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>

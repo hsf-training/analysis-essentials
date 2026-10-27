@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Finding Things &mdash; Analysis essentials  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
 
@@ -16,8 +16,8 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
       <script src="../_static/panels.js?v=0f4bdeea"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -56,8 +56,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
@@ -69,10 +69,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
@@ -93,6 +89,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
@@ -101,10 +101,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../python/scripting.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/scripting.html#argparse">argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
@@ -177,6 +173,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Decorators">Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;classmethod">&#64;classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;property">&#64;property</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Dunder">Dunder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#len">len</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#str">str</a></li>
@@ -185,6 +187,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Naming-conventions">Naming conventions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
 </ul>
 </li>
@@ -516,7 +519,7 @@ You bring fresh toner.
 
 With searching comes loss
 and the presence of absence:
-&quot;My Thesis&quot; not found.
+"My Thesis" not found.
 
 Yesterday it worked
 Today it is not working
@@ -538,7 +541,7 @@ As <a class="reference external" href="https://www.clir.org/wp-content/uploads/s
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Is not the true Tao, until
-&quot;My Thesis&quot; not found
+"My Thesis" not found
 Today it is not working
 </pre></div>
 </div>
@@ -549,7 +552,7 @@ Today it is not working
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The Tao that is seen
-&quot;My Thesis&quot; not found.
+"My Thesis" not found.
 </pre></div>
 </div>
 <p>This time,
@@ -570,7 +573,7 @@ just letters surrounded by spaces.
 Sometimes we don’t
 want to search for a single word, but a phrase. This is also easy to do with
 <code class="docutils literal notranslate"><span class="pre">grep</span></code> by putting the phrase in quotes.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>grep<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;is not&quot;</span><span class="w"> </span>haiku.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>grep<span class="w"> </span>-w<span class="w"> </span><span class="s2">"is not"</span><span class="w"> </span>haiku.txt
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Today it is not working
@@ -582,7 +585,7 @@ It also helps to make it easier to distinguish between the search term or phrase
 and the file being searched.
 We will use quotes in the remaining examples.</p>
 <p>Another useful option is <code class="docutils literal notranslate"><span class="pre">-n</span></code>, which numbers the lines that match:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;it&quot;</span><span class="w"> </span>haiku.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">"it"</span><span class="w"> </span>haiku.txt
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>5:With searching comes loss
@@ -594,7 +597,7 @@ We will use quotes in the remaining examples.</p>
 <p>We can combine options (i.e. flags) as we do with other Unix commands.
 For example, let’s find the lines that contain the word “the”. We can combine
 the option <code class="docutils literal notranslate"><span class="pre">-w</span></code> to find the lines that contain the word “the” and <code class="docutils literal notranslate"><span class="pre">-n</span></code> to number the lines that match:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>grep<span class="w"> </span>-n<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;the&quot;</span><span class="w"> </span>haiku.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>grep<span class="w"> </span>-n<span class="w"> </span>-w<span class="w"> </span><span class="s2">"the"</span><span class="w"> </span>haiku.txt
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2:Is not the true Tao, until
@@ -602,7 +605,7 @@ the option <code class="docutils literal notranslate"><span class="pre">-w</span
 </pre></div>
 </div>
 <p>Now we want to use the option <code class="docutils literal notranslate"><span class="pre">-i</span></code> to make our search case-insensitive:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>grep<span class="w"> </span>-n<span class="w"> </span>-w<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;the&quot;</span><span class="w"> </span>haiku.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>grep<span class="w"> </span>-n<span class="w"> </span>-w<span class="w"> </span>-i<span class="w"> </span><span class="s2">"the"</span><span class="w"> </span>haiku.txt
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1:The Tao that is seen
@@ -612,14 +615,14 @@ the option <code class="docutils literal notranslate"><span class="pre">-w</span
 </div>
 <p>Now, we want to use the option <code class="docutils literal notranslate"><span class="pre">-v</span></code> to invert our search, i.e., we want to output
 the lines that do not contain the word “the”.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>grep<span class="w"> </span>-n<span class="w"> </span>-w<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;the&quot;</span><span class="w"> </span>haiku.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>grep<span class="w"> </span>-n<span class="w"> </span>-w<span class="w"> </span>-v<span class="w"> </span><span class="s2">"the"</span><span class="w"> </span>haiku.txt
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1:The Tao that is seen
 3:You bring fresh toner.
 4:
 5:With searching comes loss
-7:&quot;My Thesis&quot; not found.
+7:"My Thesis" not found.
 8:
 9:Yesterday it worked
 10:Today it is not working
@@ -633,7 +636,7 @@ the lines that do not contain the word “the”.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: grep [OPTION]... PATTERN [FILE]...
 Search for PATTERN in each FILE or standard input.
 PATTERN is, by default, a basic regular expression (BRE).
-Example: grep -i &#39;hello world&#39; menu.h main.c
+Example: grep -i 'hello world' menu.h main.c
 
 Regexp selection and interpretation:
   -E, --extended-regexp     PATTERN is an extended regular expression (ERE)
@@ -663,7 +666,7 @@ is what the “re” in “grep” stands for.) Regular expressions are both com
 and powerful; if you want to do complex searches, please look at the lesson
 on <a class="reference external" href="https://v4.software-carpentry.org/regexp/index.html">our website</a>. As a taster, we can
 find lines that have an ‘o’ in the second position like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;^.o&#39;</span><span class="w"> </span>haiku.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'^.o'</span><span class="w"> </span>haiku.txt
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>You bring fresh toner.
@@ -775,7 +778,7 @@ let’s do what we did with <code class="docutils literal notranslate"><span cla
 put <code class="docutils literal notranslate"><span class="pre">*.txt</span></code> in single quotes to prevent the shell from expanding the <code class="docutils literal notranslate"><span class="pre">*</span></code> wildcard.
 This way,
 <code class="docutils literal notranslate"><span class="pre">find</span></code> actually gets the pattern <code class="docutils literal notranslate"><span class="pre">*.txt</span></code>, not the expanded filename <code class="docutils literal notranslate"><span class="pre">haiku.txt</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.txt&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">'*.txt'</span>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./data/one.txt
@@ -803,7 +806,7 @@ As we just saw,
 <code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-name</span> <span class="pre">'*.txt'</span></code> gives us a list of all text files in or below the current directory.
 How can we combine that with <code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span></code> to count the lines in all those files?</p>
 <p>The simplest way is to put the <code class="docutils literal notranslate"><span class="pre">find</span></code> command inside <code class="docutils literal notranslate"><span class="pre">$()</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.txt&#39;</span><span class="k">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">'*.txt'</span><span class="k">)</span>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>11 ./haiku.txt
@@ -829,7 +832,7 @@ The first finds files that match a pattern;
 the second looks for lines inside those files that match another pattern.
 Here, for example, we can find PDB files that contain iron atoms
 by looking for the string “FE” in all the <code class="docutils literal notranslate"><span class="pre">.pdb</span></code> files above the current directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;FE&quot;</span><span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>..<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.pdb&#39;</span><span class="k">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>grep<span class="w"> </span><span class="s2">"FE"</span><span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>..<span class="w"> </span>-name<span class="w"> </span><span class="s1">'*.pdb'</span><span class="k">)</span>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>../data/pdb/heme.pdb:ATOM     25 FE           1      -0.924   0.535  -0.518
@@ -905,7 +908,7 @@ The other options will all match “of” when part of another word.</p>
 </div>
 <div class="panel-body docutils container">
 <p>Write a short explanatory comment for the following shell script:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wc<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.dat&#39;</span><span class="k">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wc<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">'*.dat'</span><span class="k">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n
 </pre></div>
 </div>
 <div class="panel panel-solution docutils container">

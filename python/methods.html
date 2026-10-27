@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Functions &mdash; Analysis essentials  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
       <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -17,17 +17,17 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
       <script src="../_static/panels.js?v=0f4bdeea"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Scripting" href="scripting.html" />
+    <link rel="next" title="Modules" href="modules.html" />
     <link rel="prev" title="Conditions" href="conditions.html" /> 
 </head>
 
@@ -59,8 +59,8 @@
 <li class="toctree-l3"><a class="reference internal" href="00scripts.html#argparse">argparse</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html">1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html#Jupyter">Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Jupyter">Jupyter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#strong-typing">strong typing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Container-types">Container types</a></li>
@@ -72,10 +72,6 @@
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Python-variable-assignement">Python variable assignement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html">Objects and operators</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operators.html#objects">Objects</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers</a></li>
@@ -96,6 +92,10 @@
 <li class="toctree-l3"><a class="reference internal" href="dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="operators.html#objects">Objects</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="conditions.html">Conditions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="conditions.html#Truthiness">Truthiness</a></li>
 <li class="toctree-l3"><a class="reference internal" href="conditions.html#Conditions-in-loops">Conditions in loops</a></li>
@@ -104,10 +104,6 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#*args-and-**kwargs">*args and **kwargs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Inline-methods">Inline methods</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="scripting.html">Scripting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="scripting.html#argparse">argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="modules.html">Modules</a><ul>
@@ -180,6 +176,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Decorators">Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;classmethod">&#64;classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;property">&#64;property</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Dunder">Dunder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#len">len</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#str">str</a></li>
@@ -188,6 +190,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Naming-conventions">Naming conventions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
 </ul>
 </li>
@@ -495,14 +498,14 @@ function in the place (technically).</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the number of elements in `obj`.</span>
+<span class="w">    </span><span class="sd">"""Return the number of elements in `obj`.</span>
 <span class="sd">    Args</span>
 <span class="sd">    ----</span>
 <span class="sd">        obj (iterable): Object the length will be calculated from.</span>
 <span class="sd">    Return</span>
 <span class="sd">    ------</span>
 <span class="sd">        int: number of elements in `obj`.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">:</span>
         <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -558,7 +561,7 @@ length(obj)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">length</span><span class="p">(</span><span class="s1">&#39;A b c!&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">length</span><span class="p">(</span><span class="s1">'A b c!'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -615,7 +618,7 @@ quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">top_function</span><span class="p">():</span>
-<span class="w">   </span><span class="sd">&quot;&quot;&quot;Do something silly.&quot;&quot;&quot;</span>
+<span class="w">   </span><span class="sd">"""Do something silly."""</span>
    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
@@ -645,12 +648,13 @@ quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
 <span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[8]</span><span class="ansi-green-fg">, line 1</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span class="ansi-yellow-bg">top_function</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> top_function()
 
 <span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[7]</span><span class="ansi-green-fg">, line 4</span>, in <span class="ansi-cyan-fg">top_function</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">      2</span> <span class="ansi-yellow-fg">&#34;&#34;&#34;Do something silly.&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">      3</span> <span style="color: rgb(0,135,0)">print</span>(x)
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">4</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">y</span>)
+<span class="ansi-green-fg">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> top_function():
+<span class="ansi-green-fg">      2</span>    <span class="ansi-yellow-fg">&#34;&#34;&#34;Do something silly.&#34;&#34;&#34;</span>
+<span class="ansi-green-fg">      3</span>    print(x)
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">4</span>    print(y)
 
 <span class="ansi-red-fg">NameError</span>: name &#39;y&#39; is not defined
 </pre></div></div>
@@ -723,7 +727,7 @@ True
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">such_output</span><span class="p">():</span>
-    <span class="k">return</span> <span class="s1">&#39;wow&#39;</span><span class="p">,</span> <span class="s1">&#39;much clever&#39;</span><span class="p">,</span> <span class="mi">213</span>  <span class="c1"># equivalent to (return &#39;wow&#39;, &#39;much clever&#39;, 213)</span>
+    <span class="k">return</span> <span class="s1">'wow'</span><span class="p">,</span> <span class="s1">'much clever'</span><span class="p">,</span> <span class="mi">213</span>  <span class="c1"># equivalent to (return 'wow', 'much clever', 213)</span>
 </pre></div>
 </div>
 </div>
@@ -753,7 +757,7 @@ len(obj, /)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-<span class="w">   </span><span class="sd">&quot;&quot;&quot;Return the sum of x and y.&quot;&quot;&quot;</span>
+<span class="w">   </span><span class="sd">"""Return the sum of x and y."""</span>
    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </pre></div>
 </div>
@@ -853,9 +857,9 @@ len(obj, /)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">show</span><span class="p">):</span>
-<span class="w">   </span><span class="sd">&quot;&quot;&quot;Return the sum of x and y.</span>
+<span class="w">   </span><span class="sd">"""Return the sum of x and y.</span>
 <span class="sd">   Optionally print the result before returning it.</span>
-<span class="sd">   &quot;&quot;&quot;</span>
+<span class="sd">   """</span>
    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
        <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
@@ -901,9 +905,9 @@ len(obj, /)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="w">   </span><span class="sd">&quot;&quot;&quot;Return the sum of x and y.</span>
+<span class="w">   </span><span class="sd">"""Return the sum of x and y.</span>
 <span class="sd">   Optionally print the result before returning it.</span>
-<span class="sd">   &quot;&quot;&quot;</span>
+<span class="sd">   """</span>
    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
        <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
@@ -941,7 +945,7 @@ len(obj, /)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">run_method</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Call `method` with `x`.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Call `method` with `x`."""</span>
     <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1045,7 +1049,7 @@ len(obj, /)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">total</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the sum of the arguments.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Return the sum of the arguments."""</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </pre></div>
 </div>
@@ -1056,9 +1060,9 @@ len(obj, /)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">total</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the sum of the arguments.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Return the sum of the arguments."""</span>
     <span class="c1"># For seeing what `*` does</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="si">}</span><span class="s1"> arguments: </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="si">}</span><span class="s1"> arguments: </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1154,7 +1158,7 @@ Got 3 arguments: (1, 2, 3)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1174,7 +1178,7 @@ Got 3 arguments: (1, 2, 3)
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
 <span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[43]</span><span class="ansi-green-fg">, line 1</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span class="ansi-yellow-bg">reverse_args</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">l</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> reverse_args(l)
 
 <span class="ansi-red-fg">TypeError</span>: reverse_args() missing 1 required positional argument: &#39;y&#39;
 </pre></div></div>
@@ -1202,11 +1206,11 @@ Got 3 arguments: (1, 2, 3)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ages</span><span class="p">(</span><span class="o">**</span><span class="n">people</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print people&#39;s information.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Print people's information."""</span>
     <span class="c1"># For seeing what `**` does</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">people</span><span class="p">)</span><span class="si">}</span><span class="s1"> arguments: </span><span class="si">{</span><span class="n">people</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">people</span><span class="p">)</span><span class="si">}</span><span class="s1"> arguments: </span><span class="si">{</span><span class="n">people</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">people</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Person </span><span class="si">{</span><span class="n">person</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">people</span><span class="p">[</span><span class="n">person</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Person </span><span class="si">{</span><span class="n">person</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">people</span><span class="p">[</span><span class="n">person</span><span class="p">]</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1251,7 +1255,7 @@ Person zorblax is 9963
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;thor&#39;</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span> <span class="s1">&#39;yoda&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">}</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'thor'</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span> <span class="s1">'yoda'</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1291,8 +1295,8 @@ Person yoda is -1
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generic</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Got args: </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Got kwargs: </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Got args: </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Got kwargs: </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1300,8 +1304,8 @@ Person yoda is -1
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;bing&#39;</span><span class="p">:</span> <span class="s1">&#39;baz&#39;</span><span class="p">}</span>
-<span class="n">generic</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="n">foo</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'bing'</span><span class="p">:</span> <span class="s1">'baz'</span><span class="p">}</span>
+<span class="n">generic</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'abc'</span><span class="p">,</span> <span class="n">foo</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1332,13 +1336,34 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;map at 0x7f58a0450a30&gt;
+&lt;map at 0x7ffac4d01c90&gt;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0
+1
+2
+3
+4
 </pre></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">map</span></code> takes a function and an iterable, and applies the function to each element in the iterable. It returs however an generator, an object that is, for advanced reasons, not actually evaluated yet. In most cases, you can treat this <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple</span></code>-like.</p>
 <p>To make sure it is evaluated, we can explicitly convert it to a container, <em>i.e.</em> a list with the results. We can define and then pass our own functions.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)))</span>
@@ -1346,7 +1371,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1355,17 +1380,17 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the third power of x.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Return the third power of x."""</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)))</span>
@@ -1373,7 +1398,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1383,7 +1408,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 <p>For such a simple method, this is a lot of typing! We can use a <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function to define such simple methods inline.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)))</span>
@@ -1391,7 +1416,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1406,7 +1431,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 <p><code class="docutils literal notranslate"><span class="pre">&lt;args&gt;</span></code> is a command-separate set of variables that the <code class="docutils literal notranslate"><span class="pre">lambda</span></code> can take as arguments, and <code class="docutils literal notranslate"><span class="pre">&lt;return</span> <span class="pre">expression&gt;</span></code> is the code that is run. A <code class="docutils literal notranslate"><span class="pre">lambda</span></code> automatically returns whatever the result of the expression is, you don’t need a <code class="docutils literal notranslate"><span class="pre">return</span></code> (the <code class="docutils literal notranslate"><span class="pre">return</span></code> is <em>implicit</em>).</p>
 <p>Writing a <code class="docutils literal notranslate"><span class="pre">lambda</span></code> statement defines a method, which you can capture as a variable just like any other object.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">div2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span>
@@ -1414,7 +1439,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">div2</span>
@@ -1422,7 +1447,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1431,7 +1456,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">div2</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)))</span>
@@ -1439,7 +1464,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1449,7 +1474,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 <p>Note however that <em>if we assing the function to a variable</em>, the general preferred way to do is using the normal function definition.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">div2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -1469,7 +1494,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 <p><strong>Solution</strong> We need a little square root method and a method to square its input.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
@@ -1479,17 +1504,17 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 <p>We then define a method that can accept any number of arguments using the <code class="docutils literal notranslate"><span class="pre">*args</span></code> syntax, and use <code class="docutils literal notranslate"><span class="pre">map</span></code> to call the <code class="docutils literal notranslate"><span class="pre">square</span></code> method on the list of arguments. Then we can call <code class="docutils literal notranslate"><span class="pre">sum</span></code> on the result, and then <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">quadrature</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the sum in quadrature of the arguments.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Return the sum in quadrature of the arguments."""</span>
     <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">square</span><span class="p">,</span> <span class="n">args</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quadrature</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># should be equal to sqrt(2)</span>
@@ -1497,7 +1522,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1506,7 +1531,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mf">0.5</span>
@@ -1514,7 +1539,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1524,7 +1549,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 <p>Another good use case for <code class="docutils literal notranslate"><span class="pre">lambda</span></code> (remember, we can just define the function, it’s more of a “nice-to-have”) is the built-in <code class="docutils literal notranslate"><span class="pre">filter</span></code> method (see: <code class="docutils literal notranslate"><span class="pre">help(filter)</span></code>).</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filter and return the even numbers only</span>
@@ -1533,16 +1558,16 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;filter at 0x7f58a04580a0&gt;
+&lt;filter at 0x7ffac4d030a0&gt;
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
@@ -1550,7 +1575,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1570,7 +1595,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 <p><strong>Solution</strong></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">]</span>
@@ -1578,7 +1603,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1610,7 +1635,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="conditions.html" class="btn btn-neutral float-left" title="Conditions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="scripting.html" class="btn btn-neutral float-right" title="Scripting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="modules.html" class="btn btn-neutral float-right" title="Modules" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
