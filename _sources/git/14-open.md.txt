@@ -8,9 +8,8 @@
 
 > The opposite of "open" isn't "closed".
 > The opposite of "open" is "broken".
-
-{% right %} John Wilbanks 
-{% endright %}
+>
+> — John Wilbanks
 
 Free sharing of information might be the ideal in science,
 but the reality is often more complicated.
@@ -20,7 +19,7 @@ Normal practice today looks something like this:
     that is occasionally backed up by her department.
 *   She then writes or modifies a few small programs
     (which also reside on her machine)
-    to analyze that data.
+    to analyse that data.
 *   Once she has some results,
     she writes them up and submits her paper.
     She might include her data—a growing number of journals require this—but
@@ -47,8 +46,8 @@ the process looks like this:
     and given its own
     [Digital Object Identifier](https://en.wikipedia.org/wiki/Digital_object_identifier) (DOI).
     Or the data was already published and is stored in
-    [Dryad](https://datadryad.org/stash).
-*   The scientist creates a new repository on GitHub to hold her work.
+    [Dryad](https://datadryad.org/).
+*   The scientist creates a new repository on GitHub or GitLab to hold her work.
 *   As she does her analysis,
     she pushes changes to her scripts
     (and possibly some output files)
@@ -69,7 +68,7 @@ the process looks like this:
 
 This open model accelerates discovery:
 the more open work is,
-[the more widely it is cited and re-used](https://dx.doi.org/10.1371/journal.pone.0000308).
+[the more widely it is cited and re-used](https://doi.org/10.1371/journal.pone.0000308).
 However,
 people who want to work this way need to make some decisions
 about what exactly "open" means and how to do it. You can find more on the different aspects of Open Science in [this book](https://link.springer.com/book/10.1007/978-3-319-00026-8).
@@ -90,13 +89,25 @@ by acting as a shareable electronic lab notebook for computational work:
     control repository is easy to archive for perpetuity, and contains
     the entire history.
 
-{% callout "Making Code Citable" %}
+{% callout "Open science in high-energy physics" %}
 
+Particle physics has a strong open science culture, and much of the
+infrastructure mentioned above was built or is run by the HEP community:
 
-[This short guide](https://guides.github.com/activities/citable-code/) from GitHub
-explains how to create a Digital Object Identifier (DOI) for your code,
-your papers,
-or anything else hosted in a version control repository.
+*   [arXiv](https://arxiv.org/) started as a preprint server for physics, and
+    almost every HEP paper appears there before publication. Thanks to
+    [SCOAP3](https://scoap3.org/), most HEP journal articles are also open
+    access.
+*   [Zenodo](https://zenodo.org) is run by CERN, and is a common place to
+    publish software, data and posters with a DOI.
+*   [INSPIRE](https://inspirehep.net/) indexes HEP literature, and
+    [HEPData](https://www.hepdata.net/) hosts the numerical data behind
+    published plots and tables.
+*   The [CERN Open Data portal](https://opendata.cern.ch/) makes data from the
+    LHC experiments available to everyone, together with the software needed
+    to analyse it.
+
+To make your own code citable, see the lesson on [citation](16-citation.md).
 
 {% endcallout %}
 
@@ -115,11 +126,11 @@ then try to do it for a result from a lab you work with.
 
 Surf the internet for a couple of minutes and check out the data repositories
 mentioned above: [Figshare](https://figshare.com/), [Zenodo](https://zenodo.org),
-[Dryad](https://datadryad.org/stash). Depending on your field of research, you might
-find community-recognized repositories that are well-known in your field.
+[Dryad](https://datadryad.org/). Depending on your field of research, you might
+find community-recognised repositories that are well-known in your field.
 You might also find useful [these data repositories recommended by Nature](
-https://www.nature.com/sdata/data-policies/repositories).
-Discuss with your neighbor which data repository you might want to
+https://www.nature.com/sdata/policies/repositories).
+Discuss with your neighbour which data repository you might want to
 approach for your current project and explain why.
 
 {% endchallenge %}
@@ -128,11 +139,12 @@ approach for your current project and explain why.
 
 
 There are many new ways to publish code and to make it citable. One
-way is described [on the homepage of GitHub itself](
-https://guides.github.com/activities/citable-code/).
+way is described [in GitHub's documentation](
+https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content).
 Basically it's a combination of GitHub (where the code is) and Zenodo (the
 repository creating the DOI). Read through this page while being aware
-that this is only one of many ways to making your code citable.
+that this is only one of many ways to make your code citable; the lesson on
+[citation](16-citation.md) describes how to tell people how to cite it.
 
 {% endchallenge %}
 
@@ -143,5 +155,4 @@ that this is only one of many ways to making your code citable.
 
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
-{% endright %}
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation

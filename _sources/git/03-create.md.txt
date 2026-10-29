@@ -46,10 +46,12 @@ by asking Git to tell us the status of our project:
 
 ```bash
 $ git status
-# On branch master
-#
-# Initial commit
-#
+```
+```
+On branch main
+
+No commits yet
+
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
@@ -88,7 +90,7 @@ above:
 $ git status
 ```
 ```
-fatal: Not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
 ```
 
 Note that we can track files in directories within a Git:
@@ -111,7 +113,7 @@ moons
 ```
 
 To recover from this little mistake, Dracula can just remove the `.git`
-folder in the moons subdirectory. To do so he can run the following command from inside the 'moons' directory:
+folder in the moons subdirectory. To do so he can run the following command from inside the `planets` directory:
 
 ```bash
 $ rm -rf moons/.git
@@ -128,9 +130,8 @@ command `pwd`.
 
 {% keypoints "Key Points" %}
 
-- `git init` initializes a repository.
+- `git init` initialises a repository.
 
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
-{% endright %}
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation

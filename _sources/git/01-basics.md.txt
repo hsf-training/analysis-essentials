@@ -19,8 +19,8 @@ automated version control is much better than this situation:
 We've all been in this situation before: it seems ridiculous to have
 multiple nearly-identical versions of the same document. Some word
 processors let us deal with this a little better, such as Microsoft
-Word's [Track Changes](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a), Google Docs' [version
-history](https://support.google.com/docs/answer/190843?hl=en), or LibreOffice's [Recording and Displaying Changes](https://help.libreoffice.org/Common/Recording_and_Displaying_Changes).
+Word's [Track Changes](https://support.microsoft.com/en-us/word/training/track-changes-in-word), Google Docs' [version
+history](https://support.google.com/docs/answer/190843?hl=en), or LibreOffice's [Recording and Displaying Changes](https://help.libreoffice.org/latest/en-US/text/shared/guide/redlining.html).
 
 Version control systems start with a base version of the document and
 then save just the changes you made at each step of the way. You can
@@ -50,18 +50,18 @@ complete history of commits for a particular project and their metadata make up
 a repository. Repositories can be kept in sync
 across different computers facilitating collaboration among different people.
 
-{% callout "The Long History of Version Control Systems" %}
+{% discussion "The Long History of Version Control Systems" %}
 
 
 Automated version control systems are nothing new.
 Tools like RCS, CVS, or Subversion have been around since the early 1980s and are used by many large companies.
 However, many of these are now becoming considered as legacy systems due to various limitations in their capabilities.
 In particular, the more modern systems, such as Git and [Mercurial](https://swcarpentry.github.io/hg-novice/)
-are *distributed*, meaning that they do not need a centralized server to host the repository.
+are *distributed*, meaning that they do not need a centralised server to host the repository.
 These modern systems also include powerful merging tools that make it possible for multiple authors to work within
 the same files concurrently.
 
-{% endcallout %}
+{% enddiscussion %}
 
 {% challenge "Paper Writing" %}
 
@@ -83,5 +83,4 @@ the same files concurrently.
 
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
-{% endright %}
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation

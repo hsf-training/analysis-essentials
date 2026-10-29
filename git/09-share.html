@@ -1,0 +1,773 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sharing a Repository with Others &mdash; Analysis essentials  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
+      <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
+      <script src="../_static/panels.js?v=0f4bdeea"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tracking Work with Issues" href="10-issues.html" />
+    <link rel="prev" title="Remotes in CERN GitLab" href="08-gitlab.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Analysis essentials
+              <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/README.html">An introduction to Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/running.html">Running Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/00scripts.html">Scripting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Mutability">Mutability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#dynamic-typing">dynamic typing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/strings.html">Strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/strings.html#Formatting">Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/lists.html">Lists and looping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#Looping">Looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#Indentation">Indentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#List-comprehension-(Sugar,-can-be-skipped-on-first-read)">List comprehension (Sugar, can be skipped on first read)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#Tuples">Tuples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/dictionaries.html">Dictionaries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Using-modules-into-your-code:-import">Using modules into your code: import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#The-standard-library">The standard library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Modules-from-PyPi">Modules from PyPi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#(Advanced)-Write-your-first-Python-module">(Advanced) Write your first Python module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#Module-name-restrictions">Module name restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/classes.html">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/classes.html#Welcome-to-classes">Welcome to classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/classes.html#Inheritance:-a-glance">Inheritance: a glance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/classes.html#How-to-fix">How to fix</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/learning.html">Learning more</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/learning.html#exploring-python">Exploring Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/learning.html#conventional-coding">Conventional coding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/first_histogram.html">Making your first histogram</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html#pandas">Pandas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html#plotting-histograms">Plotting histograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html#applying-cuts">Applying cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/further_reading.html">More advanced topics in Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html#nice-standard-libraries">Nice standard libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html#nice-libraries-for-data-analysis">Nice libraries for data analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html#python-and-root">Python and ROOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-python/README.html">Advanced Python Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/10Basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/10Basics.html#Basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/10Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/10Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/10Basics.html#Importing-modules">Importing modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/11AdvancedPython.html">Advanced Python Concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Packing-and-unpacking-of-values">Packing and unpacking of values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Context-manager">Context manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Using-yield">Using <code class="docutils literal notranslate"><span class="pre">yield</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Using-a-class">Using a class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Decorators-and-factories">Decorators and factories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Decorator">Decorator</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Exceptions">Exceptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Custom-Exception">Custom Exception</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Catching-exceptions">Catching exceptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#pitfall-%22guaranteed-execution%22">pitfall “guaranteed execution”</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Exceptions-as-control-flow">Exceptions as control-flow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Decorators">Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;classmethod">&#64;classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;property">&#64;property</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Dunder">Dunder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#len">len</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#str">str</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Callable">Callable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Indexing-(iterating)">Indexing (iterating)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Naming-conventions">Naming conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html">2: First look at data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Two-plotting-libraries?">Two plotting libraries?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#5.-The-toy-dataset">5. The toy dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#6.-Plotting-a-simple-histogram">6. Plotting a simple histogram</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Adding-variables">Adding variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Using-rectangular-cuts">Using rectangular cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/30Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/30Classification.html#Using-a-classifier">Using a classifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/30Classification.html#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">TODO Add a diagram of a decision tree for the above plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html">4: Extension on Classification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html#Distributions-in-the-Dalitz-features-for-signal-and-background">Distributions in the Dalitz features for signal and background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html#Preparation-of-train/test-datasets">Preparation of train/test datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html#Setting-up-classifiers,-training">Setting up classifiers, training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html#Let's-look-at-the-results-of-training">Let’s look at the results of training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html#ROC-curves-after-training">ROC curves after training</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/40Histograms.html">6: Histograms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Axes">Axes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Regular">Regular</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Variable">Variable</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Axis-Name">Axis Name</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Compatibility-with-mplhep">Compatibility with mplhep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Plotting-with-hist">Plotting with hist</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Multiple-dimensions">Multiple dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Access-Bins">Access Bins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Getting-Density">Getting Density</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Projecting-axes">Projecting axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Accessing-everything-relevant">Accessing everything relevant</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Multi-dimensional">Multi dimensional</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Arithmetics">Arithmetics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Weights">Weights</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/45DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#Original-distributions">Original distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#Comparing-some-simple-expressions:">Comparing some simple expressions:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#GB-discrimination">GB-discrimination</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#Great!">Great!</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#What-did-just-happen?">What did just happen?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#How-to-tune">How to tune</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html">8: Likelihood inference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Scope-of-this-tutorial">Scope of this tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Getting-started">Getting started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Creating-the-model">Creating the model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Plotting">Plotting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#A-quick-plot">A quick plot</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Loss">Loss</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Fixing-parameters">Fixing parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/60sPlot.html">9: sPlot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Applying-sWeights">Applying sWeights</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Compare">Compare</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#More-complex-case">More complex case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Splot">Splot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Alternative:-Known-probabilities">Alternative: Known probabilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Building-sPlot-over-mass">Building sPlot over mass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Of-course-we-don't-have-labels-which-events-are-signal-and-which-are-background-beforehand">Of course we don’t have labels which events are signal and which are background beforehand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#We-have-no-information-about-real-labels">We have no information about real labels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Fitting-doesn't-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Under-assumption-of-linearity:">Under assumption of linearity:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Minimization-of-variation">Minimization of variation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Uncorrelatedness">Uncorrelatedness</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html">10: Scikit-HEP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#formulate---converting-expressions">formulate - converting expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#Particle">Particle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#hepunits">hepunits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#Vector">Vector</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#Vector-properties">Vector properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/README.html">Introducing the Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-command-line-interface">The Command-Line Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-shell">The Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#why-bother">Why bother?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#nelle-s-pipeline-starting-point">Nelle’s Pipeline: Starting Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell/02-filedir.html">Navigating Files and Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/02-filedir.html#nelle-s-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/03-create.html">Working With Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/04-pipefilter.html">Pipes and Filters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/04-pipefilter.html#nelle-s-pipeline-checking-files">Nelle’s Pipeline: Checking Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/05-loop.html">Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/06-script.html">Shell Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/07-find.html">Finding Things</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell-extras/README.html">UNIX shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen.html">Using screen to keep things running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen2.html">Advanced screen topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#finding-lost-screens">Finding lost screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#using-tabs-in-screen">Using tabs in screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/persistent-screen.html">Persistent screen or tmux session on lxplus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#lxplus7">lxplus7</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/persistent-screen.html#setting-up-password-less-kerberos-token-on-lxplus7">Setting up password-less kerberos token on lxplus7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/persistent-screen.html#making-use-of-the-keytab-on-lxplus7">Making use of the keytab on lxplus7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token-on-lxplus7">Using k5reauth to automatically refresh your kerberos token on lxplus7</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#lxplus8">lxplus8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#lxplus9">lxplus9</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/shell2.html">More about the UNIX shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#types-of-shell">Types of shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#manual-pages">Manual pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#environment-variables">Environment variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#differences-among-files">Differences among files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#looping-over-files">Looping over files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#conditionals">Conditionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#linking-commands">Linking commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#pipes-and-redirection">Pipes and redirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#bash-security">Bash security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#complexity">Complexity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-viewers">Text viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-editors">Text editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#disk-space">Disk space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../snakemake/README.html">Analysis automation with Snakemake</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#documentation-and-environments">Documentation and environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#workflow-preservation">Workflow preservation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#basic-tutorial">Basic Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#what-is-a-workflow">What is a workflow?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#why-use-a-workflow-management-system">Why use a workflow management system?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#introducing-snakemake">Introducing Snakemake</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#re-running-rules">Re-running rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#chaining-rules">Chaining rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#the-limits-of-wildcards">The limits of wildcards</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#advanced-tutorial">Advanced Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#running-scripts">Running scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#log-files">Log files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#config-files">Config files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">Git</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-basics.html">Automated Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-setup.html">Setting Up Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-create.html">Creating a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-changes.html">Tracking Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-history.html">Exploring History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-ignore.html">Ignoring Things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07-branches.html">Branching and Merging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="07-branches.html#listing-and-creating-branches">Listing and creating branches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07-branches.html#working-on-a-branch">Working on a branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07-branches.html#merging-a-branch">Merging a branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07-branches.html#when-both-branches-have-moved-on">When both branches have moved on</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07-branches.html#tags-labels-that-stay-put">Tags: labels that stay put</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="08-gitlab.html">Remotes in CERN GitLab</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Sharing a Repository with Others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10-issues.html">Tracking Work with Issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="10-issues.html#opening-an-issue">Opening an issue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10-issues.html#referring-to-issues">Referring to issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10-issues.html#closing-issues-automatically">Closing issues automatically</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="11-pullrequests.html">Collaborating with Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#what-is-a-pull-or-merge-request">What is a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#fork-the-original-project-repository">Fork the original project repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#clone-a-remote-project-and-its-fork">Clone a remote project and its fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#sync-your-local-repository-with-remote-changes">Sync your local repository with remote changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#create-a-branch-for-your-change">Create a branch for your change</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#implement-your-new-feature">Implement your new feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#push-changes">Push changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#create-a-pull-or-merge-request">Create a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#discussing-amending-retiring-a-merge-request">Discussing, amending, retiring a Merge Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#accepting-a-pull-request">Accepting a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#the-social-side-of-coding">The social side of coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#automatic-testing">Automatic testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="12-conflict.html">Conflicts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="12-conflict.html#conflicts-between-branches">Conflicts between branches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12-conflict.html#conflicts-with-a-remote">Conflicts with a remote</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="13-ci.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14-open.html">Open Science</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15-licensing.html">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16-citation.html">Citation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17-reference.html">Git Command Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#setting-up">Setting up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#starting-a-repository">Starting a repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#recording-changes">Recording changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#looking-at-history">Looking at history</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#undoing-things">Undoing things</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#branches-and-tags">Branches and tags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#working-with-remotes">Working with remotes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#resolving-conflicts">Resolving conflicts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#glossary">Glossary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#getting-help">Getting help</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributor-agreement">Contributor Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#how-to-contribute">How to Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#what-to-contribute">What to Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#using-github">Using GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#other-resources">Other Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis essentials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="README.html">Git</a></li>
+      <li class="breadcrumb-item active">Sharing a Repository with Others</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/git/09-share.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sharing-a-repository-with-others">
+<h1>Sharing a Repository with Others<a class="headerlink" href="#sharing-a-repository-with-others" title="Link to this heading"></a></h1>
+<div class="panel panel-objectives docutils container">
+<div class="panel-header open docutils container">
+<p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
+</div>
+<div class="panel-body docutils container">
+<ul class="simple">
+<li><p>Clone a remote repository.</p></li>
+<li><p>Collaborate pushing to a common repository.</p></li>
+</ul>
+</div>
+</div>
+<p>For the next step, get into pairs.  One person will be the “Owner” and the other
+will be the “Collaborator”. The goal is that the Collaborator add changes into
+the Owner’s repository. We will switch roles at the end, so both persons will
+play Owner and Collaborator.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="practising-by-yourself"><i class="fa fa-info-circle"></i> Practising By Yourself</p>
+</div>
+<div class="panel-body docutils container">
+<p>If you’re working through this lesson on your own, you can carry on by opening
+a second terminal window.
+This window will represent your partner, working on another computer. You
+won’t need to give anyone access on GitLab, because both ‘partners’ are you.</p>
+</div>
+</div>
+<p>The Owner needs to give the Collaborator access. On GitLab, select
+<strong>Manage &gt; Members</strong> in the menu on the left, click <strong>Invite members</strong>, and enter
+your partner’s username. Choose the <strong>Maintainer</strong> role: GitLab <em>protects</em> the
+<code class="docutils literal notranslate"><span class="pre">main</span></code> branch by default, and only Maintainers can push to it directly, which
+is what we will do in this lesson.</p>
+<p><img alt="The &quot;Invite members&quot; dialog of the planets project, with a colleague's username entered and the role set to Maintainer." src="../_images/gitlab-add-collaborators.png" /></p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="understanding-gitlab-permissions"><i class="fa fa-info-circle"></i> Understanding GitLab permissions</p>
+</div>
+<div class="panel-body docutils container">
+<p>GitLab permission levels might be complicated to understand. <a class="reference external" href="https://docs.gitlab.com/user/permissions/">This
+table</a> might come in handy.</p>
+</div>
+</div>
+<p>Next, the Collaborator needs to download a copy of the Owner’s repository to
+their machine. This is called “cloning a repo”. To clone the Owner’s repo into
+their <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> folder, the Collaborator enters:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>ssh://git@gitlab.cern.ch:7999/vlad/planets.git<span class="w"> </span>~/Desktop/vlad-planets
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">vlad</span></code> with the Owner’s username.</p>
+<p><img alt="Three copies of the repository with the same commits: on the Owner's computer (~/planets), which pushed them to the shared repository vlad/planets on CERN GitLab, and on the Collaborator's computer (~/Desktop/vlad-planets), which got its copy with git clone." src="../_images/gitlab-collaboration.svg" /></p>
+<p>The Collaborator can now make a change in their clone of the Owner’s repository,
+exactly the same way as we’ve been doing before:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/Desktop/vlad-planets
+$<span class="w"> </span>nano<span class="w"> </span>pluto.txt
+$<span class="w"> </span>cat<span class="w"> </span>pluto.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>It is so a planet!
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>pluto.txt
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add notes about Pluto"</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[main 8c5b3de] Add notes about Pluto
+ 1 file changed, 1 insertion(+)
+ create mode 100644 pluto.txt
+</pre></div>
+</div>
+<p>Then push the change to the <em>Owner’s repository</em> on GitLab:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 306 bytes | 306.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To ssh://gitlab.cern.ch:7999/vlad/planets.git
+   9272da5..29aba7c  main -&gt; main
+</pre></div>
+</div>
+<p>Note that we didn’t have to create a remote called <code class="docutils literal notranslate"><span class="pre">origin</span></code>: Git uses this name
+by default when we clone a repository.  (This is why <code class="docutils literal notranslate"><span class="pre">origin</span></code> was a sensible
+choice earlier when we were setting up remotes by hand.)</p>
+<p>Take a look to the Owner’s repository on its GitLab website now (maybe you need
+to refresh your browser.) You should be able to see the new commit made by the
+Collaborator.</p>
+<p>To download the Collaborator’s changes from GitLab, the Owner now enters:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 306 bytes | 306.00 KiB/s, done.
+From ssh://gitlab.cern.ch:7999/vlad/planets
+ * branch            main       -&gt; FETCH_HEAD
+   9272da5..29aba7c  main       -&gt; origin/main
+Updating 9272da5..29aba7c
+Fast-forward
+ pluto.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 pluto.txt
+</pre></div>
+</div>
+<p>Now the three repositories (Owner’s local, Collaborator’s local, and Owner’s on
+GitLab) are back in sync.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="a-basic-collaborative-workflow"><i class="fa fa-info-circle"></i> A Basic Collaborative Workflow</p>
+</div>
+<div class="panel-body docutils container">
+<p>In practice, it is good to be sure that you have an updated version of the
+repository you are collaborating on, so you should <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> before making
+your changes. The basic collaborative workflow would be:</p>
+<ul class="simple">
+<li><p>update your local repo with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code>,</p></li>
+<li><p>make your changes and stage them with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>,</p></li>
+<li><p>commit your changes with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span></code>, and</p></li>
+<li><p>upload the changes to GitLab with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">main</span></code></p></li>
+</ul>
+<p>It is better to make many commits with smaller changes rather than
+one commit with massive changes: small commits are easier to
+read and review.</p>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="switch-roles-and-repeat"><i class="fa fa-square-o"></i> Switch Roles and Repeat</p>
+</div>
+<div class="panel-body docutils container">
+<p>Switch roles and repeat the whole process.</p>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="review-changes"><i class="fa fa-square-o"></i> Review Changes</p>
+</div>
+<div class="panel-body docutils container">
+<p>The Owner pushes commits to the repository without giving any information
+to the Collaborator. How can the Collaborator find out what has changed with
+command line? And on GitLab?</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>On the command line, the Collaborator can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">origin</span></code>
+to download the remote changes into the local repository, but without merging
+them into their own work. Then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">main..origin/main</span></code> lists the new
+commits, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">main</span> <span class="pre">origin/main</span></code> shows the changes themselves.</p>
+<p>On GitLab, the Collaborator can open the project’s list of commits (in the
+<strong>Code</strong> menu on the left, select <strong>Commits</strong>) and click on any commit to see
+its changes. To see everything that differs between two points in history, the
+<strong>Code &gt; Compare revisions</strong> page lets you pick two commits or branches and
+shows all the commits and changes between them.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="comment-changes-in-gitlab"><i class="fa fa-square-o"></i> Comment Changes in GitLab</p>
+</div>
+<div class="panel-body docutils container">
+<p>The Collaborator has some questions about one line change made by the Owner and
+has some suggestions to propose.</p>
+<p>With GitLab, it is possible to comment on the changes made in a commit: open
+the commit, and hover over the line you want to comment on; a comment icon
+appears next to it that opens a comment window.</p>
+<p>The Collaborator posts their comments and suggestions using the GitLab interface.</p>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="version-history,-backup,-and-version-control"><i class="fa fa-square-o"></i> Version History, Backup, and Version Control</p>
+</div>
+<div class="panel-body docutils container">
+<p>Some backup software can keep a history of the versions of your files, and
+also allows you to recover specific versions. How is this functionality different from version control?
+What are some of the benefits of using version control, Git and GitLab?</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>There is no single right answer, but some of the main differences are:</p>
+<ul class="simple">
+<li><p>Backups save versions <em>automatically</em>, at fixed times. With version control,
+<em>you</em> decide when a version is worth recording, and each commit comes with a
+message explaining what changed and why.</p></li>
+<li><p>Version control records <em>who</em> made each change, and lets several people work
+on the same files in parallel and merge their work, rather than overwriting
+each other’s copies.</p></li>
+<li><p>You can compare any two versions, work on branches, and undo one specific
+change without losing the work done since.</p></li>
+<li><p>With Git, every clone contains the complete history, and a platform such as
+GitLab adds a place to share it, review each other’s changes and discuss
+them.</p></li>
+</ul>
+<p>Version control does not replace backups, though: it is best at tracking text
+files such as code and documents, and is not meant for large data files.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-keypoints docutils container">
+<div class="panel-header open docutils container">
+<p id="key-points"><i class="fa fa-key"></i> Key Points</p>
+</div>
+<div class="panel-body docutils container">
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> copies a remote repository to create a local repository with a remote called <code class="docutils literal notranslate"><span class="pre">origin</span></code> automatically set up.</p></li>
+</ul>
+</div>
+</div>
+<p><a class="reference external" href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a> - Based on <a class="reference external" href="https://github.com/swcarpentry/git-novice">git-novice</a> © 2016–2017 Software Carpentry Foundation</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="08-gitlab.html" class="btn btn-neutral float-left" title="Remotes in CERN GitLab" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="10-issues.html" class="btn btn-neutral float-right" title="Tracking Work with Issues" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright HSF CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on Software Carpentry (https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    Hello world
+
+
+</body>
+</html>

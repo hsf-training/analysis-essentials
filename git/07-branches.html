@@ -1,0 +1,1099 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Branching and Merging &mdash; Analysis essentials  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/panels.css?v=69fd799d" />
+      <link rel="stylesheet" type="text/css" href="../_static/hsf.css?v=4f53b0d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script data-domain="hepsoftwarefoundation.org" defer="defer" src="https://views.scientific-python.org/js/script.js"></script>
+      <script src="../_static/panels.js?v=0f4bdeea"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Remotes in CERN GitLab" href="08-gitlab.html" />
+    <link rel="prev" title="Ignoring Things" href="06-ignore.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Analysis essentials
+              <img src="../_static/hsf_logo_angled.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../python/README.html">An introduction to Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/running.html">Running Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/00scripts.html">Scripting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/00scripts.html#argparse">argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Basic-types-and-operations">Basic types and operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#strong-typing">strong typing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Container-types">Container types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Mutability">Mutability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#dynamic-typing">dynamic typing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/strings.html">Strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/strings.html#Formatting">Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/lists.html">Lists and looping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#Looping">Looping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/lists.html#Indentation">Indentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#List-comprehension-(Sugar,-can-be-skipped-on-first-read)">List comprehension (Sugar, can be skipped on first read)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/lists.html#Tuples">Tuples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/dictionaries.html">Dictionaries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/dictionaries.html#Dictionary-keys">Dictionary keys</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/operators.html">Objects and operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/operators.html#objects">Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/conditions.html">Conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Truthiness">Truthiness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/conditions.html#Conditions-in-loops">Conditions in loops</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/methods.html">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#*args-and-**kwargs">*args and **kwargs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/methods.html#Inline-methods">Inline methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/modules.html">Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Using-modules-into-your-code:-import">Using modules into your code: import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#The-standard-library">The standard library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Modules-from-PyPi">Modules from PyPi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#(Advanced)-Write-your-first-Python-module">(Advanced) Write your first Python module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/modules.html#Module-name-restrictions">Module name restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Write-a-structured-module">Write a structured module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/modules.html#Run-a-module">Run a module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/classes.html">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/classes.html#Welcome-to-classes">Welcome to classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/classes.html#Inheritance:-a-glance">Inheritance: a glance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../python/classes.html#How-to-fix">How to fix</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/learning.html">Learning more</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/learning.html#exploring-python">Exploring Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/learning.html#conventional-coding">Conventional coding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/first_histogram.html">Making your first histogram</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html#pandas">Pandas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html#plotting-histograms">Plotting histograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/first_histogram.html#applying-cuts">Applying cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/further_reading.html">More advanced topics in Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html#nice-standard-libraries">Nice standard libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html#nice-libraries-for-data-analysis">Nice libraries for data analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python/further_reading.html#python-and-root">Python and ROOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced-python/README.html">Advanced Python Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/10Basics.html">1: Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/10Basics.html#Basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/10Basics.html#Markdown">Markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/10Basics.html#Jupyter">Jupyter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/10Basics.html#Importing-modules">Importing modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/11AdvancedPython.html">Advanced Python Concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Packing-and-unpacking-of-values">Packing and unpacking of values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Context-manager">Context manager</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Using-yield">Using <code class="docutils literal notranslate"><span class="pre">yield</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Using-a-class">Using a class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Decorators-and-factories">Decorators and factories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Decorator">Decorator</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Exceptions">Exceptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Custom-Exception">Custom Exception</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Catching-exceptions">Catching exceptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#pitfall-%22guaranteed-execution%22">pitfall “guaranteed execution”</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/11AdvancedPython.html#Exceptions-as-control-flow">Exceptions as control-flow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html">Advanced Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Decorators">Decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;classmethod">&#64;classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;staticmethod">&#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#&#64;property">&#64;property</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Dunder">Dunder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#len">len</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#str">str</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Callable">Callable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Indexing-(iterating)">Indexing (iterating)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#self">self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Naming-conventions">Naming conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/12AdvancedClasses.html#Danger-zone">Danger zone</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html">2: First look at data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Two-plotting-libraries?">Two plotting libraries?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Recap:-Importing-modules">Recap: Importing modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#5.-The-toy-dataset">5. The toy dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#6.-Plotting-a-simple-histogram">6. Plotting a simple histogram</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Adding-variables">Adding variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Using-rectangular-cuts">Using rectangular cuts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/20DataAndPlotting.html#Comparing-distributions">Comparing distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/30Classification.html">3: Multivariate Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/30Classification.html#Using-a-classifier">Using a classifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/30Classification.html#TODO-Add-a-diagram-of-a-decision-tree-for-the-above-plot">TODO Add a diagram of a decision tree for the above plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html">4: Extension on Classification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Feature-engineering">Feature engineering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html#Loading-data">Loading data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html#Distributions-in-the-Dalitz-features-for-signal-and-background">Distributions in the Dalitz features for signal and background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html#Preparation-of-train/test-datasets">Preparation of train/test datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html#Setting-up-classifiers,-training">Setting up classifiers, training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html#Let's-look-at-the-results-of-training">Let’s look at the results of training</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html#ROC-curves-after-training">ROC curves after training</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/40Histograms.html">6: Histograms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Axes">Axes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Regular">Regular</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Variable">Variable</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Axis-Name">Axis Name</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Compatibility-with-mplhep">Compatibility with mplhep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Plotting-with-hist">Plotting with hist</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Multiple-dimensions">Multiple dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Access-Bins">Access Bins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Getting-Density">Getting Density</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Projecting-axes">Projecting axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Accessing-everything-relevant">Accessing everything relevant</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Multi-dimensional">Multi dimensional</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Arithmetics">Arithmetics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Weights">Weights</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/45DemoReweighting.html">7: Demonstration of distribution reweighting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#Downloading-data">Downloading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#prepare-train-and-test-samples">prepare train and test samples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#Original-distributions">Original distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#train-part-of-original-distribution">train part of original distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#test-part-for-target-distribution">test part for target distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#Bins-based-reweighting-in-n-dimensions">Bins-based reweighting in n dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#Gradient-Boosted-Reweighter">Gradient Boosted Reweighter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#Comparing-some-simple-expressions:">Comparing some simple expressions:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#GB-discrimination">GB-discrimination</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#Great!">Great!</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#What-did-just-happen?">What did just happen?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#How-to-tune">How to tune</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#Folding-reweighter">Folding reweighter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/45DemoReweighting.html#GB-discrimination-for-reweighting-rule">GB discrimination for reweighting rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html">8: Likelihood inference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Scope-of-this-tutorial">Scope of this tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Getting-started">Getting started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Creating-the-model">Creating the model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Plotting">Plotting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#A-quick-plot">A quick plot</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Loss">Loss</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/50LikelihoodInference.html#Fixing-parameters">Fixing parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/60sPlot.html">9: sPlot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Simple-sPlot-example">Simple sPlot example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Observed-distributions">Observed distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Applying-sWeights">Applying sWeights</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Compare">Compare</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#More-complex-case">More complex case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Splot">Splot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Alternative:-Known-probabilities">Alternative: Known probabilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Building-sPlot-over-mass">Building sPlot over mass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Of-course-we-don't-have-labels-which-events-are-signal-and-which-are-background-beforehand">Of course we don’t have labels which events are signal and which are background beforehand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#We-have-no-information-about-real-labels">We have no information about real labels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Fitting-doesn't-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Under-assumption-of-linearity:">Under assumption of linearity:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Minimization-of-variation">Minimization of variation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/60sPlot.html#Uncorrelatedness">Uncorrelatedness</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html">10: Scikit-HEP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#formulate---converting-expressions">formulate - converting expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#Particle">Particle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#hepunits">hepunits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#Vector">Vector</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced-python/70ScikitHEPUniverse.html#Vector-properties">Vector properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/README.html">Introducing the Shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-command-line-interface">The Command-Line Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#the-shell">The Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#why-bother">Why bother?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/README.html#nelle-s-pipeline-starting-point">Nelle’s Pipeline: Starting Point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell/02-filedir.html">Navigating Files and Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/02-filedir.html#nelle-s-pipeline-organizing-files">Nelle’s Pipeline: Organizing Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/03-create.html">Working With Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/04-pipefilter.html">Pipes and Filters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell/04-pipefilter.html#nelle-s-pipeline-checking-files">Nelle’s Pipeline: Checking Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/05-loop.html">Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/06-script.html">Shell Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell/07-find.html">Finding Things</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../shell-extras/README.html">UNIX shell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen.html">Using screen to keep things running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/screen2.html">Advanced screen topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#finding-lost-screens">Finding lost screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/screen2.html#using-tabs-in-screen">Using tabs in screen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/persistent-screen.html">Persistent screen or tmux session on lxplus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#lxplus7">lxplus7</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/persistent-screen.html#setting-up-password-less-kerberos-token-on-lxplus7">Setting up password-less kerberos token on lxplus7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/persistent-screen.html#making-use-of-the-keytab-on-lxplus7">Making use of the keytab on lxplus7</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../shell-extras/persistent-screen.html#using-k5reauth-to-automatically-refresh-your-kerberos-token-on-lxplus7">Using k5reauth to automatically refresh your kerberos token on lxplus7</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#lxplus8">lxplus8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/persistent-screen.html#lxplus9">lxplus9</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-extras/shell2.html">More about the UNIX shell</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#types-of-shell">Types of shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#manual-pages">Manual pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#environment-variables">Environment variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#differences-among-files">Differences among files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#looping-over-files">Looping over files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#conditionals">Conditionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#linking-commands">Linking commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#pipes-and-redirection">Pipes and redirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#bash-security">Bash security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#complexity">Complexity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-viewers">Text viewers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#text-editors">Text editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#disk-space">Disk space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shell-extras/shell2.html#over-the-wire-and-bandit-wargame">Over the Wire and Bandit wargame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../snakemake/README.html">Analysis automation with Snakemake</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#documentation-and-environments">Documentation and environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#workflow-preservation">Workflow preservation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#basic-tutorial">Basic Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#what-is-a-workflow">What is a workflow?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#why-use-a-workflow-management-system">Why use a workflow management system?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#introducing-snakemake">Introducing Snakemake</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#re-running-rules">Re-running rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#chaining-rules">Chaining rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#the-limits-of-wildcards">The limits of wildcards</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../snakemake/README.html#advanced-tutorial">Advanced Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#running-scripts">Running scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#log-files">Log files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#config-files">Config files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../snakemake/README.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="README.html">Git</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-basics.html">Automated Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-setup.html">Setting Up Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-create.html">Creating a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-changes.html">Tracking Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-history.html">Exploring History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-ignore.html">Ignoring Things</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Branching and Merging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#listing-and-creating-branches">Listing and creating branches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#working-on-a-branch">Working on a branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#merging-a-branch">Merging a branch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#when-both-branches-have-moved-on">When both branches have moved on</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tags-labels-that-stay-put">Tags: labels that stay put</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="08-gitlab.html">Remotes in CERN GitLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09-share.html">Sharing a Repository with Others</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10-issues.html">Tracking Work with Issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="10-issues.html#opening-an-issue">Opening an issue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10-issues.html#referring-to-issues">Referring to issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10-issues.html#closing-issues-automatically">Closing issues automatically</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="11-pullrequests.html">Collaborating with Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#what-is-a-pull-or-merge-request">What is a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#fork-the-original-project-repository">Fork the original project repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#clone-a-remote-project-and-its-fork">Clone a remote project and its fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#sync-your-local-repository-with-remote-changes">Sync your local repository with remote changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#create-a-branch-for-your-change">Create a branch for your change</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#implement-your-new-feature">Implement your new feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#push-changes">Push changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#create-a-pull-or-merge-request">Create a Pull (or Merge) Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#discussing-amending-retiring-a-merge-request">Discussing, amending, retiring a Merge Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#accepting-a-pull-request">Accepting a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#the-social-side-of-coding">The social side of coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-pullrequests.html#automatic-testing">Automatic testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="12-conflict.html">Conflicts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="12-conflict.html#conflicts-between-branches">Conflicts between branches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12-conflict.html#conflicts-with-a-remote">Conflicts with a remote</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="13-ci.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="14-open.html">Open Science</a></li>
+<li class="toctree-l2"><a class="reference internal" href="15-licensing.html">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="16-citation.html">Citation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="17-reference.html">Git Command Reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#setting-up">Setting up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#starting-a-repository">Starting a repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#recording-changes">Recording changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#looking-at-history">Looking at history</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#undoing-things">Undoing things</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#branches-and-tags">Branches and tags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#working-with-remotes">Working with remotes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#resolving-conflicts">Resolving conflicts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#glossary">Glossary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17-reference.html#getting-help">Getting help</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributor-agreement">Contributor Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#how-to-contribute">How to Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#what-to-contribute">What to Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#using-github">Using GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#other-resources">Other Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html">Instructional Material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html#software">Software</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis essentials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="README.html">Git</a></li>
+      <li class="breadcrumb-item active">Branching and Merging</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/hsf-training/analysis-essentials/blob/master/git/07-branches.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="branching-and-merging">
+<h1>Branching and Merging<a class="headerlink" href="#branching-and-merging" title="Link to this heading"></a></h1>
+<div class="panel panel-objectives docutils container">
+<div class="panel-header open docutils container">
+<p id="learning-objectives"><i class="fa fa-line-chart"></i> Learning Objectives</p>
+</div>
+<div class="panel-body docutils container">
+<ul class="simple">
+<li><p>Explain what a branch is and why branches are useful.</p></li>
+<li><p>Create, list and switch between branches.</p></li>
+<li><p>Merge a branch back into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>Tell the difference between a fast-forward merge and a merge commit.</p></li>
+<li><p>Mark important versions with tags.</p></li>
+</ul>
+</div>
+</div>
+<p>So far, all of Dracula’s commits have gone one after the other into a single
+line of history. That works well while there is only one thing going on at a
+time, but real work is rarely like that. Dracula might want to try out an idea
+without disturbing notes that he knows are correct, or to work on two
+unrelated topics at once and only keep the one that works out.</p>
+<p>Git’s answer to this is <strong>branches</strong>. A branch is an independent line of
+development: you can make commits on it without affecting any other branch,
+switch back and forth between branches at any time, and later <em>merge</em> the
+work from one branch into another.</p>
+<p>We have actually been using a branch all along. Every <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> has started
+with <code class="docutils literal notranslate"><span class="pre">On</span> <span class="pre">branch</span> <span class="pre">main</span></code>: <code class="docutils literal notranslate"><span class="pre">main</span></code> is simply the branch Git created for us when we
+ran <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>.</p>
+<section id="listing-and-creating-branches">
+<h2>Listing and creating branches<a class="headerlink" href="#listing-and-creating-branches" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> lists the branches in our repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>branch
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* main
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">*</span></code> marks the branch we are currently on. Dracula wants to write some notes
+about the two moons of Mars, but isn’t sure yet whether they are worth keeping,
+so he starts a new branch called <code class="docutils literal notranslate"><span class="pre">moons</span></code> for them:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>moons
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Switched to a new branch 'moons'
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span></code> moves us to another branch, and the <code class="docutils literal notranslate"><span class="pre">-c</span></code> option (for <em>create</em>)
+creates that branch first. The new branch starts from the commit we were on,
+so for now <code class="docutils literal notranslate"><span class="pre">moons</span></code> and <code class="docutils literal notranslate"><span class="pre">main</span></code> contain exactly the same work:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>branch
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  main
+* moons
+</pre></div>
+</div>
+</section>
+<section id="working-on-a-branch">
+<h2>Working on a branch<a class="headerlink" href="#working-on-a-branch" title="Link to this heading"></a></h2>
+<p>Commits work exactly as before. Let’s create a new file and commit it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nano<span class="w"> </span>moons.txt
+$<span class="w"> </span>cat<span class="w"> </span>moons.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Phobos and Deimos are too small to live on, but could be useful for mining
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>moons.txt
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add notes on the moons of Mars"</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[moons 1e6da70] Add notes on the moons of Mars
+ 1 file changed, 1 insertion(+)
+ create mode 100644 moons.txt
+</pre></div>
+</div>
+<p>Notice that Git now tells us which branch the commit was made on. The
+<code class="docutils literal notranslate"><span class="pre">--graph</span></code> and <code class="docutils literal notranslate"><span class="pre">--all</span></code> options of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> show us all branches at once:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph<span class="w"> </span>--all
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* 1e6da70 (HEAD -&gt; moons) Add notes on the moons of Mars
+* 35e8622 (main) Add the ignore file
+* 005937f Discuss concerns about Mars' climate for Mummy
+* 34961b1 Add concerns about effects of Mars' moons on Wolfman
+* f22b25e Start notes on Mars as a base
+</pre></div>
+</div>
+<p>(Your commit identifiers will be different, and your history may contain some
+extra commits from the exercises.)</p>
+<p>The labels in brackets show where each branch currently points: <code class="docutils literal notranslate"><span class="pre">moons</span></code> is one
+commit ahead of <code class="docutils literal notranslate"><span class="pre">main</span></code>, and <code class="docutils literal notranslate"><span class="pre">HEAD</span> <span class="pre">-&gt;</span> <span class="pre">moons</span></code> tells us that <code class="docutils literal notranslate"><span class="pre">moons</span></code> is the branch
+we are on. This is really all a branch is: a <em>label</em> pointing at a commit,
+which moves forward every time we commit on that branch.</p>
+<p><img alt="Three commits in a row. The main label points at commit 35e8622; the moons label points at the newer commit 1e6da70, and HEAD is attached to moons." src="../_images/branch-label.svg" /></p>
+<p>Now let’s go back to <code class="docutils literal notranslate"><span class="pre">main</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>main
+$<span class="w"> </span>ls
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Switched to branch 'main'
+mars.txt
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">moons.txt</span></code> has disappeared! It hasn’t been lost: it only exists on the <code class="docutils literal notranslate"><span class="pre">moons</span></code>
+branch, and when we switch branches Git updates the files in our working
+directory to match the branch we switch to. If we ran <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span> <span class="pre">moons</span></code> again,
+it would come back. (If you still have the dummy files <code class="docutils literal notranslate"><span class="pre">a.dat</span></code>, <code class="docutils literal notranslate"><span class="pre">b.dat</span></code>,
+<code class="docutils literal notranslate"><span class="pre">c.dat</span></code> and the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory from the lesson on ignoring things, <code class="docutils literal notranslate"><span class="pre">ls</span></code>
+lists them too: Git ignores them, so they stay where they are when you switch
+branches.)</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="switch-with-a-clean-working-directory"><i class="fa fa-info-circle"></i> Switch with a clean working directory</p>
+</div>
+<div class="panel-body docutils container">
+<p>Before switching branches, commit (or discard) any changes you are working on.
+Git will refuse to switch if that would overwrite changes you haven’t
+committed, and uncommitted changes that don’t clash with anything are carried
+over to the other branch, which can be confusing. Running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> before
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span></code> is a good habit.</p>
+</div>
+</div>
+<div class="panel panel-discussion docutils container">
+<div class="panel-header docutils container">
+<p id="not-ready-to-commit?-put-your-changes-aside-with-git-stash"><i class="fa fa-bell"></i> Not ready to commit? Put your changes aside with git stash</p>
+</div>
+<div class="panel-body docutils container">
+<p>Sometimes you are halfway through a change when you need to switch branch, and
+the work isn’t ready to be committed yet. If the other branch has its own
+version of a file you have changed, switching would overwrite your changes, so
+Git refuses:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>experiment
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>error: Your local changes to the following files would be overwritten by checkout:
+	mars.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+</pre></div>
+</div>
+<p>As the message suggests, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span></code> puts your uncommitted changes aside, leaving
+you with a clean working directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>stash
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Saved working directory and index state WIP on main: 35e8622 Add the ignore file
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>On branch main
+nothing to commit, working tree clean
+</pre></div>
+</div>
+<p>You can now switch to the other branch, do what you need to do there, and come
+back. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">list</span></code> shows what you have put aside, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">pop</span></code> brings
+the most recent changes back (and removes them from the stash):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>main
+$<span class="w"> </span>git<span class="w"> </span>stash<span class="w"> </span>pop
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>On branch main
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+	modified:   mars.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (eda7444b23f062e7df3b9509cd4e67e29e52ff4a)
+</pre></div>
+</div>
+<p>The stash is meant for short interruptions: it is easy to forget what you have
+put there, so for anything longer, commit your work on a branch instead.</p>
+</div>
+</div>
+</section>
+<section id="merging-a-branch">
+<h2>Merging a branch<a class="headerlink" href="#merging-a-branch" title="Link to this heading"></a></h2>
+<p>Dracula is happy with his notes on the moons, so he wants to bring them into
+<code class="docutils literal notranslate"><span class="pre">main</span></code>. From the branch that should <em>receive</em> the work (here, <code class="docutils literal notranslate"><span class="pre">main</span></code>), we run
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> with the name of the branch to merge in:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>moons
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Updating 35e8622..1e6da70
+Fast-forward
+ moons.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 moons.txt
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph<span class="w"> </span>--all
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* 1e6da70 (HEAD -&gt; main, moons) Add notes on the moons of Mars
+* 35e8622 Add the ignore file
+* 005937f Discuss concerns about Mars' climate for Mummy
+* 34961b1 Add concerns about effects of Mars' moons on Wolfman
+* f22b25e Start notes on Mars as a base
+</pre></div>
+</div>
+<p>Git calls this a <strong>fast-forward</strong> merge: nothing had happened on <code class="docutils literal notranslate"><span class="pre">main</span></code> since
+<code class="docutils literal notranslate"><span class="pre">moons</span></code> was created, so all Git had to do was move the <code class="docutils literal notranslate"><span class="pre">main</span></code> label forward to
+the same commit as <code class="docutils literal notranslate"><span class="pre">moons</span></code>. No new commit was needed.</p>
+<p><img alt="Before the merge, main (with HEAD) points at 35e8622 and moons at the next commit, 1e6da70. After git merge moons, main has moved forward to 1e6da70, the same commit as moons." src="../_images/branch-fast-forward.svg" /></p>
+<p>The animation below replays the whole story so far: creating the branch,
+committing on it, switching back to <code class="docutils literal notranslate"><span class="pre">main</span></code> and merging with a fast-forward.
+Watch how the commits stay where they are, while the <code class="docutils literal notranslate"><span class="pre">main</span></code> and <code class="docutils literal notranslate"><span class="pre">moons</span></code> labels,
+and <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>, move between them:</p>
+<p><img alt="An animation in five steps. First, main has two commits and HEAD is attached to main. git switch -c moons creates a moons label on the same commit and HEAD moves to it. git commit adds commit 1e6da70 and moons moves onto it, taking HEAD along. git switch main moves HEAD back to main. git merge moons moves the main label forward to 1e6da70, the same commit as moons: a fast-forward." src="../_images/branch-animation.svg" /></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">moons</span></code> branch has done its job, so we can delete it. This only removes the
+label; the commits are safely part of <code class="docutils literal notranslate"><span class="pre">main</span></code> now:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>moons
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Deleted branch moons (was 1e6da70).
+</pre></div>
+</div>
+</section>
+<section id="when-both-branches-have-moved-on">
+<h2>When both branches have moved on<a class="headerlink" href="#when-both-branches-have-moved-on" title="Link to this heading"></a></h2>
+<p>Fast-forwards are the simple case. More often, work continues on <code class="docutils literal notranslate"><span class="pre">main</span></code> while
+a branch is being worked on. Let’s start a new branch for some notes on Jupiter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>jupiter
+$<span class="w"> </span>nano<span class="w"> </span>jupiter.txt
+$<span class="w"> </span>cat<span class="w"> </span>jupiter.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Too much radiation, but Europa might be worth a visit
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>jupiter.txt
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Start notes on Jupiter"</span>
+</pre></div>
+</div>
+<p>Meanwhile, Dracula goes back to <code class="docutils literal notranslate"><span class="pre">main</span></code> and adds a line to <code class="docutils literal notranslate"><span class="pre">mars.txt</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>main
+$<span class="w"> </span>nano<span class="w"> </span>mars.txt
+$<span class="w"> </span>cat<span class="w"> </span>mars.txt
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Cold and dry, but everything is my favorite color
+The two moons may be a problem for Wolfman
+But the Mummy will appreciate the lack of humidity
+Dust storms can last for months
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>mars.txt
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Warn about dust storms on Mars"</span>
+</pre></div>
+</div>
+<p>Now the history has split in two: each branch has a commit that the other does
+not have.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph<span class="w"> </span>--all
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* 4b50d7f (HEAD -&gt; main) Warn about dust storms on Mars
+| * 11b9567 (jupiter) Start notes on Jupiter
+|/
+* 1e6da70 Add notes on the moons of Mars
+* 35e8622 Add the ignore file
+...
+</pre></div>
+</div>
+<p>A fast-forward is no longer possible, because <code class="docutils literal notranslate"><span class="pre">main</span></code> can’t simply be moved to
+where <code class="docutils literal notranslate"><span class="pre">jupiter</span></code> is without losing the dust storm commit. When we merge, Git
+combines the two lines of work by creating a new <strong>merge commit</strong> with two
+parents:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>jupiter
+</pre></div>
+</div>
+<p>Git opens our editor with a suggested message, <code class="docutils literal notranslate"><span class="pre">Merge</span> <span class="pre">branch</span> <span class="pre">'jupiter'</span></code>, which
+we can just save and close. Git then reports:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Merge made by the 'ort' strategy.
+ jupiter.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 jupiter.txt
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph<span class="w"> </span>--all
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>*   604e156 (HEAD -&gt; main) Merge branch 'jupiter'
+|\
+| * 11b9567 (jupiter) Start notes on Jupiter
+* | 4b50d7f Warn about dust storms on Mars
+|/
+* 1e6da70 Add notes on the moons of Mars
+* 35e8622 Add the ignore file
+...
+</pre></div>
+</div>
+<p><img alt="Before the merge, main (with HEAD) and jupiter each have a new commit after 1e6da70, so the history splits in two. After git merge jupiter, a new merge commit 604e156 joins both lines, and main (with HEAD) points at it." src="../_images/branch-merge-commit.svg" /></p>
+<p>The graph shows the two lines of work coming back together. <code class="docutils literal notranslate"><span class="pre">main</span></code> now contains
+both the dust storm warning and <code class="docutils literal notranslate"><span class="pre">jupiter.txt</span></code>, so we can delete the branch:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>jupiter
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Deleted branch jupiter (was 11b9567).
+</pre></div>
+</div>
+</section>
+<section id="tags-labels-that-stay-put">
+<h2>Tags: labels that stay put<a class="headerlink" href="#tags-labels-that-stay-put" title="Link to this heading"></a></h2>
+<p>A branch is a label that moves forward with every new commit. Sometimes we want
+the opposite: a label that marks one particular commit forever, such as the
+version of the code used for a paper, or version <code class="docutils literal notranslate"><span class="pre">1.0</span></code> of a tool. Git calls
+these <strong>tags</strong>.</p>
+<p>Dracula’s notes have reached a state he is happy with, so he tags it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v1.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">"First complete set of planet notes"</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">-a</span></code> option creates an <em>annotated</em> tag, which records who made it, when,
+and a message (given with <code class="docutils literal notranslate"><span class="pre">-m</span></code>), much like a commit. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span></code> lists the tags,
+and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> shows them next to the commit they point to:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>tag
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>v1.0
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>-1
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>604e156 (HEAD -&gt; main, tag: v1.0) Merge branch 'jupiter'
+</pre></div>
+</div>
+<p>From now on, <code class="docutils literal notranslate"><span class="pre">v1.0</span></code> can be used anywhere a commit identifier is expected, for
+example <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">v1.0</span> <span class="pre">mars.txt</span></code> or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span> <span class="pre">--detach</span> <span class="pre">v1.0</span></code>, and it will
+always mean this commit, however many commits are added later.</p>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="tags-and-releases"><i class="fa fa-info-circle"></i> Tags and releases</p>
+</div>
+<div class="panel-body docutils container">
+<p>Tags are not sent to a remote repository by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> unless you ask for them,
+with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">v1.0</span></code> for one tag, or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">--tags</span></code> for all
+of them. Hosting platforms such as GitLab and GitHub then list your tags, and
+let you turn a tag into a <em>release</em> with a description and downloadable files.
+Releases are also what services like Zenodo archive to give your software a
+citable DOI, as we will see in the lesson on <a class="reference internal" href="16-citation.html"><span class="doc">citation</span></a>.</p>
+</div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="what-if-both-branches-change-the-same-lines?"><i class="fa fa-info-circle"></i> What if both branches change the same lines?</p>
+</div>
+<div class="panel-body docutils container">
+<p>Here Git could combine the two branches automatically, because they changed
+different files. If both branches change the <em>same lines</em> of the same file, Git
+can’t know which version is right, and asks us to decide. This is called a
+<em>conflict</em>, and we will learn how to resolve one in the lesson on
+<a class="reference internal" href="12-conflict.html"><span class="doc">conflicts</span></a>.</p>
+</div>
+</div>
+<div class="panel panel-callout docutils container">
+<div class="panel-header open docutils container">
+<p id="working-with-branches"><i class="fa fa-info-circle"></i> Working with branches</p>
+</div>
+<div class="panel-body docutils container">
+<p>A few habits that make branches easy to live with:</p>
+<ul class="simple">
+<li><p>Keep <code class="docutils literal notranslate"><span class="pre">main</span></code> in a working state, and do each new piece of work (a feature, a
+fix, an experiment) on its own branch.</p></li>
+<li><p>Give branches short, descriptive names, such as <code class="docutils literal notranslate"><span class="pre">add-moon-notes</span></code> or
+<code class="docutils literal notranslate"><span class="pre">fix-mars-typo</span></code>.</p></li>
+<li><p>Merge branches back when the work is done, and delete them afterwards.</p></li>
+</ul>
+<p>This is also how most collaboration works on platforms such as GitLab and
+GitHub: each contribution is developed on its own branch and then proposed for
+merging, as we will see in the lesson on
+<a class="reference internal" href="11-pullrequests.html"><span class="doc">pull requests</span></a>.</p>
+</div>
+</div>
+<div class="panel panel-discussion docutils container">
+<div class="panel-header docutils container">
+<p id="branches-and-detached-head"><i class="fa fa-bell"></i> Branches and detached HEAD</p>
+</div>
+<div class="panel-body docutils container">
+<p>In <a class="reference internal" href="05-history.html"><span class="doc">Exploring History</span></a> we used <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span> <span class="pre">--detach</span></code> to look at
+an old commit. Now we can see what “detached” means: normally <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> points to
+a <em>branch</em> (as in <code class="docutils literal notranslate"><span class="pre">HEAD</span> <span class="pre">-&gt;</span> <span class="pre">main</span></code>), and the branch moves forward with each new
+commit. In detached HEAD state, <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> points directly at a commit and no
+branch follows along, so any commits you make there don’t belong to any branch.</p>
+<p>If you do make commits while detached and want to keep them, create a branch
+for them before switching away:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>my-experiment
+</pre></div>
+</div>
+</div>
+</div>
+<div class="panel panel-discussion docutils container">
+<div class="panel-header docutils container">
+<p id="you-will-see-this-in-older-tutorials:-git-checkout--b"><i class="fa fa-bell"></i> You will see this in older tutorials: git checkout -b</p>
+</div>
+<div class="panel-body docutils container">
+<p>Before <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span></code> was added in Git 2.23 (2019), branches were created and
+changed with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>, which still works:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Older command</p></th>
+<th class="head"><p>Modern equivalent</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">moons</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span> <span class="pre">moons</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">moons</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span> <span class="pre">-c</span> <span class="pre">moons</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="where-am-i?"><i class="fa fa-square-o"></i> Where Am I?</p>
+</div>
+<div class="panel-body docutils container">
+<p>Dracula runs <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> and sees:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  jupiter
+* main
+  saturn
+</pre></div>
+</div>
+<p>Which branch is he on? How can he start working on <code class="docutils literal notranslate"><span class="pre">saturn</span></code>? How could he
+check that the switch worked?</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>He is on <code class="docutils literal notranslate"><span class="pre">main</span></code>, marked with <code class="docutils literal notranslate"><span class="pre">*</span></code>. He can move to <code class="docutils literal notranslate"><span class="pre">saturn</span></code> with
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span> <span class="pre">saturn</span></code>; afterwards <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> shows <code class="docutils literal notranslate"><span class="pre">*</span></code> next to <code class="docutils literal notranslate"><span class="pre">saturn</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> starts with <code class="docutils literal notranslate"><span class="pre">On</span> <span class="pre">branch</span> <span class="pre">saturn</span></code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="fast-forward-or-merge-commit?"><i class="fa fa-square-o"></i> Fast-Forward or Merge Commit?</p>
+</div>
+<div class="panel-body docutils container">
+<p>In each case, Dracula runs <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">feature</span></code> while on <code class="docutils literal notranslate"><span class="pre">main</span></code>. Will Git do a
+fast-forward, or create a merge commit?</p>
+<ol class="simple">
+<li><p>He created <code class="docutils literal notranslate"><span class="pre">feature</span></code>, made two commits on it, and made no commits on <code class="docutils literal notranslate"><span class="pre">main</span></code>
+in the meantime.</p></li>
+<li><p>He created <code class="docutils literal notranslate"><span class="pre">feature</span></code>, made one commit on it, then switched back to <code class="docutils literal notranslate"><span class="pre">main</span></code>
+and made one commit there.</p></li>
+</ol>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<ol class="simple">
+<li><p>A fast-forward: <code class="docutils literal notranslate"><span class="pre">main</span></code> has not moved since <code class="docutils literal notranslate"><span class="pre">feature</span></code> was created, so Git
+only needs to move the <code class="docutils literal notranslate"><span class="pre">main</span></code> label forward.</p></li>
+<li><p>A merge commit: both branches have commits the other does not have, so Git
+has to combine them with a new commit that has two parents.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="a-branch-of-your-own"><i class="fa fa-square-o"></i> A Branch of Your Own</p>
+</div>
+<div class="panel-body docutils container">
+<p>In your <code class="docutils literal notranslate"><span class="pre">planets</span></code> repository:</p>
+<ol class="simple">
+<li><p>Create a branch called <code class="docutils literal notranslate"><span class="pre">neptune</span></code> and switch to it.</p></li>
+<li><p>Create a file <code class="docutils literal notranslate"><span class="pre">neptune.txt</span></code> with a note about Neptune, and commit it.</p></li>
+<li><p>Switch back to <code class="docutils literal notranslate"><span class="pre">main</span></code> and check that <code class="docutils literal notranslate"><span class="pre">neptune.txt</span></code> is not there.</p></li>
+<li><p>Merge <code class="docutils literal notranslate"><span class="pre">neptune</span></code> into <code class="docutils literal notranslate"><span class="pre">main</span></code>, check the history with
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--oneline</span> <span class="pre">--graph</span> <span class="pre">--all</span></code>, and delete the branch.</p></li>
+</ol>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>neptune
+$<span class="w"> </span>nano<span class="w"> </span>neptune.txt
+$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>neptune.txt
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Add notes on Neptune"</span>
+$<span class="w"> </span>git<span class="w"> </span>switch<span class="w"> </span>main
+$<span class="w"> </span>ls<span class="w">                    </span><span class="c1"># neptune.txt is not listed</span>
+$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>neptune<span class="w">     </span><span class="c1"># a fast-forward, since main has not changed</span>
+$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph<span class="w"> </span>--all
+$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>neptune
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-challenge docutils container">
+<div class="panel-header open docutils container">
+<p id="deleting-an-unmerged-branch"><i class="fa fa-square-o"></i> Deleting an Unmerged Branch</p>
+</div>
+<div class="panel-body docutils container">
+<p>Create a branch, make a commit on it, switch back to <code class="docutils literal notranslate"><span class="pre">main</span></code> and, <em>without</em>
+merging, try to delete it with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-d</span></code>. What happens, and why?</p>
+<div class="panel panel-solution docutils container">
+<div class="panel-header docutils container">
+<p id="solution"><i class="fa fa-check-square-o"></i> Solution</p>
+</div>
+<div class="panel-body docutils container">
+<p>Git refuses:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>error: the branch 'experiment' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D experiment'
+</pre></div>
+</div>
+<p>The commits on that branch are not part of any other branch, so deleting the
+label would make them very hard to find again. Git protects us from losing work
+by accident. If we really want to throw the work away, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-D</span></code> (with a
+capital <code class="docutils literal notranslate"><span class="pre">D</span></code>) forces the deletion.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-keypoints docutils container">
+<div class="panel-header open docutils container">
+<p id="key-points"><i class="fa fa-key"></i> Key Points</p>
+</div>
+<div class="panel-body docutils container">
+<ul class="simple">
+<li><p>A branch is an independent line of development; <code class="docutils literal notranslate"><span class="pre">main</span></code> is the branch Git creates by default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> lists branches, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span> <span class="pre">-c</span> <span class="pre">&lt;name&gt;</span></code> creates a new branch and switches to it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span> <span class="pre">&lt;name&gt;</span></code> changes branch, updating the files in the working directory to match.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">&lt;name&gt;</span></code> brings the work from another branch into the current one.</p></li>
+<li><p>If the current branch has not moved on, the merge is a fast-forward; otherwise Git creates a merge commit.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-d</span> <span class="pre">&lt;name&gt;</span></code> deletes a branch once it has been merged.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span></code> puts uncommitted changes aside, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">pop</span></code> brings them back.</p></li>
+<li><p>A tag (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-a</span> <span class="pre">v1.0</span> <span class="pre">-m</span> <span class="pre">&quot;...&quot;</span></code>) is a label that permanently marks one commit, such as a released version.</p></li>
+</ul>
+</div>
+</div>
+<p><a class="reference external" href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a> - Original content</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="06-ignore.html" class="btn btn-neutral float-left" title="Ignoring Things" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="08-gitlab.html" class="btn btn-neutral float-right" title="Remotes in CERN GitLab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright HSF CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/legalcode) - Originally based on Software Carpentry (https://github.com/swcarpentry/) © 2016–2017 Software Carpentry Foundation.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    Hello world
+
+
+</body>
+</html>

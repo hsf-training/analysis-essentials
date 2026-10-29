@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="250" viewBox="0 0 580 250" role="img">
+  <title>Animation: branches are labels that move</title>
+  <desc>An animation in five steps. 1: two commits on main, and HEAD is attached to main. 2: git switch -c moons creates a moons label on the same commit, and HEAD moves to moons. 3: git commit adds a new commit, and the moons label moves forward onto it, taking HEAD with it. 4: git switch main moves HEAD back to main. 5: git merge moons moves the main label forward to the same commit as moons: a fast-forward merge. The final picture shows three commits, with main (and HEAD) and moons both pointing at the newest one.</desc>
+  <rect width="580" height="250" fill="#FFFFFF"/>
+  
+<style>
+  .scene { animation: scene 16s linear infinite; }
+  @keyframes scene { 0% { opacity: 0; } 3% { opacity: 1; } 92% { opacity: 1; } 96%, 100% { opacity: 0; } }
+
+  .c3 { animation: c3 16s linear infinite; }
+  @keyframes c3 { 0%, 30% { opacity: 0; } 33%, 100% { opacity: 1; } }
+
+  .moons { animation: moons 16s ease-in-out infinite; }
+  @keyframes moons {
+    0%, 12% { opacity: 0; transform: translate(0px, 0px); }
+    15%, 33% { opacity: 1; transform: translate(0px, 0px); }
+    38%, 100% { opacity: 1; transform: translate(140px, 0px); } }
+
+  .main { animation: main 16s ease-in-out infinite; }
+  @keyframes main {
+    0%, 68% { transform: translate(0px, 0px); }
+    73%, 100% { transform: translate(140px, 0px); } }
+
+  .head { animation: head 16s ease-in-out infinite; transform: translate(445.4px, 149.0px); }
+  @keyframes head {
+    0%, 14% { transform: translate(305.4px, 149.0px); }
+    18%, 33% { transform: translate(309.5px, 43.0px); }
+    38%, 52% { transform: translate(449.5px, 43.0px); }
+    56%, 68% { transform: translate(305.4px, 149.0px); }
+    73%, 100% { transform: translate(445.4px, 149.0px); } }
+
+  .cap { opacity: 0; }
+  .cap0 { animation: cap0 16s linear infinite; }
+  .cap1 { animation: cap1 16s linear infinite; }
+  .cap2 { animation: cap2 16s linear infinite; }
+  .cap3 { animation: cap3 16s linear infinite; }
+  .cap4 { animation: cap4 16s linear infinite; opacity: 1; }
+  @keyframes cap0 { 0%, 11% { opacity: 1; } 12%, 100% { opacity: 0; } }
+  @keyframes cap1 { 0%, 11% { opacity: 0; } 12%, 29% { opacity: 1; } 30%, 100% { opacity: 0; } }
+  @keyframes cap2 { 0%, 29% { opacity: 0; } 30%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  @keyframes cap3 { 0%, 49% { opacity: 0; } 50%, 65% { opacity: 1; } 66%, 100% { opacity: 0; } }
+  @keyframes cap4 { 0%, 65% { opacity: 0; } 66%, 100% { opacity: 1; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scene, .c3, .moons, .main, .head, .cap0, .cap1, .cap2, .cap3, .cap4 { animation: none; }
+  }
+</style>
+  <g class="scene"><g><circle cx="130" cy="118" r="13" fill="#F2F2F2" stroke="#666666" stroke-width="2"/><text x="130" y="93" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="13" fill="#1A1A1A" text-anchor="middle">005937f</text></g><line x1="143" y1="118" x2="257" y2="118" stroke="#9A9A9A" stroke-width="3"/><g><circle cx="270" cy="118" r="13" fill="#F2F2F2" stroke="#666666" stroke-width="2"/><text x="270" y="93" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="13" fill="#1A1A1A" text-anchor="middle">35e8622</text></g><g class="c3"><line x1="283" y1="118" x2="397" y2="118" stroke="#9A9A9A" stroke-width="3"/><circle cx="410" cy="118" r="13" fill="#F2F2F2" stroke="#666666" stroke-width="2"/><text x="410" y="93" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="13" fill="#1A1A1A" text-anchor="middle">1e6da70</text></g><circle cx="65" cy="118" r="2.5" fill="#9A9A9A"/><circle cx="75" cy="118" r="2.5" fill="#9A9A9A"/><circle cx="85" cy="118" r="2.5" fill="#9A9A9A"/><line x1="92" y1="118" x2="117" y2="118" stroke="#9A9A9A" stroke-width="3"/><g class="main" style="transform: translate(140px, 0px)"><line x1="270" y1="131" x2="270" y2="149" stroke="#0072B2" stroke-width="2.5"/><rect x="246.6" y="149" width="46.8" height="24" rx="6" fill="#0072B2"/><text x="270" y="165.5" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">main</text></g><g class="moons" style="transform: translate(140px, 0px)"><line x1="270" y1="75" x2="270" y2="67" stroke="#E69F00" stroke-width="2.5"/><rect x="242.5" y="43" width="55.0" height="24" rx="6" fill="#E69F00"/><text x="270" y="59.5" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#1A1A1A" text-anchor="middle">moons</text></g><g class="head" style="transform: translate(445.4px, 149.0px)"><line x1="-10" y1="12" x2="0" y2="12" stroke="#333333" stroke-width="2.5"/><rect x="2.6" y="0" width="46.8" height="24" rx="6" fill="#333333"/><text x="26" y="16.5" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">HEAD</text></g><text class="cap cap0" x="290.0" y="228" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" fill="#6B6B6B" text-anchor="middle">main has two commits</text><text class="cap cap1" x="290.0" y="228" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="15" fill="#1A1A1A" text-anchor="middle">$ git switch -c moons</text><text class="cap cap2" x="290.0" y="228" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="15" fill="#1A1A1A" text-anchor="middle">$ git commit</text><text class="cap cap3" x="290.0" y="228" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="15" fill="#1A1A1A" text-anchor="middle">$ git switch main</text><text class="cap cap4" x="290.0" y="228" font-family="Consolas, 'DejaVu Sans Mono', 'Courier New', monospace" font-size="15" fill="#1A1A1A" text-anchor="middle">$ git merge moons    (fast-forward)</text></g>
+</svg>

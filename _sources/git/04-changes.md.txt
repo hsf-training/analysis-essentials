@@ -25,7 +25,7 @@ Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
 We'll use `nano` to edit the file;
 you can use whatever editor you like.
-In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create/) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
+In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out the "Which Editor?" callout in the [shell lesson](../shell/03-create.md).
 
 ```bash
 $ nano mars.txt
@@ -60,14 +60,14 @@ Git tells us that it's noticed the new file:
 $ git status
 ```
 ```
-On branch master
+On branch main
 
-Initial commit
+No commits yet
 
 Untracked files:
-   (use "git add <file>..." to include in what will be committed)
-
+  (use "git add <file>..." to include in what will be committed)
 	mars.txt
+
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
@@ -85,13 +85,12 @@ and then check that the right thing happened:
 $ git status
 ```
 ```
-On branch master
+On branch main
 
-Initial commit
+No commits yet
 
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
-
 	new file:   mars.txt
 
 ```
@@ -105,7 +104,7 @@ we need to run one more command:
 $ git commit -m "Start notes on Mars as a base"
 ```
 ```
-[master (root-commit) f22b25e] Start notes on Mars as a base
+[main (root-commit) f22b25e] Start notes on Mars as a base
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt
 ```
@@ -133,8 +132,8 @@ If we run `git status` now:
 $ git status
 ```
 ```
-On branch master
-nothing to commit, working directory clean
+On branch main
+nothing to commit, working tree clean
 ```
 
 it tells us everything is up to date.
@@ -145,7 +144,7 @@ we can ask Git to show us the project's history using `git log`:
 $ git log
 ```
 ```
-commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
+commit f22b25e3233b4645dabd0d81e651fe074bd8e73b (HEAD -> main)
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
@@ -195,11 +194,10 @@ it tells us that a file it already knows about has been modified:
 $ git status
 ```
 ```
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
+  (use "git restore <file>..." to discard changes in working directory)
 	modified:   mars.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
@@ -252,11 +250,10 @@ $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 $ git status
 ```
 ```
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
+  (use "git restore <file>..." to discard changes in working directory)
 	modified:   mars.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
@@ -271,7 +268,7 @@ $ git add mars.txt
 $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
 ```
 ```
-[master 34961b1] Add concerns about effects of Mars' moons on Wolfman
+[main 34961b1] Add concerns about effects of Mars' moons on Wolfman
  1 file changed, 1 insertion(+)
 ```
 
@@ -297,21 +294,15 @@ but not yet committed.
 
 
 If you think of Git as taking snapshots of changes over the life of a project,
-`git add` specifies *what* will go in a snapshot
-(putting things in the staging area),
-and `git commit` then *actually takes* the snapshot, and
-makes a permanent record of it (as a commit).
-If you don't have anything staged when you type `git commit`,
-Git will prompt you to use `git commit -a` or `git commit --all`,
-which is kind of like gathering *everyone* for the picture!
-However, it's almost always better to
-explicitly add things to the staging area, because you might
-commit changes you forgot you made. (Going back to snapshots,
-you might get the extra with incomplete makeup walking on
-the stage for the snapshot because you used `-a`!)
-Try to stage things manually,
-or you might find yourself searching for "git undo commit" more
-than you would like!
+`git add` chooses *what* goes into the next snapshot (by putting it in the
+staging area), and `git commit` *takes* the snapshot, making a permanent record
+of it as a commit.
+
+You may come across `git commit -a` (or `--all`), which stages every change to
+the files Git already tracks and commits them in one go, like gathering
+*everyone* for the picture. It is almost always better to add files
+explicitly: otherwise you can easily commit changes you forgot you had made,
+and find yourself searching for "git undo commit"!
 
 {% endcallout %}
 
@@ -388,7 +379,7 @@ Let's save our changes:
 $ git commit -m "Discuss concerns about Mars' climate for Mummy"
 ```
 ```
-[master 005937f] Discuss concerns about Mars' climate for Mummy
+[main 005937f] Discuss concerns about Mars' climate for Mummy
  1 file changed, 1 insertion(+)
 ```
 
@@ -398,8 +389,8 @@ check our status:
 $ git status
 ```
 ```
-On branch master
-nothing to commit, working directory clean
+On branch main
+nothing to commit, working tree clean
 ```
 
 and look at the history of what we've done so far:
@@ -408,7 +399,7 @@ and look at the history of what we've done so far:
 $ git log
 ```
 ```
-commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
+commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
@@ -427,15 +418,98 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
     Start notes on Mars as a base
 ```
 
-{% callout "Word-based diffing" %}
+{% discussion "Staging only part of a file: git add -p" %}
+
+Sometimes a single file contains two unrelated changes, and we would like to
+commit them separately. `git add -p` (for *patch*) goes through the changes
+piece by piece, and asks us for each piece (or *hunk*) whether to stage it.
+Suppose we have changed the first line of `mars.txt` and also added a line at
+the end:
+
+```bash
+$ git add -p mars.txt
+```
+```
+diff --git a/mars.txt b/mars.txt
+index b36abfd..e93e1fb 100644
+--- a/mars.txt
++++ b/mars.txt
+@@ -1,3 +1,4 @@
+-Cold and dry, but everything is my favorite color
++Cold and very dry, but everything is my favorite color
+ The two moons may be a problem for Wolfman
+ But the Mummy will appreciate the lack of humidity
++Phobos and Deimos could be useful for mining
+(1/1) Stage this hunk [y,n,q,a,d,s,e,?]? s
+Split into 2 hunks.
+@@ -1,3 +1,3 @@
+-Cold and dry, but everything is my favorite color
++Cold and very dry, but everything is my favorite color
+ The two moons may be a problem for Wolfman
+ But the Mummy will appreciate the lack of humidity
+(1/2) Stage this hunk [y,n,q,a,d,j,J,g,/,e,?]? y
+@@ -2,2 +2,3 @@
+ The two moons may be a problem for Wolfman
+ But the Mummy will appreciate the lack of humidity
++Phobos and Deimos could be useful for mining
+(2/2) Stage this hunk [y,n,q,a,d,K,g,/,e,?]? n
+```
+
+The two changes were close together, so Git first showed them as one hunk; we
+answered `s` to *split* it, then `y` (yes) to stage the first change and `n`
+(no) to leave the second one for later. Typing `?` lists all the possible
+answers. `git diff --staged` confirms that only the first change will be
+committed.
+
+Staging part of a file changes what the next commit contains, so if you want to
+try this yourself, do it in a scratch repository (a new directory with
+`git init`) rather than in `planets`, whose history the next lessons build on.
+
+![An animated terminal session of git add -p mars.txt: Git shows both changes as one hunk; the answer s splits it into two; y stages the change to the first line and n skips the new last line; git diff --staged then shows only the first change.](fig/add-patch.gif)
+
+{% enddiscussion %}
+
+{% discussion "Fixing the last commit: git commit --amend" %}
+
+If you spot a typo in the message of the commit you have just made, or realise
+that you forgot to add a file to it, you don't need a new commit to fix it.
+`git commit --amend` replaces the last commit with a corrected one:
+
+```bash
+$ git commit --amend -m "Stress how dry Mars is"
+```
+```
+[main eabf8d1] Stress how dry Mars is
+ Date: Wed Sep 30 14:51:08 2026 +0100
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
+To add a forgotten file to the last commit, stage it and amend without changing
+the message:
+
+```bash
+$ git add forgotten-file.txt
+$ git commit --amend --no-edit
+```
+
+Amending *rewrites* the last commit: it gets a new identifier, and the old
+one disappears from the history. So, as with `git reset` (see
+[Exploring History](05-history.md)), only amend commits that you have **not
+pushed yet**; if others already have the original commit, make a new commit
+instead. Both of these change history, so try them in a scratch repository
+rather than in `planets`.
+
+{% enddiscussion %}
+
+{% discussion "Word-based diffing" %}
 
 
-Sometimes, e.g. in the case of the text documments a line-wise
+Sometimes, e.g. in the case of text documents, a line-wise
 diff is too coarse. That is where the `--color-words` option of
 `git diff` comes in very useful as it highlights the changed
-words using colors.
+words using colours.
 
-{% endcallout %}
+{% enddiscussion %}
 
 {% callout "Paging the Log" %}
 
@@ -452,7 +526,7 @@ screen is a `:`, instead of your usual prompt.
 
 {% endcallout %}
 
-{% callout "Limit Log Size" %}
+{% discussion "Limit Log Size" %}
 
 
 To avoid having `git log` cover your entire terminal screen, you can limit the
@@ -464,11 +538,11 @@ the last commit you can use:
 $ git log -1
 ```
 ```
-commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
+commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-   Discuss concerns about Mars' climate for Mummy
+    Discuss concerns about Mars' climate for Mummy
 ```
 
 You can also reduce the quantity of information using the
@@ -478,9 +552,9 @@ You can also reduce the quantity of information using the
 $ git log --oneline
 ```
 ```
-* 005937f Discuss concerns about Mars' climate for Mummy
-* 34961b1 Add concerns about effects of Mars' moons on Wolfman
-* f22b25e Start notes on Mars as a base
+005937f Discuss concerns about Mars' climate for Mummy
+34961b1 Add concerns about effects of Mars' moons on Wolfman
+f22b25e Start notes on Mars as a base
 ```
 
 You can also combine the `--oneline` options with others. One useful
@@ -490,19 +564,19 @@ combination is:
 $ git log --oneline --graph --all --decorate
 ```
 ```
-* 005937f Discuss concerns about Mars' climate for Mummy (HEAD, master)
+* 005937f (HEAD -> main) Discuss concerns about Mars' climate for Mummy
 * 34961b1 Add concerns about effects of Mars' moons on Wolfman
 * f22b25e Start notes on Mars as a base
 ```
 
-{% endcallout %}
+{% enddiscussion %}
 
-{% callout "Directories" %}
+{% discussion "Directories and .gitkeep files" %}
 
 
 Two important facts you should know about directories in Git.
 
-1. Git does not track directories on their own, only files within them.
+**First**, Git does not track directories on their own, only files within them.
 Try it for yourself:
 
 ```bash
@@ -519,16 +593,15 @@ in otherwise empty directories. Unlike `.gitignore`, these files are not special
 and their sole purpose is to populate a directory so that Git adds it to
 the repository. In fact, you can name such files anything you like.
 
-{:start="2"}
-2. If you create a directory in your Git repository and populate it with files,
-you can add all files in the directory at once by:
+**Second**, if you create a directory in your Git repository and populate it
+with files, you can add all files in the directory at once by:
 
+```bash
+$ git add <directory-with-files>
 ```
-git add <directory-with-files>
-```
 
 
-{% endcallout %}
+{% enddiscussion %}
 
 To recap, when we want to add changes to our repository,
 we first need to add the changed files to the staging area
@@ -631,8 +704,7 @@ Now the files are ready to commit. You can check that using `git status`. If you
 $ git commit -m "Write plans to start a base on Venus"
 ```
 ```
-[master cc127c2]
- Write plans to start a base on Venus
+[main cc127c2] Write plans to start a base on Venus
  2 files changed, 2 insertions(+)
  create mode 100644 venus.txt
 ```
@@ -641,7 +713,7 @@ $ git commit -m "Write plans to start a base on Venus"
 
 {% endchallenge %}
 
-{% challenge "Author and Committer" %}
+{% hiddenchallenge "Author and Committer" %}
 
 
 For each of the commits you have done, Git stored your name twice.
@@ -653,7 +725,7 @@ commits:
 $ git log --format=full
 ```
 
-When commiting you can name someone else as the author:
+When committing you can name someone else as the author:
 
 ```bash
 $ git commit --author="Vlad Dracula <vlad@tran.sylvan.ia>"
@@ -669,32 +741,36 @@ how that can allow you to collaborate with your colleagues.
 
 ```bash
 $ git add me.txt
-$ git commit -m "Update Vlad's bio." --author="Frank N. Stein <franky@monster.com>"
+$ git commit -m "Update Vlad's bio." --author="Frank N. Stein <franky@monster.example>"
 ```
 ```
-[master 4162a51] Update Vlad's bio.
-Author: Frank N. Stein <franky@monster.com>
-1 file changed, 2 insertions(+), 2 deletions(-)
+[main 4162a51] Update Vlad's bio.
+ Author: Frank N. Stein <franky@monster.example>
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+```
 
+```bash
 $ git log --format=full
-commit 4162a51b273ba799a9d395dd70c45d96dba4e2ff
-Author: Frank N. Stein <franky@monster.com>
+```
+```
+commit 4162a51b273ba799a9d395dd70c45d96dba4e2ff (HEAD -> main)
+Author: Frank N. Stein <franky@monster.example>
 Commit: Vlad Dracula <vlad@tran.sylvan.ia>
 
-Update Vlad's bio.
+    Update Vlad's bio.
 
 commit aaa3271e5e26f75f11892718e83a3e2743fab8ea
 Author: Vlad Dracula <vlad@tran.sylvan.ia>
 Commit: Vlad Dracula <vlad@tran.sylvan.ia>
 
-Vlad's initial bio.
+    Vlad's initial bio.
 ```
 
 {% endsolution %}
 
-{% endchallenge %}
+{% endhiddenchallenge %}
 
-[commit-messages]: https://chris.beams.io/posts/git-commit/
+[commit-messages]: https://chris.beams.io/git-commit
 
 
 {% keypoints "Key Points" %}
@@ -707,5 +783,4 @@ Vlad's initial bio.
 
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation 
-{% endright %}
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [git-novice](https://github.com/swcarpentry/git-novice) © 2016–2017 Software Carpentry Foundation
