@@ -119,7 +119,10 @@ mars.txt
 `moons.txt` has disappeared! It hasn't been lost: it only exists on the `moons`
 branch, and when we switch branches Git updates the files in our working
 directory to match the branch we switch to. If we ran `git switch moons` again,
-it would come back.
+it would come back. (If you still have the dummy files `a.dat`, `b.dat`,
+`c.dat` and the `results` directory from the lesson on ignoring things, `ls`
+lists them too: Git ignores them, so they stay where they are when you switch
+branches.)
 
 {% callout "Switch with a clean working directory" %}
 
@@ -496,24 +499,24 @@ fast-forward, or create a merge commit?
 
 In your `planets` repository:
 
-1. Create a branch called `saturn` and switch to it.
-2. Create a file `saturn.txt` with a note about Saturn, and commit it.
-3. Switch back to `main` and check that `saturn.txt` is not there.
-4. Merge `saturn` into `main`, check the history with
+1. Create a branch called `neptune` and switch to it.
+2. Create a file `neptune.txt` with a note about Neptune, and commit it.
+3. Switch back to `main` and check that `neptune.txt` is not there.
+4. Merge `neptune` into `main`, check the history with
    `git log --oneline --graph --all`, and delete the branch.
 
 {% solution "Solution" %}
 
 ```bash
-$ git switch -c saturn
-$ nano saturn.txt
-$ git add saturn.txt
-$ git commit -m "Add notes on Saturn"
+$ git switch -c neptune
+$ nano neptune.txt
+$ git add neptune.txt
+$ git commit -m "Add notes on Neptune"
 $ git switch main
-$ ls                    # saturn.txt is not listed
-$ git merge saturn      # a fast-forward, since main has not changed
+$ ls                    # neptune.txt is not listed
+$ git merge neptune     # a fast-forward, since main has not changed
 $ git log --oneline --graph --all
-$ git branch -d saturn
+$ git branch -d neptune
 ```
 
 {% endsolution %}
@@ -530,8 +533,8 @@ merging, try to delete it with `git branch -d`. What happens, and why?
 Git refuses:
 
 ```
-error: the branch 'saturn' is not fully merged.
-If you are sure you want to delete it, run 'git branch -D saturn'
+error: the branch 'experiment' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D experiment'
 ```
 
 The commits on that branch are not part of any other branch, so deleting the

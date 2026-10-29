@@ -380,7 +380,8 @@ This is the output (most recent commits are on top):
 ```
 * 3914519 (HEAD -> add-vlad, vlad/add-vlad) Add user info for vlad
 *   ecb7f78 (origin/master, origin/HEAD, master) Merge branch 'master' into 'master'
-|| * d09c134 Add information certification
+|\
+| * d09c134 Add information certification
 | * 256c9b6 Add user info for dberzano
 |/
 * 764051d Add initial README

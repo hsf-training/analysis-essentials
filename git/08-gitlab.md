@@ -204,7 +204,7 @@ branch 'main' set up to track 'origin/main'.
 
 Our local and remote repositories are now in this state:
 
-![After git push -u origin main, the repository on your computer (~/planets) and the repository on CERN GitLab (vlad/planets) contain the same three commits and main branch. In the local repository, origin stands for ssh://git@gitlab.cern.ch:7999/vlad/planets.git.](fig/gitlab-repo-after-first-push.svg)
+![After git push -u origin main, the repository on your computer (~/planets) and the repository on CERN GitLab (vlad/planets) contain the same commits and main branch. In the local repository, origin stands for ssh://git@gitlab.cern.ch:7999/vlad/planets.git.](fig/gitlab-repo-after-first-push.svg)
 
 {% callout "What is the -u for?" %}
 
@@ -333,7 +333,8 @@ done with this exercise.
 
 We don't see any error message when we add the remote (adding the remote tells
 git about it, but doesn't try to use it yet). As soon as we try to use
-```git push``` we'll see an error message. The command ```git remote set-url```
+it, for example with `git push broken main`, we'll
+see an error message. The command ```git remote set-url```
 allows us to change the remote's URL to fix it.
 
 {% endsolution %}

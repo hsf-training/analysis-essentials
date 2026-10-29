@@ -243,8 +243,9 @@ closed by your commit, with a link to it.
 
 {% challenge "Which Bug Report Is More Useful?" %}
 
-Two people report the same problem with the plotting script from the
-[CI lesson](13-ci.md):
+Two people report the same problem with the plotting script `make_plot.py`
+from the [CI lesson](13-ci.md), a short Python script that draws a histogram
+and saves it as `plots/first_plot.pdf`:
 
 1. *"Plot broken!! Please fix ASAP."*
 2. *"make_plot.py fails with `FileNotFoundError: plots/first_plot.pdf` when run

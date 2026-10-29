@@ -321,7 +321,7 @@ results/plots
 ```
 
 What's the shortest `.gitignore` rule you could write to ignore all `.data`
-files in `result/data/position/gps`? Do not ignore the `info.txt`.
+files in `results/data/position/gps`? Do not ignore the `info.txt`.
 
 {% solution "Solution" %}
 

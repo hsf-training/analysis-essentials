@@ -461,6 +461,10 @@ answered `s` to *split* it, then `y` (yes) to stage the first change and `n`
 answers. `git diff --staged` confirms that only the first change will be
 committed.
 
+Staging part of a file changes what the next commit contains, so if you want to
+try this yourself, do it in a scratch repository (a new directory with
+`git init`) rather than in `planets`, whose history the next lessons build on.
+
 ![An animated terminal session of git add -p mars.txt: Git shows both changes as one hunk; the answer s splits it into two; y stages the change to the first line and n skips the new last line; git diff --staged then shows only the first change.](fig/add-patch.gif)
 
 {% enddiscussion %}
@@ -492,7 +496,8 @@ Amending *rewrites* the last commit: it gets a new identifier, and the old
 one disappears from the history. So, as with `git reset` (see
 [Exploring History](05-history.md)), only amend commits that you have **not
 pushed yet**; if others already have the original commit, make a new commit
-instead.
+instead. Both of these change history, so try them in a scratch repository
+rather than in `planets`.
 
 {% enddiscussion %}
 

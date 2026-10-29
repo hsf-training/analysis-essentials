@@ -26,7 +26,7 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
-An ill-considered change
+An ill-considered change.
 ```
 
 Now, let's see what we get.
@@ -43,7 +43,7 @@ index b36abfd..0848c8d 100644
  Cold and dry, but everything is my favorite color
  The two moons may be a problem for Wolfman
  But the Mummy will appreciate the lack of humidity
-+An ill-considered change
++An ill-considered change.
 ```
 
 which is the same as what you would get if you leave out `HEAD` (try it).  The
@@ -63,19 +63,20 @@ $ git diff HEAD~2 mars.txt
 ```
 ```diff
 diff --git a/mars.txt b/mars.txt
-index df0654a..b36abfd 100644
+index df0654a..0848c8d 100644
 --- a/mars.txt
 +++ b/mars.txt
-@@ -1 +1,3 @@
+@@ -1 +1,4 @@
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
++An ill-considered change.
 ```
 
 We could also use `git show` which shows us what changes we made at an older commit as well as the commit message, rather than the _differences_ between a commit and our working directory that we see by using `git diff`.
 
 ```bash
-$ git show HEAD~2 mars.txt
+$ git show HEAD~1 mars.txt
 ```
 ```diff
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
@@ -117,13 +118,14 @@ $ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
 ```
 ```diff
 diff --git a/mars.txt b/mars.txt
-index df0654a..b36abfd 100644
+index df0654a..0848c8d 100644
 --- a/mars.txt
 +++ b/mars.txt
-@@ -1 +1,3 @@
+@@ -1 +1,4 @@
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
++An ill-considered change.
 ```
 
 That's the right answer,
@@ -135,13 +137,14 @@ $ git diff f22b25e mars.txt
 ```
 ```diff
 diff --git a/mars.txt b/mars.txt
-index df0654a..b36abfd 100644
+index df0654a..0848c8d 100644
 --- a/mars.txt
 +++ b/mars.txt
-@@ -1 +1,3 @@
+@@ -1 +1,4 @@
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity
++An ill-considered change.
 ```
 
 All right! So
@@ -321,7 +324,9 @@ $ git revert HEAD
 ```
 
 Git opens your editor with a suggested commit message (`Revert "..."`); save
-and close it to create the new commit.
+and close it to create the new commit. Don't run it in your `planets`
+repository now, though: it would undo the Mummy line, which the next lessons
+rely on. If you want to see it work, try it in a scratch repository.
 
 To summarise the ways of going back that we have seen:
 

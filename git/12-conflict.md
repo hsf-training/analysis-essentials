@@ -131,12 +131,12 @@ $ git commit
 $ git log --oneline --graph -4
 ```
 ```
-*   188ab73 Merge branch 'ganymede'
+*   188ab73 (HEAD -> main) Merge branch 'ganymede'
 |\
-| * 73c1b4c Add Ganymede to the notes on Jupiter
+| * 73c1b4c (ganymede) Add Ganymede to the notes on Jupiter
 * | b7f8c6e Stress the radiation around Jupiter
 |/
-* 604e156 Merge branch 'jupiter'
+* 604e156 (tag: v1.0) Merge branch 'jupiter'
 ```
 
 Here is the whole sequence again, as it looks in a terminal:
@@ -225,7 +225,7 @@ $ git add mars.txt
 $ git commit -m "Add a line in our home copy"
 ```
 ```
-[main 5ae9631] Add a line in our home copy
+[main dabb4c8] Add a line in our home copy
  1 file changed, 1 insertion(+)
 ```
 

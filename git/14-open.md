@@ -139,7 +139,7 @@ approach for your current project and explain why.
 
 
 There are many new ways to publish code and to make it citable. One
-way is described [on the homepage of GitHub itself](
+way is described [in GitHub's documentation](
 https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content).
 Basically it's a combination of GitHub (where the code is) and Zenodo (the
 repository creating the DOI). Read through this page while being aware
