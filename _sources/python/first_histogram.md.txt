@@ -15,11 +15,11 @@ PhaseSpaceSimulation.root
 {% callout "Installing python packages inside a virtual environment" %}
 
 
-It is however usually preferable and safer to do everything inside a virtual environement.
-The latter is like a copy of your current environement. Thus you can modify your virtual 
-environement (including installing/deleting/updating modules) without affecting your default
-environement. If at some point you realize you have broken everything, you can always exit
-the virtual environement and go back to the default lxplus one.
+It is however usually preferable and safer to do everything inside a virtual environment.
+The latter is like a copy of your current environment. Thus you can modify your virtual
+environment (including installing/deleting/updating modules) without affecting your default
+environment. If at some point you realize you have broken everything, you can always exit
+the virtual environment and go back to the default lxplus one.
 
 To enter a suitable environment you can use:
 
@@ -38,7 +38,7 @@ python -c 'import root_pandas; print(f"Got root_pandas from {root_pandas.__file_
 python -c 'import matplotlib; print(f"Got matplotlib from {matplotlib.__file__}")'
 ```
 
-You can go back to the default environement using the `deactivate` command.
+You can go back to the default environment using the `deactivate` command.
 
 {% endcallout %}
 
@@ -81,7 +81,7 @@ installing user packages to upgrade LCG provided ones.
 
 
 All ROOT methods made available in Python using a set of automatically generated
-bindings, known as [PyROOT](https://root.cern.ch/pyroot).
+bindings, known as [PyROOT](https://root.cern/manual/python/).
 These are all available by using `import ROOT`.
 For example if we want to create a `TFile` using the aforementioned data we can
 launch `ipython` and run:
@@ -95,11 +95,11 @@ In [4]: my_file.ls()
 ```
 TNetXNGFile**       root://eospublic.cern.ch//eos/opendata/lhcb/AntimatterMatters2017/data/B2HHH_MagnetDown.root
  TNetXNGFile*       root://eospublic.cern.ch//eos/opendata/lhcb/AntimatterMatters2017/data/B2HHH_MagnetDown.root
-  KEY: TTree    DecayTree;1 Tree continaing data for B- --> h-h+h- decays
+  KEY: TTree    DecayTree;1 Tree containing data for B- --> h-h+h- decays
 In [5]: my_tree = my_file.Get('DecayTree')
 In [6]: my_tree.Print()
 ******************************************************************************
-*Tree    :DecayTree : Tree continaing data for B- --> h-h+h- decays          *
+*Tree    :DecayTree : Tree containing data for B- --> h-h+h- decays          *
 *Entries :  5135823 : Total =       945201357 bytes  File  Size =  666480138 *
 *        :          : Tree compression factor =   1.42                       *
 ******************************************************************************

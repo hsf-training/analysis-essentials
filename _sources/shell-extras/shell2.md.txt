@@ -186,7 +186,7 @@ fi
 - `A` is equal to `B`;
 - `A` is smaller than `B`;
 - `A` is larger than `B`.
-Be careful! We might be tempted to use `>` and `<` inside the shell script, but they actually havea a different meaning for the shell, so `lt` and `gt` should be used instead.
+Be careful! We might be tempted to use `>` and `<` inside the shell script, but they actually have a different meaning for the shell, so `lt` and `gt` should be used instead.
 
 ## Linking commands
 
@@ -391,5 +391,3 @@ It is organised in levels, each level requiring to having completed the previous
 	- try using the manual, by typing man <command> (even man has a man) and then type q to quit the manual pages;
 	- for shell built-in commands, try with help <command>;
 	- ask Google or your favourite search engine!
-
-

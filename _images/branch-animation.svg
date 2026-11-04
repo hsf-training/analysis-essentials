@@ -2,7 +2,7 @@
   <title>Animation: branches are labels that move</title>
   <desc>An animation in five steps. 1: two commits on main, and HEAD is attached to main. 2: git switch -c moons creates a moons label on the same commit, and HEAD moves to moons. 3: git commit adds a new commit, and the moons label moves forward onto it, taking HEAD with it. 4: git switch main moves HEAD back to main. 5: git merge moons moves the main label forward to the same commit as moons: a fast-forward merge. The final picture shows three commits, with main (and HEAD) and moons both pointing at the newest one.</desc>
   <rect width="580" height="250" fill="#FFFFFF"/>
-  
+
 <style>
   .scene { animation: scene 16s linear infinite; }
   @keyframes scene { 0% { opacity: 0; } 3% { opacity: 1; } 92% { opacity: 1; } 96%, 100% { opacity: 0; } }

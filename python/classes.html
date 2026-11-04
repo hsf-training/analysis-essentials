@@ -68,8 +68,8 @@
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#dynamic-typing">dynamic typing</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Python-variable-assignement">Python variable assignement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01basics.html#Assignment-and-variables">Assignment and variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Python-variable-assignment">Python variable assignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
 </ul>
@@ -219,10 +219,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html">4: Extension on Classification</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Alternative-implementations">Alternative implementations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Feature-engineering">Feature engineering</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Turn-this-into-a-script-using-argparse">Turn this into a script using argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
@@ -255,7 +255,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Multi-dimensional">Multi dimensional</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Arithmetics">Arithmetics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Arithmetic">Arithmetic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Weights">Weights</a></li>
 </ul>
 </li>
@@ -312,7 +312,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Fitting-doesn't-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Applying-sPlot">Applying sPlot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
@@ -480,11 +480,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributor-agreement">Contributor Agreement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#how-to-contribute">How to Contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#what-to-contribute">What to Contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#using-github">Using GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#other-resources">Other Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributor-agreement">Contributor agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#how-to-contribute">How to contribute</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
@@ -519,7 +516,7 @@
              
   <section id="Classes">
 <h1>Classes<a class="headerlink" href="#Classes" title="Link to this heading"></a></h1>
-<p>In programming, classes, or more general OOP (Object Oriented Programing) is a fundamental paradigm (next to others, e.g. functional programming). It is powerful and e.g. Java is fully based on it. Python is a multi-paradigm (and multi-everything anyway) language, meaning there are classes, functions etc.</p>
+<p>In programming, classes, or more general OOP (Object Oriented Programming) is a fundamental paradigm (next to others, e.g. functional programming). It is powerful and e.g. Java is fully based on it. Python is a multi-paradigm (and multi-everything anyway) language, meaning there are classes, functions etc.</p>
 <p>However, classes play in Python an extremely important role - although one does not directly have to know about it - since actually every object in Python “comes from a class”. But we’re going ahead of things.</p>
 <p>Let’s start with an example problem</p>
 <p>We want to do some calculations with particles and their momenta, e.g. to calculate their invariant mass. (we focus on just one particle here, sure we could use lists but this means to keep track of which entry is which etc.)</p>
@@ -659,7 +656,7 @@ np.float64(92.73618495495704)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&#39;px&#39;: 20, &#39;py&#39;: 30, &#39;pz&#39;: 20, &#39;E&#39;: 41.234227, &#39;mass&#39;: &lt;function calc_mass at 0x7f5a740760c0&gt;}
+{&#39;px&#39;: 20, &#39;py&#39;: 30, &#39;pz&#39;: 20, &#39;E&#39;: 41.234227, &#39;mass&#39;: &lt;function calc_mass at 0x7f802834ad40&gt;}
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -727,7 +724,7 @@ np.float64(28.284271247461902)
 <ul class="simple">
 <li><p>“feeds itself to the function called”.</p></li>
 <li><p>is created through a function (“constructor”)</p></li>
-<li><p>has attributes (better then this [’…’] accesing would be with the dot)</p></li>
+<li><p>has attributes (better then this [’…’] accessing would be with the dot)</p></li>
 </ul>
 <p>…more like this: <code class="docutils literal notranslate"><span class="pre">particle1.calc_mass()</span></code></p>
 <section id="Welcome-to-classes">
@@ -872,7 +869,7 @@ np.float64(59.16079783099616)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;__main__.Particle object at 0x7f5a74098500&gt;
+&lt;__main__.Particle object at 0x7f8028f50ec0&gt;
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -889,7 +886,7 @@ np.float64(59.16079783099616)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;bound method Particle.calc_mass of &lt;__main__.Particle object at 0x7f5a74098500&gt;&gt;
+&lt;bound method Particle.calc_mass of &lt;__main__.Particle object at 0x7f8028f50ec0&gt;&gt;
 </pre></div></div>
 </div>
 </section>
@@ -945,7 +942,7 @@ px: 10, py: 10, pz: 10
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;&lt;__main__.VerboseParticle object at 0x7f5a74098ce0&gt;&#39;
+&#39;&lt;__main__.VerboseParticle object at 0x7f802835dd90&gt;&#39;
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">

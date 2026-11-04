@@ -68,8 +68,8 @@
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#dynamic-typing">dynamic typing</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="01basics.html#Python-variable-assignement">Python variable assignement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01basics.html#Assignment-and-variables">Assignment and variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="01basics.html#Python-variable-assignment">Python variable assignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
 </ul>
@@ -219,10 +219,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html">4: Extension on Classification</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Alternative-implementations">Alternative implementations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Feature-engineering">Feature engineering</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/31ClassificationExtension.html#Turn-this-into-a-script-using-argparse">Turn this into a script using argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced-python/32BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
@@ -255,7 +255,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../advanced-python/40Histograms.html#Multi-dimensional">Multi dimensional</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Arithmetics">Arithmetics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Arithmetic">Arithmetic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/40Histograms.html#Weights">Weights</a></li>
 </ul>
 </li>
@@ -312,7 +312,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Fitting-doesn't-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Applying-sPlot">Applying sPlot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../advanced-python/60sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
@@ -480,11 +480,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributor-agreement">Contributor Agreement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#how-to-contribute">How to Contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#what-to-contribute">What to Contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#using-github">Using GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#other-resources">Other Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributor-agreement">Contributor agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#how-to-contribute">How to contribute</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
@@ -520,7 +517,7 @@
   <section id="Functions">
 <h1>Functions<a class="headerlink" href="#Functions" title="Link to this heading"></a></h1>
 <p>Functions, or methods if they are associated with a class, take some input and return some output.</p>
-<p>They are the equivalent of a mathematical function <span class="math notranslate nohighlight">\(f(x) = y\)</span>, where the function <code class="docutils literal notranslate"><span class="pre">f</span></code> takes zero or more aruments and returns zero or more values. The best way to think about a function is that it is executed and <em>replaced</em> by the return value, like a mathematical function. <code class="docutils literal notranslate"><span class="pre">f</span></code> is a function, <code class="docutils literal notranslate"><span class="pre">x</span></code> are values. <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> is not a function anymore and isn’t <code class="docutils literal notranslate"><span class="pre">x</span></code> either, it’s whatever <code class="docutils literal notranslate"><span class="pre">y</span></code> is, the return value. Like mathematical functions, you could “copy-paste” the code-block of the
+<p>They are the equivalent of a mathematical function <span class="math notranslate nohighlight">\(f(x) = y\)</span>, where the function <code class="docutils literal notranslate"><span class="pre">f</span></code> takes zero or more arguments and returns zero or more values. The best way to think about a function is that it is executed and <em>replaced</em> by the return value, like a mathematical function. <code class="docutils literal notranslate"><span class="pre">f</span></code> is a function, <code class="docutils literal notranslate"><span class="pre">x</span></code> are values. <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> is not a function anymore and isn’t <code class="docutils literal notranslate"><span class="pre">x</span></code> either, it’s whatever <code class="docutils literal notranslate"><span class="pre">y</span></code> is, the return value. Like mathematical functions, you could “copy-paste” the code-block of the
 function in the place (technically).</p>
 <p>We have already used lots of <em>functions</em>, like <code class="docutils literal notranslate"><span class="pre">len</span></code>, <code class="docutils literal notranslate"><span class="pre">abs</span></code> and <code class="docutils literal notranslate"><span class="pre">print</span></code> as well as <em>methods</em> like <code class="docutils literal notranslate"><span class="pre">append</span></code> from <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">get</span></code> from <code class="docutils literal notranslate"><span class="pre">dict</span></code> or <code class="docutils literal notranslate"><span class="pre">replace</span></code> from <code class="docutils literal notranslate"><span class="pre">str</span></code>. In this lesson we will start creating our own.</p>
 <p>As we have seen, methods can do a lot of stuff with very little typing. Methods are normally used to encapsulate small pieces of code that we want to reuse.</p>
@@ -633,7 +630,7 @@ clear to others, and to future-you, what the method is supposed to do. The forma
 </ol>
 <p>Remark: there are comments (with <code class="docutils literal notranslate"><span class="pre">#</span></code>) and docstrings. Both serve a very different purpose</p>
 <ul class="simple">
-<li><p>comments <code class="docutils literal notranslate"><span class="pre">#</span></code> are for people who <em>read</em> the code. Other developers that don’t want to just use your function but <em>change</em> it. They can be short and serve the purpose to make the code more readable. Typical example: adding a comment on a <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">1</span></code> added somewhere, such as <code class="docutils literal notranslate"><span class="pre">len(x)</span> <span class="pre">-</span> <span class="pre">1</span>&#160; <span class="pre">#</span> <span class="pre">we</span> <span class="pre">don't</span> <span class="pre">need</span> <span class="pre">the</span> <span class="pre">border</span></code>. If a block of code implements a hard to read algorithm, it is also appropriate to use several <code class="docutils literal notranslate"><span class="pre">#</span></code> lines to explain beforehand what is going to happen. <em>Never</em> use tripple
+<li><p>comments <code class="docutils literal notranslate"><span class="pre">#</span></code> are for people who <em>read</em> the code. Other developers that don’t want to just use your function but <em>change</em> it. They can be short and serve the purpose to make the code more readable. Typical example: adding a comment on a <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">1</span></code> added somewhere, such as <code class="docutils literal notranslate"><span class="pre">len(x)</span> <span class="pre">-</span> <span class="pre">1</span>&#160; <span class="pre">#</span> <span class="pre">we</span> <span class="pre">don't</span> <span class="pre">need</span> <span class="pre">the</span> <span class="pre">border</span></code>. If a block of code implements a hard to read algorithm, it is also appropriate to use several <code class="docutils literal notranslate"><span class="pre">#</span></code> lines to explain beforehand what is going to happen. <em>Never</em> use triple
 quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> to make a large comment! Use always <code class="docutils literal notranslate"><span class="pre">#</span></code>, any decent editor is able to (un)comment several lines at once. (usually ctrl + /)</p></li>
 <li><p>Docstrings are for users. If someone imports your function, the docstrings tells <em>how to use it</em> and what it does exactly. It does, however, not contain any (unnecessary) information about the implementation. It’s for someone who will <em>not</em> read the source code. Example are functions that we used, like <code class="docutils literal notranslate"><span class="pre">len</span></code>: we never looked at the source code, but the <code class="docutils literal notranslate"><span class="pre">help(len)</span></code> gave us all the information that we needed to <em>use</em> it.</p></li>
 </ul>
@@ -882,7 +879,7 @@ len(obj, /)
 
 </pre></div></div>
 </div>
-<p>Specifying the argument’s name explicitly when calling a method is nice because it reminds you what the argument is supposed to do. It also means you don’t have to remember the order in which the arguments were defined, you can specify <em>keyword arguments</em> in any order. You can even mix <em>positional arguments</em> with keyword arguments, but any keyword arguments must come last. The rule is simply: is it unambigious? You can do it. Otherwise, it’s not allowed.</p>
+<p>Specifying the argument’s name explicitly when calling a method is nice because it reminds you what the argument is supposed to do. It also means you don’t have to remember the order in which the arguments were defined, you can specify <em>keyword arguments</em> in any order. You can even mix <em>positional arguments</em> with keyword arguments, but any keyword arguments must come last. The rule is simply: is it unambiguous? You can do it. Otherwise, it’s not allowed.</p>
 <p>Using keyword arguments is particularly useful for arguments which act as on/off flags, because it’s often not obvious what your <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> is doing.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
@@ -930,7 +927,7 @@ len(obj, /)
 3
 </pre></div></div>
 </div>
-<p><em>remark on ``_``: the character ``_`` is just a variable like any other. By convention, this is used in places where there is a return value but it signals, that it is</em> <strong>deliberately</strong> <em>ignored, as it won’t be used. Contrary, just calling ``add(…)`` without the assignement is a “code smell”: a possible bug, because why would someone call it and not use it’s value?</em></p>
+<p><em>remark on ``_``: the character ``_`` is just a variable like any other. By convention, this is used in places where there is a return value but it signals, that it is</em> <strong>deliberately</strong> <em>ignored, as it won’t be used. Contrary, just calling ``add(…)`` without the assignment is a “code smell”: a possible bug, because why would someone call it and not use it’s value?</em></p>
 <p>Always having to specify that flag is annoying. It would be much nicer if <code class="docutils literal notranslate"><span class="pre">show</span></code> had a <em>default value</em>, so that we don’t <em>have</em> to provide a value when calling the method, but can optionally override it.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
@@ -1368,7 +1365,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;map at 0x7f2270226500&gt;
+&lt;map at 0x7fcc4c1d0730&gt;
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1392,7 +1389,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 4
 </pre></div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">map</span></code> takes a function and an iterable, and applies the function to each element in the iterable. It returs however an generator, an object that is, for advanced reasons, not actually evaluated yet. In most cases, you can treat this <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple</span></code>-like.</p>
+<p><code class="docutils literal notranslate"><span class="pre">map</span></code> takes a function and an iterable, and applies the function to each element in the iterable. It returns however an generator, an object that is, for advanced reasons, not actually evaluated yet. In most cases, you can treat this <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple</span></code>-like.</p>
 <p>To make sure it is evaluated, we can explicitly convert it to a container, <em>i.e.</em> a list with the results. We can define and then pass our own functions.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
@@ -1504,7 +1501,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 [0.0, 0.5, 1.0, 1.5, 2.0]
 </pre></div></div>
 </div>
-<p>Note however that <em>if we assing the function to a variable</em>, the general preferred way to do is using the normal function definition.</p>
+<p>Note however that <em>if we assign the function to a variable</em>, the general preferred way to do is using the normal function definition.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
 </pre></div>
@@ -1595,7 +1592,7 @@ Got kwargs: {&#39;foo&#39;: &#39;bar&#39;, &#39;bing&#39;: &#39;baz&#39;}
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;filter at 0x7f22702278e0&gt;
+&lt;filter at 0x7fcc4c1d1a50&gt;
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">

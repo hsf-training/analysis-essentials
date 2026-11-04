@@ -240,7 +240,7 @@ These three words are easy to mix up, so here is how they differ:
 .. list-table::
    :header-rows: 1
 
-   * - 
+   * -
      - What it is
      - Where it lives
      - How you make one

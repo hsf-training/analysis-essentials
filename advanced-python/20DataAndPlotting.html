@@ -68,8 +68,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#dynamic-typing">dynamic typing</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Assignment-and-variables">Assignment and variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignment">Python variable assignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
 </ul>
@@ -219,10 +219,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="31ClassificationExtension.html">4: Extension on Classification</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Alternative-implementations">Alternative implementations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Feature-engineering">Feature engineering</a></li>
 <li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
-<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Turn-this-into-a-script-using-argparse">Turn this into a script using argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="32BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
@@ -255,7 +255,7 @@
 <li class="toctree-l4"><a class="reference internal" href="40Histograms.html#Multi-dimensional">Multi dimensional</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Arithmetics">Arithmetics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Arithmetic">Arithmetic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Weights">Weights</a></li>
 </ul>
 </li>
@@ -312,7 +312,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Fitting-doesn't-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
-<li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Applying-sPlot">Applying sPlot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
@@ -480,11 +480,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributor-agreement">Contributor Agreement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#how-to-contribute">How to Contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#what-to-contribute">What to Contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#using-github">Using GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#other-resources">Other Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributor-agreement">Contributor agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#how-to-contribute">How to contribute</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
@@ -563,7 +560,7 @@ matplotlib (but more cumbersome). Another example is uproot that we will use to 
 <section id="Loading-data">
 <h2>Loading data<a class="headerlink" href="#Loading-data" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">uproot</span></code> is a way of reading ROOT files without having ROOT installed, see the github reposity <a class="reference external" href="https://github.com/scikit-hep/uproot">here</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uproot</span></code> is a way of reading ROOT files without having ROOT installed, see the github repository <a class="reference external" href="https://github.com/scikit-hep/uproot">here</a></p></li>
 <li><p>We can look at the objects that are available in the file and access objects using dictionary style syntax</p></li>
 <li><p>The tree class contains converters to a variety of common Python libraries, such as numpy</p></li>
 <li><p>We will also use <code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">DataFrames</span></code> to load data in a table like format (- <code class="docutils literal notranslate"><span class="pre">root_numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">root_pandas</span></code> are an alternative, yet outdated, way of reading+writing ROOT files)</p></li>
@@ -1012,7 +1009,7 @@ Text(1, 0, &#39;Jpsi mass&#39;)
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_5385/1282284705.py:2: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+/tmp/ipykernel_5560/1282284705.py:2: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
 See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
   data_df.eval(&#34;Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)&#34;, inplace=True)
 </pre></div></div>
@@ -1048,10 +1045,10 @@ Name: Jpsi_eta, dtype: float64
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_5385/4026871582.py:1: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+/tmp/ipykernel_5560/4026871582.py:1: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
 See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
   data_df.eval(&#34;mup_P = sqrt(mup_PX**2 + mup_PY**2 + mup_PZ**2)&#34;, inplace=True)
-/tmp/ipykernel_5385/4026871582.py:2: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+/tmp/ipykernel_5560/4026871582.py:2: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
 See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
   data_df.eval(&#34;mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#34;, inplace=True)
 </pre></div></div>
@@ -1189,7 +1186,7 @@ See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace 
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fba38328fe0&gt;
+&lt;matplotlib.legend.Legend at 0x7c73a107bda0&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1292,13 +1289,13 @@ Significance metric is 4.31
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_5385/2351203036.py:8: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+/tmp/ipykernel_5560/2351203036.py:8: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
 See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
   mc_df.eval(&#34;Jpsi_eta = arctanh(Jpsi_PZ/Jpsi_P)&#34;, inplace=True)
-/tmp/ipykernel_5385/2351203036.py:9: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+/tmp/ipykernel_5560/2351203036.py:9: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
 See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
   mc_df.eval(&#34;mup_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#34;, inplace=True)
-/tmp/ipykernel_5385/2351203036.py:10: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
+/tmp/ipykernel_5560/2351203036.py:10: Pandas4Warning: The inplace keyword in DataFrame.eval is deprecated and will be removed in a future version (PDEP-8).
 See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace for more details.
   mc_df.eval(&#34;mum_P = sqrt(mum_PX**2 + mum_PY**2 + mum_PZ**2)&#34;, inplace=True)
 </pre></div></div>
@@ -1348,7 +1345,7 @@ See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace 
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fba38351550&gt;
+&lt;matplotlib.legend.Legend at 0x7c73a8995550&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1379,7 +1376,7 @@ See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace 
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7fba38329460&gt;
+&lt;matplotlib.legend.Legend at 0x7c73a12c3500&gt;
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1434,7 +1431,7 @@ See https://pandas.pydata.org/docs/dev/whatsnew/v3.1.0.html#deprecation-inplace 
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/tmp/ipykernel_5385/3447827755.py:2: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+/tmp/ipykernel_5560/3447827755.py:2: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
   plt.figure()  # creates a new figure
 </pre></div></div>
 </div>

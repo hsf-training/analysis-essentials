@@ -670,5 +670,5 @@ $ find ./ -type f -mtime -1 -user ahmed
 
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation 
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation
 {% endright %}

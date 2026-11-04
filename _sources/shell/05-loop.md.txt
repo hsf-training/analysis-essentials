@@ -519,7 +519,7 @@ done
 {% solution "Solution" %}
 
 1. The text from each file in turn gets written to the `alkanes.pdb` file.
-However, the file gets overwritten on each loop interation, so the final content of `alkanes.pdb`
+However, the file gets overwritten on each loop iteration, so the final content of `alkanes.pdb`
 is the text from the `propane.pdb` file.
 
 {% endsolution %}
@@ -701,5 +701,5 @@ Try running the code for yourself to see which directories are created!
 
 {% endkeypoints %}
 
-{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation 
+{% right %} [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode) - Based on [shell-novice](https://github.com/swcarpentry/shell-novice) © 2016–2017 Software Carpentry Foundation
 {% endright %}

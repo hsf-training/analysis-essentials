@@ -84,7 +84,7 @@
    "source": [
     "## Axes\n",
     "\n",
-    "A cental part of a histogram are the axes: They difine the binning and other treats of the axis.\n",
+    "A cental part of a histogram are the axes: They define the binning and other treats of the axis.\n",
     "\n",
     "A Hist (*this refers by default to hist.Hist, but usually also applies for bh.Histogram as the former inherits\n",
     "from the latter*) can have multiple axes of different types.\n",
@@ -180,7 +180,7 @@
     "\n",
     "With bh and hist, the [Unified Histogram Interface](https://github.com/scikit-hep/uhi) was also born. This allows objects to be plotted so that a library such as mplhep knows what to do with it.\n",
     "\n",
-    "In short, mplhep and hist work seemless together:"
+    "In short, mplhep and hist work seamless together:"
    ]
   },
   {
@@ -304,7 +304,7 @@
     "\n",
     "If you want to get the density of an existing histogram, .density() is capable to do it and will return you the density array without overflow and underflow bins.\n",
     "\n",
-    "A histogram is a count, so it's an **integral over a density**. To obtain the density, one can devide by the area of the bin, this gives the \"average density\" in a bin."
+    "A histogram is a count, so it's an **integral over a density**. To obtain the density, one can divide by the area of the bin, this gives the \"average density\" in a bin."
    ]
   },
   {
@@ -430,7 +430,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Arithmetics\n",
+    "## Arithmetic\n",
     "\n",
     "We can use the histograms to do math! We can multiply, add with each other or with scalars.\n",
     "\n",
@@ -497,9 +497,9 @@
    "source": [
     "## Weights\n",
     "\n",
-    "Weights are an essential part in HEP histograms and hist fully supports weigths. We can simply give an array of weights when filling the histogram.\n",
+    "Weights are an essential part in HEP histograms and hist fully supports weights. We can simply give an array of weights when filling the histogram.\n",
     "\n",
-    "We first need to specify the storage type to be of type `Weight` in order to make sure we keep track of the weigths."
+    "We first need to specify the storage type to be of type `Weight` in order to make sure we keep track of the weights."
    ]
   },
   {

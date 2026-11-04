@@ -68,8 +68,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#dynamic-typing">dynamic typing</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Assignment-and-variables">Assignment and variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignment">Python variable assignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
 </ul>
@@ -219,10 +219,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="31ClassificationExtension.html">4: Extension on Classification</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Alternative-implementations">Alternative implementations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Feature-engineering">Feature engineering</a></li>
 <li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
-<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Turn-this-into-a-script-using-argparse">Turn this into a script using argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="32BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
@@ -255,7 +255,7 @@
 <li class="toctree-l4"><a class="reference internal" href="40Histograms.html#Multi-dimensional">Multi dimensional</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Arithmetics">Arithmetics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Arithmetic">Arithmetic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Weights">Weights</a></li>
 </ul>
 </li>
@@ -312,7 +312,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Fitting-doesn't-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
-<li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Applying-sPlot">Applying sPlot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
@@ -480,11 +480,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributor-agreement">Contributor Agreement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#how-to-contribute">How to Contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#what-to-contribute">What to Contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#using-github">Using GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#other-resources">Other Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributor-agreement">Contributor agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#how-to-contribute">How to contribute</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
@@ -1004,8 +1001,8 @@ var = return_from_context_entering_code
 <p>One way to create a context manager is to have a function that has a <code class="docutils literal notranslate"><span class="pre">yield</span></code>.</p>
 <p><em>What is ``yield``?</em>: It’s like a return, except that the executioin stops at the <code class="docutils literal notranslate"><span class="pre">yield</span></code>, lets other code execute and, at some point, <strong>continues</strong> again where the yield was. Examples are:</p>
 <ul class="simple">
-<li><p>iterator: a function that yields elements. Everytime it is called, it is supposed to yield an element and then continue from there</p></li>
-<li><p>asynchronous programing: it stops and waits until something else is finished</p></li>
+<li><p>iterator: a function that yields elements. Every time it is called, it is supposed to yield an element and then continue from there</p></li>
+<li><p>asynchronous programming: it stops and waits until something else is finished</p></li>
 <li><p>in the context manager, as we will see</p></li>
 </ul>
 <div class="nbinput docutils container">
@@ -1239,11 +1236,11 @@ entered
 exited
 </pre></div></div>
 </div>
-<p>While a class is way more powerful and offers ways to catch exceptions and more in the exit, ususally the functional way is enough and should then be preferred. If it doesn’t give you enough flexibility, remember the class, look it up and figure out all the things needed.</p>
+<p>While a class is way more powerful and offers ways to catch exceptions and more in the exit, usually the functional way is enough and should then be preferred. If it doesn’t give you enough flexibility, remember the class, look it up and figure out all the things needed.</p>
 </section>
 <section id="Decorators-and-factories">
 <h2>Decorators and factories<a class="headerlink" href="#Decorators-and-factories" title="Link to this heading"></a></h2>
-<p>Sometimes we can’t write a function fully by hand but want to create it programatically. This pattern is called a “factory”. To achieve this, instead of having a function that returns an integer (an object), a list (an object), a dict (an object) or an array (an object), we return a function (an object). We see that the concept of Python, “everything is an object”, starts being very useful here.</p>
+<p>Sometimes we can’t write a function fully by hand but want to create it programmatically. This pattern is called a “factory”. To achieve this, instead of having a function that returns an integer (an object), a list (an object), a dict (an object) or an array (an object), we return a function (an object). We see that the concept of Python, “everything is an object”, starts being very useful here.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
 </pre></div>
@@ -1442,7 +1439,7 @@ hi
 pow3(...)
 </pre></div>
 </div>
-<p>HINT, scetch of solution</p>
+<p>HINT, sketch of solution</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">time_func</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">new_func</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">'start'</span><span class="p">)</span>
@@ -1805,7 +1802,7 @@ Executed after block
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'caugth Value: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"No error"</span><span class="p">)</span>
-<span class="k">finally</span><span class="p">:</span>  <span class="c1"># POWERFUL! Guarantied to be executed</span>
+<span class="k">finally</span><span class="p">:</span>  <span class="c1"># POWERFUL! Guaranteed to be executed</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'Finally run'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Executed when passed"</span><span class="p">)</span>
 </pre></div>

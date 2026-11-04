@@ -65,7 +65,7 @@
    "source": [
     "## Observed distributions\n",
     "\n",
-    "Picture above shows how this distibution should look like,\n",
+    "Picture above shows how this distribution should look like,\n",
     "but due to inaccuracies during classification we will observe a different picture.\n",
     "\n",
     "Let's assume that with a probability of 80% particle is classified correctly (and we are not using $p_x$ during classification).\n",
@@ -214,7 +214,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Things in practice are however even more complex. We have not bins, but continuos distribution (which can be treated as many bins).\n",
+    "Things in practice are however even more complex. We have not bins, but continuous distribution (which can be treated as many bins).\n",
     "\n",
     "Typically this is a distribution over mass. By fitting mass we are able to split mixture into two parts: signal channel and everything else."
    ]
@@ -265,7 +265,7 @@
     "extended_sig = signal_pdf.create_extended(sig_yield)\n",
     "extended_bkg = comb_bkg_pdf.create_extended(bkg_yield)\n",
     "\n",
-    "# The final model is the combination of the signal and backgrond PDF\n",
+    "# The final model is the combination of the signal and background PDF\n",
     "model = zfit.pdf.SumPDF([extended_bkg, extended_sig])"
    ]
   },
@@ -634,7 +634,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Appying sPlot\n",
+    "## Applying sPlot\n",
     "\n",
     "sPlot converts probabilities to sWeights, using an implementation from `hep_ml`:\n"
    ]
@@ -859,9 +859,9 @@
    "source": [
     "### Uncorrelatedness\n",
     "\n",
-    "The main assuption we used here is that distribution inside each bin is abolutely indentical.\n",
+    "The main assumption we used here is that distribution inside each bin is absolutely identical.\n",
     "\n",
-    "In other words, we stated that there is no correlation between the index of bin and the reconstructed variable. Remember that bin corresponds to some interval in mass, and finaly we get:\n",
+    "In other words, we stated that there is no correlation between the index of bin and the reconstructed variable. Remember that bin corresponds to some interval in mass, and finally we get:\n",
     "\n",
     "__reconstructed variable shall not be correlated with mass variables (or any other splotted variable)__"
    ]

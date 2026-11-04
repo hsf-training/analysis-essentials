@@ -68,8 +68,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#dynamic-typing">dynamic typing</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Assignement-and-variables">Assignement and variables</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignement">Python variable assignement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/01basics.html#Assignment-and-variables">Assignment and variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Python-variable-assignment">Python variable assignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-comprehensions">Sugar: comprehensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../python/01basics.html#Sugar:-using-Markdown">Sugar: using Markdown</a></li>
 </ul>
@@ -219,10 +219,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="31ClassificationExtension.html">4: Extension on Classification</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Alternative-implimentations">Alternative implimentations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Alternative-implementations">Alternative implementations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Feature-engineering">Feature engineering</a></li>
 <li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#k-folding"><span class="math notranslate nohighlight">\(k\)</span>-folding</a></li>
-<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Turn-this-into-a-scipt-using-argparse">Turn this into a scipt using argparse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="31ClassificationExtension.html#Turn-this-into-a-script-using-argparse">Turn this into a script using argparse</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="32BoostingToUniformity.html">5: Boosting to Uniformity</a><ul>
@@ -255,7 +255,7 @@
 <li class="toctree-l4"><a class="reference internal" href="40Histograms.html#Multi-dimensional">Multi dimensional</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Arithmetics">Arithmetics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Arithmetic">Arithmetic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="40Histograms.html#Weights">Weights</a></li>
 </ul>
 </li>
@@ -312,7 +312,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Fitting-doesn't-give-us-information-about-real-labels">Fitting doesn’t give us information about real labels</a></li>
-<li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Appying-sPlot">Appying sPlot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Applying-sPlot">Applying sPlot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Using-sWeights-to-reconstruct-initial-distribution">Using sWeights to reconstruct initial distribution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#An-important-requirement-of-sPlot">An important requirement of sPlot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="60sPlot.html#Derivation-of-sWeights-(optional)">Derivation of sWeights (optional)</a><ul>
@@ -480,11 +480,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributor-agreement">Contributor Agreement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#how-to-contribute">How to Contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#what-to-contribute">What to Contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#using-github">Using GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#other-resources">Other Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#contributor-agreement">Contributor agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#how-to-contribute">How to contribute</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CONDUCT.html">Contributor Code of Conduct</a></li>
@@ -525,9 +522,9 @@
 <li><p>Target of reweighting: assign weights to MC such that MC and real data distributions coincide.</p></li>
 </ul>
 <p><strong>hep_ml.reweight</strong> contains methods to reweight distributions. Typically we use reweighting of monte-carlo to fight drawbacks of simulation, though there are many applications.</p>
-<p>In this example we reweight multidimensional distibutions: <code class="docutils literal notranslate"><span class="pre">original</span></code> and <code class="docutils literal notranslate"><span class="pre">target</span></code>, the aim is to find new weights for original distribution, such that these multidimensional distributions will coincide.</p>
+<p>In this example we reweight multidimensional distributions: <code class="docutils literal notranslate"><span class="pre">original</span></code> and <code class="docutils literal notranslate"><span class="pre">target</span></code>, the aim is to find new weights for original distribution, such that these multidimensional distributions will coincide.</p>
 <p>Here we have a <strong>toy example</strong> without a real physics meaning.</p>
-<p>Pay attention: equality of distibutions for each feature <span class="math notranslate nohighlight">\(\neq\)</span> equality of multivariate distributions.</p>
+<p>Pay attention: equality of distributions for each feature <span class="math notranslate nohighlight">\(\neq\)</span> equality of multivariate distributions.</p>
 <p>All samples are divided into <strong>training</strong> and <strong>validation</strong> part. Training part is used to fit reweighting rule and test part is used to estimate reweighting quality.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -573,7 +570,7 @@
 <li><p>test part is used to evaluate reweighting rule comparing the following things:</p>
 <ul>
 <li><p>Kolmogorov-Smirnov distances for 1d projections</p></li>
-<li><p>n-dim distibutions using ML (see below).</p></li>
+<li><p>n-dim distributions using ML (see below).</p></li>
 </ul>
 </li>
 </ul>
@@ -680,11 +677,11 @@ KS over  mu_pt_sum  =  0.21639364439970188
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.5220581691542179
-KS over  pt_b  =  0.21696283581927261
-KS over  pt_phi  =  0.4014855024877216
-KS over  vchi2_b  =  0.405254537307299
-KS over  mu_pt_sum  =  0.21696283581927261
+KS over  hSPD  =  0.5202707363183977
+KS over  pt_b  =  0.21493039800782998
+KS over  pt_phi  =  0.40249413930364264
+KS over  vchi2_b  =  0.4045062387996485
+KS over  mu_pt_sum  =  0.21493039800782998
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -710,11 +707,11 @@ KS over  mu_pt_sum  =  0.21696283581927261
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.5163340585711723
-KS over  pt_b  =  0.21750130087635733
-KS over  pt_phi  =  0.40518291400844714
-KS over  vchi2_b  =  0.4044104603627172
-KS over  mu_pt_sum  =  0.21750130087635733
+KS over  hSPD  =  0.5217258854691396
+KS over  pt_b  =  0.22360259839551955
+KS over  pt_phi  =  0.4022615060621957
+KS over  vchi2_b  =  0.40645434247421147
+KS over  mu_pt_sum  =  0.22360259839551955
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -755,11 +752,11 @@ KS over  mu_pt_sum  =  0.21750130087635733
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.4071348966800465
-KS over  pt_b  =  0.11961295651198361
-KS over  pt_phi  =  0.28542868997443543
-KS over  vchi2_b  =  0.34876039711590556
-KS over  mu_pt_sum  =  0.11961295651198361
+KS over  hSPD  =  0.4139893516055126
+KS over  pt_b  =  0.12833678561871548
+KS over  pt_phi  =  0.28206013153448334
+KS over  vchi2_b  =  0.3449341728390707
+KS over  mu_pt_sum  =  0.12833678561871548
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -772,7 +769,7 @@ KS over  mu_pt_sum  =  0.11961295651198361
 </section>
 <section id="Gradient-Boosted-Reweighter">
 <h2>Gradient Boosted Reweighter<a class="headerlink" href="#Gradient-Boosted-Reweighter" title="Link to this heading"></a></h2>
-<p>This algorithm is inspired by gradient boosting and is able to fight curse of dimensionality. It uses decision trees and special loss functiion (<strong>ReweightLossFunction</strong>).</p>
+<p>This algorithm is inspired by gradient boosting and is able to fight curse of dimensionality. It uses decision trees and special loss function (<strong>ReweightLossFunction</strong>).</p>
 <p>A classifier is trained to discriminate between real data and MC. This means we are able to reweight in several variables rather than just one. <code class="docutils literal notranslate"><span class="pre">GBReweighter</span></code> from <code class="docutils literal notranslate"><span class="pre">hep_ml</span></code> is able to handle many variables and requires less data (for the same performance).</p>
 <p><strong>GBReweighter</strong> supports negative weights (to reweight MC to splotted real data).</p>
 <div class="nbinput docutils container">
@@ -794,11 +791,11 @@ KS over  mu_pt_sum  =  0.11961295651198361
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-KS over  hSPD  =  0.06257332858053943
-KS over  pt_b  =  0.03770345645583062
-KS over  pt_phi  =  0.023595584701148198
-KS over  vchi2_b  =  0.039603115039895664
-KS over  mu_pt_sum  =  0.03770345645583062
+KS over  hSPD  =  0.04057034169281315
+KS over  pt_b  =  0.043103939398626334
+KS over  pt_phi  =  0.03509226207921043
+KS over  vchi2_b  =  0.024237946124960996
+KS over  mu_pt_sum  =  0.043103939398626334
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -841,9 +838,9 @@ KS over  mu_pt_sum  =  0.03770345645583062
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.5163340585711723
-Bins reweight KS: 0.4071348966800465
-GB Reweight   KS: 0.06257332858053943
+No reweight   KS: 0.5217258854691396
+Bins reweight KS: 0.4139893516055126
+GB Reweight   KS: 0.04057034169281315
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -859,9 +856,9 @@ GB Reweight   KS: 0.06257332858053943
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.08920928744649644
-Bins reweight KS: 0.11541163232582692
-GB Reweight   KS: 0.03690371070814369
+No reweight   KS: 0.09428859951519122
+Bins reweight KS: 0.11901534428342514
+GB Reweight   KS: 0.024008743177935665
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -877,9 +874,9 @@ GB Reweight   KS: 0.03690371070814369
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.3694844965498254
-Bins reweight KS: 0.33605797062966514
-GB Reweight   KS: 0.058751874943046234
+No reweight   KS: 0.3741215597842718
+Bins reweight KS: 0.3411622138334073
+GB Reweight   KS: 0.029107023946130517
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -895,9 +892,9 @@ GB Reweight   KS: 0.058751874943046234
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.48507980264865624
-Bins reweight KS: 0.3858769417587704
-GB Reweight   KS: 0.04716390914234003
+No reweight   KS: 0.483328838276331
+Bins reweight KS: 0.38844984008999384
+GB Reweight   KS: 0.058923845427925586
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -913,9 +910,9 @@ GB Reweight   KS: 0.04716390914234003
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-No reweight   KS: 0.4963363786614446
-Bins reweight KS: 0.40829584996918755
-GB Reweight   KS: 0.04770690815141565
+No reweight   KS: 0.49551554374257784
+Bins reweight KS: 0.39765854325367306
+GB Reweight   KS: 0.02673277862696727
 </pre></div></div>
 </div>
 </section>
@@ -923,8 +920,8 @@ GB Reweight   KS: 0.04770690815141565
 <section id="GB-discrimination">
 <h2>GB-discrimination<a class="headerlink" href="#GB-discrimination" title="Link to this heading"></a></h2>
 <p>Let’s check how well a classifier is able to distinguish these distributions.</p>
-<p>For this puprose we split the data into train and test, then we train a classifier to distinguish between the real data and MC distributions.</p>
-<p>We can use the ROC Area Under Curve as a measure of performance. If ROC AUC = 0.5 on the test sample, the distibutions are identical, if ROC AUC = 1.0, they are ideally separable. So we want a ROC AUC as close to 0.5 as possible to know that we cannot separate the reweighted distributions.</p>
+<p>For this purpose we split the data into train and test, then we train a classifier to distinguish between the real data and MC distributions.</p>
+<p>We can use the ROC Area Under Curve as a measure of performance. If ROC AUC = 0.5 on the test sample, the distributions are identical, if ROC AUC = 1.0, they are ideally separable. So we want a ROC AUC as close to 0.5 as possible to know that we cannot separate the reweighted distributions.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -956,9 +953,9 @@ GB Reweight   KS: 0.04770690815141565
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-original 0.9325621041583384
-bins 0.9078195012362273
-gb_weights 0.5543943801331508
+original 0.9281898250334095
+bins 0.9026183756235051
+gb_weights 0.5621824720048235
 </pre></div></div>
 </div>
 <section id="Great!">
@@ -1012,10 +1009,10 @@ Text(0.5, 1.0, &#39;predicted weights&#39;)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(np.float64(387.29995815516014), np.float64(68741.71376070686))
+(np.float64(446.6012189014473), np.float64(69109.23050514855))
 </pre></div></div>
 </div>
-<p>With such a high weight for a single event, this does not look desireable. And be aware of ad-hoc solutions: just clipping or removing weights is completely <strong>wrong</strong> as this would disturb the distribution completely.</p>
+<p>With such a high weight for a single event, this does not look desirable. And be aware of ad-hoc solutions: just clipping or removing weights is completely <strong>wrong</strong> as this would disturb the distribution completely.</p>
 <p>A good way to proceed is to play around with the hyperparameters in order to avoid overfitting until the weights distribution looks “reasonable”. Especially we don’t want to have high weights in there if avoidable.</p>
 </section>
 </section>
@@ -1056,11 +1053,11 @@ Text(0.5, 1.0, &#39;predicted weights&#39;)
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 KFold prediction using folds column
-KS over  hSPD  =  0.3069273648958206
-KS over  pt_b  =  0.18055871408363472
-KS over  pt_phi  =  0.3070627981247203
-KS over  vchi2_b  =  0.2977888840440198
-KS over  mu_pt_sum  =  0.18055871408363472
+KS over  hSPD  =  0.3041597647416483
+KS over  pt_b  =  0.180480045266332
+KS over  pt_phi  =  0.3074360022568821
+KS over  vchi2_b  =  0.29790572565369344
+KS over  mu_pt_sum  =  0.180480045266332
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1100,7 +1097,7 @@ KS over  mu_pt_sum  =  0.18055871408363472
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 original 0.9358950292314191
-2-folding 0.8277045334323155
+2-folding 0.8270886510400624
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
