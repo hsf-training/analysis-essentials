@@ -1,3 +1,6 @@
+ci:
+  autoupdate_schedule: monthly
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
@@ -11,7 +14,19 @@ repos:
       - id: check-yaml
       - id: fix-byte-order-marker
       - id: check-ast
+      - id: end-of-file-fixer
+        exclude: &data ^(shell/data-shell|shell-extras/Material|snakemake/code|git/files)/
+      - id: mixed-line-ending
+        exclude: *data
+      - id: trailing-whitespace
+        exclude: *data
 
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.4.3
+    hooks:
+      - id: codespell
+        args: ["-I", "codespell.txt"]
+        exclude: ^(shell/data-shell|shell-extras/Material|snakemake/code|git/files)/|\.ipynbBKP$
 
   # Notebook formatting
   - repo: https://github.com/nbQA-dev/nbQA
@@ -37,4 +52,3 @@ repos:
 #    hooks:
 #      - id: oxipng
 #        args: [ "--", "--best", "--strip", "all", "--quiet" ]
-

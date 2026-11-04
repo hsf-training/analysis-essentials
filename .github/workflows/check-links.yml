@@ -1,0 +1,29 @@
+name: Check links
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+  schedule:
+    - cron: "0 4 1 * *" # monthly, to catch links that break over time
+  workflow_dispatch:
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Markdown pages and notebooks. Notebooks go through a preprocessor
+          # that extracts their cell sources from the JSON.
+          args: >-
+            --no-progress
+            --preprocess .github/lychee-preprocess.sh
+            "./**/*.md" "./**/*.ipynb"
+          fail: true
+        env:
+          # Authenticated requests avoid GitHub rate limits.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
