@@ -81,7 +81,7 @@ installing user packages to upgrade LCG provided ones.
 
 
 All ROOT methods made available in Python using a set of automatically generated
-bindings, known as [PyROOT](https://root.cern.ch/pyroot).
+bindings, known as [PyROOT](https://root.cern/manual/python/).
 These are all available by using `import ROOT`.
 For example if we want to create a `TFile` using the aforementioned data we can
 launch `ipython` and run:
