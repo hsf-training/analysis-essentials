@@ -23,7 +23,7 @@ as they enter the field, and in parallel, instill best practices for writing sof
 
 ## Prerequisites
 
-There are two options for running these lessons. Running locally should be prefered on Linux and macOS as it is faster and makes it easier to save you work.
+There are two options for running these lessons. Running locally should be preferred on Linux and macOS as it is faster and makes it easier to save you work.
 On Windows it is likely easier to use Binder; however, care is needed to prevent notebooks from being lost when the server is shut down.
 
 ### Local
@@ -42,7 +42,7 @@ mamba init
 
 
 Now to use your first ```Conda/Mamba``` environment:
- 
+
  - This will install the above packages. In order to make sure that you install all of the packages needed in the tutorial, you can use the `environment.yml` file (make sure that the file `environment.yml` is in the current directory):
 ```bash
 mamba env create -f environment.yml

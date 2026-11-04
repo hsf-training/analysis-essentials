@@ -438,7 +438,7 @@ and all of the wildcards of `create_input` are also declared in `name_files`,
 this should produce the same output as before.
 
 Notice that we could also just ask Snakemake to produce `input/a.in`
-without reqesting `output/a.out`;
+without requesting `output/a.out`;
 as far as Snakemake is concerned,
 `input/a.in` is just another file it knows how to produce.
 
