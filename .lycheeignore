@@ -1,0 +1,22 @@
+# Hosts that block or rate-limit automated requests (they work in a browser).
+# gnu.org returns 403/429 for most of the 8 links to it.
+^https?://www\.gnu\.org/
+^https://stackoverflow\.com/?$
+^https://stackoverflow\.com/questions/tagged/snakemake$
+^https://www\.hepdata\.net/$
+# computerhope.com serves a Cloudflare bot challenge (403) to CI.
+^https://www\.computerhope\.com/unix/uchgrp\.htm$
+
+# Known broken links, left for the lesson maintainers to decide on
+# (see hsf-training/hsf-training-ai-maintenance#4).
+# advanced-python/README.md: the scikit-learn basic tutorial was removed.
+^https://scikit-learn\.org/stable/tutorial/basic/tutorial\.html$
+# shell/README.md: the video of "The Mother of All Demos" was removed.
+^https://www\.youtube\.com/watch\?v=a11JDLBXtPQ$
+# shell/README.md: the old CERN account management site no longer exists.
+^https://resources\.web\.cern\.ch/
+# shell/07-find.md: the old Software Carpentry v4 site no longer exists.
+^https://v4\.software-carpentry\.org/
+# shell-extras/shell2.md: the LHCb release area host no longer exists
+# (also in linkcheck_ignore in conf.py).
+^http://lhcb-release-area\.web\.cern\.ch/

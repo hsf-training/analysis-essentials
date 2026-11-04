@@ -41,8 +41,8 @@ covers from simpler `__len__` and add up to the advanced `__getattr__`.
 Notebook 20 introduced data loading with uproot, Pandas DataFrames as the default container for columnar data
 that can apply cuts and the plotting libraries.
 
-More on pandas can be found in their 
-[excellent documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html) 
+More on pandas can be found in their
+[excellent documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html)
 or by searching the web
 
 **Multivariate Analysis and Machine Learning**
@@ -53,10 +53,10 @@ of problems and algorithms.
 - 31 demonstrates another BDT, XGBoost, which is the state-of-the-art algorithm of a BDT
 - 32 contains a tutorial about a special kind of BDTs which actively de-correlate the BDT response from
  variables. This is often required in physics analysis in order not to bias the inference.
- 
+
 - 33 is a currently outdated intro to Neural Networks
 
-More tutorials for general machine learning algorithms can be found in the 
+More tutorials for general machine learning algorithms can be found in the
 [scikit-learn tutorial section](https://scikit-learn.org/stable/tutorial/basic/tutorial.html)
 
 
@@ -77,7 +77,7 @@ is pointed towards an actual zfit tutorial, it provides a guide to implement the
 obtained in previous tutorials. `hepstats` is also introduced as it works with zfit models and
 is used to estimate the significance of the discovery.
 
-More tutorials on [zfit](https://github.com/zfit/zfit-tutorials) as well as 
+More tutorials on [zfit](https://github.com/zfit/zfit-tutorials) as well as
 [hepstats](https://github.com/scikit-hep/hepstats/tree/master/notebooks) are available.
 
 **sPlot technique**
@@ -87,7 +87,7 @@ events in a variable. The technique as well as the library to obtain the weights
 
 **Scikit-HEP**
 
-Many libraries that are seen in this tutorial are part of 
+Many libraries that are seen in this tutorial are part of
 [Scikit-HEP, the HEP Python ecosystem](https://scikit-hep.org/).
 Not all packages have been used though and in tutorial 70, a few smaller, yet useful packages are presented to give
 an idea of what is available.
